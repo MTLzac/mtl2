@@ -11,9 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone, Smartphone, Tablet, Gamepad2, Laptop, Watch } from "lucide-react";
-import { cn } from "@/lib/utils";
-
-const PHONE_NUMBER = "2044894015";
+import { PRIMARY_PHONE, PRIMARY_PHONE_FORMATTED } from "@/lib/locations";
 
 const REPAIR_CATEGORIES = [
   {
@@ -143,9 +141,9 @@ export const Header = () => {
         {/* CTA Buttons */}
         <div className="hidden items-center gap-3 md:flex">
           <Button variant="ghost" size="sm" asChild>
-            <a href={`tel:${PHONE_NUMBER}`}>
+            <a href={`tel:${PRIMARY_PHONE}`}>
               <Phone className="mr-2 h-4 w-4" />
-              (204) 489-4015
+              {PRIMARY_PHONE_FORMATTED}
             </a>
           </Button>
           <Button size="sm" className="gradient-primary" asChild>
@@ -211,7 +209,7 @@ export const Header = () => {
 
               <div className="space-y-3 pt-4">
                 <Button className="w-full" asChild>
-                  <a href={`tel:${PHONE_NUMBER}`}>
+                  <a href={`tel:${PRIMARY_PHONE}`}>
                     <Phone className="mr-2 h-4 w-4" />
                     Call Now
                   </a>

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 import { LiveStatusBadge } from "./LiveStatusBadge";
 import defaultHeroImage from "@/assets/hero-repair-illustration.png";
+import { PRIMARY_PHONE } from "@/lib/locations";
 
 interface HeroSectionProps {
   deviceName: string;
@@ -11,7 +12,6 @@ interface HeroSectionProps {
 }
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
-const PHONE_NUMBER = "2044894015";
 
 export const HeroSection = ({ deviceName, tagline, description, heroImage }: HeroSectionProps) => {
   const imageToUse = heroImage || defaultHeroImage;
@@ -29,7 +29,7 @@ export const HeroSection = ({ deviceName, tagline, description, heroImage }: Her
             </div>
             <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
               {deviceName} Repair{" "}
-              <span className="text-primary">Winnipeg</span>
+              <span className="text-primary">Manitoba</span>
             </h1>
             <p className="mb-2 text-xl font-medium text-foreground/90 md:text-2xl">
               {tagline}
@@ -54,7 +54,7 @@ export const HeroSection = ({ deviceName, tagline, description, heroImage }: Her
                 className="text-lg"
                 asChild
               >
-                <a href={`tel:${PHONE_NUMBER}`}>
+                <a href={`tel:${PRIMARY_PHONE}`}>
                   <Phone className="mr-2 h-5 w-5" />
                   Call Now
                 </a>
@@ -66,7 +66,7 @@ export const HeroSection = ({ deviceName, tagline, description, heroImage }: Her
           <div className="relative hidden lg:flex items-center justify-end">
             <img 
               src={imageToUse} 
-              alt={`${deviceName} repair service at Mobile Tech Lab Winnipeg`}
+              alt={`${deviceName} repair service at Mobile Tech Lab Manitoba`}
               className="w-full max-w-xl object-contain"
             />
           </div>

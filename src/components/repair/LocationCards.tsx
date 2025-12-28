@@ -1,31 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
-
-interface Location {
-  name: string;
-  address: string;
-  phone: string;
-  hours: string[];
-  mapsUrl: string;
-}
-
-const LOCATIONS: Location[] = [
-  {
-    name: "St. Vital Location",
-    address: "Unit C – 1170 St Mary's Road, Winnipeg, MB R2M 3S4",
-    phone: "2044894015",
-    hours: ["Mon-Sat: 9AM - 7PM", "Sun: 12PM - 7PM"],
-    mapsUrl: "https://maps.google.com/?q=1170+St+Mary's+Road+Winnipeg+MB",
-  },
-  {
-    name: "Thompson Location",
-    address: "City Centre Mall, Thompson, MB",
-    phone: "2044894015",
-    hours: ["Mon-Sat: 10AM - 6PM", "Sun: Closed"],
-    mapsUrl: "https://maps.google.com/?q=City+Centre+Mall+Thompson+MB",
-  },
-];
+import { LOCATIONS } from "@/lib/locations";
 
 export const LocationCards = () => {
   return (
@@ -58,7 +34,7 @@ export const LocationCards = () => {
                     href={`tel:${location.phone}`}
                     className="font-medium hover:text-primary"
                   >
-                    {location.phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3")}
+                    {location.phoneFormatted}
                   </a>
                 </div>
                 
