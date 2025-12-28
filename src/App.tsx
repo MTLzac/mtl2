@@ -22,7 +22,6 @@ import TCLRepair from "./pages/repair/TCLRepair";
 import ZTERepair from "./pages/repair/ZTERepair";
 import BlackberryRepair from "./pages/repair/BlackberryRepair";
 import SonyXperiaRepair from "./pages/repair/SonyXperiaRepair";
-import AsusRepair from "./pages/repair/AsusRepair";
 import VivoRepair from "./pages/repair/VivoRepair";
 
 // Tablet Repair Pages
@@ -62,7 +61,6 @@ const App = () => (
             <Route path="/repair/zte" element={<ZTERepair />} />
             <Route path="/repair/blackberry" element={<BlackberryRepair />} />
             <Route path="/repair/sony-xperia" element={<SonyXperiaRepair />} />
-            <Route path="/repair/asus" element={<AsusRepair />} />
             <Route path="/repair/vivo" element={<VivoRepair />} />
             
             {/* Tablet Repair Pages */}
