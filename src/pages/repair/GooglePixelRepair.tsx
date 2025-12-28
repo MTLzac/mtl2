@@ -7,6 +7,7 @@ import {
   Volume2,
   Fingerprint
 } from "lucide-react";
+import heroImage from "@/assets/hero-google-pixel.png";
 
 const SERVICES = [
   {
@@ -89,6 +90,7 @@ const GooglePixelRepair = () => {
       deviceName="Google Pixel"
       tagline="Stock Android Specialists in Winnipeg"
       heroDescription="From the newest Pixel 9 Pro to classic Pixel devices, we provide expert repairs for Google's flagship phones. Cracked screens, battery issues, camera problems – we handle it all."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We service all Google Pixel generations including the latest Pixel 9 series and Pixel Fold devices."

@@ -19,6 +19,7 @@ interface RepairLandingTemplateProps {
   deviceName: string;
   tagline: string;
   heroDescription: string;
+  heroImage?: string;
   
   // Content
   services: Service[];
@@ -37,6 +38,7 @@ export const RepairLandingTemplate = ({
   deviceName,
   tagline,
   heroDescription,
+  heroImage,
   services,
   models,
   modelsDescription,
@@ -61,6 +63,7 @@ export const RepairLandingTemplate = ({
             deviceName={deviceName}
             tagline={tagline}
             description={heroDescription}
+            heroImage={heroImage}
           />
           
           <ServiceGrid services={services} deviceName={deviceName} />

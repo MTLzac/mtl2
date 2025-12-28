@@ -1,18 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
 import { LiveStatusBadge } from "./LiveStatusBadge";
-import heroImage from "@/assets/hero-repair-illustration.png";
+import defaultHeroImage from "@/assets/hero-repair-illustration.png";
 
 interface HeroSectionProps {
   deviceName: string;
   tagline: string;
   description: string;
+  heroImage?: string;
 }
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 const PHONE_NUMBER = "2044894015";
 
-export const HeroSection = ({ deviceName, tagline, description }: HeroSectionProps) => {
+export const HeroSection = ({ deviceName, tagline, description, heroImage }: HeroSectionProps) => {
+  const imageToUse = heroImage || defaultHeroImage;
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/5 py-12 md:py-20">
       <div className="container mx-auto px-4">
@@ -63,7 +65,7 @@ export const HeroSection = ({ deviceName, tagline, description }: HeroSectionPro
           {/* Right Image */}
           <div className="relative hidden lg:flex items-center justify-end">
             <img 
-              src={heroImage} 
+              src={imageToUse} 
               alt={`${deviceName} repair service at Mobile Tech Lab Winnipeg`}
               className="w-full max-w-xl object-contain"
             />
