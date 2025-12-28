@@ -21,9 +21,19 @@ import InfinixRepair from "./pages/repair/InfinixRepair";
 import TCLRepair from "./pages/repair/TCLRepair";
 import ZTERepair from "./pages/repair/ZTERepair";
 import BlackberryRepair from "./pages/repair/BlackberryRepair";
+import IPhoneRepair from "./pages/repair/iPhoneRepair";
+import SonyXperiaRepair from "./pages/repair/SonyXperiaRepair";
+import AsusRepair from "./pages/repair/AsusRepair";
+import VivoRepair from "./pages/repair/VivoRepair";
 
 // Tablet Repair Pages
 import SamsungGalaxyTabRepair from "./pages/repair/SamsungGalaxyTabRepair";
+
+// Console Repair Pages
+import NintendoSwitchRepair from "./pages/repair/NintendoSwitchRepair";
+import PlayStationRepair from "./pages/repair/PlayStationRepair";
+import XboxRepair from "./pages/repair/XboxRepair";
+import SteamDeckRepair from "./pages/repair/SteamDeckRepair";
 
 const queryClient = new QueryClient();
 
@@ -51,9 +61,19 @@ const App = () => (
             <Route path="/repair/tcl" element={<TCLRepair />} />
             <Route path="/repair/zte" element={<ZTERepair />} />
             <Route path="/repair/blackberry" element={<BlackberryRepair />} />
+            <Route path="/repair/iphone" element={<IPhoneRepair />} />
+            <Route path="/repair/sony-xperia" element={<SonyXperiaRepair />} />
+            <Route path="/repair/asus" element={<AsusRepair />} />
+            <Route path="/repair/vivo" element={<VivoRepair />} />
             
             {/* Tablet Repair Pages */}
             <Route path="/repair/samsung-galaxy-tab" element={<SamsungGalaxyTabRepair />} />
+            
+            {/* Console Repair Pages */}
+            <Route path="/repair/nintendo-switch" element={<NintendoSwitchRepair />} />
+            <Route path="/repair/playstation" element={<PlayStationRepair />} />
+            <Route path="/repair/xbox" element={<XboxRepair />} />
+            <Route path="/repair/steam-deck" element={<SteamDeckRepair />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
