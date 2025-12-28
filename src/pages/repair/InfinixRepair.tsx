@@ -7,6 +7,7 @@ import {
   Volume2,
   Power
 } from "lucide-react";
+import heroImage from "@/assets/hero-infinix.png";
 
 const SERVICES = [
   {
@@ -88,6 +89,7 @@ const InfinixRepair = () => {
       deviceName="Infinix"
       tagline="Infinix Repair Specialists in Winnipeg"
       heroDescription="Can't find Infinix repair in Winnipeg? We service all Infinix devices from the Note series to gaming GT phones. Affordable repairs for budget-friendly devices."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Infinix models including Note, Hot, Zero, Smart, and GT gaming series."
