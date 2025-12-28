@@ -7,6 +7,7 @@ import {
   Volume2,
   Droplets
 } from "lucide-react";
+import heroImage from "@/assets/hero-sony-xperia.png";
 
 const SERVICES = [
   {
@@ -85,6 +86,7 @@ const SonyXperiaRepair = () => {
       deviceName="Sony Xperia"
       tagline="Sony Xperia Specialists in Winnipeg"
       heroDescription="Own a Sony Xperia? We understand these premium devices with their 4K displays and pro-grade cameras. Expert repairs for all Xperia models."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Sony Xperia devices including the flagship 1 series, compact 5 series, and mid-range 10 series."
