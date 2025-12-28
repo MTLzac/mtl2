@@ -23,7 +23,7 @@ const WaterDamageRepair = () => {
     },
     {
       question: "How much does water damage repair cost?",
-      answer: "Costs vary depending on the extent of the damage and the device. We provide a free diagnostic assessment and will give you an honest quote before any work begins. You only pay if we're able to help."
+      answer: "Costs vary depending on the extent of the damage and the device. We charge a diagnostic fee which goes towards the cost of repair if you proceed. A quick 5-minute assessment over the counter is always a courtesy. We'll give you an honest quote before any work begins."
     },
     {
       question: "Can you recover my photos and data?",
