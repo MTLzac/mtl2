@@ -7,6 +7,7 @@ import {
   Volume2,
   Fingerprint
 } from "lucide-react";
+import heroImage from "@/assets/hero-oneplus.png";
 
 const SERVICES = [
   {
@@ -42,25 +43,16 @@ const SERVICES = [
 ];
 
 const MODELS = [
-  // OnePlus 12 Series
-  "OnePlus 12", "OnePlus 12R",
-  // OnePlus 11 Series
-  "OnePlus 11", "OnePlus 11R",
-  // OnePlus 10 Series
-  "OnePlus 10 Pro", "OnePlus 10T", "OnePlus 10R",
-  // OnePlus 9 Series
-  "OnePlus 9 Pro", "OnePlus 9", "OnePlus 9R", "OnePlus 9RT",
-  // OnePlus 8 Series
-  "OnePlus 8 Pro", "OnePlus 8", "OnePlus 8T",
-  // OnePlus Nord Series
-  "OnePlus Nord 3", "OnePlus Nord CE 3", "OnePlus Nord CE 3 Lite",
-  "OnePlus Nord 2T", "OnePlus Nord 2", "OnePlus Nord CE 2",
-  "OnePlus Nord N30", "OnePlus Nord N20", "OnePlus Nord N10",
-  // Older Models
-  "OnePlus 7 Pro", "OnePlus 7T", "OnePlus 7",
-  "OnePlus 6T", "OnePlus 6",
-  // OnePlus Open
-  "OnePlus Open",
+  // OnePlus Series
+  "OnePlus Ace 5 Pro 5G", "OnePlus Ace 5 5G", "OnePlus 13R", "OnePlus 13 5G", "OnePlus 12R 5G", "OnePlus 12 5G", "OnePlus 11", "OnePlus 10T 5G", "OnePlus 10R", "OnePlus Ace 3 5G", "OnePlus Ace Pro", "OnePlus Ace", "OnePlus 10 Pro", "OnePlus 9 Pro", "OnePlus 9RT 5G", "OnePlus 9R", "OnePlus 9",
+  // Classic Series
+  "OnePlus 8T", "OnePlus 8 Pro", "OnePlus 8", "OnePlus 7T Pro", "OnePlus 7T", "OnePlus 7 Pro", "OnePlus 7", "OnePlus 6T", "OnePlus 6", "OnePlus 5T", "OnePlus 5", "OnePlus 3T", "OnePlus 3", "OnePlus 2", "OnePlus One", "OnePlus X",
+  // Nord Series
+  "OnePlus Nord N300 5G", "OnePlus Nord N30 5G", "OnePlus Nord CE 3 Lite", "OnePlus Nord CE2 Lite 5G", "OnePlus Nord CE 2 5G", "OnePlus Nord CE 5G", "OnePlus Nord N20 5G", "OnePlus Nord N20 SE", "OnePlus Nord N200 5G", "OnePlus Nord 2T", "OnePlus Nord 2 5G", "OnePlus Nord N100", "OnePlus Nord N10 5G", "OnePlus Nord",
+  // Open Series
+  "OnePlus Open 5G",
+  // Pad Series
+  "OnePlus Pad Pro", "OnePlus Pad 2",
 ];
 
 const FAQS = [
@@ -94,6 +86,7 @@ const OnePlusRepair = () => {
       deviceName="OnePlus"
       tagline="Premium Android Repair Specialists in Winnipeg"
       heroDescription="From the flagship OnePlus 12 to the innovative OnePlus Open, we provide expert repairs for all OnePlus devices. Fast charging issues, screen damage, battery problems – we've got the solution."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all OnePlus models including flagship, Nord series, and the OnePlus Open foldable."
