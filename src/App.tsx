@@ -37,6 +37,9 @@ import IPodRepair from "./pages/repair/iPodRepair";
 import MacBookRepair from "./pages/repair/MacBookRepair";
 import SurfaceRepair from "./pages/repair/SurfaceRepair";
 
+// Service-Specific Pages
+import WaterDamageRepair from "./pages/repair/WaterDamageRepair";
+
 // Console Repair Pages
 import NintendoSwitchRepair from "./pages/repair/NintendoSwitchRepair";
 import PS5Repair from "./pages/repair/PS5Repair";
@@ -92,6 +95,9 @@ const App = () => (
             <Route path="/repair/ps4" element={<PS4Repair />} />
             <Route path="/repair/xbox" element={<XboxRepair />} />
             <Route path="/repair/steam-deck" element={<SteamDeckRepair />} />
+            
+            {/* Service-Specific Pages */}
+            <Route path="/repair/water-damage" element={<WaterDamageRepair />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
