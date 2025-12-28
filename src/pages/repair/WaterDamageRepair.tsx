@@ -66,7 +66,7 @@ const WaterDamageRepair = () => {
                   </div>
                   
                   <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                    Water Damage?
+                    iPhone Water Damage in Winnipeg?
                     <span className="block text-primary">We're Here to Help</span>
                   </h1>
                   
