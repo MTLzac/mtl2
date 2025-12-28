@@ -21,7 +21,6 @@ import InfinixRepair from "./pages/repair/InfinixRepair";
 import TCLRepair from "./pages/repair/TCLRepair";
 import ZTERepair from "./pages/repair/ZTERepair";
 import BlackberryRepair from "./pages/repair/BlackberryRepair";
-import IPhoneRepair from "./pages/repair/iPhoneRepair";
 import SonyXperiaRepair from "./pages/repair/SonyXperiaRepair";
 import AsusRepair from "./pages/repair/AsusRepair";
 import VivoRepair from "./pages/repair/VivoRepair";
@@ -61,7 +60,6 @@ const App = () => (
             <Route path="/repair/tcl" element={<TCLRepair />} />
             <Route path="/repair/zte" element={<ZTERepair />} />
             <Route path="/repair/blackberry" element={<BlackberryRepair />} />
-            <Route path="/repair/iphone" element={<IPhoneRepair />} />
             <Route path="/repair/sony-xperia" element={<SonyXperiaRepair />} />
             <Route path="/repair/asus" element={<AsusRepair />} />
             <Route path="/repair/vivo" element={<VivoRepair />} />
