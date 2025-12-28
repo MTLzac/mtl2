@@ -7,6 +7,7 @@ import {
   Disc,
   Wifi
 } from "lucide-react";
+import heroImage from "@/assets/hero-ps4.png";
 
 const SERVICES = [
   {
@@ -81,6 +82,7 @@ const PS4Repair = () => {
       deviceName="PS4"
       tagline="PlayStation 4 Repair Specialists in Winnipeg"
       heroDescription="PS4 overheating? HDMI not working? Controller drifting? We repair all PlayStation 4 models and DualShock 4 controllers."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all PlayStation 4 models including PS4 Pro, PS4 Slim, and the original PS4."
