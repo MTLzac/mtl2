@@ -7,6 +7,7 @@ import {
   Volume2,
   Fingerprint
 } from "lucide-react";
+import heroImage from "@/assets/hero-vivo.png";
 
 const SERVICES = [
   {
@@ -88,6 +89,7 @@ const VivoRepair = () => {
       deviceName="Vivo"
       tagline="Vivo & iQOO Repair in Winnipeg"
       heroDescription="From the ZEISS-equipped X series flagships to iQOO gaming phones, we repair all Vivo devices. Expert service for this fast-growing brand."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Vivo phones including X series, V series, Y series, X Fold foldables, and iQOO gaming devices."
