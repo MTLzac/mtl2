@@ -7,6 +7,7 @@ import {
   Volume2,
   Power
 } from "lucide-react";
+import heroImage from "@/assets/hero-lg.png";
 
 const SERVICES = [
   {
@@ -89,6 +90,7 @@ const LGRepair = () => {
       deviceName="LG"
       tagline="Legacy LG Device Support in Winnipeg"
       heroDescription="Even though LG exited the smartphone market, we continue to support all LG devices. From the unique LG Wing to the reliable Stylo series, we keep your LG phone running strong."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all LG smartphone models. As an LG legacy support specialist, we maintain parts for older devices others won't service."
