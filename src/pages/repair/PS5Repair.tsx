@@ -17,8 +17,8 @@ const SERVICES = [
   },
   {
     icon: HardDrive,
-    name: "Storage Upgrade",
-    description: "Upgrade to larger SSD storage for more games.",
+    name: "SSD Upgrade",
+    description: "Install larger NVMe SSD storage for more games.",
   },
   {
     icon: Disc,
@@ -32,8 +32,8 @@ const SERVICES = [
   },
   {
     icon: Gamepad2,
-    name: "Controller Repair",
-    description: "Fix DualSense and DualShock controller drift and buttons.",
+    name: "DualSense Repair",
+    description: "Fix DualSense controller drift, triggers, and buttons.",
   },
   {
     icon: Wifi,
@@ -43,18 +43,14 @@ const SERVICES = [
 ];
 
 const MODELS = [
-  // PlayStation 5
-  "PlayStation 5 (Disc Edition)", "PlayStation 5 Digital Edition",
-  "PlayStation 5 Slim (Disc)", "PlayStation 5 Slim Digital",
-  // PlayStation 4
-  "PlayStation 4 Pro", "PlayStation 4 Slim", "PlayStation 4 (Original)",
-  // PlayStation 3
-  "PlayStation 3 Super Slim", "PlayStation 3 Slim", "PlayStation 3 (Original)",
-  // Controllers
-  "DualSense Controller (PS5)", "DualSense Edge Controller",
-  "DualShock 4 Controller (PS4)", "DualShock 3 Controller (PS3)",
-  // PlayStation VR
-  "PlayStation VR2", "PlayStation VR",
+  "PlayStation 5 (Disc Edition)",
+  "PlayStation 5 Digital Edition",
+  "PlayStation 5 Slim (Disc)",
+  "PlayStation 5 Slim Digital",
+  "PlayStation 5 Pro",
+  "DualSense Controller",
+  "DualSense Edge Controller",
+  "PlayStation VR2",
 ];
 
 const FAQS = [
@@ -64,7 +60,7 @@ const FAQS = [
   },
   {
     question: "Do you repair DualSense controller drift?",
-    answer: "Yes, we repair analog stick drift on DualSense and DualShock controllers, usually within an hour.",
+    answer: "Yes, we repair analog stick drift and adaptive trigger issues on DualSense controllers, usually within an hour.",
   },
   {
     question: "Can you fix HDMI port issues on PS5?",
@@ -80,21 +76,21 @@ const FAQS = [
   },
 ];
 
-const PlayStationRepair = () => {
+const PS5Repair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="PlayStation Repair Winnipeg | PS5 & PS4 Fix | Mobile Tech Lab"
-      metaDescription="PlayStation repair in Winnipeg. Overheating, HDMI port, disc drive, controller repair for PS5, PS4 & PS3. Console repair specialists."
-      deviceName="PlayStation"
-      tagline="PlayStation Repair Specialists in Winnipeg"
-      heroDescription="PS5 overheating? HDMI not working? Controller drifting? We repair all PlayStation consoles and controllers. Get back in the game."
+      metaTitle="PS5 Repair Winnipeg | PlayStation 5 Fix | Mobile Tech Lab"
+      metaDescription="PS5 repair in Winnipeg. Overheating, HDMI port, disc drive, DualSense controller repair for PlayStation 5. Console repair specialists."
+      deviceName="PS5"
+      tagline="PlayStation 5 Repair Specialists in Winnipeg"
+      heroDescription="PS5 overheating? HDMI not working? DualSense drifting? We repair all PlayStation 5 models and controllers. Get back in the game."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all PlayStation consoles including PS5, PS4, PS3, and all DualSense/DualShock controllers."
+      modelsDescription="We repair all PlayStation 5 models including disc and digital editions, plus DualSense controllers and PSVR2."
       faqs={FAQS}
     />
   );
 };
 
-export default PlayStationRepair;
+export default PS5Repair;
