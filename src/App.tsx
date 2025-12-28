@@ -35,6 +35,7 @@ import IPodRepair from "./pages/repair/iPodRepair";
 
 // Laptop Repair Pages
 import MacBookRepair from "./pages/repair/MacBookRepair";
+import SurfaceRepair from "./pages/repair/SurfaceRepair";
 
 // Console Repair Pages
 import NintendoSwitchRepair from "./pages/repair/NintendoSwitchRepair";
@@ -83,6 +84,7 @@ const App = () => (
             
             {/* Laptop Repair Pages */}
             <Route path="/repair/macbook" element={<MacBookRepair />} />
+            <Route path="/repair/surface" element={<SurfaceRepair />} />
             
             {/* Console Repair Pages */}
             <Route path="/repair/nintendo-switch" element={<NintendoSwitchRepair />} />
