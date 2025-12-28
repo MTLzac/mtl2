@@ -7,6 +7,7 @@ import {
   Volume2,
   Zap
 } from "lucide-react";
+import heroImage from "@/assets/hero-oppo.png";
 
 const SERVICES = [
   {
@@ -92,6 +93,7 @@ const OppoRepair = () => {
       deviceName="Oppo"
       tagline="Oppo & Realme Repair Specialists in Winnipeg"
       heroDescription="From the flagship Find X series to the affordable A-series, we repair all Oppo devices. Plus Realme phones too! Fast SUPERVOOC charging issues, screen damage, and more."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Oppo and Realme devices including Find X flagships, Reno series, A-series, and foldables."
