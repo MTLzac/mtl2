@@ -7,6 +7,7 @@ import {
   Volume2,
   Wifi
 } from "lucide-react";
+import heroImage from "@/assets/hero-tcl.png";
 
 const SERVICES = [
   {
@@ -89,6 +90,7 @@ const TCLRepair = () => {
       deviceName="TCL"
       tagline="TCL Device Repair in Winnipeg"
       heroDescription="TCL makes great budget phones, and we're here to keep them running. From the TCL 50 series to tablets, we provide affordable repairs for all TCL devices."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all TCL phones and tablets including the 50, 40, 30, and 20 series."
