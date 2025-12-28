@@ -61,16 +61,12 @@ export const HeroSection = ({ deviceName, tagline, description }: HeroSectionPro
           </div>
 
           {/* Right Image */}
-          <div className="relative hidden lg:block">
-            <div className="relative">
-              <img 
-                src={heroImage} 
-                alt={`${deviceName} repair service at Mobile Tech Lab Winnipeg`}
-                className="w-full max-w-lg mx-auto rounded-2xl shadow-2xl"
-              />
-              {/* Decorative glow */}
-              <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 blur-2xl" />
-            </div>
+          <div className="relative hidden lg:flex items-center justify-end">
+            <img 
+              src={heroImage} 
+              alt={`${deviceName} repair service at Mobile Tech Lab Winnipeg`}
+              className="w-full max-w-xl object-contain"
+            />
           </div>
         </div>
       </div>
