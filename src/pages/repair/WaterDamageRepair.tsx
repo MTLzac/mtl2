@@ -198,8 +198,9 @@ const WaterDamageRepair = () => {
                       your options. If full repair isn't realistic, we'll focus on what matters most—recovering your data.
                     </p>
                     <p>
-                      <strong className="text-foreground">No fix, no fee:</strong> We provide a free assessment, and you 
-                      only pay if we're able to help. There's no risk in bringing your device in for evaluation.
+                      <strong className="text-foreground">Data recovery is our priority:</strong> In about 80% of water damage 
+                      cases we see, data recovery is successful. Even if your device can't be fully restored, we can often 
+                      retrieve your precious photos, contacts, and files—and transfer them to a new or pre-owned device.
                     </p>
                   </div>
 
