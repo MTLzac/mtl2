@@ -7,6 +7,7 @@ import {
   Volume2,
   Zap
 } from "lucide-react";
+import heroImage from "@/assets/hero-xiaomi.png";
 
 const SERVICES = [
   {
@@ -42,24 +43,32 @@ const SERVICES = [
 ];
 
 const MODELS = [
-  // Xiaomi 14 Series
-  "Xiaomi 14 Ultra", "Xiaomi 14 Pro", "Xiaomi 14",
-  // Xiaomi 13 Series
-  "Xiaomi 13 Ultra", "Xiaomi 13 Pro", "Xiaomi 13", "Xiaomi 13 Lite", "Xiaomi 13T Pro", "Xiaomi 13T",
-  // Xiaomi 12 Series
-  "Xiaomi 12 Pro", "Xiaomi 12", "Xiaomi 12 Lite", "Xiaomi 12T Pro", "Xiaomi 12T",
-  // Xiaomi Mix Series
-  "Xiaomi Mix Fold 3", "Xiaomi Mix Fold 2", "Xiaomi Mix 4",
-  // Redmi Note Series
-  "Redmi Note 13 Pro+", "Redmi Note 13 Pro", "Redmi Note 13",
-  "Redmi Note 12 Pro+", "Redmi Note 12 Pro", "Redmi Note 12",
-  "Redmi Note 11 Pro+", "Redmi Note 11 Pro", "Redmi Note 11",
+  // Xiaomi Series
+  "Xiaomi 17 Pro Max", "Xiaomi 15 Ultra", "Xiaomi 15T Pro 5G", "Xiaomi 15T 5G", "Xiaomi 15S Pro", "Xiaomi 15 Pro", "Xiaomi 15", "Xiaomi 14 Ultra", "Xiaomi 14 Pro", "Xiaomi 14",
+  // Mi Series
+  "Mi 11 Pro", "Mi 11 Lite 5G", "Mi 11 Lite 5G NE", "Mi 11T", "Mi 11 Lite", "Mi 11 5G", "Mi 10T Pro 5G", "Mi 10T Lite 5G",
   // Redmi Series
-  "Redmi 13", "Redmi 12", "Redmi 11 Prime",
-  // POCO Series
-  "POCO F5 Pro", "POCO F5", "POCO F4 GT",
-  "POCO X5 Pro", "POCO X5", "POCO X4 Pro",
-  "POCO M5", "POCO M4 Pro",
+  "Redmi Turbo 4", "Redmi 15C 5G", "Redmi 15C 4G", "Redmi 15 5G", "Redmi 15 4G", "Redmi 14R", "Redmi 14C 5G", "Redmi 14C 4G", "Redmi 13R",
+  // Redmi A Series
+  "Redmi A5 4G", "Redmi A4", "Redmi A3 Pro", "Redmi A3x", "Redmi A3", "Redmi A2 Plus", "Mi A2 Lite", "Redmi A2", "Redmi A1 Plus",
+  // Redmi K Series
+  "Redmi K80 Pro", "Redmi K80", "Redmi K70 Ultra", "Redmi K70 Pro", "Redmi K70E", "Redmi K70", "Redmi K60 Ultra", "Redmi K60 Pro", "Redmi K60",
+  // Redmi Note Series
+  "Redmi Note 14 Pro Plus 5G", "Redmi Note 14 Pro Plus", "Redmi Note 14 Pro 5G", "Redmi Note 14 Pro 4G", "Redmi Note 14S", "Redmi Note 14 5G", "Redmi Note 14 4G", "Redmi Note 13R Pro", "Redmi Note 13 Pro+", "Redmi Note 13 Pro", "Redmi Note 13", "Redmi Note 12 Pro+", "Redmi Note 12 Pro", "Redmi Note 12", "Redmi Note 11 Pro+", "Redmi Note 11 Pro", "Redmi Note 11",
+  // Poco X Series
+  "Poco X7 Pro", "Poco X7", "Poco X6 Pro", "Poco X6", "Poco X5 Pro", "Poco X5", "Poco X4 Pro 5G", "Poco X4 GT", "Poco X3 Pro",
+  // Poco M Series
+  "Poco M7 Pro 5G", "Poco M7 Pro", "Poco M7", "Poco M6 Pro 4G", "Poco M6 Pro", "Poco M6 5G", "Poco M6 4G", "Poco M5s", "Poco M5",
+  // Poco F Series
+  "Poco F7 Ultra", "Poco F7 Pro", "Poco F7", "Poco F6 Pro", "Poco F6", "Poco F5 Pro", "Poco F5", "Poco F4 GT", "Poco F4",
+  // Black Shark Series
+  "Black Shark 5 Pro", "Black Shark 5 RS", "Black Shark 4s Pro", "Black Shark 4s", "Black Shark 4 Pro", "Black Shark 4",
+  // Mi Note Series
+  "Mi Note 10 Pro", "Mi Note 10 Lite", "Mi Note 10",
+  // Civi Series
+  "Xiaomi Civi 1S", "Xiaomi Civi",
+  // Mix Series
+  "Xiaomi Mix Fold 3", "Xiaomi Mix Fold 2", "Xiaomi Mix 4",
 ];
 
 const FAQS = [
@@ -93,6 +102,7 @@ const XiaomiRepair = () => {
       deviceName="Xiaomi"
       tagline="Winnipeg's Xiaomi, Redmi & POCO Specialists"
       heroDescription="Can't find anyone in Winnipeg to repair your Xiaomi? We've got you covered. From flagship Xiaomi 14 to budget Redmi devices, we're the local experts for all Xiaomi ecosystem repairs."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Xiaomi, Redmi, and POCO devices. As Winnipeg's Xiaomi specialists, we service models that other shops turn away."
