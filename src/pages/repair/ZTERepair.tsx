@@ -7,6 +7,7 @@ import {
   Volume2,
   Power
 } from "lucide-react";
+import heroImage from "@/assets/hero-zte.png";
 
 const SERVICES = [
   {
@@ -88,6 +89,7 @@ const ZTERepair = () => {
       deviceName="ZTE"
       tagline="ZTE & nubia Repair Specialists in Winnipeg"
       heroDescription="From nubia gaming phones to budget Blade devices, we repair all ZTE phones. Hard to find parts? We've got the connections to source what you need."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all ZTE devices including nubia gaming phones, Blade series, Axon flagships, and foldables."
