@@ -7,6 +7,7 @@ import {
   Disc,
   Wifi
 } from "lucide-react";
+import heroImage from "@/assets/hero-xbox.png";
 
 const SERVICES = [
   {
@@ -86,6 +87,7 @@ const XboxRepair = () => {
       deviceName="Xbox"
       tagline="Xbox Repair Specialists in Winnipeg"
       heroDescription="Xbox not cooperating? Whether it's overheating, HDMI issues, or controller drift, we repair all Xbox consoles and controllers."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Xbox consoles including Series X, Series S, One, and 360, plus Elite and standard controllers."
