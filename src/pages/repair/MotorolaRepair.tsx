@@ -7,6 +7,7 @@ import {
   Volume2,
   Wifi
 } from "lucide-react";
+import heroImage from "@/assets/hero-motorola.png";
 
 const SERVICES = [
   {
@@ -91,6 +92,7 @@ const MotorolaRepair = () => {
       deviceName="Motorola"
       tagline="Budget-Friendly Moto Repairs in Winnipeg"
       heroDescription="Get your Motorola phone fixed without breaking the bank. We repair all Moto G, Edge, Razr, and legacy models with quality parts and fast turnaround times."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We service all Motorola devices from the budget-friendly Moto E to the premium Edge series and foldable Razr."
