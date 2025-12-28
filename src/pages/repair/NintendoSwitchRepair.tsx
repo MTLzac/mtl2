@@ -7,6 +7,7 @@ import {
   Volume2,
   Wifi
 } from "lucide-react";
+import heroImage from "@/assets/hero-nintendo-switch.png";
 
 const SERVICES = [
   {
@@ -86,6 +87,7 @@ const NintendoSwitchRepair = () => {
       deviceName="Nintendo Switch"
       tagline="Nintendo Switch Repair Experts in Winnipeg"
       heroDescription="Joy-Con drift driving you crazy? Screen cracked? We fix all Nintendo Switch models and Joy-Con controllers. Get back to gaming fast."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Nintendo Switch models including OLED, original, and Lite, plus Joy-Con and Pro controllers."
