@@ -7,6 +7,7 @@ import {
   HardDrive,
   Fan
 } from "lucide-react";
+import heroImage from "@/assets/hero-steam-deck.png";
 
 const SERVICES = [
   {
@@ -81,6 +82,7 @@ const SteamDeckRepair = () => {
       deviceName="Steam Deck"
       tagline="Steam Deck Repair in Winnipeg"
       heroDescription="Steam Deck acting up? From stick drift to screen damage, we repair all Steam Deck models. Plus SSD upgrades for more game storage."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Steam Deck models including OLED and LCD versions, plus storage upgrades."
