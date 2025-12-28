@@ -30,7 +30,8 @@ import SamsungGalaxyTabRepair from "./pages/repair/SamsungGalaxyTabRepair";
 
 // Console Repair Pages
 import NintendoSwitchRepair from "./pages/repair/NintendoSwitchRepair";
-import PlayStationRepair from "./pages/repair/PlayStationRepair";
+import PS5Repair from "./pages/repair/PS5Repair";
+import PS4Repair from "./pages/repair/PS4Repair";
 import XboxRepair from "./pages/repair/XboxRepair";
 import SteamDeckRepair from "./pages/repair/SteamDeckRepair";
 
@@ -69,7 +70,8 @@ const App = () => (
             
             {/* Console Repair Pages */}
             <Route path="/repair/nintendo-switch" element={<NintendoSwitchRepair />} />
-            <Route path="/repair/playstation" element={<PlayStationRepair />} />
+            <Route path="/repair/ps5" element={<PS5Repair />} />
+            <Route path="/repair/ps4" element={<PS4Repair />} />
             <Route path="/repair/xbox" element={<XboxRepair />} />
             <Route path="/repair/steam-deck" element={<SteamDeckRepair />} />
             
