@@ -7,6 +7,7 @@ import {
   HardDrive,
   Wifi
 } from "lucide-react";
+import heroImage from "@/assets/hero-blackberry.png";
 
 const SERVICES = [
   {
@@ -89,6 +90,7 @@ const BlackberryRepair = () => {
       deviceName="Blackberry"
       tagline="Legacy Blackberry Support in Winnipeg"
       heroDescription="Still using a Blackberry? We've got you covered. As Blackberry repair specialists, we maintain parts and expertise for all models – from the KEY2 to classic Bold and Curve devices."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We service all Blackberry models including Android devices (KEY2, KEYone, Priv) and classic Blackberry OS devices."
