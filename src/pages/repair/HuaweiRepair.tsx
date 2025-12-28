@@ -7,6 +7,7 @@ import {
   Cpu,
   Fingerprint
 } from "lucide-react";
+import heroImage from "@/assets/hero-huawei.png";
 
 const SERVICES = [
   {
@@ -94,6 +95,7 @@ const HuaweiRepair = () => {
       deviceName="Huawei"
       tagline="Hard-to-Find Huawei Parts Specialists"
       heroDescription="Don't let parts availability stop you from repairing your Huawei device. We specialize in sourcing components for Huawei P series, Mate, Nova, and Honor phones when others can't."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Huawei and Honor devices including P series, Mate series, Nova series, and foldable models."
