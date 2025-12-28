@@ -100,7 +100,7 @@ const WaterDamageRepair = () => {
                   <img
                     src={heroImage}
                     alt="Water damaged phone illustration showing spilled liquid on mobile devices"
-                    className="relative z-10 max-w-md w-full"
+                    className="relative z-10 max-w-lg w-full"
                   />
                 </div>
               </div>
