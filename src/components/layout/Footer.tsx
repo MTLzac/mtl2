@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Smartphone, MapPin, Phone, Mail, Clock } from "lucide-react";
+import { Smartphone, MapPin, Phone, Clock } from "lucide-react";
+import { LOCATIONS } from "@/lib/locations";
 
 export const Footer = () => {
   return (
@@ -15,7 +16,7 @@ export const Footer = () => {
               <span className="text-xl font-bold">Mobile Tech Lab</span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Winnipeg's trusted device repair specialists. Fast, reliable, and affordable repairs for phones, tablets, consoles, and computers.
+              Manitoba's trusted device repair specialists. Fast, reliable, and affordable repairs for phones, tablets, consoles, and computers.
             </p>
           </div>
 
@@ -53,38 +54,42 @@ export const Footer = () => {
 
           {/* St. Vital Location */}
           <div>
-            <h3 className="mb-4 font-semibold">St. Vital Location</h3>
+            <h3 className="mb-4 font-semibold">{LOCATIONS[0].name}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>Unit C – 1170 St Mary's Road, Winnipeg, MB R2M 3S4</span>
+                <span>{LOCATIONS[0].address}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:2044894015" className="hover:text-primary">(204) 489-4015</a>
+                <a href={`tel:${LOCATIONS[0].phone}`} className="hover:text-primary">
+                  {LOCATIONS[0].phoneFormatted}
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>Mon-Sat: 9AM-7PM<br />Sun: 12PM-7PM</span>
+                <span>{LOCATIONS[0].hours.join(" / ")}</span>
               </li>
             </ul>
           </div>
 
           {/* Thompson Location */}
           <div>
-            <h3 className="mb-4 font-semibold">Thompson Location</h3>
+            <h3 className="mb-4 font-semibold">{LOCATIONS[1].name}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>City Centre Mall, Thompson, MB</span>
+                <span>{LOCATIONS[1].address}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:2044894015" className="hover:text-primary">(204) 489-4015</a>
+                <a href={`tel:${LOCATIONS[1].phone}`} className="hover:text-primary">
+                  {LOCATIONS[1].phoneFormatted}
+                </a>
               </li>
               <li className="flex items-start gap-2">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>Mon-Sat: 10AM-6PM<br />Sun: Closed</span>
+                <span>{LOCATIONS[1].hours.join(" / ")}</span>
               </li>
             </ul>
           </div>
