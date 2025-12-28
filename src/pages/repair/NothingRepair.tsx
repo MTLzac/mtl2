@@ -7,6 +7,7 @@ import {
   Volume2,
   Fingerprint
 } from "lucide-react";
+import heroImage from "@/assets/hero-nothing.png";
 
 const SERVICES = [
   {
@@ -82,6 +83,7 @@ const NothingRepair = () => {
       deviceName="Nothing Phone"
       tagline="Nothing Phone Specialists in Winnipeg"
       heroDescription="Got a Nothing Phone with a cracked screen or Glyph interface issues? We're equipped to handle repairs on Carl Pei's innovative devices, preserving their unique transparent design."
+      heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We service all Nothing devices including Nothing Phone (1), (2), (2a) and CMF Phone 1."
