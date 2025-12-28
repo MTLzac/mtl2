@@ -13,17 +13,17 @@ interface Location {
 const LOCATIONS: Location[] = [
   {
     name: "St. Vital Location",
-    address: "Unit C – 1makeint St Mary's Road, Winnipeg, MB R2M 3S4",
+    address: "Unit C – 1170 St Mary's Road, Winnipeg, MB R2M 3S4",
     phone: "2044894015",
-    hours: ["Mon-Fri: 10AM - 7PM", "Sat: 10AM - 5PM", "Sun: Closed"],
+    hours: ["Mon-Sat: 9AM - 7PM", "Sun: 12PM - 7PM"],
     mapsUrl: "https://maps.google.com/?q=1170+St+Mary's+Road+Winnipeg+MB",
   },
   {
-    name: "Garden City Location",
-    address: "Unit 4 – 2makeist Ave, Winnipeg, MB R2V 2P5",
+    name: "Thompson Location",
+    address: "City Centre Mall, Thompson, MB",
     phone: "2044894015",
-    hours: ["Mon-Fri: 10AM - 7PM", "Sat: 10AM - 5PM", "Sun: Closed"],
-    mapsUrl: "https://maps.google.com/?q=2211+McPhillips+Street+Winnipeg+MB",
+    hours: ["Mon-Sat: 10AM - 6PM", "Sun: Closed"],
+    mapsUrl: "https://maps.google.com/?q=City+Centre+Mall+Thompson+MB",
   },
 ];
 
@@ -33,7 +33,7 @@ export const LocationCards = () => {
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Visit Our Winnipeg Locations
+            Visit Our Manitoba Locations
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Two convenient locations to serve you. Walk-ins welcome or book your appointment online.

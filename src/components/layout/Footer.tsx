@@ -65,18 +65,18 @@ export const Footer = () => {
               </li>
               <li className="flex items-start gap-2">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>Mon-Fri: 10AM-7PM<br />Sat: 10AM-5PM</span>
+                <span>Mon-Sat: 9AM-7PM<br />Sun: 12PM-7PM</span>
               </li>
             </ul>
           </div>
 
-          {/* Garden City Location */}
+          {/* Thompson Location */}
           <div>
-            <h3 className="mb-4 font-semibold">Garden City Location</h3>
+            <h3 className="mb-4 font-semibold">Thompson Location</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>Unit 4 – 2211 McPhillips St, Winnipeg, MB R2V 2P5</span>
+                <span>City Centre Mall, Thompson, MB</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
@@ -84,7 +84,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-start gap-2">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>Mon-Fri: 10AM-7PM<br />Sat: 10AM-5PM</span>
+                <span>Mon-Sat: 10AM-6PM<br />Sun: Closed</span>
               </li>
             </ul>
           </div>
