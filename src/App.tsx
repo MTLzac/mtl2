@@ -30,6 +30,9 @@ import SamsungGalaxyTabRepair from "./pages/repair/SamsungGalaxyTabRepair";
 // Wearable Repair Pages
 import AppleWatchRepair from "./pages/repair/AppleWatchRepair";
 
+// MP3 Player Repair Pages
+import IPodRepair from "./pages/repair/iPodRepair";
+
 // Console Repair Pages
 import NintendoSwitchRepair from "./pages/repair/NintendoSwitchRepair";
 import PS5Repair from "./pages/repair/PS5Repair";
@@ -71,6 +74,9 @@ const App = () => (
             
             {/* Wearable Repair Pages */}
             <Route path="/repair/apple-watch" element={<AppleWatchRepair />} />
+            
+            {/* MP3 Player Repair Pages */}
+            <Route path="/repair/ipod" element={<IPodRepair />} />
             
             {/* Console Repair Pages */}
             <Route path="/repair/nintendo-switch" element={<NintendoSwitchRepair />} />
