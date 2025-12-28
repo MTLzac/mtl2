@@ -270,7 +270,7 @@ const WaterDamageRepair = () => {
             </div>
           </section>
 
-          <WhyChooseUs />
+          <WhyChooseUs hideWarranty />
           <LocationCards />
           <FAQSection deviceName="Water Damaged Device" faqs={faqs} />
         </main>
