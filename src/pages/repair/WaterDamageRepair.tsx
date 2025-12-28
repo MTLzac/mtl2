@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyQuoteCTA } from "@/components/repair/StickyQuoteCTA";
@@ -236,25 +237,35 @@ const WaterDamageRepair = () => {
 
               <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {[
-                  "iPhones",
-                  "Samsung Galaxy",
-                  "Google Pixel",
-                  "Android Phones",
-                  "iPads",
-                  "Samsung Tablets",
-                  "MacBooks",
-                  "Windows Laptops",
-                  "Apple Watch",
-                  "AirPods",
-                  "Nintendo Switch",
-                  "Steam Deck",
+                  { name: "iPhones", link: null },
+                  { name: "Samsung Galaxy", link: "/repair/samsung" },
+                  { name: "Google Pixel", link: "/repair/google-pixel" },
+                  { name: "Android Phones", link: null },
+                  { name: "iPads", link: null },
+                  { name: "Samsung Tablets", link: "/repair/samsung-galaxy-tab" },
+                  { name: "MacBooks", link: "/repair/macbook" },
+                  { name: "Windows Laptops", link: "/repair/surface" },
+                  { name: "Apple Watch", link: "/repair/apple-watch" },
+                  { name: "AirPods", link: null },
+                  { name: "Nintendo Switch", link: "/repair/nintendo-switch" },
+                  { name: "Steam Deck", link: "/repair/steam-deck" },
                 ].map((device) => (
-                  <div 
-                    key={device}
-                    className="bg-card rounded-lg px-4 py-3 text-center font-medium text-foreground border shadow-sm"
-                  >
-                    {device}
-                  </div>
+                  device.link ? (
+                    <Link
+                      key={device.name}
+                      to={device.link}
+                      className="bg-card rounded-lg px-4 py-3 text-center font-medium text-foreground border shadow-sm hover:bg-primary/5 hover:border-primary/30 transition-colors"
+                    >
+                      {device.name}
+                    </Link>
+                  ) : (
+                    <div 
+                      key={device.name}
+                      className="bg-card rounded-lg px-4 py-3 text-center font-medium text-foreground border shadow-sm"
+                    >
+                      {device.name}
+                    </div>
+                  )
                 ))}
               </div>
             </div>
