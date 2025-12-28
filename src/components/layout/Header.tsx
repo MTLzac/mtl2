@@ -12,6 +12,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone, Smartphone, Tablet, Gamepad2, Laptop, Watch } from "lucide-react";
 import { PRIMARY_PHONE, PRIMARY_PHONE_FORMATTED } from "@/lib/locations";
+import logo from "@/assets/logo.png";
 
 const REPAIR_CATEGORIES = [
   {
@@ -78,11 +79,8 @@ export const Header = () => {
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-            <Smartphone className="h-6 w-6" />
-          </div>
-          <span className="text-xl font-bold">Mobile Tech Lab</span>
+        <Link to="/" className="flex items-center">
+          <img src={logo} alt="Mobile Tech Lab" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
