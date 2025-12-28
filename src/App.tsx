@@ -22,6 +22,9 @@ import TCLRepair from "./pages/repair/TCLRepair";
 import ZTERepair from "./pages/repair/ZTERepair";
 import BlackberryRepair from "./pages/repair/BlackberryRepair";
 
+// Tablet Repair Pages
+import SamsungGalaxyTabRepair from "./pages/repair/SamsungGalaxyTabRepair";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -48,6 +51,9 @@ const App = () => (
             <Route path="/repair/tcl" element={<TCLRepair />} />
             <Route path="/repair/zte" element={<ZTERepair />} />
             <Route path="/repair/blackberry" element={<BlackberryRepair />} />
+            
+            {/* Tablet Repair Pages */}
+            <Route path="/repair/samsung-galaxy-tab" element={<SamsungGalaxyTabRepair />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
