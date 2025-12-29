@@ -7,14 +7,14 @@ const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 
 export const WaysToSave = () => {
   return (
-    <section className="relative py-20 md:py-28">
-      {/* Subtle background band for pattern break */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-muted/50 to-muted/30" />
+    <section className="relative py-24 md:py-32">
+      {/* Subtle background band for pattern break (2-4% contrast) */}
+      <div className="absolute inset-0 bg-muted/40" />
       
       <div className="container relative mx-auto px-4">
         {/* Headline & Framing */}
-        <div className="mb-10 text-center md:mb-14">
-          <h2 className="mb-3 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+        <div className="mb-12 text-center md:mb-16">
+          <h2 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
             Worried About Repair Cost?{" "}
             <span className="text-primary">You Have Options.</span>
           </h2>
@@ -26,7 +26,7 @@ export const WaysToSave = () => {
         {/* Two-card layout */}
         <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2 md:gap-8">
           {/* Card 1 — Price Match Guarantee */}
-          <Card className="border-2 border-border/60 bg-card shadow-lg transition-shadow hover:shadow-xl">
+          <Card className="border border-border/60 bg-card shadow-md rounded-xl transition-shadow hover:shadow-lg">
             <CardContent className="flex flex-col p-6 md:p-8">
               <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
                 <Shield className="h-7 w-7 text-primary" />
@@ -37,13 +37,13 @@ export const WaysToSave = () => {
               </h3>
               
               <p className="mb-6 flex-1 text-muted-foreground">
-                Found a lower price at another Winnipeg repair shop? We'll match it — no pressure, no hassle.
+                Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure, no hassle.
               </p>
               
               <Button 
                 variant="outline" 
                 size="lg"
-                className="w-full border-primary/30 text-foreground hover:bg-primary/5 hover:border-primary/50" 
+                className="w-full border-border bg-background text-foreground hover:bg-muted hover:border-primary/40 transition-colors" 
                 asChild
               >
                 <a href={`tel:${PRIMARY_PHONE}`}>
@@ -54,11 +54,11 @@ export const WaysToSave = () => {
             </CardContent>
           </Card>
 
-          {/* Card 2 — Trade-In & Sell Your Device */}
-          <Card className="border-2 border-border/60 bg-card shadow-lg transition-shadow hover:shadow-xl">
+          {/* Card 2 — Trade-In Option */}
+          <Card className="border border-border/60 bg-card shadow-md rounded-xl transition-shadow hover:shadow-lg">
             <CardContent className="flex flex-col p-6 md:p-8">
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-success/10">
-                <RefreshCw className="h-7 w-7 text-success" />
+              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                <RefreshCw className="h-7 w-7 text-primary" />
               </div>
               
               <h3 className="mb-3 text-xl font-bold leading-tight md:text-2xl">
@@ -66,17 +66,16 @@ export const WaysToSave = () => {
               </h3>
               
               <p className="mb-3 text-muted-foreground">
-                Trade in phones, tablets, consoles, laptops — even broken ones — to reduce the cost of your repair.
+                Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.
               </p>
               
-              <p className="mb-6 flex-1 text-sm text-muted-foreground/80">
+              <p className="mb-6 flex-1 text-sm text-muted-foreground/70">
                 Get paid via Cash, E-Transfer, or Store Credit
               </p>
               
               <Button 
-                variant="outline" 
                 size="lg"
-                className="w-full border-success/30 text-foreground hover:bg-success/5 hover:border-success/50" 
+                className="w-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 hover:border-primary/50 transition-colors" 
                 asChild
               >
                 <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
