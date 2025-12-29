@@ -87,7 +87,7 @@ export const HeroSection = () => {
           {/* Hero Devices Illustration */}
           <div className="mt-10">
             <img
-              src={`${heroDevicesIllustrationUrl}?v=2025-12-29-2`}
+              src={`${heroDevicesIllustrationUrl}?v=2025-12-29-3`}
               alt="Devices we repair: smartphones, tablets, laptops, and gaming controllers"
               className="mx-auto max-w-full md:max-w-2xl lg:max-w-3xl"
             />
