@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone, ShoppingBag, Star, ExternalLink } from "lucide-react";
 import { PRIMARY_PHONE, PRIMARY_GMB_URL } from "@/lib/locations";
+import heroDevicesIllustration from "@/assets/hero-devices-illustration.png";
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 const SHOP_URL = "https://shop.mobiletechlab.ca";
@@ -81,6 +82,15 @@ export const HeroSection = () => {
                 Shop Devices
               </a>
             </Button>
+          </div>
+
+          {/* Hero Devices Illustration */}
+          <div className="mt-10">
+            <img
+              src={heroDevicesIllustration}
+              alt="Devices we repair: smartphones, tablets, laptops, and gaming controllers"
+              className="mx-auto max-w-full md:max-w-2xl lg:max-w-3xl"
+            />
           </div>
         </div>
       </div>
