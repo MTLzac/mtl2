@@ -1,13 +1,96 @@
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle2 } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { CheckCircle2, ArrowRight, Tablet, TabletSmartphone, Monitor, Layers } from "lucide-react";
+
+export interface ModelCategory {
+  title: string;
+  models: string[];
+  description: string;
+}
 
 interface ModelListGridProps {
   deviceName: string;
   models: string[];
   description?: string;
+  categories?: ModelCategory[];
 }
 
-export const ModelListGrid = ({ deviceName, models, description }: ModelListGridProps) => {
+const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
+
+const CATEGORY_ICONS = [Tablet, TabletSmartphone, Monitor, Layers];
+
+export const ModelListGrid = ({ deviceName, models, description, categories }: ModelListGridProps) => {
+  // If categories are provided, render the card-based layout
+  if (categories && categories.length > 0) {
+    return (
+      <section className="py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+              {deviceName} Models We Repair
+            </h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              We specialize in the unique architecture of each {deviceName} generation
+            </p>
+          </div>
+          
+          <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {categories.map((category, index) => {
+              const IconComponent = CATEGORY_ICONS[index % CATEGORY_ICONS.length];
+              return (
+                <Card 
+                  key={index} 
+                  className="group border-border/50 bg-card transition-all hover:border-primary/50 hover:shadow-lg"
+                >
+                  <CardHeader className="pb-3">
+                    <div className="mb-2 inline-flex rounded-full bg-primary/10 p-3 text-primary w-fit">
+                      <IconComponent className="h-6 w-6" />
+                    </div>
+                    <CardTitle className="text-lg">{category.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {category.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {category.models.slice(0, 3).map((model, modelIndex) => (
+                        <Badge 
+                          key={modelIndex} 
+                          variant="secondary" 
+                          className="text-xs font-normal"
+                        >
+                          {model}
+                        </Badge>
+                      ))}
+                      {category.models.length > 3 && (
+                        <Badge variant="outline" className="text-xs font-normal">
+                          +{category.models.length - 3} more
+                        </Badge>
+                      )}
+                    </div>
+                    <Button 
+                      variant="ghost" 
+                      size="sm" 
+                      className="w-full mt-2 group-hover:bg-primary group-hover:text-primary-foreground transition-colors"
+                      asChild
+                    >
+                      <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
+                        Get Quote
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Original badge-based layout for backward compatibility
   return (
     <section className="py-16 md:py-20">
       <div className="container mx-auto px-4">

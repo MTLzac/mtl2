@@ -4,8 +4,12 @@ import {
   Battery, 
   Plug, 
   Camera, 
-  Volume2,
-  Fingerprint
+  Droplets,
+  Cpu,
+  DollarSign,
+  Zap,
+  Shield,
+  Award
 } from "lucide-react";
 import heroImage from "@/assets/hero-ipad.png";
 
@@ -13,76 +17,105 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Fix cracked or damaged iPad displays with quality LCD or Retina replacements.",
+    description: "Dealing with fused LCD and digitizer assemblies for a factory-quality finish. Glass-only repairs available for iPad Air and Mini to save you money.",
   },
   {
     icon: Battery,
     name: "Battery Replacement",
-    description: "Restore your iPad's all-day battery life with professional replacement.",
+    description: "If your iPad dies at 20% or feels sluggish, a fresh battery can add years to its lifespan. 90-day warranty included.",
   },
   {
     icon: Plug,
     name: "Charging Port Repair",
-    description: "Repair Lightning or USB-C ports that won't charge or connect properly.",
+    description: "We clean before we replace. If damaged, we perform microsoldering to restore Lightning or USB-C connection.",
+  },
+  {
+    icon: Droplets,
+    name: "Liquid Damage Recovery",
+    description: "Spilled coffee? Our ultrasonic cleaning process is the best chance your data has for survival.",
+  },
+  {
+    icon: Cpu,
+    name: "Software & Boot Issues",
+    description: "Stuck on the Apple logo? Our technicians perform advanced restores and data recovery.",
   },
   {
     icon: Camera,
-    name: "Camera Repair",
-    description: "Fix front and rear cameras for FaceTime calls and photography.",
-  },
-  {
-    icon: Volume2,
-    name: "Speaker Repair",
-    description: "Restore crystal-clear audio for media, calls, and productivity.",
-  },
-  {
-    icon: Fingerprint,
     name: "Button & Sensor Repair",
-    description: "Fix Home buttons, power buttons, and Touch ID/Face ID sensors.",
+    description: "Home buttons, power buttons, Touch ID, and Face ID sensor repairs.",
   },
 ];
 
-const MODELS = [
-  // iPad Pro (Latest)
-  "iPad Pro 13-inch (M4)", "iPad Pro 11-inch (M4)",
-  "iPad Pro 12.9-inch (6th gen)", "iPad Pro 11-inch (4th gen)",
-  "iPad Pro 12.9-inch (5th gen)", "iPad Pro 11-inch (3rd gen)",
-  "iPad Pro 12.9-inch (4th gen)", "iPad Pro 11-inch (2nd gen)",
-  "iPad Pro 12.9-inch (3rd gen)", "iPad Pro 11-inch (1st gen)",
-  // iPad Air
-  "iPad Air 13-inch (M2)", "iPad Air 11-inch (M2)",
-  "iPad Air (5th gen)", "iPad Air (4th gen)",
-  "iPad Air (3rd gen)", "iPad Air 2", "iPad Air (1st gen)",
-  // iPad (Standard)
-  "iPad (10th gen)", "iPad (9th gen)", "iPad (8th gen)",
-  "iPad (7th gen)", "iPad (6th gen)", "iPad (5th gen)",
-  // iPad mini
-  "iPad mini (6th gen)", "iPad mini (5th gen)",
-  "iPad mini 4", "iPad mini 3", "iPad mini 2",
+const ADVANTAGE_PILLARS = [
+  {
+    icon: DollarSign,
+    title: "Transparent Pricing",
+    description: "iPad 9 glass repair from $99+tax. Multiple quality tiers so you never pay more than you need.",
+  },
+  {
+    icon: Zap,
+    title: "Same-Day Service",
+    description: "Most repairs completed same day. Rush Service available for urgent needs.",
+  },
+  {
+    icon: Shield,
+    title: "Industry-Leading Warranty",
+    description: "Lifetime warranty on premium repairs. 90-day battery warranty. 30-day budget options.",
+  },
+  {
+    icon: Award,
+    title: "Apple IRP Certified",
+    description: "Access to Genuine Apple Parts, diagnostics, and specialized tools for factory-quality repairs.",
+  },
+];
+
+const MODEL_CATEGORIES = [
+  {
+    title: "iPad Pro",
+    models: ["11-inch (M4)", "12.9-inch (6th gen)", "11-inch (4th gen)", "12.9-inch (5th gen)", "All Pro models"],
+    description: "ProMotion displays require a delicate touch. USB-C charging port specialists.",
+  },
+  {
+    title: "iPad Air & Mini",
+    models: ["Air 13-inch (M2)", "Air 11-inch (M2)", "Mini (6th gen)", "All Air & Mini generations"],
+    description: "Cracked glass but working LCD? We can often replace just the glass layer, saving you significantly.",
+  },
+  {
+    title: "Standard iPad",
+    models: ["iPad (10th gen)", "iPad (9th gen)", "iPad (8th gen)", "iPad (7th gen)", "All standard models"],
+    description: "Winnipeg's most competitive rates. Education model specialists with bulk repair options for schools.",
+  },
+  {
+    title: "All Models",
+    models: ["Legacy iPads", "Discontinued models", "All generations"],
+    description: "Don't see your model? We service all generations including discontinued models.",
+  },
 ];
 
 const FAQS = [
   {
-    question: "How long does an iPad screen repair take?",
-    answer: "Most iPad screen repairs are completed within 2-4 hours depending on the model. iPad Pro models may require additional time due to their larger displays.",
-  },
-  {
-    question: "Can you fix water-damaged iPads?",
-    answer: "Yes, we offer water damage assessment and repair for iPad devices. Success rates vary depending on the extent of damage.",
-  },
-  {
-    question: "Do you repair Apple Pencil functionality?",
-    answer: "Yes, we can diagnose and repair Apple Pencil connectivity issues, including digitizer repairs for Apple Pencil-compatible iPads.",
-  },
-  {
-    question: "Will my iPad data be safe during repair?",
-    answer: "We prioritize data safety and don't access your personal files. However, we always recommend backing up to iCloud before any repair.",
-  },
-  {
     question: "How much does iPad repair cost in Winnipeg?",
-    answer: "Costs vary by model and repair type. Contact us for a free quote specific to your iPad device and issue.",
+    answer: "Pricing depends on the model. iPad 9 glass repairs start at $99. Newer iPad Pro or Air models typically cost more due to their advanced, laminated display technology.",
+  },
+  {
+    question: "How long does it take to repair a cracked iPad screen?",
+    answer: "Most screen replacements are completed within the same business day. For urgent needs, ask about our Rush Service.",
+  },
+  {
+    question: "Do you use Genuine Apple Parts?",
+    answer: "As an IRP-certified shop, we can use Genuine Apple parts for many repairs. For certain legacy models, we use the highest-quality third-party alternatives available to keep your costs down.",
+  },
+  {
+    question: "What is the difference between your warranty tiers?",
+    answer: "Our 30-day warranty is designed for budget repairs, while our Lifetime Warranty covers manufacturing defects for as long as you own the device. All batteries include a standard 90-day warranty.",
+  },
+  {
+    question: "Can you fix a water-damaged iPad?",
+    answer: "Fixing water-damaged devices is never guaranteed, but we offer data recovery services with a high success rate for recovering data that wasn't backed up. The best option is to bring in your device right away so we can assess the depth of the liquid damage and recommend the best path forward.",
   },
 ];
+
+const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Limited pickup and drop-off capacity within Winnipeg.";
 
 const iPadRepair = () => {
   return (
@@ -90,12 +123,15 @@ const iPadRepair = () => {
       metaTitle="iPad Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
       metaDescription="Professional iPad repair in Winnipeg. Screen replacement, battery, charging port repair for iPad Pro, iPad Air, iPad mini & all models. Same-day service available."
       deviceName="iPad"
-      tagline="Expert iPad Repair in Winnipeg"
-      heroDescription="From the powerful iPad Pro to everyday iPad models, we provide expert repairs for Apple's entire tablet lineup. Cracked screens, battery issues, charging problems – we handle it all."
+      tagline="Expert iPad Repair in Winnipeg: Fast, Professional, and Guaranteed"
+      heroDescription="Whether it's a shattered screen on an iPad Pro or a battery that won't hold a charge on an iPad Air, you need more than a quick fix—you need a guarantee. Mobile Tech Lab is Winnipeg's highest-rated destination for tablet repairs."
       heroImage={heroImage}
       services={SERVICES}
-      models={MODELS}
-      modelsDescription="We service all iPad generations including the latest iPad Pro M4 and iPad Air M2 models."
+      models={[]}
+      modelsDescription=""
+      modelCategories={MODEL_CATEGORIES}
+      advantagePillars={ADVANTAGE_PILLARS}
+      serviceAreaNote={SERVICE_AREA_NOTE}
       faqs={FAQS}
     />
   );
