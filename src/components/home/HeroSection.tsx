@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone, ShoppingBag, Star } from "lucide-react";
-import { PRIMARY_PHONE } from "@/lib/locations";
+import { ArrowRight, Phone, ShoppingBag, Star, ExternalLink } from "lucide-react";
+import { PRIMARY_PHONE, PRIMARY_GMB_URL } from "@/lib/locations";
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 const SHOP_URL = "https://shop.mobiletechlab.ca";
@@ -12,13 +12,25 @@ export const HeroSection = () => {
         <div className="mx-auto max-w-4xl text-center">
           {/* Trust Badges */}
           <div className="mb-6 flex flex-wrap items-center justify-center gap-3">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+            <a
+              href={PRIMARY_GMB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary/20"
+            >
               <Star className="h-4 w-4 fill-primary" />
               4.8/5 Google Rating
-            </span>
-            <span className="inline-flex items-center rounded-full bg-success/10 px-4 py-1.5 text-sm font-medium text-success">
+              <ExternalLink className="h-3 w-3 opacity-60" />
+            </a>
+            <a
+              href={PRIMARY_GMB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-4 py-1.5 text-sm font-medium text-success transition-colors hover:bg-success/20"
+            >
               500+ Reviews
-            </span>
+              <ExternalLink className="h-3 w-3 opacity-60" />
+            </a>
             <span className="inline-flex items-center rounded-full bg-foreground/10 px-4 py-1.5 text-sm font-medium text-foreground">
               Price Match Guarantee
             </span>
