@@ -1,9 +1,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock, Navigation, Truck } from "lucide-react";
 import { LOCATIONS } from "@/lib/locations";
 
-export const LocationCards = () => {
+interface LocationCardsProps {
+  serviceAreaNote?: string;
+}
+
+export const LocationCards = ({ serviceAreaNote }: LocationCardsProps) => {
   return (
     <section className="bg-secondary/30 py-16 md:py-20">
       <div className="container mx-auto px-4">
@@ -14,6 +18,12 @@ export const LocationCards = () => {
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Two convenient locations to serve you. Walk-ins welcome or book your appointment online.
           </p>
+          {serviceAreaNote && (
+            <div className="mt-4 mx-auto max-w-2xl flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <Truck className="h-4 w-4 text-primary" />
+              <span>{serviceAreaNote}</span>
+            </div>
+          )}
         </div>
         
         <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">

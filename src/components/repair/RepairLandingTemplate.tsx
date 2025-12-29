@@ -1,14 +1,15 @@
 import { Helmet } from "react-helmet-async";
 import { HeroSection } from "./HeroSection";
 import { ServiceGrid, Service } from "./ServiceGrid";
-import { ModelListGrid } from "./ModelListGrid";
-import { WhyChooseUs } from "./WhyChooseUs";
+import { ModelListGrid, ModelCategory } from "./ModelListGrid";
+import { WhyChooseUs, AdvantagePillar } from "./WhyChooseUs";
 import { TradeInSection } from "./TradeInSection";
 import { LocationCards } from "./LocationCards";
 import { FAQSection, FAQ } from "./FAQSection";
 import { StickyQuoteCTA } from "./StickyQuoteCTA";
 import { Header } from "../layout/Header";
 import { Footer } from "../layout/Footer";
+import { LucideIcon } from "lucide-react";
 
 interface RepairLandingTemplateProps {
   // SEO
@@ -25,11 +26,14 @@ interface RepairLandingTemplateProps {
   services: Service[];
   models: string[];
   modelsDescription?: string;
+  modelCategories?: ModelCategory[];
   faqs: FAQ[];
   
   // Optional customizations
   tradeInUrl?: string;
   preOwnedUrl?: string;
+  advantagePillars?: AdvantagePillar[];
+  serviceAreaNote?: string;
 }
 
 export const RepairLandingTemplate = ({
@@ -42,9 +46,12 @@ export const RepairLandingTemplate = ({
   services,
   models,
   modelsDescription,
+  modelCategories,
   faqs,
   tradeInUrl,
   preOwnedUrl,
+  advantagePillars,
+  serviceAreaNote,
 }: RepairLandingTemplateProps) => {
   return (
     <>
@@ -72,9 +79,10 @@ export const RepairLandingTemplate = ({
             deviceName={deviceName} 
             models={models}
             description={modelsDescription}
+            categories={modelCategories}
           />
           
-          <WhyChooseUs />
+          <WhyChooseUs customPillars={advantagePillars} />
           
           <TradeInSection 
             deviceName={deviceName}
@@ -82,7 +90,7 @@ export const RepairLandingTemplate = ({
             preOwnedUrl={preOwnedUrl}
           />
           
-          <LocationCards />
+          <LocationCards serviceAreaNote={serviceAreaNote} />
           
           <FAQSection deviceName={deviceName} faqs={faqs} />
         </main>
