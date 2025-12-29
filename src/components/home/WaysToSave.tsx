@@ -60,7 +60,7 @@ export const WaysToSave = () => {
           {/* Card 2 — Trade-In Option */}
           <Card className="border border-border/50 bg-card rounded-2xl shadow-sm transition-shadow duration-200 hover:shadow-md">
             <CardContent className="flex h-full flex-col p-6 md:p-8">
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+              <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                 <RefreshCw className="h-6 w-6 text-primary" />
               </div>
               
