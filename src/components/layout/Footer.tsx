@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Smartphone, MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 import { LOCATIONS } from "@/lib/locations";
+import logo from "@/assets/logo.png";
 
 export const Footer = () => {
   return (
@@ -9,11 +10,8 @@ export const Footer = () => {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link to="/" className="mb-4 flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-                <Smartphone className="h-6 w-6" />
-              </div>
-              <span className="text-xl font-bold">Mobile Tech Lab</span>
+            <Link to="/" className="mb-4 inline-block">
+              <img src={logo} alt="Mobile Tech Lab" className="h-10 w-auto" />
             </Link>
             <p className="text-sm text-muted-foreground">
               Manitoba's trusted device repair specialists. Fast, reliable, and affordable repairs for phones, tablets, consoles, and computers.
