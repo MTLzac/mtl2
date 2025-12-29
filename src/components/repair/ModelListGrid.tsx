@@ -28,7 +28,7 @@ export const ModelListGrid = ({ deviceName, models, description, categories }: M
         <div className="container mx-auto px-4">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              {deviceName} Models We Repair
+              Comprehensive {deviceName} Services for Every Model
             </h2>
             <p className="mx-auto max-w-2xl text-muted-foreground">
               We specialize in the unique architecture of each {deviceName} generation

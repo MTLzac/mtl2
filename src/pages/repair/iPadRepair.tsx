@@ -120,7 +120,7 @@ const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona
 const iPadRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="iPad Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
+      metaTitle="iPad Repair Winnipeg | Screen & Battery Replacement"
       metaDescription="Professional iPad repair in Winnipeg. Screen replacement, battery, charging port repair for iPad Pro, iPad Air, iPad mini & all models. Same-day service available."
       deviceName="iPad"
       tagline="Expert iPad Repair in Winnipeg: Fast, Professional, and Guaranteed"
