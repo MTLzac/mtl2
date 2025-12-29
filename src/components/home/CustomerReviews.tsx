@@ -1,5 +1,7 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { PRIMARY_GMB_URL } from "@/lib/locations";
 
 const REVIEWS = [
   {
@@ -73,6 +75,20 @@ export const CustomerReviews = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* See All Reviews CTA */}
+        <div className="mt-10 text-center">
+          <Button variant="outline" size="lg" asChild>
+            <a
+              href={PRIMARY_GMB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              See All 500+ Reviews on Google
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>
