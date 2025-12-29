@@ -26,6 +26,7 @@ import VivoRepair from "./pages/repair/VivoRepair";
 
 // Tablet Repair Pages
 import SamsungGalaxyTabRepair from "./pages/repair/SamsungGalaxyTabRepair";
+import IPadRepair from "./pages/repair/iPadRepair";
 
 // Wearable Repair Pages
 import AppleWatchRepair from "./pages/repair/AppleWatchRepair";
@@ -78,6 +79,7 @@ const App = () => (
             
             {/* Tablet Repair Pages */}
             <Route path="/repair/samsung-galaxy-tab" element={<SamsungGalaxyTabRepair />} />
+            <Route path="/repair/ipad" element={<IPadRepair />} />
             
             {/* Wearable Repair Pages */}
             <Route path="/repair/apple-watch" element={<AppleWatchRepair />} />
