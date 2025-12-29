@@ -46,7 +46,7 @@ export const WaysToSave = () => {
               <Button 
                 variant="outline" 
                 size="lg"
-                className="h-12 w-full rounded-lg border-border/80 bg-background text-foreground font-medium shadow-sm transition-all duration-200 hover:bg-muted hover:border-primary/50 hover:shadow-md active:scale-[0.98]" 
+                className="h-12 w-full rounded-lg border-border/80 bg-background text-foreground font-medium shadow-sm transition-all duration-200 hover:bg-accent hover:text-accent-foreground hover:border-primary/50 hover:shadow-md active:scale-[0.98]" 
                 asChild
               >
                 <a href={`tel:${PRIMARY_PHONE}`}>
