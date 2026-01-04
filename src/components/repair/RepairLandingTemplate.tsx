@@ -3,7 +3,7 @@ import { HeroSection } from "./HeroSection";
 import { ServiceGrid, Service } from "./ServiceGrid";
 import { ModelListGrid, ModelCategory } from "./ModelListGrid";
 import { WhyChooseUs, AdvantagePillar } from "./WhyChooseUs";
-import { TradeInSection } from "./TradeInSection";
+import { RepairWaysToSave } from "./RepairWaysToSave";
 import { LocationCards } from "./LocationCards";
 import { FAQSection, FAQ } from "./FAQSection";
 import { StickyQuoteCTA } from "./StickyQuoteCTA";
@@ -30,8 +30,6 @@ interface RepairLandingTemplateProps {
   faqs: FAQ[];
   
   // Optional customizations
-  tradeInUrl?: string;
-  preOwnedUrl?: string;
   advantagePillars?: AdvantagePillar[];
   serviceAreaNote?: string;
 }
@@ -48,8 +46,6 @@ export const RepairLandingTemplate = ({
   modelsDescription,
   modelCategories,
   faqs,
-  tradeInUrl,
-  preOwnedUrl,
   advantagePillars,
   serviceAreaNote,
 }: RepairLandingTemplateProps) => {
@@ -84,11 +80,7 @@ export const RepairLandingTemplate = ({
           
           <WhyChooseUs customPillars={advantagePillars} />
           
-          <TradeInSection 
-            deviceName={deviceName}
-            tradeInUrl={tradeInUrl}
-            preOwnedUrl={preOwnedUrl}
-          />
+          <RepairWaysToSave deviceName={deviceName} />
           
           <LocationCards serviceAreaNote={serviceAreaNote} />
           
