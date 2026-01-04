@@ -5,7 +5,10 @@ import {
   Zap, 
   Camera, 
   Volume2,
-  Fingerprint
+  Fingerprint,
+  Award,
+  Package,
+  Shield
 } from "lucide-react";
 import heroImage from "@/assets/hero-oneplus.png";
 
@@ -13,32 +16,78 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Replace damaged Fluid AMOLED displays with quality parts.",
+    description: "Fluid AMOLED and ProXDR display replacements for OnePlus flagships and Nord series. Restore vibrant colors and smooth 120Hz scrolling.",
   },
   {
     icon: Battery,
     name: "Battery Replacement",
-    description: "Restore your OnePlus battery for full-day performance.",
+    description: "Restore full-day battery life to your OnePlus device. Same-day replacement for most models.",
   },
   {
     icon: Zap,
-    name: "Fast Charging Repair",
-    description: "Fix Warp Charge and SUPERVOOC fast charging port issues.",
+    name: "Warp Charge Repair",
+    description: "Warp Charge 80W, SUPERVOOC 100W, and all fast charging port diagnosis and repair.",
   },
   {
     icon: Camera,
     name: "Camera Repair",
-    description: "Repair Hasselblad-tuned cameras on OnePlus flagship devices.",
+    description: "Hasselblad-tuned camera repairs on OnePlus flagships. Front and rear camera replacements for all models.",
   },
   {
     icon: Volume2,
     name: "Speaker Repair",
-    description: "Fix stereo speakers and Dolby Atmos audio issues.",
+    description: "Fix stereo speakers, earpieces, and Dolby Atmos audio systems on OnePlus devices.",
   },
   {
     icon: Fingerprint,
     name: "Fingerprint Sensor",
-    description: "Repair in-display fingerprint sensors for secure unlocking.",
+    description: "In-display fingerprint sensor repairs and calibration for secure, responsive unlocking.",
+  },
+];
+
+const ADVANTAGE_PILLARS = [
+  {
+    icon: Award,
+    title: "OnePlus Experts in Winnipeg",
+    description: "Specialized knowledge of OnePlus devices including alert slider, Warp Charge, and Hasselblad cameras.",
+  },
+  {
+    icon: Package,
+    title: "Quality Parts Sourced",
+    description: "We maintain supplier relationships for OnePlus parts. Most available within 1-2 days for all models.",
+  },
+  {
+    icon: Zap,
+    title: "Fast Charging Specialists",
+    description: "We diagnose and repair Warp Charge, SUPERVOOC, and all fast charging systems.",
+  },
+  {
+    icon: Shield,
+    title: "90-Day Repair Warranty",
+    description: "All OnePlus repairs backed by our warranty. Quality parts that restore your device to full functionality.",
+  },
+];
+
+const MODEL_CATEGORIES = [
+  {
+    title: "OnePlus Flagship",
+    models: ["OnePlus 13", "OnePlus 13R", "OnePlus 12", "OnePlus 12R", "OnePlus 11", "OnePlus 10 Pro", "OnePlus 10T", "OnePlus 9 Pro", "OnePlus 9"],
+    description: "Premium OnePlus phones with Hasselblad cameras. AMOLED screen replacements and Warp Charge repair.",
+  },
+  {
+    title: "OnePlus Nord Series",
+    models: ["Nord CE 3 Lite", "Nord CE 2", "Nord CE", "Nord N30", "Nord N20", "Nord 2T", "Nord 2", "Nord N10", "Nord"],
+    description: "Popular mid-range Nord lineup. Affordable screen and battery repairs for all Nord generations.",
+  },
+  {
+    title: "OnePlus Open & Pad",
+    models: ["OnePlus Open", "OnePlus Pad Pro", "OnePlus Pad 2"],
+    description: "Foldable and tablet repairs. Complex fold repairs and large screen replacements.",
+  },
+  {
+    title: "Classic OnePlus",
+    models: ["OnePlus 8T", "OnePlus 8 Pro", "OnePlus 7T Pro", "OnePlus 7 Pro", "OnePlus 6T", "OnePlus 6", "OnePlus 5T"],
+    description: "Legacy OnePlus devices. Screen, battery, and charging port repairs.",
   },
 ];
 
@@ -57,40 +106,45 @@ const MODELS = [
 
 const FAQS = [
   {
+    question: "Do you repair OnePlus phones in Winnipeg?",
+    answer: "Yes! We're one of the few repair shops in Winnipeg that specializes in OnePlus devices. No need to ship your phone elsewhere.",
+  },
+  {
+    question: "How long does OnePlus screen repair take in Winnipeg?",
+    answer: "Most OnePlus screen replacements are completed same-day at our Winnipeg locations, typically within 1-2 hours once parts are available.",
+  },
+  {
     question: "Can you fix OnePlus Warp Charge issues?",
-    answer: "Yes! We diagnose and repair Warp Charge and SUPERVOOC fast charging problems, whether it's the port, cable compatibility, or internal components.",
+    answer: "Yes, we diagnose and repair Warp Charge, SUPERVOOC, and all fast charging problems including port replacement and cable testing.",
   },
   {
     question: "Do you repair OnePlus Open foldable?",
-    answer: "Yes, we service the OnePlus Open including screen repairs, hinge issues, and component replacements.",
+    answer: "Yes, we service the OnePlus Open including inner/outer screen repairs, hinge issues, and component replacements at our Winnipeg locations.",
   },
   {
-    question: "Are OnePlus parts hard to find?",
-    answer: "We maintain stock of common OnePlus parts. Some specialized parts may take 1-2 days to source for less common models.",
-  },
-  {
-    question: "How long does OnePlus screen repair take?",
-    answer: "Most OnePlus screen replacements are completed within 1-2 hours. The OnePlus Open may require additional time.",
-  },
-  {
-    question: "Will my OnePlus alert slider still work after repair?",
-    answer: "Yes! We ensure all unique OnePlus features like the alert slider function properly after any repair.",
+    question: "Are OnePlus parts available in Winnipeg?",
+    answer: "We maintain supplier relationships for OnePlus parts. Common flagship and Nord parts are often in stock; less common models may take 1-2 days.",
   },
 ];
+
+const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
 const OnePlusRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="OnePlus Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
+      metaTitle="OnePlus Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
       metaDescription="Premium OnePlus repair in Winnipeg. Screen replacement, Warp Charge port, battery repair for OnePlus 12, 11, Nord & Open. Expert same-day service."
       deviceName="OnePlus"
-      tagline="Premium Android Repair Specialists in Winnipeg"
-      heroDescription="From the flagship OnePlus 12 to the innovative OnePlus Open, we provide expert repairs for all OnePlus devices. Fast charging issues, screen damage, battery problems – we've got the solution."
+      tagline="OnePlus Phone Repair in Winnipeg"
+      heroDescription="From the flagship OnePlus 13 to the innovative OnePlus Open foldable, we provide expert repairs for all OnePlus devices in Winnipeg. Warp Charge issues, screen damage, battery problems – we're your local OnePlus specialists."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all OnePlus models including flagship, Nord series, and the OnePlus Open foldable."
+      modelsDescription="We repair all OnePlus models including flagship, Nord series, and the OnePlus Open foldable. As Winnipeg's OnePlus specialists, we service models that other shops turn away."
+      modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
+      advantagePillars={ADVANTAGE_PILLARS}
+      serviceAreaNote={SERVICE_AREA_NOTE}
     />
   );
 };
