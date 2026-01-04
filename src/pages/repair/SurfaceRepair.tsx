@@ -4,122 +4,157 @@ import {
   Battery, 
   Plug, 
   Database,
-  Droplets
+  Droplets,
+  PenTool,
+  Award,
+  Laptop,
+  Briefcase,
+  Shield
 } from "lucide-react";
 import heroImage from "@/assets/hero-surface.png";
 
-const services = [
+const SERVICES = [
   {
     icon: Monitor,
     name: "Screen Replacement",
-    description: "Fix cracked, shattered, or malfunctioning Surface displays with precision replacement."
+    description: "Fix cracked or malfunctioning Surface Pro, Laptop, and Book displays.",
   },
   {
     icon: Battery,
     name: "Battery Replacement",
-    description: "Restore your Surface's battery life with a new, high-quality battery replacement."
+    description: "Restore your Surface's battery life—specialized integrated battery service.",
   },
   {
     icon: Plug,
-    name: "Charging Port / Charging Issues",
-    description: "Resolve charging problems, port damage, and power connectivity issues."
+    name: "Charging Issues",
+    description: "Resolve Surface Connect port, USB-C charging, and power connectivity issues.",
   },
   {
     icon: Database,
     name: "Data Recovery",
-    description: "Professional data recovery services to retrieve your important files and documents."
+    description: "Professional data recovery from damaged or non-booting Surface devices.",
   },
   {
     icon: Droplets,
     name: "Liquid Damage",
-    description: "Expert liquid damage repair to salvage your water-damaged Surface device."
-  }
+    description: "Expert liquid damage repair for water-damaged Surface devices.",
+  },
+  {
+    icon: PenTool,
+    name: "Surface Pen Issues",
+    description: "Diagnose and resolve Surface Pen connectivity and digitizer problems.",
+  },
 ];
 
-const models = [
+const ADVANTAGE_PILLARS = [
+  {
+    icon: Award,
+    title: "Surface Specialists",
+    description: "Winnipeg and Winkler's Microsoft Surface repair experts.",
+  },
+  {
+    icon: Laptop,
+    title: "All Surface Models",
+    description: "From Surface Pro 11 to legacy Surface Pro 3, we service every generation.",
+  },
+  {
+    icon: Briefcase,
+    title: "Business & Enterprise",
+    description: "Quick turnaround for business-critical Surface device repairs.",
+  },
+  {
+    icon: Shield,
+    title: "90-Day Repair Warranty",
+    description: "All Surface repairs backed by our comprehensive warranty.",
+  },
+];
+
+const MODEL_CATEGORIES = [
+  {
+    title: "Surface Pro",
+    models: ["Surface Pro 11", "Surface Pro 10", "Surface Pro 9", "Surface Pro 8", "Surface Pro 7+", "Surface Pro 7", "Surface Pro 6", "Surface Pro 5", "Surface Pro 4", "Surface Pro 3"],
+    description: "All Surface Pro tablet generations.",
+  },
+  {
+    title: "Surface Laptop",
+    models: ["Surface Laptop 7", "Surface Laptop 6", "Surface Laptop 5", "Surface Laptop 4", "Surface Laptop 3", "Surface Laptop 2", "Surface Laptop Studio 2", "Surface Laptop Studio"],
+    description: "Traditional laptop and Studio repairs.",
+  },
+  {
+    title: "Surface Go",
+    models: ["Surface Go 4", "Surface Go 3", "Surface Go 2", "Surface Go"],
+    description: "Compact Surface Go repairs.",
+  },
+  {
+    title: "Surface Book",
+    models: ["Surface Book 3", "Surface Book 2", "Surface Book"],
+    description: "Detachable Surface Book repairs.",
+  },
+];
+
+const MODELS = [
   // Surface Pro
-  "Surface Pro 11",
-  "Surface Pro 10",
-  "Surface Pro 9",
-  "Surface Pro 8",
-  "Surface Pro 7+",
-  "Surface Pro 7",
-  "Surface Pro 6",
-  "Surface Pro 5",
-  "Surface Pro 4",
-  "Surface Pro 3",
-  "Surface Pro 2",
-  "Surface Pro",
+  "Surface Pro 11", "Surface Pro 10", "Surface Pro 9", "Surface Pro 8",
+  "Surface Pro 7+", "Surface Pro 7", "Surface Pro 6", "Surface Pro 5",
+  "Surface Pro 4", "Surface Pro 3", "Surface Pro 2", "Surface Pro",
   // Surface Laptop
-  "Surface Laptop 7",
-  "Surface Laptop 6",
-  "Surface Laptop 5",
-  "Surface Laptop 4",
-  "Surface Laptop 3",
-  "Surface Laptop 2",
-  "Surface Laptop",
+  "Surface Laptop 7", "Surface Laptop 6", "Surface Laptop 5",
+  "Surface Laptop 4", "Surface Laptop 3", "Surface Laptop 2", "Surface Laptop",
   // Surface Laptop Studio
-  "Surface Laptop Studio 2",
-  "Surface Laptop Studio",
+  "Surface Laptop Studio 2", "Surface Laptop Studio",
   // Surface Laptop Go
-  "Surface Laptop Go 3",
-  "Surface Laptop Go 2",
-  "Surface Laptop Go",
+  "Surface Laptop Go 3", "Surface Laptop Go 2", "Surface Laptop Go",
   // Surface Book
-  "Surface Book 3",
-  "Surface Book 2",
-  "Surface Book",
+  "Surface Book 3", "Surface Book 2", "Surface Book",
   // Surface Go
-  "Surface Go 4",
-  "Surface Go 3",
-  "Surface Go 2",
-  "Surface Go",
+  "Surface Go 4", "Surface Go 3", "Surface Go 2", "Surface Go",
   // Surface Studio
-  "Surface Studio 2+",
-  "Surface Studio 2",
-  "Surface Studio"
+  "Surface Studio 2+", "Surface Studio 2", "Surface Studio",
 ];
 
-const faqs = [
+const FAQS = [
   {
     question: "How long does a Microsoft Surface screen replacement take?",
-    answer: "Most Surface screen replacements are completed within 2-4 hours depending on the model. Due to the specialized nature of Surface devices, some repairs may require additional time."
+    answer: "Most Surface screen replacements are completed within 2-4 hours depending on the model. Surface Pro screens require careful removal due to the adhesive design.",
   },
   {
     question: "Can you replace the battery in a Surface device?",
-    answer: "Yes, we offer battery replacement for all Surface models. Surface devices have integrated batteries that require careful handling, and our technicians are trained in these specialized repairs."
+    answer: "Yes! Surface devices have integrated batteries requiring specialized tools. Our Winnipeg technicians are trained in these complex repairs for all Surface models.",
   },
   {
     question: "Is data recovery possible from a damaged Surface?",
-    answer: "In most cases, yes. Our data recovery experts can retrieve files from damaged, non-booting, or water-damaged Surface devices. We'll assess your device and provide recovery options."
+    answer: "In most cases, yes. We retrieve files from damaged, non-booting, or water-damaged Surface devices at our St. Vital and Garden City locations.",
   },
   {
     question: "Do you repair Surface Pro and Surface Laptop models?",
-    answer: "Absolutely! We repair all Microsoft Surface models including Surface Pro, Surface Laptop, Surface Book, Surface Go, and Surface Studio devices."
+    answer: "Absolutely! We repair all Microsoft Surface models including Surface Pro, Laptop, Book, Go, and Studio devices in Winnipeg.",
   },
   {
     question: "What if my Surface has liquid damage?",
-    answer: "Bring it in as soon as possible! Quick action increases the chances of successful repair. We'll perform a thorough cleaning, assess the damage, and repair or replace affected components."
+    answer: "Bring it in immediately—quick action increases recovery chances. We perform thorough cleaning, assess damage, and repair or replace affected components.",
   },
   {
-    question: "Do you offer a warranty on Surface repairs?",
-    answer: "Yes, all our Microsoft Surface repairs come with a warranty on both parts and labor. We use quality replacement parts and stand behind our work."
-  }
+    question: "Do you offer service in Winkler too?",
+    answer: "Yes! We provide Microsoft Surface repair services in both Winnipeg and Winkler, Manitoba.",
+  },
 ];
 
 const SurfaceRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="Microsoft Surface Repair in Manitoba | MobileTechLab"
-      metaDescription="Expert Microsoft Surface repair services in Winnipeg and Winkler. Screen replacement, battery replacement, charging issues, data recovery, and liquid damage repair for all Surface models."
+      metaTitle="Microsoft Surface Repair in Winnipeg | Screen & Battery Issues | Mobile Tech Lab"
+      metaDescription="Expert Microsoft Surface repair services in Winnipeg and Winkler. Screen replacement, battery replacement, charging issues, data recovery, and liquid damage repair."
       deviceName="Microsoft Surface"
-      tagline="Expert Surface Repair Services"
-      heroDescription="Professional repair services for all Microsoft Surface devices. From Surface Pro to Surface Laptop, we fix screens, batteries, charging issues, and more with quality parts and expert care."
+      tagline="Microsoft Surface Repair in Winnipeg, MB"
+      heroDescription="Professional Microsoft Surface repair services in Winnipeg and Winkler. Screen replacement, battery issues, charging problems, data recovery, and liquid damage repair for all Surface Pro, Laptop, and Book models."
       heroImage={heroImage}
-      services={services}
-      models={models}
+      services={SERVICES}
+      models={MODELS}
       modelsDescription="We repair all Microsoft Surface models and generations. Select your device to get started."
-      faqs={faqs}
+      modelCategories={MODEL_CATEGORIES}
+      faqs={FAQS}
+      advantagePillars={ADVANTAGE_PILLARS}
+      serviceAreaNote="Serving Winnipeg (St. Vital, Fort Garry, Garden City, Transcona) and Winkler, MB. Walk-ins welcome or book online."
     />
   );
 };

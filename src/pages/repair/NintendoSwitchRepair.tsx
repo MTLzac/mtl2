@@ -5,7 +5,11 @@ import {
   Plug, 
   Gamepad2, 
   Volume2,
-  Wifi
+  Wifi,
+  Award,
+  Zap,
+  Wrench,
+  Shield
 } from "lucide-react";
 import heroImage from "@/assets/hero-nintendo-switch.png";
 
@@ -13,17 +17,17 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Replace cracked LCD or OLED screens on your Switch.",
+    description: "Replace cracked LCD or OLED screens on Switch OLED, original, and Lite.",
   },
   {
     icon: Gamepad2,
     name: "Joy-Con Drift Repair",
-    description: "Fix analog stick drift on Joy-Con controllers.",
+    description: "Permanent fix for analog stick drift on Joy-Con controllers.",
   },
   {
     icon: Battery,
     name: "Battery Replacement",
-    description: "Restore battery life for longer gaming sessions.",
+    description: "Restore battery life for longer portable gaming sessions.",
   },
   {
     icon: Plug,
@@ -38,7 +42,48 @@ const SERVICES = [
   {
     icon: Wifi,
     name: "WiFi/Bluetooth Repair",
-    description: "Fix wireless connectivity issues.",
+    description: "Fix wireless connectivity for online play.",
+  },
+];
+
+const ADVANTAGE_PILLARS = [
+  {
+    icon: Award,
+    title: "Switch Specialists",
+    description: "Winnipeg's Nintendo Switch and Joy-Con repair experts.",
+  },
+  {
+    icon: Gamepad2,
+    title: "Joy-Con Drift Experts",
+    description: "Permanent analog stick fixes—our most common Switch repair.",
+  },
+  {
+    icon: Zap,
+    title: "Same-Day Service",
+    description: "Most Joy-Con repairs completed in under an hour.",
+  },
+  {
+    icon: Shield,
+    title: "90-Day Repair Warranty",
+    description: "All Nintendo Switch repairs backed by our warranty.",
+  },
+];
+
+const MODEL_CATEGORIES = [
+  {
+    title: "Switch Consoles",
+    models: ["Switch OLED Model", "Switch V2 (Red Box)", "Switch V1 (Original)", "Switch Lite"],
+    description: "All Nintendo Switch console generations.",
+  },
+  {
+    title: "Joy-Con Controllers",
+    models: ["Joy-Con (Left)", "Joy-Con (Right)", "Joy-Con Pair"],
+    description: "Joy-Con drift and button repairs.",
+  },
+  {
+    title: "Accessories",
+    models: ["Pro Controller", "Switch Dock"],
+    description: "Pro Controller and dock repairs.",
   },
 ];
 
@@ -58,12 +103,12 @@ const MODELS = [
 
 const FAQS = [
   {
-    question: "Can you fix Joy-Con drift?",
-    answer: "Yes! Joy-Con drift is our most common Switch repair. We replace the analog stick module for a permanent fix, usually within an hour.",
+    question: "Can you fix Joy-Con drift in Winnipeg?",
+    answer: "Yes! Joy-Con drift is our most common Switch repair. We replace the analog stick module for a permanent fix at our St. Vital and Garden City locations, usually within an hour.",
   },
   {
     question: "Do you repair Switch OLED screens?",
-    answer: "Yes, we can replace both LCD screens on original Switch models and OLED screens on the newer OLED model.",
+    answer: "Yes, we replace both LCD screens on original Switch models and premium OLED screens on the newer Switch OLED model.",
   },
   {
     question: "Can you fix a Switch that won't charge?",
@@ -71,27 +116,30 @@ const FAQS = [
   },
   {
     question: "Do you repair the Switch dock?",
-    answer: "Yes, we can repair common dock issues including USB-C connector problems and HDMI output issues.",
+    answer: "Yes, we repair common dock issues including USB-C connector problems and HDMI output issues.",
   },
   {
     question: "How long does Joy-Con repair take?",
-    answer: "Joy-Con drift repair typically takes 30-60 minutes. We often have parts in stock for same-day service.",
+    answer: "Joy-Con drift repair typically takes 30-60 minutes. We often have parts in stock for same-day service in Winnipeg.",
   },
 ];
 
 const NintendoSwitchRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="Nintendo Switch Repair Winnipeg | Joy-Con Drift Fix | Mobile Tech Lab"
+      metaTitle="Nintendo Switch Console Repair Winnipeg | Mobile Tech Lab"
       metaDescription="Nintendo Switch repair in Winnipeg. Joy-Con drift, screen, battery, charging port repair for Switch OLED, Switch Lite & original Switch."
       deviceName="Nintendo Switch"
-      tagline="Nintendo Switch Repair Experts in Winnipeg"
-      heroDescription="Joy-Con drift driving you crazy? Screen cracked? We fix all Nintendo Switch models and Joy-Con controllers. Get back to gaming fast."
+      tagline="Nintendo Switch Repair in Winnipeg, MB"
+      heroDescription="Joy-Con drift driving you crazy? Screen cracked? We fix all Nintendo Switch models in Winnipeg—OLED, original, and Lite. Joy-Con and Pro Controller repairs with same-day service."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Nintendo Switch models including OLED, original, and Lite, plus Joy-Con and Pro controllers."
+      modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
+      advantagePillars={ADVANTAGE_PILLARS}
+      serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
     />
   );
 };
