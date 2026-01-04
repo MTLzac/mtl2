@@ -126,7 +126,7 @@ const NothingRepair = () => {
       metaTitle="Nothing Phone Repair Winnipeg | Glyph & Screen Fix | Mobile Tech Lab"
       metaDescription="Nothing Phone repair in Winnipeg. Screen, Glyph interface, battery repair for Nothing Phone (2), Phone (1) & CMF devices. New brand expertise."
       deviceName="Nothing Phone"
-      tagline="Nothing Phone Repair in Winnipeg, MB"
+      tagline="Nothing Phone Specialists in Winnipeg"
       heroDescription="Got a Nothing Phone with a cracked screen or Glyph interface issues? We're Winnipeg's experts in Carl Pei's innovative devices, preserving the iconic transparent design and LED lighting system."
       heroImage={heroImage}
       services={SERVICES}

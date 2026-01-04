@@ -122,10 +122,10 @@ const FAQS = [
 const SteamDeckRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="Steam Deck Repair Winnipeg | Screen & Charge Port Fix | Mobile Tech Lab"
+      metaTitle="Steam Deck Repair Winnipeg | Screen & Joystick Fix | Mobile Tech Lab"
       metaDescription="Steam Deck repair in Winnipeg. Screen, joystick drift, battery, SSD upgrade for Steam Deck OLED & LCD models. PC gaming handheld specialists."
       deviceName="Steam Deck"
-      tagline="Steam Deck Repair in Winnipeg, MB"
+      tagline="Steam Deck Repair in Winnipeg"
       heroDescription="Steam Deck acting up? Screen cracked, stick drift, or need more storage? We're Winnipeg's PC gaming handheld specialists. Steam Deck OLED and LCD repairs plus SSD upgrades."
       heroImage={heroImage}
       services={SERVICES}

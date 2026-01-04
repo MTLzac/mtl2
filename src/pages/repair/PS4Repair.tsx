@@ -122,10 +122,10 @@ const FAQS = [
 const PS4Repair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="PS4 Repair Winnipeg | HDMI Ports, Overheating, No Power | Mobile Tech Lab"
+      metaTitle="PS4 Repair Winnipeg | PlayStation 4 Fix | Mobile Tech Lab"
       metaDescription="PS4 repair in Winnipeg. Overheating, HDMI port, disc drive, controller repair for PlayStation 4 Pro, Slim & Original. Console repair specialists."
       deviceName="PS4"
-      tagline="PlayStation 4 Repair in Winnipeg, MB"
+      tagline="PlayStation 4 Repair Specialists in Winnipeg"
       heroDescription="PS4 overheating? HDMI not working? No power? We're Winnipeg's PlayStation 4 repair specialists. PS4 Pro, Slim, and Original consoles plus DualShock 4 controllers."
       heroImage={heroImage}
       services={SERVICES}

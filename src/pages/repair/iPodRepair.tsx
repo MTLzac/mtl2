@@ -4,7 +4,11 @@ import {
   Battery,
   Zap,
   CircleDot,
-  HardDrive
+  HardDrive,
+  Award,
+  Clock,
+  Database,
+  Shield
 } from "lucide-react";
 import heroImage from "@/assets/hero-ipod.png";
 
@@ -62,6 +66,52 @@ const MODELS = [
   "iPod Mini (1st Gen)"
 ];
 
+const ADVANTAGE_PILLARS = [
+  {
+    icon: Award,
+    title: "Legacy Device Specialists",
+    description: "Experts in discontinued Apple devices that others won't touch.",
+  },
+  {
+    icon: Database,
+    title: "Data Recovery Experts",
+    description: "Retrieve your music and photos from damaged or aging iPods.",
+  },
+  {
+    icon: Clock,
+    title: "Quick Turnaround",
+    description: "Most iPod repairs completed in 1-3 days. Same-day battery service.",
+  },
+  {
+    icon: Shield,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
+  },
+];
+
+const MODEL_CATEGORIES = [
+  {
+    title: "iPod Touch",
+    models: ["iPod Touch (7th Gen)", "iPod Touch (6th Gen)", "iPod Touch (5th Gen)", "iPod Touch (4th Gen)", "iPod Touch (3rd Gen)", "iPod Touch (2nd Gen)", "iPod Touch (1st Gen)"],
+    description: "All iPod Touch generations with touchscreen interface.",
+  },
+  {
+    title: "iPod Classic",
+    models: ["iPod Classic (7th Gen)", "iPod Classic (6th Gen)", "iPod Classic (5th Gen)"],
+    description: "Click wheel iPods with high-capacity storage.",
+  },
+  {
+    title: "iPod Nano",
+    models: ["iPod Nano (7th Gen)", "iPod Nano (6th Gen)", "iPod Nano (5th Gen)", "iPod Nano (4th Gen)", "iPod Nano (3rd Gen)", "iPod Nano (2nd Gen)", "iPod Nano (1st Gen)"],
+    description: "Compact click wheel and touchscreen models.",
+  },
+  {
+    title: "iPod Shuffle & Mini",
+    models: ["iPod Shuffle (4th Gen)", "iPod Shuffle (3rd Gen)", "iPod Shuffle (2nd Gen)", "iPod Shuffle (1st Gen)", "iPod Mini (2nd Gen)", "iPod Mini (1st Gen)"],
+    description: "Ultra-compact and colorful iPod models.",
+  },
+];
+
 const FAQS = [
   {
     question: "Do you still repair older iPod models?",
@@ -97,7 +147,10 @@ const IPodRepair = () => {
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all iPod generations from the original iPod Mini to the latest iPod Touch. If you have an iPod, we can fix it."
+      modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
+      advantagePillars={ADVANTAGE_PILLARS}
+      serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
     />
   );
 };

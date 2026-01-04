@@ -142,10 +142,10 @@ const FAQS = [
 const SurfaceRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="Microsoft Surface Repair in Winnipeg | Screen & Battery Issues | Mobile Tech Lab"
+      metaTitle="Microsoft Surface Repair in Manitoba | MobileTechLab"
       metaDescription="Expert Microsoft Surface repair services in Winnipeg and Winkler. Screen replacement, battery replacement, charging issues, data recovery, and liquid damage repair."
       deviceName="Microsoft Surface"
-      tagline="Microsoft Surface Repair in Winnipeg, MB"
+      tagline="Expert Surface Repair Services"
       heroDescription="Professional Microsoft Surface repair services in Winnipeg and Winkler. Screen replacement, battery issues, charging problems, data recovery, and liquid damage repair for all Surface Pro, Laptop, and Book models."
       heroImage={heroImage}
       services={SERVICES}

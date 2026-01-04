@@ -137,9 +137,9 @@ const SamsungGalaxyTabRepair = () => {
   return (
     <RepairLandingTemplate
       metaTitle="Samsung Galaxy Tab Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
-      metaDescription="Professional Samsung Galaxy Tab repair in Winnipeg. Screen replacement, battery, charging port repair for Tab S10, S9, S8, A9, Active & all models. Same-day service."
+      metaDescription="Professional Samsung Galaxy Tab repair in Winnipeg. Screen replacement, battery, charging port repair for Tab S10, S9, S8, A9, Active & all models. Same-day service available."
       deviceName="Samsung Galaxy Tab"
-      tagline="Samsung Galaxy Tab Repair in Winnipeg"
+      tagline="Expert Tablet Repair in Winnipeg"
       heroDescription="Winnipeg's dedicated Galaxy Tab repair specialists. From the powerful Tab S10 Ultra to everyday Tab A devices, we provide expert tablet repairs—screens, batteries, S Pen issues, and more. Same-day service available."
       heroImage={heroImage}
       services={SERVICES}

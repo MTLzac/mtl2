@@ -134,10 +134,10 @@ const FAQS = [
 const InfinixRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="Infinix Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
+      metaTitle="Infinix Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
       metaDescription="Infinix phone repair in Winnipeg. Screen, battery, charging port repair for Infinix Note, Hot, Zero & GT series. Underserved market specialists."
       deviceName="Infinix"
-      tagline="Infinix Phone Repair in Winnipeg"
+      tagline="Infinix Repair Specialists in Winnipeg"
       heroDescription="Can't find Infinix repair in Winnipeg? We're one of the few shops serving the Infinix community. Note, Hot, Zero, or GT gaming series—we provide affordable repairs for budget-friendly devices."
       heroImage={heroImage}
       services={SERVICES}

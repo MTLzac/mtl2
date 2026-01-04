@@ -132,10 +132,10 @@ const FAQS = [
 const XboxRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="Xbox Repair Winnipeg | HDMI Issues, No Power | Mobile Tech Lab"
+      metaTitle="Xbox Repair Winnipeg | Series X & Controller Fix | Mobile Tech Lab"
       metaDescription="Xbox repair in Winnipeg. Overheating, HDMI port, disc drive, controller repair for Xbox Series X, Series S, One & 360. Console specialists."
       deviceName="Xbox"
-      tagline="Xbox Repair in Winnipeg, MB"
+      tagline="Xbox Repair Specialists in Winnipeg"
       heroDescription="Xbox not cooperating? Overheating, HDMI issues, no power, or controller drift—we repair all Xbox consoles in Winnipeg. Series X, Series S, One, and 360."
       heroImage={heroImage}
       services={SERVICES}

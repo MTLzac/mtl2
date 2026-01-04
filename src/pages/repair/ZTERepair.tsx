@@ -134,10 +134,10 @@ const FAQS = [
 const ZTERepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="ZTE Phone Repair Winnipeg | nubia & Blade Screen Fix | Mobile Tech Lab"
+      metaTitle="ZTE Repair Winnipeg | nubia & Blade Screen Fix | Mobile Tech Lab"
       metaDescription="ZTE phone repair in Winnipeg. Screen, battery, charging repair for ZTE nubia, Red Magic, Blade & Axon series. Rare device specialists."
       deviceName="ZTE"
-      tagline="ZTE Phone Repair in Winnipeg, MB"
+      tagline="ZTE & nubia Repair Specialists in Winnipeg"
       heroDescription="From nubia Red Magic gaming phones to budget Blade devices, we repair all ZTE phones in Winnipeg. Hard to find parts? We've got the sourcing connections to fix your rare device."
       heroImage={heroImage}
       services={SERVICES}
