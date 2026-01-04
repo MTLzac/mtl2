@@ -63,9 +63,9 @@ const ADVANTAGE_PILLARS = [
     description: "HDMI port micro-soldering and board-level repairs.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All Xbox repairs backed by our warranty.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
 ];
 

@@ -81,7 +81,7 @@ const FAQS = [
   },
   {
     question: "Do you offer a warranty on iPod repairs?",
-    answer: "Yes, all our iPod repairs come with a warranty covering defects in parts and workmanship. We stand behind our work."
+    answer: "Yes! Screen repairs include a lifetime warranty, and battery replacements come with a 90-day warranty. We stand behind our work with quality parts."
   }
 ];
 

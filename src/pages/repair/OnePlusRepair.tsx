@@ -62,9 +62,9 @@ const ADVANTAGE_PILLARS = [
     description: "We diagnose and repair Warp Charge, SUPERVOOC, and all fast charging systems.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All OnePlus repairs backed by our warranty. Quality parts that restore your device to full functionality.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
 ];
 

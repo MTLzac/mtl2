@@ -10,7 +10,8 @@ import {
   Wrench,
   Zap,
   Shield,
-  DollarSign
+  DollarSign,
+  Award
 } from "lucide-react";
 
 const SERVICES = [
@@ -58,9 +59,9 @@ const ADVANTAGE_PILLARS = [
     description: "Most Samsung phone repairs completed same day. Walk-ins welcome at both locations.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All Samsung phone repairs backed by our warranty. Quality parts that meet or exceed OEM specifications.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
   {
     icon: DollarSign,

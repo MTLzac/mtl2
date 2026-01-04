@@ -63,9 +63,9 @@ const ADVANTAGE_PILLARS = [
     description: "Sourcing network for hard-to-find ZTE and nubia components.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All ZTE and nubia repairs backed by our comprehensive warranty.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
 ];
 

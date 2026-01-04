@@ -63,9 +63,9 @@ const ADVANTAGE_PILLARS = [
     description: "We repair unique LG innovations including Dual Screen cases and the LG Wing swivel mechanism.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All LG repairs backed by our warranty. Quality parts that restore your device to full functionality.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
 ];
 
