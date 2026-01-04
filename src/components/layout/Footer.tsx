@@ -47,6 +47,11 @@ export const Footer = () => {
                   Pre-Owned Devices
                 </Link>
               </li>
+              <li>
+                <Link to="/contact" className="text-muted-foreground hover:text-primary">
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 
