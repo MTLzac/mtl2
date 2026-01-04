@@ -63,9 +63,9 @@ const ADVANTAGE_PILLARS = [
     description: "We repair both TCL phones and Tab tablets.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All TCL repairs backed by our comprehensive warranty.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
 ];
 

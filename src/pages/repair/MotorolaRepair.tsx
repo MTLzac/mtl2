@@ -9,7 +9,8 @@ import {
   DollarSign,
   Smartphone,
   Zap,
-  Shield
+  Shield,
+  Award
 } from "lucide-react";
 import heroImage from "@/assets/hero-motorola.png";
 
@@ -63,9 +64,9 @@ const ADVANTAGE_PILLARS = [
     description: "Most Motorola repairs completed same day—typically 1-2 hours. Walk-ins welcome.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All Motorola repairs backed by our warranty. Quality parts that meet or exceed OEM specs.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
 ];
 

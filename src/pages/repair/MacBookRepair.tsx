@@ -9,7 +9,8 @@ import {
   Zap,
   Shield,
   Clock,
-  Cpu
+  Cpu,
+  Award
 } from "lucide-react";
 import heroImage from "@/assets/hero-macbook.png";
 
@@ -58,9 +59,9 @@ const ADVANTAGE_PILLARS = [
     description: "Most MacBook repairs completed in 1-3 days. Rush service available for urgent repairs.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All MacBook repairs backed by our warranty. Quality parts that meet or exceed OEM specifications.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
   {
     icon: Clock,

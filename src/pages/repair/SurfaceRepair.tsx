@@ -63,9 +63,9 @@ const ADVANTAGE_PILLARS = [
     description: "Quick turnaround for business-critical Surface device repairs.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All Surface repairs backed by our comprehensive warranty.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
 ];
 

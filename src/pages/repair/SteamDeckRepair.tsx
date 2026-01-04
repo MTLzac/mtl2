@@ -63,9 +63,9 @@ const ADVANTAGE_PILLARS = [
     description: "Storage upgrades with system reinstallation included.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All Steam Deck repairs backed by our warranty.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
 ];
 

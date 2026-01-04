@@ -63,9 +63,9 @@ const ADVANTAGE_PILLARS = [
     description: "We diagnose and repair SuperCharge, fast charging, and all power delivery systems.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All Huawei repairs backed by our warranty. Quality parts that restore your device to full functionality.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
 ];
 

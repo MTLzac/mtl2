@@ -63,9 +63,9 @@ const ADVANTAGE_PILLARS = [
     description: "Most Joy-Con repairs completed in under an hour.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All Nintendo Switch repairs backed by our warranty.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
 ];
 

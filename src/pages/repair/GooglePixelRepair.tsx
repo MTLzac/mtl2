@@ -9,7 +9,8 @@ import {
   Smartphone,
   Zap,
   Shield,
-  DollarSign
+  DollarSign,
+  Award
 } from "lucide-react";
 import heroImage from "@/assets/hero-google-pixel.png";
 
@@ -58,9 +59,9 @@ const ADVANTAGE_PILLARS = [
     description: "Most Pixel screen and battery repairs completed within 2 hours. Walk-ins welcome at both locations.",
   },
   {
-    icon: Shield,
-    title: "90-Day Repair Warranty",
-    description: "All Pixel repairs backed by our warranty. Quality parts that preserve your phone's IP68 water resistance rating.",
+    icon: Award,
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
   {
     icon: DollarSign,
