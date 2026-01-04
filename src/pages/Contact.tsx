@@ -189,7 +189,7 @@ const Contact = () => {
           </section>
 
           {/* Online Quote CTA */}
-          <section className="bg-secondary/30 py-16">
+          <section className="py-16">
             <div className="container mx-auto px-4">
               <Card className="mx-auto max-w-2xl border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
                 <CardContent className="p-8 text-center">
@@ -210,6 +210,56 @@ const Contact = () => {
                   </Button>
                 </CardContent>
               </Card>
+            </div>
+          </section>
+
+          {/* Map Section */}
+          <section className="bg-secondary/30 py-16">
+            <div className="container mx-auto px-4">
+              <div className="mb-8 text-center">
+                <h2 className="mb-3 text-2xl font-bold">Find Us on the Map</h2>
+                <p className="text-muted-foreground">
+                  Visit us at either of our convenient Manitoba locations
+                </p>
+              </div>
+
+              <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
+                {/* St. Vital Map */}
+                <div className="overflow-hidden rounded-lg border bg-card shadow-sm">
+                  <div className="border-b bg-muted/50 px-4 py-3">
+                    <h3 className="font-semibold">{LOCATIONS[0].name}</h3>
+                  </div>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2573.0896367686387!2d-97.10548882318454!3d49.85899357148345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52ea75c3a16e3141%3A0x5aee2e35bcc25930!2sMobile%20Tech%20Lab%20St.%20Vital!5e0!3m2!1sen!2sca!4v1704400000000!5m2!1sen!2sca"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Mobile Tech Lab St. Vital Location"
+                    className="w-full"
+                  />
+                </div>
+
+                {/* Thompson Map */}
+                <div className="overflow-hidden rounded-lg border bg-card shadow-sm">
+                  <div className="border-b bg-muted/50 px-4 py-3">
+                    <h3 className="font-semibold">{LOCATIONS[1].name}</h3>
+                  </div>
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2341.8442533087883!2d-97.83205152298!3d55.74447997312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52608b6e5c2b6e5d%3A0x1234567890abcdef!2s300%20Mystery%20Lake%20Rd%20%231530%2C%20Thompson%2C%20MB%20R8N%200M2!5e0!3m2!1sen!2sca!4v1704400000000!5m2!1sen!2sca"
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Mobile Tech Lab Thompson Location"
+                    className="w-full"
+                  />
+                </div>
+              </div>
             </div>
           </section>
         </main>
