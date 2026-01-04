@@ -21,7 +21,7 @@ export const ServiceGrid = ({ services, deviceName }: ServiceGridProps) => {
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Beyond the Screen: Common Issues We Solve
+            {deviceName} Repair Services in Winnipeg
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Expert repairs for all {deviceName} issues. Fast turnaround, quality parts, and warranty included.
