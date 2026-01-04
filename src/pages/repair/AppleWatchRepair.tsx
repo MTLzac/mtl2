@@ -22,16 +22,6 @@ const SERVICES = [
     name: "Battery Replacement",
     description: "Apple Watch not lasting all day? Same-day battery replacement to restore full charge capacity.",
   },
-  {
-    icon: Droplets,
-    name: "Water Damage Repair",
-    description: "Water got past the seals? We diagnose and repair water-damaged Apple Watches with careful restoration.",
-  },
-  {
-    icon: Watch,
-    name: "Digital Crown Repair",
-    description: "Stuck or unresponsive Digital Crown? We clean, repair, or replace crowns on all Apple Watch models.",
-  },
 ];
 
 const ADVANTAGE_PILLARS = [
@@ -39,11 +29,6 @@ const ADVANTAGE_PILLARS = [
     icon: Zap,
     title: "Same-Day Watch Repairs",
     description: "Most Apple Watch screen and battery repairs completed in 1-2 hours. Walk-ins welcome at both locations.",
-  },
-  {
-    icon: Shield,
-    title: "Water Resistance Maintained",
-    description: "We take care to preserve water resistance during repairs with proper seals and testing.",
   },
   {
     icon: Clock,
@@ -61,7 +46,7 @@ const MODEL_CATEGORIES = [
   {
     title: "Apple Watch Series",
     models: ["Series 10", "Series 9", "Series 8", "Series 7", "Series 6", "Series 5", "Series 4", "Series 3"],
-    description: "Standard Apple Watch lineup. Screen replacements, battery service, and Digital Crown repairs for all generations.",
+    description: "Standard Apple Watch lineup. Screen replacements and battery service for all generations.",
   },
   {
     title: "Apple Watch SE",
