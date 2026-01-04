@@ -5,7 +5,10 @@ import {
   Plug, 
   Camera, 
   Volume2,
-  Zap
+  Zap,
+  Shield,
+  Package,
+  Award
 } from "lucide-react";
 import heroImage from "@/assets/hero-xiaomi.png";
 
@@ -13,32 +16,78 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Replace cracked AMOLED displays on Xiaomi and Redmi devices.",
+    description: "AMOLED and LCD display replacements for Xiaomi, Redmi, and POCO devices. Quality screens with vibrant colors.",
   },
   {
     icon: Battery,
     name: "Battery Replacement",
-    description: "Restore full-day battery life to your Xiaomi device.",
+    description: "Restore full-day battery life to your Xiaomi device. Same-day replacement for most models.",
   },
   {
     icon: Zap,
     name: "Fast Charging Repair",
-    description: "Fix HyperCharge and Turbo Charge port issues.",
+    description: "HyperCharge 120W, Turbo Charge, and 67W fast charging port diagnosis and repair.",
   },
   {
     icon: Camera,
     name: "Camera Repair",
-    description: "Repair Leica-partnered cameras on Xiaomi flagship devices.",
+    description: "Leica-partnered camera repairs on Xiaomi flagships. Front and rear camera replacements for all models.",
   },
   {
     icon: Volume2,
     name: "Speaker Repair",
-    description: "Fix speakers, earpieces, and Harman Kardon audio systems.",
+    description: "Fix speakers, earpieces, and Harman Kardon audio systems on premium Xiaomi devices.",
   },
   {
     icon: Plug,
     name: "Port & Connector Repair",
-    description: "Repair USB-C ports, SIM trays, and headphone jacks.",
+    description: "USB-C port, SIM tray, and headphone jack repairs for all Xiaomi ecosystem devices.",
+  },
+];
+
+const ADVANTAGE_PILLARS = [
+  {
+    icon: Award,
+    title: "Winnipeg's Xiaomi Specialists",
+    description: "Most local shops turn away Xiaomi devices. We've invested in parts sourcing and training to be Winnipeg's go-to.",
+  },
+  {
+    icon: Package,
+    title: "Parts We Can Source",
+    description: "We maintain supplier relationships for Xiaomi, Redmi, and POCO parts. Most available within 1-2 days.",
+  },
+  {
+    icon: Zap,
+    title: "HyperCharge Experts",
+    description: "We diagnose and repair 120W HyperCharge, 67W Turbo Charge, and all fast charging systems.",
+  },
+  {
+    icon: Shield,
+    title: "90-Day Repair Warranty",
+    description: "All Xiaomi repairs backed by our warranty. Quality parts that restore your device to full functionality.",
+  },
+];
+
+const MODEL_CATEGORIES = [
+  {
+    title: "Xiaomi Flagship",
+    models: ["Xiaomi 15 Ultra", "Xiaomi 15 Pro", "Xiaomi 15", "Xiaomi 14 Ultra", "Xiaomi 14 Pro", "Xiaomi 14", "Xiaomi 13 Ultra", "Xiaomi 13 Pro", "Xiaomi 13"],
+    description: "Premium Xiaomi phones with Leica cameras. AMOLED screen replacements and battery service.",
+  },
+  {
+    title: "Redmi Note Series",
+    models: ["Redmi Note 14 Pro+", "Redmi Note 14 Pro", "Redmi Note 14", "Redmi Note 13 Pro+", "Redmi Note 13 Pro", "Redmi Note 13", "Redmi Note 12 Pro+", "Redmi Note 12 Pro", "Redmi Note 12", "Redmi Note 11 Pro+", "Redmi Note 11"],
+    description: "Popular mid-range lineup. Affordable screen and battery repairs for all Redmi Note generations.",
+  },
+  {
+    title: "POCO Series",
+    models: ["POCO F7 Ultra", "POCO F7 Pro", "POCO F7", "POCO F6 Pro", "POCO F6", "POCO X7 Pro", "POCO X7", "POCO X6 Pro", "POCO X6", "POCO M7 Pro", "POCO M7"],
+    description: "Performance-focused POCO repairs. Screen, battery, and fast charging port service.",
+  },
+  {
+    title: "Redmi & Mix Fold",
+    models: ["Redmi K80 Pro", "Redmi K80", "Redmi K70 Ultra", "Redmi 15 5G", "Redmi 14C", "Xiaomi Mix Fold 3", "Xiaomi Mix Fold 2", "Xiaomi Mix 4"],
+    description: "Budget Redmi devices and foldable Mix repairs. Cost-effective fixes and complex fold repairs.",
   },
 ];
 
@@ -77,22 +126,24 @@ const FAQS = [
     answer: "Yes! We're one of the few repair shops in Winnipeg that services Xiaomi, Redmi, and POCO devices. No need to ship your phone elsewhere.",
   },
   {
-    question: "Are Xiaomi parts available in Canada?",
-    answer: "We maintain supplier relationships that allow us to source Xiaomi parts. Most common parts are available within 1-2 days.",
+    question: "How long does Xiaomi screen repair take in Winnipeg?",
+    answer: "Most Xiaomi screen replacements are completed same-day at our Winnipeg locations, typically within 2-3 hours once parts are available.",
   },
   {
     question: "Can you fix Xiaomi HyperCharge issues?",
-    answer: "Yes, we diagnose and repair fast charging problems including HyperCharge 120W and 67W systems.",
+    answer: "Yes, we diagnose and repair HyperCharge 120W, 67W Turbo Charge, and all fast charging problems including port replacement and cable testing.",
+  },
+  {
+    question: "Are Xiaomi parts available in Winnipeg?",
+    answer: "We maintain supplier relationships for Xiaomi parts. Common Redmi Note and POCO parts are often in stock; less common models may take 1-2 days.",
   },
   {
     question: "Do you repair POCO and Redmi phones?",
-    answer: "Absolutely! POCO and Redmi are Xiaomi sub-brands, and we service all models from both lines.",
-  },
-  {
-    question: "Why choose Mobile Tech Lab for Xiaomi repair?",
-    answer: "Most Winnipeg repair shops don't service Xiaomi devices. We've invested in parts sourcing and training to fill this gap in the local market.",
+    answer: "Absolutely! POCO and Redmi are Xiaomi sub-brands. We service all models from both lines at our Winnipeg locations.",
   },
 ];
+
+const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
 const XiaomiRepair = () => {
   return (
@@ -100,13 +151,16 @@ const XiaomiRepair = () => {
       metaTitle="Xiaomi Repair Winnipeg | Redmi & POCO Screen Fix | Mobile Tech Lab"
       metaDescription="Xiaomi repair specialists in Winnipeg – no local competition! Screen, battery, fast charging repair for Xiaomi 14, 13, Redmi Note, POCO & all models."
       deviceName="Xiaomi"
-      tagline="Winnipeg's Xiaomi, Redmi & POCO Specialists"
-      heroDescription="Can't find anyone in Winnipeg to repair your Xiaomi? We've got you covered. From flagship Xiaomi 14 to budget Redmi devices, we're the local experts for all Xiaomi ecosystem repairs."
+      tagline="Xiaomi, Redmi & POCO Repair in Winnipeg, MB"
+      heroDescription="Can't find anyone in Winnipeg to repair your Xiaomi? We've got you covered. From flagship Xiaomi 15 Ultra to budget Redmi devices and performance POCO phones, we're the local experts for all Xiaomi ecosystem repairs."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Xiaomi, Redmi, and POCO devices. As Winnipeg's Xiaomi specialists, we service models that other shops turn away."
+      modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
+      advantagePillars={ADVANTAGE_PILLARS}
+      serviceAreaNote={SERVICE_AREA_NOTE}
     />
   );
 };
