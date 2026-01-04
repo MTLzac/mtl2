@@ -18,7 +18,7 @@ export const TradeInSection = ({
         <div className="mx-auto max-w-4xl rounded-2xl bg-gradient-to-br from-primary/10 via-background to-accent/10 p-8 md:p-12">
           <div className="text-center">
             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Can't Be Fixed? We've Got Options
+              {deviceName} Trade-In & Replacement Options
             </h2>
             <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
               If your {deviceName} is beyond repair, don't throw it away! Trade it in for value towards a new device, 

@@ -21,7 +21,7 @@ export const FAQSection = ({ deviceName, faqs }: FAQSectionProps) => {
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            Frequently Asked Questions
+            {deviceName} Repair FAQs
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Common questions about {deviceName} repair at Mobile Tech Lab
