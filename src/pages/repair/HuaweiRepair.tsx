@@ -5,7 +5,11 @@ import {
   Plug, 
   Camera, 
   Cpu,
-  Fingerprint
+  Fingerprint,
+  Award,
+  Package,
+  Shield,
+  Zap
 } from "lucide-react";
 import heroImage from "@/assets/hero-huawei.png";
 
@@ -13,32 +17,78 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Replace damaged Huawei OLED and LCD screens with quality parts.",
+    description: "OLED and LCD display replacements for Huawei P series, Mate, and Nova devices. Restore vibrant colors and touch responsiveness.",
   },
   {
     icon: Battery,
     name: "Battery Replacement",
-    description: "Restore battery performance with a new Huawei battery.",
+    description: "Restore full-day battery life to your Huawei device. Same-day replacement for most models.",
   },
   {
     icon: Plug,
-    name: "Charging Port Repair",
-    description: "Fix USB-C charging and SuperCharge port issues.",
+    name: "SuperCharge Repair",
+    description: "USB-C charging port and SuperCharge fast charging diagnosis and repair for all Huawei devices.",
   },
   {
     icon: Camera,
     name: "Leica Camera Repair",
-    description: "Repair Leica-engineered cameras on Huawei flagship devices.",
+    description: "Leica-engineered camera repairs on Huawei flagships. Front and rear camera replacements for all models.",
   },
   {
     icon: Cpu,
     name: "Motherboard Repair",
-    description: "Component-level motherboard diagnostics and repair.",
+    description: "Component-level motherboard diagnostics and micro-soldering repair for complex issues.",
   },
   {
     icon: Fingerprint,
     name: "Fingerprint Sensor",
-    description: "Repair in-display and rear fingerprint sensors.",
+    description: "In-display and rear fingerprint sensor repairs and calibration for secure unlocking.",
+  },
+];
+
+const ADVANTAGE_PILLARS = [
+  {
+    icon: Award,
+    title: "Huawei Specialists in Winnipeg",
+    description: "Specialized knowledge of Huawei devices when most shops turn them away due to parts challenges.",
+  },
+  {
+    icon: Package,
+    title: "Hard-to-Find Parts",
+    description: "We maintain supplier relationships for Huawei parts that others can't source. Most available within 2-3 days.",
+  },
+  {
+    icon: Zap,
+    title: "SuperCharge Experts",
+    description: "We diagnose and repair SuperCharge, fast charging, and all power delivery systems.",
+  },
+  {
+    icon: Shield,
+    title: "90-Day Repair Warranty",
+    description: "All Huawei repairs backed by our warranty. Quality parts that restore your device to full functionality.",
+  },
+];
+
+const MODEL_CATEGORIES = [
+  {
+    title: "Huawei P Series",
+    models: ["P60 Pro", "P60 Art", "P60", "P50 Pro", "P50 Pocket", "P50", "P40 Pro+", "P40 Pro", "P40", "P30 Pro", "P30"],
+    description: "Premium Huawei phones with Leica cameras. OLED screen replacements and battery service.",
+  },
+  {
+    title: "Huawei Mate Series",
+    models: ["Mate 60 Pro", "Mate 60", "Mate 50 Pro", "Mate 50", "Mate 40 Pro", "Mate 40", "Mate 30 Pro", "Mate 20 Pro", "Mate 20 X"],
+    description: "Flagship Mate lineup. Screen, battery, and motherboard repairs for all generations.",
+  },
+  {
+    title: "Huawei Nova Series",
+    models: ["Nova 11 Pro", "Nova 11", "Nova 10 Pro", "Nova 10", "Nova 9", "Nova 8", "Nova 7", "Nova 5T"],
+    description: "Mid-range Nova devices. Affordable screen and battery repairs.",
+  },
+  {
+    title: "Honor Devices",
+    models: ["Honor Magic5 Pro", "Honor Magic4 Pro", "Honor 70", "Honor 50", "Honor 20 Pro", "Honor 10"],
+    description: "Former Huawei sub-brand. We service all Honor models at our Winnipeg locations.",
   },
 ];
 
@@ -66,40 +116,45 @@ const MODELS = [
 
 const FAQS = [
   {
-    question: "Are Huawei parts hard to find in Canada?",
-    answer: "Some Huawei parts can be challenging to source due to trade restrictions, but we maintain supplier relationships that allow us to obtain quality parts for most models.",
+    question: "Do you repair Huawei phones in Winnipeg?",
+    answer: "Yes! We're one of the few repair shops in Winnipeg that specializes in Huawei devices. No need to ship your phone elsewhere.",
+  },
+  {
+    question: "Are Huawei parts available in Winnipeg?",
+    answer: "We maintain supplier relationships for Huawei parts that others can't source. Most parts available within 2-3 days for P series, Mate, and Nova devices.",
+  },
+  {
+    question: "How long does Huawei screen repair take in Winnipeg?",
+    answer: "Most Huawei screen replacements are completed same-day at our Winnipeg locations once parts are available, typically within 1-2 hours.",
+  },
+  {
+    question: "Do you repair Honor phones?",
+    answer: "Yes, we repair all Honor devices which were formerly part of Huawei, including the Magic series and Honor numbered series.",
   },
   {
     question: "Can you repair Huawei phones without Google services?",
     answer: "Yes! We repair all Huawei hardware regardless of whether the device has Google Mobile Services or Huawei Mobile Services.",
   },
-  {
-    question: "Do you repair Honor phones?",
-    answer: "Yes, we repair Honor devices which were formerly part of Huawei. This includes the latest Magic series and Honor numbered series.",
-  },
-  {
-    question: "How long does Huawei repair take?",
-    answer: "Repairs typically take 1-2 hours if parts are in stock. Some parts may need 2-3 days to source for less common models.",
-  },
-  {
-    question: "Is it worth repairing my older Huawei phone?",
-    answer: "We'll provide an honest assessment. Many Huawei phones are well-built and worth repairing, especially flagship P and Mate series devices.",
-  },
 ];
+
+const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
 const HuaweiRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="Huawei Repair Winnipeg | P Series & Mate Screen Fix | Mobile Tech Lab"
+      metaTitle="Huawei Phone Repair Winnipeg | Broken Screens, Bad Batteries | Mobile Tech Lab"
       metaDescription="Expert Huawei repair in Winnipeg. Screen, battery, motherboard repair for Huawei P60, P50, Mate, Nova & Honor devices. Hard-to-find parts specialists."
       deviceName="Huawei"
-      tagline="Hard-to-Find Huawei Parts Specialists"
-      heroDescription="Don't let parts availability stop you from repairing your Huawei device. We specialize in sourcing components for Huawei P series, Mate, Nova, and Honor phones when others can't."
+      tagline="Huawei Phone Repair Services in Winnipeg"
+      heroDescription="Don't let parts availability stop you from repairing your Huawei device. We specialize in sourcing components for Huawei P series, Mate, Nova, and Honor phones in Winnipeg when others can't."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all Huawei and Honor devices including P series, Mate series, Nova series, and foldable models."
+      modelsDescription="We repair all Huawei and Honor devices including P series, Mate series, Nova series, and foldable models. As Winnipeg's Huawei specialists, we service models that other shops turn away."
+      modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
+      advantagePillars={ADVANTAGE_PILLARS}
+      serviceAreaNote={SERVICE_AREA_NOTE}
     />
   );
 };
