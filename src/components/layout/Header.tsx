@@ -133,6 +133,12 @@ export const Header = () => {
                 Pre-Owned
               </Link>
             </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <Link to="/contact" className="px-4 py-2 text-sm font-medium hover:text-primary">
+                Contact
+              </Link>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -203,6 +209,13 @@ export const Header = () => {
                 onClick={() => setMobileOpen(false)}
               >
                 Pre-Owned
+              </Link>
+              <Link 
+                to="/contact" 
+                className="block text-lg font-medium"
+                onClick={() => setMobileOpen(false)}
+              >
+                Contact
               </Link>
 
               <div className="space-y-3 pt-4">
