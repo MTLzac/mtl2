@@ -59,8 +59,8 @@ const ADVANTAGE_PILLARS = [
   },
   {
     icon: Shield,
-    title: "Industry-Leading Warranty",
-    description: "Lifetime warranty on premium repairs. 90-day battery warranty. 30-day budget options.",
+    title: "Industry-Leading Warranties",
+    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
   },
   {
     icon: Award,
@@ -106,8 +106,8 @@ const FAQS = [
     answer: "As an IRP-certified shop, we can use Genuine Apple parts for many repairs. For certain legacy models, we use the highest-quality third-party alternatives available to keep your costs down.",
   },
   {
-    question: "What is the difference between your warranty tiers?",
-    answer: "Our 30-day warranty is designed for budget repairs, while our Lifetime Warranty covers manufacturing defects for as long as you own the device. All batteries include a standard 90-day warranty.",
+    question: "What warranty do you offer on iPad repairs?",
+    answer: "Screen repairs include a lifetime warranty, and battery replacements come with a 90-day warranty. We stand behind our work with quality parts that meet OEM specifications."
   },
   {
     question: "Can you fix a water-damaged iPad?",
