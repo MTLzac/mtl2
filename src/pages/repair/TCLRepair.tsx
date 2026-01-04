@@ -138,7 +138,7 @@ const TCLRepair = () => {
       metaTitle="TCL Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
       metaDescription="TCL phone repair in Winnipeg. Screen, battery, charging port repair for TCL 50, 40, 30 series & tablets. Budget device specialists."
       deviceName="TCL"
-      tagline="TCL Phone Repair in Winnipeg, MB"
+      tagline="TCL Device Repair in Winnipeg"
       heroDescription="TCL makes great budget phones, and we're here to keep them running in Winnipeg. From the TCL 50 series to tablets, we provide affordable repairs for all TCL devices at prices that make sense."
       heroImage={heroImage}
       services={SERVICES}

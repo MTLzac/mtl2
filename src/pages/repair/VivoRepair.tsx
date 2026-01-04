@@ -139,10 +139,10 @@ const FAQS = [
 const VivoRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="Vivo Phone Repair Winnipeg | Mobile Tech Lab"
+      metaTitle="Vivo Repair Winnipeg | X Series & iQOO Fix | Mobile Tech Lab"
       metaDescription="Vivo phone repair in Winnipeg. Screen, battery, camera repair for Vivo X100, V30, Y series & iQOO gaming phones. Growing brand specialists."
       deviceName="Vivo"
-      tagline="Vivo Phone Repair in Winnipeg, MB"
+      tagline="Vivo & iQOO Repair in Winnipeg"
       heroDescription="From the ZEISS-equipped X100 flagship to iQOO gaming phones, we repair all Vivo devices in Winnipeg. Growing brand specialists with expert service for X, V, Y series and foldables."
       heroImage={heroImage}
       services={SERVICES}

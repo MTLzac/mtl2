@@ -144,7 +144,7 @@ const MacBookRepair = () => {
       metaTitle="MacBook Repair Services | Expert Mac Repairs"
       metaDescription="Professional MacBook repair services including screen replacement, battery replacement, keyboard repair, liquid damage restoration, and data recovery. Fast turnaround and quality parts."
       deviceName="MacBook"
-      tagline="MacBook Repair in Winnipeg, MB"
+      tagline="Expert MacBook Repair Services"
       heroDescription="From cracked Retina displays to liquid damage and keyboard issues, we repair all MacBook Air and Pro models in Winnipeg. Apple Silicon specialists with fast turnaround and quality parts."
       heroImage={heroImage}
       services={SERVICES}
