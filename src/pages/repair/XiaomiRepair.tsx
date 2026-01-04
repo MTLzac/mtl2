@@ -151,7 +151,7 @@ const XiaomiRepair = () => {
       metaTitle="Xiaomi Repair Winnipeg | Redmi & POCO Screen Fix | Mobile Tech Lab"
       metaDescription="Xiaomi repair specialists in Winnipeg – no local competition! Screen, battery, fast charging repair for Xiaomi 14, 13, Redmi Note, POCO & all models."
       deviceName="Xiaomi"
-      tagline="Xiaomi, Redmi & POCO Repair in Winnipeg, MB"
+      tagline="Xiaomi, Redmi & POCO Repair in Winnipeg"
       heroDescription="Can't find anyone in Winnipeg to repair your Xiaomi? We've got you covered. From flagship Xiaomi 15 Ultra to budget Redmi devices and performance POCO phones, we're the local experts for all Xiaomi ecosystem repairs."
       heroImage={heroImage}
       services={SERVICES}
