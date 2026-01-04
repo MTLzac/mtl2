@@ -1,41 +1,98 @@
 import { RepairLandingTemplate } from "@/components/repair/RepairLandingTemplate";
-import { Monitor, Battery, Keyboard, HardDrive, Droplets, Plug } from "lucide-react";
+import { 
+  Monitor, 
+  Battery, 
+  Keyboard, 
+  HardDrive, 
+  Droplets, 
+  Plug,
+  Zap,
+  Shield,
+  Clock,
+  Cpu
+} from "lucide-react";
 import heroImage from "@/assets/hero-macbook.png";
 
-const services = [
+const SERVICES = [
   {
     icon: Monitor,
     name: "Screen Replacement",
-    description: "Cracked, damaged, or malfunctioning display? We replace MacBook screens with high-quality parts.",
+    description: "Cracked Retina display or dead pixels? We replace MacBook Air and Pro screens with high-quality LCD and LED panels.",
   },
   {
     icon: Battery,
     name: "Battery Replacement",
-    description: "Restore your MacBook's battery life with a genuine replacement for all-day power.",
+    description: "MacBook battery swelling or not holding charge? Same-day battery replacement for most models.",
   },
   {
     icon: Keyboard,
     name: "Keyboard Replacement",
-    description: "Sticky, unresponsive, or broken keys? We replace MacBook keyboards with precision.",
+    description: "Sticky butterfly keys or unresponsive Magic Keyboard? Complete keyboard replacement for all MacBook generations.",
   },
   {
     icon: HardDrive,
     name: "Data Recovery",
-    description: "Lost important files? Our experts can recover data from damaged or failed drives.",
+    description: "Lost files from a failed SSD or corrupted drive? Our technicians recover data from damaged MacBooks.",
   },
   {
     icon: Droplets,
-    name: "Liquid Damage",
-    description: "Spilled coffee or water on your MacBook? We specialize in liquid damage repair and restoration.",
+    name: "Liquid Damage Repair",
+    description: "Coffee or water spill? We specialize in liquid damage restoration including logic board cleaning and component repair.",
   },
   {
     icon: Plug,
     name: "Charging Issues",
-    description: "MacBook not charging? We diagnose and fix charging port, battery, and power issues.",
+    description: "MacBook not charging? We diagnose and repair MagSafe, USB-C ports, battery connectors, and power issues.",
   },
 ];
 
-const models = [
+const ADVANTAGE_PILLARS = [
+  {
+    icon: Cpu,
+    title: "M1, M2 & M3 Specialists",
+    description: "Expert repairs for Apple Silicon MacBooks. We service the latest M3 chips and all Intel models.",
+  },
+  {
+    icon: Zap,
+    title: "Fast Turnaround",
+    description: "Most MacBook repairs completed in 1-3 days. Rush service available for urgent repairs.",
+  },
+  {
+    icon: Shield,
+    title: "90-Day Repair Warranty",
+    description: "All MacBook repairs backed by our warranty. Quality parts that meet or exceed OEM specifications.",
+  },
+  {
+    icon: Clock,
+    title: "Free Diagnostics",
+    description: "Not sure what's wrong? We provide free diagnostics to identify the issue before any repair.",
+  },
+];
+
+const MODEL_CATEGORIES = [
+  {
+    title: "MacBook Air",
+    models: ["MacBook Air M3 (2024)", "MacBook Air M2 (2022)", "MacBook Air M1 (2020)", "MacBook Air Retina (2018-2020)", "MacBook Air (2015-2017)"],
+    description: "Ultralight MacBook repairs. Screen, battery, keyboard, and logic board service for all Air generations.",
+  },
+  {
+    title: "MacBook Pro 14\" & 16\"",
+    models: ["MacBook Pro 16\" M3 (2023)", "MacBook Pro 14\" M3 (2023)", "MacBook Pro 16\" M2 (2023)", "MacBook Pro 14\" M2 (2023)", "MacBook Pro 16\" M1 (2021)", "MacBook Pro 14\" M1 (2021)", "MacBook Pro 16\" (2019)", "MacBook Pro 15\" (2015-2019)"],
+    description: "Pro-level MacBook repairs. Liquid XDR display replacements, battery service, and keyboard repairs.",
+  },
+  {
+    title: "MacBook Pro 13\"",
+    models: ["MacBook Pro 13\" M2 (2022)", "MacBook Pro 13\" M1 (2020)", "MacBook Pro 13\" (2016-2020)"],
+    description: "Compact Pro repairs. Touch Bar, Retina display, and butterfly keyboard fixes for 13-inch models.",
+  },
+  {
+    title: "MacBook 12\"",
+    models: ["MacBook 12\" (2015)", "MacBook 12\" (2016)", "MacBook 12\" (2017)"],
+    description: "Retina MacBook repairs. Screen, battery, and USB-C port service for the ultra-portable 12-inch model.",
+  },
+];
+
+const MODELS = [
   "MacBook Air M3 (2024)",
   "MacBook Air M2 (2022)",
   "MacBook Air M1 (2020)",
@@ -55,28 +112,30 @@ const models = [
   "MacBook 12\" (2015-2017)",
 ];
 
-const faqs = [
+const FAQS = [
   {
-    question: "How long does a MacBook screen replacement take?",
-    answer: "Most MacBook screen replacements are completed within 1-3 business days, depending on the model and parts availability.",
+    question: "How long does MacBook screen replacement take in Winnipeg?",
+    answer: "Most MacBook screen replacements at our Winnipeg locations are completed within 1-3 business days, depending on the model and parts availability.",
   },
   {
     question: "Can you recover data from a water-damaged MacBook?",
-    answer: "Yes, in many cases we can recover data from liquid-damaged MacBooks. The success rate depends on the extent of the damage and how quickly the device is brought in for repair.",
+    answer: "Yes, in many cases we can recover data from liquid-damaged MacBooks. Success depends on the extent of damage and how quickly the device is brought to our Winnipeg shop.",
   },
   {
-    question: "Do you use genuine Apple parts?",
-    answer: "We use high-quality OEM and aftermarket parts that meet or exceed Apple's specifications. We can discuss part options with you before repair.",
+    question: "Do you repair MacBooks with Apple Silicon (M1, M2, M3)?",
+    answer: "Absolutely! We're experienced with Apple Silicon MacBooks including M1, M2, and the latest M3 chips. Screen, battery, and keyboard repairs available.",
   },
   {
-    question: "How much does a MacBook battery replacement cost?",
-    answer: "Battery replacement costs vary by model. Contact us for a free quote specific to your MacBook model.",
+    question: "How much does MacBook battery replacement cost in Winnipeg?",
+    answer: "MacBook battery replacement costs vary by model. Contact our Winnipeg locations for a free quote specific to your MacBook Air or Pro model.",
   },
   {
-    question: "Is my data safe during repair?",
-    answer: "We prioritize data security. Your files remain untouched during hardware repairs, and we recommend backing up before any service as a precaution.",
+    question: "Is my data safe during MacBook repair?",
+    answer: "We prioritize data security. Your files remain untouched during hardware repairs. We recommend backing up before any service as a precaution.",
   },
 ];
+
+const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
 const MacBookRepair = () => {
   return (
@@ -84,12 +143,16 @@ const MacBookRepair = () => {
       metaTitle="MacBook Repair Services | Expert Mac Repairs"
       metaDescription="Professional MacBook repair services including screen replacement, battery replacement, keyboard repair, liquid damage restoration, and data recovery. Fast turnaround and quality parts."
       deviceName="MacBook"
-      tagline="Expert MacBook Repair Services"
-      heroDescription="From cracked screens to liquid damage, our certified technicians repair all MacBook models with precision and care. Fast turnaround, quality parts, and warranty included."
+      tagline="MacBook Repair in Winnipeg, MB"
+      heroDescription="From cracked Retina displays to liquid damage and keyboard issues, we repair all MacBook Air and Pro models in Winnipeg. Apple Silicon specialists with fast turnaround and quality parts."
       heroImage={heroImage}
-      services={services}
-      models={models}
-      faqs={faqs}
+      services={SERVICES}
+      models={MODELS}
+      modelsDescription="We repair all MacBook models from Intel-based machines to the latest M3 Apple Silicon. Air, Pro, and 12-inch MacBooks all serviced."
+      modelCategories={MODEL_CATEGORIES}
+      faqs={FAQS}
+      advantagePillars={ADVANTAGE_PILLARS}
+      serviceAreaNote={SERVICE_AREA_NOTE}
     />
   );
 };
