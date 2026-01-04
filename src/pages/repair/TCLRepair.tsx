@@ -5,7 +5,11 @@ import {
   Plug, 
   Camera, 
   Volume2,
-  Wifi
+  Wifi,
+  Award,
+  DollarSign,
+  Tablet,
+  Shield
 } from "lucide-react";
 import heroImage from "@/assets/hero-tcl.png";
 
@@ -13,17 +17,17 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Replace cracked or damaged TCL screens affordably.",
+    description: "Replace cracked or damaged TCL NXTVISION screens in Winnipeg.",
   },
   {
     icon: Battery,
     name: "Battery Replacement",
-    description: "Restore battery life to your TCL phone.",
+    description: "Restore battery life to your TCL phone or tablet.",
   },
   {
     icon: Plug,
     name: "Charging Port Repair",
-    description: "Fix USB-C charging port issues.",
+    description: "Fix USB-C charging port issues for reliable power.",
   },
   {
     icon: Camera,
@@ -38,7 +42,53 @@ const SERVICES = [
   {
     icon: Wifi,
     name: "Connectivity Repair",
-    description: "Resolve WiFi, Bluetooth, and cellular issues.",
+    description: "Resolve WiFi, Bluetooth, and cellular issues on TCL phones.",
+  },
+];
+
+const ADVANTAGE_PILLARS = [
+  {
+    icon: Award,
+    title: "TCL Specialists",
+    description: "Winnipeg's experts in TCL phones and tablets.",
+  },
+  {
+    icon: DollarSign,
+    title: "Budget Device Experts",
+    description: "Affordable repairs matching TCL's value-focused pricing.",
+  },
+  {
+    icon: Tablet,
+    title: "Phone & Tablet Service",
+    description: "We repair both TCL phones and Tab tablets.",
+  },
+  {
+    icon: Shield,
+    title: "90-Day Repair Warranty",
+    description: "All TCL repairs backed by our comprehensive warranty.",
+  },
+];
+
+const MODEL_CATEGORIES = [
+  {
+    title: "TCL 50 Series",
+    models: ["TCL 50 XL 5G", "TCL 50 SE", "TCL 50 XE"],
+    description: "Latest TCL 50 series with 5G connectivity.",
+  },
+  {
+    title: "TCL 40 Series",
+    models: ["TCL 40 NxtPaper", "TCL 40 XL", "TCL 40 XE", "TCL 40 SE"],
+    description: "Popular 40 series including unique NxtPaper display.",
+  },
+  {
+    title: "TCL 30 Series",
+    models: ["TCL 30 XL", "TCL 30 XE 5G", "TCL 30 SE", "TCL 30 V 5G"],
+    description: "Reliable 30 series budget phones.",
+  },
+  {
+    title: "TCL Tablets",
+    models: ["TCL Tab 10s", "TCL Tab 8"],
+    description: "TCL tablet repairs for screen, battery, and charging.",
   },
 ];
 
@@ -61,24 +111,24 @@ const MODELS = [
 
 const FAQS = [
   {
-    question: "Do you repair TCL phones?",
-    answer: "Yes! TCL makes quality budget phones, and we service all TCL smartphone models.",
+    question: "Do you repair TCL phones in Winnipeg?",
+    answer: "Yes! TCL makes quality budget phones, and we service all TCL smartphone models at our St. Vital and Garden City locations.",
   },
   {
     question: "Is TCL repair worth it?",
-    answer: "Often yes! TCL devices are budget-friendly, and our repair costs are proportionally affordable, making repair a smart choice.",
+    answer: "Often yes! TCL devices are budget-friendly, and our repair costs are proportionally affordable, making repair a smart choice over replacement.",
   },
   {
-    question: "Are TCL parts available?",
-    answer: "We can source parts for most TCL models. Common models like the 30 and 40 series have good availability.",
+    question: "Are TCL parts available in Winnipeg?",
+    answer: "We can source parts for most TCL models. Common 40 and 50 series parts are often available quickly; older models may take a few days.",
   },
   {
     question: "Do you repair TCL tablets too?",
-    answer: "Yes, we service TCL Tab devices for screen, battery, and charging issues.",
+    answer: "Yes! We service TCL Tab devices including the Tab 10s and Tab 8 for screen, battery, and charging port repairs.",
   },
   {
     question: "How long does TCL repair take?",
-    answer: "Most repairs are completed same-day if parts are in stock, typically within 1-2 hours.",
+    answer: "Most repairs are completed same-day if parts are in stock, typically within 1-2 hours. Part sourcing may add 2-3 business days.",
   },
 ];
 
@@ -88,13 +138,16 @@ const TCLRepair = () => {
       metaTitle="TCL Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
       metaDescription="TCL phone repair in Winnipeg. Screen, battery, charging port repair for TCL 50, 40, 30 series & tablets. Budget device specialists."
       deviceName="TCL"
-      tagline="TCL Device Repair in Winnipeg"
-      heroDescription="TCL makes great budget phones, and we're here to keep them running. From the TCL 50 series to tablets, we provide affordable repairs for all TCL devices."
+      tagline="TCL Phone Repair in Winnipeg, MB"
+      heroDescription="TCL makes great budget phones, and we're here to keep them running in Winnipeg. From the TCL 50 series to tablets, we provide affordable repairs for all TCL devices at prices that make sense."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all TCL phones and tablets including the 50, 40, 30, and 20 series."
+      modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
+      advantagePillars={ADVANTAGE_PILLARS}
+      serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
     />
   );
 };
