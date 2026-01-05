@@ -149,7 +149,7 @@ export const LiveStatusBadge = () => {
           <MapPin className="h-3 w-3" />
           <span className="font-semibold">{location.shortName}</span>
           <span className="opacity-75">·</span>
-          <span className="font-normal">{status.isOpen ? "Open" : "Closed"}</span>
+          <span className="font-normal">{status.isOpen ? "Open" : status.nextChange}</span>
         </Badge>
       ))}
     </div>
