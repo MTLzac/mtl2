@@ -54,6 +54,9 @@ import SteamDeckRepair from "./pages/repair/SteamDeckRepair";
 // B2B / Business Page
 import BusinessRepair from "./pages/BusinessRepair";
 
+// Trade-In Page
+import TradeIn from "./pages/TradeIn";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -116,6 +119,9 @@ const App = () => (
             {/* B2B / Business Page */}
             <Route path="/business" element={<BusinessRepair />} />
             <Route path="/b2b" element={<BusinessRepair />} />
+
+            {/* Trade-In Page */}
+            <Route path="/trade-in" element={<TradeIn />} />
             
             {/* Contact Page */}
             <Route path="/contact" element={<Contact />} />
