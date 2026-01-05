@@ -9,19 +9,22 @@ interface HeroSectionProps {
   tagline: string;
   description: string;
   heroImage?: string;
+  hideImage?: boolean;
 }
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 
-export const HeroSection = ({ deviceName, tagline, description, heroImage }: HeroSectionProps) => {
+export const HeroSection = ({ deviceName, tagline, description, heroImage, hideImage }: HeroSectionProps) => {
   const imageToUse = heroImage || defaultHeroImage;
+  const showImage = !hideImage;
+  
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/5 py-12 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className={showImage ? "grid items-center gap-8 lg:grid-cols-2 lg:gap-12" : "max-w-4xl mx-auto text-center"}>
           {/* Left Content */}
           <div>
-            <div className="mb-4 flex flex-wrap items-center gap-3">
+            <div className={`mb-4 flex flex-wrap items-center gap-3 ${!showImage ? "justify-center" : ""}`}>
               <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
                 Professional {deviceName} Repair
               </span>
@@ -33,10 +36,10 @@ export const HeroSection = ({ deviceName, tagline, description, heroImage }: Her
             <p className="mb-2 text-xl font-medium text-foreground/90 md:text-2xl">
               {tagline}
             </p>
-            <p className="mb-8 text-lg text-muted-foreground">
+            <p className={`mb-8 text-lg text-muted-foreground ${!showImage ? "mx-auto max-w-2xl" : ""}`}>
               {description}
             </p>
-            <div className="flex flex-col gap-4 sm:flex-row">
+            <div className={`flex flex-col gap-4 sm:flex-row ${!showImage ? "justify-center" : ""}`}>
               <Button
                 size="lg"
                 className="gradient-primary text-lg"
@@ -62,13 +65,15 @@ export const HeroSection = ({ deviceName, tagline, description, heroImage }: Her
           </div>
 
           {/* Right Image */}
-          <div className="relative hidden lg:flex items-center justify-end">
-            <img 
-              src={imageToUse} 
-              alt={`${deviceName} repair service at Mobile Tech Lab Manitoba`}
-              className="w-full max-w-xl object-contain"
-            />
-          </div>
+          {showImage && (
+            <div className="relative hidden lg:flex items-center justify-end">
+              <img 
+                src={imageToUse} 
+                alt={`${deviceName} repair service at Mobile Tech Lab Manitoba`}
+                className="w-full max-w-xl object-contain"
+              />
+            </div>
+          )}
         </div>
       </div>
       
