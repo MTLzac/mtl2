@@ -58,51 +58,49 @@ const WaterDamageRepair = () => {
           {/* Hero Section */}
           <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/20 py-16 lg:py-24">
             <div className="container mx-auto px-4">
-              <div className="grid items-center gap-12 lg:grid-cols-2">
-                <div className="space-y-6">
+              <div className="max-w-3xl mx-auto space-y-6">
+                {/* Badge with inline illustration */}
+                <div className="flex items-center gap-4">
                   <div className="inline-flex items-center gap-2 rounded-full bg-destructive/10 px-4 py-2 text-sm font-medium text-destructive">
                     <AlertTriangle className="h-4 w-4" />
                     Act Fast – Time Is Critical
                   </div>
-                  
-                  <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-                    iPhone Water Damage in Winnipeg?
-                    <span className="block text-primary">We're Here to Help</span>
-                  </h1>
-                  
-                  <p className="text-lg text-muted-foreground">
-                    Accidents happen. Whether it's a spilled coffee, a dropped phone, or an unexpected splash, 
-                    we understand the panic that comes with water damage. <strong>Don't give up on your device just yet.</strong>
-                  </p>
-                  
-                  <p className="text-muted-foreground">
-                    Our technicians specialize in water damage assessment and recovery. While every case is unique 
-                    and we can't promise miracles, we've helped countless customers retrieve irreplaceable photos, 
-                    messages, and data—even from devices that seemed beyond hope.
-                  </p>
-
-                  <div className="flex flex-col gap-4 sm:flex-row">
-                    <Button size="lg" className="gap-2" asChild>
-                      <a href={`tel:${PRIMARY_PHONE.replace(/[^0-9]/g, '')}`}>
-                        <Phone className="h-5 w-5" />
-                        Call Now – Free Assessment
-                      </a>
-                    </Button>
-                    <Button size="lg" variant="outline" className="gap-2" asChild>
-                      <a href="/#quote">
-                        <MessageSquare className="h-5 w-5" />
-                        Get a Quote
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-
-                <div className="relative flex justify-center">
                   <img
                     src={heroImage}
-                    alt="Water damaged phone illustration showing spilled liquid on mobile devices"
-                    className="relative z-10 max-w-2xl w-full object-contain"
+                    alt="Water damaged phone illustration"
+                    className="h-16 w-auto object-contain opacity-80"
                   />
+                </div>
+                
+                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+                  iPhone Water Damage in Winnipeg?
+                  <span className="block text-primary">We're Here to Help</span>
+                </h1>
+                
+                <p className="text-lg text-muted-foreground">
+                  Accidents happen. Whether it's a spilled coffee, a dropped phone, or an unexpected splash, 
+                  we understand the panic that comes with water damage. <strong>Don't give up on your device just yet.</strong>
+                </p>
+                
+                <p className="text-muted-foreground">
+                  Our technicians specialize in water damage assessment and recovery. While every case is unique 
+                  and we can't promise miracles, we've helped countless customers retrieve irreplaceable photos, 
+                  messages, and data—even from devices that seemed beyond hope.
+                </p>
+
+                <div className="flex flex-col gap-4 sm:flex-row">
+                  <Button size="lg" className="gap-2" asChild>
+                    <a href={`tel:${PRIMARY_PHONE.replace(/[^0-9]/g, '')}`}>
+                      <Phone className="h-5 w-5" />
+                      Call Now – Free Assessment
+                    </a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="gap-2" asChild>
+                    <a href="/#quote">
+                      <MessageSquare className="h-5 w-5" />
+                      Get a Quote
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>
