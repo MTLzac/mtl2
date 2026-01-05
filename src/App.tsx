@@ -39,6 +39,7 @@ import IPodRepair from "./pages/repair/iPodRepair";
 // Laptop Repair Pages
 import MacBookRepair from "./pages/repair/MacBookRepair";
 import SurfaceRepair from "./pages/repair/SurfaceRepair";
+import LaptopRepair from "./pages/repair/LaptopRepair";
 
 // Service-Specific Pages
 import WaterDamageRepair from "./pages/repair/WaterDamageRepair";
@@ -95,6 +96,7 @@ const App = () => (
             <Route path="/repair/macbook" element={<MacBookRepair />} />
             <Route path="/repair/surface" element={<SurfaceRepair />} />
             <Route path="/repair/microsoft-surface" element={<SurfaceRepair />} />
+            <Route path="/repair/laptop" element={<LaptopRepair />} />
 
             {/* Console Repair Pages */}
             <Route path="/repair/nintendo-switch" element={<NintendoSwitchRepair />} />
