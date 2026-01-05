@@ -1,9 +1,8 @@
 import { Shield, RefreshCw, Phone, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { PRIMARY_PHONE } from "@/lib/locations";
-
-const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 
 export const WaysToSave = () => {
   return (
@@ -81,10 +80,10 @@ export const WaysToSave = () => {
                 className="h-12 w-full rounded-lg border border-primary/40 bg-primary/10 text-primary font-medium shadow-sm transition-all duration-200 hover:bg-primary/15 hover:border-primary/60 hover:shadow-md active:scale-[0.98]" 
                 asChild
               >
-                <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
+                <Link to="/trade-in">
                   Lower My Repair Cost
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
+                </Link>
               </Button>
             </CardContent>
           </Card>

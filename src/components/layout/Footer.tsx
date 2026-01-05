@@ -39,7 +39,7 @@ export const Footer = () => {
               </li>
               <li>
                 <Link to="/trade-in" className="text-muted-foreground hover:text-primary">
-                  Trade-In
+                  Sell Your Phone
                 </Link>
               </li>
               <li>

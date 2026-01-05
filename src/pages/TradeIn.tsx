@@ -18,11 +18,11 @@ const SELL_PHONE_FAQS = [
   },
   {
     question: "Can I get cash for my used phone?",
-    answer: "Yes! In-store drop-offs receive same-day cash or E-Transfer. You can also use your payout as store credit toward repairs or a pre-owned device.",
+    answer: "Yes! In-store drop-offs receive same-day cash or E-Transfer. You can also use your payout as store credit toward repairs or browse our <a href='/pre-owned' class='text-primary hover:underline'>pre-owned devices</a>.",
   },
   {
     question: "Do you buy broken phones?",
-    answer: "Absolutely! Cracked screens, battery issues, water damage—we buy phones in any condition. We'll provide a fair quote based on your device's current state.",
+    answer: "Absolutely! Cracked screens, battery issues, water damage—we buy phones in any condition. If you'd rather fix it, check out our <a href='/repair/samsung' class='text-primary hover:underline'>Samsung repair</a> or <a href='/repair/ipad' class='text-primary hover:underline'>iPad repair</a> services.",
   },
   {
     question: "Why won't you buy locked phones?",
