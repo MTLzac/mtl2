@@ -123,6 +123,12 @@ export const Header = () => {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
+              <Link to="/business" className="px-4 py-2 text-sm font-medium hover:text-primary">
+                Business
+              </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
               <Link to="/trade-in" className="px-4 py-2 text-sm font-medium hover:text-primary">
                 Trade-In
               </Link>
@@ -196,6 +202,13 @@ export const Header = () => {
                 </div>
               ))}
 
+              <Link 
+                to="/business" 
+                className="block text-lg font-medium"
+                onClick={() => setMobileOpen(false)}
+              >
+                Business
+              </Link>
               <Link 
                 to="/trade-in" 
                 className="block text-lg font-medium"
