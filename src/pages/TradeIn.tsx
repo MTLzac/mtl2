@@ -11,33 +11,33 @@ import { LocationCards } from "@/components/repair/LocationCards";
 import { FAQSection } from "@/components/repair/FAQSection";
 import { StickyQuoteCTA } from "@/components/repair/StickyQuoteCTA";
 
-const TRADE_IN_FAQS = [
+const SELL_PHONE_FAQS = [
   {
-    question: "How do I get a trade-in quote?",
-    answer: "Submit your device details through our quote form. We'll review the information and respond with a value based on the model and condition.",
+    question: "How do I sell my phone in Winnipeg?",
+    answer: "Submit your device details through our quote form or drop by our Winnipeg location. We'll assess your phone and provide a cash offer based on the model and condition.",
   },
   {
-    question: "What can I do with my trade-in credit?",
-    answer: "Use it toward a repair bill at our shop or apply it to a pre-owned device purchase. The choice is yours.",
+    question: "Can I get cash for my used phone?",
+    answer: "Yes! In-store drop-offs receive same-day cash or E-Transfer. You can also use your payout as store credit toward repairs or a pre-owned device.",
   },
   {
-    question: "Do you accept damaged devices?",
-    answer: "Yes! Cracked screens, battery issues, water damage, and other problems are fine. We'll provide a quote based on the device's current condition.",
+    question: "Do you buy broken phones?",
+    answer: "Absolutely! Cracked screens, battery issues, water damage—we buy phones in any condition. We'll provide a fair quote based on your device's current state.",
   },
   {
-    question: "Why won't you accept locked devices?",
-    answer: "iCloud-locked or Google FRP-locked devices can't be resold or refurbished. We need devices that you can sign out of and unlock before trading in.",
+    question: "Why won't you buy locked phones?",
+    answer: "iCloud-locked or Google FRP-locked devices can't be resold or refurbished. We need devices that you can sign out of and unlock before selling.",
   },
   {
-    question: "How do I ship my device?",
-    answer: "After accepting your quote, we'll send you a free prepaid shipping label. Just pack your device securely and drop it off at any Canada Post location.",
+    question: "How do I ship my phone to sell?",
+    answer: "After accepting your quote, we'll send you a free prepaid shipping label. Pack your device securely and drop it off at any Canada Post location.",
   },
   {
-    question: "How fast do I get paid?",
-    answer: "In-store drop-offs receive same-day payment via cash or E-Transfer. Mail-in devices are processed and paid within 24-48 hours of inspection.",
+    question: "How fast do I get cash for my phone?",
+    answer: "Drop off in Winnipeg and get paid same-day via cash or E-Transfer. Mail-in devices are processed and paid within 24-48 hours of inspection.",
   },
   {
-    question: "Do I need to wipe my device first?",
+    question: "Do I need to erase my phone before selling?",
     answer: "You can, but you don't have to. We securely erase all data during our intake process. Either way, your personal information is protected.",
   },
 ];
@@ -46,10 +46,10 @@ const TradeIn = () => {
   return (
     <>
       <Helmet>
-        <title>Trade In Your Device | Get More Than Carrier Trade-Ins | Mobile Tech Lab Winnipeg</title>
+        <title>Sell Your Phone Winnipeg | Get Cash for Used Devices | Mobile Tech Lab</title>
         <meta 
           name="description" 
-          content="Trade in phones, tablets, laptops, game consoles, and wearables. Get more than carrier programs. Use credit toward repairs or pre-owned devices. Free shipping." 
+          content="Sell your used phone, tablet, or laptop in Winnipeg. Get cash or store credit same-day. We pay more than carriers. Free shipping on mail-ins. Working or damaged devices accepted." 
         />
         <link rel="canonical" href="https://mobiletechlab.ca/trade-in" />
       </Helmet>
@@ -64,7 +64,7 @@ const TradeIn = () => {
         <Requirements />
         <B2BCallout />
         <LocationCards serviceAreaNote="Drop off your trade-in at our Winnipeg location for same-day quotes and payment." />
-        <FAQSection deviceName="Trade-In" faqs={TRADE_IN_FAQS} />
+        <FAQSection deviceName="Sell Your Phone" faqs={SELL_PHONE_FAQS} />
       </main>
 
       <Footer />

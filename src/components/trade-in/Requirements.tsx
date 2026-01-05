@@ -6,9 +6,9 @@ export const Requirements = () => {
     <section className="py-16 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Important Requirements</h2>
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Sell Requirements</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Before sending your device, please review what we can and cannot accept.
+            Before selling your device, please review what we can and cannot buy.
           </p>
         </div>
 

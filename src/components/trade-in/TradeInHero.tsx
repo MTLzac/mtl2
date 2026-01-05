@@ -16,21 +16,21 @@ export const TradeInHero = () => {
           </div>
           
           <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Trade In Your Device
+            Sell Your Phone in Winnipeg
           </h1>
           
           <p className="mb-2 text-xl font-medium text-foreground/90 md:text-2xl">
-            Get More Than Carrier Trade-In Programs
+            Get Cash for Your Used Phone, Tablet, or Laptop
           </p>
           
           <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-            Turn your old phones, tablets, laptops, and gaming devices into credit toward repairs or pre-owned purchases. Working or damaged—we'll quote it. Free prepaid shipping included.
+            Sell your used iPhone, Samsung, iPad, MacBook, or gaming console for cash or store credit. We buy working and damaged devices. Drop off in Winnipeg for same-day payment or ship free with our prepaid label.
           </p>
           
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Button size="lg" className="gradient-primary text-lg" asChild>
               <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
-                Get a Trade-In Quote
+                Get a Cash Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
