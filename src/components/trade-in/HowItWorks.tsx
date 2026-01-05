@@ -28,9 +28,9 @@ export const HowItWorks = () => {
     <section className="py-16 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">How It Works</h2>
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">How to Sell Your Device</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Trading in your device is quick and easy—just four simple steps.
+            Selling your device is quick and easy—just four simple steps.
           </p>
         </div>
 

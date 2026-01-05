@@ -29,9 +29,9 @@ export const WhyTradeIn = () => {
     <section className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Why Trade In With Us?</h2>
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Why Sell to Mobile Tech Lab?</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Get more value for your old devices with our straightforward trade-in program.
+            Get more cash for your used devices with our straightforward sell program.
           </p>
         </div>
 
