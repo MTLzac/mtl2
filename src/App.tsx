@@ -28,6 +28,7 @@ import VivoRepair from "./pages/repair/VivoRepair";
 // Tablet Repair Pages
 import SamsungGalaxyTabRepair from "./pages/repair/SamsungGalaxyTabRepair";
 import IPadRepair from "./pages/repair/iPadRepair";
+import AmazonKindleRepair from "./pages/repair/AmazonKindleRepair";
 
 // Wearable Repair Pages
 import AppleWatchRepair from "./pages/repair/AppleWatchRepair";
@@ -80,8 +81,10 @@ const App = () => (
             
             {/* Tablet Repair Pages */}
             <Route path="/repair/samsung-galaxy-tab" element={<SamsungGalaxyTabRepair />} />
+            <Route path="/repair/galaxy-tab" element={<SamsungGalaxyTabRepair />} />
             <Route path="/repair/ipad" element={<IPadRepair />} />
-            
+            <Route path="/repair/amazon-kindle-fire" element={<AmazonKindleRepair />} />
+
             {/* Wearable Repair Pages */}
             <Route path="/repair/apple-watch" element={<AppleWatchRepair />} />
             
@@ -91,14 +94,17 @@ const App = () => (
             {/* Laptop Repair Pages */}
             <Route path="/repair/macbook" element={<MacBookRepair />} />
             <Route path="/repair/surface" element={<SurfaceRepair />} />
-            
+            <Route path="/repair/microsoft-surface" element={<SurfaceRepair />} />
+
             {/* Console Repair Pages */}
             <Route path="/repair/nintendo-switch" element={<NintendoSwitchRepair />} />
             <Route path="/repair/ps5" element={<PS5Repair />} />
+            <Route path="/repair/playstation-5" element={<PS5Repair />} />
             <Route path="/repair/ps4" element={<PS4Repair />} />
+            <Route path="/repair/playstation-4" element={<PS4Repair />} />
             <Route path="/repair/xbox" element={<XboxRepair />} />
             <Route path="/repair/steam-deck" element={<SteamDeckRepair />} />
-            
+
             {/* Service-Specific Pages */}
             <Route path="/repair/water-damage" element={<WaterDamageRepair />} />
             
