@@ -43,17 +43,17 @@ export const ModelListGrid = ({ deviceName, models, description, categories }: M
                   key={index} 
                   className="group border-border/50 bg-card transition-all hover:border-primary/50 hover:shadow-lg"
                 >
-                  <CardHeader className="pb-3">
-                    <div className="mb-2 inline-flex rounded-full bg-primary/10 p-3 text-primary w-fit">
+                  <CardHeader className="pb-3 text-center">
+                    <div className="mb-2 inline-flex rounded-full bg-primary/10 p-3 text-primary mx-auto">
                       <IconComponent className="h-6 w-6" />
                     </div>
                     <CardTitle className="text-lg">{category.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-4 text-center">
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       {category.description}
                     </p>
-                    <div className="flex flex-wrap gap-1.5">
+                    <div className="flex flex-wrap justify-center gap-1.5">
                       {category.models.slice(0, 3).map((model, modelIndex) => (
                         <Badge 
                           key={modelIndex} 
