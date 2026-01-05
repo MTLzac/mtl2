@@ -51,6 +51,9 @@ import PS4Repair from "./pages/repair/PS4Repair";
 import XboxRepair from "./pages/repair/XboxRepair";
 import SteamDeckRepair from "./pages/repair/SteamDeckRepair";
 
+// B2B / Business Page
+import BusinessRepair from "./pages/BusinessRepair";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -109,6 +112,10 @@ const App = () => (
 
             {/* Service-Specific Pages */}
             <Route path="/repair/water-damage" element={<WaterDamageRepair />} />
+
+            {/* B2B / Business Page */}
+            <Route path="/business" element={<BusinessRepair />} />
+            <Route path="/b2b" element={<BusinessRepair />} />
             
             {/* Contact Page */}
             <Route path="/contact" element={<Contact />} />
