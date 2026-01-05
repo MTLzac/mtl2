@@ -1,6 +1,5 @@
 import { RepairLandingTemplate } from "@/components/repair/RepairLandingTemplate";
 import { Monitor, Battery, Keyboard, Zap, Fan, HardDrive, Cpu, Wrench } from "lucide-react";
-import heroImage from "@/assets/hero-laptop.png";
 
 const SERVICES = [
   {
@@ -168,7 +167,7 @@ const LaptopRepair = () => {
       deviceName="Laptop"
       tagline="Winnipeg's Windows Laptop & Chromebook Repair Experts"
       heroDescription="From cracked screens to dead batteries, overheating issues to keyboard failures—we repair all Windows laptops and Chromebooks. Asus, Acer, Lenovo, HP, Dell, Toshiba, MSI, Razer, and more."
-      heroImage={heroImage}
+      hideHeroImage={true}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We service all major laptop brands. Don't see your specific model? Contact us—we can almost certainly help."
