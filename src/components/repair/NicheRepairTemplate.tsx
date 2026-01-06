@@ -1,13 +1,14 @@
 import { Helmet } from "react-helmet-async";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { WhyChooseUs, AdvantagePillar } from "./WhyChooseUs";
 import { LocationCards } from "./LocationCards";
 import { FAQSection, FAQ } from "./FAQSection";
 import { StickyQuoteCTA } from "./StickyQuoteCTA";
-import { Header } from "../layout/Header";
-import { Footer } from "../layout/Footer";
-import { Phone, AlertTriangle, CheckCircle2, LucideIcon } from "lucide-react";
+import { CheckCircle, LucideIcon, Package, Phone, AlertTriangle } from "lucide-react";
 
 export interface ApproachStep {
   step: number;
@@ -21,35 +22,24 @@ export interface CompetitorProblem {
   description: string;
 }
 
-export interface NicheRepairTemplateProps {
-  // SEO
+interface NicheRepairTemplateProps {
   metaTitle: string;
   metaDescription: string;
-  
-  // Hero
   headline: string;
   subheadline: string;
   heroDescription: string;
   urgentBadge?: string;
-  
-  // Proof of Repair
   proofImage: string;
   proofImageAlt: string;
   proofCaption: string;
-  
-  // Our Approach
   approachSteps: ApproachStep[];
-  
-  // Why Others Can't Help
   competitorProblems: CompetitorProblem[];
-  
-  // FAQs
   deviceName: string;
   faqs: FAQ[];
-  
-  // Optional customizations
   advantagePillars?: AdvantagePillar[];
   serviceAreaNote?: string;
+  mailInAvailable?: boolean;
+  mailInDescription?: string;
 }
 
 export const NicheRepairTemplate = ({
@@ -58,7 +48,7 @@ export const NicheRepairTemplate = ({
   headline,
   subheadline,
   heroDescription,
-  urgentBadge = "Specialized Repair",
+  urgentBadge,
   proofImage,
   proofImageAlt,
   proofCaption,
@@ -68,6 +58,8 @@ export const NicheRepairTemplate = ({
   faqs,
   advantagePillars,
   serviceAreaNote,
+  mailInAvailable = false,
+  mailInDescription = "Can't visit in person? We accept mail-in repairs from across Canada and internationally. Ship your device to us, and we'll have it repaired and back to you quickly.",
 }: NicheRepairTemplateProps) => {
   return (
     <>
@@ -86,10 +78,20 @@ export const NicheRepairTemplate = ({
           <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-16 md:py-24">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-3xl text-center">
-                <Badge variant="secondary" className="mb-4 bg-destructive/10 text-destructive border-destructive/20">
-                  <AlertTriangle className="mr-1 h-3 w-3" />
-                  {urgentBadge}
-                </Badge>
+                <div className="mb-4 flex flex-wrap items-center justify-center gap-3">
+                  {urgentBadge && (
+                    <Badge variant="secondary" className="bg-destructive/10 text-destructive border-destructive/20">
+                      <AlertTriangle className="mr-1 h-3 w-3" />
+                      {urgentBadge}
+                    </Badge>
+                  )}
+                  {mailInAvailable && (
+                    <Badge variant="secondary" className="bg-primary/10 text-primary border-primary/20">
+                      <Package className="mr-1 h-3 w-3" />
+                      Mail-In Service Available
+                    </Badge>
+                  )}
+                </div>
                 
                 <h1 className="mb-4 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
                   {headline}
@@ -138,7 +140,7 @@ export const NicheRepairTemplate = ({
                       />
                     </div>
                     <Badge className="absolute -bottom-3 left-4 bg-green-600 text-white hover:bg-green-600">
-                      <CheckCircle2 className="mr-1 h-3 w-3" />
+                      <CheckCircle className="mr-1 h-3 w-3" />
                       Repair Complete
                     </Badge>
                   </div>
@@ -232,10 +234,40 @@ export const NicheRepairTemplate = ({
             </div>
           </section>
           
+          {/* Why Choose Us */}
           <WhyChooseUs customPillars={advantagePillars} />
+
+          {/* Mail-In Callout */}
+          {mailInAvailable && (
+            <section className="bg-primary/5 py-12 md:py-16">
+              <div className="container mx-auto px-4">
+                <div className="mx-auto max-w-3xl text-center">
+                  <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2">
+                    <Package className="h-5 w-5 text-primary" />
+                    <span className="font-medium text-primary">Mail-In Repairs</span>
+                  </div>
+                  <h2 className="mb-4 text-2xl font-bold md:text-3xl">
+                    Can't Find Anyone Local?
+                  </h2>
+                  <p className="mb-6 text-muted-foreground">
+                    {mailInDescription}
+                  </p>
+                  <Button size="lg" asChild>
+                    <a href="/contact">Get Mail-In Quote</a>
+                  </Button>
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Locations */}
+          <LocationCards 
+            serviceAreaNote={serviceAreaNote} 
+            showMailIn={mailInAvailable}
+            heading={mailInAvailable ? "Visit Us or Mail It In" : undefined}
+          />
           
-          <LocationCards serviceAreaNote={serviceAreaNote} />
-          
+          {/* FAQ */}
           <FAQSection deviceName={deviceName} faqs={faqs} />
         </main>
         

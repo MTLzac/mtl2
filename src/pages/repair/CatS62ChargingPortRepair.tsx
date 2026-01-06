@@ -83,6 +83,10 @@ const faqs: FAQ[] = [
     answer: "CAT doesn't offer repair service in Canada, and most repair shops don't have the micro-soldering equipment or expertise needed for this repair. The charging port isn't a modular component — it's soldered directly to the motherboard."
   },
   {
+    question: "Do you accept mail-in repairs?",
+    answer: "Yes! We regularly receive devices from across Canada and internationally from customers who can't find anyone local to perform these specialized repairs. Contact us for shipping instructions and a quote. We'll diagnose the issue and keep you informed throughout the process."
+  },
+  {
     question: "Do you have CAT S62 parts in stock?",
     answer: "We maintain relationships with specialty suppliers and can often source compatible parts quickly. In some cases, we can adapt similar charging ports to work with the CAT S62. Contact us to discuss your specific situation."
   },
@@ -99,12 +103,13 @@ const faqs: FAQ[] = [
 const CatS62ChargingPortRepair = () => {
   return (
     <NicheRepairTemplate
-      metaTitle="CAT S62 Charging Port Repair Winnipeg | Same-Day Micro-Soldering"
-      metaDescription="CAT S62 not charging? Mobile Tech Lab specializes in micro-soldering repairs for rugged phones. When the manufacturer says no, we say yes. Same-day service available."
+      metaTitle="CAT S62 Charging Port Repair | Micro-Soldering Specialists"
+      metaDescription="CAT S62 not charging? We specialize in micro-soldering repairs for rugged phones. Mail-in service available. Based in Winnipeg, MB."
       headline="CAT S62 Won't Charge?"
       subheadline="We've Fixed This Before — Same Day"
-      heroDescription="Your rugged phone deserves a repair shop that won't give up. We specialize in micro-soldering repairs for devices that other shops turn away."
+      heroDescription="Your rugged phone deserves a repair shop that won't give up. We specialize in micro-soldering repairs for devices that other shops turn away. Based in Winnipeg, MB — mail-in repairs welcome."
       urgentBadge="Rugged Phone Specialist"
+      mailInAvailable={true}
       proofImage={proofImage}
       proofImageAlt="CAT S62 smartphone with successfully repaired charging port at Mobile Tech Lab"
       proofCaption="This CAT S62 came in completely dead — the charging port had failed. Parts aren't available domestically and the manufacturer doesn't offer repair service in Canada. Using our micro-soldering expertise and parts resourcefulness, we had this device charging and back to the customer same day."
@@ -113,6 +118,7 @@ const CatS62ChargingPortRepair = () => {
       deviceName="CAT S62"
       faqs={faqs}
       advantagePillars={advantagePillars}
+      serviceAreaNote="Can't visit in person? We accept mail-in repairs from across Canada and internationally."
     />
   );
 };
