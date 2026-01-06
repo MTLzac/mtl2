@@ -8,7 +8,7 @@ import { WhyChooseUs, AdvantagePillar } from "./WhyChooseUs";
 import { LocationCards } from "./LocationCards";
 import { FAQSection, FAQ } from "./FAQSection";
 import { StickyQuoteCTA } from "./StickyQuoteCTA";
-import { CheckCircle, LucideIcon, Package, Phone, AlertTriangle } from "lucide-react";
+import { CheckCircle, LucideIcon, Package, Phone, MessageSquare, AlertTriangle } from "lucide-react";
 
 export interface ApproachStep {
   step: number;
@@ -40,6 +40,7 @@ interface NicheRepairTemplateProps {
   serviceAreaNote?: string;
   mailInAvailable?: boolean;
   mailInDescription?: string;
+  smsNumber?: string;
 }
 
 export const NicheRepairTemplate = ({
@@ -60,7 +61,9 @@ export const NicheRepairTemplate = ({
   serviceAreaNote,
   mailInAvailable = false,
   mailInDescription = "Can't visit in person? We accept mail-in repairs from across Canada and internationally. Ship your device to us, and we'll have it repaired and back to you quickly.",
+  smsNumber = "2045009757",
 }: NicheRepairTemplateProps) => {
+  const smsMessage = encodeURIComponent(`Hi, I found your site searching for ${deviceName} repair. Can you help?`);
   return (
     <>
       <Helmet>
@@ -113,11 +116,20 @@ export const NicheRepairTemplate = ({
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" className="h-12 px-8 text-base" asChild>
-                    <a href="https://mobiletechlab.ca/pages/get-a-quote" target="_blank" rel="noopener noreferrer">
-                      Get a Free Quote
+                    <a href={`sms:+1${smsNumber}?body=${smsMessage}`}>
+                      <MessageSquare className="mr-2 h-5 w-5" />
+                      Text Us: (204) 500-9757
                     </a>
                   </Button>
                 </div>
+                <a 
+                  href="https://mobiletechlab.ca/pages/get-a-quote" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-block text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
+                >
+                  Prefer email? Get a free quote online
+                </a>
               </div>
             </div>
             
@@ -152,12 +164,20 @@ export const NicheRepairTemplate = ({
                     <p className="mb-6 text-muted-foreground leading-relaxed">
                       {proofCaption}
                     </p>
-                    <Button size="lg" className="h-12" asChild>
-                      <a href="tel:2049001054">
-                        <Phone className="mr-2 h-5 w-5" />
-                        Get Your Device Fixed
-                      </a>
-                    </Button>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <Button size="lg" className="h-12" asChild>
+                        <a href="tel:2049001054">
+                          <Phone className="mr-2 h-5 w-5" />
+                          Call to Get Started
+                        </a>
+                      </Button>
+                      <Button size="lg" variant="outline" className="h-12" asChild>
+                        <a href={`sms:+1${smsNumber}?body=${smsMessage}`}>
+                          <MessageSquare className="mr-2 h-5 w-5" />
+                          Text Us
+                        </a>
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </div>
