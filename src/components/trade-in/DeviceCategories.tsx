@@ -78,7 +78,7 @@ export const DeviceCategories = () => {
                 <Button 
                   variant="outline" 
                   size="sm" 
-                  className="w-full border-primary/40 bg-primary/10 text-primary hover:bg-primary/15 hover:border-primary/60"
+                  className="w-full border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/70 hover:text-primary"
                   asChild
                 >
                   <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
