@@ -81,7 +81,7 @@ export const RepairWaysToSave = ({ deviceName }: RepairWaysToSaveProps) => {
               
               <Button 
                 size="lg"
-                className="h-12 w-full rounded-lg border border-primary/40 bg-primary/10 text-primary font-medium shadow-sm transition-all duration-200 hover:bg-primary/15 hover:border-primary/60 hover:shadow-md active:scale-[0.98]" 
+                className="h-12 w-full rounded-lg border border-primary/40 bg-primary/10 text-primary font-medium shadow-sm transition-all duration-200 hover:bg-primary/15 hover:border-primary/60 hover:text-primary hover:shadow-md active:scale-[0.98]" 
                 asChild
               >
                 <Link to="/trade-in">
