@@ -35,7 +35,7 @@ export const ModelListGrid = ({ deviceName, models, description, categories }: M
             </p>
           </div>
           
-          <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto flex max-w-5xl flex-wrap justify-center gap-6">
             {categories.map((category, index) => {
               const IconComponent = CATEGORY_ICONS[index % CATEGORY_ICONS.length];
               return (
