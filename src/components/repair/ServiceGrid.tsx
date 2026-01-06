@@ -28,11 +28,11 @@ export const ServiceGrid = ({ services, deviceName }: ServiceGridProps) => {
           </p>
         </div>
         
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-6">
           {services.map((service, index) => (
             <Card 
               key={index}
-              className="group border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-lg"
+              className="group w-full border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-lg sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
             >
               <CardContent className="p-6">
                 <div className="mb-4 inline-flex rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
