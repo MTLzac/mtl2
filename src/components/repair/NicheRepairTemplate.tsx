@@ -122,14 +122,6 @@ export const NicheRepairTemplate = ({
                     </a>
                   </Button>
                 </div>
-                <a 
-                  href="https://mobiletechlab.ca/pages/get-a-quote" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-block text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
-                >
-                  Prefer email? Get a free quote online
-                </a>
               </div>
             </div>
             
