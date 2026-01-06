@@ -46,6 +46,7 @@ import WaterDamageRepair from "./pages/repair/WaterDamageRepair";
 
 // Niche Repair Pages
 import CatS62ChargingPortRepair from "./pages/repair/CatS62ChargingPortRepair";
+import BlackMagicHDMIRepair from "./pages/repair/BlackMagicHDMIRepair";
 // Console Repair Pages
 import NintendoSwitchRepair from "./pages/repair/NintendoSwitchRepair";
 import PS5Repair from "./pages/repair/PS5Repair";
@@ -120,6 +121,9 @@ const App = () => (
 
             {/* Niche Repair Pages */}
             <Route path="/repair/cat-s62-charging-port" element={<CatS62ChargingPortRepair />} />
+            <Route path="/repair/blackmagic-hdmi" element={<BlackMagicHDMIRepair />} />
+            <Route path="/repair/bmpcc-hdmi" element={<BlackMagicHDMIRepair />} />
+            <Route path="/repair/blackmagic-pocket-4k-hdmi" element={<BlackMagicHDMIRepair />} />
 
             {/* B2B / Business Page */}
             <Route path="/business" element={<BusinessRepair />} />
