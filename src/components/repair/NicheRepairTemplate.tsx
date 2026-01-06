@@ -110,9 +110,9 @@ export const NicheRepairTemplate = ({
                 
                 <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
                   <Button size="lg" className="h-12 px-8 text-base" asChild>
-                    <a href="tel:2049001054">
+                    <a href="tel:2045009757">
                       <Phone className="mr-2 h-5 w-5" />
-                      Call Now: (204) 900-1054
+                      Call Now: (204) 500-9757
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" className="h-12 px-8 text-base" asChild>
@@ -158,7 +158,7 @@ export const NicheRepairTemplate = ({
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <Button size="lg" className="h-12" asChild>
-                        <a href="tel:2049001054">
+                        <a href="tel:2045009757">
                           <Phone className="mr-2 h-5 w-5" />
                           Call to Get Started
                         </a>
