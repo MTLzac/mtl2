@@ -135,9 +135,9 @@ export const Header = () => {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link to="/pre-owned" className="px-4 py-2 text-sm font-medium hover:text-primary">
+              <a href="https://shop.mobiletechlab.ca" target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-sm font-medium hover:text-primary">
                 Pre-Owned
-              </Link>
+              </a>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
@@ -216,13 +216,15 @@ export const Header = () => {
               >
                 Trade-In
               </Link>
-              <Link 
-                to="/pre-owned" 
+              <a 
+                href="https://shop.mobiletechlab.ca" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="block text-lg font-medium"
                 onClick={() => setMobileOpen(false)}
               >
                 Pre-Owned
-              </Link>
+              </a>
               <Link 
                 to="/contact" 
                 className="block text-lg font-medium"
