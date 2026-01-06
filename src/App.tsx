@@ -44,6 +44,8 @@ import LaptopRepair from "./pages/repair/LaptopRepair";
 // Service-Specific Pages
 import WaterDamageRepair from "./pages/repair/WaterDamageRepair";
 
+// Niche Repair Pages
+import CatS62ChargingPortRepair from "./pages/repair/CatS62ChargingPortRepair";
 // Console Repair Pages
 import NintendoSwitchRepair from "./pages/repair/NintendoSwitchRepair";
 import PS5Repair from "./pages/repair/PS5Repair";
@@ -115,6 +117,9 @@ const App = () => (
 
             {/* Service-Specific Pages */}
             <Route path="/repair/water-damage" element={<WaterDamageRepair />} />
+
+            {/* Niche Repair Pages */}
+            <Route path="/repair/cat-s62-charging-port" element={<CatS62ChargingPortRepair />} />
 
             {/* B2B / Business Page */}
             <Route path="/business" element={<BusinessRepair />} />
