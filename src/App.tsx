@@ -122,8 +122,6 @@ const App = () => (
             {/* Niche Repair Pages */}
             <Route path="/repair/cat-s62-charging-port" element={<CatS62ChargingPortRepair />} />
             <Route path="/repair/blackmagic-hdmi" element={<BlackMagicHDMIRepair />} />
-            <Route path="/repair/bmpcc-hdmi" element={<BlackMagicHDMIRepair />} />
-            <Route path="/repair/blackmagic-pocket-4k-hdmi" element={<BlackMagicHDMIRepair />} />
 
             {/* B2B / Business Page */}
             <Route path="/business" element={<BusinessRepair />} />

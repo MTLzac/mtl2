@@ -1,5 +1,6 @@
 import { NicheRepairTemplate } from "@/components/repair/NicheRepairTemplate";
 import { Ban, XCircle, HelpCircle, Search, Gamepad2, Package, Heart } from "lucide-react";
+import bmpccWorkstation from "@/assets/repairs/bmpcc-hdmi-repair-workstation.png";
 
 const approachSteps = [
   {
@@ -109,9 +110,9 @@ const BlackMagicHDMIRepair = () => {
       subheadline="HDMI Port & Controller IC Replacement"
       heroDescription="Is your BMPCC 4K or 6K showing no HDMI output? We fix BlackMagic Pocket Cinema Camera HDMI ports and the controller IC chip when others can't. Based in Winnipeg, MB - mail-in repairs welcome from anywhere in Canada."
       urgentBadge="Pro Video Equipment Specialist"
-      proofImage="/placeholder.svg"
-      proofImageAlt="BlackMagic Pocket Cinema Camera HDMI port repair"
-      proofCaption="We diagnose both HDMI port and controller IC failures - the two most common reasons for BMPCC HDMI output problems."
+      proofImage={bmpccWorkstation}
+      proofImageAlt="BlackMagic Pocket Cinema Camera HDMI port repair workstation"
+      proofCaption="Our professional micro-soldering workstation where we diagnose and repair BMPCC 4K and 6K HDMI port and controller IC failures. We use the same precision equipment for gaming console HDMI repairs."
       approachSteps={approachSteps}
       competitorProblems={competitorProblems}
       advantagePillars={advantagePillars}
@@ -119,6 +120,13 @@ const BlackMagicHDMIRepair = () => {
       faqs={faqs}
       mailInAvailable={true}
       mailInDescription="Ship your BMPCC 4K or 6K from anywhere in Canada for professional HDMI port or controller IC repair. We provide packaging guidance and quick turnaround for filmmakers who can't be without their camera."
+      youtubeVideoId="nlnYBiuD6VU"
+      youtubeVideoTitle="Watch Our BMPCC HDMI Repair Process"
+      relatedRepairs={[
+        { label: "PS5 HDMI Repair", href: "/repair/ps5" },
+        { label: "Xbox HDMI Repair", href: "/repair/xbox" },
+        { label: "Nintendo Switch Repair", href: "/repair/nintendo-switch" },
+      ]}
     />
   );
 };
