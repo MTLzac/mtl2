@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Phone, Smartphone, Tablet, Gamepad2, Laptop, Watch } from "lucide-react";
+import { Menu, Phone, Smartphone, Tablet, Gamepad2, Laptop, Watch, Wrench } from "lucide-react";
 import { PRIMARY_PHONE, PRIMARY_PHONE_FORMATTED } from "@/lib/locations";
 import logo from "@/assets/logo.png";
 
@@ -68,6 +68,15 @@ const REPAIR_CATEGORIES = [
       { name: "Apple Watch", href: "/repair/apple-watch" },
       { name: "iPod", href: "/repair/ipod" },
       { name: "Water Damage", href: "/repair/water-damage" },
+    ],
+  },
+  {
+    title: "Specialty Repairs",
+    icon: Wrench,
+    items: [
+      { name: "Steam Deck", href: "/repair/steam-deck" },
+      { name: "CAT S62 Charging Port", href: "/repair/cat-s62-charging-port" },
+      { name: "BlackMagic HDMI", href: "/repair/blackmagic-hdmi" },
     ],
   },
 ];
