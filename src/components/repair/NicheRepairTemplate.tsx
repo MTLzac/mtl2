@@ -8,7 +8,7 @@ import { WhyChooseUs, AdvantagePillar } from "./WhyChooseUs";
 import { LocationCards } from "./LocationCards";
 import { FAQSection, FAQ } from "./FAQSection";
 import { StickyQuoteCTA } from "./StickyQuoteCTA";
-import { CheckCircle, LucideIcon, Package, Phone, MessageSquare, AlertTriangle, Play, ArrowRight } from "lucide-react";
+import { CheckCircle, LucideIcon, Package, Phone, MessageSquare, AlertTriangle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export interface ApproachStep {
@@ -143,22 +143,37 @@ export const NicheRepairTemplate = ({
               <div className="mx-auto max-w-5xl">
                 <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
                   <div className="relative">
-                    <div className="overflow-hidden rounded-xl border border-border bg-background shadow-lg">
-                      <img 
-                        src={proofImage} 
-                        alt={proofImageAlt}
-                        className="h-auto w-full object-cover"
-                      />
-                    </div>
-                    <Badge className="absolute -bottom-3 left-4 bg-green-600 text-white hover:bg-green-600">
-                      <CheckCircle className="mr-1 h-3 w-3" />
-                      Repair Complete
-                    </Badge>
+                    {youtubeVideoId ? (
+                      <div className="overflow-hidden rounded-xl border border-border bg-background shadow-lg aspect-video">
+                        <iframe 
+                          className="w-full h-full"
+                          src={`https://www.youtube.com/embed/${youtubeVideoId}`}
+                          title={youtubeVideoTitle}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      </div>
+                    ) : (
+                      <>
+                        <div className="overflow-hidden rounded-xl border border-border bg-background shadow-lg">
+                          <img 
+                            src={proofImage} 
+                            alt={proofImageAlt}
+                            className="h-auto w-full object-cover"
+                          />
+                        </div>
+                        <Badge className="absolute -bottom-3 left-4 bg-green-600 text-white hover:bg-green-600">
+                          <CheckCircle className="mr-1 h-3 w-3" />
+                          Repair Complete
+                        </Badge>
+                      </>
+                    )}
                   </div>
                   
                   <div>
                     <h2 className="mb-4 text-2xl font-bold text-foreground md:text-3xl">
-                      We Fixed This Exact Device
+                      {youtubeVideoId ? "Watch the Repair Process" : "We Fixed This Exact Device"}
                     </h2>
                     <p className="mb-6 text-muted-foreground leading-relaxed">
                       {proofCaption}
@@ -252,39 +267,6 @@ export const NicheRepairTemplate = ({
               </div>
             </div>
           </section>
-
-          {/* Video Section */}
-          {youtubeVideoId && (
-            <section className="py-16 md:py-20">
-              <div className="container mx-auto px-4">
-                <div className="mx-auto max-w-3xl text-center mb-10">
-                  <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2">
-                    <Play className="h-5 w-5 text-primary" />
-                    <span className="font-medium text-primary">Video Walkthrough</span>
-                  </div>
-                  <h2 className="mb-4 text-3xl font-bold text-foreground">
-                    {youtubeVideoTitle}
-                  </h2>
-                  <p className="text-muted-foreground">
-                    See exactly how we diagnose and repair this device
-                  </p>
-                </div>
-                
-                <div className="mx-auto max-w-4xl">
-                  <div className="relative overflow-hidden rounded-xl border border-border bg-background shadow-lg aspect-video">
-                    <iframe 
-                      className="absolute inset-0 w-full h-full"
-                      src={`https://www.youtube.com/embed/${youtubeVideoId}`}
-                      title={youtubeVideoTitle}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
-              </div>
-            </section>
-          )}
 
           {/* Related Repairs */}
           {relatedRepairs && relatedRepairs.length > 0 && (
