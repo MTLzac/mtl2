@@ -38,6 +38,12 @@ export function TierCard({ tier, tierInfo, animationClass, isHighlighted }: Tier
         <Badge className={cn("w-fit mx-auto mb-2 text-sm font-medium", tierInfo.badgeClass)}>
           {tierInfo.name}
         </Badge>
+        <p className={cn(
+          "text-lg font-semibold",
+          tier === "premium" ? "text-primary" : "text-foreground"
+        )}>
+          {tierInfo.priceIndicator}
+        </p>
         <p className="text-muted-foreground text-sm">{tierInfo.tagline}</p>
       </CardHeader>
 

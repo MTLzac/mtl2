@@ -6,6 +6,7 @@ export interface TierInfo {
   name: string;
   tagline: string;
   badgeClass: string;
+  priceIndicator: string;
   benefits: string[];
 }
 
@@ -25,6 +26,7 @@ export const TIER_INFO: Record<TierType, TierInfo> = {
     name: "Value",
     tagline: "Budget-Friendly",
     badgeClass: "bg-muted text-muted-foreground",
+    priceIndicator: "Save up to 40%",
     benefits: [
       "Most affordable option",
       "Quality tested & inspected",
@@ -37,6 +39,7 @@ export const TIER_INFO: Record<TierType, TierInfo> = {
     name: "Premium",
     tagline: "Best Balance",
     badgeClass: "bg-primary/10 text-primary border border-primary/20",
+    priceIndicator: "Best Value",
     benefits: [
       "Enhanced color accuracy",
       "Better touch responsiveness",
@@ -49,6 +52,7 @@ export const TIER_INFO: Record<TierType, TierInfo> = {
     name: "Genuine",
     tagline: "Factory Original",
     badgeClass: "bg-success/10 text-success border border-success/20",
+    priceIndicator: "Factory Original",
     benefits: [
       "Factory-original Apple parts",
       "True Tone support retained",
