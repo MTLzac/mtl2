@@ -60,6 +60,9 @@ import BusinessRepair from "./pages/BusinessRepair";
 // Trade-In Page
 import TradeIn from "./pages/TradeIn";
 
+// Screen Quality Page
+import ScreenQuality from "./pages/ScreenQuality";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -129,6 +132,9 @@ const App = () => (
 
             {/* Trade-In Page */}
             <Route path="/trade-in" element={<TradeIn />} />
+
+            {/* Screen Quality Page */}
+            <Route path="/screen-quality" element={<ScreenQuality />} />
             
             {/* Contact Page */}
             <Route path="/contact" element={<Contact />} />
