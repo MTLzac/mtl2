@@ -1,7 +1,8 @@
 import { Smartphone, Tablet, Laptop, Gamepad2, Watch } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const QUOTE_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 
@@ -11,30 +12,40 @@ const categories = [
     title: "Sell iPhone & Android Phones",
     models: ["iPhone", "Samsung Galaxy", "Google Pixel", "OnePlus"],
     description: "Sell your used iPhone, Samsung Galaxy, Google Pixel, or Android phone for cash. Cracked or working.",
+    repairLink: "/repair/samsung",
+    repairLabel: "phone repair",
   },
   {
     icon: Tablet,
     title: "Sell iPad & Tablets",
     models: ["iPad", "Samsung Galaxy Tab", "Surface", "Amazon Fire"],
     description: "Sell your iPad, Samsung Galaxy Tab, or Surface tablet. All sizes and generations.",
+    repairLink: "/repair/ipad",
+    repairLabel: "tablet repair",
   },
   {
     icon: Laptop,
     title: "Sell MacBook & Laptops",
     models: ["MacBook", "Windows laptops", "Chromebooks", "Desktop PCs"],
     description: "Sell your MacBook, Windows laptop, or Chromebook. Even older models have value.",
+    repairLink: "/repair/macbook",
+    repairLabel: "laptop repair",
   },
   {
     icon: Gamepad2,
     title: "Sell Game Consoles & Games",
     models: ["PlayStation", "Xbox", "Nintendo Switch", "Steam Deck"],
     description: "Sell PlayStation, Xbox, Nintendo Switch, Steam Deck, and game discs.",
+    repairLink: "/repair/nintendo-switch",
+    repairLabel: "console repair",
   },
   {
     icon: Watch,
     title: "Sell Apple Watch & Wearables",
     models: ["Apple Watch", "Samsung Galaxy Watch", "Fitbit"],
     description: "Sell your Apple Watch, Samsung Galaxy Watch, or fitness tracker.",
+    repairLink: "/repair/apple-watch",
+    repairLabel: "wearable repair",
   },
 ];
 
@@ -75,17 +86,25 @@ export const DeviceCategories = () => {
                     </span>
                   ))}
                 </div>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/70 hover:text-primary"
-                  asChild
-                >
-                  <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
-                    Sell This Device
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
+                <div className="space-y-2">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="w-full border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 hover:border-primary/70 hover:text-primary"
+                    asChild
+                  >
+                    <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
+                      Sell This Device
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <p className="text-xs text-muted-foreground">
+                    Changed your mind?{" "}
+                    <Link to={category.repairLink} className="text-primary hover:underline">
+                      Get {category.repairLabel} instead
+                    </Link>
+                  </p>
+                </div>
               </CardContent>
             </Card>
           ))}
