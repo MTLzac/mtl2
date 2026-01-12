@@ -1,5 +1,6 @@
 import { DollarSign, ArrowLeftRight, Truck, Zap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const advantages = [
   {
@@ -10,7 +11,13 @@ const advantages = [
   {
     icon: ArrowLeftRight,
     title: "Use It Your Way",
-    description: "Apply your credit toward a repair bill or a pre-owned device purchase.",
+    description: (
+      <>
+        Apply your credit toward a{" "}
+        <Link to="/repair/samsung" className="text-primary hover:underline">repair bill</Link>
+        {" "}or a pre-owned device purchase.
+      </>
+    ),
   },
   {
     icon: Truck,

@@ -14,7 +14,7 @@ import { StickyQuoteCTA } from "@/components/repair/StickyQuoteCTA";
 const SELL_PHONE_FAQS = [
   {
     question: "How do I sell my phone in Winnipeg?",
-    answer: "Submit your device details through our quote form or drop by our Winnipeg location. We'll assess your phone and provide a cash offer based on the model and condition.",
+    answer: "Submit your device details through our quote form or <a href='/contact' class='text-primary hover:underline'>drop by our Winnipeg location</a>. We'll assess your phone and provide a cash offer based on the model and condition.",
   },
   {
     question: "Can I get cash for my used phone?",
@@ -23,6 +23,14 @@ const SELL_PHONE_FAQS = [
   {
     question: "Do you buy broken phones?",
     answer: "Absolutely! Cracked screens, battery issues, water damage—we buy phones in any condition. If you'd rather fix it, check out our <a href='/repair/samsung' class='text-primary hover:underline'>Samsung repair</a> or <a href='/repair/ipad' class='text-primary hover:underline'>iPad repair</a> services.",
+  },
+  {
+    question: "Should I repair or sell my phone?",
+    answer: "It depends on the damage and your device's value. Minor issues like cracked screens are often worth repairing—<a href='/screen-quality' class='text-primary hover:underline'>compare screen quality options</a> to see pricing. For older devices or major damage, selling may get you more value. <a href='/repair/samsung' class='text-primary hover:underline'>Get a repair quote</a> to compare.",
+  },
+  {
+    question: "Can you recover data from my phone before I sell it?",
+    answer: "Yes! We offer data recovery for phones, tablets, and laptops. Normally $129, but when bundled with a trade-in, it's just $49. We'll transfer your photos, contacts, and files to a USB drive or cloud backup before processing your device.",
   },
   {
     question: "Why won't you buy locked phones?",

@@ -1,4 +1,5 @@
 import { ClipboardList, Package, Search, CreditCard } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const steps = [
   {
@@ -19,7 +20,13 @@ const steps = [
   {
     icon: CreditCard,
     title: "Get Paid",
-    description: "Receive store credit toward repairs or pre-owned devices. In-store? Get cash or E-Transfer same-day.",
+    description: (
+      <>
+        Receive store credit toward{" "}
+        <Link to="/repair/samsung" className="text-primary hover:underline">repairs</Link>
+        {" "}or pre-owned devices. In-store? Get cash or E-Transfer same-day.
+      </>
+    ),
   },
 ];
 
