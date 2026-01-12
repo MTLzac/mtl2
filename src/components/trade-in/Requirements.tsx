@@ -97,13 +97,8 @@ export const Requirements = () => {
                 <div>
                   <h3 className="mb-1 font-semibold">Need Your Data First?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Selling a phone with photos, contacts, or files you haven't backed up? We'll recover your data before we buy your device.
+                    Selling a phone with photos, contacts, or files you haven't backed up? We can recover your data before we buy your device — and bundle it with your trade-in for a discount.
                   </p>
-                </div>
-                <div className="inline-flex items-center gap-3 rounded-lg bg-primary/10 px-4 py-2">
-                  <span className="text-sm text-muted-foreground line-through">$129</span>
-                  <span className="text-lg font-bold text-primary">$49</span>
-                  <span className="text-sm font-medium text-primary">Save $80 with trade-in</span>
                 </div>
                 <Button 
                   variant="outline" 
@@ -112,7 +107,7 @@ export const Requirements = () => {
                   asChild
                 >
                   <a href="https://shop.mobiletechlab.ca/pages/repair2" target="_blank" rel="noopener noreferrer">
-                    Add Data Recovery to Quote
+                    Ask About Data Recovery
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
