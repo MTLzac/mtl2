@@ -30,7 +30,7 @@ const SELL_PHONE_FAQS = [
   },
   {
     question: "Can you recover data from my phone before I sell it?",
-    answer: "Yes! We offer data recovery for phones, tablets, and laptops. Normally $129, but when bundled with a trade-in, it's just $49. We'll transfer your photos, contacts, and files to a USB drive or cloud backup before processing your device.",
+    answer: "Yes! We offer data recovery for phones, tablets, and laptops. When bundled with a trade-in, you'll save on the recovery fee. We'll transfer your photos, contacts, and files to a USB drive or cloud backup before processing your device. Ask for a quote when you submit your trade-in.",
   },
   {
     question: "Why won't you buy locked phones?",
