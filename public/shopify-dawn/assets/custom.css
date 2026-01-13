@@ -1,0 +1,701 @@
+/* ==========================================================================
+   Mobile Tech Lab - Shopify Dawn Custom Styles
+   Design System Alignment for shop.mobiletechlab.ca
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Design Tokens)
+   -------------------------------------------------------------------------- */
+
+:root {
+  /* Brand Colors */
+  --mtl-primary: 4 74% 56%;           /* #E53935 - Red */
+  --mtl-primary-hover: 4 72% 47%;     /* #C62828 - Darker Red */
+  --mtl-foreground: 220 18% 15%;      /* #21252b - Dark text */
+  --mtl-muted: 220 9% 46%;            /* #6b7280 - Muted text */
+  --mtl-muted-foreground: 220 9% 46%;
+  --mtl-background: 0 0% 100%;        /* #ffffff */
+  --mtl-secondary-bg: 0 0% 96%;       /* #f5f5f5 */
+  --mtl-border: 0 0% 90%;             /* #e5e5e5 */
+  --mtl-success: 142 76% 36%;         /* #16a34a - Green */
+  --mtl-amber: 32 95% 44%;            /* #d97706 - Amber/Orange */
+  
+  /* Typography */
+  --mtl-font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  /* Spacing & Sizing */
+  --mtl-radius: 8px;
+  --mtl-radius-lg: 12px;
+  --mtl-radius-full: 9999px;
+  
+  /* Shadows */
+  --mtl-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --mtl-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --mtl-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --mtl-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* --------------------------------------------------------------------------
+   2. Global Typography Overrides
+   -------------------------------------------------------------------------- */
+
+body,
+.shopify-section {
+  font-family: var(--mtl-font-family);
+  color: hsl(var(--mtl-foreground));
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--mtl-font-family);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: hsl(var(--mtl-foreground));
+}
+
+h1, .h1 { font-size: 2.25rem; line-height: 2.5rem; }
+h2, .h2 { font-size: 1.875rem; line-height: 2.25rem; }
+h3, .h3 { font-size: 1.5rem; line-height: 2rem; }
+h4, .h4 { font-size: 1.25rem; line-height: 1.75rem; }
+
+@media screen and (min-width: 750px) {
+  h1, .h1 { font-size: 3rem; line-height: 1.2; }
+  h2, .h2 { font-size: 2.25rem; line-height: 2.5rem; }
+  h3, .h3 { font-size: 1.875rem; line-height: 2.25rem; }
+}
+
+/* --------------------------------------------------------------------------
+   3. Button Styles
+   -------------------------------------------------------------------------- */
+
+/* Primary Button */
+.button,
+.shopify-payment-button button,
+button.button--primary,
+.button--primary {
+  background-color: hsl(var(--mtl-primary));
+  color: white;
+  border: none;
+  border-radius: var(--mtl-radius);
+  font-family: var(--mtl-font-family);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+  box-shadow: var(--mtl-shadow-sm);
+}
+
+.button:hover,
+.shopify-payment-button button:hover,
+button.button--primary:hover,
+.button--primary:hover {
+  background-color: hsl(var(--mtl-primary-hover));
+  transform: translateY(-1px);
+  box-shadow: var(--mtl-shadow-md);
+}
+
+/* Secondary/Outline Button */
+.button--secondary,
+button.button--secondary {
+  background-color: transparent;
+  color: hsl(var(--mtl-primary));
+  border: 2px solid hsl(var(--mtl-primary));
+  border-radius: var(--mtl-radius);
+  font-family: var(--mtl-font-family);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.button--secondary:hover,
+button.button--secondary:hover {
+  background-color: hsl(var(--mtl-primary) / 0.1);
+}
+
+/* Soft Button Variant (MTL signature style) */
+.mtl-btn-soft {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: hsl(var(--mtl-primary) / 0.1);
+  color: hsl(var(--mtl-primary));
+  border: 1px solid hsl(var(--mtl-primary) / 0.4);
+  border-radius: var(--mtl-radius);
+  font-family: var(--mtl-font-family);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.625rem 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.mtl-btn-soft:hover {
+  background-color: hsl(var(--mtl-primary) / 0.15);
+  border-color: hsl(var(--mtl-primary) / 0.6);
+}
+
+/* Primary Solid Button */
+.mtl-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: hsl(var(--mtl-primary));
+  color: white;
+  border: none;
+  border-radius: var(--mtl-radius);
+  font-family: var(--mtl-font-family);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.mtl-btn-primary:hover {
+  background-color: hsl(var(--mtl-primary-hover));
+  transform: translateY(-1px);
+  box-shadow: var(--mtl-shadow-md);
+}
+
+/* Outline Button */
+.mtl-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: hsl(var(--mtl-foreground));
+  border: 2px solid hsl(var(--mtl-border));
+  border-radius: var(--mtl-radius);
+  font-family: var(--mtl-font-family);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.625rem 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.mtl-btn-outline:hover {
+  border-color: hsl(var(--mtl-foreground));
+  background-color: hsl(var(--mtl-foreground) / 0.05);
+}
+
+/* Amber Button (for Data Recovery) */
+.mtl-btn-amber {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: hsl(var(--mtl-amber) / 0.1);
+  color: hsl(var(--mtl-amber));
+  border: 1px solid hsl(var(--mtl-amber) / 0.4);
+  border-radius: var(--mtl-radius);
+  font-family: var(--mtl-font-family);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.625rem 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.mtl-btn-amber:hover {
+  background-color: hsl(var(--mtl-amber) / 0.15);
+  border-color: hsl(var(--mtl-amber) / 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   4. Card Styles
+   -------------------------------------------------------------------------- */
+
+.card,
+.product-card,
+.collection-card {
+  border-radius: var(--mtl-radius-lg);
+  border: 1px solid hsl(var(--mtl-border));
+  background-color: hsl(var(--mtl-background));
+  box-shadow: var(--mtl-shadow);
+  transition: all 0.2s ease;
+}
+
+.card:hover,
+.product-card:hover,
+.collection-card:hover {
+  box-shadow: var(--mtl-shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Accent Border Card */
+.mtl-card-accent {
+  border-left: 4px solid hsl(var(--mtl-primary));
+}
+
+/* --------------------------------------------------------------------------
+   5. Trust Bar Styles
+   -------------------------------------------------------------------------- */
+
+.mtl-trust-bar {
+  background-color: hsl(var(--mtl-secondary-bg));
+  border-top: 1px solid hsl(var(--mtl-border));
+  border-bottom: 1px solid hsl(var(--mtl-border));
+  padding: 1rem 0;
+}
+
+.mtl-trust-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .mtl-trust-items {
+    gap: 3rem;
+  }
+}
+
+.mtl-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--mtl-foreground));
+}
+
+.mtl-trust-item svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: hsl(var(--mtl-primary));
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. Condition Selector Styles
+   -------------------------------------------------------------------------- */
+
+.mtl-condition-selector {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background-color: hsl(var(--mtl-secondary-bg));
+  border-radius: var(--mtl-radius-lg);
+  border: 1px solid hsl(var(--mtl-border));
+}
+
+.mtl-condition-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: hsl(var(--mtl-foreground));
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mtl-condition-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mtl-condition-option {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: hsl(var(--mtl-background));
+  border: 2px solid hsl(var(--mtl-border));
+  border-radius: var(--mtl-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mtl-condition-option:hover {
+  border-color: hsl(var(--mtl-primary) / 0.5);
+}
+
+.mtl-condition-option.mtl-condition-selected,
+.mtl-condition-option:has(input:checked) {
+  border-color: hsl(var(--mtl-primary));
+  background-color: hsl(var(--mtl-primary) / 0.05);
+}
+
+.mtl-condition-option input[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: hsl(var(--mtl-primary));
+}
+
+.mtl-condition-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--mtl-radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.mtl-badge-success {
+  background-color: hsl(var(--mtl-success) / 0.1);
+  color: hsl(var(--mtl-success));
+}
+
+.mtl-badge-primary {
+  background-color: hsl(var(--mtl-primary) / 0.1);
+  color: hsl(var(--mtl-primary));
+}
+
+.mtl-badge-amber {
+  background-color: hsl(var(--mtl-amber) / 0.1);
+  color: hsl(var(--mtl-amber));
+}
+
+.mtl-condition-desc {
+  flex: 1 1 100%;
+  font-size: 0.875rem;
+  color: hsl(var(--mtl-muted));
+  margin-left: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .mtl-condition-desc {
+    flex: 1;
+    margin-left: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Product Trust Badges
+   -------------------------------------------------------------------------- */
+
+.mtl-product-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background-color: hsl(var(--mtl-secondary-bg));
+  border-radius: var(--mtl-radius);
+}
+
+.mtl-trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: hsl(var(--mtl-foreground));
+}
+
+.mtl-trust-badge svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: hsl(var(--mtl-success));
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. Bundle Upsell Cards
+   -------------------------------------------------------------------------- */
+
+.mtl-bundle-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.mtl-bundle-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: var(--mtl-radius-lg);
+  transition: all 0.2s ease;
+}
+
+.mtl-bundle-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--mtl-shadow-md);
+}
+
+/* Trade-In Bundle (Primary Red) */
+.mtl-bundle-primary {
+  background-color: hsl(var(--mtl-primary) / 0.05);
+  border: 1px solid hsl(var(--mtl-primary) / 0.2);
+  border-left: 4px solid hsl(var(--mtl-primary));
+}
+
+.mtl-bundle-primary .mtl-bundle-icon {
+  color: hsl(var(--mtl-primary));
+}
+
+/* Data Recovery Bundle (Amber) */
+.mtl-bundle-amber {
+  background-color: hsl(var(--mtl-amber) / 0.05);
+  border: 1px solid hsl(var(--mtl-amber) / 0.2);
+  border-left: 4px solid hsl(var(--mtl-amber));
+}
+
+.mtl-bundle-amber .mtl-bundle-icon {
+  color: hsl(var(--mtl-amber));
+}
+
+/* Repair Bundle (Outline) */
+.mtl-bundle-outline {
+  background-color: hsl(var(--mtl-background));
+  border: 1px solid hsl(var(--mtl-border));
+  border-left: 4px solid hsl(var(--mtl-muted));
+}
+
+.mtl-bundle-outline .mtl-bundle-icon {
+  color: hsl(var(--mtl-muted));
+}
+
+.mtl-bundle-icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mtl-bundle-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mtl-bundle-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.mtl-bundle-content h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  color: hsl(var(--mtl-foreground));
+}
+
+.mtl-bundle-content p {
+  font-size: 0.875rem;
+  color: hsl(var(--mtl-muted));
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   9. Trade-In Banner Section
+   -------------------------------------------------------------------------- */
+
+.mtl-trade-in-banner {
+  background-color: hsl(var(--mtl-foreground));
+  color: white;
+  padding: 4rem 0;
+}
+
+.mtl-trade-in-banner .page-width {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 990px) {
+  .mtl-trade-in-banner .page-width {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+}
+
+.mtl-trade-in-content h2 {
+  font-size: 1.875rem;
+  color: white;
+  margin: 0 0 0.5rem 0;
+}
+
+.mtl-trade-in-content p {
+  font-size: 1.125rem;
+  color: hsl(0 0% 100% / 0.8);
+  margin: 0;
+}
+
+.mtl-trade-in-banner .mtl-btn-primary {
+  font-size: 1rem;
+  padding: 1rem 2rem;
+}
+
+/* --------------------------------------------------------------------------
+   10. Repair Services Section
+   -------------------------------------------------------------------------- */
+
+.mtl-services-section {
+  padding: 4rem 0;
+  background-color: hsl(var(--mtl-secondary-bg));
+}
+
+.mtl-section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.mtl-section-header h2 {
+  margin: 0 0 0.75rem 0;
+}
+
+.mtl-section-header p {
+  font-size: 1.125rem;
+  color: hsl(var(--mtl-muted));
+  margin: 0;
+}
+
+.mtl-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .mtl-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .mtl-services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mtl-service-card {
+  background-color: hsl(var(--mtl-background));
+  border: 1px solid hsl(var(--mtl-border));
+  border-radius: var(--mtl-radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.mtl-service-card:hover {
+  box-shadow: var(--mtl-shadow-lg);
+  transform: translateY(-4px);
+}
+
+.mtl-service-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(var(--mtl-primary) / 0.1);
+  border-radius: var(--mtl-radius);
+  color: hsl(var(--mtl-primary));
+}
+
+.mtl-service-icon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mtl-service-card h3 {
+  font-size: 1.125rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.mtl-service-card p {
+  font-size: 0.875rem;
+  color: hsl(var(--mtl-muted));
+  margin: 0;
+  line-height: 1.6;
+}
+
+.mtl-services-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   11. Form Styles
+   -------------------------------------------------------------------------- */
+
+.field__input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+  font-family: var(--mtl-font-family);
+  border-radius: var(--mtl-radius);
+  border: 1px solid hsl(var(--mtl-border));
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.field__input:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  border-color: hsl(var(--mtl-primary));
+  box-shadow: 0 0 0 3px hsl(var(--mtl-primary) / 0.1);
+  outline: none;
+}
+
+/* --------------------------------------------------------------------------
+   12. Utility Classes
+   -------------------------------------------------------------------------- */
+
+.mtl-text-primary { color: hsl(var(--mtl-primary)); }
+.mtl-text-muted { color: hsl(var(--mtl-muted)); }
+.mtl-text-success { color: hsl(var(--mtl-success)); }
+.mtl-text-amber { color: hsl(var(--mtl-amber)); }
+
+.mtl-bg-primary { background-color: hsl(var(--mtl-primary)); }
+.mtl-bg-secondary { background-color: hsl(var(--mtl-secondary-bg)); }
+
+.mtl-font-semibold { font-weight: 600; }
+.mtl-font-bold { font-weight: 700; }
+
+.mtl-tracking-tight { letter-spacing: -0.025em; }
+
+.mtl-rounded { border-radius: var(--mtl-radius); }
+.mtl-rounded-lg { border-radius: var(--mtl-radius-lg); }
+
+.mtl-shadow { box-shadow: var(--mtl-shadow); }
+.mtl-shadow-md { box-shadow: var(--mtl-shadow-md); }
+.mtl-shadow-lg { box-shadow: var(--mtl-shadow-lg); }
+
+/* --------------------------------------------------------------------------
+   13. Animation Classes
+   -------------------------------------------------------------------------- */
+
+@keyframes mtl-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mtl-animate-fade-in {
+  animation: mtl-fade-in 0.3s ease-out;
+}
+
+/* Hover lift effect */
+.mtl-hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mtl-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--mtl-shadow-lg);
+}
