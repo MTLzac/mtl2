@@ -1,0 +1,184 @@
+<!-- ==========================================================================
+   Mobile Tech Lab - Repair Services Section
+   File: sections/mtl-repair-services.liquid
+   ========================================================================== -->
+
+<section class="mtl-services-section">
+  <div class="page-width">
+    <div class="mtl-section-header">
+      <h2>{{ section.settings.heading }}</h2>
+      {% if section.settings.subheading != blank %}
+        <p>{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+    
+    <div class="mtl-services-grid">
+      {% for block in section.blocks %}
+        <div class="mtl-service-card mtl-hover-lift" {{ block.shopify_attributes }}>
+          <div class="mtl-service-icon">
+            {% case block.settings.icon %}
+              {% when 'smartphone' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+              {% when 'tablet' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><line x1="12" x2="12.01" y1="18" y2="18"/></svg>
+              {% when 'laptop' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
+              {% when 'monitor' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+              {% when 'battery' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="2" y="7" rx="2" ry="2"/><line x1="22" x2="22" y1="11" y2="13"/><line x1="6" x2="6" y1="11" y2="13"/><line x1="10" x2="10" y1="11" y2="13"/></svg>
+              {% when 'droplet' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+              {% when 'hard-drive' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="2" y1="12" y2="12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" x2="6.01" y1="16" y2="16"/><line x1="10" x2="10.01" y1="16" y2="16"/></svg>
+              {% when 'gamepad' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>
+              {% when 'wrench' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              {% when 'shield' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>
+            {% endcase %}
+          </div>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    
+    {% if section.settings.cta_text != blank %}
+      <div class="mtl-services-cta">
+        <a href="{{ section.settings.cta_link }}" class="mtl-btn-primary">
+          {{ section.settings.cta_text }}
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "MTL Repair Services",
+  "tag": "section",
+  "class": "section-mtl-services",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Need a Repair Instead?"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Same-day repairs on phones, tablets, laptops, and gaming consoles at two Manitoba locations."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "View All Repairs"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link",
+      "default": "https://mobiletechlab.ca"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "smartphone", "label": "Smartphone" },
+            { "value": "tablet", "label": "Tablet" },
+            { "value": "laptop", "label": "Laptop" },
+            { "value": "monitor", "label": "Monitor" },
+            { "value": "battery", "label": "Battery" },
+            { "value": "droplet", "label": "Water/Droplet" },
+            { "value": "hard-drive", "label": "Hard Drive" },
+            { "value": "gamepad", "label": "Gaming" },
+            { "value": "wrench", "label": "Wrench" },
+            { "value": "shield", "label": "Shield" }
+          ],
+          "default": "smartphone"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Screen Repair"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Same-day screen repairs for iPhones, Samsung, and more."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MTL Repair Services",
+      "blocks": [
+        {
+          "type": "service",
+          "settings": {
+            "icon": "smartphone",
+            "title": "Screen Repair",
+            "description": "Same-day screen repairs for iPhones, Samsung, Google Pixel, and more."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "icon": "battery",
+            "title": "Battery Replacement",
+            "description": "Restore your device's battery life with genuine replacement batteries."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "icon": "droplet",
+            "title": "Water Damage",
+            "description": "Professional cleaning and repair for water-damaged devices."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "icon": "hard-drive",
+            "title": "Data Recovery",
+            "description": "Recover photos, contacts, and files from damaged or broken devices."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "icon": "gamepad",
+            "title": "Console Repair",
+            "description": "PlayStation, Xbox, and Nintendo Switch repairs and modifications."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "icon": "laptop",
+            "title": "Laptop Repair",
+            "description": "MacBook and PC laptop screen, keyboard, and hardware repairs."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
