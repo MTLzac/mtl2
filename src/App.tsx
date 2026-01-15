@@ -63,6 +63,9 @@ import TradeIn from "./pages/TradeIn";
 // Screen Quality Page
 import ScreenQuality from "./pages/ScreenQuality";
 
+// Draft Pages (hidden from production)
+import PDPv2Draft from "./pages/draft/PDPv2Draft";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -138,6 +141,9 @@ const App = () => (
             
             {/* Contact Page */}
             <Route path="/contact" element={<Contact />} />
+
+            {/* Draft Pages - Hidden from production */}
+            <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
