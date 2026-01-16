@@ -103,8 +103,8 @@ const mockProduct = {
       answer: "Our 1-year warranty covers manufacturer defects and hardware failures only. Physical damage (drops, cracks) and liquid damage are excluded. If your device has covered issues, bring it to either of our Manitoba locations for free diagnosis and repair or replacement."
     },
     {
-      question: "Can I return the device if I'm not satisfied?",
-      answer: "Yes! We offer a 14-day return policy. If you're not completely satisfied, return the device in its original condition for a full refund."
+      question: "What if something goes wrong with my device?",
+      answer: "Our 1-year defects-only warranty covers you. If your device develops a hardware defect, bring it to either of our Manitoba locations and we'll repair or replace it free of charge. Physical and liquid damage are not covered."
     },
     {
       question: "What's the difference between condition grades?",

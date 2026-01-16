@@ -29,8 +29,8 @@ const PDPTrustPanel = () => {
     },
     {
       icon: Truck,
-      title: "Free shipping & 14‑day returns",
-      subtitle: "Across Manitoba; pickup available"
+      title: "Free Manitoba shipping",
+      subtitle: "Fast delivery or pickup in Winnipeg & Thompson"
     }
   ];
 
