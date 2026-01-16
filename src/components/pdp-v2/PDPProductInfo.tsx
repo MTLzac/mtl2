@@ -1,4 +1,5 @@
 import { Star, Smartphone, CheckCircle } from "lucide-react";
+import PDPBnplSection from "./PDPBnplSection";
 
 interface Condition {
   value: string;
@@ -83,30 +84,22 @@ const PDPProductInfo = ({ product, selectedCondition }: PDPProductInfoProps) => 
         </span>
       </button>
 
-      {/* Price Display */}
-      <div className="flex items-baseline gap-3 pt-2">
-        <span className="text-3xl lg:text-4xl font-bold text-foreground">
-          ${selectedCondition.price.toFixed(2)}
-        </span>
-        <span className="text-lg text-muted-foreground line-through">
-          ${product.compareAtPrice.toFixed(2)}
-        </span>
-        <span className="inline-flex items-center px-2 py-0.5 bg-success/10 text-success text-sm font-semibold rounded">
-          Save {savingsPercent}%
-        </span>
-      </div>
-
-      {/* Stock Indicator */}
-      <div className="flex items-center gap-2 text-sm">
-        {selectedCondition.stock <= 3 ? (
-          <span className="text-amber-600 font-medium">
-            ⚡ Only {selectedCondition.stock} left in {selectedCondition.label} condition
+      {/* Price Display - Primary Visual Anchor */}
+      <div className="pt-2">
+        <div className="flex items-baseline gap-3">
+          <span className="text-3xl lg:text-4xl font-bold text-foreground">
+            ${selectedCondition.price.toFixed(2)}
           </span>
-        ) : (
-          <span className="text-success font-medium">
-            ✓ In stock — {selectedCondition.stock} available
+          <span className="text-lg text-muted-foreground line-through">
+            ${product.compareAtPrice.toFixed(2)}
           </span>
-        )}
+          <span className="inline-flex items-center px-2 py-0.5 bg-success/10 text-success text-sm font-semibold rounded">
+            Save {savingsPercent}%
+          </span>
+        </div>
+        
+        {/* BNPL Section - Secondary to price */}
+        <PDPBnplSection price={selectedCondition.price} />
       </div>
     </div>
   );
