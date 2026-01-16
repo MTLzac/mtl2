@@ -9,7 +9,6 @@ import PDPTrustPanel from "@/components/pdp-v2/PDPTrustPanel";
 import PDPTrustBadges from "@/components/pdp-v2/PDPTrustBadges";
 import PDPReviews from "@/components/pdp-v2/PDPReviews";
 import PDPPrimaryUpgrades from "@/components/pdp-v2/PDPPrimaryUpgrades";
-import PDPSecondaryUpsells from "@/components/pdp-v2/PDPSecondaryUpsells";
 import PDPStickyMobileCTA from "@/components/pdp-v2/PDPStickyMobileCTA";
 import PDPFAQAccordion from "@/components/pdp-v2/PDPFAQAccordion";
 import PDPStructuredData from "@/components/pdp-v2/PDPStructuredData";
@@ -123,6 +122,8 @@ const mockProduct = {
 // Upgrade pricing constants
 const BATTERY_UPGRADE_PRICE = 100;
 const DAMAGE_PROTECTION_PRICE = 49;
+const CASE_BUNDLE_PRICE = 19;
+const SCREEN_PROTECTOR_PRICE = 19.99;
 
 const PDPv2Draft = () => {
   // Track all selected variant options
@@ -135,6 +136,8 @@ const PDPv2Draft = () => {
   // Track upgrade selections
   const [batteryUpgrade, setBatteryUpgrade] = useState(false);
   const [damageProtection, setDamageProtection] = useState(false);
+  const [caseAddon, setCaseAddon] = useState(false);
+  const [screenProtector, setScreenProtector] = useState(false);
 
   const handleVariantSelect = (groupName: string, value: string) => {
     setSelectedValues(prev => ({
@@ -149,8 +152,20 @@ const PDPv2Draft = () => {
   // Calculate total price including upgrades
   const upgradesTotal = 
     (batteryUpgrade ? BATTERY_UPGRADE_PRICE : 0) + 
-    (damageProtection ? DAMAGE_PROTECTION_PRICE : 0);
+    (damageProtection ? DAMAGE_PROTECTION_PRICE : 0) +
+    (caseAddon ? CASE_BUNDLE_PRICE : 0) +
+    (screenProtector ? SCREEN_PROTECTOR_PRICE : 0);
   const currentPrice = basePrice + upgradesTotal;
+
+  // Get location inventory for selected condition (simulating variant metafields)
+  const conditionInventory: Record<string, { winnipeg: number; thompson: number }> = {
+    renewed: { winnipeg: 1, thompson: 1 },
+    excellent: { winnipeg: 2, thompson: 1 },
+    "very good": { winnipeg: 4, thompson: 2 },
+    good: { winnipeg: 3, thompson: 2 },
+    fair: { winnipeg: 1, thompson: 0 },
+  };
+  const locationStock = conditionInventory[selectedValues.Condition] || { winnipeg: 0, thompson: 0 };
   
   // Get stock for selected condition
   const selectedConditionOption = mockProduct.variantGroups
@@ -232,14 +247,20 @@ const PDPv2Draft = () => {
                 prices={mockProduct.conditionPrices}
               />
               
-              {/* PRIMARY UPGRADES - Battery & Protection (Above Add to Cart) */}
+              {/* PRIMARY UPGRADES - Battery, Protection, Case, Screen Protector (Above Add to Cart) */}
               <PDPPrimaryUpgrades
                 batteryUpgrade={batteryUpgrade}
                 damageProtection={damageProtection}
+                caseAddon={caseAddon}
+                screenProtector={screenProtector}
                 onBatteryUpgradeChange={setBatteryUpgrade}
                 onDamageProtectionChange={setDamageProtection}
+                onCaseAddonChange={setCaseAddon}
+                onScreenProtectorChange={setScreenProtector}
                 batteryUpgradePrice={BATTERY_UPGRADE_PRICE}
                 damageProtectionPrice={DAMAGE_PROTECTION_PRICE}
+                caseBundlePrice={CASE_BUNDLE_PRICE}
+                screenProtectorPrice={SCREEN_PROTECTOR_PRICE}
               />
               
               {/* Stock Status */}
@@ -259,22 +280,23 @@ const PDPv2Draft = () => {
                 )}
               </div>
               
-              {/* Location-specific pickup availability */}
-              <p className="text-sm text-muted-foreground mt-1">
-                {mockProduct.locationInventory.winnipeg > 0 || mockProduct.locationInventory.thompson > 0 ? (
+              {/* Location-specific pickup availability - updates per variant */}
+              <p className="text-xs text-muted-foreground mt-1">
+                {locationStock.winnipeg > 0 || locationStock.thompson > 0 ? (
                   <>
-                    {mockProduct.locationInventory.winnipeg > 0 && (
-                      <span>{mockProduct.locationInventory.winnipeg} in Winnipeg</span>
+                    <span className="font-medium">Pickup:</span>{" "}
+                    {locationStock.winnipeg > 0 && (
+                      <span>Winnipeg ({locationStock.winnipeg})</span>
                     )}
-                    {mockProduct.locationInventory.winnipeg > 0 && mockProduct.locationInventory.thompson > 0 && (
-                      <span> / </span>
+                    {locationStock.winnipeg > 0 && locationStock.thompson > 0 && (
+                      <span> • </span>
                     )}
-                    {mockProduct.locationInventory.thompson > 0 && (
-                      <span>{mockProduct.locationInventory.thompson} in Thompson</span>
+                    {locationStock.thompson > 0 && (
+                      <span>Thompson ({locationStock.thompson})</span>
                     )}
                   </>
                 ) : (
-                  "Ready for pickup in Winnipeg and Thompson locations"
+                  "Ships from our warehouse"
                 )}
               </p>
               
@@ -301,9 +323,6 @@ const PDPv2Draft = () => {
           reviewCount={mockProduct.reviewCount} 
         />
 
-        {/* SECONDARY UPSELLS - Accessories (Below the Fold) */}
-        <PDPSecondaryUpsells />
-
         {/* Product Description */}
         <section className="container mx-auto px-4 py-8 border-t border-border">
           <h2 className="text-2xl font-bold mb-4">Product Details</h2>
@@ -321,7 +340,7 @@ const PDPv2Draft = () => {
       <PDPStickyMobileCTA 
         price={currentPrice} 
         productTitle={mockProduct.title}
-        hasUpgrades={batteryUpgrade || damageProtection}
+        hasUpgrades={batteryUpgrade || damageProtection || caseAddon || screenProtector}
       />
       
       <Footer />
