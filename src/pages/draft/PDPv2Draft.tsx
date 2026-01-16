@@ -27,6 +27,11 @@ const mockProduct = {
     "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=600&h=600&fit=crop",
     "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=600&h=600&fit=crop",
   ],
+  // Location-specific inventory (simulating Shopify metafields)
+  locationInventory: {
+    winnipeg: 5,
+    thompson: 2,
+  },
   // Variant options with stock aggregation
   variantGroups: [
     {
@@ -92,8 +97,8 @@ const mockProduct = {
       answer: "Your iPhone SE comes with a USB-C to Lightning cable, SIM ejector tool, and 1-year warranty card. Original box and accessories may vary."
     },
     {
-      question: "How does the 1-year warranty work?",
-      answer: "Our 1-year warranty covers manufacturer defects and hardware failures (excluding physical and liquid damage). If your device has issues, bring it to either of our Manitoba locations for free diagnosis and repair or replacement."
+      question: "How does the 1-year defects-only warranty work?",
+      answer: "Our 1-year warranty covers manufacturer defects and hardware failures only. Physical damage (drops, cracks) and liquid damage are excluded. If your device has covered issues, bring it to either of our Manitoba locations for free diagnosis and repair or replacement."
     },
     {
       question: "Can I return the device if I'm not satisfied?",
@@ -225,9 +230,23 @@ const PDPv2Draft = () => {
                 )}
               </div>
               
-              {/* Pickup availability */}
+              {/* Location-specific pickup availability */}
               <p className="text-sm text-muted-foreground mt-1">
-                Ready for pickup in Winnipeg and Thompson locations
+                {mockProduct.locationInventory.winnipeg > 0 || mockProduct.locationInventory.thompson > 0 ? (
+                  <>
+                    {mockProduct.locationInventory.winnipeg > 0 && (
+                      <span>{mockProduct.locationInventory.winnipeg} in Winnipeg</span>
+                    )}
+                    {mockProduct.locationInventory.winnipeg > 0 && mockProduct.locationInventory.thompson > 0 && (
+                      <span> / </span>
+                    )}
+                    {mockProduct.locationInventory.thompson > 0 && (
+                      <span>{mockProduct.locationInventory.thompson} in Thompson</span>
+                    )}
+                  </>
+                ) : (
+                  "Ready for pickup in Winnipeg and Thompson locations"
+                )}
               </p>
               
               {/* Add to Cart Button */}
