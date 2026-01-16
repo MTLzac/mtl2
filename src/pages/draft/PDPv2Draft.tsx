@@ -56,6 +56,7 @@ const mockProduct = {
     {
       name: "Condition",
       options: [
+        { value: "renewed", label: "Renewed", available: true, stock: 2 },
         { value: "excellent", label: "Excellent", available: true, stock: 3 },
         { value: "very good", label: "Very Good", available: true, stock: 6 },
         { value: "good", label: "Good", available: true, stock: 8 },
@@ -65,6 +66,7 @@ const mockProduct = {
   ],
   // Price by condition
   conditionPrices: {
+    renewed: 289.00,
     excellent: 239.00,
     "very good": 219.00,
     good: 199.00,
