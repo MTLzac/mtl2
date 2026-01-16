@@ -1,4 +1,4 @@
-import { ShoppingCart } from "lucide-react";
+import { ShoppingCart, Shield } from "lucide-react";
 
 interface PDPStickyMobileCTAProps {
   price: number;
@@ -27,9 +27,12 @@ const PDPStickyMobileCTA = ({ price, productTitle }: PDPStickyMobileCTAProps) =>
           </button>
         </div>
 
-        {/* Trust Line */}
+        {/* Trust Line - Updated for 1-year warranty */}
         <div className="flex items-center justify-center gap-4 mt-2 pt-2 border-t border-border">
-          <span className="text-xs text-success font-medium">✓ 90-Day Warranty</span>
+          <span className="text-xs text-success font-medium flex items-center gap-1">
+            <Shield className="w-3 h-3" />
+            1-Year Warranty
+          </span>
           <span className="text-xs text-muted-foreground">•</span>
           <span className="text-xs text-muted-foreground">Free MB Shipping</span>
           <span className="text-xs text-muted-foreground">•</span>

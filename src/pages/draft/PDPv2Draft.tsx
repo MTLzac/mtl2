@@ -4,7 +4,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import PDPProductGallery from "@/components/pdp-v2/PDPProductGallery";
 import PDPProductInfo from "@/components/pdp-v2/PDPProductInfo";
-import PDPConditionSelector from "@/components/pdp-v2/PDPConditionSelector";
+import PDPVariantSelector from "@/components/pdp-v2/PDPVariantSelector";
+import PDPTrustPanel from "@/components/pdp-v2/PDPTrustPanel";
 import PDPTrustBadges from "@/components/pdp-v2/PDPTrustBadges";
 import PDPReviews from "@/components/pdp-v2/PDPReviews";
 import PDPBundleUpsells from "@/components/pdp-v2/PDPBundleUpsells";
@@ -15,7 +16,7 @@ import PDPStructuredData from "@/components/pdp-v2/PDPStructuredData";
 // Mock product data - would come from Shopify in production
 const mockProduct = {
   id: "iphone-se-2020-64gb",
-  title: "iPhone SE (2020) - 64GB - Unlocked",
+  title: "iPhone SE (2020) - Unlocked",
   vendor: "Apple",
   price: 199.00,
   compareAtPrice: 299.00,
@@ -26,32 +27,41 @@ const mockProduct = {
     "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=600&h=600&fit=crop",
     "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=600&h=600&fit=crop",
   ],
-  conditions: [
+  // Variant options with stock aggregation
+  variantGroups: [
     {
-      value: "excellent",
-      label: "Excellent",
-      description: "Minor signs of use, fully functional. May have light micro-scratches invisible under normal use.",
-      price: 219.00,
-      stock: 3,
-      badge: "success"
+      name: "Storage",
+      options: [
+        { value: "64GB", label: "64GB", available: true, stock: 12 },
+        { value: "128GB", label: "128GB", available: true, stock: 8 },
+        { value: "256GB", label: "256GB", available: true, stock: 3 },
+      ]
     },
     {
-      value: "good",
-      label: "Good",
-      description: "Light scratches, normal wear. Fully functional with visible signs of use that don't affect performance.",
-      price: 199.00,
-      stock: 7,
-      badge: "primary"
+      name: "Colour",
+      options: [
+        { value: "Black", label: "Black", available: true, stock: 15 },
+        { value: "White", label: "White", available: true, stock: 4 },
+        { value: "Red", label: "(PRODUCT)RED", available: false, stock: 0 },
+      ]
     },
     {
-      value: "fair",
-      label: "Fair",
-      description: "Visible wear, minor cosmetic issues. Fully functional but shows character from previous use.",
-      price: 169.00,
-      stock: 2,
-      badge: "amber"
+      name: "Condition",
+      options: [
+        { value: "excellent", label: "Excellent", available: true, stock: 3 },
+        { value: "very good", label: "Very Good", available: true, stock: 6 },
+        { value: "good", label: "Good", available: true, stock: 8 },
+        { value: "fair", label: "Fair", available: true, stock: 2 },
+      ]
     }
   ],
+  // Price by condition
+  conditionPrices: {
+    excellent: 239.00,
+    "very good": 219.00,
+    good: 199.00,
+    fair: 169.00,
+  } as Record<string, number>,
   specs: {
     storage: "64GB",
     carrier: "Unlocked",
@@ -67,10 +77,10 @@ const mockProduct = {
       <li>iPhone SE (2020) - Certified Pre-Owned</li>
       <li>USB-C to Lightning Cable</li>
       <li>SIM Ejector Tool</li>
-      <li>90-Day Warranty Card</li>
+      <li>1-Year Warranty Card</li>
     </ul>
     <h4>Our Certification Process:</h4>
-    <p>Every device passes our rigorous 72-point inspection, including battery health verification, functionality testing, and thorough cleaning. Devices are data-wiped and factory reset.</p>
+    <p>Every device passes our rigorous 90+ point inspection, including battery health verification (≥85%), functionality testing, and thorough professional cleaning. Devices are data-wiped and factory reset.</p>
   `,
   faqs: [
     {
@@ -79,11 +89,11 @@ const mockProduct = {
     },
     {
       question: "What's included with my purchase?",
-      answer: "Your iPhone SE comes with a USB-C to Lightning cable, SIM ejector tool, and 90-day warranty card. Original box and accessories may vary."
+      answer: "Your iPhone SE comes with a USB-C to Lightning cable, SIM ejector tool, and 1-year warranty card. Original box and accessories may vary."
     },
     {
-      question: "How does the 90-day warranty work?",
-      answer: "Our warranty covers manufacturer defects and hardware failures. If your device has issues, bring it to either of our Manitoba locations for free diagnosis and repair or replacement."
+      question: "How does the 1-year warranty work?",
+      answer: "Our 1-year warranty covers manufacturer defects and hardware failures (excluding physical and liquid damage). If your device has issues, bring it to either of our Manitoba locations for free diagnosis and repair or replacement."
     },
     {
       question: "Can I return the device if I'm not satisfied?",
@@ -91,13 +101,50 @@ const mockProduct = {
     },
     {
       question: "What's the difference between condition grades?",
-      answer: "Excellent: Nearly flawless with minimal signs of use. Good: Light scratches and normal wear, fully functional. Fair: Noticeable cosmetic wear but fully functional. All conditions pass our 72-point inspection."
+      answer: "Fair: Visible wear & scratches, fully functional. Good: Minor cosmetic wear, great value. Very Good: Light signs of use, near-perfect. Excellent: Like new condition. All conditions pass our 90+ point inspection and include our 1-year warranty."
+    },
+    {
+      question: "Is the battery health guaranteed?",
+      answer: "Yes! All our devices are guaranteed to have battery health of 85% or higher. This ensures long-lasting performance throughout your ownership."
     }
   ]
 };
 
 const PDPv2Draft = () => {
-  const [selectedCondition, setSelectedCondition] = useState(mockProduct.conditions[1]); // Default to "Good"
+  // Track all selected variant options
+  const [selectedValues, setSelectedValues] = useState<Record<string, string>>({
+    Storage: "64GB",
+    Colour: "Black",
+    Condition: "good"
+  });
+
+  const handleVariantSelect = (groupName: string, value: string) => {
+    setSelectedValues(prev => ({
+      ...prev,
+      [groupName]: value
+    }));
+  };
+
+  // Get current price based on selected condition
+  const currentPrice = mockProduct.conditionPrices[selectedValues.Condition] || mockProduct.price;
+  
+  // Get stock for selected condition
+  const selectedConditionOption = mockProduct.variantGroups
+    .find(g => g.name === "Condition")
+    ?.options.find(o => o.value === selectedValues.Condition);
+  const currentStock = selectedConditionOption?.stock || 0;
+
+  // Create a condition object for compatibility with existing components
+  const selectedCondition = {
+    value: selectedValues.Condition,
+    label: selectedConditionOption?.label || "Good",
+    description: "",
+    price: currentPrice,
+    stock: currentStock,
+    badge: selectedValues.Condition === "excellent" ? "success" : 
+           selectedValues.Condition === "very good" ? "primary" :
+           selectedValues.Condition === "good" ? "primary" : "amber"
+  };
 
   return (
     <>
@@ -105,7 +152,7 @@ const PDPv2Draft = () => {
         <title>{mockProduct.title} | Mobile Tech Lab</title>
         <meta 
           name="description" 
-          content={`Buy certified pre-owned ${mockProduct.title} from $${mockProduct.conditions[2].price}. 90-day warranty, tested & certified. Free shipping in Manitoba.`} 
+          content={`Buy certified pre-owned ${mockProduct.title} from $${mockProduct.conditionPrices.fair}. 1-year warranty, 90+ point tested & certified. Free shipping in Manitoba.`} 
         />
       </Helmet>
       
@@ -114,7 +161,7 @@ const PDPv2Draft = () => {
       
       <Header />
       
-      <main className="min-h-screen bg-background">
+      <main className="min-h-screen bg-background pb-24 lg:pb-0">
         {/* Draft Banner */}
         <div className="bg-amber-500 text-amber-950 text-center py-2 px-4 text-sm font-medium">
           🚧 DRAFT PDP v2 — For Review Only — Not Live 🚧
@@ -142,23 +189,59 @@ const PDPv2Draft = () => {
             {/* Right Column - Product Info */}
             <div className="flex flex-col">
               <PDPProductInfo 
-                product={mockProduct} 
+                product={{
+                  ...mockProduct,
+                  specs: {
+                    ...mockProduct.specs,
+                    storage: selectedValues.Storage,
+                    color: selectedValues.Colour
+                  }
+                }} 
                 selectedCondition={selectedCondition}
               />
               
-              {/* Condition Selector with inline descriptions */}
-              <PDPConditionSelector 
-                conditions={mockProduct.conditions}
-                selectedCondition={selectedCondition}
-                onSelect={setSelectedCondition}
+              {/* Variant Selectors - Storage, Colour, Condition */}
+              <PDPVariantSelector 
+                variantGroups={mockProduct.variantGroups}
+                selectedValues={selectedValues}
+                onSelect={handleVariantSelect}
+                prices={mockProduct.conditionPrices}
               />
+              
+              {/* Stock Status */}
+              <div className="mt-4 text-sm">
+                {currentStock > 0 ? (
+                  currentStock <= 5 ? (
+                    <span className="text-amber-600 font-medium">
+                      ⚡ Only {currentStock} left in {selectedCondition.label} condition
+                    </span>
+                  ) : (
+                    <span className="text-success font-medium">
+                      ✓ In stock — {currentStock} available
+                    </span>
+                  )
+                ) : (
+                  <span className="text-destructive font-medium">Out of stock</span>
+                )}
+              </div>
+              
+              {/* Pickup availability */}
+              <p className="text-sm text-muted-foreground mt-1">
+                Ready for pickup in Winnipeg and Thompson locations
+              </p>
               
               {/* Add to Cart Button */}
-              <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 px-6 rounded-lg text-lg transition-colors mt-6">
-                Add to Cart — ${selectedCondition.price.toFixed(2)} CAD
+              <button 
+                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 px-6 rounded-lg text-lg transition-colors mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
+                disabled={currentStock === 0}
+              >
+                Add to Cart — ${currentPrice.toFixed(2)} CAD
               </button>
               
-              {/* Trust Badges - Consolidated near CTA */}
+              {/* NEW: Trust Panel with 1-year warranty and all reassurances */}
+              <PDPTrustPanel />
+              
+              {/* Quick Trust Badges */}
               <PDPTrustBadges />
               
               {/* Bundle Upsells */}
@@ -188,7 +271,7 @@ const PDPv2Draft = () => {
 
       {/* Sticky Mobile CTA Bar */}
       <PDPStickyMobileCTA 
-        price={selectedCondition.price} 
+        price={currentPrice} 
         productTitle={mockProduct.title}
       />
       

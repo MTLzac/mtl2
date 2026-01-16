@@ -4,12 +4,12 @@ const PDPTrustBadges = () => {
   const badges = [
     {
       icon: Shield,
-      text: "90-Day Warranty",
+      text: "1-Year Warranty",
       highlight: true
     },
     {
       icon: CheckCircle,
-      text: "72-Point Tested"
+      text: "90+ Point Tested"
     },
     {
       icon: Truck,
