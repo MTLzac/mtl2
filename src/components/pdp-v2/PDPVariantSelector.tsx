@@ -22,10 +22,11 @@ interface PDPVariantSelectorProps {
 
 // Condition descriptions for inline display
 const conditionDescriptions: Record<string, string> = {
-  fair: "Visible wear & scratches",
-  good: "Minor cosmetic wear",
+  renewed: "Box, charger, new battery",
+  excellent: "Like new",
   "very good": "Light signs of use",
-  excellent: "Like new"
+  good: "Minor cosmetic wear",
+  fair: "Visible wear & scratches"
 };
 
 const PDPVariantSelector = ({ 
