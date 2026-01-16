@@ -8,7 +8,8 @@ import PDPVariantSelector from "@/components/pdp-v2/PDPVariantSelector";
 import PDPTrustPanel from "@/components/pdp-v2/PDPTrustPanel";
 import PDPTrustBadges from "@/components/pdp-v2/PDPTrustBadges";
 import PDPReviews from "@/components/pdp-v2/PDPReviews";
-import PDPBundleUpsells from "@/components/pdp-v2/PDPBundleUpsells";
+import PDPPrimaryUpgrades from "@/components/pdp-v2/PDPPrimaryUpgrades";
+import PDPSecondaryUpsells from "@/components/pdp-v2/PDPSecondaryUpsells";
 import PDPStickyMobileCTA from "@/components/pdp-v2/PDPStickyMobileCTA";
 import PDPFAQAccordion from "@/components/pdp-v2/PDPFAQAccordion";
 import PDPStructuredData from "@/components/pdp-v2/PDPStructuredData";
@@ -117,6 +118,10 @@ const mockProduct = {
   ]
 };
 
+// Upgrade pricing constants
+const BATTERY_UPGRADE_PRICE = 100;
+const DAMAGE_PROTECTION_PRICE = 49;
+
 const PDPv2Draft = () => {
   // Track all selected variant options
   const [selectedValues, setSelectedValues] = useState<Record<string, string>>({
@@ -124,6 +129,10 @@ const PDPv2Draft = () => {
     Colour: "Black",
     Condition: "good"
   });
+
+  // Track upgrade selections
+  const [batteryUpgrade, setBatteryUpgrade] = useState(false);
+  const [damageProtection, setDamageProtection] = useState(false);
 
   const handleVariantSelect = (groupName: string, value: string) => {
     setSelectedValues(prev => ({
@@ -133,7 +142,13 @@ const PDPv2Draft = () => {
   };
 
   // Get current price based on selected condition
-  const currentPrice = mockProduct.conditionPrices[selectedValues.Condition] || mockProduct.price;
+  const basePrice = mockProduct.conditionPrices[selectedValues.Condition] || mockProduct.price;
+  
+  // Calculate total price including upgrades
+  const upgradesTotal = 
+    (batteryUpgrade ? BATTERY_UPGRADE_PRICE : 0) + 
+    (damageProtection ? DAMAGE_PROTECTION_PRICE : 0);
+  const currentPrice = basePrice + upgradesTotal;
   
   // Get stock for selected condition
   const selectedConditionOption = mockProduct.variantGroups
@@ -215,6 +230,16 @@ const PDPv2Draft = () => {
                 prices={mockProduct.conditionPrices}
               />
               
+              {/* PRIMARY UPGRADES - Battery & Protection (Above Add to Cart) */}
+              <PDPPrimaryUpgrades
+                batteryUpgrade={batteryUpgrade}
+                damageProtection={damageProtection}
+                onBatteryUpgradeChange={setBatteryUpgrade}
+                onDamageProtectionChange={setDamageProtection}
+                batteryUpgradePrice={BATTERY_UPGRADE_PRICE}
+                damageProtectionPrice={DAMAGE_PROTECTION_PRICE}
+              />
+              
               {/* Stock Status */}
               <div className="mt-4 text-sm">
                 {currentStock > 0 ? (
@@ -259,14 +284,11 @@ const PDPv2Draft = () => {
                 Add to Cart — ${currentPrice.toFixed(2)} CAD
               </button>
               
-              {/* NEW: Trust Panel with 1-year warranty and all reassurances */}
+              {/* Trust Panel with 1-year warranty and all reassurances */}
               <PDPTrustPanel />
               
               {/* Quick Trust Badges */}
               <PDPTrustBadges />
-              
-              {/* Bundle Upsells */}
-              <PDPBundleUpsells />
             </div>
           </div>
         </section>
@@ -277,7 +299,10 @@ const PDPv2Draft = () => {
           reviewCount={mockProduct.reviewCount} 
         />
 
-        {/* Product Description (collapsed on mobile) */}
+        {/* SECONDARY UPSELLS - Accessories (Below the Fold) */}
+        <PDPSecondaryUpsells />
+
+        {/* Product Description */}
         <section className="container mx-auto px-4 py-8 border-t border-border">
           <h2 className="text-2xl font-bold mb-4">Product Details</h2>
           <div 
@@ -294,6 +319,7 @@ const PDPv2Draft = () => {
       <PDPStickyMobileCTA 
         price={currentPrice} 
         productTitle={mockProduct.title}
+        hasUpgrades={batteryUpgrade || damageProtection}
       />
       
       <Footer />
