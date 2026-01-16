@@ -13,6 +13,10 @@ import PDPStickyMobileCTA from "@/components/pdp-v2/PDPStickyMobileCTA";
 import PDPFAQAccordion from "@/components/pdp-v2/PDPFAQAccordion";
 import PDPStructuredData from "@/components/pdp-v2/PDPStructuredData";
 
+// Product images
+import iphoneSEFront from "@/assets/pdp/iphone-se-2020-white-front.webp";
+import iphoneSEBack from "@/assets/pdp/iphone-se-2020-white-back.webp";
+
 // Mock product data - would come from Shopify in production
 const mockProduct = {
   id: "iphone-se-2020-64gb",
@@ -22,10 +26,8 @@ const mockProduct = {
   compareAtPrice: 299.00,
   currency: "CAD",
   images: [
-    "https://images.unsplash.com/photo-1592286927505-1def25115558?w=600&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=600&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=600&h=600&fit=crop",
-    "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=600&h=600&fit=crop",
+    iphoneSEFront,
+    iphoneSEBack,
   ],
   // Location-specific inventory (simulating Shopify metafields)
   locationInventory: {
