@@ -107,27 +107,27 @@ const MODELS = [
 const FAQS: FAQ[] = [
   {
     question: "How much does iPhone battery replacement cost in Winnipeg?",
-    answer: "iPhone battery replacement at Mobile Tech Lab starts at $59 for older models and goes up to $99 for newer models like the iPhone 14 and 15 series. We also offer genuine Apple battery upgrades for an additional $100. All battery replacements include a 90-day warranty and are typically completed same-day.",
+    answer: "iPhone battery replacement at Mobile Tech Lab Winnipeg starts at $59 for older models and goes up to $99 for newer models like the iPhone 15 and 16 series. We also offer genuine Apple battery upgrades for an additional $100. All battery replacements include a 90-day warranty and are typically completed same-day at our St. Vital location.",
   },
   {
     question: "Do you offer same-day iPhone screen repair?",
-    answer: "Yes! Most iPhone screen repairs are completed in 1-2 hours while you wait. Walk-ins are welcome at our St. Vital (Winnipeg) and City Centre Mall (Thompson) locations, or you can book an appointment online to guarantee your time slot.",
+    answer: "Yes! Most iPhone screen repairs in Winnipeg are completed in 1-2 hours while you wait. Walk into our St. Vital Centre location anytime during business hours, or book an appointment online to guarantee your time slot. We stock screens for all popular iPhone models.",
   },
   {
-    question: "Are your iPhone repair parts Apple-certified?",
-    answer: "We use high-quality aftermarket parts as standard for cost-effective repairs. For customers who prefer OEM components, we offer genuine Apple battery upgrades for $100 extra. All parts—aftermarket or genuine—are backed by our repair warranty.",
+    question: "Are the parts genuine Apple or equivalent quality?",
+    answer: "We use high-quality aftermarket parts that meet or exceed OEM standards for cost-effective repairs. For customers who prefer genuine components, we offer Apple battery upgrades for $100 extra. All parts are backed by our repair warranty regardless of type.",
   },
   {
-    question: "Do you fix water-damaged iPhones?",
-    answer: "Yes, we specialize in water damage repair. Our technicians use ultrasonic cleaning to remove corrosion and moisture from internal components. The sooner you bring in your device after water exposure, the better the chances of a full recovery. We offer free diagnostics to assess the damage.",
+    question: "Can I walk in or do I need to book ahead?",
+    answer: "Walk-ins are always welcome at our Winnipeg location in St. Vital Centre! No appointment necessary. However, booking online guarantees your time slot and helps us prepare the right parts for your specific iPhone model in advance.",
   },
   {
-    question: "Do I need an appointment or can I walk in?",
-    answer: "Walk-ins are always welcome at both our Winnipeg (St. Vital) and Thompson (City Centre Mall) locations! However, booking an appointment online guarantees your time slot and helps us prepare the right parts for your repair in advance.",
+    question: "What's the warranty on iPhone repairs?",
+    answer: "All iPhone repairs at Mobile Tech Lab come with a warranty. Screen repairs include a lifetime warranty against defects, while battery and other component repairs are covered for 90 days. If anything goes wrong with our work, we'll make it right—guaranteed.",
   },
   {
-    question: "Will I lose my photos and data during iPhone repair?",
-    answer: "No. We never factory reset devices during repairs. Your photos, apps, messages, and all data remain intact during screen, battery, charging port, and most other repairs. For peace of mind, we always recommend backing up your device before any service.",
+    question: "What if I find a cheaper quote in Winnipeg?",
+    answer: "We offer a price match guarantee! If you find a lower quote for the same iPhone repair from any authorized repair shop in Winnipeg, show us the quote and we'll match it. We're confident our combination of quality, speed, and pricing can't be beat.",
   },
 ];
 
@@ -136,12 +136,12 @@ const FAQS: FAQ[] = [
 // ============================================
 const REVIEWS = [
   {
-    quote: "Replaced my iPhone 13 Pro battery in under an hour. Great price and the team was super friendly. My phone feels brand new!",
+    quote: "Got my iPhone 14 screen replaced in under an hour at the St. Vital location. Super fast, affordable, and the staff were incredibly friendly. Best iPhone repair in Winnipeg!",
     author: "Google Review",
     rating: 5,
   },
   {
-    quote: "Cracked my iPhone screen on a Saturday and they fixed it same day. Way cheaper than the Apple Store and just as good quality. Highly recommend!",
+    quote: "My iPhone battery was dying by noon every day. Mobile Tech Lab replaced it same-day for way less than Apple quoted me. Phone works like new again!",
     author: "Google Review",
     rating: 5,
   },
@@ -150,9 +150,9 @@ const REVIEWS = [
 // ============================================
 // 5. SEO CONTENT
 // ============================================
-const WHY_CHOOSE_PARAGRAPH = `At Mobile Tech Lab, we've earned our reputation as Winnipeg's go-to destination for iPhone repairs. Whether you need a quick battery swap or a full screen replacement, our experienced technicians deliver fast, reliable service—most repairs completed same-day while you wait. We're confident in our pricing and offer a price match guarantee against Apple and other local repair shops. With two convenient locations—St. Vital Centre in Winnipeg and City Centre Mall in Thompson—we're never far when your iPhone needs help. Every repair is backed by our warranty, and we use quality parts to ensure your device works like new. From the latest iPhone 16 Pro Max to classic models like the iPhone 6s, we've seen it all and fixed it all.`;
+const WHY_CHOOSE_PARAGRAPH = `Looking for reliable iPhone repair in Winnipeg? Mobile Tech Lab is the city's trusted choice for fast, affordable iPhone fixes. We offer same-day service for most repairs—including battery replacements, cracked screens, charging port issues, and back glass damage. Our experienced technicians use high-quality parts that meet or exceed OEM standards, and every repair comes with a warranty for your peace of mind. We're so confident in our pricing that we offer a price match guarantee—if you find a cheaper quote from Apple or any local Winnipeg repair shop, we'll match it. Visit our main location at St. Vital Centre for quick walk-in service, or our secondary shop in Thompson. From the latest iPhone 16 Pro Max to the classic iPhone 6s, we've repaired thousands of iPhones for happy Winnipeg customers.`;
 
-const LOCAL_TRUST_PARAGRAPH = `Whether you're in St. Vital, Fort Garry, Transcona, or anywhere in Winnipeg, expert iPhone repair is just a short drive away. Our St. Vital Centre location offers easy parking and walk-in service, while our Thompson store at City Centre Mall serves Northern Manitoba. Our friendly team is ready to diagnose your iPhone issue for free, give you an upfront quote with no hidden fees, and get your device back to you fast. Don't let a cracked screen or dying battery slow you down—request a quote online or give us a call today!`;
+const LOCAL_TRUST_PARAGRAPH = `Ready to get your iPhone fixed? Winnipeg's most trusted repair shop is just a short drive away. Walk into our St. Vital Centre location—no appointment needed—and our friendly technicians will diagnose your issue for free. Most iPhone repairs are completed same-day while you wait. We pride ourselves on transparent pricing with no hidden fees, fast turnaround times, and thousands of satisfied Winnipeg customers. Whether you need a quick battery swap or a full screen replacement, we make iPhone repair easy. Request a free quote online or call our St. Vital location directly!`;
 
 // ============================================
 // MAIN COMPONENT
@@ -179,29 +179,30 @@ const IPhoneRepair = () => {
               <div className="mx-auto max-w-4xl text-center">
                 <div className="mb-4 flex flex-wrap items-center justify-center gap-3">
                   <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-                    Professional iPhone Repair
+                    Winnipeg's #1 iPhone Repair Shop
                   </span>
                   <LiveStatusBadge />
                 </div>
                 
                 {/* SEO H1 */}
                 <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-                  iPhone Repair in <span className="text-primary">Winnipeg</span> & Thompson
+                  iPhone Repair in <span className="text-primary">Winnipeg</span> – Fast, Affordable & Trusted
                 </h1>
                 
                 {/* Subheading */}
                 <p className="mb-4 text-xl font-medium text-foreground/90 md:text-2xl">
-                  Fast, Affordable Battery & Screen Repairs for All iPhone Models
+                  Battery, Screen, Charging Port & Back Glass Repairs
                 </p>
                 
                 {/* SEO Paragraph (40-60 words) */}
                 <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-                  From cracked screens to dead batteries, charging port issues to back glass damage—we fix it all. 
-                  Mobile Tech Lab offers same-day iPhone repair with a price match guarantee and friendly, expert service. 
-                  Serving Winnipeg and Thompson with quality parts and repairs you can trust. Looking for{" "}
-                  <Link to="/repair/ipad" className="text-primary hover:underline">iPad</Link>,{" "}
-                  <Link to="/repair/macbook" className="text-primary hover:underline">MacBook</Link>, or{" "}
-                  <Link to="/repair/apple-watch" className="text-primary hover:underline">Apple Watch</Link> repair? We're Apple device specialists.
+                  Need fast iPhone repair near you? Winnipeg trusts Mobile Tech Lab for same-day battery replacements, 
+                  cracked screen fixes, charging port repairs, and back glass restoration. Our skilled technicians use 
+                  high-quality parts and offer affordable pricing on all iPhone models. Walk in today or request a free quote online. 
+                  We also repair{" "}
+                  <Link to="/repair/ipad" className="text-primary hover:underline">iPads</Link>,{" "}
+                  <Link to="/repair/macbook" className="text-primary hover:underline">MacBooks</Link>, and{" "}
+                  <Link to="/repair/apple-watch" className="text-primary hover:underline">Apple Watches</Link>.
                 </p>
                 
                 <div className="flex flex-col justify-center gap-4 sm:flex-row">
@@ -235,7 +236,7 @@ const IPhoneRepair = () => {
           {/* WHY CHOOSE US - Extended SEO Block */}
           {/* ============================================ */}
           <WhyChooseUsExtended 
-            heading="Why We're Winnipeg's Trusted iPhone Repair Specialists"
+            heading="Winnipeg's Trusted iPhone Repair Shop"
             paragraph={WHY_CHOOSE_PARAGRAPH}
           />
           
@@ -253,7 +254,7 @@ const IPhoneRepair = () => {
           <ModelListGrid 
             deviceName="iPhone" 
             models={MODELS}
-            description="We repair every iPhone generation from the iPhone 6s to the latest iPhone 16 Pro Max. Same-day service for most models at both Winnipeg and Thompson locations."
+            description="We repair every iPhone generation from the iPhone 6s to the latest iPhone 16 Pro Max. Same-day service for most models at our Winnipeg location."
             categories={MODEL_CATEGORIES}
           />
           
@@ -266,20 +267,25 @@ const IPhoneRepair = () => {
           {/* LOCATION CARDS */}
           {/* ============================================ */}
           <LocationCards 
-            heading="iPhone Repair Locations in Winnipeg & Manitoba"
-            serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Same-day iPhone repair at our Thompson location too."
+            heading="Visit Our Winnipeg iPhone Repair Shop"
+            serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods."
           />
           
           {/* ============================================ */}
           {/* FAQ SECTION */}
           {/* ============================================ */}
-          <FAQSection deviceName="iPhone" faqs={FAQS} />
+          <FAQSection 
+            deviceName="iPhone" 
+            faqs={FAQS}
+            heading="Common Questions About iPhone Repairs"
+            subheading="Everything you need to know about iPhone repair in Winnipeg"
+          />
           
           {/* ============================================ */}
           {/* LOCAL TRUST & CONTACT SECTION */}
           {/* ============================================ */}
           <LocalTrustSection 
-            heading="Serving Winnipeg & Thompson – Book Your iPhone Repair Today"
+            heading="Book Your iPhone Repair in Winnipeg Today"
             paragraph={LOCAL_TRUST_PARAGRAPH}
           />
         </main>
