@@ -13,18 +13,20 @@ export interface FAQ {
 interface FAQSectionProps {
   deviceName: string;
   faqs: FAQ[];
+  heading?: string;
+  subheading?: string;
 }
 
-export const FAQSection = ({ deviceName, faqs }: FAQSectionProps) => {
+export const FAQSection = ({ deviceName, faqs, heading, subheading }: FAQSectionProps) => {
   return (
     <section className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-            {deviceName} Repair FAQs
+            {heading || `${deviceName} Repair FAQs`}
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            Common questions about {deviceName} repair at Mobile Tech Lab
+            {subheading || `Common questions about ${deviceName} repair at Mobile Tech Lab`}
           </p>
         </div>
         
