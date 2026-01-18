@@ -19,6 +19,7 @@ const REPAIR_CATEGORIES = [
     title: "Phone Repairs",
     icon: Smartphone,
     items: [
+      { name: "iPhone", href: "/repair/iphone" },
       { name: "Samsung", href: "/repair/samsung" },
       { name: "Google Pixel", href: "/repair/google-pixel" },
       { name: "Motorola", href: "/repair/motorola" },
@@ -38,6 +39,7 @@ const REPAIR_CATEGORIES = [
     title: "Tablets",
     icon: Tablet,
     items: [
+      { name: "iPad", href: "/repair/ipad" },
       { name: "Galaxy Tab", href: "/repair/galaxy-tab" },
       { name: "Amazon Kindle/Fire", href: "/repair/amazon-kindle-fire" },
     ],

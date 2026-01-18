@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 // Phone Repair Pages
+import IPhoneRepair from "./pages/repair/iPhoneRepair";
 import SamsungRepair from "./pages/repair/SamsungRepair";
 import GooglePixelRepair from "./pages/repair/GooglePixelRepair";
 import MotorolaRepair from "./pages/repair/MotorolaRepair";
@@ -79,6 +80,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             
             {/* Phone Repair Pages */}
+            <Route path="/repair/iphone" element={<IPhoneRepair />} />
             <Route path="/repair/samsung" element={<SamsungRepair />} />
             <Route path="/repair/google-pixel" element={<GooglePixelRepair />} />
             <Route path="/repair/motorola" element={<MotorolaRepair />} />

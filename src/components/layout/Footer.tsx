@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <footer className="border-t border-border bg-secondary/30">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div>
             <Link to="/" className="mb-4 inline-block">
@@ -43,13 +43,40 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/pre-owned" className="text-muted-foreground hover:text-primary">
-                  Pre-Owned Devices
+                <Link to="/contact" className="text-muted-foreground hover:text-primary">
+                  Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Popular Repairs */}
+          <div>
+            <h3 className="mb-4 font-semibold">Popular Repairs</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/repair/iphone" className="text-muted-foreground hover:text-primary">
+                  iPhone Repair
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-muted-foreground hover:text-primary">
-                  Contact Us
+                <Link to="/repair/samsung" className="text-muted-foreground hover:text-primary">
+                  Samsung Repair
+                </Link>
+              </li>
+              <li>
+                <Link to="/repair/ipad" className="text-muted-foreground hover:text-primary">
+                  iPad Repair
+                </Link>
+              </li>
+              <li>
+                <Link to="/repair/macbook" className="text-muted-foreground hover:text-primary">
+                  MacBook Repair
+                </Link>
+              </li>
+              <li>
+                <Link to="/repair/water-damage" className="text-muted-foreground hover:text-primary">
+                  Water Damage
                 </Link>
               </li>
             </ul>
