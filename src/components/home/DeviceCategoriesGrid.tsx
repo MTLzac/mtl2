@@ -29,6 +29,13 @@ const PRIMARY_SERVICE: ServiceCard = {
 
 const SECONDARY_SERVICES: ServiceCard[] = [
   {
+    title: "iPhone Repair",
+    description: "Screen replacement, battery, back glass, and charging port repairs for all iPhone models.",
+    cta: "Fix my iPhone",
+    href: "/repair/iphone",
+    icon: Smartphone,
+  },
+  {
     title: "Samsung Repair",
     description: "Cracked screens, battery drain, charging ports, camera issues, and more.",
     cta: "Fix my Samsung",
@@ -37,7 +44,7 @@ const SECONDARY_SERVICES: ServiceCard[] = [
   },
   {
     title: "Google Pixel Repair",
-    description: "Galaxy screen repairs, batteries, charging issues, and camera fixes.",
+    description: "Pixel screen repairs, batteries, charging issues, and camera fixes.",
     cta: "Fix my Pixel",
     href: "/repair/google-pixel",
     icon: Smartphone,
