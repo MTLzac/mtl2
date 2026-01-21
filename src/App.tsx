@@ -1,71 +1,78 @@
+import { lazy, Suspense } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PageLoader from "@/components/PageLoader";
+
+// Core pages - keep synchronous for instant first paint
 import Index from "./pages/Index";
-import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
-// Phone Repair Pages
-import IPhoneRepair from "./pages/repair/iPhoneRepair";
-import SamsungRepair from "./pages/repair/SamsungRepair";
-import GooglePixelRepair from "./pages/repair/GooglePixelRepair";
-import MotorolaRepair from "./pages/repair/MotorolaRepair";
-import OnePlusRepair from "./pages/repair/OnePlusRepair";
-import LGRepair from "./pages/repair/LGRepair";
-import HuaweiRepair from "./pages/repair/HuaweiRepair";
-import XiaomiRepair from "./pages/repair/XiaomiRepair";
-import OppoRepair from "./pages/repair/OppoRepair";
-import NothingRepair from "./pages/repair/NothingRepair";
-import InfinixRepair from "./pages/repair/InfinixRepair";
-import TCLRepair from "./pages/repair/TCLRepair";
-import ZTERepair from "./pages/repair/ZTERepair";
-import BlackberryRepair from "./pages/repair/BlackberryRepair";
-import SonyXperiaRepair from "./pages/repair/SonyXperiaRepair";
-import VivoRepair from "./pages/repair/VivoRepair";
+// Lazy-loaded Phone Repair Pages
+const IPhoneRepair = lazy(() => import("./pages/repair/iPhoneRepair"));
+const SamsungRepair = lazy(() => import("./pages/repair/SamsungRepair"));
+const GooglePixelRepair = lazy(() => import("./pages/repair/GooglePixelRepair"));
+const MotorolaRepair = lazy(() => import("./pages/repair/MotorolaRepair"));
+const OnePlusRepair = lazy(() => import("./pages/repair/OnePlusRepair"));
+const LGRepair = lazy(() => import("./pages/repair/LGRepair"));
+const HuaweiRepair = lazy(() => import("./pages/repair/HuaweiRepair"));
+const XiaomiRepair = lazy(() => import("./pages/repair/XiaomiRepair"));
+const OppoRepair = lazy(() => import("./pages/repair/OppoRepair"));
+const NothingRepair = lazy(() => import("./pages/repair/NothingRepair"));
+const InfinixRepair = lazy(() => import("./pages/repair/InfinixRepair"));
+const TCLRepair = lazy(() => import("./pages/repair/TCLRepair"));
+const ZTERepair = lazy(() => import("./pages/repair/ZTERepair"));
+const BlackberryRepair = lazy(() => import("./pages/repair/BlackberryRepair"));
+const SonyXperiaRepair = lazy(() => import("./pages/repair/SonyXperiaRepair"));
+const VivoRepair = lazy(() => import("./pages/repair/VivoRepair"));
 
-// Tablet Repair Pages
-import SamsungGalaxyTabRepair from "./pages/repair/SamsungGalaxyTabRepair";
-import IPadRepair from "./pages/repair/iPadRepair";
-import AmazonKindleRepair from "./pages/repair/AmazonKindleRepair";
+// Lazy-loaded Tablet Repair Pages
+const SamsungGalaxyTabRepair = lazy(() => import("./pages/repair/SamsungGalaxyTabRepair"));
+const IPadRepair = lazy(() => import("./pages/repair/iPadRepair"));
+const AmazonKindleRepair = lazy(() => import("./pages/repair/AmazonKindleRepair"));
 
-// Wearable Repair Pages
-import AppleWatchRepair from "./pages/repair/AppleWatchRepair";
+// Lazy-loaded Wearable Repair Pages
+const AppleWatchRepair = lazy(() => import("./pages/repair/AppleWatchRepair"));
 
-// MP3 Player Repair Pages
-import IPodRepair from "./pages/repair/iPodRepair";
+// Lazy-loaded MP3 Player Repair Pages
+const IPodRepair = lazy(() => import("./pages/repair/iPodRepair"));
 
-// Laptop Repair Pages
-import MacBookRepair from "./pages/repair/MacBookRepair";
-import SurfaceRepair from "./pages/repair/SurfaceRepair";
-import LaptopRepair from "./pages/repair/LaptopRepair";
+// Lazy-loaded Laptop Repair Pages
+const MacBookRepair = lazy(() => import("./pages/repair/MacBookRepair"));
+const SurfaceRepair = lazy(() => import("./pages/repair/SurfaceRepair"));
+const LaptopRepair = lazy(() => import("./pages/repair/LaptopRepair"));
 
-// Service-Specific Pages
-import WaterDamageRepair from "./pages/repair/WaterDamageRepair";
+// Lazy-loaded Service-Specific Pages
+const WaterDamageRepair = lazy(() => import("./pages/repair/WaterDamageRepair"));
 
-// Niche Repair Pages
-import CatS62ChargingPortRepair from "./pages/repair/CatS62ChargingPortRepair";
-import BlackMagicHDMIRepair from "./pages/repair/BlackMagicHDMIRepair";
-// Console Repair Pages
-import NintendoSwitchRepair from "./pages/repair/NintendoSwitchRepair";
-import PS5Repair from "./pages/repair/PS5Repair";
-import PS4Repair from "./pages/repair/PS4Repair";
-import XboxRepair from "./pages/repair/XboxRepair";
-import SteamDeckRepair from "./pages/repair/SteamDeckRepair";
+// Lazy-loaded Niche Repair Pages
+const CatS62ChargingPortRepair = lazy(() => import("./pages/repair/CatS62ChargingPortRepair"));
+const BlackMagicHDMIRepair = lazy(() => import("./pages/repair/BlackMagicHDMIRepair"));
 
-// B2B / Business Page
-import BusinessRepair from "./pages/BusinessRepair";
+// Lazy-loaded Console Repair Pages
+const NintendoSwitchRepair = lazy(() => import("./pages/repair/NintendoSwitchRepair"));
+const PS5Repair = lazy(() => import("./pages/repair/PS5Repair"));
+const PS4Repair = lazy(() => import("./pages/repair/PS4Repair"));
+const XboxRepair = lazy(() => import("./pages/repair/XboxRepair"));
+const SteamDeckRepair = lazy(() => import("./pages/repair/SteamDeckRepair"));
 
-// Trade-In Page
-import TradeIn from "./pages/TradeIn";
+// Lazy-loaded B2B / Business Page
+const BusinessRepair = lazy(() => import("./pages/BusinessRepair"));
 
-// Screen Quality Page
-import ScreenQuality from "./pages/ScreenQuality";
+// Lazy-loaded Trade-In Page
+const TradeIn = lazy(() => import("./pages/TradeIn"));
 
-// Draft Pages (hidden from production)
-import PDPv2Draft from "./pages/draft/PDPv2Draft";
+// Lazy-loaded Screen Quality Page
+const ScreenQuality = lazy(() => import("./pages/ScreenQuality"));
+
+// Lazy-loaded Contact Page
+const Contact = lazy(() => import("./pages/Contact"));
+
+// Lazy-loaded Draft Pages
+const PDPv2Draft = lazy(() => import("./pages/draft/PDPv2Draft"));
 
 const queryClient = new QueryClient();
 
@@ -76,80 +83,82 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            
-            {/* Phone Repair Pages */}
-            <Route path="/repair/iphone" element={<IPhoneRepair />} />
-            <Route path="/repair/samsung" element={<SamsungRepair />} />
-            <Route path="/repair/google-pixel" element={<GooglePixelRepair />} />
-            <Route path="/repair/motorola" element={<MotorolaRepair />} />
-            <Route path="/repair/oneplus" element={<OnePlusRepair />} />
-            <Route path="/repair/lg" element={<LGRepair />} />
-            <Route path="/repair/huawei" element={<HuaweiRepair />} />
-            <Route path="/repair/xiaomi" element={<XiaomiRepair />} />
-            <Route path="/repair/oppo" element={<OppoRepair />} />
-            <Route path="/repair/nothing" element={<NothingRepair />} />
-            <Route path="/repair/infinix" element={<InfinixRepair />} />
-            <Route path="/repair/tcl" element={<TCLRepair />} />
-            <Route path="/repair/zte" element={<ZTERepair />} />
-            <Route path="/repair/blackberry" element={<BlackberryRepair />} />
-            <Route path="/repair/sony-xperia" element={<SonyXperiaRepair />} />
-            <Route path="/repair/vivo" element={<VivoRepair />} />
-            
-            {/* Tablet Repair Pages */}
-            <Route path="/repair/samsung-galaxy-tab" element={<SamsungGalaxyTabRepair />} />
-            <Route path="/repair/galaxy-tab" element={<SamsungGalaxyTabRepair />} />
-            <Route path="/repair/ipad" element={<IPadRepair />} />
-            <Route path="/repair/amazon-kindle-fire" element={<AmazonKindleRepair />} />
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              
+              {/* Phone Repair Pages */}
+              <Route path="/repair/iphone" element={<IPhoneRepair />} />
+              <Route path="/repair/samsung" element={<SamsungRepair />} />
+              <Route path="/repair/google-pixel" element={<GooglePixelRepair />} />
+              <Route path="/repair/motorola" element={<MotorolaRepair />} />
+              <Route path="/repair/oneplus" element={<OnePlusRepair />} />
+              <Route path="/repair/lg" element={<LGRepair />} />
+              <Route path="/repair/huawei" element={<HuaweiRepair />} />
+              <Route path="/repair/xiaomi" element={<XiaomiRepair />} />
+              <Route path="/repair/oppo" element={<OppoRepair />} />
+              <Route path="/repair/nothing" element={<NothingRepair />} />
+              <Route path="/repair/infinix" element={<InfinixRepair />} />
+              <Route path="/repair/tcl" element={<TCLRepair />} />
+              <Route path="/repair/zte" element={<ZTERepair />} />
+              <Route path="/repair/blackberry" element={<BlackberryRepair />} />
+              <Route path="/repair/sony-xperia" element={<SonyXperiaRepair />} />
+              <Route path="/repair/vivo" element={<VivoRepair />} />
+              
+              {/* Tablet Repair Pages */}
+              <Route path="/repair/samsung-galaxy-tab" element={<SamsungGalaxyTabRepair />} />
+              <Route path="/repair/galaxy-tab" element={<SamsungGalaxyTabRepair />} />
+              <Route path="/repair/ipad" element={<IPadRepair />} />
+              <Route path="/repair/amazon-kindle-fire" element={<AmazonKindleRepair />} />
 
-            {/* Wearable Repair Pages */}
-            <Route path="/repair/apple-watch" element={<AppleWatchRepair />} />
-            
-            {/* MP3 Player Repair Pages */}
-            <Route path="/repair/ipod" element={<IPodRepair />} />
-            
-            {/* Laptop Repair Pages */}
-            <Route path="/repair/macbook" element={<MacBookRepair />} />
-            <Route path="/repair/surface" element={<SurfaceRepair />} />
-            <Route path="/repair/microsoft-surface" element={<SurfaceRepair />} />
-            <Route path="/repair/laptop" element={<LaptopRepair />} />
+              {/* Wearable Repair Pages */}
+              <Route path="/repair/apple-watch" element={<AppleWatchRepair />} />
+              
+              {/* MP3 Player Repair Pages */}
+              <Route path="/repair/ipod" element={<IPodRepair />} />
+              
+              {/* Laptop Repair Pages */}
+              <Route path="/repair/macbook" element={<MacBookRepair />} />
+              <Route path="/repair/surface" element={<SurfaceRepair />} />
+              <Route path="/repair/microsoft-surface" element={<SurfaceRepair />} />
+              <Route path="/repair/laptop" element={<LaptopRepair />} />
 
-            {/* Console Repair Pages */}
-            <Route path="/repair/nintendo-switch" element={<NintendoSwitchRepair />} />
-            <Route path="/repair/ps5" element={<PS5Repair />} />
-            <Route path="/repair/playstation-5" element={<PS5Repair />} />
-            <Route path="/repair/ps4" element={<PS4Repair />} />
-            <Route path="/repair/playstation-4" element={<PS4Repair />} />
-            <Route path="/repair/xbox" element={<XboxRepair />} />
-            <Route path="/repair/steam-deck" element={<SteamDeckRepair />} />
+              {/* Console Repair Pages */}
+              <Route path="/repair/nintendo-switch" element={<NintendoSwitchRepair />} />
+              <Route path="/repair/ps5" element={<PS5Repair />} />
+              <Route path="/repair/playstation-5" element={<PS5Repair />} />
+              <Route path="/repair/ps4" element={<PS4Repair />} />
+              <Route path="/repair/playstation-4" element={<PS4Repair />} />
+              <Route path="/repair/xbox" element={<XboxRepair />} />
+              <Route path="/repair/steam-deck" element={<SteamDeckRepair />} />
 
-            {/* Service-Specific Pages */}
-            <Route path="/repair/water-damage" element={<WaterDamageRepair />} />
+              {/* Service-Specific Pages */}
+              <Route path="/repair/water-damage" element={<WaterDamageRepair />} />
 
-            {/* Niche Repair Pages */}
-            <Route path="/repair/cat-s62-charging-port" element={<CatS62ChargingPortRepair />} />
-            <Route path="/repair/blackmagic-hdmi" element={<BlackMagicHDMIRepair />} />
+              {/* Niche Repair Pages */}
+              <Route path="/repair/cat-s62-charging-port" element={<CatS62ChargingPortRepair />} />
+              <Route path="/repair/blackmagic-hdmi" element={<BlackMagicHDMIRepair />} />
 
-            {/* B2B / Business Page */}
-            <Route path="/business" element={<BusinessRepair />} />
-            <Route path="/b2b" element={<BusinessRepair />} />
+              {/* B2B / Business Page */}
+              <Route path="/business" element={<BusinessRepair />} />
+              <Route path="/b2b" element={<BusinessRepair />} />
 
-            {/* Trade-In Page */}
-            <Route path="/trade-in" element={<TradeIn />} />
+              {/* Trade-In Page */}
+              <Route path="/trade-in" element={<TradeIn />} />
 
-            {/* Screen Quality Page */}
-            <Route path="/screen-quality" element={<ScreenQuality />} />
-            
-            {/* Contact Page */}
-            <Route path="/contact" element={<Contact />} />
+              {/* Screen Quality Page */}
+              <Route path="/screen-quality" element={<ScreenQuality />} />
+              
+              {/* Contact Page */}
+              <Route path="/contact" element={<Contact />} />
 
-            {/* Draft Pages - Hidden from production */}
-            <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
-            
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              {/* Draft Pages - Hidden from production */}
+              <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
+              
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
