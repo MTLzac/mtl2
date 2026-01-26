@@ -13,6 +13,7 @@ import { LiveStatusBadge } from "@/components/repair/LiveStatusBadge";
 import { WhyChooseUsExtended } from "@/components/repair/WhyChooseUsExtended";
 import { GoogleReviewsHighlight } from "@/components/repair/GoogleReviewsHighlight";
 import { LocalTrustSection } from "@/components/repair/LocalTrustSection";
+import { QuickFacts } from "@/components/repair/QuickFacts";
 import { PRIMARY_PHONE } from "@/lib/locations";
 import { 
   Smartphone, 
@@ -219,6 +220,13 @@ const IPhoneRepair = () => {
                     </a>
                   </Button>
                 </div>
+                
+                <QuickFacts facts={{
+                  turnaround: "1-2 hours",
+                  startingPrice: "From $59",
+                  warranty: "Lifetime screen warranty",
+                  locations: "St. Vital & Thompson",
+                }} />
               </div>
             </div>
             
