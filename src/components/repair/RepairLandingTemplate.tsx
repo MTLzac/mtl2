@@ -10,6 +10,7 @@ import { StickyQuoteCTA } from "./StickyQuoteCTA";
 import { Header } from "../layout/Header";
 import { Footer } from "../layout/Footer";
 import { BreadcrumbSchema, getRepairBreadcrumbs } from "../seo/BreadcrumbSchema";
+import { ServiceSchema } from "../seo/ServiceSchema";
 
 interface RepairLandingTemplateProps {
   // SEO
@@ -60,6 +61,7 @@ export const RepairLandingTemplate = ({
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <ServiceSchema deviceName={deviceName} services={services} canonicalUrl={canonicalUrl} />
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
