@@ -15,7 +15,7 @@ export const LocationCards = ({
   heading = "Device Repair Locations in Winnipeg & Manitoba"
 }: LocationCardsProps) => {
   return (
-    <section className="bg-secondary/30 py-16 md:py-20">
+    <section id="locations" className="bg-secondary/30 py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">

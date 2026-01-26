@@ -9,6 +9,8 @@ import { FAQSection, FAQ } from "./FAQSection";
 import { StickyQuoteCTA } from "./StickyQuoteCTA";
 import { BreadcrumbSchema, getRepairBreadcrumbs } from "@/components/seo/BreadcrumbSchema";
 import { ServiceSchema } from "@/components/seo/ServiceSchema";
+import { VisibleBreadcrumbs } from "./VisibleBreadcrumbs";
+import { TableOfContents } from "./TableOfContents";
 import { CheckCircle, LucideIcon, Package, Phone, MessageSquare, AlertTriangle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -102,8 +104,10 @@ export const NicheRepairTemplate = ({
         <Header />
         
         <main className="flex-1 pb-20 md:pb-0">
+          <VisibleBreadcrumbs deviceName={deviceName} slug={slug} />
+          
           {/* Hero Section */}
-          <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-16 md:py-24">
+          <section id="hero" className="relative overflow-hidden bg-gradient-to-br from-background via-background to-primary/5 py-16 md:py-24">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-3xl text-center">
                 <div className="mb-4 flex flex-wrap items-center justify-center gap-3">
@@ -156,7 +160,7 @@ export const NicheRepairTemplate = ({
           </section>
 
           {/* Proof of Repair Section */}
-          <section className="border-y border-border bg-muted/30 py-12 md:py-16">
+          <section id="proof" className="border-y border-border bg-muted/30 py-12 md:py-16">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-5xl">
                 <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
@@ -217,7 +221,7 @@ export const NicheRepairTemplate = ({
           </section>
 
           {/* Our Approach Section */}
-          <section className="py-16 md:py-20">
+          <section id="process" className="py-16 md:py-20">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-3xl text-center mb-12">
                 <h2 className="mb-4 text-3xl font-bold text-foreground">
@@ -252,7 +256,7 @@ export const NicheRepairTemplate = ({
           </section>
 
           {/* Why Others Can't Help Section */}
-          <section className="border-y border-border bg-muted/30 py-16 md:py-20">
+          <section id="why-others-cant" className="border-y border-border bg-muted/30 py-16 md:py-20">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-3xl text-center mb-12">
                 <h2 className="mb-4 text-3xl font-bold text-foreground">
@@ -356,6 +360,13 @@ export const NicheRepairTemplate = ({
         
         <Footer />
         <StickyQuoteCTA />
+        <TableOfContents items={[
+          { id: "proof", label: "Proof" },
+          { id: "process", label: "Process" },
+          { id: "why-choose-us", label: "Why Us" },
+          { id: "locations", label: "Locations" },
+          { id: "faqs", label: "FAQs" },
+        ]} />
       </div>
     </>
   );

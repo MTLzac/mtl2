@@ -17,7 +17,7 @@ const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 
 export const ServiceGrid = ({ services, deviceName }: ServiceGridProps) => {
   return (
-    <section className="bg-secondary/30 py-16 md:py-20">
+    <section id="services" className="bg-secondary/30 py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">

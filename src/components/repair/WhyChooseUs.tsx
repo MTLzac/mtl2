@@ -44,7 +44,7 @@ export const WhyChooseUs = ({ hideWarranty = false, customPillars }: WhyChooseUs
   const gridCols = pillars.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4';
 
   return (
-    <section className="py-16 md:py-20">
+    <section id="why-choose-us" className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">

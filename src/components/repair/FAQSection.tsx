@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { FAQPageSchema } from "@/components/seo/FAQPageSchema";
 
 export interface FAQ {
   question: string;
@@ -19,7 +20,8 @@ interface FAQSectionProps {
 
 export const FAQSection = ({ deviceName, faqs, heading, subheading }: FAQSectionProps) => {
   return (
-    <section className="py-16 md:py-20">
+    <section id="faqs" className="py-16 md:py-20">
+      <FAQPageSchema faqs={faqs} />
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
