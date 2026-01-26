@@ -139,6 +139,7 @@ const LGRepair = () => {
     <RepairLandingTemplate
       metaTitle="LG Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
       metaDescription="LG phone repair specialists in Winnipeg. Screen, battery, charging port repair for LG Velvet, V series, G series, Stylo & all legacy models. We keep your LG running!"
+      canonicalUrl="https://mobiletechlab.ca/repair/lg"
       deviceName="LG"
       tagline="LG Phone Repair in Winnipeg, MB"
       heroDescription="Even though LG exited the smartphone market, we continue to support all LG devices in Winnipeg. From the innovative LG Wing to the reliable Stylo series, we keep your LG phone running strong."

@@ -9,10 +9,12 @@ import { WaysToSave } from "@/components/home/WaysToSave";
 import { WhyChooseSection } from "@/components/home/WhyChooseSection";
 import { LocationsSection } from "@/components/home/LocationsSection";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { OrganizationSchema } from "@/components/seo/OrganizationSchema";
 
 const Index = () => {
   return (
     <>
+      <OrganizationSchema />
       <Helmet>
         <title>Cell Phone, iPhone & iPad Repair in Winnipeg</title>
         <meta

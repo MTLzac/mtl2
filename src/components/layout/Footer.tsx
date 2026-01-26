@@ -50,9 +50,9 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Popular Repairs */}
+          {/* Phone Repairs */}
           <div>
-            <h3 className="mb-4 font-semibold">Popular Repairs</h3>
+            <h3 className="mb-4 font-semibold">Phone Repairs</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/repair/iphone" className="text-muted-foreground hover:text-primary">
@@ -65,13 +65,72 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/repair/google-pixel" className="text-muted-foreground hover:text-primary">
+                  Google Pixel Repair
+                </Link>
+              </li>
+              <li>
+                <Link to="/repair/motorola" className="text-muted-foreground hover:text-primary">
+                  Motorola Repair
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Tablet & Computer Repairs */}
+          <div>
+            <h3 className="mb-4 font-semibold">Tablets & Computers</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
                 <Link to="/repair/ipad" className="text-muted-foreground hover:text-primary">
                   iPad Repair
                 </Link>
               </li>
               <li>
+                <Link to="/repair/samsung-galaxy-tab" className="text-muted-foreground hover:text-primary">
+                  Galaxy Tab Repair
+                </Link>
+              </li>
+              <li>
                 <Link to="/repair/macbook" className="text-muted-foreground hover:text-primary">
                   MacBook Repair
+                </Link>
+              </li>
+              <li>
+                <Link to="/repair/laptop" className="text-muted-foreground hover:text-primary">
+                  Laptop Repair
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Gaming & Other */}
+          <div>
+            <h3 className="mb-4 font-semibold">Gaming & More</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/repair/nintendo-switch" className="text-muted-foreground hover:text-primary">
+                  Nintendo Switch
+                </Link>
+              </li>
+              <li>
+                <Link to="/repair/ps5" className="text-muted-foreground hover:text-primary">
+                  PS5 Repair
+                </Link>
+              </li>
+              <li>
+                <Link to="/repair/xbox" className="text-muted-foreground hover:text-primary">
+                  Xbox Repair
+                </Link>
+              </li>
+              <li>
+                <Link to="/repair/steam-deck" className="text-muted-foreground hover:text-primary">
+                  Steam Deck Repair
+                </Link>
+              </li>
+              <li>
+                <Link to="/repair/apple-watch" className="text-muted-foreground hover:text-primary">
+                  Apple Watch Repair
                 </Link>
               </li>
               <li>

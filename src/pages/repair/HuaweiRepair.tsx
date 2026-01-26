@@ -144,6 +144,7 @@ const HuaweiRepair = () => {
     <RepairLandingTemplate
       metaTitle="Huawei Phone Repair Winnipeg | Broken Screens, Bad Batteries | Mobile Tech Lab"
       metaDescription="Expert Huawei repair in Winnipeg. Screen, battery, motherboard repair for Huawei P60, P50, Mate, Nova & Honor devices. Hard-to-find parts specialists."
+      canonicalUrl="https://mobiletechlab.ca/repair/huawei"
       deviceName="Huawei"
       tagline="Huawei Phone Repair Services in Winnipeg"
       heroDescription="Don't let parts availability stop you from repairing your Huawei device. We specialize in sourcing components for Huawei P series, Mate, Nova, and Honor phones in Winnipeg when others can't."

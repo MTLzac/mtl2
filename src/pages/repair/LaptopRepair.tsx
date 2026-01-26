@@ -164,6 +164,7 @@ const LaptopRepair = () => {
     <RepairLandingTemplate
       metaTitle="Laptop Repair Winnipeg | Asus, Acer, Lenovo, HP, Dell & More"
       metaDescription="Expert Windows laptop and Chromebook repair in Winnipeg. Screen replacement, battery service, keyboard repair, SSD upgrades. All brands serviced. Same-day available."
+      canonicalUrl="https://mobiletechlab.ca/repair/laptop"
       deviceName="Laptop"
       tagline="Winnipeg's Windows Laptop & Chromebook Repair Experts"
       heroDescription="From cracked screens to dead batteries, overheating issues to keyboard failures—we repair all Windows laptops and Chromebooks. Asus, Acer, Lenovo, HP, Dell, Toshiba, MSI, Razer, and more."

@@ -48,7 +48,7 @@ const WaterDamageRepair = () => {
           content="Spilled liquid on your phone or laptop? Don't panic. Our water damage specialists can assess your device and work to recover your precious data. Fast, honest service in Winnipeg and Brandon." 
         />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href="https://mobiletechlab.ca/repair/water-damage" />
       </Helmet>
 
       <div className="flex min-h-screen flex-col">
