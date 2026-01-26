@@ -8,6 +8,7 @@ import { LocationCards } from "./LocationCards";
 import { FAQSection, FAQ } from "./FAQSection";
 import { StickyQuoteCTA } from "./StickyQuoteCTA";
 import { BreadcrumbSchema, getRepairBreadcrumbs } from "@/components/seo/BreadcrumbSchema";
+import { ServiceSchema } from "@/components/seo/ServiceSchema";
 import { CheckCircle, LucideIcon, Package, Phone, MessageSquare, AlertTriangle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -74,9 +75,22 @@ export const NicheRepairTemplate = ({
 }: NicheRepairTemplateProps) => {
   const breadcrumbs = getRepairBreadcrumbs(deviceName, slug);
   const smsMessage = encodeURIComponent(`Hi, I found your site searching for ${deviceName} repair. Can you help?`);
+  
+  // Generate services from approach steps for structured data
+  const services = approachSteps.map(step => ({
+    icon: Package, // Placeholder icon for schema
+    name: step.title,
+    description: step.description
+  }));
+  
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
+      <ServiceSchema 
+        deviceName={deviceName} 
+        services={services} 
+        canonicalUrl={`https://mobiletechlab.ca/repair/${slug}`} 
+      />
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
