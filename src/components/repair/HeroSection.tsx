@@ -3,6 +3,7 @@ import { ArrowRight, Phone } from "lucide-react";
 import { LiveStatusBadge } from "./LiveStatusBadge";
 import defaultHeroImage from "@/assets/hero-repair-illustration.png";
 import { PRIMARY_PHONE } from "@/lib/locations";
+import { QuickFacts, QuickFactsData } from "./QuickFacts";
 
 interface HeroSectionProps {
   deviceName: string;
@@ -10,11 +11,12 @@ interface HeroSectionProps {
   description: string;
   heroImage?: string;
   hideImage?: boolean;
+  quickFacts?: QuickFactsData;
 }
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 
-export const HeroSection = ({ deviceName, tagline, description, heroImage, hideImage }: HeroSectionProps) => {
+export const HeroSection = ({ deviceName, tagline, description, heroImage, hideImage, quickFacts }: HeroSectionProps) => {
   const imageToUse = heroImage || defaultHeroImage;
   const showImage = !hideImage;
   
@@ -62,6 +64,9 @@ export const HeroSection = ({ deviceName, tagline, description, heroImage, hideI
                 </a>
               </Button>
             </div>
+            
+            {/* Quick Facts */}
+            {quickFacts && <QuickFacts facts={quickFacts} />}
           </div>
 
           {/* Right Image */}

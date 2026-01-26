@@ -11,6 +11,9 @@ import { Header } from "../layout/Header";
 import { Footer } from "../layout/Footer";
 import { BreadcrumbSchema, getRepairBreadcrumbs } from "../seo/BreadcrumbSchema";
 import { ServiceSchema } from "../seo/ServiceSchema";
+import { VisibleBreadcrumbs } from "./VisibleBreadcrumbs";
+import { QuickFacts, QuickFactsData } from "./QuickFacts";
+import { TableOfContents } from "./TableOfContents";
 
 interface RepairLandingTemplateProps {
   // SEO
@@ -36,6 +39,7 @@ interface RepairLandingTemplateProps {
   // Optional customizations
   advantagePillars?: AdvantagePillar[];
   serviceAreaNote?: string;
+  quickFacts?: QuickFactsData;
 }
 
 export const RepairLandingTemplate = ({
@@ -55,6 +59,7 @@ export const RepairLandingTemplate = ({
   faqs,
   advantagePillars,
   serviceAreaNote,
+  quickFacts,
 }: RepairLandingTemplateProps) => {
   const breadcrumbs = getRepairBreadcrumbs(deviceName, slug);
   
@@ -73,12 +78,15 @@ export const RepairLandingTemplate = ({
         <Header />
         
         <main className="flex-1 pb-20 md:pb-0">
+          <VisibleBreadcrumbs deviceName={deviceName} slug={slug} />
+          
           <HeroSection
             deviceName={deviceName}
             tagline={tagline}
             description={heroDescription}
             heroImage={heroImage}
             hideImage={hideHeroImage}
+            quickFacts={quickFacts}
           />
           
           <ServiceGrid services={services} deviceName={deviceName} />
@@ -101,6 +109,13 @@ export const RepairLandingTemplate = ({
         
         <Footer />
         <StickyQuoteCTA />
+        <TableOfContents items={[
+          { id: "services", label: "Services" },
+          { id: "models", label: "Models" },
+          { id: "why-choose-us", label: "Why Us" },
+          { id: "locations", label: "Locations" },
+          { id: "faqs", label: "FAQs" },
+        ]} />
       </div>
     </>
   );
