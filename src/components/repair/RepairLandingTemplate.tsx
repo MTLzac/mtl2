@@ -9,13 +9,14 @@ import { FAQSection, FAQ } from "./FAQSection";
 import { StickyQuoteCTA } from "./StickyQuoteCTA";
 import { Header } from "../layout/Header";
 import { Footer } from "../layout/Footer";
-import { LucideIcon } from "lucide-react";
+import { BreadcrumbSchema, getRepairBreadcrumbs } from "../seo/BreadcrumbSchema";
 
 interface RepairLandingTemplateProps {
   // SEO
   metaTitle: string;
   metaDescription: string;
   canonicalUrl: string;
+  slug: string; // URL slug for breadcrumbs (e.g., "iphone", "samsung")
   
   // Hero
   deviceName: string;
@@ -40,6 +41,7 @@ export const RepairLandingTemplate = ({
   metaTitle,
   metaDescription,
   canonicalUrl,
+  slug,
   deviceName,
   tagline,
   heroDescription,
@@ -53,8 +55,11 @@ export const RepairLandingTemplate = ({
   advantagePillars,
   serviceAreaNote,
 }: RepairLandingTemplateProps) => {
+  const breadcrumbs = getRepairBreadcrumbs(deviceName, slug);
+  
   return (
     <>
+      <BreadcrumbSchema items={breadcrumbs} />
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />

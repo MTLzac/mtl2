@@ -125,6 +125,7 @@ const PS4Repair = () => {
       metaTitle="PS4 Repair Winnipeg | PlayStation 4 Fix | Mobile Tech Lab"
       metaDescription="PS4 repair in Winnipeg. Overheating, HDMI port, disc drive, controller repair for PlayStation 4 Pro, Slim & Original. Console repair specialists."
       canonicalUrl="https://mobiletechlab.ca/repair/ps4"
+      slug="ps4"
       deviceName="PS4"
       tagline="PlayStation 4 Repair Specialists in Winnipeg"
       heroDescription="PS4 overheating? HDMI not working? No power? We're Winnipeg's PlayStation 4 repair specialists. PS4 Pro, Slim, and Original consoles plus DualShock 4 controllers."

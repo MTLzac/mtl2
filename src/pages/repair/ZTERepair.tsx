@@ -137,6 +137,7 @@ const ZTERepair = () => {
       metaTitle="ZTE Repair Winnipeg | nubia & Blade Screen Fix | Mobile Tech Lab"
       metaDescription="ZTE phone repair in Winnipeg. Screen, battery, charging repair for ZTE nubia, Red Magic, Blade & Axon series. Rare device specialists."
       canonicalUrl="https://mobiletechlab.ca/repair/zte"
+      slug="zte"
       deviceName="ZTE"
       tagline="ZTE & nubia Repair Specialists in Winnipeg"
       heroDescription="From nubia Red Magic gaming phones to budget Blade devices, we repair all ZTE phones in Winnipeg. Hard to find parts? We've got the sourcing connections to fix your rare device."

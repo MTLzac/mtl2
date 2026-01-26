@@ -130,6 +130,7 @@ const NintendoSwitchRepair = () => {
       metaTitle="Nintendo Switch Repair Winnipeg | Joy-Con Drift Fix | Mobile Tech Lab"
       metaDescription="Nintendo Switch repair in Winnipeg. Joy-Con drift, screen, battery, charging port repair for Switch OLED, Switch Lite & original Switch."
       canonicalUrl="https://mobiletechlab.ca/repair/nintendo-switch"
+      slug="nintendo-switch"
       deviceName="Nintendo Switch"
       tagline="Nintendo Switch Repair Experts in Winnipeg"
       heroDescription="Joy-Con drift driving you crazy? Screen cracked? We fix all Nintendo Switch models in Winnipeg—OLED, original, and Lite. Joy-Con and Pro Controller repairs with same-day service."

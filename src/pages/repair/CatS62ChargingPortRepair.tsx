@@ -113,6 +113,7 @@ const CatS62ChargingPortRepair = () => {
     <NicheRepairTemplate
       metaTitle="CAT S62 Charging Port Repair & Replacement | USB-C Port Fix"
       metaDescription="CAT S62 not charging? We specialize in CAT S62 Pro charging port replacement and USB-C port repair. Same-day micro-soldering. Mail-in service available."
+      slug="cat-s62-charging-port"
       headline="CAT S62 Charging Port Repair"
       subheadline="USB-C Port Replacement — Same Day Service"
       heroDescription="Is your CAT S62 not charging? We specialize in CAT S62 Pro charging port replacement using precision micro-soldering. Most USB-C port repairs completed same day. Based in Winnipeg, MB — mail-in repairs welcome from anywhere."

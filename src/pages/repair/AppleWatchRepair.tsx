@@ -107,6 +107,7 @@ const AppleWatchRepair = () => {
       metaTitle="Apple Watch Repair Winnipeg | Screen & Battery Replacement"
       metaDescription="Expert Apple Watch repair in Winnipeg. Screen replacement and battery replacement for all Apple Watch models including Series 10, Ultra 2, and SE. Fast, reliable service."
       canonicalUrl="https://mobiletechlab.ca/repair/apple-watch"
+      slug="apple-watch"
       deviceName="Apple Watch"
       tagline="Apple Watch Repair in Winnipeg, MB"
       heroDescription="Cracked screen? Battery draining fast? We repair all Apple Watch models in Winnipeg—from Series 3 to the latest Series 10, SE generations, and Ultra. Same-day service with quality parts and expert technicians. We also repair iPhone, iPad, and MacBook."

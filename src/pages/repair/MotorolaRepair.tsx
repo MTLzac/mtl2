@@ -143,6 +143,7 @@ const MotorolaRepair = () => {
       metaTitle="Motorola Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
       metaDescription="Affordable Motorola repair in Winnipeg. Screen, battery, charging port repair for Moto G, Edge, Razr & all models. Budget-friendly same-day service."
       canonicalUrl="https://mobiletechlab.ca/repair/motorola"
+      slug="motorola"
       deviceName="Motorola"
       tagline="Affordable Motorola Phone Repairs in Winnipeg"
       heroDescription="From budget-friendly Moto G and E series to premium Edge flagships and foldable Razr devices, we repair all Motorola phones in Winnipeg. Cracked screens, dying batteries, charging issues—fixed fast with quality parts and backed by our repair warranty."
