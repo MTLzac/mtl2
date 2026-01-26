@@ -188,4 +188,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- Niche Repair Pages -->
+  <url>
+    <loc>https://mobiletechlab.ca/repair/cat-s62-charging-port</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mobiletechlab.ca/repair/blackmagic-hdmi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
