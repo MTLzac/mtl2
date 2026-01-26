@@ -140,6 +140,7 @@ const IPodRepair = () => {
     <RepairLandingTemplate
       metaTitle="iPod Repair Winnipeg | Screen, Battery & Data Recovery"
       metaDescription="Expert iPod repair in Winnipeg. Screen replacement, battery replacement, charging issues, home button repair, and data recovery for all iPod generations. Fast service."
+      canonicalUrl="https://mobiletechlab.ca/repair/ipod"
       deviceName="iPod"
       tagline="iPod Repair Experts in Winnipeg"
       heroDescription="Still rocking your classic iPod? We repair all generations of iPods including Touch, Classic, Nano, Shuffle, and Mini. Screen repairs, battery replacements, data recovery, and more."

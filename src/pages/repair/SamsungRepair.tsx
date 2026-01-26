@@ -140,6 +140,7 @@ const SamsungRepair = () => {
     <RepairLandingTemplate
       metaTitle="Samsung Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
       metaDescription="Expert Samsung Galaxy repair in Winnipeg. Screen replacement, battery, charging port, water damage repair for all Galaxy S, Z Fold, Z Flip, A series & Note models. Fast same-day service."
+      canonicalUrl="https://mobiletechlab.ca/repair/samsung"
       deviceName="Samsung Phone"
       tagline="Winnipeg's Samsung Galaxy Phone Repair Specialists"
       heroDescription="From the latest Galaxy S24 Ultra to foldable Z Fold and Z Flip devices, we specialize in Samsung smartphone repairs. Cracked screens, dead batteries, water damage, and charging issues—all fixed with quality parts and backed by our repair warranty."

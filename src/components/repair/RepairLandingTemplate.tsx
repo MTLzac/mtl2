@@ -15,6 +15,7 @@ interface RepairLandingTemplateProps {
   // SEO
   metaTitle: string;
   metaDescription: string;
+  canonicalUrl: string;
   
   // Hero
   deviceName: string;
@@ -38,6 +39,7 @@ interface RepairLandingTemplateProps {
 export const RepairLandingTemplate = ({
   metaTitle,
   metaDescription,
+  canonicalUrl,
   deviceName,
   tagline,
   heroDescription,
@@ -57,7 +59,7 @@ export const RepairLandingTemplate = ({
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
       
       <div className="flex min-h-screen flex-col">

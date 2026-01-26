@@ -133,6 +133,7 @@ const AmazonKindleRepair = () => {
     <RepairLandingTemplate
       metaTitle="Amazon Kindle & Fire Tablet Repair Winnipeg | E-Reader Specialists"
       metaDescription="Expert Kindle e-reader and Fire tablet repair in Winnipeg. E-Ink screen replacement, battery service, charging port repair. Same-day service available."
+      canonicalUrl="https://mobiletechlab.ca/repair/amazon-kindle"
       deviceName="Amazon Kindle & Fire"
       tagline="Winnipeg's Kindle & Fire Tablet Repair Experts"
       heroDescription="From cracked E-Ink displays to dead batteries, we specialize in Amazon device repairs. Whether it's your beloved Kindle Paperwhite or your family's Fire tablet, we'll get it working like new."

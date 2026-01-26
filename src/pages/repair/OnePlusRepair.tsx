@@ -134,6 +134,7 @@ const OnePlusRepair = () => {
     <RepairLandingTemplate
       metaTitle="OnePlus Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
       metaDescription="Premium OnePlus repair in Winnipeg. Screen replacement, Warp Charge port, battery repair for OnePlus 12, 11, Nord & Open. Expert same-day service."
+      canonicalUrl="https://mobiletechlab.ca/repair/oneplus"
       deviceName="OnePlus"
       tagline="OnePlus Phone Repair in Winnipeg"
       heroDescription="From the flagship OnePlus 13 to the innovative OnePlus Open foldable, we provide expert repairs for all OnePlus devices in Winnipeg. Warp Charge issues, screen damage, battery problems – we're your local OnePlus specialists."

@@ -135,6 +135,7 @@ const SonyXperiaRepair = () => {
     <RepairLandingTemplate
       metaTitle="Sony Xperia Repair Winnipeg | Screen & Camera Fix | Mobile Tech Lab"
       metaDescription="Sony Xperia repair in Winnipeg. Screen, battery, camera repair for Xperia 1, 5, 10 series & Pro models. Premium device specialists."
+      canonicalUrl="https://mobiletechlab.ca/repair/sony-xperia"
       deviceName="Sony Xperia"
       tagline="Sony Xperia Phone Repair in Winnipeg, MB"
       heroDescription="Own a Sony Xperia? We understand these premium devices with their 4K displays and pro-grade cameras. Expert repairs for all Xperia models in Winnipeg."

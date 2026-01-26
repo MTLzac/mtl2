@@ -134,6 +134,7 @@ const GooglePixelRepair = () => {
     <RepairLandingTemplate
       metaTitle="Google Pixel Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
       metaDescription="Professional Google Pixel repair in Winnipeg. Screen replacement, battery, charging port repair for Pixel 9, 8, 7, 6, Fold & all models. Same-day service available."
+      canonicalUrl="https://mobiletechlab.ca/repair/google-pixel"
       deviceName="Google Pixel"
       tagline="Google Pixel Repair Experts in Winnipeg, MB"
       heroDescription="From the latest Pixel 9 Pro to Pixel Fold devices, we specialize in Google's flagship phone repairs. Cracked OLED screens, degraded batteries, camera issues, and charging problems—all fixed with quality parts and backed by our repair warranty."

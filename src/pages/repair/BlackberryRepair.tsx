@@ -139,6 +139,7 @@ const BlackberryRepair = () => {
     <RepairLandingTemplate
       metaTitle="Blackberry Phone Repair Winnipeg | KEY2 & Classic Fix | Mobile Tech Lab"
       metaDescription="Blackberry repair specialists in Winnipeg. Screen, keyboard, battery repair for KEY2, KEYone, Classic, Passport & all legacy models. We keep discontinued devices running!"
+      canonicalUrl="https://mobiletechlab.ca/repair/blackberry"
       deviceName="Blackberry"
       tagline="Blackberry Phone Repair in Winnipeg, MB"
       heroDescription="Still using a Blackberry? We've got you covered in Winnipeg. As Blackberry repair specialists, we maintain parts and expertise for all models – from the KEY2 to classic Bold and Curve devices."

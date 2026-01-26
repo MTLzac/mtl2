@@ -144,6 +144,7 @@ const SurfaceRepair = () => {
     <RepairLandingTemplate
       metaTitle="Microsoft Surface Repair in Manitoba | MobileTechLab"
       metaDescription="Expert Microsoft Surface repair services in Winnipeg and Winkler. Screen replacement, battery replacement, charging issues, data recovery, and liquid damage repair."
+      canonicalUrl="https://mobiletechlab.ca/repair/surface"
       deviceName="Microsoft Surface"
       tagline="Expert Surface Repair Services"
       heroDescription="Professional Microsoft Surface repair services in Winnipeg and Winkler. Screen replacement, battery issues, charging problems, data recovery, and liquid damage repair for all Surface Pro, Laptop, and Book models."
