@@ -106,6 +106,7 @@ const BlackMagicHDMIRepair = () => {
     <NicheRepairTemplate
       metaTitle="BlackMagic Pocket 4K/6K HDMI Port Repair | BMPCC HDMI Fix"
       metaDescription="BMPCC 4K or 6K HDMI not working? We repair BlackMagic Pocket Cinema Camera HDMI ports and controller IC chips. Mail-in service available Canada-wide."
+      slug="blackmagic-hdmi"
       headline="BlackMagic Pocket 4K/6K HDMI Repair"
       subheadline="HDMI Port & Controller IC Replacement"
       heroDescription="Is your BMPCC 4K or 6K showing no HDMI output? We fix BlackMagic Pocket Cinema Camera HDMI ports and the controller IC chip when others can't. Based in Winnipeg, MB - mail-in repairs welcome from anywhere in Canada."

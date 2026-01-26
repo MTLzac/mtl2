@@ -2,12 +2,12 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { WhyChooseUs, AdvantagePillar } from "./WhyChooseUs";
 import { LocationCards } from "./LocationCards";
 import { FAQSection, FAQ } from "./FAQSection";
 import { StickyQuoteCTA } from "./StickyQuoteCTA";
+import { BreadcrumbSchema, getRepairBreadcrumbs } from "@/components/seo/BreadcrumbSchema";
 import { CheckCircle, LucideIcon, Package, Phone, MessageSquare, AlertTriangle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -26,6 +26,7 @@ export interface CompetitorProblem {
 interface NicheRepairTemplateProps {
   metaTitle: string;
   metaDescription: string;
+  slug: string; // URL slug for breadcrumbs (e.g., "blackmagic-hdmi")
   headline: string;
   subheadline: string;
   heroDescription: string;
@@ -50,6 +51,7 @@ interface NicheRepairTemplateProps {
 export const NicheRepairTemplate = ({
   metaTitle,
   metaDescription,
+  slug,
   headline,
   subheadline,
   heroDescription,
@@ -70,14 +72,16 @@ export const NicheRepairTemplate = ({
   youtubeVideoTitle = "Watch the Repair Process",
   relatedRepairs,
 }: NicheRepairTemplateProps) => {
+  const breadcrumbs = getRepairBreadcrumbs(deviceName, slug);
   const smsMessage = encodeURIComponent(`Hi, I found your site searching for ${deviceName} repair. Can you help?`);
   return (
     <>
+      <BreadcrumbSchema items={breadcrumbs} />
       <Helmet>
         <title>{metaTitle}</title>
         <meta name="description" content={metaDescription} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={window.location.href} />
+        <link rel="canonical" href={`https://mobiletechlab.ca/repair/${slug}`} />
       </Helmet>
       
       <div className="flex min-h-screen flex-col">

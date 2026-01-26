@@ -135,6 +135,7 @@ const XboxRepair = () => {
       metaTitle="Xbox Repair Winnipeg | Series X & Controller Fix | Mobile Tech Lab"
       metaDescription="Xbox repair in Winnipeg. Overheating, HDMI port, disc drive, controller repair for Xbox Series X, Series S, One & 360. Console specialists."
       canonicalUrl="https://mobiletechlab.ca/repair/xbox"
+      slug="xbox"
       deviceName="Xbox"
       tagline="Xbox Repair Specialists in Winnipeg"
       heroDescription="Xbox not cooperating? Overheating, HDMI issues, no power, or controller drift—we repair all Xbox consoles in Winnipeg. Series X, Series S, One, and 360."

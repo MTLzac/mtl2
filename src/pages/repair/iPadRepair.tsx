@@ -123,6 +123,7 @@ const iPadRepair = () => {
       metaTitle="iPad Repair Winnipeg | Screen & Battery Replacement"
       metaDescription="Professional iPad repair in Winnipeg. Screen replacement, battery, charging port repair for iPad Pro, iPad Air, iPad mini & all models. Same-day service available."
       canonicalUrl="https://mobiletechlab.ca/repair/ipad"
+      slug="ipad"
       deviceName="iPad"
       tagline="Expert iPad Repair in Winnipeg: Fast, Professional, and Guaranteed"
       heroDescription="Whether it's a shattered screen on an iPad Pro or a battery that won't hold a charge on an iPad Air, you need more than a quick fix—you need a guarantee. Mobile Tech Lab is Winnipeg's highest-rated destination for tablet repairs. Need iPhone or MacBook repair? We service all Apple devices."

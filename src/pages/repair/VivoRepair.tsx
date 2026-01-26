@@ -142,6 +142,7 @@ const VivoRepair = () => {
       metaTitle="Vivo Repair Winnipeg | X Series & iQOO Fix | Mobile Tech Lab"
       metaDescription="Vivo phone repair in Winnipeg. Screen, battery, camera repair for Vivo X100, V30, Y series & iQOO gaming phones. Growing brand specialists."
       canonicalUrl="https://mobiletechlab.ca/repair/vivo"
+      slug="vivo"
       deviceName="Vivo"
       tagline="Vivo & iQOO Repair in Winnipeg"
       heroDescription="From the ZEISS-equipped X100 flagship to iQOO gaming phones, we repair all Vivo devices in Winnipeg. Growing brand specialists with expert service for X, V, Y series and foldables."

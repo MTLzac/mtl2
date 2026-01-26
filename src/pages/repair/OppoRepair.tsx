@@ -146,6 +146,7 @@ const OppoRepair = () => {
       metaTitle="Oppo Repair Winnipeg | Find X & Reno Screen Fix | Mobile Tech Lab"
       metaDescription="Oppo repair in Winnipeg. Screen, battery, SUPERVOOC charging repair for Oppo Find X, Reno, A series & Realme devices. Growing market specialists."
       canonicalUrl="https://mobiletechlab.ca/repair/oppo"
+      slug="oppo"
       deviceName="Oppo"
       tagline="Oppo & Realme Repair Specialists in Winnipeg"
       heroDescription="From the flagship Find X series to the affordable A-series, we repair all Oppo devices in Winnipeg. Plus Realme phones too! SUPERVOOC charging issues, cracked screens, battery problems—we fix it all."

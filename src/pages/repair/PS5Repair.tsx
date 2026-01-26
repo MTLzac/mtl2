@@ -127,6 +127,7 @@ const PS5Repair = () => {
       metaTitle="PS5 Repair Winnipeg | PlayStation 5 Fix | Mobile Tech Lab"
       metaDescription="PS5 repair in Winnipeg. Overheating, HDMI port, disc drive, DualSense controller repair for PlayStation 5. Console repair specialists."
       canonicalUrl="https://mobiletechlab.ca/repair/ps5"
+      slug="ps5"
       deviceName="PS5"
       tagline="PlayStation 5 Repair Specialists in Winnipeg"
       heroDescription="PS5 overheating? HDMI not working? DualSense drifting? We're Winnipeg's PlayStation 5 repair specialists. All PS5 models and DualSense controllers serviced."
