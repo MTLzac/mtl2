@@ -53,8 +53,8 @@ const ADVANTAGE_PILLARS = [
   },
   {
     icon: Fingerprint,
-    title: "90-Day Warranty",
-    description: "All repairs backed by our industry-leading warranty for your peace of mind.",
+    title: "Warranty on Every Repair",
+    description: "Screen repairs from 30 days to lifetime. 90-day battery warranty. Most other repairs include lifetime warranty.",
   },
 ];
 

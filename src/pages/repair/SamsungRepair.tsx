@@ -60,8 +60,8 @@ const ADVANTAGE_PILLARS = [
   },
   {
     icon: Award,
-    title: "Industry-Leading Warranties",
-    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
+    title: "Warranty on Every Repair",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
   },
   {
     icon: DollarSign,

@@ -15,7 +15,7 @@ const DEFAULT_BENEFITS: AdvantagePillar[] = [
   {
     icon: Shield,
     title: "Warranty Included",
-    description: "All repairs backed by our service warranty for peace of mind",
+    description: "All repairs backed by warranty—screen repairs from 30 days to lifetime, batteries 90 days, most other repairs lifetime.",
   },
   {
     icon: Award,

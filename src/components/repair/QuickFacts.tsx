@@ -14,7 +14,7 @@ interface QuickFactsProps {
 const DEFAULT_FACTS: QuickFactsData = {
   turnaround: "Same-day available",
   startingPrice: "From $59",
-  warranty: "90-day warranty",
+  warranty: "Up to lifetime warranty",
   locations: "2 Manitoba locations",
 };
 
