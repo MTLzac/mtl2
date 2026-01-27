@@ -59,8 +59,8 @@ const ADVANTAGE_PILLARS = [
   },
   {
     icon: Shield,
-    title: "Industry-Leading Warranties",
-    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
+    title: "Warranty on Every Repair",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
   },
   {
     icon: Award,
@@ -107,7 +107,7 @@ const FAQS = [
   },
   {
     question: "What warranty do you offer on iPad repairs?",
-    answer: "Screen repairs include a lifetime warranty, and battery replacements come with a 90-day warranty. We stand behind our work with quality parts that meet OEM specifications."
+    answer: "Screen repair warranties vary by part quality tier (starting at 30 days for budget options, up to lifetime for premium). Battery replacements come with a 90-day warranty. Most other repairs include a lifetime warranty. We stand behind our work with quality parts."
   },
   {
     question: "Can you fix a water-damaged iPad?",

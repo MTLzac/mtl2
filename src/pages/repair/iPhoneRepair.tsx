@@ -124,7 +124,7 @@ const FAQS: FAQ[] = [
   },
   {
     question: "What's the warranty on iPhone repairs?",
-    answer: "All iPhone repairs at Mobile Tech Lab come with a warranty. Screen repairs include a lifetime warranty against defects, while battery and other component repairs are covered for 90 days. If anything goes wrong with our work, we'll make it right—guaranteed.",
+    answer: "All iPhone repairs at Mobile Tech Lab come with a warranty. Screen repair warranties vary by part quality tier (starting at 30 days for budget options, up to lifetime for premium). Battery replacements are covered for 90 days. Most other component repairs include a lifetime warranty. If anything goes wrong with our work, we'll make it right—guaranteed.",
   },
   {
     question: "What if I find a cheaper quote in Winnipeg?",
@@ -224,7 +224,7 @@ const IPhoneRepair = () => {
                 <QuickFacts facts={{
                   turnaround: "1-2 hours",
                   startingPrice: "From $59",
-                  warranty: "Lifetime screen warranty",
+                  warranty: "Up to lifetime warranty",
                   locations: "St. Vital & Thompson",
                 }} />
               </div>

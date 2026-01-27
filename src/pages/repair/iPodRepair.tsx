@@ -84,8 +84,8 @@ const ADVANTAGE_PILLARS = [
   },
   {
     icon: Shield,
-    title: "Industry-Leading Warranties",
-    description: "Lifetime warranty on screen repairs. 90-day warranty on battery replacements. Quality parts that meet OEM specifications.",
+    title: "Warranty on Every Repair",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
   },
 ];
 
@@ -131,7 +131,7 @@ const FAQS = [
   },
   {
     question: "Do you offer a warranty on iPod repairs?",
-    answer: "Yes! Screen repairs include a lifetime warranty, and battery replacements come with a 90-day warranty. We stand behind our work with quality parts."
+    answer: "Yes! Screen repair warranties vary by part quality tier (30 days to lifetime). Battery replacements come with a 90-day warranty. Most other repairs include a lifetime warranty."
   }
 ];
 
