@@ -51,10 +51,10 @@ const BrandonRepair = () => {
   return (
     <>
       <Helmet>
-        <title>Device Repair Brandon MB | Mail-In Phone Repair | Mobile Tech Lab</title>
+        <title>Phone & Device Repair Brandon MB | Free Mail-In | Mobile Tech Lab</title>
         <meta 
           name="description" 
-          content="Need phone, tablet, or console repair in Brandon, Manitoba? Mail your device to us for fast, affordable repairs with free shipping. Or drive 2 hours to Winnipeg for same-day service." 
+          content="Brandon, MB phone, tablet & console repair. Free mail-in shipping or visit Winnipeg (2 hrs) for same-day service. 24-48 hour turnaround. Get a free quote!" 
         />
         <link rel="canonical" href="https://mobiletechlab.ca/location/brandon" />
         
@@ -64,7 +64,7 @@ const BrandonRepair = () => {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Mobile Tech Lab",
-            "description": "Professional device repair services for Brandon, Manitoba residents via mail-in or in-person at our Winnipeg location.",
+            "description": "Professional phone, tablet, laptop & console repair for Brandon, Manitoba. Free mail-in service or same-day repairs at our Winnipeg location.",
             "url": "https://mobiletechlab.ca",
             "telephone": "+1-204-500-9117",
             "areaServed": [
@@ -134,9 +134,9 @@ const BrandonRepair = () => {
           driveTime={DRIVE_TIME} 
         />
         
-        <MailInHowItWorks />
+        <MailInHowItWorks cityName={CITY_NAME} />
         
-        <ServiceCategories />
+        <ServiceCategories cityName={CITY_NAME} />
         
         <WhyChooseUsLocation cityName={CITY_NAME} />
         

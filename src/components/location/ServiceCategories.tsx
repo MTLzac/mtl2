@@ -40,12 +40,18 @@ const services = [
   },
 ];
 
-export const ServiceCategories = () => {
+interface ServiceCategoriesProps {
+  cityName?: string;
+}
+
+export const ServiceCategories = ({ cityName }: ServiceCategoriesProps) => {
   return (
     <section className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Services We Offer</h2>
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+            {cityName ? `Device Repair Services for ${cityName}, MB` : "Services We Offer"}
+          </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Professional repairs for phones, tablets, laptops, and gaming consoles—all available via mail-in.
           </p>
