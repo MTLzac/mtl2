@@ -25,7 +25,7 @@ export const MailInHero = ({ cityName, distanceToWinnipeg, driveTime }: MailInHe
           </div>
           
           <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Device Repair for{" "}
+            Phone & Device Repair for{" "}
             <span className="text-primary">{cityName}, MB</span>
           </h1>
           

@@ -14,7 +14,7 @@ export const ServiceOptions = ({ cityName, driveTime }: ServiceOptionsProps) => 
     <section className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Two Ways to Get Your Device Repaired</h2>
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Two Ways to Get Your Device Repaired in {cityName}</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Choose the option that works best for you—mail your device or make the trip to Winnipeg.
           </p>

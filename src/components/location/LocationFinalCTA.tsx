@@ -14,7 +14,7 @@ export const LocationFinalCTA = ({ cityName }: LocationFinalCTAProps) => {
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="mb-3 text-3xl font-bold md:text-4xl">
-            Ready to Get Your Device Fixed?
+            Get Your {cityName} Device Repair Started
           </h2>
           <p className="mb-8 text-lg text-muted-foreground">
             {cityName} residents get the same great service—shipped right to your door.
