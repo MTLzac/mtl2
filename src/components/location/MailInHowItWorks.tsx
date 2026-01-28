@@ -19,7 +19,7 @@ const steps = [
   {
     icon: Truck,
     title: "Get It Back",
-    description: "Choose your preferred return shipping option and we'll send your repaired device back—usually within 3–5 business days.",
+    description: "Choose your preferred return shipping option and we'll send your repaired device back—most repairs done within 24–48 hours of arrival.",
   },
 ];
 

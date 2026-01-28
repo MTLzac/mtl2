@@ -44,7 +44,7 @@ export const ServiceOptions = ({ cityName, driveTime }: ServiceOptionsProps) => 
                 </li>
                 <li className="flex items-start gap-3">
                   <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>3–5 business day turnaround</span>
+                  <span>24–48 hour turnaround once received</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Shield className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
