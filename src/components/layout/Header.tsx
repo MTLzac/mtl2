@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Phone, Smartphone, Tablet, Gamepad2, Laptop, Watch, Wrench } from "lucide-react";
+import { Menu, Phone, Smartphone, Tablet, Gamepad2, Laptop, Watch, Wrench, MapPin } from "lucide-react";
 import { PRIMARY_PHONE, PRIMARY_PHONE_FORMATTED } from "@/lib/locations";
 import logo from "@/assets/logo.png";
 
@@ -83,6 +83,10 @@ const REPAIR_CATEGORIES = [
   },
 ];
 
+const LOCATIONS = [
+  { name: "Brandon, MB", href: "/location/brandon" },
+];
+
 export const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -129,6 +133,32 @@ export const Header = () => {
                       </ul>
                     </div>
                   ))}
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Locations</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="w-48 p-3">
+                  <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
+                    <MapPin className="h-4 w-4" />
+                    Service Areas
+                  </div>
+                  <ul className="space-y-1">
+                    {LOCATIONS.map((location) => (
+                      <li key={location.href}>
+                        <NavigationMenuLink asChild>
+                          <Link
+                            to={location.href}
+                            className="block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                          >
+                            {location.name}
+                          </Link>
+                        </NavigationMenuLink>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </NavigationMenuContent>
             </NavigationMenuItem>
@@ -212,6 +242,26 @@ export const Header = () => {
                   </ul>
                 </div>
               ))}
+
+              <div>
+                <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
+                  <MapPin className="h-4 w-4" />
+                  Locations
+                </div>
+                <ul className="ml-6 space-y-2">
+                  {LOCATIONS.map((location) => (
+                    <li key={location.href}>
+                      <Link
+                        to={location.href}
+                        className="block text-sm text-muted-foreground hover:text-primary"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {location.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               <Link 
                 to="/business" 
