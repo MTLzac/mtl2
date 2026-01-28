@@ -74,6 +74,9 @@ const Contact = lazy(() => import("./pages/Contact"));
 // Lazy-loaded Draft Pages
 const PDPv2Draft = lazy(() => import("./pages/draft/PDPv2Draft"));
 
+// Lazy-loaded Location Pages
+const BrandonRepair = lazy(() => import("./pages/location/BrandonRepair"));
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -151,6 +154,9 @@ const App = () => (
               
               {/* Contact Page */}
               <Route path="/contact" element={<Contact />} />
+
+              {/* Location Pages */}
+              <Route path="/location/brandon" element={<BrandonRepair />} />
 
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
