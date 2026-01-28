@@ -35,7 +35,7 @@ export const MailInHero = ({ cityName, distanceToWinnipeg, driveTime }: MailInHe
           
           <p className="mx-auto mb-8 max-w-2xl text-muted-foreground">
             While we don't have a physical location in {cityName}, we make device repair easy. 
-            Ship your device to us with free prepaid labels, or visit our Winnipeg shop—only {driveTime} away. 
+            We'll send you a free shipping label to get your device to us, or visit our Winnipeg shop—only {driveTime} away. 
             Same quality service. Same warranty. Real technicians.
           </p>
           
@@ -43,7 +43,7 @@ export const MailInHero = ({ cityName, distanceToWinnipeg, driveTime }: MailInHe
           <div className="mb-8 flex flex-wrap items-center justify-center gap-6 text-sm">
             <div className="flex items-center gap-2">
               <Truck className="h-4 w-4 text-primary" />
-              <span>Free shipping both ways</span>
+              <span>Free inbound shipping</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-primary" />

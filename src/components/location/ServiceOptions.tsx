@@ -40,7 +40,7 @@ export const ServiceOptions = ({ cityName, driveTime }: ServiceOptionsProps) => 
               <ul className="mb-8 space-y-3">
                 <li className="flex items-start gap-3">
                   <Truck className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>Free prepaid shipping labels</span>
+                  <span>Free shipping to us (we send you a label)</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Clock className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
@@ -48,7 +48,7 @@ export const ServiceOptions = ({ cityName, driveTime }: ServiceOptionsProps) => 
                 </li>
                 <li className="flex items-start gap-3">
                   <Shield className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
-                  <span>Insured return shipping</span>
+                  <span>Affordable return shipping options</span>
                 </li>
               </ul>
               

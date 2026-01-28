@@ -46,7 +46,7 @@ export const LocationFinalCTA = ({ cityName }: LocationFinalCTAProps) => {
           </div>
 
           <p className="mt-6 text-sm text-muted-foreground">
-            Fast answers from real technicians • No obligation • Free shipping both ways
+            Fast answers from real technicians • No obligation • Free inbound shipping
           </p>
         </div>
       </div>
