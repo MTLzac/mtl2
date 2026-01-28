@@ -1,142 +1,186 @@
 
-# Further Digestibility Improvements for Repair Pages
+
+# Brandon, MB Mail-In Repair Landing Page
 
 ## Overview
-After analyzing the current implementation, here are actionable improvements to make pages more digestible for users and search engines.
+
+Create a new location page at `/location/brandon` that serves two purposes:
+1. **Capture search impressions** from users searching for "phone repair Brandon MB" and similar keywords
+2. **Convert visitors** by highlighting mail-in repair options and directing them to get a quote
+
+This page acknowledges Brandon doesn't have a physical location while emphasizing the convenience of mail-in service and proximity to Winnipeg (2-hour drive).
 
 ---
 
-## 1. Add Visible Breadcrumb Navigation (High Priority)
+## Page Structure
 
-Currently, breadcrumb structured data exists (JSON-LD) but users cannot see or click breadcrumbs on the page.
+### 1. Hero Section
+- **Headline**: "Device Repair for Brandon, MB"
+- **Subheadline**: "Mail-In Service or Visit Winnipeg"
+- **Description**: Acknowledge no physical location in Brandon, but highlight:
+  - Free mail-in service with prepaid shipping labels
+  - Winnipeg is just 2 hours away for same-day repairs
+  - Same quality service and warranty as in-store repairs
 
-**What to add:**
-- A visible breadcrumb component showing: `Home > Repairs > [Device] Repair`
-- Placed directly below the header on repair pages
-- Clickable links for easy navigation
+### 2. Two Options Cards
+Side-by-side cards presenting clear choices:
 
-**Benefits:**
-- Improves user orientation and navigation
-- Reduces bounce rate by providing clear escape routes
-- Complements existing structured data
+**Option A: Mail-In Repairs**
+- Ship your device from Brandon
+- Free prepaid shipping labels
+- 3-5 day turnaround
+- Insured return shipping
+- CTA: "Get Mail-In Quote"
 
----
+**Option B: Visit Winnipeg**
+- Same-day repairs available
+- Walk-ins welcome
+- Only 2 hours from Brandon
+- Directions/Map link
+- CTA: "Get Directions"
 
-## 2. Add FAQPage Structured Data (High Priority)
+### 3. How Mail-In Works
+Reuse the step-by-step flow pattern from trade-in:
+1. Request a Quote (online form)
+2. Ship Your Device (free prepaid label)
+3. We Repair It (fast turnaround)
+4. Get It Back (insured return shipping)
 
-The FAQ sections exist on pages but lack FAQPage schema, which can generate rich FAQ snippets in Google search results.
+### 4. Services We Offer
+Brief grid of repair categories to reinforce what's available:
+- Phone Screen Repair
+- Battery Replacement
+- Charging Port Repair
+- Water Damage Recovery
+- Tablet & iPad Repair
+- Console Repair
 
-**What to add:**
-- Create `FAQPageSchema.tsx` component
-- Outputs JSON-LD with `@type: FAQPage` and `mainEntity` array
-- Integrate into `FAQSection.tsx` so it auto-generates from existing FAQ data
+Links to relevant repair landing pages for SEO internal linking.
 
-**Benefits:**
-- Potential for expandable FAQ rich snippets in Google
-- Increased SERP real estate
-- Higher click-through rates
+### 5. Why Brandon Residents Choose Us
+Trust pillars adapted for remote customers:
+- No local shop? No problem
+- Same warranty as in-store
+- Real humans answering your calls
+- Serving Manitoba since [year]
 
----
+### 6. FAQ Section
+Brandon-specific questions:
+- "Do you have a location in Brandon?"
+- "How long does mail-in repair take?"
+- "Is my device insured during shipping?"
+- "Can I drive to Winnipeg for same-day repair?"
+- "What devices do you repair?"
 
-## 3. Add Table of Contents / Jump Links (Medium Priority)
-
-Long repair pages have many sections but no quick navigation.
-
-**What to add:**
-- Floating or inline table of contents with anchor links:
-  - Services
-  - Models We Repair
-  - Why Choose Us
-  - Locations
-  - FAQs
-- Add `id` attributes to each section
-
-**Benefits:**
-- Helps users quickly find information
-- Reduces scroll fatigue on mobile
-- Google may display jump-to links in search results
-
----
-
-## 4. Add "Quick Facts" Summary Box (Medium Priority)
-
-Users want to quickly see key info without reading paragraphs.
-
-**What to add:**
-A highlighted box near the hero showing:
-- Turnaround time (e.g., "Same-day service")
-- Starting price (e.g., "From $59")
-- Warranty (e.g., "90-day warranty")
-- Location count (e.g., "2 Manitoba locations")
-
-**Benefits:**
-- Immediately answers common questions
-- Reduces cognitive load
-- Increases conversion by front-loading value
+### 7. Contact/CTA Section
+Final push with phone number and quote button.
 
 ---
 
-## 5. Improve Model List Scannability (Low Priority)
+## Files to Create
 
-Current model list can be overwhelming with 30+ models.
-
-**What to improve:**
-- Add collapsible/expandable sections for model categories
-- Show 3-4 popular models by default, expand to see all
-- Add search/filter functionality for large lists
-
-**Benefits:**
-- Less overwhelming for users
-- Faster to find specific model
-- Improved mobile experience
+| File | Purpose |
+|------|---------|
+| `src/pages/location/BrandonRepair.tsx` | Main Brandon landing page |
+| `src/components/location/MailInHero.tsx` | Hero component for mail-in focused pages (reusable for other cities) |
+| `src/components/location/ServiceOptions.tsx` | Two-option cards (Mail-In vs Visit) |
+| `src/components/location/MailInHowItWorks.tsx` | 4-step process for mail-in repairs |
 
 ---
 
-## Implementation Priority Order
+## Files to Modify
 
-| Priority | Improvement | Effort | Impact |
-|----------|-------------|--------|--------|
-| 1 | Visible breadcrumb navigation | Low | High |
-| 2 | FAQPage structured data | Low | High |
-| 3 | Quick Facts summary box | Medium | High |
-| 4 | Table of contents / jump links | Medium | Medium |
-| 5 | Collapsible model categories | Medium | Low |
+| File | Changes |
+|------|---------|
+| `src/App.tsx` | Add route: `/location/brandon` |
+| `public/sitemap.xml` | Add Brandon URL |
+
+---
+
+## SEO Strategy
+
+### Meta Tags
+- **Title**: "Device Repair Brandon MB | Mail-In Phone Repair | Mobile Tech Lab"
+- **Description**: "Need phone, tablet, or console repair in Brandon, Manitoba? Mail your device to us for fast, affordable repairs with free shipping. Or drive 2 hours to Winnipeg for same-day service."
+- **Canonical**: `https://mobiletechlab.ca/location/brandon`
+
+### Structured Data
+- LocalBusiness schema with `areaServed: Brandon, MB`
+- Service schema for mail-in repairs
+- FAQPage schema for rich snippets
+
+### Internal Links
+- Link to main repair pages (iPhone, Samsung, iPad)
+- Link to Contact page for quote widget
+- Link to Winnipeg location for directions
 
 ---
 
 ## Technical Details
 
-### Visible Breadcrumbs Component
+### Route Structure
 ```
-Location: src/components/repair/VisibleBreadcrumbs.tsx
-Placement: After <Header />, before hero section
-Styling: Small text, muted color, horizontal layout
+/location/brandon → BrandonRepair.tsx
 ```
 
-### FAQPage Schema Component
-```
-Location: src/components/seo/FAQPageSchema.tsx
-Integration: Add to FAQSection.tsx, auto-generate from faqs array
-Schema: @type FAQPage with mainEntity containing Question/Answer pairs
-```
+This pattern allows future expansion:
+- `/location/portage-la-prairie`
+- `/location/steinbach`
+- `/location/selkirk`
 
-### Quick Facts Component
+### Component Reusability
+The mail-in focused components can be reused for:
+- Other Manitoba cities without physical locations
+- General mail-in landing page (`/mail-in-repairs`)
+
+### Quick Facts Box
 ```
-Location: src/components/repair/QuickFacts.tsx
-Placement: Within hero section or immediately after
-Props: turnaround, startingPrice, warranty, locations
+Turnaround: 3-5 business days
+Shipping: Free both ways
+Warranty: Same as in-store
+Distance to Winnipeg: ~200 km / 2 hours
 ```
 
 ---
 
-## Files to Create/Modify
+## Visual Layout
 
-| File | Action |
-|------|--------|
-| `src/components/repair/VisibleBreadcrumbs.tsx` | Create |
-| `src/components/seo/FAQPageSchema.tsx` | Create |
-| `src/components/repair/QuickFacts.tsx` | Create |
-| `src/components/repair/FAQSection.tsx` | Modify (add schema) |
-| `src/components/repair/RepairLandingTemplate.tsx` | Modify (add breadcrumbs, quick facts) |
-| `src/components/repair/NicheRepairTemplate.tsx` | Modify (add breadcrumbs) |
-| Multiple section components | Modify (add id attributes for anchors) |
+```text
++--------------------------------------------------+
+|  HERO: Device Repair for Brandon, MB             |
+|  "Mail-in service or visit Winnipeg"             |
+|  [Get a Quote] [Call Now]                        |
++--------------------------------------------------+
+|                                                  |
+|  +---------------------+  +---------------------+|
+|  | MAIL-IN REPAIRS     |  | VISIT WINNIPEG      ||
+|  | Ship from anywhere  |  | Same-day repairs    ||
+|  | Free shipping       |  | 2 hours from Brandon||
+|  | [Get Quote]         |  | [Get Directions]    ||
+|  +---------------------+  +---------------------+|
+|                                                  |
++--------------------------------------------------+
+|  HOW MAIL-IN WORKS                               |
+|  1. Quote → 2. Ship → 3. Repair → 4. Return      |
++--------------------------------------------------+
+|  SERVICES WE OFFER                               |
+|  [Phones] [Tablets] [Consoles] [Laptops]         |
++--------------------------------------------------+
+|  WHY CHOOSE US                                   |
+|  Trust pillars                                   |
++--------------------------------------------------+
+|  FAQs (with FAQPage schema)                      |
++--------------------------------------------------+
+|  FINAL CTA                                       |
++--------------------------------------------------+
+```
+
+---
+
+## Implementation Priority
+
+1. Create `BrandonRepair.tsx` page with inline components initially
+2. Extract reusable components if needed for future city pages
+3. Add route and sitemap entry
+4. Test structured data with Google Rich Results Test
+
