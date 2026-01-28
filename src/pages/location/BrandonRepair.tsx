@@ -33,7 +33,7 @@ const faqs: FAQ[] = [
   },
   {
     question: "What devices do you repair?",
-    answer: "We repair smartphones (iPhone, Samsung, Google Pixel, and more), tablets (iPad, Galaxy Tab), laptops (MacBook, Windows laptops), gaming consoles (Nintendo Switch, PlayStation, Xbox), and more. If it has a screen or a battery, chances are we can fix it."
+    answer: "We repair smartphones (<a href='/repair/iphone' class='text-primary hover:underline'>iPhone</a>, <a href='/repair/samsung' class='text-primary hover:underline'>Samsung</a>, <a href='/repair/google-pixel' class='text-primary hover:underline'>Google Pixel</a>, and more), tablets (<a href='/repair/ipad' class='text-primary hover:underline'>iPad</a>, <a href='/repair/samsung-galaxy-tab' class='text-primary hover:underline'>Galaxy Tab</a>), laptops (<a href='/repair/macbook' class='text-primary hover:underline'>MacBook</a>, <a href='/repair/laptop' class='text-primary hover:underline'>Windows laptops</a>), gaming consoles (<a href='/repair/nintendo-switch' class='text-primary hover:underline'>Nintendo Switch</a>, <a href='/repair/ps5' class='text-primary hover:underline'>PlayStation</a>, <a href='/repair/xbox' class='text-primary hover:underline'>Xbox</a>), and more. If it has a screen or a battery, chances are we can fix it."
   },
   {
     question: "How do I get started with a mail-in repair?",
