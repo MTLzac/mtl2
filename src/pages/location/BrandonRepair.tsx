@@ -17,11 +17,11 @@ const DRIVE_TIME = "2 hours";
 const faqs: FAQ[] = [
   {
     question: "Do you have a repair location in Brandon?",
-    answer: "We don't have a physical shop in Brandon, but we make repairs easy with our mail-in service. We'll send you a free prepaid label to ship your device to us, and we'll repair it and send it back—typically within 3–5 business days. You can also drive to our Winnipeg location (about 2 hours) for same-day service."
+    answer: "We don't have a physical shop in Brandon, but we make repairs easy with our mail-in service. We'll send you a free prepaid label to ship your device to us, and most repairs are done within 24–48 hours of arrival. You can also drive to our Winnipeg location (about 2 hours) for same-day service."
   },
   {
     question: "How long does mail-in repair take?",
-    answer: "Most mail-in repairs are completed within 3–5 business days after we receive your device. This includes shipping time with Canada Post. For urgent repairs, consider visiting our Winnipeg shop for same-day service."
+    answer: "Most repairs are completed within 24–48 hours of us receiving your device, pending parts availability. Add a few days for shipping each way, and you're looking at about a week total. For urgent repairs, consider visiting our Winnipeg shop for same-day service."
   },
   {
     question: "How does shipping work?",
