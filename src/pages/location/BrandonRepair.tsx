@@ -17,15 +17,15 @@ const DRIVE_TIME = "2 hours";
 const faqs: FAQ[] = [
   {
     question: "Do you have a repair location in Brandon?",
-    answer: "We don't have a physical shop in Brandon, but we make repairs easy with our free mail-in service. Ship your device to us with a prepaid label, and we'll repair it and send it back—typically within 3–5 business days. You can also drive to our Winnipeg location (about 2 hours) for same-day service."
+    answer: "We don't have a physical shop in Brandon, but we make repairs easy with our mail-in service. We'll send you a free prepaid label to ship your device to us, and we'll repair it and send it back—typically within 3–5 business days. You can also drive to our Winnipeg location (about 2 hours) for same-day service."
   },
   {
     question: "How long does mail-in repair take?",
     answer: "Most mail-in repairs are completed within 3–5 business days after we receive your device. This includes shipping time with Canada Post. For urgent repairs, consider visiting our Winnipeg shop for same-day service."
   },
   {
-    question: "Is my device insured during shipping?",
-    answer: "Yes! We provide prepaid, insured shipping labels for sending your device to us. Return shipping is also insured. Your device is protected throughout the entire process."
+    question: "How does shipping work?",
+    answer: "We provide a free prepaid shipping label to send your device to us—no cost to you. For the return, you choose from affordable shipping options based on your preference for speed and tracking. We'll discuss options when your repair is complete."
   },
   {
     question: "Can I drive to Winnipeg for same-day repair?",
@@ -37,7 +37,7 @@ const faqs: FAQ[] = [
   },
   {
     question: "How do I get started with a mail-in repair?",
-    answer: "Easy! Click 'Get a Free Quote' and tell us about your device and the issue. We'll respond with a repair estimate and instructions. Once approved, we'll email you a prepaid shipping label to send your device."
+    answer: "Easy! Click 'Get a Free Quote' and tell us about your device and the issue. We'll respond with a repair estimate and instructions. Once approved, we'll email you a free prepaid shipping label to send your device."
   }
 ];
 

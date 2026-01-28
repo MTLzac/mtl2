@@ -9,7 +9,7 @@ const steps = [
   {
     icon: Package,
     title: "Ship Your Device",
-    description: "We'll send you a free prepaid shipping label. Pack it up and drop it off at any Canada Post.",
+    description: "We'll send you a free prepaid shipping label to send your device to us. Drop it off at any Canada Post.",
   },
   {
     icon: Wrench,
@@ -19,7 +19,7 @@ const steps = [
   {
     icon: Truck,
     title: "Get It Back",
-    description: "We ship your repaired device back with insured delivery—usually within 3–5 business days.",
+    description: "Choose your preferred return shipping option and we'll send your repaired device back—usually within 3–5 business days.",
   },
 ];
 
