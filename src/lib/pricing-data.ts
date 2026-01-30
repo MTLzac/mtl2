@@ -82,6 +82,7 @@ export const PRICING_LOGIC = [
   {
     title: "Price match policy",
     points: [
+      "We price match verified local competitors when pricing is publicly advertised or can be confirmed",
       "We match comparable quotes from local competitors for the same repair",
       "Bring in a written quote and we'll do our best to match it",
     ],

@@ -28,8 +28,9 @@ export const PricingHero = () => {
           {/* Subheadline */}
           <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
             We don't publish fixed prices because repair costs depend on your
-            specific device and situation. Here's how we think about pricing so
-            you can make an informed decision.
+            specific device, the parts available, and current part costs. Here's
+            how we think about pricing so you can understand your options and
+            avoid surprises.
           </p>
 
           {/* Trust Badges */}
@@ -68,6 +69,11 @@ export const PricingHero = () => {
               </a>
             </Button>
           </div>
+
+          {/* Part-cost transparency micro-line */}
+          <p className="mb-8 text-sm text-muted-foreground/80">
+            Repair pricing generally follows real part costs. When part costs drop over time, repair prices often follow.
+          </p>
 
           {/* Anchor Links */}
           <nav className="flex flex-wrap items-center justify-center gap-2 text-sm">
