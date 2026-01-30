@@ -182,12 +182,6 @@ export const Header = () => {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <Link to="/repair-pricing" className="px-4 py-2 text-sm font-medium hover:text-primary">
-                Pricing
-              </Link>
-            </NavigationMenuItem>
-
-            <NavigationMenuItem>
               <Link to="/contact" className="px-4 py-2 text-sm font-medium hover:text-primary">
                 Contact
               </Link>
