@@ -47,6 +47,11 @@ export const Footer = () => {
                   Contact Us
                 </Link>
               </li>
+              <li>
+                <Link to="/repair-pricing" className="text-muted-foreground hover:text-primary">
+                  Repair Pricing
+                </Link>
+              </li>
             </ul>
           </div>
 
