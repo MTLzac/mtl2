@@ -4,6 +4,7 @@ import { LiveStatusBadge } from "./LiveStatusBadge";
 import defaultHeroImage from "@/assets/hero-repair-illustration.png";
 import { PRIMARY_PHONE } from "@/lib/locations";
 import { QuickFacts, QuickFactsData } from "./QuickFacts";
+import { Link } from "react-router-dom";
 
 interface HeroSectionProps {
   deviceName: string;
@@ -64,6 +65,14 @@ export const HeroSection = ({ deviceName, tagline, description, heroImage, hideI
                 </a>
               </Button>
             </div>
+            
+            {/* Pricing clarity link */}
+            <p className={`mt-4 text-sm text-muted-foreground ${!showImage ? "text-center" : ""}`}>
+              Not sure what affects the cost?{" "}
+              <Link to="/repair-pricing" className="underline underline-offset-2 hover:text-primary transition-colors">
+                How repair pricing works
+              </Link>
+            </p>
             
             {/* Quick Facts */}
             {quickFacts && <QuickFacts facts={quickFacts} />}
