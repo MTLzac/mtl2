@@ -1,33 +1,32 @@
-import { DollarSign, ArrowLeftRight, Truck, Zap } from "lucide-react";
+import { DollarSign, Zap, Truck, Recycle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 
 const advantages = [
   {
     icon: DollarSign,
-    title: "More Than Carriers",
-    description: "We consistently pay more than Bell, Rogers, Apple, or Samsung trade-in programs.",
+    title: "Best Price Guarantee",
+    description: "We use real-time part pricing and beat any advertised local offer. If a competitor publishes a higher payout, show us and we'll match it.",
   },
   {
-    icon: ArrowLeftRight,
-    title: "Use It Your Way",
+    icon: Zap,
+    title: "Fast Payment",
+    description: "Cash, e-transfer or store credit—paid on the same day we receive your device.",
+  },
+  {
+    icon: Truck,
+    title: "Free Shipping & Drop-Off",
     description: (
       <>
-        Apply your credit toward a{" "}
-        <Link to="/repair/samsung" className="text-primary hover:underline">repair bill</Link>
-        {" "}or a pre-owned device purchase.
+        Mail it in on us or stop by our convenient{" "}
+        <Link to="/contact" className="text-primary hover:underline">Winnipeg locations</Link>.
       </>
     ),
   },
   {
-    icon: Truck,
-    title: "Free Shipping",
-    description: "We provide a free prepaid label—no cost to ship your device to us.",
-  },
-  {
-    icon: Zap,
-    title: "Same-Day Payment",
-    description: "Drop off in-store and get cash or E-Transfer the same day.",
+    icon: Recycle,
+    title: "Eco-Friendly Upcycling",
+    description: "Broken tech still has value. We refurbish or responsibly recycle every device to reduce e-waste.",
   },
 ];
 

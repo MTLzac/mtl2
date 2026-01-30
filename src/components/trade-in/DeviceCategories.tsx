@@ -10,40 +10,40 @@ const categories = [
   {
     icon: Smartphone,
     title: "Sell iPhone & Android Phones",
-    models: ["iPhone", "Samsung Galaxy", "Google Pixel", "OnePlus"],
-    description: "Sell your used iPhone, Samsung Galaxy, Google Pixel, or Android phone for cash. Cracked or working.",
+    models: ["iPhone", "Samsung Galaxy", "Google Pixel", "OnePlus", "and more"],
+    description: "We buy working or broken phones—cracked screens, battery issues, water damage. We securely wipe all data before processing.",
     repairLink: "/repair/samsung",
     repairLabel: "phone repair",
   },
   {
     icon: Tablet,
     title: "Sell iPad & Tablets",
-    models: ["iPad", "Samsung Galaxy Tab", "Surface", "Amazon Fire"],
-    description: "Sell your iPad, Samsung Galaxy Tab, or Surface tablet. All sizes and generations.",
+    models: ["iPad", "Samsung Galaxy Tab", "Surface", "Amazon Fire", "and more"],
+    description: "Sell your tablet in any condition. We handle data wiping and accept devices with damaged screens or batteries.",
     repairLink: "/repair/ipad",
     repairLabel: "tablet repair",
   },
   {
     icon: Laptop,
     title: "Sell MacBook & Laptops",
-    models: ["MacBook", "Windows laptops", "Chromebooks", "Desktop PCs"],
-    description: "Sell your MacBook, Windows laptop, or Chromebook. Even older models have value.",
+    models: ["MacBook", "Windows laptops", "Chromebooks", "Desktop PCs", "and more"],
+    description: "Get cash for your laptop—even older models have value. We securely erase all personal data during intake.",
     repairLink: "/repair/macbook",
     repairLabel: "laptop repair",
   },
   {
     icon: Gamepad2,
     title: "Sell Game Consoles & Games",
-    models: ["PlayStation", "Xbox", "Nintendo Switch", "Steam Deck"],
-    description: "Sell PlayStation, Xbox, Nintendo Switch, Steam Deck, and game discs.",
+    models: ["PlayStation", "Xbox", "Nintendo Switch", "Steam Deck", "and more"],
+    description: "Sell PlayStation, Xbox, Nintendo Switch, Steam Deck, and game discs. Working or with issues.",
     repairLink: "/repair/nintendo-switch",
     repairLabel: "console repair",
   },
   {
     icon: Watch,
     title: "Sell Apple Watch & Wearables",
-    models: ["Apple Watch", "Samsung Galaxy Watch", "Fitbit"],
-    description: "Sell your Apple Watch, Samsung Galaxy Watch, or fitness tracker.",
+    models: ["Apple Watch", "Samsung Galaxy Watch", "Fitbit", "and more"],
+    description: "Sell your smartwatch or fitness tracker. We buy devices in any cosmetic or functional condition.",
     repairLink: "/repair/apple-watch",
     repairLabel: "wearable repair",
   },
@@ -51,7 +51,7 @@ const categories = [
 
 export const DeviceCategories = () => {
   return (
-    <section className="py-16 md:py-20">
+    <section id="quote-form" className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Devices We Buy</h2>
@@ -77,7 +77,7 @@ export const DeviceCategories = () => {
                   {category.description}
                 </p>
                 <div className="flex flex-wrap justify-center gap-1.5">
-                  {category.models.slice(0, 4).map((model, modelIndex) => (
+                  {category.models.map((model, modelIndex) => (
                     <span
                       key={modelIndex}
                       className="rounded-full bg-muted px-2.5 py-1 text-xs font-medium text-muted-foreground"
@@ -94,7 +94,7 @@ export const DeviceCategories = () => {
                     asChild
                   >
                     <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
-                      Sell This Device
+                      Get Cash Quote
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>

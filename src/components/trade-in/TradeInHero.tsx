@@ -16,28 +16,28 @@ export const TradeInHero = () => {
           </div>
           
           <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Sell Your Phone in Winnipeg
+            Sell Your Phone, Tablet & Laptop in Winnipeg
           </h1>
           
           <p className="mb-2 text-xl font-medium text-foreground/90 md:text-2xl">
-            Get Cash for Your Used Phone, Tablet, or Laptop
+            Get top dollar for used, broken or unwanted devices with fast quotes, price match guarantee, and same-day payout.
           </p>
           
           <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-            Sell your used iPhone, Samsung, iPad, MacBook, or gaming console for cash or store credit. We buy working and damaged devices. Drop off in Winnipeg for same-day payment or ship free with our prepaid label.
+            We buy iPhones, Androids, iPads, MacBooks and more—even with cracked screens or water damage. Our offers are based on real part costs: if parts get cheaper, your payout goes up, and if they rise, we adjust honestly.
           </p>
           
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Button size="lg" className="gradient-primary text-lg" asChild>
               <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
-                Get a Cash Quote
+                Get Cash Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>
             </Button>
             <Button size="lg" variant="outline" className="text-lg" asChild>
               <a href={`tel:${PRIMARY_PHONE}`}>
                 <Phone className="mr-2 h-5 w-5" />
-                Call Now
+                Call For Quote
               </a>
             </Button>
           </div>

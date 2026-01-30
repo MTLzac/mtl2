@@ -27,18 +27,18 @@ export const Requirements = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
-                  Working devices in any cosmetic condition
+                  We accept fully paid, unlocked devices (working or broken)
+                </li>
+                <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
+                  Original or third-party chargers welcomed
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
                   <span>
-                    Damaged devices (cracked screens, battery issues, etc.) — 
+                    All personal data removed (we can assist) — 
                     <Link to="/repair/water-damage" className="text-primary hover:underline ml-1">prefer to fix it?</Link>
                   </span>
-                </li>
-                <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
-                  Devices you can unlock and sign out of
                 </li>
               </ul>
             </CardContent>
@@ -56,15 +56,15 @@ export const Requirements = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-                  iCloud-locked devices (Find My iPhone enabled)
+                  We do not purchase blacklisted, stolen or financed devices
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-                  Google/FRP-locked devices
+                  We cannot buy iCloud-locked phones
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-                  Devices with passcode you can't remove
+                  Severely water-damaged devices may be recycled rather than paid out
                 </li>
               </ul>
             </CardContent>
@@ -81,7 +81,7 @@ export const Requirements = () => {
               <div>
                 <h3 className="mb-1 font-semibold">Your Data is Safe</h3>
                 <p className="text-sm text-muted-foreground">
-                  You can wipe your device before sending, or we'll securely erase all data during our intake process. Either way, your personal information is protected.
+                  Our team securely wipes or destroys all data from every device we receive. You can erase it yourself before sending, or leave it to us—either way, your personal information is fully protected.
                 </p>
               </div>
             </CardContent>
@@ -97,7 +97,7 @@ export const Requirements = () => {
                 <div>
                   <h3 className="mb-1 font-semibold">Need Your Data First?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Selling a phone with photos, contacts, or files you haven't backed up? We can recover your data before we buy your device — and bundle it with your trade-in for a discount.
+                    Selling a phone with photos, contacts, or files you haven't backed up? We offer Data Recovery & Transfer services—bundle it with your trade-in for a discount.
                   </p>
                 </div>
                 <Button 
