@@ -77,6 +77,9 @@ const PDPv2Draft = lazy(() => import("./pages/draft/PDPv2Draft"));
 // Lazy-loaded Location Pages
 const BrandonRepair = lazy(() => import("./pages/location/BrandonRepair"));
 
+// Lazy-loaded Informational Pages
+const RepairPricing = lazy(() => import("./pages/RepairPricing"));
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -157,6 +160,9 @@ const App = () => (
 
               {/* Location Pages */}
               <Route path="/location/brandon" element={<BrandonRepair />} />
+
+              {/* Informational Pages */}
+              <Route path="/repair-pricing" element={<RepairPricing />} />
 
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
