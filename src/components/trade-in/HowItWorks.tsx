@@ -4,29 +4,23 @@ import { Link } from "react-router-dom";
 const steps = [
   {
     icon: ClipboardList,
-    title: "Request a Quote",
-    description: "Tell us about your device—model, condition, and any issues. We'll respond with a quote.",
+    title: "Get a Quote",
+    description: "Tell us your device's make, model & condition. We send a cash offer right away.",
   },
   {
     icon: Package,
-    title: "Ship or Drop Off",
-    description: "Mail it with our free prepaid label, or drop it off at our Winnipeg location.",
+    title: "Drop Off or Ship",
+    description: "Bring it to our Winnipeg shop or mail it in with free, trackable shipping.",
   },
   {
     icon: Search,
     title: "We Inspect & Confirm",
-    description: "We verify the device condition and confirm your final quote.",
+    description: "Our techs verify the device and confirm your payout. If our part cost drops, your payout increases; if parts get more expensive, we adjust fairly.",
   },
   {
     icon: CreditCard,
-    title: "Get Paid",
-    description: (
-      <>
-        Receive store credit toward{" "}
-        <Link to="/repair/samsung" className="text-primary hover:underline">repairs</Link>
-        {" "}or pre-owned devices. In-store? Get cash or E-Transfer same-day.
-      </>
-    ),
+    title: "Get Paid Fast",
+    description: "Choose cash, e-transfer or store credit and get paid the same day.",
   },
 ];
 
@@ -61,6 +55,17 @@ export const HowItWorks = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Repair vs Sell Link */}
+        <div className="mt-8 text-center">
+          <p className="text-muted-foreground">
+            Questions about repair versus selling?{" "}
+            <Link to="/repair-pricing#should-i-repair-or-sell-my-device" className="text-primary hover:underline font-medium">
+              Compare repair vs. sell
+            </Link>
+            .
+          </p>
         </div>
       </div>
     </section>

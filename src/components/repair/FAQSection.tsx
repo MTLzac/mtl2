@@ -43,8 +43,8 @@ export const FAQSection = ({ deviceName, faqs, heading, subheading }: FAQSection
                 <AccordionTrigger className="text-left hover:no-underline">
                   <span className="font-semibold">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
+                <AccordionContent className="text-muted-foreground prose-a:text-primary prose-a:hover:underline">
+                  <span dangerouslySetInnerHTML={{ __html: faq.answer }} />
                 </AccordionContent>
               </AccordionItem>
             ))}
