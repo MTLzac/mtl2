@@ -17,7 +17,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Dealing with fused LCD and digitizer assemblies for a factory-quality finish. Glass-only repairs available for iPad Air and Mini to save you money.",
+    description: "Dealing with fused LCD and digitizer assemblies for a factory-quality finish. Glass-only repairs available for iPad Air and Mini to save you money. iPad repair costs vary by model and part availability. Some iPad models offer multiple screen quality options, while others only have one reliable replacement option available.",
   },
   {
     icon: Battery,
@@ -55,12 +55,12 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Zap,
     title: "Same-Day Service",
-    description: "Most repairs completed same day. Rush Service available for urgent needs.",
+    description: "Most repairs completed same day. Rush Service available for urgent needs. Same-day iPad repair depends on part availability and our current repair queue.",
   },
   {
     icon: Shield,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part replaced only and does not extend to unrelated components.",
   },
   {
     icon: Award,
@@ -88,14 +88,14 @@ const MODEL_CATEGORIES = [
   {
     title: "All Models",
     models: ["Legacy iPads", "Discontinued models", "All generations"],
-    description: "Don't see your model? We service all generations including discontinued models.",
+    description: "Don't see your model? We service all generations including discontinued models. For older iPads, we'll also help you decide whether repair or replacement makes more financial sense.",
   },
 ];
 
 const FAQS = [
   {
     question: "How much does iPad repair cost in Winnipeg?",
-    answer: "Pricing depends on the model. iPad 9 glass repairs start at $99. Newer iPad Pro or Air models typically cost more due to their advanced, laminated display technology.",
+    answer: "Pricing depends on the model. iPad 9 glass repairs start at $99. Newer iPad Pro or Air models typically cost more due to their advanced, laminated display technology. <a href='/repair-pricing' class='text-primary hover:underline'>Learn more about how repair pricing works</a>.",
   },
   {
     question: "How long does it take to repair a cracked iPad screen?",
