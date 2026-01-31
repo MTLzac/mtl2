@@ -22,7 +22,7 @@ const SERVICES = [
   {
     icon: Plug,
     name: "HDMI Port Repair",
-    description: "Replace damaged HDMI ports—no signal issues fixed.",
+    description: "Replace damaged HDMI ports—no signal issues fixed. PS5 HDMI repairs involve board-level work and are not comparable to simple part swaps.",
   },
   {
     icon: Disc,
@@ -60,12 +60,12 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Zap,
     title: "Console Repair Pros",
-    description: "HDMI port micro-soldering and board-level repairs.",
+    description: "HDMI port micro-soldering and board-level repairs. Many PS5 HDMI repairs can be completed the same day when the console is dropped off early enough. Rush service can guarantee same-day completion regardless of timing or repair queue.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Lifetime warranty on most PS5 and controller repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward. Damage caused by liquid exposure or power surges is not warrantied.",
   },
 ];
 
@@ -73,12 +73,12 @@ const MODEL_CATEGORIES = [
   {
     title: "PS5 Consoles",
     models: ["PS5 Disc Edition", "PS5 Digital Edition", "PS5 Slim (Disc)", "PS5 Slim Digital", "PS5 Pro"],
-    description: "All PlayStation 5 console models.",
+    description: "All PlayStation 5 console models. PS5 model variants, including standard, digital, and slim editions, do not significantly change the repair process for most common issues.",
   },
   {
     title: "DualSense Controllers",
     models: ["DualSense Controller", "DualSense Edge Controller"],
-    description: "Stick drift and trigger repairs.",
+    description: "Stick drift, trigger, and charging port repairs. If a PS5 or controller cannot be reliably fixed or repaired in a cost-effective way, we'll explain alternative options, including trade-in credit toward another console.",
   },
   {
     title: "Accessories",
@@ -130,7 +130,7 @@ const PS5Repair = () => {
       slug="ps5"
       deviceName="PS5"
       tagline="PlayStation 5 Repair Specialists in Winnipeg"
-      heroDescription="PS5 overheating? HDMI not working? DualSense drifting? We're Winnipeg's PlayStation 5 repair specialists. All PS5 models and DualSense controllers serviced."
+      heroDescription="PS5 overheating? HDMI not working? DualSense drifting? We're Winnipeg's PlayStation 5 repair specialists. We repair a wide range of PS5 issues, including HDMI port damage, power or no-power problems, overheating, disc drive and power supply issues, software problems, and common controller repairs such as stick drift or charging port damage."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
