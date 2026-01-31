@@ -18,7 +18,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Pixel OLED and LTPO display replacements. Smooth 120Hz scrolling restored for Pixel 7 Pro, 8 Pro, and 9 Pro models.",
+    description: "Pixel OLED and LTPO display replacements. Smooth 120Hz scrolling restored for Pixel 7 Pro, 8 Pro, and 9 Pro models. Pixel screen repair costs vary by model and part availability. For most Google Pixel phones, the replacement screen used is the original Google display, which can impact overall repair cost. Aftermarket screens may be available for some Pixel models, but they are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -56,12 +56,12 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Zap,
     title: "Same-Day Pixel Repairs",
-    description: "Most Pixel screen and battery repairs completed within 2 hours. Walk-ins welcome at both locations.",
+    description: "Most Pixel screen and battery repairs completed within 2 hours. Walk-ins welcome at both locations. Pixel phone repair timing depends on the model, part availability, and our current repair queue.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
   {
     icon: DollarSign,
@@ -89,7 +89,7 @@ const MODEL_CATEGORIES = [
   {
     title: "Pixel Fold & Legacy",
     models: ["Pixel Fold", "Pixel 6 Pro", "Pixel 6", "Pixel 6a", "Pixel 5", "Pixel 5a", "Pixel 4 XL", "Pixel 4", "Pixel 4a", "Pixel 3 XL", "Pixel 3", "Pixel 3a"],
-    description: "Foldable specialists plus continued support for older Pixel generations.",
+    description: "Foldable specialists plus continued support for older Pixel generations. For some Pixel models, especially when screen cost approaches the value of the device or data is the priority, we'll help you decide whether repair or replacement makes more financial sense.",
   },
 ];
 
@@ -119,7 +119,7 @@ const FAQS = [
   },
   {
     question: "How much does Pixel repair cost in Winnipeg?",
-    answer: "Costs vary by model and repair type. Pixel a-series repairs are typically more affordable, while Pro models and Fold devices cost more due to premium components. Use our free quote tool for an accurate estimate.",
+    answer: "Costs vary by model and repair type. Pixel a-series repairs are typically more affordable, while Pro models and Fold devices cost more due to premium components. Use our free quote tool for an accurate estimate. <a href='/repair-pricing' class='text-primary hover:underline'>Learn more about how repair pricing works</a>.",
   },
   {
     question: "Do Pixel repairs affect camera quality or AI features?",
