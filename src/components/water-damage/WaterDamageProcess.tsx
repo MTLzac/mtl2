@@ -28,10 +28,14 @@ export const WaterDamageProcess = () => {
             How Liquid Damage Is Assessed
           </h2>
           
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground mb-4">
             Liquid damage is not a standard repair. Every case is different. Our process focuses on 
             understanding the extent of corrosion and determining whether data recovery or limited 
             repair is possible.
+          </p>
+          
+          <p className="text-muted-foreground mb-8">
+            We perform internal corrosion cleaning and advanced board-level work when required to recover data from liquid-damaged devices. This may include cleaning or repairing components directly on the device's motherboard.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-2">

@@ -45,7 +45,27 @@ export const WaterDamageFirstSteps = () => {
             ))}
           </div>
 
-          <p className="text-muted-foreground text-center italic">
+          <div className="mt-8 pt-6 border-t">
+            <h3 className="text-lg font-semibold text-foreground mb-4">
+              Bring It In As Soon As Possible If:
+            </h3>
+            <ul className="space-y-2 text-muted-foreground">
+              <li className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                The device was recently exposed to liquid
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                The device will not power on
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
+                Important data has not been backed up
+              </li>
+            </ul>
+          </div>
+
+          <p className="text-muted-foreground text-center italic mt-8">
             Early assessment improves the chance of recovery, even though liquid damage is never predictable.
           </p>
         </div>
