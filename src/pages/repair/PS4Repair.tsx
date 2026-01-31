@@ -22,7 +22,7 @@ const SERVICES = [
   {
     icon: Plug,
     name: "HDMI Port Repair",
-    description: "Replace damaged HDMI ports—no signal issues fixed.",
+    description: "Replace damaged HDMI ports—no signal issues fixed. PS4 HDMI repairs involve board-level work and are not simple part swaps.",
   },
   {
     icon: Power,
@@ -60,12 +60,12 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Zap,
     title: "Console Repair Pros",
-    description: "HDMI port micro-soldering and board-level repairs.",
+    description: "HDMI port micro-soldering and board-level repairs. Many PS4 HDMI repairs can be completed the same day when the console is dropped off early enough. Rush service can guarantee same-day completion regardless of timing or repair queue.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Lifetime warranty on most PS4 and controller repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward. Damage caused by liquid exposure or power surges is not warrantied.",
   },
 ];
 
@@ -73,12 +73,12 @@ const MODEL_CATEGORIES = [
   {
     title: "PS4 Consoles",
     models: ["PlayStation 4 Pro", "PlayStation 4 Slim", "PlayStation 4 (Original/Fat)"],
-    description: "All PlayStation 4 console generations.",
+    description: "All PlayStation 4 console generations. Different PS4 model variants do not significantly change the repair process for most common issues.",
   },
   {
     title: "Controllers",
     models: ["DualShock 4 Controller (V1)", "DualShock 4 Controller (V2)"],
-    description: "Stick drift and button repairs.",
+    description: "Stick drift, button, and charging port repairs. If multiple issues make a PS4 repair cost high, we may recommend replacement or explain trade-in options toward another console when it's the more cost-effective choice.",
   },
   {
     title: "Accessories",
@@ -128,7 +128,7 @@ const PS4Repair = () => {
       slug="ps4"
       deviceName="PS4"
       tagline="PlayStation 4 Repair Specialists in Winnipeg"
-      heroDescription="PS4 overheating? HDMI not working? No power? We're Winnipeg's PlayStation 4 repair specialists. PS4 Pro, Slim, and Original consoles plus DualShock 4 controllers."
+      heroDescription="PS4 overheating? HDMI not working? No power? We're Winnipeg's PlayStation 4 repair specialists. We repair a wide range of PS4 issues, including HDMI port damage, power or no-power problems, overheating, disc drive issues, software problems, and common controller repairs such as stick drift or charging port damage."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
