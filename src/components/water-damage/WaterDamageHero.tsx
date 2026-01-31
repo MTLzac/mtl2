@@ -22,8 +22,8 @@ export const WaterDamageHero = () => {
           </div>
           
           <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-            Water & Liquid Damage Repair
-            <span className="block text-primary">(Winnipeg)</span>
+            iPhone Water Damage in Winnipeg?
+            <span className="block text-primary">We're Here to Help</span>
           </h1>
           
           <p className="text-lg text-muted-foreground">
