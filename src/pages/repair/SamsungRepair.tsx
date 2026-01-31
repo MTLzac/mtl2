@@ -18,7 +18,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Galaxy S, A, and Note AMOLED screen replacements. Z Fold and Z Flip inner and outer display repairs with quality parts.",
+    description: "Galaxy S, A, and Note AMOLED screen replacements. Z Fold and Z Flip inner and outer display repairs with quality parts. Samsung screen repair costs vary significantly by model and part availability. For many Samsung phones — especially newer or higher-end models — the replacement screen used is the original Samsung display, which can impact overall repair cost. Lower-quality aftermarket screens may exist for some models, but they are not offered when they cannot be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -56,12 +56,12 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Zap,
     title: "Same-Day Galaxy Repairs",
-    description: "Most Samsung phone repairs completed same day. Walk-ins welcome at both locations.",
+    description: "Most Samsung phone repairs completed same day. Walk-ins welcome at both locations. Same-day Samsung phone repair depends on the model, part availability, and our current repair queue.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part replaced only and does not extend to unrelated components.",
   },
   {
     icon: DollarSign,
@@ -89,7 +89,7 @@ const MODEL_CATEGORIES = [
   {
     title: "Galaxy Note Series",
     models: ["Note 20 Ultra", "Note 20", "Note 10+", "Note 10"],
-    description: "S Pen and stylus functionality preserved. Screen and battery repairs for all Note models.",
+    description: "S Pen and stylus functionality preserved. Screen and battery repairs for all Note models. For certain Samsung models, we'll also help you decide whether repair or replacement makes more financial sense.",
   },
 ];
 
@@ -123,7 +123,7 @@ const FAQS = [
   },
   {
     question: "How much does Samsung Galaxy repair cost in Winnipeg?",
-    answer: "Repair costs vary by model. Galaxy A series repairs are typically the most affordable, while flagship S series and foldable Z series cost more due to premium components. Use our free quote tool for an accurate estimate.",
+    answer: "Repair costs vary by model. Galaxy A series repairs are typically the most affordable, while flagship S series and foldable Z series cost more due to premium components. Use our free quote tool for an accurate estimate. <a href='/repair-pricing' class='text-primary hover:underline'>Learn more about how repair pricing works</a>.",
   },
   {
     question: "Do you use genuine Samsung parts?",
