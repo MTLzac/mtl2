@@ -12,7 +12,8 @@ export const WaterDamageReplacement = () => {
           
           <p className="text-muted-foreground mb-6">
             If damage is severe or data is no longer needed, we may recommend replacing the device instead. 
-            In some cases, store credit toward another device may be an option, depending on condition.
+            In some cases, store credit toward another device may be an option, depending on condition. 
+            If recovery or repair isn't practical, we'll explain replacement or <Link to="/trade-in" className="text-primary hover:underline">sell your device instead</Link>.
           </p>
 
           <Link 

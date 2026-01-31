@@ -27,7 +27,7 @@ export const WaterDamageRepairVsRecovery = () => {
           <p className="text-muted-foreground mb-8">
             In some cases, replacing a specific component may restore function. However, liquid-damaged 
             devices cannot be reliably warrantied against future issues. For this reason, we usually 
-            recommend recovery or replacement instead of long-term repair.
+            recommend recovery or replacement instead of long-term repair. Even if a liquid-damaged device powers on after service, long-term reliability cannot be guaranteed.
           </p>
 
           <div className="space-y-4">
