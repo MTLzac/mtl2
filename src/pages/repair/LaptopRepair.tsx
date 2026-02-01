@@ -5,7 +5,7 @@ const SERVICES = [
   {
     icon: Monitor,
     name: "Screen Replacement",
-    description: "Cracked, flickering, or dead pixels? We replace LCD and LED screens on all laptop brands and sizes.",
+    description: "Cracked, flickering, or dead pixels? We replace LCD and LED screens on all laptop brands and sizes. Laptop screen repairs vary significantly by size, resolution, and model, and in some cases the cost of a screen can approach the value of the laptop itself. We repair most Windows-based laptops across major and lesser-known brands, including HP, Dell, Lenovo, Asus, Acer, MSI, and others.",
   },
   {
     icon: Battery,
@@ -48,22 +48,22 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Monitor,
     title: "All Brands Welcome",
-    description: "We service Asus, Acer, Lenovo, HP, Dell, Toshiba, Chromebooks, and more.",
+    description: "We service Asus, Acer, Lenovo, HP, Dell, Toshiba, Chromebooks, and more. Laptop repair costs and timelines vary widely depending on the model and issue. Screen size, resolution, connectors, internal layout, and part availability all play a role in determining repair options.",
   },
   {
     icon: HardDrive,
     title: "Upgrade Specialists",
-    description: "SSD and RAM upgrades to breathe new life into your existing laptop.",
+    description: "SSD and RAM upgrades to breathe new life into your existing laptop. Some simple laptop repairs can be completed quickly, but many require diagnosis and parts ordering. We'll always confirm timing after assessing the specific device and issue.",
   },
   {
     icon: Cpu,
     title: "Component-Level Repair",
-    description: "Advanced motherboard diagnostics and micro-soldering capabilities.",
+    description: "Advanced motherboard diagnostics and micro-soldering capabilities. Depending on the issue, age, and overall value of the laptop, we may recommend discussing replacement options when repair costs approach or exceed the value of the device. We'll explain all options clearly so you can make an informed decision. If a laptop isn't cost-effective to repair, data recovery is often still possible and commonly recommended to retrieve important files.",
   },
   {
     icon: Battery,
     title: "Warranty on Every Repair",
-    description: "Screen repairs from 30 days to lifetime. 90-day battery warranty. Most other repairs include lifetime warranty.",
+    description: "Screen repairs from 30 days to lifetime. 90-day battery warranty. Most other repairs include lifetime warranty. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -172,7 +172,7 @@ const LaptopRepair = () => {
       hideHeroImage={true}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We service all major laptop brands. Don't see your specific model? Contact us—we can almost certainly help."
+      modelsDescription="We service all major laptop brands. Don't see your specific model? Contact us—we can almost certainly help. Repair cost and part availability can vary between laptop models, even when the repair type is the same."
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
