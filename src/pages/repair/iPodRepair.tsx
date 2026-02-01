@@ -16,12 +16,12 @@ const SERVICES = [
   {
     icon: Smartphone,
     name: "Screen Replacement",
-    description: "Cracked or unresponsive iPod display? We replace screens on all iPod models with quality parts."
+    description: "Cracked or unresponsive iPod display? We replace screens on all iPod models with quality parts. Parts availability for iPods varies by generation and model. As a discontinued product line, some parts may be limited, but repairs are often still possible after evaluating the specific device."
   },
   {
     icon: Battery,
     name: "Battery Replacement",
-    description: "iPod not holding charge like it used to? We replace worn batteries to restore your iPod's battery life."
+    description: "iPod not holding charge like it used to? We replace worn batteries to restore your iPod's battery life. Repair timing for iPods depends on the model and part availability, and we'll always confirm next steps after assessing the device."
   },
   {
     icon: Zap,
@@ -70,22 +70,22 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Award,
     title: "Legacy Device Specialists",
-    description: "Experts in discontinued Apple devices that others won't touch.",
+    description: "Experts in discontinued Apple devices that others won't touch. Many customers choose to repair iPods to preserve music libraries, maintain compatibility with older vehicles or accessories, or restore devices with sentimental value.",
   },
   {
     icon: Database,
     title: "Data Recovery Experts",
-    description: "Retrieve your music and photos from damaged or aging iPods.",
+    description: "Retrieve your music and photos from damaged or aging iPods. If a repair isn't practical, data recovery may still be possible depending on the device and condition.",
   },
   {
     icon: Clock,
-    title: "Quick Turnaround",
-    description: "Most iPod repairs completed in 1-3 days. Same-day battery service.",
+    title: "Repair vs Replacement Options",
+    description: "Because many iPod models are no longer manufactured, replacement options vary by model and availability. We'll help explain whether repair, replacement, or another option makes the most sense based on your device.",
   },
   {
     icon: Shield,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -148,7 +148,7 @@ const IPodRepair = () => {
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all iPod generations from the original iPod Mini to the latest iPod Touch. If you have an iPod, we can fix it."
+      modelsDescription="We repair most iPod models, including iPod Classic, iPod Nano, iPod Touch, and iPod Shuffle where possible. Parts availability varies by generation and model."
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
