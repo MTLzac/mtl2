@@ -17,7 +17,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Replace cracked ZTE and nubia screens—including Red Magic gaming displays.",
+    description: "Replace cracked ZTE and nubia screens—including Red Magic gaming displays. Repair cost and turnaround time for ZTE devices can vary significantly by model and part availability. Some ZTE models are straightforward to repair, while others may require more specialized parts depending on the device. Aftermarket parts are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -50,22 +50,22 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Award,
     title: "ZTE & nubia Specialists",
-    description: "Winnipeg's experts in ZTE and nubia gaming devices.",
+    description: "Winnipeg's experts in ZTE and nubia gaming devices. Most ZTE repairs require parts to be ordered and are typically completed within at least one business day once parts arrive. We'll always confirm timing after assessing the specific device.",
   },
   {
     icon: Gamepad2,
     title: "Gaming Phone Experts",
-    description: "Specialized in Red Magic cooling systems and gaming features.",
+    description: "Specialized in Red Magic cooling systems and gaming features. In some cases, the cost to repair a ZTE device may approach or exceed the value of the phone itself. When that happens, we'll explain all available options so you can decide whether repair, replacement, or another solution makes the most sense.",
   },
   {
     icon: Package,
     title: "Rare Device Parts",
-    description: "Sourcing network for hard-to-find ZTE and nubia components.",
+    description: "Sourcing network for hard-to-find ZTE and nubia components. If repair isn't cost-effective, we can also attempt data recovery to help retrieve important information from the device.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -144,7 +144,7 @@ const ZTERepair = () => {
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all ZTE devices including nubia gaming phones, Blade series, Axon flagships, and foldables."
+      modelsDescription="We repair all ZTE devices including nubia gaming phones, Blade series, Axon flagships, and foldables. Repair cost and part availability can vary between ZTE models, even when the repair type is the same."
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
