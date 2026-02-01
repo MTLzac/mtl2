@@ -22,7 +22,7 @@ const SERVICES = [
   {
     icon: Plug,
     name: "HDMI Port Repair",
-    description: "Replace damaged HDMI ports—no signal issues fixed.",
+    description: "Replace damaged HDMI ports—no signal issues fixed. Xbox HDMI repairs involve board-level work and are not simple part swaps.",
   },
   {
     icon: Power,
@@ -37,7 +37,7 @@ const SERVICES = [
   {
     icon: Gamepad2,
     name: "Controller Repair",
-    description: "Fix Elite and standard controller drift, bumpers, and buttons.",
+    description: "Fix Elite and standard controller drift, bumpers, buttons, charging port damage, and sync problems.",
   },
   {
     icon: HardDrive,
@@ -60,12 +60,12 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Zap,
     title: "Console Repair Pros",
-    description: "HDMI port micro-soldering and board-level repairs.",
+    description: "HDMI port micro-soldering and board-level repairs. Many Xbox HDMI repairs can be completed the same day when the console is dropped off early enough. Rush service can guarantee same-day completion regardless of timing or repair queue.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Lifetime warranty on most Xbox and controller repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward. Damage caused by liquid exposure or power surges is not warrantied.",
   },
 ];
 
@@ -73,7 +73,7 @@ const MODEL_CATEGORIES = [
   {
     title: "Xbox Series",
     models: ["Xbox Series X", "Xbox Series S"],
-    description: "Current generation Xbox consoles.",
+    description: "Current generation Xbox consoles. We service all major Xbox models, including Xbox One and Xbox Series consoles, and the repair process is similar across generations for most common issues.",
   },
   {
     title: "Xbox One",
@@ -83,7 +83,7 @@ const MODEL_CATEGORIES = [
   {
     title: "Controllers",
     models: ["Xbox Wireless Controller (Series X|S)", "Xbox Elite Series 2", "Xbox Elite Controller", "Xbox One Controller"],
-    description: "Standard and Elite controller repairs.",
+    description: "Standard and Elite controller repairs including stick drift, charging port damage, button issues, and sync problems. If the cost of repair exceeds the value of the console, we'll explain alternative options such as replacement or trade-in credit, while still proceeding with repair if that's what you prefer.",
   },
   {
     title: "Xbox 360",
@@ -138,7 +138,7 @@ const XboxRepair = () => {
       slug="xbox"
       deviceName="Xbox"
       tagline="Xbox Repair Specialists in Winnipeg"
-      heroDescription="Xbox not cooperating? Overheating, HDMI issues, no power, or controller drift—we repair all Xbox consoles in Winnipeg. Series X, Series S, One, and 360."
+      heroDescription="Xbox not cooperating? We repair a wide range of Xbox issues across all major models, including HDMI port damage, power or no-power problems, overheating, disc drive issues where applicable, software or system issues, and common controller repairs such as stick drift, charging port damage, button issues, or sync problems."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
