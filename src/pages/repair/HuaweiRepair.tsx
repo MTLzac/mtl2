@@ -17,7 +17,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "OLED and LCD display replacements for Huawei P series, Mate, and Nova devices. Restore vibrant colors and touch responsiveness.",
+    description: "OLED and LCD display replacements for Huawei P series, Mate, and Nova devices. Restore vibrant colors and touch responsiveness. Screen repair costs vary by model and part availability. Many Huawei devices only have one reliable screen option available, which can affect overall repair cost. Aftermarket screens may exist for some models, but they are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -55,7 +55,7 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Package,
     title: "Hard-to-Find Parts",
-    description: "We maintain supplier relationships for Huawei parts that others can't source. Most available within 2-3 days.",
+    description: "We maintain supplier relationships for Huawei parts that others can't source. Most repairs require parts to be ordered and are typically completed within about one business day once parts arrive.",
   },
   {
     icon: Zap,
@@ -65,7 +65,7 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -148,11 +148,11 @@ const HuaweiRepair = () => {
       slug="huawei"
       deviceName="Huawei"
       tagline="Huawei Phone Repair Services in Winnipeg"
-      heroDescription="Don't let parts availability stop you from repairing your Huawei device. We specialize in sourcing components for Huawei P series, Mate, Nova, and Honor phones in Winnipeg when others can't."
+      heroDescription="Don't let parts availability stop you from repairing your Huawei device. We specialize in sourcing components for Huawei P series, Mate, Nova, and Honor phones in Winnipeg when others can't. Most repairs are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll always explain options clearly before moving forward."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all Huawei and Honor devices including P series, Mate series, Nova series, and foldable models. As Winnipeg's Huawei specialists, we service models that other shops turn away."
+      modelsDescription="We repair all Huawei and Honor devices including P series, Mate series, Nova series, and foldable models. As Winnipeg's Huawei specialists, we service models that other shops turn away. Repair cost and part availability can vary between models, even when the repair type is the same."
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
