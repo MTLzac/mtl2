@@ -18,7 +18,7 @@ const SERVICES = [
   {
     icon: Monitor,
     name: "Screen Replacement",
-    description: "Cracked Retina display or dead pixels? We replace MacBook Air and Pro screens with high-quality LCD and LED panels.",
+    description: "Cracked Retina display or dead pixels? We replace MacBook Air and Pro screens with high-quality LCD and LED panels. MacBook display repair costs vary by model and part availability. Depending on the device, displays may be original Apple screens or high-quality aftermarket screens without the Apple logo, and this can significantly affect repair cost. Aftermarket displays are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -38,7 +38,7 @@ const SERVICES = [
   {
     icon: Droplets,
     name: "Liquid Damage Repair",
-    description: "Coffee or water spill? We specialize in liquid damage restoration including logic board cleaning and component repair.",
+    description: "Coffee or water spill? We specialize in liquid damage restoration including logic board cleaning and component repair. Liquid damage repairs are typically approached with data recovery as the priority. Even after cleaning or component replacement, long-term reliability cannot be guaranteed, and liquid damage cleaning fees are charged regardless of outcome.",
   },
   {
     icon: Plug,
@@ -56,12 +56,12 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Zap,
     title: "Fast Turnaround",
-    description: "Most MacBook repairs completed in 1-3 days. Rush service available for urgent repairs.",
+    description: "Most MacBook repairs require parts and typically take around one business day once parts arrive. Rush service can be used to expedite part ordering and queue position when timing is critical.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
   {
     icon: Clock,
@@ -74,7 +74,7 @@ const MODEL_CATEGORIES = [
   {
     title: "MacBook Air",
     models: ["MacBook Air M3 (2024)", "MacBook Air M2 (2022)", "MacBook Air M1 (2020)", "MacBook Air Retina (2018-2020)", "MacBook Air (2015-2017)"],
-    description: "Ultralight MacBook repairs. Screen, battery, keyboard, and logic board service for all Air generations.",
+    description: "Ultralight MacBook repairs. Screen, battery, keyboard, and logic board service for all Air generations. In some cases, MacBook display costs can approach the value of the device, and we'll help you understand whether repair or replacement makes more financial sense.",
   },
   {
     title: "MacBook Pro 14\" & 16\"",
@@ -89,7 +89,7 @@ const MODEL_CATEGORIES = [
   {
     title: "MacBook 12\"",
     models: ["MacBook 12\" (2015)", "MacBook 12\" (2016)", "MacBook 12\" (2017)"],
-    description: "Retina MacBook repairs. Screen, battery, and USB-C port service for the ultra-portable 12-inch model.",
+    description: "Retina MacBook repairs. Screen, battery, and USB-C port service for the ultra-portable 12-inch model. If a MacBook cannot be reliably repaired or the cost exceeds its value, we'll explain alternative options, including replacement or trade-in credit toward another device.",
   },
 ];
 
@@ -147,7 +147,7 @@ const MacBookRepair = () => {
       slug="macbook"
       deviceName="MacBook"
       tagline="Expert MacBook Repair Services"
-      heroDescription="From cracked Retina displays to liquid damage and keyboard issues, we repair all MacBook Air and Pro models in Winnipeg. Apple Silicon specialists with fast turnaround and quality parts. Need iPhone or iPad repair? We're Apple device experts."
+      heroDescription="From cracked Retina displays to liquid damage and keyboard issues, we repair all MacBook Air and Pro models in Winnipeg. We service a wide range of MacBook issues, including screen and display replacement, battery replacement, keyboard and trackpad repairs, charging port issues, logic board repair, liquid damage cleaning, data recovery or data transfer, and software-related problems."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
