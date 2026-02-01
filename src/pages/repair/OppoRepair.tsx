@@ -17,7 +17,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Replace cracked AMOLED displays on Oppo Find X, Reno, and Realme devices with precision.",
+    description: "Replace cracked AMOLED displays on Oppo Find X, Reno, and Realme devices with precision. Repair costs and timelines vary by model and part availability. For less common devices like these, parts availability can differ by model and supplier, but repairs are often still possible after evaluation. Aftermarket parts are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -50,22 +50,22 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Award,
     title: "Oppo & Realme Experts",
-    description: "Specialized in the BBK family of brands including Oppo, Realme, and OnePlus devices.",
+    description: "Specialized in the BBK family of brands including Oppo, Realme, and OnePlus devices. Repairs for these devices typically require at least one business day due to part sourcing. If you need a working phone while we complete the repair, loaner phones may be available.",
   },
   {
     icon: Zap,
     title: "SUPERVOOC Specialists",
-    description: "Expert repair for 65W to 150W SUPERVOOC fast charging systems.",
+    description: "Expert repair for 65W to 150W SUPERVOOC fast charging systems. If a repair is outside your budget or parts are not readily available, we can also attempt data recovery to help you retrieve important information.",
   },
   {
     icon: TrendingUp,
     title: "Growing Market Leaders",
-    description: "Early adopters of Oppo repair in Winnipeg, staying ahead of the curve.",
+    description: "Early adopters of Oppo repair in Winnipeg, staying ahead of the curve. Most repairs for these devices are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll explain options clearly before proceeding.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -153,7 +153,7 @@ const OppoRepair = () => {
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all Oppo and Realme devices including Find X flagships, Reno series, A-series, and foldables."
+      modelsDescription="We repair all Oppo and Realme devices including Find X flagships, Reno series, A-series, and foldables. Repair cost and part availability can vary between models, even within the same brand."
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}

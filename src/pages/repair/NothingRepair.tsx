@@ -17,7 +17,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Replace cracked Nothing AMOLED displays while preserving the iconic transparent design.",
+    description: "Replace cracked Nothing AMOLED displays while preserving the iconic transparent design. Repair costs and timelines vary by model and part availability. For less common devices like these, parts availability can differ by model and supplier, but repairs are often still possible after evaluation. Aftermarket parts are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Lightbulb,
@@ -50,22 +50,22 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Award,
     title: "Nothing Specialists",
-    description: "Winnipeg's experts in Carl Pei's innovative Nothing devices.",
+    description: "Winnipeg's experts in Carl Pei's innovative Nothing devices. Repairs for these devices typically require at least one business day due to part sourcing. If you need a working phone while we complete the repair, loaner phones may be available.",
   },
   {
     icon: Lightbulb,
     title: "Glyph Interface Experts",
-    description: "Specialized repair for the unique LED Glyph lighting system.",
+    description: "Specialized repair for the unique LED Glyph lighting system. If a repair is outside your budget or parts are not readily available, we can also attempt data recovery to help you retrieve important information.",
   },
   {
     icon: Rocket,
     title: "New Brand Pioneers",
-    description: "Early adopters supporting Nothing devices since day one.",
+    description: "Early adopters supporting Nothing devices since day one. Most repairs for these devices are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll explain options clearly before proceeding.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -133,7 +133,7 @@ const NothingRepair = () => {
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We service all Nothing devices including Nothing Phone (1), (2), (2a) and CMF Phone 1."
+      modelsDescription="We service all Nothing devices including Nothing Phone (1), (2), (2a) and CMF Phone 1. Repair cost and part availability can vary between models, even within the same brand."
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}

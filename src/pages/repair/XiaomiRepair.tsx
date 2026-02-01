@@ -16,7 +16,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "AMOLED and LCD display replacements for Xiaomi, Redmi, and POCO devices. Quality screens with vibrant colors.",
+    description: "AMOLED and LCD display replacements for Xiaomi, Redmi, and POCO devices. Quality screens with vibrant colors. Repair costs and timelines vary by model and part availability. For less common devices like these, parts availability can differ by model and supplier, but repairs are often still possible after evaluation. Aftermarket parts are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -49,22 +49,22 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Award,
     title: "Winnipeg's Xiaomi Specialists",
-    description: "Most local shops turn away Xiaomi devices. We've invested in parts sourcing and training to be Winnipeg's go-to.",
+    description: "Most local shops turn away Xiaomi devices. We've invested in parts sourcing and training to be Winnipeg's go-to. Repairs for these devices typically require at least one business day due to part sourcing. If you need a working phone while we complete the repair, loaner phones may be available.",
   },
   {
     icon: Package,
     title: "Parts We Can Source",
-    description: "We maintain supplier relationships for Xiaomi, Redmi, and POCO parts. Most available within 1-2 days.",
+    description: "We maintain supplier relationships for Xiaomi, Redmi, and POCO parts. Most available within 1-2 days. If a repair is outside your budget or parts are not readily available, we can also attempt data recovery to help you retrieve important information.",
   },
   {
     icon: Zap,
     title: "HyperCharge Experts",
-    description: "We diagnose and repair 120W HyperCharge, 67W Turbo Charge, and all fast charging systems.",
+    description: "We diagnose and repair 120W HyperCharge, 67W Turbo Charge, and all fast charging systems. Most repairs for these devices are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll explain options clearly before proceeding.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -158,7 +158,7 @@ const XiaomiRepair = () => {
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all Xiaomi, Redmi, and POCO devices. As Winnipeg's Xiaomi specialists, we service models that other shops turn away."
+      modelsDescription="We repair all Xiaomi, Redmi, and POCO devices. As Winnipeg's Xiaomi specialists, we service models that other shops turn away. Repair cost and part availability can vary between models, even within the same brand."
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
