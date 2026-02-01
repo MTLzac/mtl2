@@ -16,7 +16,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Fluid AMOLED and ProXDR display replacements for OnePlus flagships and Nord series. Restore vibrant colors and smooth 120Hz scrolling.",
+    description: "Fluid AMOLED and ProXDR display replacements for OnePlus flagships and Nord series. Restore vibrant colors and smooth 120Hz scrolling. OnePlus screen repair costs vary by model and part availability. While some models have aftermarket screen options, flagship and foldable OnePlus devices often require higher-grade screens, which can affect overall repair cost. Aftermarket screens are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -54,7 +54,7 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Package,
     title: "Quality Parts Sourced",
-    description: "We maintain supplier relationships for OnePlus parts. Most available within 1-2 days for all models.",
+    description: "We maintain supplier relationships for OnePlus parts. Most OnePlus repairs require parts to be ordered and are typically completed within about one business day once parts arrive. Rush service can be used to expedite part ordering and queue position when timing is important. Repair cost and part availability can vary between OnePlus models, even when the repair type is the same.",
   },
   {
     icon: Zap,
@@ -64,7 +64,7 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -82,7 +82,7 @@ const MODEL_CATEGORIES = [
   {
     title: "OnePlus Open & Pad",
     models: ["OnePlus Open", "OnePlus Pad Pro", "OnePlus Pad 2"],
-    description: "Foldable and tablet repairs. Complex fold repairs and large screen replacements.",
+    description: "Foldable and tablet repairs. Complex fold repairs and large screen replacements. Foldable OnePlus repairs involve more complex internal components, and we'll walk through options and expectations before proceeding.",
   },
   {
     title: "Classic OnePlus",
@@ -138,7 +138,7 @@ const OnePlusRepair = () => {
       slug="oneplus"
       deviceName="OnePlus"
       tagline="OnePlus Phone Repair in Winnipeg"
-      heroDescription="From the flagship OnePlus 13 to the innovative OnePlus Open foldable, we provide expert repairs for all OnePlus devices in Winnipeg. Warp Charge issues, screen damage, battery problems – we're your local OnePlus specialists."
+      heroDescription="From the flagship OnePlus 13 to the innovative OnePlus Open foldable, we provide expert repairs for all OnePlus devices in Winnipeg. Warp Charge issues, screen damage, battery problems – we're your local OnePlus specialists. Because many customers don't have a baseline for what a OnePlus repair should cost, we'll always explain options clearly before moving forward."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
