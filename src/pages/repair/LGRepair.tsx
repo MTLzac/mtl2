@@ -17,7 +17,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "OLED and LCD display replacements for LG Velvet, V series, G series, and Stylo devices. Restore clarity and touch response.",
+    description: "OLED and LCD display replacements for LG Velvet, V series, G series, and Stylo devices. Restore clarity and touch response. Screen repair costs vary by model and part availability. Many LG devices only have one reliable screen option available, which can affect overall repair cost. Aftermarket screens may exist for some models, but they are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -55,7 +55,7 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Package,
     title: "Parts Still Available",
-    description: "We maintain supplier relationships for LG parts that others can't source. Stock available for popular models.",
+    description: "We maintain supplier relationships for LG parts that others can't source. Most repairs require parts to be ordered and are typically completed within about one business day once parts arrive.",
   },
   {
     icon: Wrench,
@@ -65,7 +65,7 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -143,11 +143,11 @@ const LGRepair = () => {
       slug="lg"
       deviceName="LG"
       tagline="LG Phone Repair in Winnipeg, MB"
-      heroDescription="Even though LG exited the smartphone market, we continue to support all LG devices in Winnipeg. From the innovative LG Wing to the reliable Stylo series, we keep your LG phone running strong."
+      heroDescription="Even though LG exited the smartphone market, we continue to support all LG devices in Winnipeg. From the innovative LG Wing to the reliable Stylo series, we keep your LG phone running strong. Most repairs are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll always explain options clearly before moving forward."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all LG smartphone models. As Winnipeg's LG legacy support specialists, we maintain parts for older devices others won't service."
+      modelsDescription="We repair all LG smartphone models. As Winnipeg's LG legacy support specialists, we maintain parts for older devices others won't service. Repair cost and part availability can vary between models, even when the repair type is the same."
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}

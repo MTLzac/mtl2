@@ -17,7 +17,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Replace cracked or damaged TCL NXTVISION screens in Winnipeg.",
+    description: "Replace cracked or damaged TCL NXTVISION screens in Winnipeg. Screen repair costs vary by model and part availability. Many TCL devices only have one reliable screen option available, which can affect overall repair cost. Aftermarket screens may exist for some models, but they are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -55,7 +55,7 @@ const ADVANTAGE_PILLARS = [
   {
     icon: DollarSign,
     title: "Budget Device Experts",
-    description: "Affordable repairs matching TCL's value-focused pricing.",
+    description: "Affordable repairs matching TCL's value-focused pricing. Most repairs require parts to be ordered and are typically completed within about one business day once parts arrive.",
   },
   {
     icon: Tablet,
@@ -65,7 +65,7 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -141,11 +141,11 @@ const TCLRepair = () => {
       slug="tcl"
       deviceName="TCL"
       tagline="TCL Device Repair in Winnipeg"
-      heroDescription="TCL makes great budget phones, and we're here to keep them running in Winnipeg. From the TCL 50 series to tablets, we provide affordable repairs for all TCL devices at prices that make sense."
+      heroDescription="TCL makes great budget phones, and we're here to keep them running in Winnipeg. From the TCL 50 series to tablets, we provide affordable repairs for all TCL devices at prices that make sense. Most repairs are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll always explain options clearly before moving forward."
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all TCL phones and tablets including the 50, 40, 30, and 20 series."
+      modelsDescription="We repair all TCL phones and tablets including the 50, 40, 30, and 20 series. Repair cost and part availability can vary between models, even when the repair type is the same."
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
