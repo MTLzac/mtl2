@@ -17,7 +17,7 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Replace cracked Infinix screens affordably in Winnipeg—Note, Hot, and GT series.",
+    description: "Replace cracked Infinix screens affordably in Winnipeg—Note, Hot, and GT series. Repair cost and turnaround time for Infinix devices can vary by model and part availability. As a less common brand in Canada, parts may need to be sourced based on the specific device, but repairs are often still possible after evaluation. Aftermarket parts are only offered when the quality is sufficient to be reliably warrantied.",
   },
   {
     icon: Battery,
@@ -50,22 +50,22 @@ const ADVANTAGE_PILLARS = [
   {
     icon: Award,
     title: "Infinix Specialists",
-    description: "One of the few Winnipeg shops with Infinix repair expertise.",
+    description: "One of the few Winnipeg shops with Infinix repair expertise. Most Infinix repairs require parts to be ordered and are typically completed within at least one business day once parts arrive. We'll always confirm timing after assessing the device.",
   },
   {
     icon: Users,
     title: "Underserved Market Experts",
-    description: "Filling the gap for Infinix owners who can't find repair elsewhere.",
+    description: "Filling the gap for Infinix owners who can't find repair elsewhere. If a repair isn't cost-effective or parts aren't readily available, we can also attempt data recovery to help retrieve important information.",
   },
   {
     icon: DollarSign,
     title: "Affordable Repairs",
-    description: "Budget-friendly pricing matching Infinix's value proposition.",
+    description: "Budget-friendly pricing matching Infinix's value proposition. Most repairs for these devices are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll explain options clearly before proceeding.",
   },
   {
     icon: Award,
     title: "Warranty on Every Repair",
-    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs.",
+    description: "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward.",
   },
 ];
 
@@ -144,7 +144,7 @@ const InfinixRepair = () => {
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
-      modelsDescription="We repair all Infinix models including Note, Hot, Zero, Smart, and GT gaming series."
+      modelsDescription="We repair all Infinix models including Note, Hot, Zero, Smart, and GT gaming series. Repair cost and part availability can vary between Infinix models, even when the repair type is the same."
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
