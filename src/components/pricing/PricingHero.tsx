@@ -26,11 +26,16 @@ export const PricingHero = () => {
           </h1>
 
           {/* Subheadline */}
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
+          <p className="mx-auto mb-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
             We don't publish fixed prices because repair costs depend on your
             specific device, the parts available, and current part costs. Here's
             how we think about pricing so you can understand your options and
             avoid surprises.
+          </p>
+
+          {/* Pricing philosophy primer */}
+          <p className="mx-auto mb-8 max-w-2xl text-base text-muted-foreground">
+            The part itself is usually the biggest factor in repair cost, not the labor. Some repairs are closer to routine maintenance, while others can approach the value of the device. If a repair doesn't make financial sense, we'll explain alternatives instead of pushing it. When repair isn't ideal, data recovery may still be an option.
           </p>
 
           {/* Trust Badges */}
