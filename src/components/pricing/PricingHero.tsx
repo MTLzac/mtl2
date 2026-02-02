@@ -22,7 +22,7 @@ export const PricingHero = () => {
           {/* H1 */}
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
             Repair Pricing Explained{" "}
-            <span className="text-primary">(Winnipeg)</span>
+            <span className="text-primary/75 font-semibold">(Winnipeg)</span>
           </h1>
 
           {/* Subheadline */}
@@ -33,10 +33,15 @@ export const PricingHero = () => {
             avoid surprises.
           </p>
 
-          {/* Pricing philosophy primer */}
-          <p className="mx-auto mb-8 max-w-2xl text-base text-muted-foreground">
-            The part itself is usually the biggest factor in repair cost, not the labor. Some repairs are closer to routine maintenance, while others can approach the value of the device. If a repair doesn't make financial sense, we'll explain alternatives instead of pushing it. When repair isn't ideal, data recovery may still be an option.
-          </p>
+          {/* Pricing philosophy primer - split into two logical groups */}
+          <div className="mx-auto mb-10 max-w-2xl space-y-3 text-base text-muted-foreground">
+            <p>
+              The part itself is usually the biggest factor in repair cost, not the labor. Some repairs are closer to routine maintenance, while others can approach the value of the device.
+            </p>
+            <p>
+              If a repair doesn't make financial sense, we'll explain alternatives instead of pushing it. When repair isn't ideal, data recovery may still be an option.
+            </p>
+          </div>
 
           {/* Trust Badges */}
           <div className="mb-8 flex flex-wrap items-center justify-center gap-4">
