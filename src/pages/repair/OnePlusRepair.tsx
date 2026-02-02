@@ -129,6 +129,13 @@ const FAQS = [
 
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
+const PRICING_MICRO_COPY = {
+  costDriver: "OnePlus repair costs vary by model—flagship devices with AMOLED displays cost more than Nord series repairs due to premium components.",
+  priceShock: "Many customers are surprised that OnePlus repairs can cost as much as Samsung or iPhone repairs, especially for newer flagships and foldables.",
+  advisory: "If the repair cost doesn't make sense for your device's value, we'll explain alternatives and help you decide what's best.",
+  fallback: "When repair isn't practical, data recovery is often still possible to retrieve your files.",
+};
+
 const OnePlusRepair = () => {
   return (
     <RepairLandingTemplate
@@ -147,6 +154,7 @@ const OnePlusRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote={SERVICE_AREA_NOTE}
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

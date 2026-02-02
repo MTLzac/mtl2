@@ -135,6 +135,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Samsung repair costs are primarily driven by the screen—OEM Samsung displays can be surprisingly expensive, especially for flagship S and Z series devices.",
+  priceShock: "Many customers expect Samsung repairs to cost less than iPhone repairs, but premium AMOLED screens often cost the same or more.",
+  advisory: "If the repair cost approaches the value of your device, we'll explain that clearly so you can make an informed decision.",
+  fallback: "When repair doesn't make sense, data recovery is often still an option.",
+};
+
 const SamsungRepair = () => {
   return (
     <RepairLandingTemplate
@@ -152,6 +159,7 @@ const SamsungRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

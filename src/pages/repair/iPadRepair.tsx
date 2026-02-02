@@ -117,6 +117,13 @@ const FAQS = [
 
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Limited pickup and drop-off capacity within Winnipeg.";
 
+const PRICING_MICRO_COPY = {
+  costDriver: "iPad repair costs depend heavily on the model—newer Pro and Air models with laminated displays cost significantly more to repair than standard iPads.",
+  priceShock: "Many customers are surprised to learn that an iPad Pro screen can cost more than the tablet originally did after a few years of depreciation.",
+  advisory: "If the repair cost approaches or exceeds your iPad's current value, we'll explain that so you can decide what makes sense.",
+  fallback: "When repair isn't practical, data recovery or data transfer to a new device may still be possible.",
+};
+
 const iPadRepair = () => {
   return (
     <RepairLandingTemplate
@@ -135,6 +142,7 @@ const iPadRepair = () => {
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote={SERVICE_AREA_NOTE}
       faqs={FAQS}
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

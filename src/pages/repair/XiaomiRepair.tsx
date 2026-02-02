@@ -145,6 +145,13 @@ const FAQS = [
 
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Xiaomi repair costs vary widely—budget Redmi devices are affordable to repair, while flagship Xiaomi and POCO models with premium displays cost more.",
+  priceShock: "Many customers expect Xiaomi repairs to be cheap, but flagship models can cost as much as Samsung or iPhone repairs due to premium parts.",
+  advisory: "If the repair cost approaches your device's value, we'll explain that clearly so you can make an informed decision.",
+  fallback: "When repair doesn't make sense, data recovery is often still possible to retrieve your files.",
+};
+
 const XiaomiRepair = () => {
   return (
     <RepairLandingTemplate
@@ -163,6 +170,7 @@ const XiaomiRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote={SERVICE_AREA_NOTE}
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

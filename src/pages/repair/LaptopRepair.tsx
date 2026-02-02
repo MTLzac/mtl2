@@ -159,6 +159,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Laptop repair costs vary widely based on screen size, resolution, and internal design—some repairs are straightforward, while others require rare or expensive parts.",
+  priceShock: "Many customers are surprised when a laptop screen replacement costs nearly as much as a budget laptop, especially for high-resolution or touch displays.",
+  advisory: "If the repair cost approaches or exceeds your laptop's current value, we'll explain that honestly so you can make an informed choice.",
+  fallback: "When repair isn't cost-effective, data recovery is often still possible to retrieve your important files.",
+};
+
 const LaptopRepair = () => {
   return (
     <RepairLandingTemplate
@@ -177,6 +184,7 @@ const LaptopRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Thompson, and surrounding Manitoba communities"
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

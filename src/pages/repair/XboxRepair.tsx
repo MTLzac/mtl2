@@ -129,6 +129,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Xbox repair costs depend on the issue—simple fixes like thermal paste are affordable, while HDMI port repairs involve board-level soldering and cost more.",
+  priceShock: "Many customers are surprised that console repairs can approach a significant portion of the device's value, especially for older Xbox One models.",
+  advisory: "If the repair cost doesn't make financial sense for your console's age and condition, we'll explain alternatives including trade-in options.",
+  fallback: "When repair isn't practical, your game saves are typically backed up to Xbox Live, so data loss is rarely a concern.",
+};
+
 const XboxRepair = () => {
   return (
     <RepairLandingTemplate
@@ -147,6 +154,7 @@ const XboxRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

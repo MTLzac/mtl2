@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -65,6 +66,22 @@ const WaterDamageRepair = () => {
           <WaterDamageDevices />
           <WaterDamageReplacement />
           <LocationCards />
+          
+          {/* Pricing Micro-Copy Block */}
+          <section className="py-12 md:py-16">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-3xl space-y-3 text-base text-muted-foreground">
+                <p>
+                  Liquid damage repair costs depend on the extent of damage and what components are affected—cleaning fees are charged regardless of outcome to cover the diagnostic work required. Many customers are surprised that water damage repair is unpredictable and outcomes cannot be guaranteed.
+                </p>
+                <p>
+                  With liquid damage, our priority is your data first, then the device. If full repair isn't practical, data recovery is often still possible. You can learn more about{" "}
+                  <Link to="/repair-pricing" className="text-primary hover:underline">how repair pricing works</Link>.
+                </p>
+              </div>
+            </div>
+          </section>
+          
           <FAQSection 
             deviceName="Liquid Damage" 
             faqs={faqs}

@@ -139,6 +139,13 @@ const FAQS = [
 
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Huawei repair costs depend on parts availability—as a brand with supply chain challenges, some components require specialty sourcing which can affect pricing.",
+  priceShock: "Many customers are surprised that Huawei parts can be as expensive as Samsung or Apple parts due to limited supply and specialty sourcing requirements.",
+  advisory: "If the repair cost doesn't make sense for your device's value, we'll explain alternatives and help you decide.",
+  fallback: "When repair isn't practical, data recovery is often still possible to retrieve your files.",
+};
+
 const HuaweiRepair = () => {
   return (
     <RepairLandingTemplate
@@ -157,6 +164,7 @@ const HuaweiRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote={SERVICE_AREA_NOTE}
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

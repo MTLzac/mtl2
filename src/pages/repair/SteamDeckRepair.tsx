@@ -119,6 +119,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Steam Deck repair costs depend on the issue and model—joystick drift fixes are affordable, while OLED screen replacements cost more due to premium displays.",
+  priceShock: "Many customers are surprised that Steam Deck OLED screen replacements can approach a significant portion of the device's value due to premium display components.",
+  advisory: "If the repair cost doesn't make sense for your Steam Deck's condition, we'll explain alternatives clearly.",
+  fallback: "Your Steam library and saves are tied to your Steam account and sync to the cloud, so data loss is rarely a concern with Steam Deck repairs.",
+};
+
 const SteamDeckRepair = () => {
   return (
     <RepairLandingTemplate
@@ -137,6 +144,7 @@ const SteamDeckRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

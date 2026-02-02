@@ -131,6 +131,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "ZTE repair costs vary by model—budget Blade devices are affordable, while nubia flagships and Red Magic gaming phones cost more due to specialized components.",
+  priceShock: "Many customers are surprised that nubia and Red Magic repairs can approach premium device pricing due to gaming-specific parts and limited supply.",
+  advisory: "If the repair cost approaches your device's value, we'll explain alternatives clearly so you can make an informed decision.",
+  fallback: "When repair doesn't make sense, data recovery is often still possible to retrieve your files.",
+};
+
 const ZTERepair = () => {
   return (
     <RepairLandingTemplate
@@ -149,6 +156,7 @@ const ZTERepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

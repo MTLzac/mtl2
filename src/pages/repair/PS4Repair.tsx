@@ -119,6 +119,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "PS4 repair costs depend on the issue—cleaning and thermal paste are affordable, while HDMI port repairs involve board-level soldering and cost more.",
+  priceShock: "Given the PS4's age and current resale value, many customers are surprised when board-level repairs approach or exceed what the console is worth.",
+  advisory: "If the repair cost doesn't make financial sense, we'll explain alternatives including trade-in options toward a PS5 or replacement console.",
+  fallback: "When repair isn't practical, we may be able to help recover saved game data or transfer your account to a replacement console.",
+};
+
 const PS4Repair = () => {
   return (
     <RepairLandingTemplate
@@ -137,6 +144,7 @@ const PS4Repair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

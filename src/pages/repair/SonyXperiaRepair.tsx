@@ -130,6 +130,13 @@ const FAQS = [
 
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Sony Xperia repair costs depend heavily on the model—4K OLED displays on Xperia 1 series are premium components that cost more to source and replace.",
+  priceShock: "Many customers are surprised that Xperia flagship repairs can cost as much as iPhone or Samsung repairs due to the specialized 4K displays and pro-grade components.",
+  advisory: "If the repair cost approaches your Xperia's current value, we'll explain that clearly so you can make an informed decision.",
+  fallback: "When repair doesn't make sense, data recovery is often still possible to retrieve your files.",
+};
+
 const SonyXperiaRepair = () => {
   return (
     <RepairLandingTemplate
@@ -148,6 +155,7 @@ const SonyXperiaRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote={SERVICE_AREA_NOTE}
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

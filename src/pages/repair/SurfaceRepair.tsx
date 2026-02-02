@@ -139,6 +139,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Surface repair costs are driven by the display and integrated design—high-resolution PixelSense screens and adhesive-sealed batteries require specialized work.",
+  priceShock: "Many customers are surprised that a Surface screen replacement can cost nearly as much as a budget laptop, especially for larger Pro and Laptop Studio models.",
+  advisory: "If the repair cost approaches your Surface's current value, we'll explain that clearly so you can decide whether repair, replacement, or trade-in makes sense.",
+  fallback: "When repair isn't practical, data recovery or data transfer to a new device is often still possible.",
+};
+
 const SurfaceRepair = () => {
   return (
     <RepairLandingTemplate
@@ -157,6 +164,7 @@ const SurfaceRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving Winnipeg (St. Vital, Fort Garry, Garden City, Transcona) and Winkler, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

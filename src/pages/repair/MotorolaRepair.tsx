@@ -137,6 +137,13 @@ const FAQS = [
 
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Motorola repair costs vary by model—budget Moto G and E series are very affordable, while Edge flagships and Razr foldables cost more.",
+  priceShock: "Moto G repairs are often surprisingly affordable, but Razr foldable screens can approach flagship pricing due to their complex folding displays.",
+  advisory: "For budget Motorola devices, repair almost always makes sense. For Razr foldables, we'll explain the costs clearly so you can decide.",
+  fallback: "When repair doesn't make sense, data recovery is often still possible.",
+};
+
 const MotorolaRepair = () => {
   return (
     <RepairLandingTemplate
@@ -155,6 +162,7 @@ const MotorolaRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote={SERVICE_AREA_NOTE}
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

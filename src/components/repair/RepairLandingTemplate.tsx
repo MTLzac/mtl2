@@ -14,6 +14,7 @@ import { ServiceSchema } from "../seo/ServiceSchema";
 import { VisibleBreadcrumbs } from "./VisibleBreadcrumbs";
 import { QuickFacts, QuickFactsData } from "./QuickFacts";
 import { TableOfContents } from "./TableOfContents";
+import { PricingMicroCopy, PricingMicroCopyData } from "./PricingMicroCopy";
 
 interface RepairLandingTemplateProps {
   // SEO
@@ -40,6 +41,7 @@ interface RepairLandingTemplateProps {
   advantagePillars?: AdvantagePillar[];
   serviceAreaNote?: string;
   quickFacts?: QuickFactsData;
+  pricingMicroCopy?: PricingMicroCopyData;
 }
 
 export const RepairLandingTemplate = ({
@@ -60,6 +62,7 @@ export const RepairLandingTemplate = ({
   advantagePillars,
   serviceAreaNote,
   quickFacts,
+  pricingMicroCopy,
 }: RepairLandingTemplateProps) => {
   const breadcrumbs = getRepairBreadcrumbs(deviceName, slug);
   
@@ -103,6 +106,8 @@ export const RepairLandingTemplate = ({
           <RepairWaysToSave deviceName={deviceName} />
           
           <LocationCards serviceAreaNote={serviceAreaNote} />
+          
+          {pricingMicroCopy && <PricingMicroCopy content={pricingMicroCopy} />}
           
           <FAQSection deviceName={deviceName} faqs={faqs} />
         </main>
