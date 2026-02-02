@@ -124,6 +124,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Nintendo Switch repair costs depend on the issue—Joy-Con drift repairs are affordable, while Switch OLED screen replacements cost more due to premium displays.",
+  priceShock: "Many customers are pleasantly surprised that Joy-Con repairs are very affordable, but OLED screen replacements can approach a significant portion of the console's value.",
+  advisory: "If the repair cost doesn't make sense for your Switch's condition, we'll explain alternatives including trade-in options.",
+  fallback: "Your game saves are typically backed up to Nintendo Switch Online, so data loss is rarely a concern with Switch repairs.",
+};
+
 const NintendoSwitchRepair = () => {
   return (
     <RepairLandingTemplate
@@ -142,6 +149,7 @@ const NintendoSwitchRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

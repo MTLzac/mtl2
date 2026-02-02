@@ -136,6 +136,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Vivo repair costs vary by model—budget Y series devices are affordable, while X series flagships and foldables cost more due to premium ZEISS camera systems and AMOLED displays.",
+  priceShock: "Many customers are surprised that flagship Vivo repairs can cost as much as Samsung or iPhone repairs, especially for X series and foldable devices.",
+  advisory: "If the repair cost doesn't make sense for your device's value, we'll explain alternatives clearly.",
+  fallback: "When repair isn't practical, data recovery is often still possible to retrieve your files.",
+};
+
 const VivoRepair = () => {
   return (
     <RepairLandingTemplate
@@ -154,6 +161,7 @@ const VivoRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

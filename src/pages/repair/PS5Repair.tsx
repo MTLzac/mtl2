@@ -121,6 +121,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "PS5 repair costs depend on the issue—simple fixes like thermal paste are affordable, while HDMI port repairs involve board-level soldering and cost more.",
+  priceShock: "Many customers are surprised that console repairs can approach a significant portion of the device's value, especially for complex board-level work.",
+  advisory: "If the repair cost doesn't make financial sense for your console's age and condition, we'll explain alternatives including trade-in options.",
+  fallback: "When repair isn't practical, we may be able to help recover saved game data or transfer your account to a replacement console.",
+};
+
 const PS5Repair = () => {
   return (
     <RepairLandingTemplate
@@ -139,6 +146,7 @@ const PS5Repair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

@@ -279,10 +279,25 @@ const IPhoneRepair = () => {
             serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods."
           />
           
+          {/* Pricing Micro-Copy Block */}
+          <section className="py-12 md:py-16">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-3xl space-y-3 text-base text-muted-foreground">
+                <p>
+                  iPhone repair costs are primarily driven by the screen—newer Pro Max models with ProMotion displays cost more than older or standard models. Many customers are surprised that financing often hides the true replacement cost of an iPhone, making repair a smarter financial choice.
+                </p>
+                <p>
+                  If the repair cost approaches your device's value, we'll explain that clearly so you can make an informed decision. When repair doesn't make sense, data recovery is often still an option. You can learn more about{" "}
+                  <Link to="/repair-pricing" className="text-primary hover:underline">how repair pricing works</Link>.
+                </p>
+              </div>
+            </div>
+          </section>
+          
           {/* ============================================ */}
           {/* FAQ SECTION */}
           {/* ============================================ */}
-          <FAQSection 
+          <FAQSection
             deviceName="iPhone" 
             faqs={FAQS}
             heading="Common Questions About iPhone Repairs"

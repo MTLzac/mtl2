@@ -132,6 +132,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "TCL repair costs are generally affordable, matching the brand's budget-friendly positioning—most repairs are proportionally priced to the device's value.",
+  priceShock: "TCL owners are often pleasantly surprised that repairs are more affordable than other brands, making repair a smart choice over replacement.",
+  advisory: "For budget TCL devices, repair almost always makes financial sense. We'll explain costs clearly so you can decide.",
+  fallback: "When repair doesn't make sense, data recovery is often still possible to retrieve your photos and files.",
+};
+
 const TCLRepair = () => {
   return (
     <RepairLandingTemplate
@@ -150,6 +157,7 @@ const TCLRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

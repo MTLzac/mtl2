@@ -134,6 +134,13 @@ const FAQS = [
 
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
+const PRICING_MICRO_COPY = {
+  costDriver: "LG repair costs depend on the model and parts availability—as a discontinued brand, some parts require specialty sourcing which can affect pricing.",
+  priceShock: "Many customers are surprised that repairing an older LG device can sometimes cost more than expected due to limited parts supply.",
+  advisory: "If the repair cost doesn't make sense for your LG's current value, we'll explain alternatives and help you decide.",
+  fallback: "When repair isn't practical, data recovery is often still possible to retrieve your photos and files.",
+};
+
 const LGRepair = () => {
   return (
     <RepairLandingTemplate
@@ -152,6 +159,7 @@ const LGRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote={SERVICE_AREA_NOTE}
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

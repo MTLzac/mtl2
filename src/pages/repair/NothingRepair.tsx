@@ -120,6 +120,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Nothing Phone repair costs depend on the model and parts availability—as a newer brand, some components require specialty sourcing.",
+  priceShock: "Many customers are surprised that Nothing repairs can cost as much as other premium Android devices due to unique parts and limited supply.",
+  advisory: "If the repair cost doesn't make sense for your device's value, we'll explain alternatives clearly.",
+  fallback: "When repair isn't practical, data recovery is often still possible to retrieve your files.",
+};
+
 const NothingRepair = () => {
   return (
     <RepairLandingTemplate
@@ -138,6 +145,7 @@ const NothingRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

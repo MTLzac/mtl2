@@ -140,6 +140,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Oppo and Realme repair costs vary by model—budget A-series devices are affordable, while Find X flagships and foldables cost more due to premium components.",
+  priceShock: "Many customers are surprised that flagship Oppo repairs can cost as much as Samsung or iPhone repairs, especially for Find X and N-series foldables.",
+  advisory: "If the repair cost doesn't make sense for your device's value, we'll explain alternatives clearly.",
+  fallback: "When repair isn't practical, data recovery is often still possible to retrieve your files.",
+};
+
 const OppoRepair = () => {
   return (
     <RepairLandingTemplate
@@ -158,6 +165,7 @@ const OppoRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };

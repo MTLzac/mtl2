@@ -133,6 +133,13 @@ const FAQS = [
   },
 ];
 
+const PRICING_MICRO_COPY = {
+  costDriver: "Galaxy Tab repair costs depend heavily on the model—Tab S Ultra displays are premium components, while Tab A series repairs are much more affordable.",
+  priceShock: "Many customers are surprised that a Tab S series screen can cost nearly as much as a new budget tablet, especially for the larger 14.6\" Ultra models.",
+  advisory: "If the repair cost approaches your tablet's current value, we'll explain that clearly so you can make an informed decision.",
+  fallback: "When repair doesn't make sense, data recovery or data transfer to a new device is often still possible.",
+};
+
 const SamsungGalaxyTabRepair = () => {
   return (
     <RepairLandingTemplate
@@ -151,6 +158,7 @@ const SamsungGalaxyTabRepair = () => {
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
 };
