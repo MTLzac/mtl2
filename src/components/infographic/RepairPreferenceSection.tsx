@@ -16,7 +16,7 @@ export const RepairPreferenceSection = () => {
             stat="45% of consumers prefer repairing devices instead of replacing them."
             source={{
               name: "Consumer Reports / Repair.org Survey",
-              url: "https://www.repair.org/",
+              url: "https://www.repair.org/stand-up",
               year: "2023",
               note: "North American consumer survey"
             }}
@@ -27,7 +27,7 @@ export const RepairPreferenceSection = () => {
             stat="More than 75% of Canadians support Right-to-Repair legislation."
             source={{
               name: "OpenMedia / Right to Repair Coalition",
-              url: "https://openmedia.org/",
+              url: "https://openmedia.org/article/item/right-to-repair-in-canada",
               year: "2024",
               note: "Canadian public opinion polling"
             }}
