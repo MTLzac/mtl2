@@ -4,9 +4,8 @@ import { Footer } from "@/components/layout/Footer";
 import {
   InfographicSchemas,
   InfographicHero,
-  ReplacementFrequencySection,
-  RepairPreferenceSection,
-  RepairCostSection,
+  StatCardsGrid,
+  RepairCostTable,
   RepairShopInsightsSection,
   WhenRepairMayNotMakeSenseSection,
   DecisionHelper,
@@ -47,9 +46,8 @@ const RepairOrReplace = () => {
         <main className="flex-1">
           <article>
             <InfographicHero />
-            <ReplacementFrequencySection />
-            <RepairPreferenceSection />
-            <RepairCostSection />
+            <StatCardsGrid />
+            <RepairCostTable />
             <RepairShopInsightsSection />
             <WhenRepairMayNotMakeSenseSection />
             <DecisionHelper />

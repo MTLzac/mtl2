@@ -28,11 +28,11 @@ export const EmbedSection = () => {
   };
 
   return (
-    <section className="py-12 md:py-16" aria-labelledby="embed-section">
+    <section className="py-12 md:py-16 bg-muted/30" aria-labelledby="embed-section">
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 
           id="embed-section" 
-          className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4"
+          className="text-2xl md:text-3xl font-bold tracking-tight text-trust mb-4"
         >
           Embed This Data
         </h2>
@@ -42,29 +42,32 @@ export const EmbedSection = () => {
           The embed includes minimal branding and a canonical link back to this page.
         </p>
 
-        <div className="relative">
-          <pre className="p-4 bg-muted rounded-lg overflow-x-auto text-xs text-muted-foreground border border-border">
+        {/* Dark code block */}
+        <div className="relative rounded-lg overflow-hidden">
+          <div className="absolute top-2 right-2 z-10">
+            <Button
+              onClick={handleCopy}
+              size="sm"
+              variant="ghost"
+              className="text-white/70 hover:text-white hover:bg-white/10"
+            >
+              {copied ? (
+                <>
+                  <Check className="h-4 w-4 mr-1" />
+                  Copied
+                </>
+              ) : (
+                <>
+                  <Copy className="h-4 w-4 mr-1" />
+                  Copy
+                </>
+              )}
+            </Button>
+          </div>
+          
+          <pre className="p-4 pt-12 bg-slate-900 overflow-x-auto text-xs text-slate-300 font-mono">
             {embedCode}
           </pre>
-          
-          <Button
-            onClick={handleCopy}
-            size="sm"
-            variant="outline"
-            className="absolute top-2 right-2"
-          >
-            {copied ? (
-              <>
-                <Check className="h-4 w-4" />
-                Copied
-              </>
-            ) : (
-              <>
-                <Copy className="h-4 w-4" />
-                Copy
-              </>
-            )}
-          </Button>
         </div>
 
         <div className="mt-6 text-sm text-muted-foreground">

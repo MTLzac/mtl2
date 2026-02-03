@@ -1,11 +1,14 @@
 export { StatBlock } from "./StatBlock";
 export { InfographicSchemas } from "./InfographicSchemas";
 export { InfographicHero } from "./InfographicHero";
+export { StatCardsGrid } from "./StatCardsGrid";
 export { ReplacementFrequencySection } from "./ReplacementFrequencySection";
 export { RepairPreferenceSection } from "./RepairPreferenceSection";
 export { RepairCostSection } from "./RepairCostSection";
+export { RepairCostTable } from "./RepairCostTable";
 export { RepairShopInsightsSection } from "./RepairShopInsightsSection";
 export { WhenRepairMayNotMakeSenseSection } from "./WhenRepairMayNotMakeSenseSection";
 export { DecisionHelper } from "./DecisionHelper";
+export { QuickGuide } from "./QuickGuide";
 export { EmbedSection } from "./EmbedSection";
 export { InfographicCTA } from "./InfographicCTA";
