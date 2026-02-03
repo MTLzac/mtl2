@@ -20,7 +20,7 @@ const RepairOrReplace = () => {
   return (
     <>
       <Helmet>
-        <title>Repair or Replace Your Device? Canadian Repair, Cost & E-Waste Statistics ({CURRENT_YEAR}) | Mobile Tech Lab</title>
+        <title>{`Repair or Replace Your Device? Canadian Repair, Cost & E-Waste Statistics (${CURRENT_YEAR}) | Mobile Tech Lab`}</title>
         <meta 
           name="description" 
           content="Neutral, fact-based data on device repair costs, replacement frequency, and e-waste in Canada. Interactive decision helper and embeddable statistics for journalists and publishers." 
