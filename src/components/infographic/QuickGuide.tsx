@@ -18,29 +18,29 @@ const GUIDE_BOXES: GuideBox[] = [
     question: "Motherboard Issue?",
     answer: "Trade-In",
     icon: <RefreshCw className="h-5 w-5" />,
-    iconBg: "bg-orange-100 text-orange-600",
+    iconBg: "bg-primary/10 text-primary",
   },
   {
     question: "Data Trapped?",
     answer: "Data Recovery",
     icon: <HardDrive className="h-5 w-5" />,
-    iconBg: "bg-trust-muted text-trust",
+    iconBg: "bg-muted text-muted-foreground",
   },
 ];
 
 export const QuickGuide = () => {
   return (
     <div className="mb-8">
-      <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">
+      <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4 text-center sm:text-left">
         Quick Guide
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {GUIDE_BOXES.map((box, index) => (
           <div 
             key={index}
-            className="flex items-center gap-3 p-4 bg-card rounded-lg border border-border"
+            className="flex items-center gap-3 p-4 bg-card rounded-lg border border-border hover:border-primary/30 transition-colors"
           >
-            <div className={`p-2 rounded-full ${box.iconBg}`}>
+            <div className={`p-2.5 rounded-full ${box.iconBg} flex-shrink-0`}>
               {box.icon}
             </div>
             <div>

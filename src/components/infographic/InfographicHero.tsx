@@ -8,7 +8,7 @@ export const InfographicHero = () => {
           Repair or Replace Your Device?
         </h1>
         
-        <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-trust mb-6">
+        <p className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-6">
           Canadian Repair, Cost & E-Waste Statistics ({CURRENT_YEAR})
         </p>
         
@@ -17,7 +17,7 @@ export const InfographicHero = () => {
         </p>
         
         {/* Divider */}
-        <div className="mt-8 border-b border-border w-24 mx-auto" />
+        <div className="mt-8 border-b-2 border-primary/30 w-24 mx-auto" />
       </div>
     </section>
   );

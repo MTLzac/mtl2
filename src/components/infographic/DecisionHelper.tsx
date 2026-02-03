@@ -86,11 +86,11 @@ export const DecisionHelper = () => {
   return (
     <section className="py-12 md:py-16" aria-labelledby="decision-helper">
       <div className="container mx-auto px-4 max-w-3xl">
-        {/* Trust Blue left border to make this section pop */}
-        <div className="border-l-4 border-trust pl-6">
+        {/* Brand accent left border to make this section pop */}
+        <div className="border-l-4 border-primary pl-6">
           <h2 
             id="decision-helper" 
-            className="text-2xl md:text-3xl font-bold tracking-tight text-trust mb-4"
+            className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4"
           >
             Interactive Decision Helper
           </h2>
@@ -193,8 +193,7 @@ export const DecisionHelper = () => {
               <Button
                 onClick={() => setShowResult(true)}
                 disabled={!canShowResult}
-                variant="outline"
-                className="flex-1 sm:flex-none border-trust text-trust hover:bg-trust-muted"
+                className="flex-1 sm:flex-none bg-primary hover:bg-primary/90 text-primary-foreground"
               >
                 See Recommendation
               </Button>
@@ -208,9 +207,9 @@ export const DecisionHelper = () => {
               </Button>
             </div>
 
-            {/* Result - Using Trust Blue/Gray background instead of red */}
+            {/* Result - Using neutral background with brand accent */}
             {showResult && recommendation && (
-              <div className="mt-6 p-6 bg-trust-muted rounded-lg border border-trust/20">
+              <div className="mt-6 p-6 bg-secondary rounded-lg border border-primary/20">
                 <h4 className="text-xl font-semibold text-foreground mb-2">
                   {recommendation.title}
                 </h4>
@@ -222,7 +221,7 @@ export const DecisionHelper = () => {
                 </p>
                 
                 {recommendation.actionLabel && recommendation.actionLink && (
-                  <Button asChild className="bg-primary hover:bg-primary/90">
+                  <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
                     <a href={recommendation.actionLink}>
                       {recommendation.actionLabel}
                     </a>
