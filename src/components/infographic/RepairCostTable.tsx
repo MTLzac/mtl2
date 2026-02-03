@@ -42,7 +42,7 @@ export const RepairCostTable = () => {
       <div className="container mx-auto px-4 max-w-4xl">
         <h2 
           id="repair-costs" 
-          className="text-2xl md:text-3xl font-bold tracking-tight text-trust mb-4"
+          className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4"
         >
           What Repairs Commonly Cost
         </h2>
@@ -64,7 +64,7 @@ export const RepairCostTable = () => {
               {REPAIR_COSTS.map((row, index) => (
                 <TableRow key={index}>
                   <TableCell className="font-medium">{row.type}</TableCell>
-                  <TableCell className="font-bold text-trust">{row.cost}</TableCell>
+                  <TableCell className="font-bold text-primary">{row.cost}</TableCell>
                   <TableCell className="text-muted-foreground">{row.context}</TableCell>
                 </TableRow>
               ))}
