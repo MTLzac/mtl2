@@ -1,340 +1,306 @@
 
-
-# Canonical Repair Pricing Explained Page - Implementation Plan
+# Repair or Replace Infographic - Implementation Plan
 
 ## Overview
-Create a new informational page at `/repair-pricing` (or `/pricing-explained`) that serves as the canonical source for repair pricing logic, targeting both SEO and LLM understanding. The page will follow Mobile Tech Lab's existing design patterns while providing consumer-friendly, transparent information without specific prices.
+
+Create a server-rendered, AI-visible, interactive HTML infographic at `/repair-or-replace-device-canada` that serves as a backlinkable data resource for journalists, a decision aid for Canadians, and a citation-friendly asset for LLMs.
 
 ---
 
-## File Structure
+## Technical Architecture
 
-### New Files to Create:
-1. `src/pages/RepairPricing.tsx` - Main page component
-2. `src/components/pricing/PricingHero.tsx` - Hero section with trust badges
-3. `src/components/pricing/QuickAnswersGrid.tsx` - 4-card "What most people want to know"
-4. `src/components/pricing/PricingLogicSection.tsx` - Core pricing logic explanation
-5. `src/components/pricing/ScreenOptionsSection.tsx` - 3-tier screen quality cards
-6. `src/components/pricing/TurnaroundSection.tsx` - Repair timing and rush service
-7. `src/components/pricing/RepairVsReplaceSection.tsx` - Decision framework
-8. `src/components/pricing/DataOptionsSection.tsx` - Data transfer/recovery cards
-9. `src/components/pricing/ComparisonTable.tsx` - Filterable collapsible table
-10. `src/components/pricing/PricingFAQ.tsx` - FAQ section with schema
-11. `src/components/pricing/PricingFinalCTA.tsx` - Final soft CTA section
-12. `src/lib/pricing-data.ts` - Constants, FAQs, and data for the page
+### New Files to Create
 
-### Files to Modify:
-1. `src/App.tsx` - Add route for `/repair-pricing`
-2. `public/sitemap.xml` - Add new URL
-3. `src/components/layout/Footer.tsx` - Add link to pricing page (optional)
-
----
-
-## Section-by-Section Breakdown
-
-### Section A: Hero (PricingHero.tsx)
-- **Background**: Soft gradient (`bg-gradient-to-br from-primary/5 via-background to-primary/5`)
-- **H1**: "Repair Pricing Explained (Winnipeg)"
-- **Subheadline**: "We don't publish fixed prices because repair costs depend on your specific device and situation. Here's how we think about pricing so you can make an informed decision."
-- **Trust Badges Row** (pill badges):
-  - "4.8★ Google Rating" (links to GMB)
-  - "500+ Reviews"
-  - "Price Match Guarantee"
-- **CTAs**:
-  - Primary: "Get Repair Quote" (red gradient button)
-  - Secondary: "Call For Quote (204) 500-9757" (outline button)
-- **Anchor Links**: Jump-to navigation below CTAs
-  - Screen Options | Warranty | Turnaround | Data | FAQ
-
-### Section B: Quick Answers (QuickAnswersGrid.tsx)
-- **Title**: "What Most People Want to Know"
-- **4-Card Grid** with icons:
-  1. **"Why prices vary"** - Part availability + repair complexity drive cost
-  2. **"Do you offer cheaper options?"** - Only when reliable parts exist; sometimes only one option
-  3. **"How fast can you do it?"** - Depends on stock, queue, and sourcing options
-  4. **"What about warranty?"** - Varies by tier and repair type; exclusions apply
-- **Style**: Cards with subtle background, icon on top, bold title, muted description
-
-### Section C: Core Pricing Logic (PricingLogicSection.tsx)
-- **Title (H2)**: "How We Think About Repair Pricing"
-- **Subsections with bullets**:
-  1. **Part availability shapes options**
-     - Some devices have multiple quality tiers; others have one reliable option
-     - Newer/rarer devices often have fewer aftermarket alternatives
-  2. **Bundling multiple repairs**
-     - Multiple repairs on the same device may qualify for a bundled discount
-     - Ask about this when requesting a quote
-  3. **Price match policy**
-     - We match comparable quotes from local competitors for the same repair
-  4. **Financing doesn't reflect replacement cost**
-     - Monthly payments can make a phone feel worth less than its true value
-     - Understanding actual replacement cost helps evaluate repair value
-
-### Section D: Screen Options (ScreenOptionsSection.tsx)
-- **Title (H2)**: "Screen Options (When Available)"
-- **3-Column Tier Cards**:
-  | Value | Premium | Genuine (Apple) |
-  |-------|---------|-----------------|
-  | Aftermarket | Original-quality | Factory original |
-  | 30-day warranty | Lifetime warranty | 12-month warranty |
-  | Defects only (excludes physical/liquid) | Defects only (excludes physical/liquid) | Defects only (excludes physical/liquid) |
-- **Important Note Box** (styled callout):
-  - "Warranty covers the part we installed. If another feature fails later and wasn't part of the repair, it isn't covered - but we're always happy to take a quick look."
-- **Style**: Use existing TierCard pattern from screen-quality page
-
-### Section E: Turnaround & Rush (TurnaroundSection.tsx)
-- **Title (H2)**: "How Long Repairs Take"
-- **Main content explaining**:
-  - Same-day depends on stock + queue
-  - Common stocked parts list:
-    - iPhone screens/batteries
-    - Popular iPhone back glass/frame
-    - Popular iPad screens/batteries
-    - Samsung S-series batteries
-    - Higher-end Samsung S-series screens
-  - If not stocked: often expedited within ~24 business hours via Canadian suppliers
-  - If not available in Canada: rush service can support expedited/overnight sourcing from the U.S. (where possible)
-  - Diagnosis-required issues cannot be guaranteed same day
-- **Rush Service Card** (highlighted callout):
-  - Skips queue
-  - Can expedite sourcing when faster logistics exist
-  - Does not apply to issues requiring diagnosis
-
-### Section F: Repair vs Replace (RepairVsReplaceSection.tsx)
-- **Title (H2)**: "Repair vs Replace (and When Trade-In Changes the Math)"
-- **Content**:
-  - We don't want to charge more than a device is worth
-  - Ultimately you decide what makes sense
-  - Alternatives: pre-owned devices, new options, trade-in/buyback
-  - Example logic (no prices): "Flagship devices can be costly to repair because parts are costly; the cost reflects the device's true replacement value, not monthly payments."
-- **Style**: Clean section with optional icon
-
-### Section G: Data Options (DataOptionsSection.tsx)
-- **Title (H2)**: "If Your Data Matters More Than the Phone"
-- **Two Cards**:
-  1. **Data Transfer**
-     - Working device to working device
-     - Service-based (no warranty term)
-  2. **Data Recovery Attempt**
-     - May involve temporarily getting a damaged phone working long enough to back up/transfer
-     - Fee applies regardless of outcome
-     - Covers technician time and effort
-- **Disclaimer** (soft callout):
-  - "Some damage types (especially liquid damage) reduce success odds."
-
-### Section H: Comparison Table (ComparisonTable.tsx)
-- **Title (H2)**: "Common Repairs & What Changes the Cost"
-- **Initially Collapsed** with "Show Comparison Table" toggle
-- **Filters** (chip-style):
-  - Device type: Phone / Tablet / Laptop / Console
-  - Brand: Apple / Samsung / Other
-- **Table Columns** (no prices):
-  - Repair type
-  - Typical cost driver (part vs labor vs diagnosis)
-  - Option tiers commonly available
-  - Typical turnaround category
-  - Warranty note
-- **Mobile Behavior**: Rows become stacked cards with filter chips
-
-### Section I: FAQ (PricingFAQ.tsx)
-- **Title (H2)**: "Pricing FAQs"
-- **12 FAQs with short answers**:
-  1. Why is Samsung screen repair expensive?
-  2. Why can't you always offer a cheaper screen?
-  3. Can you price match?
-  4. Do you discount multiple repairs at once?
-  5. Can you guarantee same-day?
-  6. What does warranty cover?
-  7. What if my phone has water damage?
-  8. Can you recover photos without repairing fully?
-  9. What if I'm still financing my phone?
-  10. Is diagnosis required for some issues?
-  11. Do you repair devices other shops won't?
-  12. What if repair costs more than the phone is worth?
-- **FAQPage Schema** automatically generated (using existing FAQPageSchema component)
-
-### Section J: Final CTA (PricingFinalCTA.tsx)
-- **Two CTA Cards**:
-  1. "Get Repair Quote" - Primary red button
-  2. "Call / Text Us" - Secondary with phone number
-- **Style**: Soft gradient background, centered, friendly tone
-
----
-
-## Technical Requirements
-
-### SEO Implementation
-- **Title tag**: `Repair Pricing Explained in Winnipeg | Mobile Tech Lab`
-- **Meta description**: `Understand how repair pricing works in Winnipeg: why costs vary, screen quality options, warranties, turnaround times, and when repair vs replacement makes sense.`
-- **Canonical URL**: `https://mobiletechlab.ca/repair-pricing`
-- **H1**: Single, with "Winnipeg" included
-- **H2/H3**: Logical structure for each section
-- **FAQPage Schema**: JSON-LD from FAQ section
-- **BreadcrumbList Schema**: Home > Repair Pricing
-- **Location mentions**: "Winnipeg" primary, "Thompson" secondary (small line)
-
-### Anchor Links (Jump Navigation)
-Near the top of the page:
 ```text
-Jump to: Screen Options | Warranty | Turnaround | Data | FAQ
+src/pages/RepairOrReplace.tsx                    # Main page component
+src/components/infographic/                       # Component directory
+  ├── InfographicHero.tsx                        # H1 + intro
+  ├── StatBlock.tsx                              # Reusable stat display with expandable source
+  ├── ReplacementFrequencySection.tsx            # Section 1
+  ├── RepairPreferenceSection.tsx                # Section 2
+  ├── RepairCostSection.tsx                      # Section 3
+  ├── RepairShopInsightsSection.tsx              # Section 4
+  ├── WhenRepairMayNotMakeSenseSection.tsx       # Section 5
+  ├── DecisionHelper.tsx                         # Section 6 - Interactive calculator
+  ├── EmbedSection.tsx                           # Section 7 - Embed code
+  ├── InfographicCTA.tsx                         # Soft CTA
+  ├── InfographicSchemas.tsx                     # Article + Dataset + FAQ schemas
+src/pages/embed/RepairStatsEmbed.tsx             # Embeddable stats widget
 ```
 
-### Route Configuration
+### Route Registration
+
 Add to `src/App.tsx`:
-```typescript
-const RepairPricing = lazy(() => import("./pages/RepairPricing"));
-// Route
-<Route path="/repair-pricing" element={<RepairPricing />} />
+- `/repair-or-replace-device-canada` - Main infographic page
+- `/embed/repair-or-replace-stats` - Embeddable iframe version
+
+---
+
+## Component Specifications
+
+### 1. StatBlock Component (Reusable)
+
+A semantic, accessible stat display with expandable source citation:
+
+```text
+Structure:
+┌─────────────────────────────────────────────────┐
+│  [Stat text as plain <p> element]               │
+│  ▼ View Source (Collapsible)                    │
+│    Source: [Name] | Link | Year                 │
+└─────────────────────────────────────────────────┘
 ```
 
-### Sitemap Update
-Add to `public/sitemap.xml`:
-```xml
-<url>
-  <loc>https://mobiletechlab.ca/repair-pricing</loc>
-  <lastmod>2026-01-30</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+Features:
+- Plain HTML text (not in canvas/image)
+- Expandable source using existing `Collapsible` component
+- Semantic markup with `<article>` wrapper
+- Mobile-first responsive styling
+
+### 2. Section Components
+
+Each section follows consistent structure:
+
+```text
+<section>
+  <h2>[Section Title]</h2>
+  <div>[StatBlock components]</div>
+  <p>[Neutral explanation]</p>
+</section>
+```
+
+#### Section 1: Replacement Frequency
+Stats to display:
+- "Canadians replace smartphones roughly every 3 years on average"
+- "Canadians are holding onto phones and computers longer than in previous decades"
+
+#### Section 2: Repair Preference
+Stats to display:
+- "45% of consumers prefer repairing devices instead of replacing them"
+- "More than 75% of Canadians support Right-to-Repair legislation"
+
+#### Section 3: Repair Costs (Third-Party Only)
+Stats to display:
+- "Smartphone repairs commonly range from ~$50-$400, depending on damage"
+- "Cracked screen repairs average around ~$200"
+- "Consumers report an average perceived repair or replacement cost of ~$302"
+- Disclaimer: "Actual repair cost varies by device model, damage severity, and parts availability."
+
+#### Section 4: Repair Shop Insights
+Labeled as "anonymized Canadian repair data":
+- Common failures: Screen damage, Battery degradation, Back glass damage
+- Turnaround: "Same day to 3 business days"
+- Note: Not presented as guarantee
+
+#### Section 5: When Repair May Not Make Sense
+E-waste stats:
+- "Canada generates approximately 1 million tonnes of e-waste annually"
+- "Only ~20% of Canadian e-waste is formally recycled"
+- "14% of Canadian households report having unwanted cellphones"
+- Data recovery + trade-in positioning
+
+### 3. Decision Helper (Interactive)
+
+```text
+┌─────────────────────────────────────────────────┐
+│  How old is your device?                        │
+│  ○ Less than 2 years  ○ 2-4 years  ○ 4+ years  │
+│                                                 │
+│  What's the issue?                              │
+│  ○ Screen  ○ Battery  ○ Back glass  ○ Other    │
+│                                                 │
+│  Does the device power on?                      │
+│  ○ Yes  ○ No                                    │
+│                                                 │
+│  [See Recommendation]                           │
+└─────────────────────────────────────────────────┘
+
+Outcomes (exactly three):
+1. "Repair often makes sense" + stat-backed rationale
+2. "Repair may make sense depending on cost" + explanation
+3. "Data recovery and trade-in may be smarter" + explanation
+```
+
+Implementation:
+- Pure React state (no external dependencies)
+- Decision logic visible as plain text in HTML
+- Uses existing Radio Group and Button components
+- No sales language in outcomes
+
+### 4. Embed Section
+
+Provides:
+- Responsive iframe embed code
+- Minimal branding (text attribution only)
+- Canonical backlink
+- Copy-to-clipboard functionality
+
+### 5. Structured Data (JSON-LD)
+
+Three schema types in `InfographicSchemas.tsx`:
+
+```text
+Article Schema
+├── Publisher: Mobile Tech Lab
+├── Geographic scope: Canada
+├── dateModified: Current date
+└── Update frequency: Quarterly
+
+Dataset Schema
+├── Name: Canadian Device Repair & Replacement Statistics
+├── Description: Aggregated repair, cost, and e-waste data
+├── Temporal coverage: 2026
+└── Update cadence: Quarterly
+
+FAQ Schema (Consumer-Style)
+├── "Is it worth fixing my phone in Canada?"
+├── "How long does phone repair usually take?"
+├── "When is a phone not worth repairing?"
+└── "Is trading in a damaged phone better than repairing it?"
 ```
 
 ---
 
-## Visual Design Specifications
+## Design System Integration
+
+### Colors (from existing CSS variables)
+- Primary: `hsl(1 76% 55%)` - Mobile Tech Lab Red
+- Background: `hsl(0 0% 100%)`
+- Foreground: `hsl(220 15% 15%)`
+- Muted: `hsl(0 0% 94%)`
+- Border: `hsl(0 0% 90%)`
 
 ### Typography
-- **H1**: `text-4xl md:text-5xl font-bold tracking-tight`
-- **H2**: `text-3xl md:text-4xl font-bold`
-- **Body**: `text-lg text-muted-foreground`
-- **Font**: Inter (already configured)
-
-### Colors
-- **Primary**: Mobile Tech Lab red (`hsl(1 76% 55%)`)
-- **Background**: Soft gradients using `from-primary/5 via-background to-primary/5`
-- **Cards**: `bg-card` with `border-border` borders
-- **Text**: `text-foreground` and `text-muted-foreground`
-
-### Buttons
-- **Primary CTA**: `gradient-primary` class (solid red)
-- **Secondary CTA**: `variant="outline"`
-- **Rounded pills**: `rounded-full` for badges
+- Font: Inter (already imported)
+- Headings: `font-bold tracking-tight`
+- Body: `text-muted-foreground`
 
 ### Spacing
-- **Section padding**: `py-16 md:py-20`
-- **Container**: `container mx-auto px-4`
-- **Card gaps**: `gap-6` for grids
+- Section padding: `py-16 md:py-20` (matches existing pattern)
+- Container: `container mx-auto px-4`
+- Max-width for readability: `max-w-3xl` or `max-w-4xl`
 
-### Mobile Responsiveness
-- All grids use responsive breakpoints (e.g., `md:grid-cols-3`)
-- Tables convert to stacked cards on mobile
-- Touch-friendly filter chips
-
----
-
-## Data Constants (pricing-data.ts)
-
-### Screen Tiers
-```typescript
-export const SCREEN_TIERS = [
-  {
-    name: "Value",
-    type: "Aftermarket",
-    warranty: "30-day warranty against defects",
-    exclusions: "Excludes physical/liquid damage",
-    description: "Budget-friendly option when available"
-  },
-  {
-    name: "Premium",
-    type: "Original-quality",
-    warranty: "Lifetime warranty against defects",
-    exclusions: "Excludes physical/liquid damage",
-    description: "Best balance of quality and value"
-  },
-  {
-    name: "Genuine (Apple)",
-    type: "Factory original",
-    warranty: "12-month warranty against defects",
-    exclusions: "Excludes physical/liquid damage",
-    description: "Factory-original Apple parts"
-  }
-];
-```
-
-### Common Stocked Parts
-```typescript
-export const STOCKED_PARTS = [
-  "iPhone screens and batteries",
-  "Popular iPhone back glass and frames",
-  "Popular iPad screens and batteries",
-  "Samsung S-series batteries",
-  "Higher-end Samsung S-series screens"
-];
-```
-
-### Comparison Table Data
-```typescript
-export const REPAIR_COMPARISONS = [
-  {
-    repairType: "Screen Replacement",
-    costDriver: "Part quality and device model",
-    tiers: ["Value", "Premium", "Genuine (Apple only)"],
-    turnaround: "Same-day possible",
-    warranty: "30 days to lifetime by tier"
-  },
-  // ... more repairs
-];
-```
+### Components to Reuse
+- `Header` and `Footer` (layout)
+- `Accordion` (expandable sources)
+- `Collapsible` (section expansion)
+- `RadioGroup` (decision helper)
+- `Button` (CTA and interactions)
+- `Card` (stat containers)
 
 ---
 
-## Device Page Integration (Future Phase)
+## Accessibility Requirements
 
-For device pages like `/repair/macbook`, add a small "Pricing explained" module near the quote CTA:
+- Semantic HTML: `<article>`, `<section>`, `<h1>-<h3>`, `<p>`, `<ul>`
+- All stats as plain text (not images/canvas)
+- Page readable with JavaScript disabled (core content)
+- ARIA labels on interactive elements
+- Keyboard navigation support
+- Sufficient color contrast
+
+---
+
+## SEO Considerations
+
+### Meta Tags
+- Title: "Repair or Replace Your Device? Canadian Repair, Cost & E-Waste Statistics (2026) | Mobile Tech Lab"
+- Description: Neutral, fact-focused summary
+- Canonical URL: `https://mobiletechlab.ca/repair-or-replace-device-canada`
+- Open Graph tags for social sharing
+
+### Structured Data
+- Article schema for search visibility
+- Dataset schema for data citation
+- FAQ schema for featured snippets
+
+### Internal Linking
+- Link to `/repair-pricing` for pricing philosophy
+- Link to `/trade-in` for trade-in program
+- Link to `/contact` for consultation
+
+---
+
+## Implementation Sequence
+
+### Phase 1: Foundation
+1. Create `InfographicSchemas.tsx` with all three JSON-LD schemas
+2. Create `StatBlock.tsx` reusable component
+3. Create main `RepairOrReplace.tsx` page shell with Header/Footer
+
+### Phase 2: Content Sections
+4. Create `InfographicHero.tsx` with H1 and intro
+5. Create `ReplacementFrequencySection.tsx` (Section 1)
+6. Create `RepairPreferenceSection.tsx` (Section 2)
+7. Create `RepairCostSection.tsx` (Section 3)
+8. Create `RepairShopInsightsSection.tsx` (Section 4)
+9. Create `WhenRepairMayNotMakeSenseSection.tsx` (Section 5)
+
+### Phase 3: Interactive Features
+10. Create `DecisionHelper.tsx` (Section 6)
+11. Create `EmbedSection.tsx` (Section 7)
+12. Create `InfographicCTA.tsx` (soft CTA)
+
+### Phase 4: Embed Widget
+13. Create `src/pages/embed/RepairStatsEmbed.tsx`
+14. Register embed route in `App.tsx`
+
+### Phase 5: Integration
+15. Register main route in `App.tsx`
+16. Add footer link to infographic page
+
+---
+
+## Validation Checklist
+
+- [ ] All statistics exist as plain HTML text
+- [ ] No stat exists only inside images/canvas/JS-only components
+- [ ] Page readable with JavaScript disabled
+- [ ] Semantic HTML throughout
+- [ ] Mobile-first responsive design
+- [ ] Brand colors and typography match existing site
+- [ ] All three structured data schemas present
+- [ ] Expandable sources for each statistic
+- [ ] Decision helper has visible logic
+- [ ] Embed code functional with minimal branding
+- [ ] Soft CTA with no sales pressure
+- [ ] Date-agnostic URL structure
+
+---
+
+## Technical Notes
+
+### Source Citations Structure
+
+Each stat will include expandable source data:
 
 ```tsx
-<div className="mt-8 p-4 bg-muted/50 rounded-lg">
-  <p className="text-sm text-muted-foreground mb-2">
-    MacBook repair pricing depends mainly on part type and whether diagnosis is required...
-  </p>
-  <Button variant="soft" size="sm" asChild>
-    <Link to="/repair-pricing">How repair pricing works in Winnipeg</Link>
-  </Button>
-</div>
+interface StatSource {
+  name: string;       // "Statistics Canada"
+  url?: string;       // Link to source
+  year: string;       // "2024"
+  note?: string;      // Additional context
+}
 ```
 
-This keeps device pages transactional while the canonical pricing page handles informational intent.
+### Decision Logic (Transparent)
 
----
+The decision helper logic will be documented in the component and visible in the DOM:
 
-## Implementation Order
+```text
+IF device_age < 2 years AND powers_on = yes
+  THEN "Repair often makes sense"
 
-1. Create `src/lib/pricing-data.ts` with all constants
-2. Create individual section components:
-   - PricingHero.tsx
-   - QuickAnswersGrid.tsx
-   - PricingLogicSection.tsx
-   - ScreenOptionsSection.tsx
-   - TurnaroundSection.tsx
-   - RepairVsReplaceSection.tsx
-   - DataOptionsSection.tsx
-   - ComparisonTable.tsx
-   - PricingFAQ.tsx
-   - PricingFinalCTA.tsx
-3. Create main page `src/pages/RepairPricing.tsx`
-4. Update `src/App.tsx` with route
-5. Update `public/sitemap.xml`
-6. Optional: Add footer/header link
+IF device_age >= 2 AND device_age < 4 AND issue = screen|battery
+  THEN "Repair may make sense depending on cost"
 
----
+IF device_age >= 4 OR powers_on = no
+  THEN "Data recovery and trade-in may be smarter"
+```
 
-## Copy Constraints Checklist
+### Quarterly Update Strategy
 
-- [ ] No exact prices
-- [ ] No "starting at" pricing
-- [ ] No competitor naming
-- [ ] No hype/SEO fluff
-- [ ] Plain, calm, transparent tone
-- [ ] Warranty language reflects tiered structure
-- [ ] Data recovery: fee applies regardless of outcome
-- [ ] Water damage limitations acknowledged
-
+Content structured for easy updates:
+- Stats data centralized in component props
+- Year reference only in title/headings
+- Schema dateModified set dynamically
