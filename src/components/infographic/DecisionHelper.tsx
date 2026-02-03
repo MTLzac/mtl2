@@ -232,33 +232,6 @@ export const DecisionHelper = () => {
           </div>
         </div>
 
-        {/* Decision Logic Documentation */}
-        <details className="mt-6 text-sm text-muted-foreground">
-          <summary className="cursor-pointer hover:text-foreground">
-            View decision logic
-          </summary>
-          <pre className="mt-3 p-4 bg-muted rounded-lg overflow-x-auto text-xs">
-{`Decision Logic:
-
-IF powers_on = NO
-  → "Data recovery and trade-in may be smarter"
-
-IF device_age >= 4 years
-  → "Data recovery and trade-in may be smarter"
-
-IF device_age < 2 years AND powers_on = YES
-  → "Repair often makes sense"
-
-IF device_age = 2-4 years AND issue = screen|battery|back glass
-  → "Repair may make sense depending on cost"
-
-IF device_age = 2-4 years AND issue = other
-  → "Data recovery and trade-in may be smarter"
-
-DEFAULT
-  → "Repair may make sense depending on cost"`}
-          </pre>
-        </details>
       </div>
     </section>
   );

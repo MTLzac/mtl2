@@ -36,6 +36,10 @@
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
+    /* Warning - Orange for trade-in recommendations */
+    --warning: 25 95% 53%;
+    --warning-foreground: 0 0% 100%;
+
     /* Trust Blue - For data, facts, and information */
     --trust: 214 100% 41%;
     --trust-foreground: 0 0% 100%;
@@ -85,6 +89,10 @@
 
     --success: 142 76% 42%;
     --success-foreground: 0 0% 100%;
+
+    /* Warning - Dark mode */
+    --warning: 25 95% 53%;
+    --warning-foreground: 0 0% 100%;
 
     /* Trust Blue - Dark mode */
     --trust: 214 100% 50%;
