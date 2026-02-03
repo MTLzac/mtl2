@@ -1,45 +1,28 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { MapPin } from "lucide-react";
 
 export const InfographicCTA = () => {
   return (
-    <section className="py-16 md:py-20 bg-muted/30" aria-labelledby="cta-section">
-      <div className="container mx-auto px-4 max-w-3xl text-center">
+    <section className="py-16 md:py-20" aria-labelledby="final-cta">
+      <div className="container mx-auto px-4 max-w-2xl text-center">
         <h2 
-          id="cta-section"
+          id="final-cta" 
           className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4"
         >
-          The right choice depends on the device — not pressure.
+          Not sure what to do?
         </h2>
         
-        <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-          If you want help deciding, we're here.
+        <p className="text-lg text-muted-foreground mb-8">
+          The right choice depends on the device — not pressure. If you want help deciding, we're here.
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4">
-          <Button asChild size="lg">
-            <Link to="/contact">
-              Get a Free Consultation
-            </Link>
-          </Button>
-          
-          <Button asChild variant="outline" size="lg">
-            <Link to="/trade-in">
-              Explore Trade-In Options
-            </Link>
-          </Button>
-        </div>
-        
-        <p className="mt-8 text-sm text-muted-foreground">
-          Learn more about{" "}
-          <Link to="/repair-pricing" className="text-primary hover:underline">
-            how repair pricing works
+        <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+          <Link to="/brandon-repair" className="inline-flex items-center gap-2">
+            <MapPin className="h-5 w-5" />
+            Find a Location Near You
           </Link>
-          {" "}or browse our{" "}
-          <Link to="/repair/iphone" className="text-primary hover:underline">
-            repair services
-          </Link>.
-        </p>
+        </Button>
       </div>
     </section>
   );

@@ -36,6 +36,11 @@
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
+    /* Trust Blue - For data, facts, and information */
+    --trust: 214 100% 41%;
+    --trust-foreground: 0 0% 100%;
+    --trust-muted: 214 100% 97%;
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
@@ -80,6 +85,11 @@
 
     --success: 142 76% 42%;
     --success-foreground: 0 0% 100%;
+
+    /* Trust Blue - Dark mode */
+    --trust: 214 100% 50%;
+    --trust-foreground: 0 0% 100%;
+    --trust-muted: 214 40% 20%;
 
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 100%;
