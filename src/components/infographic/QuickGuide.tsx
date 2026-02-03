@@ -1,53 +1,58 @@
 import { Wrench, RefreshCw, HardDrive } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
-interface GuideBox {
-  question: string;
-  answer: string;
+interface MatrixCard {
+  condition: string;
+  action: string;
   icon: React.ReactNode;
-  iconBg: string;
+  accentColor: string;
+  bgColor: string;
 }
 
-const GUIDE_BOXES: GuideBox[] = [
+const MATRIX_CARDS: MatrixCard[] = [
   {
-    question: "Device < 2 Years?",
-    answer: "Repair",
-    icon: <Wrench className="h-5 w-5" />,
-    iconBg: "bg-success/10 text-success",
+    condition: "Device < 2 Years?",
+    action: "Repair",
+    icon: <Wrench className="h-6 w-6" />,
+    accentColor: "text-success",
+    bgColor: "bg-success/10",
   },
   {
-    question: "Motherboard Issue?",
-    answer: "Trade-In",
-    icon: <RefreshCw className="h-5 w-5" />,
-    iconBg: "bg-primary/10 text-primary",
+    condition: "Device > 4 Years + Major Issue?",
+    action: "Trade-In",
+    icon: <RefreshCw className="h-6 w-6" />,
+    accentColor: "text-warning",
+    bgColor: "bg-warning/10",
   },
   {
-    question: "Data Trapped?",
-    answer: "Data Recovery",
-    icon: <HardDrive className="h-5 w-5" />,
-    iconBg: "bg-muted text-muted-foreground",
+    condition: "Data Not Backed Up?",
+    action: "Data Recovery",
+    icon: <HardDrive className="h-6 w-6" />,
+    accentColor: "text-primary",
+    bgColor: "bg-primary/10",
   },
 ];
 
 export const QuickGuide = () => {
   return (
     <div className="mb-8">
-      <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4 text-center sm:text-left">
-        Quick Guide
+      <h3 className="text-lg font-semibold text-foreground mb-4">
+        Quick Decision Matrix
       </h3>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        {GUIDE_BOXES.map((box, index) => (
-          <div 
+        {MATRIX_CARDS.map((card, index) => (
+          <Card 
             key={index}
-            className="flex items-center gap-3 p-4 bg-card rounded-lg border border-border hover:border-primary/30 transition-colors"
+            className="bg-card border border-border shadow-sm hover:shadow-md transition-shadow"
           >
-            <div className={`p-2.5 rounded-full ${box.iconBg} flex-shrink-0`}>
-              {box.icon}
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">{box.question}</p>
-              <p className="font-semibold text-foreground">→ {box.answer}</p>
-            </div>
-          </div>
+            <CardContent className="p-6 text-center">
+              <div className={`inline-flex p-3 rounded-full ${card.bgColor} ${card.accentColor} mb-4`}>
+                {card.icon}
+              </div>
+              <p className="text-sm text-muted-foreground mb-2">{card.condition}</p>
+              <p className={`text-xl font-bold ${card.accentColor}`}>→ {card.action}</p>
+            </CardContent>
+          </Card>
         ))}
       </div>
     </div>
