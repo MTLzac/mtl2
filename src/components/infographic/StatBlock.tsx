@@ -44,7 +44,7 @@ export const StatBlock = ({ stat, source, explanation }: StatBlockProps) => {
               <a 
                 href={source.url} 
                 target="_blank" 
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="text-primary hover:underline"
               >
                 {source.name}

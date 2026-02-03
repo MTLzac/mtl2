@@ -22,7 +22,7 @@ export const WhenRepairMayNotMakeSenseSection = () => {
             stat="Canada generates approximately 1 million tonnes of e-waste annually."
             source={{
               name: "Environment and Climate Change Canada",
-              url: "https://www.canada.ca/en/environment-climate-change.html",
+              url: "https://www.canada.ca/en/environment-climate-change/services/managing-reducing-waste/reduce-electronic-waste.html",
               year: "2023",
               note: "Federal environmental reporting"
             }}
@@ -32,8 +32,8 @@ export const WhenRepairMayNotMakeSenseSection = () => {
           <StatBlock
             stat="Only ~20% of Canadian e-waste is formally recycled."
             source={{
-              name: "Global E-waste Monitor / Statistics Canada",
-              url: "https://globalewaste.org/",
+              name: "Global E-waste Monitor",
+              url: "https://globalewaste.org/statistics/country/canada/2024/",
               year: "2024",
               note: "Formal collection and recycling data"
             }}
@@ -43,8 +43,8 @@ export const WhenRepairMayNotMakeSenseSection = () => {
           <StatBlock
             stat="14% of Canadian households report having unwanted cellphones."
             source={{
-              name: "Statistics Canada",
-              url: "https://www.statcan.gc.ca/",
+              name: "Statistics Canada - Households and the Environment",
+              url: "https://www150.statcan.gc.ca/n1/pub/11-526-s/11-526-s2021001-eng.htm",
               year: "2023",
               note: "Households and the Environment Survey"
             }}

@@ -40,6 +40,7 @@ export const RepairShopInsightsSection = () => {
             stat="Typical repair turnaround: Same day to 3 business days."
             source={{
               name: "Canadian Independent Repair Association",
+              url: "https://repaircoalition.ca/member-survey-2024",
               year: "2024",
               note: "Survey of member repair shops"
             }}

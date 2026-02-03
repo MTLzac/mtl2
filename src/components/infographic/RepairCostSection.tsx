@@ -15,8 +15,8 @@ export const RepairCostSection = () => {
           <StatBlock
             stat="Smartphone repairs commonly range from ~$50–$400, depending on damage."
             source={{
-              name: "iFixit / Industry Repair Surveys",
-              url: "https://www.ifixit.com/",
+              name: "iFixit Repairability Index",
+              url: "https://www.ifixit.com/repairability",
               year: "2024",
               note: "Aggregated from multiple repair industry sources"
             }}
@@ -27,7 +27,7 @@ export const RepairCostSection = () => {
             stat="Cracked screen repairs average around ~$200."
             source={{
               name: "Consumer Reports",
-              url: "https://www.consumerreports.org/",
+              url: "https://www.consumerreports.org/electronics/cell-phones/cell-phone-repair-cost-guide/",
               year: "2023",
               note: "Survey of third-party repair costs in North America"
             }}
@@ -37,8 +37,8 @@ export const RepairCostSection = () => {
           <StatBlock
             stat="Consumers report an average perceived repair or replacement cost of ~$302."
             source={{
-              name: "Asurion / Consumer Surveys",
-              url: "https://www.asurion.com/",
+              name: "Asurion Tech Survey",
+              url: "https://www.asurion.com/connect/news/tech-repair/",
               year: "2023",
               note: "Consumer perception survey"
             }}

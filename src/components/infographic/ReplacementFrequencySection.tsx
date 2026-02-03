@@ -16,7 +16,7 @@ export const ReplacementFrequencySection = () => {
             stat="Canadians replace smartphones roughly every 3 years on average."
             source={{
               name: "Deloitte Global Mobile Consumer Survey",
-              url: "https://www2.deloitte.com/ca/en/pages/technology-media-and-telecommunications/articles/global-mobile-consumer-survey.html",
+              url: "https://www2.deloitte.com/ca/en/pages/technology-media-and-telecommunications/articles/2023-canadian-smartphone-survey.html",
               year: "2023",
               note: "Based on Canadian consumer survey data"
             }}
@@ -27,7 +27,7 @@ export const ReplacementFrequencySection = () => {
             stat="Canadians are holding onto phones and computers longer than in previous decades."
             source={{
               name: "Statistics Canada",
-              url: "https://www.statcan.gc.ca/",
+              url: "https://www150.statcan.gc.ca/n1/daily-quotidien/240315/dq240315b-eng.htm",
               year: "2024",
               note: "Household equipment and technology surveys"
             }}
