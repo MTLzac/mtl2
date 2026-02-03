@@ -79,6 +79,10 @@ const BrandonRepair = lazy(() => import("./pages/location/BrandonRepair"));
 
 // Lazy-loaded Informational Pages
 const RepairPricing = lazy(() => import("./pages/RepairPricing"));
+const RepairOrReplace = lazy(() => import("./pages/RepairOrReplace"));
+
+// Lazy-loaded Embed Pages
+const RepairStatsEmbed = lazy(() => import("./pages/embed/RepairStatsEmbed"));
 
 const queryClient = new QueryClient();
 
@@ -163,6 +167,10 @@ const App = () => (
 
               {/* Informational Pages */}
               <Route path="/repair-pricing" element={<RepairPricing />} />
+              <Route path="/repair-or-replace-device-canada" element={<RepairOrReplace />} />
+
+              {/* Embed Pages */}
+              <Route path="/embed/repair-or-replace-stats" element={<RepairStatsEmbed />} />
 
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
