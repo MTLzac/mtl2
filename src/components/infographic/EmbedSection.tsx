@@ -32,7 +32,7 @@ export const EmbedSection = () => {
       <div className="container mx-auto px-4 max-w-3xl">
         <h2 
           id="embed-section" 
-          className="text-2xl md:text-3xl font-bold tracking-tight text-trust mb-4"
+          className="text-2xl md:text-3xl font-bold tracking-tight text-foreground mb-4"
         >
           Embed This Data
         </h2>
