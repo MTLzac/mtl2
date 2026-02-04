@@ -84,14 +84,14 @@ const REPAIR_CATEGORIES = [
 ];
 
 const PHYSICAL_LOCATIONS = [
-  { name: "Winnipeg (St. Vital)", href: "/location/winnipeg" },
-  { name: "Thompson", href: "/location/thompson" },
+  { name: "Winnipeg (St. Vital), MB", href: "/location/winnipeg" },
+  { name: "Thompson, MB", href: "/location/thompson" },
 ];
 
 const MAIL_IN_AREAS = [
-  { name: "Steinbach", href: "/service-area/steinbach" },
-  { name: "Brandon", href: "/service-area/brandon" },
-  { name: "Portage la Prairie", href: "/service-area/portage-la-prairie" },
+  { name: "Steinbach, MB", href: "/service-area/steinbach" },
+  { name: "Brandon, MB", href: "/service-area/brandon" },
+  { name: "Portage la Prairie, MB", href: "/service-area/portage-la-prairie" },
   { name: "More Areas", href: "/service-areas" },
 ];
 

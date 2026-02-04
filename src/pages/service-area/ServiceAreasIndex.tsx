@@ -9,13 +9,13 @@ import { PRIMARY_PHONE, PRIMARY_PHONE_FORMATTED } from "@/lib/locations";
 
 const PHYSICAL_LOCATIONS = [
   {
-    name: "Winnipeg (St. Vital)",
+    name: "Winnipeg (St. Vital), MB",
     href: "/location/winnipeg",
     address: "St. Vital Centre, Winnipeg, MB",
     description: "Walk-in repairs, same-day service available",
   },
   {
-    name: "Thompson",
+    name: "Thompson, MB",
     href: "/location/thompson",
     address: "Thompson, MB",
     description: "Northern Manitoba's repair destination",
@@ -24,17 +24,17 @@ const PHYSICAL_LOCATIONS = [
 
 const SERVICE_AREAS = [
   {
-    name: "Brandon",
+    name: "Brandon, MB",
     href: "/service-area/brandon",
     description: "Fast mail-in repairs for Brandon and surrounding areas",
   },
   {
-    name: "Steinbach",
+    name: "Steinbach, MB",
     href: "/service-area/steinbach",
     description: "Serving Steinbach and Southeast Manitoba",
   },
   {
-    name: "Portage la Prairie",
+    name: "Portage la Prairie, MB",
     href: "/service-area/portage-la-prairie",
     description: "Mail-in service for Portage and Central Manitoba",
   },
