@@ -78,10 +78,8 @@ const Contact = lazy(() => import("./pages/Contact"));
 const PDPv2Draft = lazy(() => import("./pages/draft/PDPv2Draft"));
 
 // Lazy-loaded Location Pages
-const BrandonRepair = lazy(() => import("./pages/location/BrandonRepair"));
 const WinnipegLocation = lazy(() => import("./pages/location/WinnipegLocation"));
 const ThompsonLocation = lazy(() => import("./pages/location/ThompsonLocation"));
-
 // Lazy-loaded Informational Pages
 const RepairPricing = lazy(() => import("./pages/RepairPricing"));
 const RepairOrReplace = lazy(() => import("./pages/RepairOrReplace"));
@@ -92,6 +90,7 @@ const RepairStatsEmbed = lazy(() => import("./pages/embed/RepairStatsEmbed"));
 // Lazy-loaded Service Area Pages
 const SteinbachServiceArea = lazy(() => import("./pages/service-area/SteinbachServiceArea"));
 const PortageLaPrairieServiceArea = lazy(() => import("./pages/service-area/PortageLaPrairieServiceArea"));
+const BrandonServiceArea = lazy(() => import("./pages/service-area/BrandonServiceArea"));
 
 const queryClient = new QueryClient();
 
@@ -177,7 +176,6 @@ const App = () => (
               {/* Location Pages */}
               <Route path="/locations/winnipeg" element={<WinnipegLocation />} />
               <Route path="/locations/thompson" element={<ThompsonLocation />} />
-              <Route path="/location/brandon" element={<BrandonRepair />} />
 
               {/* Informational Pages */}
               <Route path="/repair-pricing" element={<RepairPricing />} />
@@ -189,6 +187,9 @@ const App = () => (
               {/* Service Area Pages */}
               <Route path="/service-area/steinbach" element={<SteinbachServiceArea />} />
               <Route path="/service-area/portage-la-prairie" element={<PortageLaPrairieServiceArea />} />
+              <Route path="/service-area/brandon" element={<BrandonServiceArea />} />
+              {/* Legacy redirect */}
+              <Route path="/location/brandon" element={<BrandonServiceArea />} />
 
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
