@@ -89,6 +89,9 @@ const RepairOrReplace = lazy(() => import("./pages/RepairOrReplace"));
 // Lazy-loaded Embed Pages
 const RepairStatsEmbed = lazy(() => import("./pages/embed/RepairStatsEmbed"));
 
+// Lazy-loaded Service Area Pages
+const SteinbachServiceArea = lazy(() => import("./pages/service-area/SteinbachServiceArea"));
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -181,6 +184,9 @@ const App = () => (
 
               {/* Embed Pages */}
               <Route path="/embed/repair-or-replace-stats" element={<RepairStatsEmbed />} />
+
+              {/* Service Area Pages */}
+              <Route path="/service-area/steinbach" element={<SteinbachServiceArea />} />
 
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
