@@ -1,4 +1,4 @@
-import { Star, ExternalLink } from "lucide-react";
+import { Star, ExternalLink, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -14,6 +14,7 @@ interface ReviewData {
   name: string;
   rating: number;
   text: string;
+  reviewUrl?: string;
 }
 
 const reviews: ReviewData[] = [
@@ -34,8 +35,8 @@ const reviews: ReviewData[] = [
   },
 ];
 
-const ReviewCard = ({ name, rating, text }: ReviewData) => (
-  <Card className="h-full border-border/50 shadow-sm">
+const ReviewCard = ({ name, rating, text, reviewUrl }: ReviewData) => (
+  <Card className="h-full border-border/50 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-md">
     <CardContent className="flex h-full flex-col items-center p-6 text-center">
       {/* Star Rating */}
       <div className="mb-4 flex gap-0.5">
@@ -49,8 +50,22 @@ const ReviewCard = ({ name, rating, text }: ReviewData) => (
         "{text}"
       </p>
 
-      {/* Reviewer Name */}
-      <p className="font-medium text-foreground">– {name}</p>
+      {/* Reviewer Name with Verified Badge */}
+      <div className="flex items-center gap-1.5">
+        {reviewUrl ? (
+          <a
+            href={reviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-foreground hover:text-primary hover:underline"
+          >
+            – {name}
+          </a>
+        ) : (
+          <p className="font-medium text-foreground">– {name}</p>
+        )}
+        <BadgeCheck className="h-4 w-4 text-primary" aria-label="Verified Review" />
+      </div>
 
       {/* Source */}
       <p className="mt-1 text-xs text-muted-foreground/70">Via Google Reviews</p>
@@ -62,9 +77,16 @@ export const CustomerReviewsSection = () => {
   return (
     <section className="py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <h2 className="mb-8 text-center text-2xl font-bold md:text-3xl">
-          What Our St. Vital Customers Are Saying
-        </h2>
+        {/* Header with Subtitle */}
+        <div className="mb-8 text-center">
+          <h2 className="mb-2 text-2xl font-bold md:text-3xl">
+            What Our St. Vital Customers Are Saying
+          </h2>
+          <p className="flex items-center justify-center gap-1.5 text-muted-foreground">
+            <Star className="h-4 w-4 fill-primary text-primary" />
+            Trusted by over 550 happy customers in Winnipeg
+          </p>
+        </div>
 
         {/* Desktop: Grid Layout */}
         <div className="mx-auto hidden max-w-4xl gap-6 md:grid md:grid-cols-3">
@@ -90,9 +112,9 @@ export const CustomerReviewsSection = () => {
 
         {/* CTA */}
         <div className="mt-10 text-center">
-          <p className="mb-4 flex items-center justify-center gap-2 text-muted-foreground">
-            <Star className="h-4 w-4 fill-primary text-primary" />
-            See All 200+ Google Reviews
+          <p className="mb-4 flex items-center justify-center gap-2 font-medium">
+            <Star className="h-5 w-5 fill-primary text-primary" />
+            See All 550+ Google Reviews
           </p>
           <Button asChild>
             <a
@@ -100,7 +122,7 @@ export const CustomerReviewsSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              View on Google
+              Read More Reviews on Google
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>
