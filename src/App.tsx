@@ -80,6 +80,7 @@ const PDPv2Draft = lazy(() => import("./pages/draft/PDPv2Draft"));
 // Lazy-loaded Location Pages
 const BrandonRepair = lazy(() => import("./pages/location/BrandonRepair"));
 const WinnipegLocation = lazy(() => import("./pages/location/WinnipegLocation"));
+const ThompsonLocation = lazy(() => import("./pages/location/ThompsonLocation"));
 
 // Lazy-loaded Informational Pages
 const RepairPricing = lazy(() => import("./pages/RepairPricing"));
@@ -171,6 +172,7 @@ const App = () => (
 
               {/* Location Pages */}
               <Route path="/locations/winnipeg" element={<WinnipegLocation />} />
+              <Route path="/locations/thompson" element={<ThompsonLocation />} />
               <Route path="/location/brandon" element={<BrandonRepair />} />
 
               {/* Informational Pages */}
