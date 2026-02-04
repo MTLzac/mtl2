@@ -15,7 +15,7 @@ const stVitalLocation = LOCATIONS[0];
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Mobile Tech Lab - St. Vital Winnipeg",
+  "name": "Mobile Tech Lab - St. Vital",
   "image": "https://mobiletechlab.ca/favicon.png",
   "url": "https://mobiletechlab.ca/locations/winnipeg",
   "telephone": "+1-204-500-9757",
@@ -29,28 +29,32 @@ const localBusinessSchema = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 49.8568,
-    "longitude": -97.1058
-  },
-  "areaServed": {
-    "@type": "City",
-    "name": "Winnipeg"
+    "latitude": 49.823521,
+    "longitude": -97.089403
   },
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "19:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
-      "opens": "12:00",
-      "closes": "19:00"
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "10:00",
+      "closes": "18:00"
     }
   ],
-  "priceRange": "$$"
+  "priceRange": "$$",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Winnipeg"
+  },
+  "sameAs": [
+    "https://www.facebook.com/mobiletechlab",
+    "https://www.instagram.com/mobiletechlab"
+  ]
 };
 
 const breadcrumbSchema = {
