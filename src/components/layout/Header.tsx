@@ -92,6 +92,7 @@ const MAIL_IN_AREAS = [
   { name: "Steinbach, MB", href: "/service-area/steinbach" },
   { name: "Brandon, MB", href: "/service-area/brandon" },
   { name: "Portage la Prairie, MB", href: "/service-area/portage-la-prairie" },
+  { name: "Selkirk, MB", href: "/service-area/selkirk" },
   { name: "More Areas", href: "/service-areas" },
 ];
 
