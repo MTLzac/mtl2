@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { CustomerReviewsSection } from "@/components/location/CustomerReviewsSection";
 import { LOCATIONS, PRIMARY_GMB_URL } from "@/lib/locations";
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
@@ -30,6 +31,10 @@ const localBusinessSchema = {
     "@type": "GeoCoordinates",
     "latitude": 49.8568,
     "longitude": -97.1058
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Winnipeg"
   },
   "openingHoursSpecification": [
     {
@@ -196,36 +201,8 @@ const WinnipegLocation = () => {
           </div>
         </section>
 
-        {/* Google Reviews Section */}
-        <section className="bg-secondary/30 py-12 md:py-16">
-          <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-2xl text-center">
-              <div className="mb-4 flex items-center justify-center gap-1">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 fill-primary text-primary" />
-                ))}
-              </div>
-              <h2 className="mb-3 text-2xl font-bold md:text-3xl">
-                See What Our Customers Say
-              </h2>
-              <p className="mb-6 text-muted-foreground">
-                We're proud to serve the St. Vital community. Check out our reviews 
-                from real customers.
-              </p>
-              <Button variant="outline" size="lg" asChild>
-                <a 
-                  href={PRIMARY_GMB_URL} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
-                  <Star className="mr-2 h-4 w-4" />
-                  Read Our St. Vital Google Reviews
-                  <ExternalLink className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-            </div>
-          </div>
-        </section>
+        {/* Customer Reviews Section */}
+        <CustomerReviewsSection />
 
         {/* Light CTA Section */}
         <section className="py-12 md:py-16">
