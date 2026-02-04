@@ -10,7 +10,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Phone, Smartphone, Tablet, Gamepad2, Laptop, Watch, Wrench } from "lucide-react";
+import { Menu, Phone, Smartphone, Tablet, Gamepad2, Laptop, Watch, Wrench, MapPin, Package } from "lucide-react";
 import { PRIMARY_PHONE, PRIMARY_PHONE_FORMATTED } from "@/lib/locations";
 import logo from "@/assets/logo.png";
 
@@ -83,6 +83,17 @@ const REPAIR_CATEGORIES = [
   },
 ];
 
+const PHYSICAL_LOCATIONS = [
+  { name: "Winnipeg (St. Vital)", href: "/location/winnipeg" },
+  { name: "Thompson", href: "/location/thompson" },
+];
+
+const MAIL_IN_AREAS = [
+  { name: "Steinbach", href: "/service-area/steinbach" },
+  { name: "Brandon", href: "/service-area/brandon" },
+  { name: "Portage la Prairie", href: "/service-area/portage-la-prairie" },
+  { name: "More Areas", href: "/service-areas" },
+];
 
 export const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -150,6 +161,55 @@ export const Header = () => {
               </NavigationMenuContent>
             </NavigationMenuItem>
 
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Locations</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="grid w-[400px] gap-4 p-4 md:grid-cols-2">
+                  {/* Physical Store Locations */}
+                  <div>
+                    <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
+                      <MapPin className="h-4 w-4" />
+                      Physical Stores
+                    </div>
+                    <ul className="space-y-1">
+                      {PHYSICAL_LOCATIONS.map((location) => (
+                        <li key={location.href}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={location.href}
+                              className="block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                            >
+                              {location.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  {/* Mail-In Service Areas */}
+                  <div>
+                    <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
+                      <Package className="h-4 w-4" />
+                      Mail-In Service Areas
+                    </div>
+                    <ul className="space-y-1">
+                      {MAIL_IN_AREAS.map((area) => (
+                        <li key={area.href}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={area.href}
+                              className="block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                            >
+                              {area.name}
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
 
             <NavigationMenuItem>
               <Link to="/business" className="px-4 py-2 text-sm font-medium hover:text-primary">
@@ -239,6 +299,52 @@ export const Header = () => {
                 </div>
               ))}
 
+              {/* Locations Section */}
+              <div className="border-t border-border pt-4">
+                <div className="mb-3 text-lg font-medium">Locations</div>
+                
+                {/* Physical Stores */}
+                <div className="mb-4">
+                  <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
+                    <MapPin className="h-4 w-4" />
+                    Physical Stores
+                  </div>
+                  <ul className="ml-6 space-y-2">
+                    {PHYSICAL_LOCATIONS.map((location) => (
+                      <li key={location.href}>
+                        <Link
+                          to={location.href}
+                          className="block text-sm text-muted-foreground hover:text-primary"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {location.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* Mail-In Service Areas */}
+                <div>
+                  <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
+                    <Package className="h-4 w-4" />
+                    Mail-In Service Areas
+                  </div>
+                  <ul className="ml-6 space-y-2">
+                    {MAIL_IN_AREAS.map((area) => (
+                      <li key={area.href}>
+                        <Link
+                          to={area.href}
+                          className="block text-sm text-muted-foreground hover:text-primary"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {area.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
 
               <Link 
                 to="/business" 
