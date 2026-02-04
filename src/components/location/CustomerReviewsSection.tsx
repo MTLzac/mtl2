@@ -1,58 +1,61 @@
 import { Star, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { PRIMARY_GMB_URL } from "@/lib/locations";
 
-import rileyReview from "@/assets/reviews/riley-review.png";
-import jerryReview from "@/assets/reviews/jerry-review.png";
-
-interface ReviewCardProps {
-  imageSrc: string;
-  reviewerName: string;
+interface ReviewData {
+  name: string;
   rating: number;
+  text: string;
 }
 
-const ReviewCard = ({ imageSrc, reviewerName, rating }: ReviewCardProps) => (
-  <div className="flex flex-col items-center rounded-xl border border-border/50 bg-card p-4 shadow-sm">
-    <img
-      src={imageSrc}
-      alt={`Google review from ${reviewerName}`}
-      className="mb-4 w-full rounded-lg object-contain"
-    />
-    <p className="font-semibold text-foreground">{reviewerName}</p>
-    <div className="my-1 flex gap-0.5">
-      {[...Array(rating)].map((_, i) => (
-        <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-      ))}
-    </div>
-    <p className="text-sm text-muted-foreground">Via Google Reviews</p>
-  </div>
-);
+const reviews: ReviewData[] = [
+  {
+    name: "Riley Z.",
+    rating: 5,
+    text: "Fantastic service! They fixed my phone screen quickly and it looks brand new. Highly recommend!",
+  },
+  {
+    name: "Brent K.",
+    rating: 5,
+    text: "Great service, great prices, lots of options! Tanvin was excellent.",
+  },
+  {
+    name: "Jerry M.",
+    rating: 5,
+    text: "Fast, professional, and reasonably priced. Will definitely come back for any future repairs.",
+  },
+];
 
-// Text-only review card for when image is unavailable
-const TextReviewCard = ({
-  reviewerName,
-  rating,
-  reviewText,
-}: {
-  reviewerName: string;
-  rating: number;
-  reviewText: string;
-}) => (
-  <div className="flex flex-col items-center rounded-xl border border-border/50 bg-card p-6 shadow-sm">
-    <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-lg font-semibold text-primary">
-      {reviewerName.charAt(0)}
-    </div>
-    <p className="mb-2 text-center text-sm italic text-muted-foreground">
-      "{reviewText}"
-    </p>
-    <p className="font-semibold text-foreground">{reviewerName}</p>
-    <div className="my-1 flex gap-0.5">
-      {[...Array(rating)].map((_, i) => (
-        <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-      ))}
-    </div>
-    <p className="text-sm text-muted-foreground">Via Google Reviews</p>
-  </div>
+const ReviewCard = ({ name, rating, text }: ReviewData) => (
+  <Card className="h-full border-border/50 shadow-sm">
+    <CardContent className="flex h-full flex-col items-center p-6 text-center">
+      {/* Star Rating */}
+      <div className="mb-4 flex gap-0.5">
+        {[...Array(rating)].map((_, i) => (
+          <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+        ))}
+      </div>
+
+      {/* Review Text */}
+      <p className="mb-4 flex-1 text-sm italic text-muted-foreground">
+        "{text}"
+      </p>
+
+      {/* Reviewer Name */}
+      <p className="font-medium text-foreground">– {name}</p>
+
+      {/* Source */}
+      <p className="mt-1 text-xs text-muted-foreground/70">Via Google Reviews</p>
+    </CardContent>
+  </Card>
 );
 
 export const CustomerReviewsSection = () => {
@@ -63,32 +66,41 @@ export const CustomerReviewsSection = () => {
           What Our St. Vital Customers Are Saying
         </h2>
 
-        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
-          <ReviewCard
-            imageSrc={rileyReview}
-            reviewerName="Riley Z."
-            rating={5}
-          />
-          <TextReviewCard
-            reviewerName="Brent K."
-            rating={5}
-            reviewText="Great service, great prices, lots of options! Tanvin was excellent."
-          />
-          <ReviewCard
-            imageSrc={jerryReview}
-            reviewerName="Jerry M."
-            rating={5}
-          />
+        {/* Desktop: Grid Layout */}
+        <div className="mx-auto hidden max-w-4xl gap-6 md:grid md:grid-cols-3">
+          {reviews.map((review) => (
+            <ReviewCard key={review.name} {...review} />
+          ))}
         </div>
 
-        <div className="mt-8 text-center">
-          <Button variant="outline" asChild>
+        {/* Mobile: Carousel */}
+        <div className="mx-auto max-w-sm md:hidden">
+          <Carousel opts={{ align: "center", loop: true }}>
+            <CarouselContent>
+              {reviews.map((review) => (
+                <CarouselItem key={review.name}>
+                  <ReviewCard {...review} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="-left-4" />
+            <CarouselNext className="-right-4" />
+          </Carousel>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-10 text-center">
+          <p className="mb-4 flex items-center justify-center gap-2 text-muted-foreground">
+            <Star className="h-4 w-4 fill-primary text-primary" />
+            See All 200+ Google Reviews
+          </p>
+          <Button asChild>
             <a
               href={PRIMARY_GMB_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Read All Google Reviews
+              View on Google
               <ExternalLink className="ml-2 h-4 w-4" />
             </a>
           </Button>
