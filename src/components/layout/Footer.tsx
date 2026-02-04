@@ -53,8 +53,8 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/location/brandon" className="text-muted-foreground hover:text-primary">
-                  Brandon, MB
+                <Link to="/service-areas" className="text-muted-foreground hover:text-primary">
+                  Service Areas
                 </Link>
               </li>
             </ul>
