@@ -91,6 +91,7 @@ const RepairStatsEmbed = lazy(() => import("./pages/embed/RepairStatsEmbed"));
 
 // Lazy-loaded Service Area Pages
 const SteinbachServiceArea = lazy(() => import("./pages/service-area/SteinbachServiceArea"));
+const PortageLaPrairieServiceArea = lazy(() => import("./pages/service-area/PortageLaPrairieServiceArea"));
 
 const queryClient = new QueryClient();
 
@@ -187,6 +188,7 @@ const App = () => (
 
               {/* Service Area Pages */}
               <Route path="/service-area/steinbach" element={<SteinbachServiceArea />} />
+              <Route path="/service-area/portage-la-prairie" element={<PortageLaPrairieServiceArea />} />
 
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
