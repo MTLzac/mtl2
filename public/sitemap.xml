@@ -201,11 +201,21 @@
     <priority>0.6</priority>
   </url>
   
-  <!-- Location Pages (Mail-In Service Areas) -->
+  <!-- Service Area Pages (Mail-In) -->
   <url>
-    <loc>https://mobiletechlab.ca/location/brandon</loc>
+    <loc>https://mobiletechlab.ca/service-area/brandon</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mobiletechlab.ca/service-area/steinbach</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mobiletechlab.ca/service-area/portage-la-prairie</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- Informational Pages -->
