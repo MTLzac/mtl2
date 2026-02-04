@@ -1,306 +1,254 @@
 
-# Repair or Replace Infographic - Implementation Plan
+
+# Service Areas Hub Page Implementation Plan
 
 ## Overview
 
-Create a server-rendered, AI-visible, interactive HTML infographic at `/repair-or-replace-device-canada` that serves as a backlinkable data resource for journalists, a decision aid for Canadians, and a citation-friendly asset for LLMs.
+This plan transforms the existing `/service-areas/` page from a combined locations hub into a focused, SEO-optimized mail-in service areas directory for Manitoba. The page will strengthen internal linking, support topical relevance for "Manitoba mail-in repair," and guide users and search engines to town-level service pages.
 
 ---
 
-## Technical Architecture
+## Architecture Approach
 
-### New Files to Create
+### Current State
+- `ServiceAreasIndex.tsx` at `/service-areas` includes both physical stores and mail-in areas
+- Location data is duplicated across Header, ServiceAreasIndex, and lib/locations.ts
+- No centralized service area data with distance/delivery information
 
-```text
-src/pages/RepairOrReplace.tsx                    # Main page component
-src/components/infographic/                       # Component directory
-  ├── InfographicHero.tsx                        # H1 + intro
-  ├── StatBlock.tsx                              # Reusable stat display with expandable source
-  ├── ReplacementFrequencySection.tsx            # Section 1
-  ├── RepairPreferenceSection.tsx                # Section 2
-  ├── RepairCostSection.tsx                      # Section 3
-  ├── RepairShopInsightsSection.tsx              # Section 4
-  ├── WhenRepairMayNotMakeSenseSection.tsx       # Section 5
-  ├── DecisionHelper.tsx                         # Section 6 - Interactive calculator
-  ├── EmbedSection.tsx                           # Section 7 - Embed code
-  ├── InfographicCTA.tsx                         # Soft CTA
-  ├── InfographicSchemas.tsx                     # Article + Dataset + FAQ schemas
-src/pages/embed/RepairStatsEmbed.tsx             # Embeddable stats widget
-```
-
-### Route Registration
-
-Add to `src/App.tsx`:
-- `/repair-or-replace-device-canada` - Main infographic page
-- `/embed/repair-or-replace-stats` - Embeddable iframe version
+### Proposed Changes
+1. Create a new centralized data file `lib/service-areas.ts` for mail-in service areas
+2. Rewrite `ServiceAreasIndex.tsx` to focus exclusively on mail-in service areas
+3. Update Header navigation to consume the shared data source
+4. No changes needed to sitemap (already includes `/service-areas`)
 
 ---
 
-## Component Specifications
+## File Changes
 
-### 1. StatBlock Component (Reusable)
+### 1. Create `src/lib/service-areas.ts` (New File)
 
-A semantic, accessible stat display with expandable source citation:
+Centralized data source for all mail-in service areas with distance and delivery information:
 
 ```text
-Structure:
-┌─────────────────────────────────────────────────┐
-│  [Stat text as plain <p> element]               │
-│  ▼ View Source (Collapsible)                    │
-│    Source: [Name] | Link | Year                 │
-└─────────────────────────────────────────────────┘
++------------------------------------------+
+|          SERVICE_AREAS Array             |
++------------------------------------------+
+| - name: "Steinbach, MB"                  |
+| - slug: "steinbach"                      |
+| - distance: "~60 km"                     |
+| - deliveryTime: "1-day delivery"         |
+| - description: "Southeast Manitoba"      |
++------------------------------------------+
+| - name: "Brandon, MB"                    |
+| - slug: "brandon"                        |
+| - distance: "~215 km"                    |
+| - deliveryTime: "1-2 day delivery"       |
++------------------------------------------+
+| - name: "Portage la Prairie, MB"         |
+| - slug: "portage-la-prairie"             |
+| - distance: "~85 km"                     |
+| - deliveryTime: "1-day delivery"         |
++------------------------------------------+
+| - name: "Selkirk, MB"                    |
+| - slug: "selkirk"                        |
+| - distance: "~35 km"                     |
+| - deliveryTime: "1-day delivery"         |
++------------------------------------------+
 ```
 
-Features:
-- Plain HTML text (not in canvas/image)
-- Expandable source using existing `Collapsible` component
-- Semantic markup with `<article>` wrapper
-- Mobile-first responsive styling
+This centralizes data so adding new service areas automatically updates:
+- The `/service-areas/` hub page
+- The Header navigation "Mail-In Service Areas" dropdown
 
-### 2. Section Components
+---
 
-Each section follows consistent structure:
+### 2. Rewrite `src/pages/service-area/ServiceAreasIndex.tsx`
+
+Complete redesign with the following structure:
+
+**SEO Metadata:**
+- Title: "Mobile Tech Lab | Manitoba Mail-In Phone Repair Service Areas"
+- Meta description: As specified
+- Canonical: `https://mobiletechlab.ca/service-areas`
+
+**Page Sections:**
 
 ```text
-<section>
-  <h2>[Section Title]</h2>
-  <div>[StatBlock components]</div>
-  <p>[Neutral explanation]</p>
-</section>
++================================================+
+|                    HERO                         |
+|-------------------------------------------------|
+| H1: Mail-In Phone Repair Across Manitoba        |
+| Intro: Mobile Tech Lab offers fast, affordable  |
+| mail-in phone and device repair...              |
++================================================+
+
++================================================+
+|      SERVICE AREAS GRID (from centralized data) |
+|-------------------------------------------------|
+| Section H2: Mail-In Service Areas Serviced by   |
+|             Our Winnipeg Location               |
+|-------------------------------------------------|
+|  [Steinbach, MB]    [Brandon, MB]               |
+|  ~60 km (1-day)     ~215 km (1-2 day)           |
+|  [Link ->]          [Link ->]                   |
+|-------------------------------------------------|
+|  [Portage, MB]      [Selkirk, MB]               |
+|  ~85 km (1-day)     ~35 km (1-day)              |
+|  [Link ->]          [Link ->]                   |
+|-------------------------------------------------|
+| + "More towns coming soon" notice               |
++================================================+
+
++================================================+
+|              HOW IT WORKS SECTION               |
+|-------------------------------------------------|
+| Reuse existing MailInHowItWorks component       |
+| 4-step process with visual icons                |
++================================================+
+
++================================================+
+|               CTA SECTION                       |
+|-------------------------------------------------|
+| Not listed? We serve all of Manitoba and Canada |
+| [Get a Quote Online]  [Call (204) 500-9757]     |
++================================================+
 ```
 
-#### Section 1: Replacement Frequency
-Stats to display:
-- "Canadians replace smartphones roughly every 3 years on average"
-- "Canadians are holding onto phones and computers longer than in previous decades"
+**Key Features:**
+- Clean grid layout with distance and delivery time per town
+- Each town card links to its `/service-area/{slug}/` page
+- "More towns coming soon" future-proofing note
+- Consistent design with existing service area pages
+- LLM-parsable semantic HTML structure
 
-#### Section 2: Repair Preference
-Stats to display:
-- "45% of consumers prefer repairing devices instead of replacing them"
-- "More than 75% of Canadians support Right-to-Repair legislation"
+---
 
-#### Section 3: Repair Costs (Third-Party Only)
-Stats to display:
-- "Smartphone repairs commonly range from ~$50-$400, depending on damage"
-- "Cracked screen repairs average around ~$200"
-- "Consumers report an average perceived repair or replacement cost of ~$302"
-- Disclaimer: "Actual repair cost varies by device model, damage severity, and parts availability."
+### 3. Update `src/components/layout/Header.tsx`
 
-#### Section 4: Repair Shop Insights
-Labeled as "anonymized Canadian repair data":
-- Common failures: Screen damage, Battery degradation, Back glass damage
-- Turnaround: "Same day to 3 business days"
-- Note: Not presented as guarantee
-
-#### Section 5: When Repair May Not Make Sense
-E-waste stats:
-- "Canada generates approximately 1 million tonnes of e-waste annually"
-- "Only ~20% of Canadian e-waste is formally recycled"
-- "14% of Canadian households report having unwanted cellphones"
-- Data recovery + trade-in positioning
-
-### 3. Decision Helper (Interactive)
+Import and use the centralized `SERVICE_AREAS` from `lib/service-areas.ts`:
 
 ```text
-┌─────────────────────────────────────────────────┐
-│  How old is your device?                        │
-│  ○ Less than 2 years  ○ 2-4 years  ○ 4+ years  │
-│                                                 │
-│  What's the issue?                              │
-│  ○ Screen  ○ Battery  ○ Back glass  ○ Other    │
-│                                                 │
-│  Does the device power on?                      │
-│  ○ Yes  ○ No                                    │
-│                                                 │
-│  [See Recommendation]                           │
-└─────────────────────────────────────────────────┘
+Before:
+  const MAIL_IN_AREAS = [
+    { name: "Steinbach, MB", href: "/service-area/steinbach" },
+    ...inline data...
+  ];
 
-Outcomes (exactly three):
-1. "Repair often makes sense" + stat-backed rationale
-2. "Repair may make sense depending on cost" + explanation
-3. "Data recovery and trade-in may be smarter" + explanation
+After:
+  import { SERVICE_AREAS } from "@/lib/service-areas";
+  // Map SERVICE_AREAS to navigation format
 ```
 
-Implementation:
-- Pure React state (no external dependencies)
-- Decision logic visible as plain text in HTML
-- Uses existing Radio Group and Button components
-- No sales language in outcomes
+This ensures the header dropdown automatically reflects any new service areas added to the centralized data file.
 
-### 4. Embed Section
+---
 
-Provides:
-- Responsive iframe embed code
-- Minimal branding (text attribution only)
-- Canonical backlink
-- Copy-to-clipboard functionality
+### 4. Update Footer (Optional Enhancement)
 
-### 5. Structured Data (JSON-LD)
-
-Three schema types in `InfographicSchemas.tsx`:
+Update the Footer to link to `/service-area/brandon` instead of `/location/brandon`:
 
 ```text
-Article Schema
-├── Publisher: Mobile Tech Lab
-├── Geographic scope: Canada
-├── dateModified: Current date
-└── Update frequency: Quarterly
-
-Dataset Schema
-├── Name: Canadian Device Repair & Replacement Statistics
-├── Description: Aggregated repair, cost, and e-waste data
-├── Temporal coverage: 2026
-└── Update cadence: Quarterly
-
-FAQ Schema (Consumer-Style)
-├── "Is it worth fixing my phone in Canada?"
-├── "How long does phone repair usually take?"
-├── "When is a phone not worth repairing?"
-└── "Is trading in a damaged phone better than repairing it?"
+Line 56: Change "/location/brandon" -> "/service-area/brandon"
 ```
 
 ---
 
-## Design System Integration
+## Content Implementation
 
-### Colors (from existing CSS variables)
-- Primary: `hsl(1 76% 55%)` - Mobile Tech Lab Red
-- Background: `hsl(0 0% 100%)`
-- Foreground: `hsl(220 15% 15%)`
-- Muted: `hsl(0 0% 94%)`
-- Border: `hsl(0 0% 90%)`
+### Hero Section Content
+- **H1:** "Mail-In Phone Repair Across Manitoba"
+- **Intro:** "Mobile Tech Lab offers fast, affordable mail-in phone and device repair to customers across Manitoba. All mail-in repairs are handled through our certified Winnipeg repair lab, with most deliveries arriving within 1-2 business days. Below are the towns we commonly serve."
 
-### Typography
-- Font: Inter (already imported)
-- Headings: `font-bold tracking-tight`
-- Body: `text-muted-foreground`
+### Service Area Cards
+Each card displays:
+- Town name (e.g., "Steinbach, MB")
+- Distance from Winnipeg (e.g., "~60 km from Winnipeg")
+- Delivery time (e.g., "1-day delivery")
+- Link button to service area page
 
-### Spacing
-- Section padding: `py-16 md:py-20` (matches existing pattern)
-- Container: `container mx-auto px-4`
-- Max-width for readability: `max-w-3xl` or `max-w-4xl`
-
-### Components to Reuse
-- `Header` and `Footer` (layout)
-- `Accordion` (expandable sources)
-- `Collapsible` (section expansion)
-- `RadioGroup` (decision helper)
-- `Button` (CTA and interactions)
-- `Card` (stat containers)
+### Future Expansion Notice
+- Text: "More towns coming soon — we accept mail-in repairs from anywhere in Manitoba and across Canada."
 
 ---
 
-## Accessibility Requirements
+## Technical Implementation
 
-- Semantic HTML: `<article>`, `<section>`, `<h1>-<h3>`, `<p>`, `<ul>`
-- All stats as plain text (not images/canvas)
-- Page readable with JavaScript disabled (core content)
-- ARIA labels on interactive elements
-- Keyboard navigation support
-- Sufficient color contrast
+### Data Structure (`lib/service-areas.ts`)
+
+```typescript
+export interface ServiceArea {
+  name: string;           // "Steinbach, MB"
+  slug: string;           // "steinbach"
+  distance: string;       // "~60 km"
+  deliveryTime: string;   // "1-day delivery"
+  description?: string;   // Optional region description
+}
+
+export const SERVICE_AREAS: ServiceArea[] = [
+  {
+    name: "Steinbach, MB",
+    slug: "steinbach",
+    distance: "~60 km",
+    deliveryTime: "1-day delivery",
+    description: "Southeast Manitoba"
+  },
+  // ...additional areas
+];
+
+// Helper to generate href from slug
+export const getServiceAreaHref = (slug: string) => 
+  `/service-area/${slug}`;
+```
+
+### Adding New Service Areas
+When a new town is added (e.g., Winkler), simply add to `SERVICE_AREAS` array:
+
+```typescript
+{
+  name: "Winkler, MB",
+  slug: "winkler",
+  distance: "~120 km",
+  deliveryTime: "1-2 day delivery"
+}
+```
+
+This automatically updates:
+1. The `/service-areas/` hub grid
+2. The Header navigation dropdown
+3. Any other components consuming this data
 
 ---
 
 ## SEO Considerations
 
-### Meta Tags
-- Title: "Repair or Replace Your Device? Canadian Repair, Cost & E-Waste Statistics (2026) | Mobile Tech Lab"
-- Description: Neutral, fact-focused summary
-- Canonical URL: `https://mobiletechlab.ca/repair-or-replace-device-canada`
-- Open Graph tags for social sharing
-
-### Structured Data
-- Article schema for search visibility
-- Dataset schema for data citation
-- FAQ schema for featured snippets
-
-### Internal Linking
-- Link to `/repair-pricing` for pricing philosophy
-- Link to `/trade-in` for trade-in program
-- Link to `/contact` for consultation
+| Element | Implementation |
+|---------|----------------|
+| No commercial keyword optimization | Page focuses on geographic hub, not "phone repair Brandon" |
+| Clean internal linking | Each town links to its own service area page |
+| Semantic headings | H1 > H2 hierarchy, screen-reader friendly |
+| LLM-parsable | Plain HTML, no JavaScript-hidden content |
+| Schema.org | BreadcrumbList for navigation path |
 
 ---
 
-## Implementation Sequence
+## Files to Modify
 
-### Phase 1: Foundation
-1. Create `InfographicSchemas.tsx` with all three JSON-LD schemas
-2. Create `StatBlock.tsx` reusable component
-3. Create main `RepairOrReplace.tsx` page shell with Header/Footer
-
-### Phase 2: Content Sections
-4. Create `InfographicHero.tsx` with H1 and intro
-5. Create `ReplacementFrequencySection.tsx` (Section 1)
-6. Create `RepairPreferenceSection.tsx` (Section 2)
-7. Create `RepairCostSection.tsx` (Section 3)
-8. Create `RepairShopInsightsSection.tsx` (Section 4)
-9. Create `WhenRepairMayNotMakeSenseSection.tsx` (Section 5)
-
-### Phase 3: Interactive Features
-10. Create `DecisionHelper.tsx` (Section 6)
-11. Create `EmbedSection.tsx` (Section 7)
-12. Create `InfographicCTA.tsx` (soft CTA)
-
-### Phase 4: Embed Widget
-13. Create `src/pages/embed/RepairStatsEmbed.tsx`
-14. Register embed route in `App.tsx`
-
-### Phase 5: Integration
-15. Register main route in `App.tsx`
-16. Add footer link to infographic page
+| File | Action |
+|------|--------|
+| `src/lib/service-areas.ts` | Create new (centralized data) |
+| `src/pages/service-area/ServiceAreasIndex.tsx` | Rewrite (focused hub page) |
+| `src/components/layout/Header.tsx` | Update (use shared data) |
+| `src/components/layout/Footer.tsx` | Minor fix (correct Brandon link) |
 
 ---
 
 ## Validation Checklist
 
-- [ ] All statistics exist as plain HTML text
-- [ ] No stat exists only inside images/canvas/JS-only components
-- [ ] Page readable with JavaScript disabled
-- [ ] Semantic HTML throughout
-- [ ] Mobile-first responsive design
-- [ ] Brand colors and typography match existing site
-- [ ] All three structured data schemas present
-- [ ] Expandable sources for each statistic
-- [ ] Decision helper has visible logic
-- [ ] Embed code functional with minimal branding
-- [ ] Soft CTA with no sales pressure
-- [ ] Date-agnostic URL structure
+After implementation, verify:
+- [ ] `/service-areas/` displays only mail-in service areas (no physical stores)
+- [ ] Each town card shows distance and delivery time
+- [ ] Links navigate correctly to `/service-area/{slug}/`
+- [ ] Header dropdown reflects centralized data
+- [ ] Page is fully crawlable with semantic HTML
+- [ ] Mobile responsive layout works correctly
 
----
-
-## Technical Notes
-
-### Source Citations Structure
-
-Each stat will include expandable source data:
-
-```tsx
-interface StatSource {
-  name: string;       // "Statistics Canada"
-  url?: string;       // Link to source
-  year: string;       // "2024"
-  note?: string;      // Additional context
-}
-```
-
-### Decision Logic (Transparent)
-
-The decision helper logic will be documented in the component and visible in the DOM:
-
-```text
-IF device_age < 2 years AND powers_on = yes
-  THEN "Repair often makes sense"
-
-IF device_age >= 2 AND device_age < 4 AND issue = screen|battery
-  THEN "Repair may make sense depending on cost"
-
-IF device_age >= 4 OR powers_on = no
-  THEN "Data recovery and trade-in may be smarter"
-```
-
-### Quarterly Update Strategy
-
-Content structured for easy updates:
-- Stats data centralized in component props
-- Year reference only in title/headings
-- Schema dateModified set dynamically
