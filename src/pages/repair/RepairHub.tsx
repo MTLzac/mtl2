@@ -134,7 +134,7 @@ const benefits = [
   },
   {
     icon: Shield,
-    text: "90-day warranty on all repairs",
+    text: "Warranty coverage on all repairs",
   },
 ];
 
@@ -212,7 +212,7 @@ const RepairHub = () => {
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Mobile Tech Lab offers expert repair services for phones, game consoles, tablets, and other devices in Winnipeg. 
-              Our certified technicians provide fast, reliable service with a 90-day warranty on all repairs.
+              Our certified technicians provide fast, reliable service with warranty coverage on all repairs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg">
