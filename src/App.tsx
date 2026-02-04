@@ -101,7 +101,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               
               {/* Repair Hub Page */}
-              <Route path="/repair" element={<RepairHub />} />
+              <Route path="/repairs" element={<RepairHub />} />
               
               {/* Phone Repair Pages */}
               <Route path="/repair/iphone" element={<IPhoneRepair />} />
