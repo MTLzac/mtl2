@@ -38,6 +38,11 @@ const SERVICE_AREAS = [
     href: "/service-area/portage-la-prairie",
     description: "Mail-in service for Portage and Central Manitoba",
   },
+  {
+    name: "Selkirk, MB",
+    href: "/service-area/selkirk",
+    description: "Serving Selkirk and the Interlake region",
+  },
 ];
 
 const ServiceAreasIndex = () => {
