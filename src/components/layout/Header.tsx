@@ -12,7 +12,14 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Phone, Smartphone, Tablet, Gamepad2, Laptop, Watch, Wrench, MapPin, Package } from "lucide-react";
 import { PRIMARY_PHONE, PRIMARY_PHONE_FORMATTED } from "@/lib/locations";
+import { getServiceAreasForNav } from "@/lib/service-areas";
 import logo from "@/assets/logo.png";
+
+// Get mail-in service areas from centralized data
+const MAIL_IN_AREAS = [
+  ...getServiceAreasForNav(),
+  { name: "More Areas", href: "/service-areas" },
+];
 
 const REPAIR_CATEGORIES = [
   {
@@ -88,13 +95,7 @@ const PHYSICAL_LOCATIONS = [
   { name: "Thompson, MB", href: "/location/thompson" },
 ];
 
-const MAIL_IN_AREAS = [
-  { name: "Steinbach, MB", href: "/service-area/steinbach" },
-  { name: "Brandon, MB", href: "/service-area/brandon" },
-  { name: "Portage la Prairie, MB", href: "/service-area/portage-la-prairie" },
-  { name: "Selkirk, MB", href: "/service-area/selkirk" },
-  { name: "More Areas", href: "/service-areas" },
-];
+// MAIL_IN_AREAS is now defined at top of file from centralized data
 
 export const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
