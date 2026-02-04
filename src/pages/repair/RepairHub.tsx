@@ -117,7 +117,7 @@ const benefits = [
 
 const breadcrumbItems = [
   { name: "Home", url: "https://mobiletechlab.ca/" },
-  { name: "Repair Services", url: "https://mobiletechlab.ca/repair/" },
+  { name: "Repair Services", url: "https://mobiletechlab.ca/repairs" },
 ];
 
 const RepairHub = () => {
@@ -129,7 +129,7 @@ const RepairHub = () => {
           name="description"
           content="Expert phone, tablet, and game console repair services in Winnipeg. Fast turnaround, certified technicians, and 90-day warranty on all repairs."
         />
-        <link rel="canonical" href="https://mobiletechlab.ca/repair/" />
+        <link rel="canonical" href="https://mobiletechlab.ca/repairs" />
       </Helmet>
       <BreadcrumbSchema items={breadcrumbItems} />
 

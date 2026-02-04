@@ -105,9 +105,25 @@ export const Header = () => {
             </NavigationMenuItem>
             
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Repairs</NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <Link to="/repairs" className="hover:text-primary">
+                  Repairs
+                </Link>
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid w-[600px] gap-3 p-4 md:grid-cols-3">
+                  {/* All Repairs link at top */}
+                  <div className="col-span-full mb-2 border-b border-border pb-3">
+                    <NavigationMenuLink asChild>
+                      <Link
+                        to="/repairs"
+                        className="flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+                      >
+                        <Wrench className="h-4 w-4" />
+                        View All Repair Services
+                      </Link>
+                    </NavigationMenuLink>
+                  </div>
                   {REPAIR_CATEGORIES.map((category) => (
                     <div key={category.title}>
                       <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
@@ -191,6 +207,14 @@ export const Header = () => {
                 onClick={() => setMobileOpen(false)}
               >
                 Home
+              </Link>
+
+              <Link 
+                to="/repairs" 
+                className="block text-lg font-medium text-primary"
+                onClick={() => setMobileOpen(false)}
+              >
+                All Repair Services
               </Link>
               
               {REPAIR_CATEGORIES.map((category) => (
