@@ -88,6 +88,7 @@ const RepairOrReplace = lazy(() => import("./pages/RepairOrReplace"));
 const RepairStatsEmbed = lazy(() => import("./pages/embed/RepairStatsEmbed"));
 
 // Lazy-loaded Service Area Pages
+const ServiceAreasIndex = lazy(() => import("./pages/service-area/ServiceAreasIndex"));
 const SteinbachServiceArea = lazy(() => import("./pages/service-area/SteinbachServiceArea"));
 const PortageLaPrairieServiceArea = lazy(() => import("./pages/service-area/PortageLaPrairieServiceArea"));
 const BrandonServiceArea = lazy(() => import("./pages/service-area/BrandonServiceArea"));
@@ -174,6 +175,9 @@ const App = () => (
               <Route path="/contact" element={<Contact />} />
 
               {/* Location Pages */}
+              <Route path="/location/winnipeg" element={<WinnipegLocation />} />
+              <Route path="/location/thompson" element={<ThompsonLocation />} />
+              {/* Legacy location routes */}
               <Route path="/locations/winnipeg" element={<WinnipegLocation />} />
               <Route path="/locations/thompson" element={<ThompsonLocation />} />
 
@@ -185,6 +189,7 @@ const App = () => (
               <Route path="/embed/repair-or-replace-stats" element={<RepairStatsEmbed />} />
 
               {/* Service Area Pages */}
+              <Route path="/service-areas" element={<ServiceAreasIndex />} />
               <Route path="/service-area/steinbach" element={<SteinbachServiceArea />} />
               <Route path="/service-area/portage-la-prairie" element={<PortageLaPrairieServiceArea />} />
               <Route path="/service-area/brandon" element={<BrandonServiceArea />} />
