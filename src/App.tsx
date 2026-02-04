@@ -11,6 +11,9 @@ import PageLoader from "@/components/PageLoader";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// Lazy-loaded Repair Hub
+const RepairHub = lazy(() => import("./pages/repair/RepairHub"));
+
 // Lazy-loaded Phone Repair Pages
 const IPhoneRepair = lazy(() => import("./pages/repair/iPhoneRepair"));
 const SamsungRepair = lazy(() => import("./pages/repair/SamsungRepair"));
@@ -96,6 +99,9 @@ const App = () => (
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
+              
+              {/* Repair Hub Page */}
+              <Route path="/repair" element={<RepairHub />} />
               
               {/* Phone Repair Pages */}
               <Route path="/repair/iphone" element={<IPhoneRepair />} />
