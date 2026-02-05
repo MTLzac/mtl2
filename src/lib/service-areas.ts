@@ -42,6 +42,13 @@ export const SERVICE_AREAS: ServiceArea[] = [
     deliveryTime: "1-day delivery",
     description: "Interlake region",
   },
+   {
+     name: "The Pas, MB",
+     slug: "the-pas",
+     distance: "~630 km",
+     deliveryTime: "1-2 day delivery",
+     description: "Northern Manitoba (Thompson in-person or mail-in)",
+   },
 ];
 
 /**

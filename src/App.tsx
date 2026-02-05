@@ -93,6 +93,7 @@ const SteinbachServiceArea = lazy(() => import("./pages/service-area/SteinbachSe
 const PortageLaPrairieServiceArea = lazy(() => import("./pages/service-area/PortageLaPrairieServiceArea"));
 const BrandonServiceArea = lazy(() => import("./pages/service-area/BrandonServiceArea"));
 const SelkirkServiceArea = lazy(() => import("./pages/service-area/SelkirkServiceArea"));
+ const ThePasServiceArea = lazy(() => import("./pages/service-area/ThePasServiceArea"));
 
 const queryClient = new QueryClient();
 
@@ -195,6 +196,7 @@ const App = () => (
               <Route path="/service-area/portage-la-prairie" element={<PortageLaPrairieServiceArea />} />
               <Route path="/service-area/brandon" element={<BrandonServiceArea />} />
               <Route path="/service-area/selkirk" element={<SelkirkServiceArea />} />
+               <Route path="/service-area/the-pas" element={<ThePasServiceArea />} />
               {/* Legacy redirect */}
               <Route path="/location/brandon" element={<BrandonServiceArea />} />
 
