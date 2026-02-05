@@ -5,6 +5,7 @@ import { TradeInHero } from "@/components/trade-in/TradeInHero";
 import { HowItWorks } from "@/components/trade-in/HowItWorks";
 import { DeviceCategories } from "@/components/trade-in/DeviceCategories";
 import { WhyTradeIn } from "@/components/trade-in/WhyTradeIn";
+ import { TradeInCaseStudy } from "@/components/trade-in/TradeInCaseStudy";
 import { Requirements } from "@/components/trade-in/Requirements";
 import { B2BCallout } from "@/components/trade-in/B2BCallout";
 import { LocationCards } from "@/components/repair/LocationCards";
@@ -65,6 +66,7 @@ const TradeIn = () => {
         <HowItWorks />
         <DeviceCategories />
         <WhyTradeIn />
+         <TradeInCaseStudy />
         <Requirements />
         <B2BCallout />
         <LocationCards serviceAreaNote="Drop off your trade-in at our Winnipeg location for same-day quotes and payment." />
