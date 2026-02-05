@@ -3,8 +3,7 @@
  import { Button } from "@/components/ui/button";
  import { Badge } from "@/components/ui/badge";
  import damagedXr from "@/assets/trade-in/bent-xr-damaged.png";
- // TODO: Replace with actual recovered image once re-uploaded
- import recoveredXr from "@/assets/trade-in/bent-xr-damaged.png";
+ import recoveredXr from "@/assets/trade-in/bent-xr-recovered.png";
  
  const QUOTE_URL = "https://shop.mobiletechlab.ca/pages/repair2";
  
