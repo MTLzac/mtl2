@@ -1,4 +1,5 @@
 import { RepairLandingTemplate } from "@/components/repair/RepairLandingTemplate";
+import { BeforeAfterVideos } from "@/components/repair/BeforeAfterVideos";
 import { 
   ScreenShare, 
   Battery, 
@@ -143,6 +144,15 @@ const iPadRepair = () => {
       serviceAreaNote={SERVICE_AREA_NOTE}
       faqs={FAQS}
       pricingMicroCopy={PRICING_MICRO_COPY}
+      beforeAfterSection={
+        <BeforeAfterVideos
+          deviceName="iPad"
+          preRepairSrc="/videos/ipad-pre-repair.mp4"
+          postRepairSrc="/videos/ipad-post-repair.mp4"
+          preRepairCaption="Cracked iPad screen as received"
+          postRepairCaption="Fully restored with new display"
+        />
+      }
     />
   );
 };
