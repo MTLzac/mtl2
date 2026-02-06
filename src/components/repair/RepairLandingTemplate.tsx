@@ -1,3 +1,4 @@
+import React from "react";
 import { Helmet } from "react-helmet-async";
 import { HeroSection } from "./HeroSection";
 import { ServiceGrid, Service } from "./ServiceGrid";
@@ -42,6 +43,7 @@ interface RepairLandingTemplateProps {
   serviceAreaNote?: string;
   quickFacts?: QuickFactsData;
   pricingMicroCopy?: PricingMicroCopyData;
+  beforeAfterSection?: React.ReactNode;
 }
 
 export const RepairLandingTemplate = ({
@@ -63,6 +65,7 @@ export const RepairLandingTemplate = ({
   serviceAreaNote,
   quickFacts,
   pricingMicroCopy,
+  beforeAfterSection,
 }: RepairLandingTemplateProps) => {
   const breadcrumbs = getRepairBreadcrumbs(deviceName, slug);
   
@@ -94,6 +97,8 @@ export const RepairLandingTemplate = ({
           
           <ServiceGrid services={services} deviceName={deviceName} />
           
+          {beforeAfterSection}
+          
           <ModelListGrid 
             deviceName={deviceName} 
             models={models}
@@ -116,6 +121,7 @@ export const RepairLandingTemplate = ({
         <StickyQuoteCTA />
         <TableOfContents items={[
           { id: "services", label: "Services" },
+          ...(beforeAfterSection ? [{ id: "results", label: "Results" }] : []),
           { id: "models", label: "Models" },
           { id: "why-choose-us", label: "Why Us" },
           { id: "locations", label: "Locations" },
