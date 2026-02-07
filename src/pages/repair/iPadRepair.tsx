@@ -147,8 +147,8 @@ const iPadRepair = () => {
       beforeAfterSection={
         <BeforeAfterVideos
           deviceName="iPad"
-          preRepairSrc="/videos/ipad-pre-repair.mp4#t=0,3"
-          postRepairSrc="/videos/ipad-post-repair.mp4#t=0,3"
+          preRepairSrc="/videos/ipad-pre-repair.mp4#t=0,2"
+          postRepairSrc="/videos/ipad-post-repair.mp4#t=3,6"
           preRepairCaption="Cracked iPad screen as received"
           postRepairCaption="Fully restored with new display"
         />
