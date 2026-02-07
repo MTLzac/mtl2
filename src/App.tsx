@@ -87,6 +87,9 @@ const RepairOrReplace = lazy(() => import("./pages/RepairOrReplace"));
 // Lazy-loaded Embed Pages
 const RepairStatsEmbed = lazy(() => import("./pages/embed/RepairStatsEmbed"));
 
+// Lazy-loaded Device Hub Pages
+const IPhoneXRDevice = lazy(() => import("./pages/device/iPhoneXR"));
+
 // Lazy-loaded Service Area Pages
 const ServiceAreasIndex = lazy(() => import("./pages/service-area/ServiceAreasIndex"));
 const SteinbachServiceArea = lazy(() => import("./pages/service-area/SteinbachServiceArea"));
@@ -189,6 +192,9 @@ const App = () => (
 
               {/* Embed Pages */}
               <Route path="/embed/repair-or-replace-stats" element={<RepairStatsEmbed />} />
+
+              {/* Device Hub Pages */}
+              <Route path="/devices/iphone-xr" element={<IPhoneXRDevice />} />
 
               {/* Service Area Pages */}
               <Route path="/service-areas" element={<ServiceAreasIndex />} />
