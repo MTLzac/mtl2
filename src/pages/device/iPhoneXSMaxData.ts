@@ -172,7 +172,7 @@ const iPhoneXSMaxData: DeviceHubData = {
       <p>The iPhone XS Max's trade-in value in 2026 is modest and heavily condition-dependent. The stainless steel frame helps preserve cosmetic condition, but battery health and screen condition remain the primary factors that determine value.</p>
       <p>Common upgrade paths from the iPhone XS Max include:</p>
       <ul>
-        <li><a href="/devices/iphone-12">iPhone 12</a> — First iPhone with 5G, MagSafe, and a significantly longer iOS support window. A natural upgrade for XS Max users who want continued software support.</li>
+        <li>iPhone 12 — First iPhone with 5G, MagSafe, and a significantly longer iOS support window. A natural upgrade for XS Max users who want continued software support.</li>
         <li><a href="https://shop.mobiletechlab.ca/products/iphone-12" target="_blank" rel="noopener noreferrer">Certified pre-owned iPhone 12</a> — Strong mid-range value for users buying used.</li>
         <li>iPhone 12 Pro Max or 13 Pro Max — For users who want to maintain the large-screen experience with modern camera and battery improvements.</li>
       </ul>

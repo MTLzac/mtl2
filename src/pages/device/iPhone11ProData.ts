@@ -141,7 +141,7 @@ const iPhone11ProData: DeviceHubData = {
           <li><strong>OLED screen + back glass damage</strong> — The combined cost of replacing the Super Retina XDR OLED panel and the back glass (which is attached to a stainless steel frame) can approach or exceed the device's market value.</li>
           <li><strong>Face ID failure after drops</strong> — TrueDepth camera system repairs on the 11 Pro can be complex and costly, similar to the XS generation.</li>
           <li><strong>Multiple simultaneous repairs</strong> — When screen, battery, and back glass all need attention, the combined cost — driven primarily by the OLED panel — often favours trading in and upgrading.</li>
-          <li><strong>Desire for 5G or MagSafe</strong> — Like the standard iPhone 11, the 11 Pro does not support 5G or MagSafe. If these features matter, upgrading to an <a href="/devices/iphone-12">iPhone 12</a> or later is the path forward.</li>
+          <li><strong>Desire for 5G or MagSafe</strong> — Like the standard iPhone 11, the 11 Pro does not support 5G or MagSafe. If these features matter, upgrading to an iPhone 12 or later is the path forward.</li>
         </ul>
         <p>For a full list of iPhone repair services we offer, see our <a href="/repair/iphone">iPhone repair page</a>.</p>
       `,
@@ -176,7 +176,7 @@ const iPhone11ProData: DeviceHubData = {
       <p>However, because the 11 Pro is a premium device, users often have higher expectations for camera quality and performance — areas where newer models offer significant improvements. The decision to upgrade often comes down to whether the user values the latest camera features and 5G connectivity.</p>
       <p>Common upgrade paths from the iPhone 11 Pro include:</p>
       <ul>
-        <li><a href="/devices/iphone-12">iPhone 12</a> or iPhone 12 Pro — First-generation 5G iPhones with MagSafe. The 12 Pro offers a familiar premium experience with updated internals.</li>
+        <li>iPhone 12 or iPhone 12 Pro — First-generation 5G iPhones with MagSafe. The 12 Pro offers a familiar premium experience with updated internals.</li>
         <li><a href="https://shop.mobiletechlab.ca/products/iphone-12" target="_blank" rel="noopener noreferrer">Certified pre-owned iPhone 12</a> — Strong value option for users buying used.</li>
         <li>iPhone 13 Pro or 14 Pro — For users who want a meaningful leap in camera quality, battery life, and display technology (ProMotion 120Hz).</li>
       </ul>
