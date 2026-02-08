@@ -133,8 +133,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "TCL repair costs are generally affordable, matching the brand's budget-friendly positioning—most repairs are proportionally priced to the device's value.",
-  priceShock: "TCL owners are often pleasantly surprised that repairs are more affordable than other brands, making repair a smart choice over replacement.",
+  costDriver: "TCL repair costs are generally affordable, matching the brand's budget-friendly positioning—most repairs are proportionally priced to the device's value. TCL's <a href='https://www.tcl.com/ca/en/support' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>official support page</a> provides model-specific troubleshooting and warranty information for their phone and tablet lineup.",
+  priceShock: "TCL owners are often pleasantly surprised that repairs are more affordable than other brands, making repair a smart choice over replacement. <a href='https://www.ifixit.com/Right-to-Repair' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's repairability advocacy</a> highlights why budget devices like TCL phones often benefit most from repair—the low cost of parts makes fixing more economical than replacing.",
   advisory: "For budget TCL devices, repair almost always makes financial sense. We'll explain costs clearly so you can decide.",
   fallback: "When repair doesn't make sense, data recovery is often still possible to retrieve your photos and files.",
 };

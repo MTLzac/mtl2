@@ -122,8 +122,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "PS5 repair costs depend on the issue—simple fixes like thermal paste are affordable, while HDMI port repairs involve board-level soldering and cost more.",
-  priceShock: "Many customers are surprised that console repairs can approach a significant portion of the device's value, especially for complex board-level work.",
+  costDriver: "PS5 repair costs depend on the issue—simple fixes like thermal paste are affordable, while HDMI port repairs involve board-level soldering and cost more. Sony's <a href='https://www.playstation.com/en-ca/support/hardware/ps5/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>PS5 support centre</a> provides troubleshooting guides and safe mode instructions that may resolve software issues without physical repair.",
+  priceShock: "Many customers are surprised that console repairs can approach a significant portion of the device's value, especially for complex board-level work. <a href='https://www.ifixit.com/Search?query=ps5+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's PS5 teardown</a> reveals how the console's internal layout affects repair accessibility for components like the HDMI port and disc drive.",
   advisory: "If the repair cost doesn't make financial sense for your console's age and condition, we'll explain alternatives including trade-in options.",
   fallback: "When repair isn't practical, we may be able to help recover saved game data or transfer your account to a replacement console.",
 };

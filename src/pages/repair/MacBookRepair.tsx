@@ -139,8 +139,8 @@ const FAQS = [
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
 const PRICING_MICRO_COPY = {
-  costDriver: "MacBook repair costs are driven by the display and logic board—Retina screens and Apple Silicon components can be expensive, especially for larger Pro models.",
-  priceShock: "Many customers are surprised that a MacBook display can cost more than the original laptop after a few years of depreciation.",
+  costDriver: "MacBook repair costs are driven by the display and logic board—Retina screens and Apple Silicon components can be expensive, especially for larger Pro models. Apple's <a href='https://support.apple.com/en-ca/102894' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>battery service documentation</a> explains how battery health affects performance and when replacement is recommended.",
+  priceShock: "Many customers are surprised that a MacBook display can cost more than the original laptop after a few years of depreciation. <a href='https://www.ifixit.com/Search?query=macbook+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's MacBook teardowns</a> illustrate why certain models—particularly those with adhesive-bonded batteries and soldered components—are more complex and costly to repair.",
   advisory: "If the repair cost approaches your MacBook's current value, we'll explain that clearly so you can decide whether repair, replacement, or trade-in makes the most sense.",
   fallback: "When repair isn't practical, data recovery or data transfer to a new device is often still an option.",
 };

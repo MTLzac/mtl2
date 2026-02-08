@@ -130,8 +130,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Xbox repair costs depend on the issue—simple fixes like thermal paste are affordable, while HDMI port repairs involve board-level soldering and cost more.",
-  priceShock: "Many customers are surprised that console repairs can approach a significant portion of the device's value, especially for older Xbox One models.",
+  costDriver: "Xbox repair costs depend on the issue—simple fixes like thermal paste are affordable, while HDMI port repairs involve board-level soldering and cost more. Microsoft's <a href='https://support.xbox.com/en-CA/help/hardware-network/console/console-wont-power-on' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Xbox hardware troubleshooting guide</a> covers power and connectivity issues that can sometimes be resolved without physical repair.",
+  priceShock: "Many customers are surprised that console repairs can approach a significant portion of the device's value, especially for older Xbox One models. <a href='https://www.ifixit.com/Search?query=xbox+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Xbox teardowns</a> show how each console generation differs in terms of internal layout and repair accessibility.",
   advisory: "If the repair cost doesn't make financial sense for your console's age and condition, we'll explain alternatives including trade-in options.",
   fallback: "When repair isn't practical, your game saves are typically backed up to Xbox Live, so data loss is rarely a concern.",
 };

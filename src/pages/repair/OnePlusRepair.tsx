@@ -130,8 +130,8 @@ const FAQS = [
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
 const PRICING_MICRO_COPY = {
-  costDriver: "OnePlus repair costs vary by model—flagship devices with AMOLED displays cost more than Nord series repairs due to premium components.",
-  priceShock: "Many customers are surprised that OnePlus repairs can cost as much as Samsung or iPhone repairs, especially for newer flagships and foldables.",
+  costDriver: "OnePlus repair costs vary by model—flagship devices with AMOLED displays cost more than Nord series repairs due to premium components. OnePlus provides <a href='https://www.oneplus.com/ca_en/support' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>official device support documentation</a> including battery care tips and troubleshooting guides.",
+  priceShock: "Many customers are surprised that OnePlus repairs can cost as much as Samsung or iPhone repairs, especially for newer flagships and foldables. <a href='https://www.ifixit.com/Search?query=oneplus+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's OnePlus teardowns</a> show how the alert slider, Warp Charge circuitry, and curved displays contribute to repair complexity.",
   advisory: "If the repair cost doesn't make sense for your device's value, we'll explain alternatives and help you decide what's best.",
   fallback: "When repair isn't practical, data recovery is often still possible to retrieve your files.",
 };

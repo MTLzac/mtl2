@@ -284,7 +284,7 @@ const IPhoneRepair = () => {
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-3xl space-y-3 text-base text-muted-foreground">
                 <p>
-                  iPhone repair costs are primarily driven by the screen—newer Pro Max models with ProMotion displays cost more than older or standard models. Many customers are surprised that financing often hides the true replacement cost of an iPhone, making repair a smarter financial choice.
+                  iPhone repair costs are primarily driven by the screen—newer Pro Max models with ProMotion displays cost more than older or standard models. Many customers are surprised that financing often hides the true replacement cost of an iPhone, making repair a smarter financial choice. Apple provides guidance on <a href="https://support.apple.com/en-ca/108057" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">checking your iPhone's battery health</a>, which can help determine whether a battery replacement alone would restore performance. Independent teardowns from <a href="https://www.ifixit.com/Search?query=iphone+repair" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">iFixit's iPhone repair guides</a> also illustrate why certain models cost more to repair due to increasingly integrated component designs.
                 </p>
                 <p>
                   If the repair cost approaches your device's value, we'll explain that clearly so you can make an informed decision. When repair doesn't make sense, data recovery is often still an option. You can learn more about{" "}

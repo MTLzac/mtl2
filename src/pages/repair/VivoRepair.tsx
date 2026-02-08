@@ -137,8 +137,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Vivo repair costs vary by model—budget Y series devices are affordable, while X series flagships and foldables cost more due to premium ZEISS camera systems and AMOLED displays.",
-  priceShock: "Many customers are surprised that flagship Vivo repairs can cost as much as Samsung or iPhone repairs, especially for X series and foldable devices.",
+  costDriver: "Vivo repair costs vary by model—budget Y series devices are affordable, while X series flagships and foldables cost more due to premium ZEISS camera systems and AMOLED displays. Vivo's <a href='https://www.vivo.com/en/support' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>official support centre</a> provides battery care tips and FlashCharge troubleshooting for all device families.",
+  priceShock: "Many customers are surprised that flagship Vivo repairs can cost as much as Samsung or iPhone repairs, especially for X series and foldable devices. <a href='https://www.ifixit.com/Search?query=smartphone+repair+guide' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's smartphone repair resources</a> can help users understand the complexity of AMOLED screen replacements and why foldable devices cost more to repair.",
   advisory: "If the repair cost doesn't make sense for your device's value, we'll explain alternatives clearly.",
   fallback: "When repair isn't practical, data recovery is often still possible to retrieve your files.",
 };

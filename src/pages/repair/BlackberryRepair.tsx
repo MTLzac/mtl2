@@ -135,7 +135,7 @@ const FAQS = [
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Blackberry repair costs depend on parts availability—as a discontinued brand, some components are increasingly difficult to source.",
+  costDriver: "Blackberry repair costs depend on parts availability—as a discontinued brand, some components are increasingly difficult to source. <a href='https://www.ifixit.com/Search?query=blackberry+repair' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Blackberry repair guides</a> provide useful reference for the internal layout of various models, which helps inform repair complexity and cost.",
   priceShock: "Many customers are surprised that repairing a legacy Blackberry can sometimes cost more than expected due to parts scarcity, even though the device has depreciated.",
   advisory: "If the repair cost doesn't make sense for your Blackberry's value, we'll explain alternatives and help you decide.",
   fallback: "When repair isn't practical, data recovery is often still possible to retrieve your contacts, messages, and files.",

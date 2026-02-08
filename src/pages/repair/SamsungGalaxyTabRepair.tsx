@@ -134,8 +134,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Galaxy Tab repair costs depend heavily on the model—Tab S Ultra displays are premium components, while Tab A series repairs are much more affordable.",
-  priceShock: "Many customers are surprised that a Tab S series screen can cost nearly as much as a new budget tablet, especially for the larger 14.6\" Ultra models.",
+  costDriver: "Galaxy Tab repair costs depend heavily on the model—Tab S Ultra displays are premium components, while Tab A series repairs are much more affordable. Samsung's <a href='https://www.samsung.com/ca/support/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>official tablet support page</a> provides battery diagnostics and S Pen troubleshooting that may resolve issues before a repair is needed.",
+  priceShock: "Many customers are surprised that a Tab S series screen can cost nearly as much as a new budget tablet, especially for the larger 14.6\" Ultra models. <a href='https://www.ifixit.com/Search?query=samsung+galaxy+tab+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Galaxy Tab teardowns</a> show how the adhesive-sealed glass and fused display assemblies on Tab S models increase repair complexity.",
   advisory: "If the repair cost approaches your tablet's current value, we'll explain that clearly so you can make an informed decision.",
   fallback: "When repair doesn't make sense, data recovery or data transfer to a new device is often still possible.",
 };

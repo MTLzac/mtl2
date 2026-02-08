@@ -132,8 +132,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "ZTE repair costs vary by model—budget Blade devices are affordable, while nubia flagships and Red Magic gaming phones cost more due to specialized components.",
-  priceShock: "Many customers are surprised that nubia and Red Magic repairs can approach premium device pricing due to gaming-specific parts and limited supply.",
+  costDriver: "ZTE repair costs vary by model—budget Blade devices are affordable, while nubia flagships and Red Magic gaming phones cost more due to specialized components. ZTE's <a href='https://www.ztedevices.com/en-gl/support/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>global device support page</a> provides firmware updates and troubleshooting for Blade and Axon series devices.",
+  priceShock: "Many customers are surprised that nubia and Red Magic repairs can approach premium device pricing due to gaming-specific parts and limited supply. <a href='https://www.ifixit.com/Search?query=gaming+phone+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's gaming phone teardowns</a> illustrate the active cooling systems and trigger mechanisms that make gaming phone repairs more complex than standard smartphones.",
   advisory: "If the repair cost approaches your device's value, we'll explain alternatives clearly so you can make an informed decision.",
   fallback: "When repair doesn't make sense, data recovery is often still possible to retrieve your files.",
 };

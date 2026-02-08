@@ -16,11 +16,10 @@ export const PricingMicroCopy = ({ content }: PricingMicroCopyProps) => {
     <section className="py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl space-y-3 text-base text-muted-foreground">
+          <p dangerouslySetInnerHTML={{ __html: `${content.costDriver} ${content.priceShock}` }} />
           <p>
-            {content.costDriver} {content.priceShock}
-          </p>
-          <p>
-            {content.advisory} {content.fallback} You can learn more about{" "}
+            <span dangerouslySetInnerHTML={{ __html: `${content.advisory} ${content.fallback}` }} />{" "}
+            You can learn more about{" "}
             <Link 
               to="/repair-pricing" 
               className="text-primary hover:underline"

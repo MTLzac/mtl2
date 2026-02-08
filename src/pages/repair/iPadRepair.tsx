@@ -119,8 +119,8 @@ const FAQS = [
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Limited pickup and drop-off capacity within Winnipeg.";
 
 const PRICING_MICRO_COPY = {
-  costDriver: "iPad repair costs depend heavily on the model—newer Pro and Air models with laminated displays cost significantly more to repair than standard iPads.",
-  priceShock: "Many customers are surprised to learn that an iPad Pro screen can cost more than the tablet originally did after a few years of depreciation.",
+  costDriver: "iPad repair costs depend heavily on the model—newer Pro and Air models with laminated displays cost significantly more to repair than standard iPads. Apple's official <a href='https://support.apple.com/en-ca/111901' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iPad repair service documentation</a> outlines what's covered under warranty versus what requires third-party service.",
+  priceShock: "Many customers are surprised to learn that an iPad Pro screen can cost more than the tablet originally did after a few years of depreciation. As <a href='https://www.ifixit.com/Search?query=ipad+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's iPad teardowns</a> show, the adhesive-sealed designs of modern iPads make screen replacement a labour-intensive process.",
   advisory: "If the repair cost approaches or exceeds your iPad's current value, we'll explain that so you can decide what makes sense.",
   fallback: "When repair isn't practical, data recovery or data transfer to a new device may still be possible.",
 };

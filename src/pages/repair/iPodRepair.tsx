@@ -136,8 +136,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "iPod repair costs depend on the model and parts availability—as a discontinued product line, some parts may be limited or require sourcing from specialty suppliers.",
-  priceShock: "Many customers are surprised that repairing a legacy device can sometimes cost more than expected due to parts scarcity, even though the device itself may have depreciated.",
+  costDriver: "iPod repair costs depend on the model and parts availability—as a discontinued product line, some parts may be limited or require sourcing from specialty suppliers. Although Apple has discontinued the iPod, their <a href='https://support.apple.com/en-ca/ipod' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iPod support documentation</a> still provides useful troubleshooting and syncing guidance.",
+  priceShock: "Many customers are surprised that repairing a legacy device can sometimes cost more than expected due to parts scarcity, even though the device itself may have depreciated. <a href='https://www.ifixit.com/Search?query=ipod+classic+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's iPod teardowns</a> remain a valuable reference—they document the internal layout of every iPod generation and highlight which models are most repair-friendly.",
   advisory: "If the repair cost doesn't make sense given the device's value, we'll explain alternatives and help you decide what's best.",
   fallback: "When repair isn't practical, data recovery is often still possible to retrieve your music library and files.",
 };

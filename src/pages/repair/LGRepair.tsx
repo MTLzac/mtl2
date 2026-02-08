@@ -135,8 +135,8 @@ const FAQS = [
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
 const PRICING_MICRO_COPY = {
-  costDriver: "LG repair costs depend on the model and parts availability—as a discontinued brand, some parts require specialty sourcing which can affect pricing.",
-  priceShock: "Many customers are surprised that repairing an older LG device can sometimes cost more than expected due to limited parts supply.",
+  costDriver: "LG repair costs depend on the model and parts availability—as a discontinued brand, some parts require specialty sourcing which can affect pricing. Although LG has exited the smartphone market, their <a href='https://www.lg.com/ca_en/support' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Canadian support portal</a> still provides basic device documentation and software updates for existing devices.",
+  priceShock: "Many customers are surprised that repairing an older LG device can sometimes cost more than expected due to limited parts supply. <a href='https://www.ifixit.com/Search?query=lg+phone+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's LG phone teardowns</a> remain a useful resource for understanding the internal layout and repairability of various LG models.",
   advisory: "If the repair cost doesn't make sense for your LG's current value, we'll explain alternatives and help you decide.",
   fallback: "When repair isn't practical, data recovery is often still possible to retrieve your photos and files.",
 };
