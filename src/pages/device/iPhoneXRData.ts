@@ -184,7 +184,15 @@ const iPhoneXRData: DeviceHubData = {
   },
 
   // ── Comparisons ──
-  comparisons: [],
+  comparisons: [
+    { label: "iPhone XR vs iPhone 11", slug: "iphone-xr-vs-iphone-11" },
+    { label: "iPhone XR vs iPhone XS", slug: "iphone-xr-vs-iphone-xs" },
+    { label: "iPhone XR vs iPhone 12", slug: "iphone-xr-vs-iphone-12" },
+    {
+      label: "iPhone XR vs iPhone SE (2020)",
+      slug: "iphone-xr-vs-iphone-se-2020",
+    },
+  ],
 
   // ── FAQs ──
   faqHeading: "Frequently Asked Questions About the iPhone XR",
