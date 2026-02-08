@@ -108,6 +108,15 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                     html={data.featuredSnippetHtml}
                     className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-primary/80 [&_p]:mb-4 [&_p:last-child]:mb-0"
                   />
+
+                  {data.tldrHtml && (
+                    <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4">
+                      <HtmlBlock
+                        html={data.tldrHtml}
+                        className="text-sm leading-relaxed text-foreground [&_strong]:font-semibold"
+                      />
+                    </div>
+                  )}
                 </div>
 
                 {data.heroImage && (
@@ -307,7 +316,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                 </h2>
                 <p className="mb-6 text-muted-foreground">
                   Side-by-side comparisons to help you decide whether to repair,
-                  keep, or upgrade.
+                  keep, or upgrade. These guides are being published progressively as part of our ongoing device reference series.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {data.comparisons.map((comp) => (
