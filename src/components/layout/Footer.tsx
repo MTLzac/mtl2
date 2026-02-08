@@ -7,7 +7,7 @@ export const Footer = () => {
   return (
     <footer className="border-t border-border bg-secondary/30">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-6">
           {/* Brand */}
           <div>
             <Link to="/" className="mb-4 inline-block">
@@ -146,6 +146,18 @@ export const Footer = () => {
               <li>
                 <Link to="/repair/water-damage" className="text-muted-foreground hover:text-primary">
                   Water Damage
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Device Guides */}
+          <div>
+            <h3 className="mb-4 font-semibold">Device Guides</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/devices/iphone-xr" className="text-muted-foreground hover:text-primary">
+                  iPhone XR
                 </Link>
               </li>
             </ul>
