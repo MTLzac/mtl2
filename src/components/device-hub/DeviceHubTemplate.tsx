@@ -4,13 +4,10 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Badge } from "@/components/ui/badge";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-} from "@/components/ui/table";
 import { ArrowRight } from "lucide-react";
+import { AtAGlanceGrid } from "./AtAGlanceGrid";
+import { DecisionGuideCards } from "./DecisionGuideCards";
+import { DeviceHubTOC } from "./DeviceHubTOC";
 import type { DeviceHubData } from "./types";
 
 const statusVariantClasses: Record<string, string> = {
@@ -127,28 +124,17 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           </section>
 
           {/* ── At a Glance ── */}
-          <section className="py-10 md:py-14">
+          <section id="at-a-glance" className="py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-6 text-2xl font-bold md:text-3xl">
                 {data.deviceName} at a Glance
               </h2>
-              <Table>
-                <TableBody>
-                  {data.atAGlance.map((field) => (
-                    <TableRow key={field.label}>
-                      <TableCell className="w-1/3 font-medium text-muted-foreground">
-                        {field.label}
-                      </TableCell>
-                      <TableCell>{field.value}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
+              <AtAGlanceGrid fields={data.atAGlance} />
             </div>
           </section>
 
           {/* ── iOS Support Status ── */}
-          <section className="border-t border-border py-10 md:py-14">
+          <section id="ios-support" className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-6 text-2xl font-bold md:text-3xl">
                 {data.iosSupportStatus.heading}
@@ -165,7 +151,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           </section>
 
           {/* ── What Happens When Updates Stop ── */}
-          <section className="border-t border-border py-10 md:py-14">
+          <section id="update-deprecation" className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-6 text-2xl font-bold md:text-3xl">
                 {data.updateDeprecation.heading}
@@ -184,7 +170,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           </section>
 
           {/* ── Is It Worth Fixing? ── */}
-          <section className="border-t border-border py-10 md:py-14">
+          <section id="worth-fixing" className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-6 text-2xl font-bold md:text-3xl">
                 {data.worthFixing.heading}
@@ -212,7 +198,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           </section>
 
           {/* ── Common Damage ── */}
-          <section className="border-t border-border py-10 md:py-14">
+          <section id="common-damage" className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-6 text-2xl font-bold md:text-3xl">
                 {data.commonDamage.heading}
@@ -263,7 +249,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           </section>
 
           {/* ── Trading In or Upgrading ── */}
-          <section className="border-t border-border py-10 md:py-14">
+          <section id="trade-in-upgrade" className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-6 text-2xl font-bold md:text-3xl">
                 {data.tradeInUpgrade.heading}
@@ -273,27 +259,15 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           </section>
 
           {/* ── Decision Guide ── */}
-          <section className="border-t border-border py-10 md:py-14">
+          <section id="decision-guide" className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-6 text-2xl font-bold md:text-3xl">
                 {data.decisionGuide.heading}
               </h2>
               <HtmlBlock html={data.decisionGuide.contentHtml} />
 
-              <div className="mt-6 space-y-4">
-                {data.decisionGuide.scenarios.map((scenario, i) => (
-                  <div
-                    key={i}
-                    className="rounded-lg border border-border bg-card p-5"
-                  >
-                    <p className="font-medium text-foreground">
-                      {scenario.condition}
-                    </p>
-                    <p className="mt-2 text-muted-foreground">
-                      {scenario.recommendation}
-                    </p>
-                  </div>
-                ))}
+              <div className="mt-6">
+                <DecisionGuideCards scenarios={data.decisionGuide.scenarios} />
               </div>
 
               <p className="mt-6 text-sm italic text-muted-foreground">
@@ -304,7 +278,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
 
           {/* ── Comparison Entry Points ── */}
           {data.comparisons.length > 0 && (
-            <section className="border-t border-border py-10 md:py-14">
+            <section id="comparisons" className="border-t border-border py-10 md:py-14">
               <div className="container mx-auto max-w-3xl px-4">
                 <h2 className="mb-6 text-2xl font-bold md:text-3xl">
                   Compare {data.deviceName} to Other Models
@@ -330,7 +304,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           )}
 
           {/* ── FAQs (visible, not accordions) ── */}
-          <section className="border-t border-border py-10 md:py-14">
+          <section id="faqs" className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-8 text-2xl font-bold md:text-3xl">
                 {data.faqHeading}
@@ -351,6 +325,8 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
 
         <Footer />
       </div>
+
+      <DeviceHubTOC data={data} />
     </>
   );
 };
