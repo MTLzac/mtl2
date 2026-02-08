@@ -48,7 +48,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
       name: faq.question,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answerHtml.replace(/<[^>]*>/g, ""),
+        text: (faq.answerHtml || "").replace(/<[^>]*>/g, ""),
       },
     })),
   };
