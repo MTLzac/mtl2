@@ -311,14 +311,13 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {data.comparisons.map((comp) => (
-                    <Link
+                    <div
                       key={comp.slug}
-                      to={`/devices/compare/${comp.slug}`}
-                      className="flex items-center justify-between rounded-lg border border-border bg-card p-4 transition-colors hover:border-primary/40 hover:bg-primary/5"
+                      className="flex items-center rounded-lg border border-border bg-card p-4 text-muted-foreground"
                     >
                       <span className="font-medium">{comp.label}</span>
-                      <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                    </Link>
+                      <span className="ml-auto text-xs italic">Coming soon</span>
+                    </div>
                   ))}
                 </div>
               </div>

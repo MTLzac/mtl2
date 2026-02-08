@@ -210,7 +210,12 @@ const iPhoneXSData: DeviceHubData = {
   },
 
   // ── Comparisons ──
-  comparisons: [],
+  comparisons: [
+    { label: "iPhone XS vs iPhone XR", slug: "iphone-xs-vs-iphone-xr" },
+    { label: "iPhone XS vs iPhone 11", slug: "iphone-xs-vs-iphone-11" },
+    { label: "iPhone XS vs iPhone 12", slug: "iphone-xs-vs-iphone-12" },
+    { label: "iPhone XS vs iPhone XS Max", slug: "iphone-xs-vs-iphone-xs-max" },
+  ],
 
   // ── FAQs ──
   faqHeading: "Frequently Asked Questions About the iPhone XS",
