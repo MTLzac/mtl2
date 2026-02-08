@@ -1,7 +1,7 @@
 import type { DeviceHubData } from "@/components/device-hub/types";
 import heroBack from "@/assets/devices/iphone-xr-back.jpg";
 import frontDamage from "@/assets/devices/iphone-xr-front-damage.jpg";
-import backDamage from "@/assets/devices/iphone-xr-back-damage.jpg";
+import backDamage from "@/assets/devices/iphone-xr-back-damage.png";
 
 const iPhoneXRData: DeviceHubData = {
   // ── SEO (LOCKED) ──
