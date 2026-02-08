@@ -90,6 +90,9 @@ const RepairStatsEmbed = lazy(() => import("./pages/embed/RepairStatsEmbed"));
 // Lazy-loaded Device Hub Pages
 const IPhoneXRDevice = lazy(() => import("./pages/device/iPhoneXR"));
 const IPhoneXSDevice = lazy(() => import("./pages/device/iPhoneXS"));
+const IPhoneXSMaxDevice = lazy(() => import("./pages/device/iPhoneXSMax"));
+const IPhone11Device = lazy(() => import("./pages/device/iPhone11"));
+const IPhone11ProDevice = lazy(() => import("./pages/device/iPhone11Pro"));
 
 // Lazy-loaded Service Area Pages
 const ServiceAreasIndex = lazy(() => import("./pages/service-area/ServiceAreasIndex"));
@@ -197,6 +200,9 @@ const App = () => (
               {/* Device Hub Pages */}
               <Route path="/devices/iphone-xr" element={<IPhoneXRDevice />} />
               <Route path="/devices/iphone-xs" element={<IPhoneXSDevice />} />
+              <Route path="/devices/iphone-xs-max" element={<IPhoneXSMaxDevice />} />
+              <Route path="/devices/iphone-11" element={<IPhone11Device />} />
+              <Route path="/devices/iphone-11-pro" element={<IPhone11ProDevice />} />
 
               {/* Service Area Pages */}
               <Route path="/service-areas" element={<ServiceAreasIndex />} />

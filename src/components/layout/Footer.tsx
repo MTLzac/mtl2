@@ -165,6 +165,21 @@ export const Footer = () => {
                   iPhone XS
                 </Link>
               </li>
+              <li>
+                <Link to="/devices/iphone-xs-max" className="text-muted-foreground hover:text-primary">
+                  iPhone XS Max
+                </Link>
+              </li>
+              <li>
+                <Link to="/devices/iphone-11" className="text-muted-foreground hover:text-primary">
+                  iPhone 11
+                </Link>
+              </li>
+              <li>
+                <Link to="/devices/iphone-11-pro" className="text-muted-foreground hover:text-primary">
+                  iPhone 11 Pro
+                </Link>
+              </li>
             </ul>
           </div>
 

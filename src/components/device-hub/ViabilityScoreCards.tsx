@@ -11,9 +11,9 @@ const LABEL_ICON: Record<string, React.ReactNode> = {
 
 const fallbackIcon = <ShieldCheck className="h-5 w-5 text-primary" />;
 
-/** Renders ●●●○○ filled/unfilled dots for a 1–5 score */
+/** Renders ●●●○○ filled/unfilled dots for a 1–5 score (rounds for display) */
 const ScoreDots = ({ score }: { score: number }) => {
-  const filled = Math.min(Math.max(score, 0), 5);
+  const filled = Math.min(Math.max(Math.round(score), 0), 5);
   const empty = 5 - filled;
   return (
     <span className="text-lg tracking-widest" aria-hidden="true">
@@ -23,10 +23,10 @@ const ScoreDots = ({ score }: { score: number }) => {
   );
 };
 
-/** Colour accent based on score: 1–2 = destructive, 3 = warning, 4–5 = success */
+/** Colour accent based on score: ≤2 = destructive, ≤3 = warning, >3 = success */
 const scoreBorderClass = (score: number): string => {
   if (score <= 2) return "border-l-destructive";
-  if (score === 3) return "border-l-warning";
+  if (score <= 3) return "border-l-warning";
   return "border-l-success";
 };
 
