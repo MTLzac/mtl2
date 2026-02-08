@@ -15,6 +15,8 @@ export interface DeviceHubData {
   heroImageAlt?: string;
   /** HTML paragraph displayed immediately after H1 — featured-snippet style */
   featuredSnippetHtml: string;
+  /** Optional TL;DR summary box rendered directly after the intro paragraph */
+  tldrHtml?: string;
 
   // ── At a Glance ──
   atAGlance: AtAGlanceField[];
