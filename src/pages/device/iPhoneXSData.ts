@@ -5,7 +5,7 @@ const iPhoneXSData: DeviceHubData = {
   metaTitle:
     "Is the iPhone XS Still Supported in 2026? Repair Viability, iOS Support & Upgrade Options",
   metaDescription:
-    "A factual guide to the iPhone XS in 2026 — covering iOS support status, OLED repair costs, battery life, app compatibility, and trade-in or upgrade options for Canadian users.",
+    "Factual guide to the iPhone XS in 2026 — iOS support status, OLED repair costs vs resale value, battery life, app compatibility, and upgrade options for Canadian users.",
   canonicalUrl: "https://mobiletechlab.ca/devices/iphone-xs",
   slug: "iphone-xs",
 
@@ -19,8 +19,11 @@ const iPhoneXSData: DeviceHubData = {
   heroImage: undefined,
   heroImageAlt: "Apple iPhone XS front and back view",
   featuredSnippetHtml: `
-    <p>As of 2026, the iPhone XS does not support iOS 26 and will not receive future major iOS feature updates. The XS was Apple's flagship in 2018, featuring the first OLED Super Retina display and the A12 Bionic chip. While it remains capable for everyday tasks, its smaller battery capacity and higher OLED screen repair costs affect its long-term repair viability.</p>
-    <p>Sources: <a href="https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios" target="_blank" rel="noopener noreferrer">Apple iOS compatibility</a> · <a href="https://www.macrumors.com/guide/ios-18-compatible-iphone-models/" target="_blank" rel="noopener noreferrer">Macworld iOS 18 device list</a></p>
+    <p>As of early 2026, the iPhone XS no longer receives major iOS updates from Apple. Released in 2018 as Apple's compact OLED flagship — with a 5.8-inch Super Retina display, stainless steel frame, and the A12 Bionic chip — the XS was the premium alternative to the <a href="/devices/iphone-xr">LCD-equipped iPhone XR</a>. It shares the same A12 chip and software support ceiling as both the XR and the larger <a href="/devices/iphone-xs-max">iPhone XS Max</a>, but its OLED display and stainless steel build carried a higher original price and carry higher repair costs — making repair decisions particularly cost-sensitive in 2026.</p>
+    <p>Sources: <a href="https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios" target="_blank" rel="noopener noreferrer">Apple iOS compatibility</a></p>
+  `,
+  tldrHtml: `
+    <p><strong>TL;DR:</strong> The iPhone XS no longer receives major iOS updates as of early 2026. Battery replacement remains cost-effective, but OLED screen repairs are significantly more expensive than on the <a href="/devices/iphone-xr">LCD-equipped iPhone XR</a>. For single-issue repairs, fixing is usually worthwhile. For multi-component damage, upgrading is typically more practical given the device's limited remaining app compatibility window.</p>
   `,
 
   // ── At a Glance ──
@@ -30,12 +33,12 @@ const iPhoneXSData: DeviceHubData = {
     { label: "Processor", value: "A12 Bionic" },
     {
       label: "Latest Major iOS",
-      value: "iOS 18 (does not support iOS 26)",
+      value: "iOS 18 (no longer receiving major updates as of early 2026)",
     },
     {
       label: "Typical Use Case Today",
       value:
-        "Compact daily driver, secondary phone, or backup device for users who prefer a smaller form factor",
+        "Compact daily driver for users who prefer a smaller OLED phone and don't require the latest iOS features or 5G connectivity",
     },
   ],
 
@@ -45,48 +48,49 @@ const iPhoneXSData: DeviceHubData = {
       label: "Battery Life",
       score: 2,
       explanation:
-        "The iPhone XS has a 2,658 mAh battery — small by modern standards. Original batteries from this generation commonly show significant degradation, making battery replacement one of the most frequent repairs we perform on this model.",
+        "The iPhone XS has a 2,658 mAh battery — small by modern standards and significantly smaller than the <a href='/devices/iphone-11'>iPhone 11's</a> 3,110 mAh cell. By 2026, most original batteries show substantial degradation. Battery replacement is the single most cost-effective repair for this model and one of the most common reasons users keep the device longer.",
     },
     {
       label: "Repair Cost (Relative)",
-      score: 2,
+      score: 3.5,
       explanation:
-        "OLED screen replacements cost significantly more than the LCD panels used in the iPhone XR. Combined with the laser-welded back glass, multi-issue repairs on the XS can quickly approach the device's market value.",
+        "The XS uses an OLED display, which costs more to replace than the LCD panel in the <a href='/devices/iphone-xr'>iPhone XR</a>. The smaller 5.8-inch panel is marginally less expensive than the 6.5-inch OLED in the <a href='/devices/iphone-xs-max'>XS Max</a>, but this difference is modest. Back glass replacement requires a frame swap due to the stainless steel construction, adding meaningful cost. Single-issue repairs remain proportionate to the device's value, but multi-component damage pushes total costs near or beyond resale value.",
     },
     {
       label: "Parts Availability",
-      score: 3,
+      score: 4,
       explanation:
-        "Quality replacement parts for the iPhone XS are still available, though supply is beginning to thin for OEM-equivalent OLED panels. Aftermarket options remain widely available and deliver good results for most users.",
+        "Replacement parts for the iPhone XS — including OLED screens, batteries, cameras, and charging assemblies — remain available from multiple suppliers. OEM-equivalent OLED panels are beginning to thin in supply, but quality aftermarket options are widely accessible and deliver strong results for daily use.",
     },
     {
       label: "iOS Support Lifespan",
-      score: 1,
+      score: 2,
       explanation:
-        "The iPhone XS received its last major iOS update with iOS 18. It will not receive iOS 19 or later. Apple may issue limited security patches, but the device is at end-of-life for software support.",
+        "The iPhone XS received its last major iOS update with iOS 18. As of early 2026, it no longer receives major feature updates. Apple may continue to issue limited security patches, but app compatibility will gradually decline as developers target newer iOS versions. The <a href='/devices/iphone-11'>iPhone 11</a> — one generation newer — still receives major updates.",
     },
   ],
   quickTakeawayHtml: `
-    <strong>Quick takeaway:</strong> The iPhone XS still functions reliably in 2026 for basic use, but battery wear, OLED screen repair costs, and limited remaining iOS support often make upgrading a better long-term value if multiple repairs are required.
+    <strong>Summary:</strong> The iPhone XS remains functional for everyday tasks in 2026, but its software support has ended and app compatibility will gradually narrow. Battery replacement is cost-effective and extends daily usability. OLED screen repairs cost more than on the <a href="/devices/iphone-xr">LCD-equipped XR</a>, and multi-component damage often makes <a href="/trade-in">trading in</a> and upgrading more practical — especially given the device's limited remaining software runway.
   `,
 
   // ── iOS Support Status ──
   iosSupportStatus: {
     heading: "iPhone XS iOS Support Status in 2026",
     contentHtml: `
-      <p>The iPhone XS shipped with iOS 12 and received major updates through iOS 18. As of 2026, it does not support iOS 26 and will not receive future major feature updates from Apple.</p>
-      <p>Apple has historically provided limited security patches to devices one or two generations behind the current release. However, these patches are not guaranteed and typically address only critical vulnerabilities — they do not include new features or app framework updates.</p>
-      <p>The XS shares the same A12 Bionic chip as the <a href="/devices/iphone-xr">iPhone XR</a>, which means both devices reached their iOS support ceiling at the same time.</p>
+      <p>The iPhone XS shipped with iOS 12 and received major updates through iOS 18. As of early 2026, it no longer receives major feature updates from Apple. The XS shares the same A12 Bionic chip as the <a href="/devices/iphone-xr">iPhone XR</a> and <a href="/devices/iphone-xs-max">XS Max</a>, which means all three devices reached their iOS support ceiling at the same time.</p>
+      <p>Based on Apple's historical update patterns, Apple may continue to issue limited security patches for iOS 18, but these are not guaranteed and address only critical vulnerabilities — they do not include new features or app framework updates.</p>
+      <p>This places the XS one generation behind the <a href="/devices/iphone-11">iPhone 11</a>, which — as of early 2026 — still receives major iOS updates. That one-generation gap is the most significant practical difference between the two devices for users evaluating long-term viability.</p>
     `,
     whatVersion: {
       heading: "What iOS Version Does the iPhone XS Support?",
       contentHtml: `
-        <p>The iPhone XS supports up to <strong>iOS 18</strong>. This was the last major iOS version available for the A12 Bionic chip. The device did not receive iOS 19, iOS 20, or any subsequent releases.</p>
+        <p>The iPhone XS supports up to <strong>iOS 18</strong>. This was the last major iOS version available for the A12 Bionic chip.</p>
         <p>It's important to understand the difference between <strong>feature updates</strong> and <strong>security updates</strong>:</p>
         <ul>
           <li><strong>Feature updates</strong> (e.g., iOS 18 → iOS 19) bring new capabilities, app frameworks, and UI changes. The iPhone XS no longer receives these.</li>
           <li><strong>Security updates</strong> are smaller patches that fix vulnerabilities. Apple may still issue these for iOS 18, but on a limited and unpredictable schedule.</li>
         </ul>
+        <p>App compatibility is often the first real limitation users encounter after losing major update support. As developers build against newer iOS SDKs, apps gradually drop support for older versions — a process that typically accelerates one to two years after the last major update.</p>
         <p>Sources: <a href="https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios" target="_blank" rel="noopener noreferrer">Apple – iPhone models compatible with iOS</a></p>
       `,
     },
@@ -94,23 +98,23 @@ const iPhoneXSData: DeviceHubData = {
 
   // ── What Happens When Updates Stop ──
   updateDeprecation: {
-    heading: "What Happens When the iPhone XS Stops Getting iOS Updates?",
+    heading: "What Happens Now That the iPhone XS Has Stopped Getting iOS Updates?",
     contentHtml: `
       <p>The iPhone XS does not stop working when it loses iOS support. Calls, messaging, browsing, and most currently installed apps continue to function normally.</p>
-      <p>What changes over time is <strong>app compatibility</strong>. App developers build against the latest iOS SDKs, and older versions gradually lose support. This process is gradual — not immediate — but accelerates as the device falls further behind the current iOS release.</p>
-      <p>Security is the other consideration. Without regular patches, known vulnerabilities remain unaddressed. For most users, this doesn't create an immediate crisis, but it does increase risk over time — particularly for devices used for banking, payments, or storing sensitive information.</p>
+      <p>What changes over time is <strong>app compatibility</strong>. App developers build against the latest iOS SDKs, and older versions gradually lose support. For the iPhone XS — which stopped receiving major updates with iOS 18 — this process is already underway. Users may begin noticing app update restrictions or compatibility warnings within the next one to two years.</p>
+      <p>Security is the other consideration. Without regular patches, known vulnerabilities remain unaddressed. For most users, this doesn't create an immediate crisis, but it does increase risk — particularly for devices used for banking, payments, or storing sensitive information.</p>
     `,
     appCompatibility: {
       heading: "App Compatibility Issues Canadian Users May Notice",
       contentHtml: `
-        <p>From our experience, these are the categories of apps where Canadian users tend to notice compatibility issues first:</p>
+        <p>From our experience, these are the categories of apps where Canadian users on the iPhone XS tend to notice compatibility issues first:</p>
         <ul>
           <li><strong>Banking apps</strong> — TD, RBC, Scotiabank, and BMO typically require iOS versions within two major releases of the current version. Users on iOS 18 may find these apps stop updating or display compatibility warnings.</li>
           <li><strong>Transit and payment apps</strong> — Presto, city transit apps, and mobile payment platforms often follow similar requirements.</li>
           <li><strong>Government services</strong> — CRA My Account, provincial health apps, and digital ID services may require newer iOS versions for security compliance.</li>
-          <li><strong>Two-factor authentication apps</strong> — Apps like Microsoft Authenticator and Google Authenticator will eventually require newer OS versions.</li>
+          <li><strong>Two-factor authentication apps</strong> — Microsoft Authenticator, Google Authenticator, and similar apps will eventually require newer OS versions.</li>
         </ul>
-        <p>This doesn't mean these apps stop working overnight. The transition is gradual, and many apps continue to function on older iOS versions even after they stop receiving updates for them.</p>
+        <p>This transition is gradual, not immediate. Many apps continue to function on older iOS versions even after they stop receiving updates — but the window narrows over time. Users of the <a href="/devices/iphone-11">iPhone 11</a>, which still receives major updates, do not face these limitations yet.</p>
       `,
     },
   },
@@ -119,49 +123,49 @@ const iPhoneXSData: DeviceHubData = {
   worthFixing: {
     heading: "Is the iPhone XS Worth Fixing in 2026?",
     contentHtml: `
-      <p>From our experience repairing iPhones daily, whether an iPhone XS is worth fixing depends on the type and extent of the damage, with one important caveat: the XS uses an OLED display, which costs more to replace than the LCD panel in the <a href="/devices/iphone-xr">iPhone XR</a>. This higher screen repair cost shifts the repair-vs-replace equation more quickly toward replacement when multiple issues are present.</p>
+      <p>From our experience, whether an iPhone XS is worth fixing depends on the type and number of repairs needed. The XS uses an OLED display, which costs more to replace than the LCD panel in the <a href="/devices/iphone-xr">iPhone XR</a>. Its compact 5.8-inch size appeals to users who prefer a smaller phone, but does not meaningfully reduce OLED repair cost risk compared to the larger <a href="/devices/iphone-xs-max">XS Max</a>. Combined with the device's limited remaining software support, this makes repair decisions more cost-sensitive than on newer models like the <a href="/devices/iphone-11">iPhone 11</a>.</p>
     `,
     whenRepairMakesSense: {
       heading: "When Repairing an iPhone XS Usually Makes Sense",
       contentHtml: `
         <ul>
-          <li><strong>Battery replacement only</strong> — The most cost-effective repair for the XS. Restores daily battery life and removes performance throttling. Typically completed in under an hour.</li>
-          <li><strong>Single-issue repairs</strong> — If only the screen or only the charging port needs attention and the rest of the device is in good condition, repair typically makes financial sense.</li>
-          <li><strong>Data recovery situations</strong> — If the device contains irreplaceable data (photos, contacts, documents), repair may be necessary regardless of the device's market value. We offer motherboard-level data recovery for situations where the device won't power on.</li>
+          <li><strong>Battery replacement</strong> — The most cost-effective repair for the XS and one of the best-value repairs available on this model. Restores daily battery life, removes performance throttling, and is typically completed in under an hour. This is the most common reason users extend the life of their XS.</li>
+          <li><strong>Single-issue screen repair</strong> — OLED replacement costs more than LCD, but a screen-only repair can still be worthwhile if the rest of the device is in good condition. This is a value decision — compare the repair cost against the device's current resale value.</li>
+          <li><strong>Charging port or camera repairs</strong> — Individual component repairs remain cost-effective and extend daily usability.</li>
+          <li><strong>Data recovery</strong> — For devices containing irreplaceable photos, contacts, or documents, repair is worthwhile regardless of market value. We offer motherboard-level data recovery for devices that won't power on.</li>
         </ul>
       `,
     },
     whenUpgradeIsBetter: {
-      heading: "When It's Often Better to Sell or Upgrade Instead",
+      heading: "When Upgrading or Trading In Is Usually More Practical",
       contentHtml: `
         <ul>
-          <li><strong>OLED screen + back glass damage</strong> — Combined OLED panel and back glass replacement on the XS typically exceeds the device's current market value.</li>
-          <li><strong>Face ID failure after drops</strong> — The TrueDepth camera system on the XS is delicate. If Face ID stops working after a drop, the repair often involves components that are expensive or difficult to source for this generation.</li>
-          <li><strong>Multiple major repairs required</strong> — Screen, battery, and charging port failures together make repair uneconomical in most cases.</li>
-          <li><strong>Repair cost approaches device value</strong> — As a general guideline, if the total repair estimate exceeds 50–60% of what a comparable replacement costs, upgrading is usually the better investment. The threshold is lower for the XS than the XR due to higher OLED repair costs.</li>
+          <li><strong>OLED screen + back glass damage</strong> — The combined cost of OLED panel and back glass replacement on the XS frequently exceeds the device's current resale value. The stainless steel frame requires a full housing swap for back glass repair, adding significant cost.</li>
+          <li><strong>Face ID failure after drops</strong> — The TrueDepth camera system on the XS is delicate and expensive to repair. Components for this generation are increasingly difficult to source.</li>
+          <li><strong>Multiple major repairs needed</strong> — When screen, battery, and back glass all need attention, the combined cost — driven by the OLED panel and frame swap — makes <a href="/trade-in">trading in</a> and upgrading more practical.</li>
+          <li><strong>Repair cost exceeds 50–60% of replacement cost</strong> — As a general guideline, if the total repair estimate exceeds half the cost of a comparable replacement device, upgrading is usually the better investment. This threshold is reached more quickly on the XS than on LCD-equipped models.</li>
         </ul>
-        <p>For a full list of iPhone repair services we offer, see our <a href="/repair/iphone">iPhone repair page</a>.</p>
+        <p>For a full list of iPhone repair services, see our <a href="/repair/iphone">iPhone repair page</a>.</p>
       `,
     },
   },
 
   // ── Common Damage ──
   commonDamage: {
-    heading: "Common iPhone XS Damage and What It Means",
+    heading: "Common iPhone XS Damage and What It Costs",
     frontGlass: {
       heading: "OLED Display Damage",
       contentHtml: `
-        <p>The iPhone XS uses a Super Retina OLED display — the same technology used in Apple's Pro lineup today. When the screen cracks, the entire OLED panel and digitizer assembly must be replaced as one unit. This makes screen repair on the XS more expensive than on LCD-equipped models like the iPhone XR or iPhone SE.</p>
-        <p>OLED damage can also present as colour distortion, green lines, or dead pixels even without visible cracks, typically after drops. These symptoms indicate panel damage that requires full replacement.</p>
-        <p>Aftermarket OLED panels are available at lower price points than OEM, though colour accuracy and brightness may differ slightly. From our experience, most users find aftermarket OLED replacements acceptable for daily use.</p>
+        <p>The iPhone XS uses a 5.8-inch Super Retina OLED display. When the screen cracks, the entire OLED panel and digitizer assembly must be replaced as a single unit — making screen repair on the XS more expensive than on LCD-equipped models like the <a href="/devices/iphone-xr">iPhone XR</a>. The compact screen size does not meaningfully reduce OLED replacement cost compared to the larger <a href="/devices/iphone-xs-max">XS Max</a>.</p>
+        <p>OLED damage can also present as colour distortion, green lines, or dead pixels — sometimes without visible cracks, typically after drops. These symptoms all indicate panel damage that requires full replacement.</p>
+        <p>Quality aftermarket OLED panels are available at lower price points than OEM. From our experience, most users find aftermarket replacements deliver strong results for daily use, though colour accuracy and peak brightness may differ slightly from the original panel.</p>
       `,
     },
     backGlass: {
       heading: "Back Glass Damage",
       contentHtml: `
-        <p>Like the iPhone XR, the XS features back glass that is laser-welded to the stainless steel frame. The XS actually uses a stainless steel frame (versus the XR's aluminium), which makes the device more durable overall but doesn't change the back glass repair process.</p>
-        <p>Back glass repair requires either a full housing swap or careful glass-only removal. The repair is viable and something we perform regularly, but it adds significant cost compared to a screen replacement alone.</p>
-        <p>For devices with back glass damage only, repair is usually worthwhile. For devices with both OLED screen and back glass damage, the combined cost frequently exceeds the device's market value — making a <a href="/trade-in">trade-in</a> the more practical path forward.</p>
+        <p>The iPhone XS features back glass bonded to a stainless steel frame. Unlike the <a href="/devices/iphone-xr">iPhone XR's</a> aluminium construction, the stainless steel frame on the XS requires a full housing swap for back glass repair — a more involved and costly process than glass-only removal.</p>
+        <p>For devices with back glass damage only, repair is usually worthwhile if the rest of the device is in good condition. When combined with OLED screen damage, the total cost frequently exceeds the device's current resale value — making a <a href="/trade-in">trade-in</a> the more practical option.</p>
       `,
     },
   },
@@ -170,13 +174,14 @@ const iPhoneXSData: DeviceHubData = {
   tradeInUpgrade: {
     heading: "Trading In or Upgrading From an iPhone XS",
     contentHtml: `
-      <p>The iPhone XS's trade-in value in 2026 is modest and heavily condition-dependent. The stainless steel frame gives the XS slightly better cosmetic durability than the aluminium XR, which can help preserve trade-in value — but battery health and screen condition remain the primary factors.</p>
-      <p>If you're considering a trade-in, it's worth understanding the difference between <strong>cash trade-ins</strong> and <strong>store credit</strong>. Cash offers are typically lower but provide immediate liquidity. Store credit toward a replacement device is often higher but locks you into a specific retailer or carrier.</p>
+      <p>The iPhone XS holds modest trade-in value in early 2026, heavily dependent on condition. The stainless steel frame gives it slightly better cosmetic durability than the <a href="/devices/iphone-xr">aluminium-framed XR</a>, which can help preserve trade-in value — but battery health and screen condition remain the primary factors.</p>
+      <p>Because the XS no longer receives major iOS updates, its trade-in window is narrowing. Trading in sooner — while the device still has functional value — typically yields a better return than waiting until app compatibility limitations reduce demand further.</p>
       <p>Common upgrade paths from the iPhone XS include:</p>
       <ul>
-        <li><a href="/devices/iphone-12">iPhone 12</a> — First iPhone with 5G, MagSafe, and a significantly longer iOS support window. A popular upgrade for XS users.</li>
-        <li><a href="https://shop.mobiletechlab.ca/products/iphone-12" target="_blank" rel="noopener noreferrer">Certified pre-owned iPhone 12</a> — Strong mid-range value if buying used.</li>
-        <li>Refurbished iPhone 13 or 14 — For users who want a longer support runway with modern camera capabilities.</li>
+        <li>iPhone 12 — First iPhone with 5G, MagSafe, and a significantly longer iOS support window. A natural upgrade for XS users seeking modern connectivity.</li>
+        <li><a href="https://shop.mobiletechlab.ca/products/iphone-12" target="_blank" rel="noopener noreferrer">Certified pre-owned iPhone 12</a> — Strong mid-range value for users buying used.</li>
+        <li><a href="/devices/iphone-11">iPhone 11</a> — Budget-friendly option with LCD (lower repair costs) and active iOS support as of early 2026, though also approaching its support ceiling.</li>
+        <li>Refurbished iPhone 13 or 14 — For users who want a longer support runway with improved camera and battery.</li>
       </ul>
       <p>For current trade-in values based on your device's specific condition, see our <a href="/trade-in">trade-in page</a>.</p>
     `,
@@ -184,29 +189,34 @@ const iPhoneXSData: DeviceHubData = {
 
   // ── Decision Guide ──
   decisionGuide: {
-    heading: "Should You Keep, Fix, or Upgrade Your iPhone XS?",
+    heading: "Repair, Sell, or Upgrade? A Practical Framework",
     contentHtml: `
-      <p>Based on your situation, repairing, trading in, or upgrading may make sense. Here's a practical framework based on common scenarios we see:</p>
+      <p>The iPhone XS repair decision depends on the type of damage, the number of components affected, and how long you plan to keep the device. Use this framework to evaluate your options:</p>
     `,
     scenarios: [
       {
-        condition: "Light damage or battery-only issues",
+        condition: "Battery wear or single minor issue",
         recommendation:
-          "Repair is typically worthwhile. Battery replacement is the single most cost-effective way to extend the life of an iPhone XS. If the screen and body are intact, a new battery restores daily usability at a fraction of replacement cost.",
+          "Repair is typically worthwhile. Battery replacement is the single most cost-effective way to extend the life of an iPhone XS. If the screen and body are intact, a new battery restores daily usability at a fraction of replacement cost — even with the device's limited remaining software support.",
+      },
+      {
+        condition: "OLED screen damage (single issue)",
+        recommendation:
+          "Compare repair cost against resale value before deciding. OLED replacement on the XS costs more than LCD on the iPhone XR. If battery health is acceptable and no other damage is present, screen-only repair can still deliver reasonable value for users who don't need the latest iOS features.",
       },
       {
         condition: "Multiple major repairs needed",
         recommendation:
-          "Trade-in plus upgrade is usually the better value. When OLED screen replacement, back glass, and battery are all needed, the combined repair cost frequently exceeds what the device is worth. Trading in — even in damaged condition — puts cash toward a device with years of remaining support.",
+          "Trading in and upgrading is usually more practical. When OLED screen, back glass, and battery all need replacement, the combined cost — driven by the OLED panel and stainless steel frame swap — frequently exceeds the device's resale value. Trading in puts cash toward a device with longer remaining support.",
       },
       {
         condition: "Data-critical device (even if damaged)",
         recommendation:
-          "Data recovery first, then decide. If the device contains irreplaceable photos, contacts, or documents, prioritize data extraction before making a repair-or-replace decision. We offer motherboard-level recovery for devices that won't power on.",
+          "Prioritize data recovery first, then decide. If the device contains irreplaceable photos, contacts, or documents, extract data before making a repair-or-replace decision. We offer motherboard-level recovery for devices that won't power on.",
       },
     ],
     disclaimer:
-      "Costs, values, and repair outcomes vary based on device condition, parts availability, and market demand.",
+      "Costs, values, and repair outcomes vary based on device condition, parts availability, and market demand. Information reflects conditions as of early 2026.",
   },
 
   // ── Comparisons ──
@@ -221,24 +231,24 @@ const iPhoneXSData: DeviceHubData = {
   faqHeading: "Frequently Asked Questions About the iPhone XS",
   faqs: [
     {
-      question: "How long will the iPhone XS be supported?",
+      question: "Is the iPhone XS still supported in 2026?",
       answerHtml:
-        "The iPhone XS received its last major iOS update with iOS 18. Apple may continue to issue limited security patches for iOS 18, but the device will not receive iOS 19 or later. App compatibility will gradually decline as developers target newer iOS versions. Source: <a href='https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios' target='_blank' rel='noopener noreferrer'>Apple</a>.",
+        "No. As of early 2026, the iPhone XS no longer receives major iOS updates — iOS 18 was its last major release. Apple may issue limited security patches, but new app frameworks and features are no longer available. App compatibility will gradually decline. Source: <a href='https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios' target='_blank' rel='noopener noreferrer'>Apple</a>.",
     },
     {
       question: "Is the iPhone XS worth fixing?",
       answerHtml:
-        "For single-issue repairs like a worn battery, repair is typically worthwhile. However, because the XS uses an OLED display, screen replacement costs more than on LCD models like the iPhone XR. For multiple simultaneous failures (screen + back glass + battery), the combined cost often exceeds the device's market value, making replacement a more practical option.",
+        "For battery replacement or single-component repairs, usually yes — these are cost-effective and extend daily usability. However, OLED screen replacement costs more than on the <a href='/devices/iphone-xr'>LCD-equipped XR</a>. For multi-component damage, the combined cost often exceeds the device's resale value, making upgrading more practical.",
     },
     {
       question: "Can I still use an iPhone XS in 2026?",
       answerHtml:
-        "Yes. The iPhone XS remains functional for calls, messaging, browsing, email, and most social media in 2026. Where users may notice limitations is in newer app requirements and battery longevity. The compact 5.8-inch OLED display still delivers excellent image quality for media consumption. For many use cases, it remains a capable daily driver.",
+        "Yes. The iPhone XS handles calls, messaging, browsing, and most apps in 2026. The compact 5.8-inch OLED display still delivers strong image quality. The main limitations are declining app compatibility and the lack of 5G. Banking and government apps may begin requiring newer iOS versions.",
     },
     {
       question: "What is the resale value of an iPhone XS?",
       answerHtml:
-        "Resale value depends heavily on condition, battery health, storage capacity, and carrier lock status. The XS generally trades slightly below the iPhone XR despite being the higher-tier device, because OLED screen damage is more common and costlier to repair. For a current estimate based on your specific device, use a <a href='/trade-in'>condition-based valuation tool</a>.",
+        "Modest and condition-dependent. The XS generally trades slightly below the <a href='/devices/iphone-xr'>iPhone XR</a> despite its premium build, because OLED screen damage is costlier to repair — reducing buyer demand for damaged units. For a current estimate, see our <a href='/trade-in'>trade-in page</a>.",
     },
   ],
 };
