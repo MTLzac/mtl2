@@ -104,7 +104,8 @@ const PortageLaPrairieServiceArea = () => {
                 Repair Services for Portage la Prairie Customers
               </h1>
               <p className="text-lg text-muted-foreground">
-                While Mobile Tech Lab does not operate a storefront in Portage la Prairie, we proudly 
+                While Mobile Tech Lab does not operate a storefront in{" "}
+                <a href="https://www.city-plap.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Portage la Prairie</a>, we proudly 
                 serve customers across Manitoba—including Portage—with fast, reliable mail-in repairs 
                 through our certified repair centers in Winnipeg and Thompson. We've helped thousands 
                 of Manitobans with same-day repairs, prepaid shipping labels, and fast return shipping.
