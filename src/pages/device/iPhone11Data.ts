@@ -139,7 +139,7 @@ const iPhone11Data: DeviceHubData = {
         <ul>
           <li><strong>Multiple simultaneous repairs</strong> — Even though individual repairs are affordable, when screen, battery, and back glass all need attention, the combined cost can approach the price of a newer refurbished device with years more support.</li>
           <li><strong>Back glass damage requiring frame replacement</strong> — The iPhone 11 uses an aluminium frame with back glass. While repairable, back glass repair adds meaningful cost compared to screen or battery alone.</li>
-          <li><strong>Desire for 5G or MagSafe</strong> — The iPhone 11 does not support 5G networks or MagSafe accessories. If these are important, upgrading to an <a href="/devices/iphone-12">iPhone 12</a> or later is the practical path.</li>
+          <li><strong>Desire for 5G or MagSafe</strong> — The iPhone 11 does not support 5G networks or MagSafe accessories. If these are important, upgrading to an iPhone 12 or later is the practical path.</li>
         </ul>
         <p>For a full list of iPhone repair services we offer, see our <a href="/repair/iphone">iPhone repair page</a>.</p>
       `,
@@ -174,7 +174,7 @@ const iPhone11Data: DeviceHubData = {
       <p>Given its low repair costs and continued software support, many users find that repairing an iPhone 11 and continuing to use it is more economical than trading in and upgrading. The decision typically comes down to whether the user needs features the iPhone 11 lacks (5G, MagSafe, better cameras).</p>
       <p>Common upgrade paths from the iPhone 11 include:</p>
       <ul>
-        <li><a href="/devices/iphone-12">iPhone 12</a> — First iPhone with 5G and MagSafe. The most natural upgrade for iPhone 11 users who want modern connectivity.</li>
+        <li>iPhone 12 — First iPhone with 5G and MagSafe. The most natural upgrade for iPhone 11 users who want modern connectivity.</li>
         <li><a href="https://shop.mobiletechlab.ca/products/iphone-12" target="_blank" rel="noopener noreferrer">Certified pre-owned iPhone 12</a> — Strong value option for users buying used.</li>
         <li>iPhone 13 or 14 — For users who want a longer support runway with improved cameras and battery life.</li>
       </ul>
@@ -248,7 +248,7 @@ const iPhone11Data: DeviceHubData = {
     {
       question: "Does the iPhone 11 support 5G?",
       answerHtml:
-        "No. The iPhone 11 uses a 4G LTE modem. The <a href='/devices/iphone-12'>iPhone 12</a> was the first iPhone to support 5G networks. For most Canadian users, 4G LTE remains sufficient for daily use, but users in areas with strong 5G coverage may benefit from upgrading.",
+        "No. The iPhone 11 uses a 4G LTE modem. The iPhone 12 was the first iPhone to support 5G networks. For most Canadian users, 4G LTE remains sufficient for daily use, but users in areas with strong 5G coverage may benefit from upgrading.",
     },
   ],
 };
