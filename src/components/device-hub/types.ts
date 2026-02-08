@@ -19,6 +19,11 @@ export interface DeviceHubData {
   // ── At a Glance ──
   atAGlance: AtAGlanceField[];
 
+  // ── Viability Scoring (optional — appears between At a Glance and iOS Support) ──
+  viabilityScores?: ViabilityScore[];
+  /** Quick takeaway summary HTML — rendered immediately after the scoring section */
+  quickTakeawayHtml?: string;
+
   // ── iOS Support Status (H2) ──
   iosSupportStatus: HtmlSection & {
     /** H3 — What iOS Version Does the {Device} Support? */
@@ -75,6 +80,15 @@ export interface StatusBadge {
 export interface AtAGlanceField {
   label: string;
   value: string;
+}
+
+export interface ViabilityScore {
+  /** e.g. "Battery Life", "Repair Cost (Relative)" */
+  label: string;
+  /** Integer 1–5 */
+  score: number;
+  /** 1–2 sentence explanation */
+  explanation: string;
 }
 
 export interface HtmlSection {

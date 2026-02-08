@@ -8,6 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { AtAGlanceGrid } from "./AtAGlanceGrid";
 import { DecisionGuideCards } from "./DecisionGuideCards";
 import { DeviceHubTOC } from "./DeviceHubTOC";
+import { ViabilityScoreCards } from "./ViabilityScoreCards";
 import type { DeviceHubData } from "./types";
 
 const statusVariantClasses: Record<string, string> = {
@@ -132,6 +133,27 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
               <AtAGlanceGrid fields={data.atAGlance} />
             </div>
           </section>
+
+          {/* ── Viability Scoring ── */}
+          {data.viabilityScores && data.viabilityScores.length > 0 && (
+            <section id="viability-score" className="border-t border-border py-10 md:py-14">
+              <div className="container mx-auto max-w-3xl px-4">
+                <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+                  {data.deviceName} Repair Viability Score
+                </h2>
+                <ViabilityScoreCards scores={data.viabilityScores} />
+
+                {data.quickTakeawayHtml && (
+                  <div className="mt-8 rounded-lg border border-border bg-muted/50 p-5">
+                    <HtmlBlock
+                      html={data.quickTakeawayHtml}
+                      className="text-sm leading-relaxed text-muted-foreground [&_strong]:text-foreground"
+                    />
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
 
           {/* ── iOS Support Status ── */}
           <section id="ios-support" className="border-t border-border py-10 md:py-14">
