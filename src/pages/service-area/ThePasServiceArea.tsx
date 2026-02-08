@@ -137,13 +137,14 @@
                    In-Person Repair When You're Headed to Thompson
                  </h2>
                </div>
-               <p className="mb-6 text-muted-foreground">
-                 If you're planning a trip to Thompson for work, shopping, or errands, consider
-                 bundling your device repair into the visit. Many customers from The Pas and
-                 surrounding communities do exactly that—drop off your phone in the morning and
-                 pick it up the same day. Same-day repairs are often possible when parts are in
-                 stock.
-               </p>
+                <p className="mb-6 text-muted-foreground">
+                  If you're planning a trip to Thompson for work, shopping, or errands, consider
+                  bundling your device repair into the visit. Many customers from{" "}
+                  <a href="https://townofthepas.ca/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">The Pas</a>{" "}
+                  and surrounding communities do exactly that—drop off your phone in the morning and
+                  pick it up the same day. Same-day repairs are often possible when parts are in
+                  stock.
+                </p>
                <Button asChild>
                  <Link to="/location/thompson">
                    Check our Thompson store hours and location here
