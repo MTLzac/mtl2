@@ -136,8 +136,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Samsung repair costs are primarily driven by the screen—OEM Samsung displays can be surprisingly expensive, especially for flagship S and Z series devices.",
-  priceShock: "Many customers expect Samsung repairs to cost less than iPhone repairs, but premium AMOLED screens often cost the same or more.",
+  costDriver: "Samsung repair costs are primarily driven by the screen—OEM Samsung displays can be surprisingly expensive, especially for flagship S and Z series devices. Samsung provides official guidance on <a href='https://www.samsung.com/ca/support/model/SM-S928WZKAXAC/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>device care and battery maintenance</a> that can help extend the lifespan of your Galaxy phone.",
+  priceShock: "Many customers expect Samsung repairs to cost less than iPhone repairs, but premium AMOLED screens often cost the same or more. As <a href='https://www.ifixit.com/Search?query=samsung+galaxy+repair' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Samsung teardowns</a> demonstrate, foldable devices like the Z Fold and Z Flip have particularly complex internal assemblies that affect repair difficulty and cost.",
   advisory: "If the repair cost approaches the value of your device, we'll explain that clearly so you can make an informed decision.",
   fallback: "When repair doesn't make sense, data recovery is often still an option.",
 };

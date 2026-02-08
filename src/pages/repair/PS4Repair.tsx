@@ -120,8 +120,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "PS4 repair costs depend on the issue—cleaning and thermal paste are affordable, while HDMI port repairs involve board-level soldering and cost more.",
-  priceShock: "Given the PS4's age and current resale value, many customers are surprised when board-level repairs approach or exceed what the console is worth.",
+  costDriver: "PS4 repair costs depend on the issue—cleaning and thermal paste are affordable, while HDMI port repairs involve board-level soldering and cost more. Sony's <a href='https://www.playstation.com/en-ca/support/hardware/ps4/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>PS4 support documentation</a> covers basic troubleshooting and safe mode options that may resolve software-related issues before a physical repair.",
+  priceShock: "Given the PS4's age and current resale value, many customers are surprised when board-level repairs approach or exceed what the console is worth. <a href='https://www.ifixit.com/Search?query=ps4+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's PS4 teardowns</a> explain why HDMI port replacement requires micro-soldering rather than a simple part swap.",
   advisory: "If the repair cost doesn't make financial sense, we'll explain alternatives including trade-in options toward a PS5 or replacement console.",
   fallback: "When repair isn't practical, we may be able to help recover saved game data or transfer your account to a replacement console.",
 };

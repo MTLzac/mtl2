@@ -125,8 +125,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Nintendo Switch repair costs depend on the issue—Joy-Con drift repairs are affordable, while Switch OLED screen replacements cost more due to premium displays.",
-  priceShock: "Many customers are pleasantly surprised that Joy-Con repairs are very affordable, but OLED screen replacements can approach a significant portion of the console's value.",
+  costDriver: "Nintendo Switch repair costs depend on the issue—Joy-Con drift repairs are affordable, while Switch OLED screen replacements cost more due to premium displays. Nintendo's <a href='https://www.nintendo.com/en-ca/consumer-support/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>official consumer support page</a> outlines warranty coverage and troubleshooting steps worth trying before a physical repair.",
+  priceShock: "Many customers are pleasantly surprised that Joy-Con repairs are very affordable, but OLED screen replacements can approach a significant portion of the console's value. <a href='https://www.ifixit.com/Search?query=nintendo+switch+joy-con' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Joy-Con teardowns</a> show why drift is so common—the analog stick module is a known wear component across all Joy-Con revisions.",
   advisory: "If the repair cost doesn't make sense for your Switch's condition, we'll explain alternatives including trade-in options.",
   fallback: "Your game saves are typically backed up to Nintendo Switch Online, so data loss is rarely a concern with Switch repairs.",
 };

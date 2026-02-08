@@ -120,8 +120,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Steam Deck repair costs depend on the issue and model—joystick drift fixes are affordable, while OLED screen replacements cost more due to premium displays.",
-  priceShock: "Many customers are surprised that Steam Deck OLED screen replacements can approach a significant portion of the device's value due to premium display components.",
+  costDriver: "Steam Deck repair costs depend on the issue and model—joystick drift fixes are affordable, while OLED screen replacements cost more due to premium displays. Valve provides official <a href='https://help.steampowered.com/en/faqs/view/69E3-14AF-9764-4C28' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Steam Deck troubleshooting documentation</a> for common software and connectivity issues.",
+  priceShock: "Many customers are surprised that Steam Deck OLED screen replacements can approach a significant portion of the device's value due to premium display components. <a href='https://www.ifixit.com/Search?query=steam+deck+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Steam Deck teardowns</a> highlight Valve's design choices that make joystick and SSD replacements relatively user-friendly compared to other handhelds.",
   advisory: "If the repair cost doesn't make sense for your Steam Deck's condition, we'll explain alternatives clearly.",
   fallback: "Your Steam library and saves are tied to your Steam account and sync to the cloud, so data loss is rarely a concern with Steam Deck repairs.",
 };

@@ -132,8 +132,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Infinix repair costs are generally affordable, matching the brand's budget-friendly positioning—most repairs are proportionally priced to the device's value.",
-  priceShock: "Infinix owners are often pleasantly surprised that repairs are more affordable than other brands, making repair a smart choice over replacement.",
+  costDriver: "Infinix repair costs are generally affordable, matching the brand's budget-friendly positioning—most repairs are proportionally priced to the device's value. Infinix's <a href='https://www.infinixmobility.com/support' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>official support page</a> provides model-specific troubleshooting and warranty information.",
+  priceShock: "Infinix owners are often pleasantly surprised that repairs are more affordable than other brands, making repair a smart choice over replacement. <a href='https://www.ifixit.com/Search?query=phone+repair+guide' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>General repair guides from iFixit</a> can help users understand what's involved in common smartphone repairs like screen and battery replacements.",
   advisory: "For budget Infinix devices, repair almost always makes financial sense. We'll explain costs clearly so you can decide.",
   fallback: "When repair doesn't make sense, data recovery is often still possible to retrieve your photos and files.",
 };

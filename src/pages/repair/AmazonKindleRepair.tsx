@@ -129,8 +129,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Kindle and Fire tablet repair costs depend on the device—E-Ink screen repairs can be more expensive due to specialized displays, while Fire tablets are generally more affordable.",
-  priceShock: "Many customers are surprised that an E-Ink screen replacement can approach the cost of a new Kindle, especially for older models that have depreciated.",
+  costDriver: "Kindle and Fire tablet repair costs depend on the device—E-Ink screen repairs can be more expensive due to specialized displays, while Fire tablets are generally more affordable. Amazon's <a href='https://www.amazon.ca/gp/help/customer/display.html?nodeId=GKMQC26VQQMM8XSW' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>device support pages</a> cover troubleshooting steps and warranty information for Kindle and Fire devices.",
+  priceShock: "Many customers are surprised that an E-Ink screen replacement can approach the cost of a new Kindle, especially for older models that have depreciated. <a href='https://www.ifixit.com/Search?query=kindle+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Kindle teardowns</a> illustrate why E-Ink displays are delicate and costly to replace compared to standard LCD screens.",
   advisory: "If the repair cost approaches your device's value, we'll explain that clearly so you can make an informed decision.",
   fallback: "When repair doesn't make sense, your content is typically tied to your Amazon account and will sync to a new device.",
 };

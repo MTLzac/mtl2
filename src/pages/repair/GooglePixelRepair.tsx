@@ -130,8 +130,8 @@ const FAQS = [
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Walk-ins welcome or book online.";
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Pixel repair costs are driven by parts availability and quality—Google uses premium OLED displays that can be expensive to source outside of authorized channels.",
-  priceShock: "Many customers are surprised that Pixel screens can cost as much as or more than iPhone screens, especially for Pro and Fold models.",
+  costDriver: "Pixel repair costs are driven by parts availability and quality—Google uses premium OLED displays that can be expensive to source outside of authorized channels. Google's <a href='https://support.google.com/googlepixelphone/answer/6090612' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Pixel phone help center</a> covers troubleshooting steps and battery health checks that may resolve issues before a repair is needed.",
+  priceShock: "Many customers are surprised that Pixel screens can cost as much as or more than iPhone screens, especially for Pro and Fold models. <a href='https://www.ifixit.com/Search?query=google+pixel+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Pixel teardowns</a> show that Google has improved repairability in recent generations, but older models remain tightly integrated.",
   advisory: "If the repair cost approaches the value of your Pixel, we'll explain your options clearly before proceeding.",
   fallback: "When repair doesn't make financial sense, data recovery is often still possible.",
 };

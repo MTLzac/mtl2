@@ -146,8 +146,8 @@ const FAQS = [
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Xiaomi repair costs vary widely—budget Redmi devices are affordable to repair, while flagship Xiaomi and POCO models with premium displays cost more.",
-  priceShock: "Many customers expect Xiaomi repairs to be cheap, but flagship models can cost as much as Samsung or iPhone repairs due to premium parts.",
+  costDriver: "Xiaomi repair costs vary widely—budget Redmi devices are affordable to repair, while flagship Xiaomi and POCO models with premium displays cost more. Xiaomi's <a href='https://www.mi.com/global/support' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>global support portal</a> provides battery health guidance and troubleshooting for HyperCharge and connectivity issues.",
+  priceShock: "Many customers expect Xiaomi repairs to be cheap, but flagship models can cost as much as Samsung or iPhone repairs due to premium parts. <a href='https://www.ifixit.com/Search?query=xiaomi+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Xiaomi teardowns</a> reveal that while Redmi and POCO budget devices are relatively straightforward to repair, flagship models use adhesive-heavy construction similar to Samsung and Apple.",
   advisory: "If the repair cost approaches your device's value, we'll explain that clearly so you can make an informed decision.",
   fallback: "When repair doesn't make sense, data recovery is often still possible to retrieve your files.",
 };

@@ -141,8 +141,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Oppo and Realme repair costs vary by model—budget A-series devices are affordable, while Find X flagships and foldables cost more due to premium components.",
-  priceShock: "Many customers are surprised that flagship Oppo repairs can cost as much as Samsung or iPhone repairs, especially for Find X and N-series foldables.",
+  costDriver: "Oppo and Realme repair costs vary by model—budget A-series devices are affordable, while Find X flagships and foldables cost more due to premium components. Oppo's <a href='https://support.oppo.com/ca/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Canadian support centre</a> provides model-specific troubleshooting and SUPERVOOC charging diagnostics.",
+  priceShock: "Many customers are surprised that flagship Oppo repairs can cost as much as Samsung or iPhone repairs, especially for Find X and N-series foldables. <a href='https://www.ifixit.com/Search?query=oppo+find+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Oppo teardowns</a> reveal the engineering complexity of SUPERVOOC charging systems and foldable hinge mechanisms.",
   advisory: "If the repair cost doesn't make sense for your device's value, we'll explain alternatives clearly.",
   fallback: "When repair isn't practical, data recovery is often still possible to retrieve your files.",
 };

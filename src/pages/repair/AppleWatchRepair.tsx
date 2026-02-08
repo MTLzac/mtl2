@@ -102,8 +102,8 @@ const FAQS = [
 const SERVICE_AREA_NOTE = "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.";
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Apple Watch repair costs depend on the model—newer Series and Ultra models have more expensive OLED displays, while older models are more affordable to repair.",
-  priceShock: "Many customers are surprised that an Apple Watch screen can cost nearly as much as a new SE model, especially for larger or Ultra variants.",
+  costDriver: "Apple Watch repair costs depend on the model—newer Series and Ultra models have more expensive OLED displays, while older models are more affordable to repair. Apple's <a href='https://support.apple.com/en-ca/108055' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Apple Watch battery health documentation</a> explains how to check your watch's maximum capacity and when replacement is recommended.",
+  priceShock: "Many customers are surprised that an Apple Watch screen can cost nearly as much as a new SE model, especially for larger or Ultra variants. <a href='https://www.ifixit.com/Search?query=apple+watch+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Apple Watch teardowns</a> reveal how the compact, sealed design makes screen replacement a precision-intensive process.",
   advisory: "If the repair cost approaches the value of your Apple Watch, we'll explain your options so you can make the best decision.",
   fallback: "Unlike phones, Apple Watch data is typically synced to your iPhone, so data loss is rarely a concern with watch repairs.",
 };

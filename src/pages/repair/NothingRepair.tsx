@@ -121,8 +121,8 @@ const FAQS = [
 ];
 
 const PRICING_MICRO_COPY = {
-  costDriver: "Nothing Phone repair costs depend on the model and parts availability—as a newer brand, some components require specialty sourcing.",
-  priceShock: "Many customers are surprised that Nothing repairs can cost as much as other premium Android devices due to unique parts and limited supply.",
+  costDriver: "Nothing Phone repair costs depend on the model and parts availability—as a newer brand, some components require specialty sourcing. Nothing's <a href='https://nothing.tech/pages/support' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>official support page</a> provides warranty information and device care guidance.",
+  priceShock: "Many customers are surprised that Nothing repairs can cost as much as other premium Android devices due to unique parts and limited supply. <a href='https://www.ifixit.com/Search?query=nothing+phone+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Nothing Phone teardowns</a> reveal how the transparent design and Glyph LED system add complexity to screen and back panel repairs.",
   advisory: "If the repair cost doesn't make sense for your device's value, we'll explain alternatives clearly.",
   fallback: "When repair isn't practical, data recovery is often still possible to retrieve your files.",
 };
