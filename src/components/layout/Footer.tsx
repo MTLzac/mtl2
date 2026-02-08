@@ -160,6 +160,11 @@ export const Footer = () => {
                   iPhone XR
                 </Link>
               </li>
+              <li>
+                <Link to="/devices/iphone-xs" className="text-muted-foreground hover:text-primary">
+                  iPhone XS
+                </Link>
+              </li>
             </ul>
           </div>
 

@@ -9,6 +9,9 @@ import type { DeviceHubData } from "./types";
 export const DeviceHubTOC = ({ data }: { data: DeviceHubData }) => {
   const items = [
     { id: "at-a-glance", label: "At a Glance" },
+    ...(data.viabilityScores && data.viabilityScores.length > 0
+      ? [{ id: "viability-score", label: "Viability Score" }]
+      : []),
     { id: "ios-support", label: "iOS Support" },
     { id: "update-deprecation", label: "After Updates Stop" },
     { id: "worth-fixing", label: "Worth Fixing?" },
