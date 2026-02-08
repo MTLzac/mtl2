@@ -1,41 +1,75 @@
-/** Shared types for the Device Hub page template */
+/** Shared types for the Device Hub page template (v2 — content-brief aligned) */
 
 export interface DeviceHubData {
-  // SEO
+  // ── SEO ──
   metaTitle: string;
   metaDescription: string;
   canonicalUrl: string;
   slug: string;
 
-  // Hero
+  // ── Hero ──
   deviceName: string;
+  h1: string;
   statusBadge: StatusBadge;
-  heroImages?: DeviceImages;
+  heroImage?: string;
+  heroImageAlt?: string;
+  /** HTML paragraph displayed immediately after H1 — featured-snippet style */
+  featuredSnippetHtml: string;
 
-  // At a Glance
+  // ── At a Glance ──
   atAGlance: AtAGlanceField[];
 
-  // Content sections
-  everydayPerformance: ContentSection;
-  batteryAndAging: ContentSection;
-  camera: ContentSection;
-  iosSupport: IosSupportSection;
-  repairViability: RepairViabilitySection;
-  resaleContext: ContentSection;
-  decisionFraming: DecisionScenario[];
+  // ── iOS Support Status (H2) ──
+  iosSupportStatus: HtmlSection & {
+    /** H3 — What iOS Version Does the {Device} Support? */
+    whatVersion: HtmlSubSection;
+  };
+
+  // ── What Happens When Updates Stop (H2) ──
+  updateDeprecation: HtmlSection & {
+    /** H3 — App Compatibility Issues Canadian Users May Notice */
+    appCompatibility: HtmlSubSection;
+  };
+
+  // ── Is the {Device} Worth Fixing? (H2) ──
+  worthFixing: HtmlSection & {
+    /** H3 — When Repairing Usually Makes Sense */
+    whenRepairMakesSense: HtmlSubSection;
+    /** H3 — When It's Often Better to Sell or Upgrade */
+    whenUpgradeIsBetter: HtmlSubSection;
+  };
+
+  // ── Common Damage (H2) ──
+  commonDamage: {
+    heading: string;
+    frontGlass: DamageSubSection;
+    backGlass: DamageSubSection;
+  };
+
+  // ── Trading In or Upgrading (H2) ──
+  tradeInUpgrade: HtmlSection;
+
+  // ── Decision Guide (H2) ──
+  decisionGuide: {
+    heading: string;
+    contentHtml: string;
+    scenarios: DecisionScenario[];
+    disclaimer: string;
+  };
+
+  // ── Comparison Entry Points ──
   comparisons: ComparisonLink[];
+
+  // ── FAQs ──
+  faqHeading: string;
   faqs: DeviceHubFAQ[];
 }
+
+// ── Supporting types ──
 
 export interface StatusBadge {
   label: string;
   variant: "supported" | "aging" | "deprecated";
-}
-
-export interface DeviceImages {
-  front?: string;
-  back?: string;
-  alt: string;
 }
 
 export interface AtAGlanceField {
@@ -43,30 +77,22 @@ export interface AtAGlanceField {
   value: string;
 }
 
-export interface ContentSection {
-  paragraphs: string[];
-  bullets?: string[];
+export interface HtmlSection {
+  heading: string;
+  /** Rich HTML content — supports internal links, outbound links, lists */
+  contentHtml: string;
 }
 
-export interface IosSupportSection extends ContentSection {
-  currentVersion: string;
-  deprecationStatus: string;
-  affectedApps?: string[];
+export interface HtmlSubSection {
+  heading: string;
+  contentHtml: string;
 }
 
-export interface RepairViabilitySection extends ContentSection {
-  commonRepairs: CommonRepair[];
-  images?: {
-    frontDamage?: string;
-    frontDamageAlt?: string;
-    backDamage?: string;
-    backDamageAlt?: string;
-  };
-}
-
-export interface CommonRepair {
-  name: string;
-  description: string;
+export interface DamageSubSection {
+  heading: string;
+  contentHtml: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 export interface DecisionScenario {
@@ -81,5 +107,6 @@ export interface ComparisonLink {
 
 export interface DeviceHubFAQ {
   question: string;
-  answer: string;
+  /** HTML answer — supports links for LLM citability */
+  answerHtml: string;
 }

@@ -13,8 +13,6 @@ import {
 import { ArrowRight } from "lucide-react";
 import type { DeviceHubData } from "./types";
 
-const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
-
 const statusVariantClasses: Record<string, string> = {
   supported:
     "border-transparent bg-success/15 text-success hover:bg-success/15",
@@ -23,6 +21,14 @@ const statusVariantClasses: Record<string, string> = {
   deprecated:
     "border-transparent bg-destructive/15 text-destructive hover:bg-destructive/15",
 };
+
+/** Renders an HTML content block with dangerouslySetInnerHTML */
+const HtmlBlock = ({ html, className }: { html: string; className?: string }) => (
+  <div
+    className={className ?? "prose-device text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-primary/80 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1 [&_ul]:mt-3 [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:space-y-1 [&_ol]:mt-3 [&_p]:mb-4 [&_p:last-child]:mb-0"}
+    dangerouslySetInnerHTML={{ __html: html }}
+  />
+);
 
 const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
   const breadcrumbs = [
@@ -40,7 +46,10 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
     mainEntity: data.faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
-      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answerHtml.replace(/<[^>]*>/g, ""),
+      },
     })),
   };
 
@@ -62,14 +71,23 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           {/* ── Hero ── */}
           <section className="border-b border-border bg-secondary/30 py-12 md:py-16">
             <div className="container mx-auto px-4">
-              <nav className="mb-6 text-sm text-muted-foreground" aria-label="Breadcrumb">
+              <nav
+                className="mb-6 text-sm text-muted-foreground"
+                aria-label="Breadcrumb"
+              >
                 <ol className="flex flex-wrap items-center gap-1.5">
-                  <li><Link to="/" className="hover:text-primary">Home</Link></li>
+                  <li>
+                    <Link to="/" className="hover:text-primary">
+                      Home
+                    </Link>
+                  </li>
                   <li className="before:mx-1.5 before:content-['/']">
                     <span>Devices</span>
                   </li>
                   <li className="before:mx-1.5 before:content-['/']">
-                    <span className="text-foreground font-medium">{data.deviceName}</span>
+                    <span className="font-medium text-foreground">
+                      {data.deviceName}
+                    </span>
                   </li>
                 </ol>
               </nav>
@@ -84,35 +102,24 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                     </Badge>
                   </div>
 
-                  <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
-                    {data.deviceName}: Repair, iOS&nbsp;Support &amp; Value in 2026
+                  <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+                    {data.h1}
                   </h1>
 
-                  <p className="text-lg text-muted-foreground">
-                    A factual overview of the {data.deviceName} in 2026 — covering
-                    real-world performance, software lifespan, repair viability,
-                    and upgrade considerations.
-                  </p>
+                  <HtmlBlock
+                    html={data.featuredSnippetHtml}
+                    className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-primary/80 [&_p]:mb-4 [&_p:last-child]:mb-0"
+                  />
                 </div>
 
-                {data.heroImages && (
-                  <div className="hidden items-center justify-center gap-6 lg:flex">
-                    {data.heroImages.front && (
-                      <img
-                        src={data.heroImages.front}
-                        alt={`${data.heroImages.alt} — front view`}
-                        className="h-80 w-auto object-contain"
-                        loading="eager"
-                      />
-                    )}
-                    {data.heroImages.back && (
-                      <img
-                        src={data.heroImages.back}
-                        alt={`${data.heroImages.alt} — back view`}
-                        className="h-80 w-auto object-contain"
-                        loading="eager"
-                      />
-                    )}
+                {data.heroImage && (
+                  <div className="hidden items-center justify-center lg:flex">
+                    <img
+                      src={data.heroImage}
+                      alt={data.heroImageAlt || `${data.deviceName}`}
+                      className="h-80 w-auto object-contain"
+                      loading="eager"
+                    />
                   </div>
                 )}
               </div>
@@ -129,7 +136,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                 <TableBody>
                   {data.atAGlance.map((field) => (
                     <TableRow key={field.label}>
-                      <TableCell className="font-medium text-muted-foreground w-1/3">
+                      <TableCell className="w-1/3 font-medium text-muted-foreground">
                         {field.label}
                       </TableCell>
                       <TableCell>{field.value}</TableCell>
@@ -140,253 +147,158 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
             </div>
           </section>
 
-          {/* ── Everyday Performance ── */}
+          {/* ── iOS Support Status ── */}
           <section className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-6 text-2xl font-bold md:text-3xl">
-                Everyday Performance
+                {data.iosSupportStatus.heading}
               </h2>
-              {data.everydayPerformance.paragraphs.map((p, i) => (
-                <p key={i} className="mb-4 text-muted-foreground leading-relaxed">
-                  {p}
-                </p>
-              ))}
-              {data.everydayPerformance.bullets && (
-                <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-                  {data.everydayPerformance.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </section>
+              <HtmlBlock html={data.iosSupportStatus.contentHtml} />
 
-          {/* ── Battery Life & Aging ── */}
-          <section className="border-t border-border py-10 md:py-14">
-            <div className="container mx-auto max-w-3xl px-4">
-              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
-                Battery Life &amp; Aging Considerations
-              </h2>
-              {data.batteryAndAging.paragraphs.map((p, i) => (
-                <p key={i} className="mb-4 text-muted-foreground leading-relaxed">
-                  {p}
-                </p>
-              ))}
-              {data.batteryAndAging.bullets && (
-                <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-                  {data.batteryAndAging.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </section>
-
-          {/* ── Camera Capabilities ── */}
-          <section className="border-t border-border py-10 md:py-14">
-            <div className="container mx-auto max-w-3xl px-4">
-              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
-                Camera Capabilities (Practical Use)
-              </h2>
-              {data.camera.paragraphs.map((p, i) => (
-                <p key={i} className="mb-4 text-muted-foreground leading-relaxed">
-                  {p}
-                </p>
-              ))}
-              {data.camera.bullets && (
-                <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-                  {data.camera.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </section>
-
-          {/* ── iOS Support & App Compatibility ── */}
-          <section className="border-t border-border py-10 md:py-14">
-            <div className="container mx-auto max-w-3xl px-4">
-              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
-                iOS Support &amp; App Compatibility
-              </h2>
-
-              <div className="mb-6 rounded-lg border border-border bg-card p-4">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <p className="text-sm font-medium text-muted-foreground">Current iOS Version</p>
-                    <p className="text-lg font-semibold">{data.iosSupport.currentVersion}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-muted-foreground">Deprecation Status</p>
-                    <p className="text-lg font-semibold">{data.iosSupport.deprecationStatus}</p>
-                  </div>
-                </div>
-              </div>
-
-              {data.iosSupport.paragraphs.map((p, i) => (
-                <p key={i} className="mb-4 text-muted-foreground leading-relaxed">
-                  {p}
-                </p>
-              ))}
-
-              {data.iosSupport.affectedApps && data.iosSupport.affectedApps.length > 0 && (
-                <div className="mt-4">
-                  <h3 className="mb-3 text-lg font-semibold">
-                    Apps That May Limit Support
-                  </h3>
-                  <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
-                    {data.iosSupport.affectedApps.map((app, i) => (
-                      <li key={i}>{app}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </section>
-
-          {/* ── Repair Viability ── */}
-          <section className="border-t border-border py-10 md:py-14">
-            <div className="container mx-auto max-w-3xl px-4">
-              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
-                Repair Viability &amp; Common Issues
-              </h2>
-
-              {data.repairViability.paragraphs.map((p, i) => (
-                <p key={i} className="mb-4 text-muted-foreground leading-relaxed">
-                  {p}
-                </p>
-              ))}
-
-              {data.repairViability.commonRepairs.length > 0 && (
-                <div className="my-6">
-                  <h3 className="mb-4 text-lg font-semibold">Common Repairs</h3>
-                  <div className="space-y-3">
-                    {data.repairViability.commonRepairs.map((repair, i) => (
-                      <div key={i} className="rounded-lg border border-border bg-card p-4">
-                        <p className="font-medium">{repair.name}</p>
-                        <p className="mt-1 text-sm text-muted-foreground">{repair.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {data.repairViability.images && (
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {data.repairViability.images.frontDamage && (
-                    <figure className="overflow-hidden rounded-lg border border-border">
-                      <img
-                        src={data.repairViability.images.frontDamage}
-                        alt={data.repairViability.images.frontDamageAlt || "Front glass damage example"}
-                        className="w-full object-cover"
-                        loading="lazy"
-                      />
-                      <figcaption className="bg-card p-3 text-center text-sm text-muted-foreground">
-                        Front glass damage example
-                      </figcaption>
-                    </figure>
-                  )}
-                  {data.repairViability.images.backDamage && (
-                    <figure className="overflow-hidden rounded-lg border border-border">
-                      <img
-                        src={data.repairViability.images.backDamage}
-                        alt={data.repairViability.images.backDamageAlt || "Back glass damage example"}
-                        className="w-full object-cover"
-                        loading="lazy"
-                      />
-                      <figcaption className="bg-card p-3 text-center text-sm text-muted-foreground">
-                        Back glass damage example
-                      </figcaption>
-                    </figure>
-                  )}
-                </div>
-              )}
-
-              {/* Soft CTA after repair section */}
-              <div className="mt-8 rounded-lg border border-border bg-secondary/30 p-5">
-                <p className="text-sm text-muted-foreground">
-                  Need a repair assessment?{" "}
-                  <a
-                    href={REPAIR_WIDGET_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-medium text-primary hover:underline"
-                  >
-                    Get a free quote
-                  </a>{" "}
-                  or{" "}
-                  <Link
-                    to={`/repair/iphone`}
-                    className="font-medium text-primary hover:underline"
-                  >
-                    see our iPhone repair services
-                  </Link>
-                  .
-                </p>
+              <div className="mt-8">
+                <h3 className="mb-4 text-xl font-semibold">
+                  {data.iosSupportStatus.whatVersion.heading}
+                </h3>
+                <HtmlBlock html={data.iosSupportStatus.whatVersion.contentHtml} />
               </div>
             </div>
           </section>
 
-          {/* ── Resale Value & Trade-In Context ── */}
+          {/* ── What Happens When Updates Stop ── */}
           <section className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-6 text-2xl font-bold md:text-3xl">
-                Resale Value &amp; Trade-In Context
+                {data.updateDeprecation.heading}
               </h2>
-              {data.resaleContext.paragraphs.map((p, i) => (
-                <p key={i} className="mb-4 text-muted-foreground leading-relaxed">
-                  {p}
-                </p>
-              ))}
-              {data.resaleContext.bullets && (
-                <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
-                  {data.resaleContext.bullets.map((b, i) => (
-                    <li key={i}>{b}</li>
-                  ))}
-                </ul>
-              )}
+              <HtmlBlock html={data.updateDeprecation.contentHtml} />
 
-              {/* Soft CTA after resale section */}
-              <div className="mt-8 rounded-lg border border-border bg-secondary/30 p-5">
-                <p className="text-sm text-muted-foreground">
-                  Curious what your device is worth?{" "}
-                  <Link
-                    to="/trade-in"
-                    className="font-medium text-primary hover:underline"
-                  >
-                    Check trade-in value
-                  </Link>{" "}
-                  or{" "}
-                  <Link
-                    to="/devices"
-                    className="font-medium text-primary hover:underline"
-                  >
-                    compare with a newer model
-                  </Link>
-                  .
-                </p>
+              <div className="mt-8">
+                <h3 className="mb-4 text-xl font-semibold">
+                  {data.updateDeprecation.appCompatibility.heading}
+                </h3>
+                <HtmlBlock
+                  html={data.updateDeprecation.appCompatibility.contentHtml}
+                />
               </div>
             </div>
           </section>
 
-          {/* ── Decision Framing ── */}
+          {/* ── Is It Worth Fixing? ── */}
           <section className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-6 text-2xl font-bold md:text-3xl">
-                What Usually Makes Sense for This Device
+                {data.worthFixing.heading}
               </h2>
-              <p className="mb-6 text-muted-foreground">
-                The best path depends on the device's condition, your budget, and what you
-                need it to do. Here's a general framework based on common scenarios we see.
-              </p>
-              <div className="space-y-4">
-                {data.decisionFraming.map((scenario, i) => (
-                  <div key={i} className="rounded-lg border border-border bg-card p-5">
-                    <p className="font-medium text-foreground">{scenario.condition}</p>
-                    <p className="mt-2 text-muted-foreground">{scenario.recommendation}</p>
+              <HtmlBlock html={data.worthFixing.contentHtml} />
+
+              <div className="mt-8">
+                <h3 className="mb-4 text-xl font-semibold">
+                  {data.worthFixing.whenRepairMakesSense.heading}
+                </h3>
+                <HtmlBlock
+                  html={data.worthFixing.whenRepairMakesSense.contentHtml}
+                />
+              </div>
+
+              <div className="mt-8">
+                <h3 className="mb-4 text-xl font-semibold">
+                  {data.worthFixing.whenUpgradeIsBetter.heading}
+                </h3>
+                <HtmlBlock
+                  html={data.worthFixing.whenUpgradeIsBetter.contentHtml}
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* ── Common Damage ── */}
+          <section className="border-t border-border py-10 md:py-14">
+            <div className="container mx-auto max-w-3xl px-4">
+              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+                {data.commonDamage.heading}
+              </h2>
+
+              {/* Front Glass */}
+              <div className="mb-10">
+                <h3 className="mb-4 text-xl font-semibold">
+                  {data.commonDamage.frontGlass.heading}
+                </h3>
+                {data.commonDamage.frontGlass.image && (
+                  <div className="mb-4">
+                    <img
+                      src={data.commonDamage.frontGlass.image}
+                      alt={
+                        data.commonDamage.frontGlass.imageAlt ||
+                        "Front glass damage"
+                      }
+                      className="w-full max-w-md rounded-lg"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <HtmlBlock html={data.commonDamage.frontGlass.contentHtml} />
+              </div>
+
+              {/* Back Glass */}
+              <div>
+                <h3 className="mb-4 text-xl font-semibold">
+                  {data.commonDamage.backGlass.heading}
+                </h3>
+                {data.commonDamage.backGlass.image && (
+                  <div className="mb-4">
+                    <img
+                      src={data.commonDamage.backGlass.image}
+                      alt={
+                        data.commonDamage.backGlass.imageAlt ||
+                        "Back glass damage"
+                      }
+                      className="w-full max-w-md rounded-lg"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                <HtmlBlock html={data.commonDamage.backGlass.contentHtml} />
+              </div>
+            </div>
+          </section>
+
+          {/* ── Trading In or Upgrading ── */}
+          <section className="border-t border-border py-10 md:py-14">
+            <div className="container mx-auto max-w-3xl px-4">
+              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+                {data.tradeInUpgrade.heading}
+              </h2>
+              <HtmlBlock html={data.tradeInUpgrade.contentHtml} />
+            </div>
+          </section>
+
+          {/* ── Decision Guide ── */}
+          <section className="border-t border-border py-10 md:py-14">
+            <div className="container mx-auto max-w-3xl px-4">
+              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+                {data.decisionGuide.heading}
+              </h2>
+              <HtmlBlock html={data.decisionGuide.contentHtml} />
+
+              <div className="mt-6 space-y-4">
+                {data.decisionGuide.scenarios.map((scenario, i) => (
+                  <div
+                    key={i}
+                    className="rounded-lg border border-border bg-card p-5"
+                  >
+                    <p className="font-medium text-foreground">
+                      {scenario.condition}
+                    </p>
+                    <p className="mt-2 text-muted-foreground">
+                      {scenario.recommendation}
+                    </p>
                   </div>
                 ))}
               </div>
+
+              <p className="mt-6 text-sm italic text-muted-foreground">
+                {data.decisionGuide.disclaimer}
+              </p>
             </div>
           </section>
 
@@ -421,15 +333,15 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           <section className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
               <h2 className="mb-8 text-2xl font-bold md:text-3xl">
-                Frequently Asked Questions
+                {data.faqHeading}
               </h2>
               <div className="space-y-8">
                 {data.faqs.map((faq, i) => (
                   <article key={i}>
-                    <h3 className="mb-2 text-lg font-semibold">{faq.question}</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {faq.answer}
-                    </p>
+                    <h3 className="mb-2 text-lg font-semibold">
+                      {faq.question}
+                    </h3>
+                    <HtmlBlock html={faq.answerHtml} />
                   </article>
                 ))}
               </div>
