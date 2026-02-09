@@ -27,7 +27,7 @@ export const WaterDamageHero = () => {
           </h1>
           
           <p className="text-lg text-muted-foreground">
-            Liquid damage is unpredictable. We focus on <strong>honest diagnostics and data recovery first</strong> — with no false promises.
+            <a href="https://support.apple.com/en-ca/102249" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Liquid damage</a> is unpredictable. We focus on <strong>honest diagnostics and data recovery first</strong> — with no false promises.
           </p>
           
           <p className="text-sm text-muted-foreground">
