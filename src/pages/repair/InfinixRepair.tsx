@@ -147,7 +147,7 @@ const InfinixRepair = () => {
       slug="infinix"
       deviceName="Infinix"
       tagline="Infinix Repair Specialists in Winnipeg"
-      heroDescription="Can't find Infinix repair in Winnipeg? We're one of the few shops serving the Infinix community. Note, Hot, Zero, or GT gaming series—we provide affordable repairs for budget-friendly devices."
+      heroDescription={<>Can't find <a href="https://www.infinixmobility.com/care/repair" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Infinix repair</a> in Winnipeg? We're one of the few shops serving the Infinix community. Note, Hot, Zero, or GT gaming series—we provide affordable repairs for budget-friendly devices.</>}
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
