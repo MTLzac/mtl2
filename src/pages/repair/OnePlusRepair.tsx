@@ -145,7 +145,7 @@ const OnePlusRepair = () => {
       slug="oneplus"
       deviceName="OnePlus"
       tagline="OnePlus Phone Repair in Winnipeg"
-      heroDescription="From the flagship OnePlus 13 to the innovative OnePlus Open foldable, we provide expert repairs for all OnePlus devices in Winnipeg. Warp Charge issues, screen damage, battery problems – we're your local OnePlus specialists. Because many customers don't have a baseline for what a OnePlus repair should cost, we'll always explain options clearly before moving forward."
+      heroDescription={<>From the flagship OnePlus 13 to the innovative OnePlus Open foldable, we provide expert repairs for all OnePlus devices in Winnipeg. Warp Charge issues, screen damage, battery problems – we're your local OnePlus specialists. Because many customers don't have a baseline for <a href="https://www.oneplus.com/ca_en/support/repair-pricing/details" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">what a OnePlus repair should cost</a>, we'll always explain options clearly before moving forward.</>}
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}

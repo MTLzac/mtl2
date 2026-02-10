@@ -27,7 +27,7 @@ interface RepairLandingTemplateProps {
   // Hero
   deviceName: string;
   tagline: string;
-  heroDescription: string;
+  heroDescription: React.ReactNode;
   heroImage?: string;
   hideHeroImage?: boolean;
   
