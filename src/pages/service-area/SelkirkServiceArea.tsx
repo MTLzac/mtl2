@@ -104,7 +104,7 @@ const SelkirkServiceArea = () => {
                 Phone & Device Repair for Selkirk, MB
               </h1>
               <p className="text-lg text-muted-foreground">
-                Need your phone, tablet, or gaming console repaired in Selkirk? We've got you covered. 
+                Need your phone, tablet, or gaming console repaired in <a href="https://www.myselkirk.ca/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Selkirk</a>? We've got you covered. 
                 Mobile Tech Lab offers fast, professional mail-in repair services through our certified 
                 repair centers in Winnipeg and Thompson. We've served thousands of customers across 
                 Manitoba—including Selkirk and the Interlake region—with trusted iPhone repair, 
