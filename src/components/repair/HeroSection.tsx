@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 interface HeroSectionProps {
   deviceName: string;
   tagline: string;
-  description: string;
+  description: React.ReactNode;
   heroImage?: string;
   hideImage?: boolean;
   quickFacts?: QuickFactsData;
