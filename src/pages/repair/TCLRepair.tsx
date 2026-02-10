@@ -148,7 +148,7 @@ const TCLRepair = () => {
       slug="tcl"
       deviceName="TCL"
       tagline="TCL Device Repair in Winnipeg"
-      heroDescription="TCL makes great budget phones, and we're here to keep them running in Winnipeg. From the TCL 50 series to tablets, we provide affordable repairs for all TCL devices at prices that make sense. Most repairs are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll always explain options clearly before moving forward."
+      heroDescription={<>TCL makes great budget phones, and we're here to keep them running in Winnipeg. From the TCL 50 series to tablets, we provide <a href="https://support.tcl.com/us/self-repair-options" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">affordable repairs for all TCL devices</a> at prices that make sense. Most repairs are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll always explain options clearly before moving forward.</>}
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
