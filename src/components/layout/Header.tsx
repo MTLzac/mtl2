@@ -55,10 +55,12 @@ const REPAIR_CATEGORIES = [
     title: "Gaming Consoles",
     icon: Gamepad2,
     items: [
+      { name: "All Console Repairs", href: "/consoles" },
       { name: "Nintendo Switch", href: "/repair/nintendo-switch" },
       { name: "PlayStation 5", href: "/repair/playstation-5" },
       { name: "PlayStation 4", href: "/repair/playstation-4" },
       { name: "Xbox", href: "/repair/xbox" },
+      { name: "Steam Deck", href: "/repair/steam-deck" },
     ],
   },
   {

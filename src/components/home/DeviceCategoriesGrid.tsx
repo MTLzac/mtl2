@@ -70,7 +70,7 @@ const SUPPORTING_SERVICES: ServiceCard[] = [
     title: "Console Repair",
     description: "HDMI ports, overheating, and power issues for PS5, PS4, Xbox, and Nintendo Switch.",
     cta: "Fix my console",
-    href: "/repair/ps5",
+    href: "/consoles",
     icon: Gamepad2,
   },
 ];
