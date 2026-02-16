@@ -157,6 +157,11 @@
   
   <!-- Gaming Console Repair Pages -->
   <url>
+    <loc>https://mobiletechlab.ca/consoles</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mobiletechlab.ca/repair/nintendo-switch</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

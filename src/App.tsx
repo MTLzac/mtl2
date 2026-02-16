@@ -56,6 +56,7 @@ const CatS62ChargingPortRepair = lazy(() => import("./pages/repair/CatS62Chargin
 const BlackMagicHDMIRepair = lazy(() => import("./pages/repair/BlackMagicHDMIRepair"));
 
 // Lazy-loaded Console Repair Pages
+const ConsoleRepairHub = lazy(() => import("./pages/repair/ConsoleRepairHub"));
 const NintendoSwitchRepair = lazy(() => import("./pages/repair/NintendoSwitchRepair"));
 const PS5Repair = lazy(() => import("./pages/repair/PS5Repair"));
 const PS4Repair = lazy(() => import("./pages/repair/PS4Repair"));
@@ -155,6 +156,7 @@ const App = () => (
               <Route path="/repair/laptop" element={<LaptopRepair />} />
 
               {/* Console Repair Pages */}
+              <Route path="/consoles" element={<ConsoleRepairHub />} />
               <Route path="/repair/nintendo-switch" element={<NintendoSwitchRepair />} />
               <Route path="/repair/ps5" element={<PS5Repair />} />
               <Route path="/repair/playstation-5" element={<PS5Repair />} />
