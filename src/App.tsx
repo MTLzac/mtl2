@@ -89,6 +89,7 @@ const RepairOrReplace = lazy(() => import("./pages/RepairOrReplace"));
 const RepairStatsEmbed = lazy(() => import("./pages/embed/RepairStatsEmbed"));
 
 // Lazy-loaded Device Hub Pages
+const DeviceHubIndex = lazy(() => import("./pages/device/DeviceHubIndex"));
 const IPhoneXRDevice = lazy(() => import("./pages/device/iPhoneXR"));
 const IPhoneXSDevice = lazy(() => import("./pages/device/iPhoneXS"));
 const IPhoneXSMaxDevice = lazy(() => import("./pages/device/iPhoneXSMax"));
@@ -200,6 +201,7 @@ const App = () => (
               <Route path="/embed/repair-or-replace-stats" element={<RepairStatsEmbed />} />
 
               {/* Device Hub Pages */}
+              <Route path="/devices" element={<DeviceHubIndex />} />
               <Route path="/devices/iphone-xr" element={<IPhoneXRDevice />} />
               <Route path="/devices/iphone-xs" element={<IPhoneXSDevice />} />
               <Route path="/devices/iphone-xs-max" element={<IPhoneXSMaxDevice />} />
