@@ -1,5 +1,5 @@
 import type { DeviceHubData } from "@/components/device-hub/types";
-import heroBack from "@/assets/devices/iphone-xr-back.png";
+import heroBack from "@/assets/devices/iphone-xr-hero.png";
 import frontDamage from "@/assets/devices/iphone-xr-front-damage.jpg";
 import backDamage from "@/assets/devices/iphone-xr-back-damage.png";
 
