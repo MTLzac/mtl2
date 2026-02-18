@@ -27,55 +27,51 @@ export const CommonIssuesSection = ({ issues }: CommonIssuesSectionProps) => {
           {issues.map((issue, index) => (
             <div
               key={issue.title}
-              className={`group rounded-xl border border-border p-6 md:p-8 transition-shadow duration-300 hover:shadow-lg ${
+              className={`group relative overflow-hidden rounded-xl border border-border p-6 md:p-8 transition-shadow duration-300 hover:shadow-lg ${
                 index % 2 === 0 ? "bg-secondary/30" : "bg-card"
               }`}
             >
-              <div className="flex flex-col-reverse gap-4 md:flex-row md:items-start md:gap-6">
-                {/* Text content — left side on desktop */}
-                <div className="flex-1 space-y-3">
-                  {!issue.image && (
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <issue.icon className="h-6 w-6 text-primary" />
-                    </div>
-                  )}
-                  <h3 className="text-xl font-semibold">{issue.title}</h3>
-                  <div>
-                    <p className="mb-2 text-sm font-medium text-muted-foreground">
-                      Symptoms
-                    </p>
-                    <ul className="flex flex-wrap gap-2">
-                      {issue.symptoms.map((symptom) => (
-                        <li
-                          key={symptom}
-                          className="rounded-full border border-border bg-background px-3 py-1 text-sm"
-                        >
-                          {symptom}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <p className="text-muted-foreground">{issue.solution}</p>
-                  <Button asChild variant="soft" className="mt-2">
-                    <a href="https://mobiletechlab.ca/contact">
-                      {issue.ctaText}
-                      <ChevronRight className="ml-1 h-4 w-4" />
-                    </a>
-                  </Button>
-                </div>
-
-                {/* Image — right side on desktop, top on mobile */}
-                {issue.image && (
-                  <div className="mx-auto w-4/5 shrink-0 md:mx-0 md:w-56">
-                    <img
-                      src={issue.image}
-                      alt={issue.imageAlt || issue.title}
-                      className="mx-auto max-h-[180px] w-full object-contain drop-shadow-[0_8px_24px_rgba(220,38,38,0.25)] transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_8px_32px_rgba(220,38,38,0.4)]"
-                      loading="lazy"
-                    />
+              {/* Text content */}
+              <div className={`relative z-10 space-y-3 ${issue.image ? "max-w-[60%]" : ""}`}>
+                {!issue.image && (
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <issue.icon className="h-6 w-6 text-primary" />
                   </div>
                 )}
+                <h3 className="text-xl font-semibold">{issue.title}</h3>
+                <div>
+                  <p className="mb-2 text-sm font-medium text-muted-foreground">
+                    Symptoms
+                  </p>
+                  <ul className="flex flex-wrap gap-2">
+                    {issue.symptoms.map((symptom) => (
+                      <li
+                        key={symptom}
+                        className="rounded-full border border-border bg-background px-3 py-1 text-sm"
+                      >
+                        {symptom}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <p className="text-muted-foreground">{issue.solution}</p>
+                <Button asChild variant="soft" className="mt-2">
+                  <a href="https://mobiletechlab.ca/contact">
+                    {issue.ctaText}
+                    <ChevronRight className="ml-1 h-4 w-4" />
+                  </a>
+                </Button>
               </div>
+
+              {/* Image — absolutely positioned right on desktop, stacked on mobile */}
+              {issue.image && (
+                <img
+                  src={issue.image}
+                  alt={issue.imageAlt || issue.title}
+                  className="mx-auto mt-4 block max-h-[180px] w-4/5 object-contain mix-blend-multiply drop-shadow-[0px_10px_15px_rgba(0,0,0,0.1)] transition-transform duration-300 group-hover:scale-105 md:absolute md:right-5 md:top-1/2 md:mt-0 md:w-auto md:max-w-[35%] md:-translate-y-1/2"
+                  loading="lazy"
+                />
+              )}
             </div>
           ))}
         </div>
