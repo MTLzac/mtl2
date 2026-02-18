@@ -8,6 +8,8 @@ export interface CommonIssue {
   solution: string;
   ctaText: string;
   ctaHref?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 interface CommonIssuesSectionProps {
@@ -30,9 +32,21 @@ export const CommonIssuesSection = ({ issues }: CommonIssuesSectionProps) => {
               }`}
             >
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                  <issue.icon className="h-6 w-6 text-primary" />
-                </div>
+                {issue.image && (
+                  <div className="shrink-0 overflow-hidden rounded-lg md:w-64">
+                    <img
+                      src={issue.image}
+                      alt={issue.imageAlt || issue.title}
+                      className="h-auto w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                )}
+                {!issue.image && (
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+                    <issue.icon className="h-6 w-6 text-primary" />
+                  </div>
+                )}
                 <div className="flex-1 space-y-3">
                   <h3 className="text-xl font-semibold">{issue.title}</h3>
                   <div>
