@@ -14,6 +14,7 @@ import {
   Shield
 } from "lucide-react";
 import heroImage from "@/assets/hero-xbox.png";
+import xboxHdmiImage from "@/assets/repairs/xbox-broken-hdmi-port.png";
 
 const SERVICES = [
   {
@@ -145,6 +146,8 @@ const COMMON_ISSUES: CommonIssue[] = [
     symptoms: ["No video output", "Loose HDMI connection", "Flickering or static"],
     solution: "Board-level micro-soldering to replace the HDMI port. Often same-day when dropped off early.",
     ctaText: "Get HDMI Repair Quote",
+    image: xboxHdmiImage,
+    imageAlt: "Xbox Series X with broken HDMI port showing no video signal",
   },
   {
     icon: Power,
