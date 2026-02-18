@@ -68,7 +68,7 @@ export const CommonIssuesSection = ({ issues }: CommonIssuesSectionProps) => {
                 <img
                   src={issue.image}
                   alt={issue.imageAlt || issue.title}
-                  className="mx-auto mt-4 block max-h-[180px] w-4/5 object-contain mix-blend-multiply drop-shadow-[0px_10px_15px_rgba(0,0,0,0.1)] transition-transform duration-300 group-hover:scale-105 md:absolute md:right-5 md:top-1/2 md:mt-0 md:w-auto md:max-w-[35%] md:-translate-y-1/2"
+                  className="mx-auto mt-4 block max-h-[180px] w-4/5 object-contain mix-blend-multiply contrast-[1.05] brightness-[1.02] drop-shadow-[0px_14px_28px_rgba(0,0,0,0.18)] transition-transform duration-300 group-hover:scale-105 md:absolute md:-right-3 md:top-1/2 md:mt-0 md:w-auto md:max-w-[38%] md:-translate-y-1/2"
                   loading="lazy"
                 />
               )}
