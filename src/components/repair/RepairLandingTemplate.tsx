@@ -44,6 +44,7 @@ interface RepairLandingTemplateProps {
   quickFacts?: QuickFactsData;
   pricingMicroCopy?: PricingMicroCopyData;
   beforeAfterSection?: React.ReactNode;
+  commonIssuesSection?: React.ReactNode;
 }
 
 export const RepairLandingTemplate = ({
@@ -66,6 +67,7 @@ export const RepairLandingTemplate = ({
   quickFacts,
   pricingMicroCopy,
   beforeAfterSection,
+  commonIssuesSection,
 }: RepairLandingTemplateProps) => {
   const breadcrumbs = getRepairBreadcrumbs(deviceName, slug);
   
@@ -95,6 +97,8 @@ export const RepairLandingTemplate = ({
             quickFacts={quickFacts}
           />
           
+          {commonIssuesSection}
+          
           <ServiceGrid services={services} deviceName={deviceName} />
           
           {beforeAfterSection}
@@ -120,6 +124,7 @@ export const RepairLandingTemplate = ({
         <Footer />
         <StickyQuoteCTA />
         <TableOfContents items={[
+          ...(commonIssuesSection ? [{ id: "common-issues", label: "Common Issues" }] : []),
           { id: "services", label: "Services" },
           ...(beforeAfterSection ? [{ id: "results", label: "Results" }] : []),
           { id: "models", label: "Models" },

@@ -1,5 +1,7 @@
 import { RepairLandingTemplate } from "@/components/repair/RepairLandingTemplate";
-import { 
+import { CommonIssuesSection } from "@/components/repair/CommonIssuesSection";
+import type { CommonIssue } from "@/components/repair/CommonIssuesSection";
+import {
   HardDrive, 
   Fan, 
   Plug, 
@@ -136,6 +138,23 @@ const PRICING_MICRO_COPY = {
   fallback: "When repair isn't practical, your game saves are typically backed up to Xbox Live, so data loss is rarely a concern.",
 };
 
+const COMMON_ISSUES: CommonIssue[] = [
+  {
+    icon: Plug,
+    title: "Broken HDMI Port",
+    symptoms: ["No video output", "Loose HDMI connection", "Flickering or static"],
+    solution: "Board-level micro-soldering to replace the HDMI port. Often same-day when dropped off early.",
+    ctaText: "Get HDMI Repair Quote",
+  },
+  {
+    icon: Power,
+    title: "Won't Turn On / Shuts Off Mid-Game",
+    symptoms: ["No power at all", "Turns off randomly", "Shuts down during gameplay"],
+    solution: "Diagnosis of power supply, thermal system, or board-level fault. We identify the root cause before quoting.",
+    ctaText: "Get Power Repair Quote",
+  },
+];
+
 const XboxRepair = () => {
   return (
     <RepairLandingTemplate
@@ -155,6 +174,7 @@ const XboxRepair = () => {
       advantagePillars={ADVANTAGE_PILLARS}
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
       pricingMicroCopy={PRICING_MICRO_COPY}
+      commonIssuesSection={<CommonIssuesSection issues={COMMON_ISSUES} />}
     />
   );
 };
