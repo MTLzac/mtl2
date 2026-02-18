@@ -69,7 +69,7 @@ export const CommonIssuesSection = ({ issues }: CommonIssuesSectionProps) => {
                   src={issue.image}
                   alt={issue.imageAlt || issue.title}
                   style={{ clipPath: "inset(3px round 8px)", filter: "drop-shadow(0 4px 6px rgba(0,0,0,0.15)) drop-shadow(0 25px 35px rgba(0,0,0,0.1))" }}
-                  className="mx-auto mt-4 block max-h-[220px] w-4/5 object-contain mix-blend-multiply contrast-[1.05] brightness-[1.02] transition-transform duration-300 group-hover:scale-105 md:absolute md:-right-11 md:top-1/2 md:mt-0 md:w-auto md:max-w-[46%] md:-translate-y-1/2"
+                  className="mx-auto mt-4 block max-h-[250px] w-4/5 object-contain mix-blend-multiply contrast-[1.05] brightness-[1.02] transition-transform duration-300 group-hover:scale-105 md:absolute md:-right-16 md:top-1/2 md:mt-0 md:w-auto md:max-w-[52%] md:-translate-y-1/2"
                   loading="lazy"
                 />
               )}
