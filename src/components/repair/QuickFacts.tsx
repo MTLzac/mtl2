@@ -38,7 +38,7 @@ export const QuickFacts = ({ facts }: QuickFactsProps) => {
             </div>
             <div className="min-w-0">
               <p className="text-xs text-muted-foreground">{item.label}</p>
-              <p className="truncate text-sm font-semibold text-foreground">{item.value}</p>
+              <p className="text-sm font-semibold text-foreground">{item.value}</p>
             </div>
           </div>
         ))}
