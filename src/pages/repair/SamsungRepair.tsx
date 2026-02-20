@@ -151,7 +151,7 @@ const SamsungRepair = () => {
       slug="samsung"
       deviceName="Samsung Phone"
       tagline="Winnipeg's Samsung Galaxy Phone Repair Specialists"
-      heroDescription="From the latest Galaxy S24 Ultra to foldable Z Fold and Z Flip devices, we specialize in Samsung smartphone repairs. Cracked screens, dead batteries, water damage, and charging issues—all fixed with quality parts and backed by our repair warranty."
+      heroDescription={<>From the latest Galaxy S24 Ultra to foldable Z Fold and Z Flip devices, we specialize in <a href="https://www.samsung.com/ca/support/service-center/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Samsung smartphone repairs</a>. Cracked screens, dead batteries, water damage, and charging issues—all fixed with quality parts and backed by our repair warranty.</>}
       services={SERVICES}
       models={MODELS}
       modelsDescription="We repair all Samsung Galaxy phone models including the S series, Z Fold, Z Flip, A series, and Note series. Don't see your model? Contact us!"
