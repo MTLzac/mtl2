@@ -149,7 +149,7 @@ const SamsungGalaxyTabRepair = () => {
       slug="samsung-galaxy-tab"
       deviceName="Samsung Galaxy Tab"
       tagline="Expert Tablet Repair in Winnipeg"
-      heroDescription="Winnipeg's dedicated Galaxy Tab repair specialists. From the powerful Tab S10 Ultra to everyday Tab A devices, we provide expert tablet repairs—screens, batteries, S Pen issues, and more. Same-day service available."
+      heroDescription={<>Winnipeg's <a href="https://www.samsung.com/ca/samsung-experience-store/repair-and-support/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">dedicated Galaxy Tab repair</a> specialists. From the powerful Tab S10 Ultra to everyday Tab A devices, we provide expert tablet repairs—screens, batteries, S Pen issues, and more. Same-day service available.</>}
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
