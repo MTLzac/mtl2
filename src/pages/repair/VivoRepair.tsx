@@ -152,7 +152,7 @@ const VivoRepair = () => {
       slug="vivo"
       deviceName="Vivo"
       tagline="Vivo & iQOO Repair in Winnipeg"
-      heroDescription="From the ZEISS-equipped X100 flagship to iQOO gaming phones, we repair all Vivo devices in Winnipeg. Growing brand specialists with expert service for X, V, Y series and foldables."
+      heroDescription={<>From the ZEISS-equipped X100 flagship to iQOO gaming phones, we <a href="https://www.vivo.com/en/support" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">repair all Vivo devices</a> in Winnipeg. Growing brand specialists with expert service for X, V, Y series and foldables.</>}
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
