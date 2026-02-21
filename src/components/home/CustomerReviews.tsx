@@ -40,11 +40,11 @@ export const CustomerReviews = () => {
               <Star key={i} className="h-6 w-6 fill-primary text-primary" />
             ))}
           </div>
-          <h2 className="mb-3 text-3xl font-bold md:text-4xl">
-            What Our Customers Say
+           <h2 className="mb-3 text-3xl font-bold md:text-4xl">
+            Trusted by Hundreds of Winnipeg Repair Customers
           </h2>
           <p className="text-lg text-muted-foreground">
-            500+ 5-star reviews on Google
+            500+ 5-star reviews on Google from real Manitoba customers
           </p>
         </div>
 
