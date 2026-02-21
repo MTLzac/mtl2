@@ -17,12 +17,12 @@ const SERVICES = [
   {
     icon: Fan,
     name: "Overheating Repair",
-    description: "Clean dust, replace thermal paste, fix PS5 overheating and loud fans.",
+    description: "PS5 overheating is often caused by dust buildup, clogged heatsinks, or degraded thermal compound. We fully disassemble the console, deep clean cooling channels, and apply high-performance thermal paste.",
   },
   {
     icon: Plug,
     name: "HDMI Port Repair",
-    description: "Replace damaged HDMI ports—no signal issues fixed. PS5 HDMI repairs involve board-level work and are not comparable to simple part swaps.",
+    description: "Precision board-level micro-soldering to restore broken HDMI ports, damaged pads, and trace damage. Common HDMI symptoms include: no signal on TV, flickering display, loose or pushed-in HDMI port, black screen with console powered on, and visible bent or broken pins. Many HDMI failures also involve lifted pads or damaged traces on the motherboard — we diagnose and repair underlying board damage when necessary.",
   },
   {
     icon: Disc,
@@ -41,8 +41,8 @@ const SERVICES = [
   },
   {
     icon: Wifi,
-    name: "WiFi/Bluetooth Repair",
-    description: "Fix wireless connectivity for online gaming.",
+    name: "Display & Power Issues",
+    description: "PS5 turns on but no display, blue light blinking, console shuts off randomly, not powering on, and power supply issues. Not sure what the issue is? We provide full diagnostics before recommending any repair.",
   },
 ];
 
@@ -66,6 +66,11 @@ const ADVANTAGE_PILLARS = [
     icon: Award,
     title: "Warranty on Every Repair",
     description: "Lifetime warranty on most PS5 and controller repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward. Damage caused by liquid exposure or power surges is not warrantied.",
+  },
+  {
+    icon: Shield,
+    title: "Precision Board-Level Repair",
+    description: "Unlike basic repair shops, we perform micro-soldering repairs under magnification. This ensures HDMI ports are securely mounted and electrically stable — reducing repeat failures.",
   },
 ];
 
@@ -119,6 +124,26 @@ const FAQS = [
     question: "Can you fix disc drive problems?",
     answer: "Yes, we diagnose and repair disc drive issues including cleaning, roller replacement, and full drive replacements.",
   },
+  {
+    question: "How much does PS5 HDMI repair cost in Winnipeg?",
+    answer: "HDMI repair costs depend on the extent of motherboard damage. We provide a clear quote after diagnosing the console — no surprise charges.",
+  },
+  {
+    question: "Can you fix PS5 no signal issues?",
+    answer: "Yes. No signal is usually caused by HDMI port damage or internal board issues. We diagnose and repair both.",
+  },
+  {
+    question: "Is PS5 HDMI repair done the same day?",
+    answer: "Many HDMI repairs can be completed the same day. Rush service guarantees same-day turnaround.",
+  },
+  {
+    question: "Why does my PS5 overheat?",
+    answer: "Dust buildup and degraded thermal compound are the most common causes. Professional cleaning restores airflow and cooling performance.",
+  },
+  {
+    question: "Do you offer warranty on PS5 repairs?",
+    answer: "Yes. We offer a lifetime warranty on most PS5 HDMI and controller repairs. Warranty applies to the repaired component only.",
+  },
 ];
 
 const PRICING_MICRO_COPY = {
@@ -137,7 +162,7 @@ const PS5Repair = () => {
       slug="ps5"
       deviceName="PS5"
       tagline="PlayStation 5 Repair Specialists in Winnipeg"
-      heroDescription="PS5 overheating? HDMI not working? DualSense drifting? We're Winnipeg's PlayStation 5 repair specialists. We repair a wide range of PS5 issues, including HDMI port damage, power or no-power problems, overheating, disc drive and power supply issues, software problems, and common controller repairs such as stick drift or charging port damage."
+      heroDescription={<>PS5 overheating? HDMI not working? DualSense drifting? We're Winnipeg's PlayStation 5 repair specialists. We repair a wide range of PS5 issues, including HDMI port damage, power or no-power problems, overheating, disc drive and power supply issues, software problems, and common controller repairs such as stick drift or charging port damage.<br /><br />HDMI port damage is the most common PS5 issue we repair in Winnipeg. Our technicians perform precision board-level micro-soldering to restore broken ports, damaged pads, and trace damage — not just basic part swaps.</>}
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
@@ -145,7 +170,7 @@ const PS5Repair = () => {
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
-      serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      serviceAreaNote="Serving all Winnipeg neighborhoods including St. Vital, Fort Garry, Transcona, Garden City, and surrounding Manitoba communities. Also serving customers from Thompson, MB. Walk-ins welcome or book online."
       pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
