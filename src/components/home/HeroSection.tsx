@@ -38,13 +38,16 @@ export const HeroSection = () => {
 
           {/* H1 */}
           <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Winnipeg's Trusted Cell Phone, iPhone & iPad{" "}
-            <span className="text-primary">Repair Experts</span>
+            Professional Phone, Tablet, Computer & Console{" "}
+            <span className="text-primary">Repair in Winnipeg</span>
           </h1>
 
           {/* Tagline */}
-          <p className="mb-8 text-xl text-muted-foreground md:text-2xl">
+          <p className="mb-4 text-xl text-muted-foreground md:text-2xl">
             iPhones, iPads, Samsung, Laptops, Consoles & More — Fixed Fast, Priced Fair
+          </p>
+          <p className="mb-8 text-base text-muted-foreground max-w-2xl mx-auto">
+            Mobile Tech Lab is Winnipeg's trusted destination for professional device repair. Our certified technicians serve customers across Manitoba with same-day service, transparent pricing, and a warranty on every repair.
           </p>
 
           {/* 3 CTAs */}

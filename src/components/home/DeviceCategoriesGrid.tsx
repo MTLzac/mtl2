@@ -19,7 +19,7 @@ interface ServiceCard {
 }
 
 const PRIMARY_SERVICE: ServiceCard = {
-  title: "Water Damage",
+  title: "Water Damage Repair in Winnipeg",
   description: "Liquid damage cleanup and professional data recovery for phones, tablets, laptops, and consoles.",
   cta: "Get help with water damage",
   href: "/repair/water-damage",
@@ -29,21 +29,21 @@ const PRIMARY_SERVICE: ServiceCard = {
 
 const SECONDARY_SERVICES: ServiceCard[] = [
   {
-    title: "iPhone Repair",
+    title: "iPhone Repair in Winnipeg",
     description: "Screen replacement, battery, back glass, and charging port repairs for all iPhone models.",
     cta: "Fix my iPhone",
     href: "/repair/iphone",
     icon: Smartphone,
   },
   {
-    title: "Samsung Repair",
+    title: "Samsung Repair in Winnipeg",
     description: "Cracked screens, battery drain, charging ports, camera issues, and more.",
     cta: "Fix my Samsung",
     href: "/repair/samsung",
     icon: Smartphone,
   },
   {
-    title: "Google Pixel Repair",
+    title: "Google Pixel Repair in Winnipeg",
     description: "Pixel screen repairs, batteries, charging issues, and camera fixes.",
     cta: "Fix my Pixel",
     href: "/repair/google-pixel",
@@ -53,21 +53,21 @@ const SECONDARY_SERVICES: ServiceCard[] = [
 
 const SUPPORTING_SERVICES: ServiceCard[] = [
   {
-    title: "iPad & Tablet Repair",
+    title: "iPad & Tablet Repair in Winnipeg",
     description: "Broken screens, batteries, and charging ports for iPad, Galaxy Tab, Surface, and more.",
     cta: "Fix my iPad / tablet",
     href: "/repair/samsung-galaxy-tab",
     icon: Tablet,
   },
   {
-    title: "Laptop Repair",
+    title: "Laptop Repair in Winnipeg",
     description: "Screen, battery, and keyboard repairs for MacBook and Windows laptops.",
     cta: "Fix my laptop",
     href: "/repair/macbook",
     icon: Laptop,
   },
   {
-    title: "Console Repair",
+    title: "Console Repair in Winnipeg",
     description: "HDMI ports, overheating, and power issues for PS5, PS4, Xbox, and Nintendo Switch.",
     cta: "Fix my console",
     href: "/consoles",
@@ -129,10 +129,10 @@ export const DeviceCategoriesGrid = () => {
         {/* Header */}
         <div className="mb-12 text-center">
           <h2 className="mb-3 text-3xl font-bold md:text-4xl">
-            We Fix What Others Won't
+            Winnipeg Repair Services — We Fix What Others Won't
           </h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            From cracked screens to water damage — if it's broken, we can help.
+            From cracked screens to water damage — if it's broken, our Winnipeg technicians can help.
           </p>
         </div>
 

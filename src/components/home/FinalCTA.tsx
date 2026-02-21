@@ -57,8 +57,13 @@ export const FinalCTA = () => {
             </div>
           </div>
 
+          {/* Local closing paragraph */}
+          <p className="mt-8 text-sm text-muted-foreground max-w-2xl mx-auto">
+            Mobile Tech Lab proudly serves Winnipeg, Thompson, and communities across Manitoba with professional phone, tablet, laptop, and console repair services. Whether you walk in or mail in your device, our certified technicians are here to help.
+          </p>
+
           {/* Subtle fallback link */}
-          <p className="mt-8 text-sm text-muted-foreground">
+          <p className="mt-4 text-sm text-muted-foreground">
             Looking for pre-owned devices?{" "}
             <a
               href={SHOP_URL}
