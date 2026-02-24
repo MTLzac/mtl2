@@ -17,17 +17,17 @@ const SERVICES = [
   {
     icon: Fan,
     name: "Overheating Repair",
-    description: "Clean dust, replace thermal paste, fix PS4 overheating and loud fans.",
+    description: "PS4 overheating is often caused by dust buildup, clogged heatsinks, or degraded thermal compound. We fully disassemble the console, deep clean cooling channels, and apply high-performance thermal paste.",
   },
   {
     icon: Plug,
     name: "HDMI Port Repair",
-    description: "Replace damaged HDMI ports—no signal issues fixed. PS4 HDMI repairs involve board-level work and are not simple part swaps.",
+    description: "Precision board-level micro-soldering to restore broken HDMI ports, damaged pads, and trace damage. Common HDMI symptoms include: no signal on TV, flickering display, loose or pushed-in HDMI port, black screen with console powered on, and visible bent or broken pins. Many HDMI failures also involve lifted pads or damaged traces on the motherboard — we diagnose and repair underlying board damage when necessary.",
   },
   {
     icon: Power,
-    name: "No Power Issues",
-    description: "Diagnose and repair PS4 power supply and boot problems.",
+    name: "Display & Power Issues",
+    description: "PS4 turns on but no display, blinking light, console shuts off randomly, not powering on, and power supply issues. Not sure what the issue is? We provide full diagnostics before recommending any repair.",
   },
   {
     icon: Disc,
@@ -66,6 +66,11 @@ const ADVANTAGE_PILLARS = [
     icon: Award,
     title: "Warranty on Every Repair",
     description: "Lifetime warranty on most PS4 and controller repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward. Damage caused by liquid exposure or power surges is not warrantied.",
+  },
+  {
+    icon: Shield,
+    title: "Precision Board-Level Repair",
+    description: "Unlike basic repair shops, we perform micro-soldering repairs under magnification. This ensures HDMI ports are securely mounted and electrically stable — reducing repeat failures.",
   },
 ];
 
@@ -117,6 +122,26 @@ const FAQS = [
     question: "Can you upgrade my PS4 hard drive?",
     answer: "Yes, we upgrade PS4 to SSD for dramatically faster load times or larger HDD for more storage.",
   },
+  {
+    question: "How much does PS4 HDMI repair cost in Winnipeg?",
+    answer: "HDMI repair costs depend on the extent of motherboard damage. We provide a clear quote after diagnosing the console — no surprise charges.",
+  },
+  {
+    question: "Can you fix PS4 no signal issues?",
+    answer: "Yes. No signal is usually caused by HDMI port damage or internal board issues. We diagnose and repair both.",
+  },
+  {
+    question: "Is PS4 HDMI repair done the same day?",
+    answer: "Many HDMI repairs can be completed the same day. Rush service guarantees same-day turnaround.",
+  },
+  {
+    question: "Why does my PS4 overheat?",
+    answer: "Dust buildup and degraded thermal compound are the most common causes. Professional cleaning restores airflow and cooling performance.",
+  },
+  {
+    question: "Do you offer warranty on PS4 repairs?",
+    answer: "Yes. We offer a lifetime warranty on most PS4 HDMI and controller repairs. Warranty applies to the repaired component only.",
+  },
 ];
 
 const PRICING_MICRO_COPY = {
@@ -135,7 +160,7 @@ const PS4Repair = () => {
       slug="ps4"
       deviceName="PS4"
       tagline="PlayStation 4 Repair Specialists in Winnipeg"
-      heroDescription="PS4 overheating? HDMI not working? No power? We're Winnipeg's PlayStation 4 repair specialists. We repair a wide range of PS4 issues, including HDMI port damage, power or no-power problems, overheating, disc drive issues, software problems, and common controller repairs such as stick drift or charging port damage."
+      heroDescription={<>PS4 overheating? HDMI not working? No power? We're Winnipeg's PlayStation 4 repair specialists. We repair a wide range of PS4 issues, including HDMI port damage, power or no-power problems, overheating, disc drive issues, software problems, and common controller repairs such as stick drift or charging port damage.<br /><br />HDMI port damage is the most common PS4 issue we repair in Winnipeg. Our technicians perform precision board-level micro-soldering to restore broken ports, damaged pads, and trace damage — not just basic part swaps.</>}
       heroImage={heroImage}
       services={SERVICES}
       models={MODELS}
@@ -143,7 +168,7 @@ const PS4Repair = () => {
       modelCategories={MODEL_CATEGORIES}
       faqs={FAQS}
       advantagePillars={ADVANTAGE_PILLARS}
-      serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
+      serviceAreaNote="Serving all Winnipeg neighborhoods including St. Vital, Fort Garry, Transcona, Garden City, and surrounding Manitoba communities. Also serving customers from Thompson, MB. Walk-ins welcome or book online."
       pricingMicroCopy={PRICING_MICRO_COPY}
     />
   );
