@@ -252,6 +252,11 @@
   
   <!-- Device Guide Pages -->
   <url>
+    <loc>https://mobiletechlab.ca/devices</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mobiletechlab.ca/devices/iphone-xr</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
