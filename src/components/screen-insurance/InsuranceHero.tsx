@@ -58,7 +58,7 @@ export function InsuranceHero() {
               <span className="text-primary">Screen Protected.</span>
             </h1>
             <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              Pay once, get a free Premium screen replacement for your device
+              Pay once, get a free Premium screen replacement for any iPhone
               within 12 months of purchase. No monthly fees. No deductibles.
             </p>
 

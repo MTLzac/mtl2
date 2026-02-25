@@ -122,7 +122,6 @@ export const COVERAGE_EXCLUDED = [
   "Intentional damage or misuse",
   "Damage to back glass or housing",
   "Software-related display issues",
-  "Devices not purchased or registered with MTL",
 ];
 
 // ------------------------------------------------------------
@@ -188,9 +187,9 @@ export const INSURANCE_FAQS = [
       "Screen protection covers the screen only. If your device has additional damage (e.g., water damage, bent frame), we'll provide a separate quote for those repairs at our standard rates.",
   },
   {
-    question: "Can I buy protection for a phone I didn't buy from MTL?",
+    question: "Can I buy protection for any iPhone?",
     answer:
-      "Yes! Screen protection is available for any iPhone, regardless of where you purchased it. We just need to verify the screen is in good condition at the time of purchase.",
+      "Yes! Screen protection is available for any iPhone — whether you purchased it from us, had it repaired by us before, or neither. We just need to verify the screen is in good condition at the time of purchase.",
   },
   {
     question: "Can I cover multiple devices?",
