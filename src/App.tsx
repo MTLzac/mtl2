@@ -72,6 +72,9 @@ const TradeIn = lazy(() => import("./pages/TradeIn"));
 // Lazy-loaded Screen Quality Page
 const ScreenQuality = lazy(() => import("./pages/ScreenQuality"));
 
+// Lazy-loaded Screen Insurance Page
+const ScreenInsurance = lazy(() => import("./pages/ScreenInsurance"));
+
 // Lazy-loaded Contact Page
 const Contact = lazy(() => import("./pages/Contact"));
 
@@ -182,6 +185,9 @@ const App = () => (
 
               {/* Screen Quality Page */}
               <Route path="/screen-quality" element={<ScreenQuality />} />
+
+              {/* Screen Insurance Page */}
+              <Route path="/screen-insurance" element={<ScreenInsurance />} />
               
               {/* Contact Page */}
               <Route path="/contact" element={<Contact />} />
