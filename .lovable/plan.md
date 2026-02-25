@@ -1,86 +1,43 @@
 
 
-## Screen Insurance — Revised Dynamic Pricing Model
+## Savings Clarity — Plan
 
-### Key Change from Previous Plan
+The current hero already shows the insurance price and a small text line with savings. The comparison section is generic (no model-specific numbers). Here's how to make savings feel like a no-brainer without adding clutter:
 
-Insurance pricing is based on **Premium screen part cost only**. No Value-tier or Genuine-tier plans. The customer gets one insurance product per device — priced as a percentage of the Premium part cost.
+### Approach: Enhanced Price Card + Strikethrough Savings
 
-### Pricing Architecture
-
-```text
-┌─────────────────────────────────────────────────┐
-│  PARTS COST TABLE (source of truth)             │
-│                                                 │
-│  Model              │ Premium Part Cost          │
-│  iPhone 15 Pro Max  │  $140                      │
-│  iPhone 14 Pro      │  $120                      │
-│  iPhone 12          │   $80                      │
-│  iPhone SE (3rd)    │   $60                      │
-└──────────┬──────────────────────────────────────┘
-           │
-           ▼  premiumPartCost × MULTIPLIER
-┌─────────────────────────────────────────────────┐
-│  INSURANCE PRICE (auto-calculated)              │
-│                                                 │
-│  Formula:  max(premiumCost × 0.50, MIN_PRICE)   │
-│                                                 │
-│  iPhone 15 Pro Max → $70                        │
-│  iPhone 14 Pro     → $60                        │
-│  iPhone 12         → $40                        │
-│  iPhone SE (3rd)   → $30 (floor applied)        │
-└─────────────────────────────────────────────────┘
-```
-
-Single multiplier constant + single minimum price floor. One-line edit to reprice everything.
-
-### What the Customer Sees
-
-User selects model → one price card appears showing:
-- One-time coverage price (e.g., "$70")
-- Covers: 1× Premium screen replacement
-- Warranty included on the repair
-- CTA: "Get Protected — $70"
-
-No tier comparison cards. Clean single-product display. This simplifies the hero calculator significantly — select model, see price, buy.
-
-### Data Structure
+When a user selects a model, the existing price card in the hero gets reworked to show a clear visual comparison:
 
 ```text
-// src/lib/screen-insurance-data.ts
-
-INSURANCE_MULTIPLIER = 0.50
-MIN_INSURANCE_PRICE = 29
-
-SCREEN_PART_COSTS: {
-  model: string
-  family: string          // "iPhone 15 series"
-  slug: string            // "iphone-15-pro-max"
-  premiumPartCost: number // e.g. 140
-}[]
-
-getInsurancePrice(model) →
-  max(premiumPartCost × INSURANCE_MULTIPLIER, MIN_INSURANCE_PRICE)
+┌─────────────────────────────────────────┐
+│  iPhone 15 Pro Max Screen Protection    │
+│                                         │
+│  Screen replacement cost:  $140         │
+│  You pay today:            $70          │
+│  ─────────────────────────────────────  │
+│  You save $70 (50% off)                 │
+│                                         │
+│  ✓ Premium screen  ✓ 12 months          │
+│  ✓ 1 device        ✓ No deductible      │
+└─────────────────────────────────────────┘
 ```
 
-### Simplified Component List
+Key visual treatments:
+- The replacement cost (`$140`) shown with a strikethrough or muted style so the "real price" anchors high
+- The insurance price (`$70`) shown large and bold in primary color
+- A savings badge: "Save $70 (50%)" in a green/success accent
+- Compact bullet row of coverage highlights replaces the plain text line
 
-Since there's only one plan per device (no tier cards to compare), the hero becomes cleaner:
+### Changes
 
-1. **`src/lib/screen-insurance-data.ts`** — Part costs, multiplier, price function, FAQs, coverage list
-2. **`src/components/screen-insurance/InsuranceHero.tsx`** — Model selector + animated silhouette + single price display + CTA
-3. **`src/components/screen-insurance/PhoneSilhouette.tsx`** — SVG device outline with transition
-4. **`src/components/screen-insurance/HowItWorks.tsx`** — 3-step explainer
-5. **`src/components/screen-insurance/CoverageDetails.tsx`** — What's covered / not covered
-6. **`src/components/screen-insurance/InsuranceComparison.tsx`** — "With insurance" vs "Without" cost comparison (uses `premiumPartCost` as the "without" price)
-7. **`src/components/screen-insurance/InsuranceFAQ.tsx`** — Accordion
-8. **`src/pages/ScreenInsurance.tsx`** — Page assembly
-9. **Edit `src/App.tsx`** — Add `/screen-insurance` route
-10. **Edit `public/sitemap.xml`** — Add URL
+**`src/components/screen-insurance/InsuranceHero.tsx`** — Rework the price display area (lines ~97–113):
+- Show `premiumPartCost` as the "Screen replacement value" with strikethrough styling
+- Show calculated insurance price large and bold
+- Add a savings pill/badge showing dollar amount and percentage saved
+- Add a 4-item inline feature grid (Premium screen, 12 months, 1 device, No deductible)
+- Remove the small footer text that currently shows savings (it moves into the card itself)
 
-### Price Update Workflow
+**`src/components/screen-insurance/InsuranceComparison.tsx`** — No changes needed; the hero card now does the heavy lifting for model-specific savings. The comparison section stays as a general "why insurance" explainer.
 
-- Change a model's part cost → insurance price updates automatically
-- Change the multiplier → all model prices update
-- Change the floor → only affects cheap models
+This keeps the page layout identical — no new sections, no extra scroll depth. The savings story is told right where the user is already looking: the price card.
 
