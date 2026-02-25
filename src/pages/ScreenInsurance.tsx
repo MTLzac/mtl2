@@ -17,7 +17,7 @@ const ScreenInsurance = () => {
         <title>Screen Protection Plans | Mobile Tech Lab</title>
         <meta
           name="description"
-          content="Protect your iPhone screen with a one-time payment. Get a free Premium screen replacement whenever you need it. No monthly fees, no deductibles."
+          content="Protect your iPhone screen for 12 months with a one-time payment. Get a free Premium screen replacement — no monthly fees, no deductibles."
         />
         <link rel="canonical" href="https://mobiletechlab.ca/screen-insurance" />
       </Helmet>
