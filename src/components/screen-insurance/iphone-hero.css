@@ -642,6 +642,112 @@
   transform-origin: -125% 80%;
 }
 
+/* ───── iMessage Notification Animation ───── */
+
+/* When notification is open, expand the Dynamic Island */
+.iphone-scene .notch-container.notif-open {
+  --shadow-opacity: 0.5;
+  max-height: calc(var(--notch-radius) * 3.5);
+  transition-timing-function: var(--ease-spring);
+}
+
+.iphone-scene .notch-container.notif-open .notch {
+  max-width: 100%;
+  max-height: 100%;
+  pointer-events: all;
+  transform: scale3d(1, 1, 1);
+}
+
+.iphone-scene .notch-container.notif-open ~ .notch-blur {
+  opacity: 1;
+  max-height: calc(var(--notch-radius) * 5);
+}
+
+/* Collapse animation */
+.iphone-scene .notch-container.notif-closing .notch {
+  transform: scale3d(0.375, 0.4, 1);
+  transition-timing-function: var(--ease);
+}
+
+.iphone-scene .notch-container.notif-closing ~ .notch-blur {
+  opacity: 0;
+}
+
+/* Notification overlay inside the notch */
+.iphone-scene .notif-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  gap: 1.2em;
+  padding: 1.5em 2em;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.3s var(--ease-out), transform 0.35s var(--ease-spring);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.iphone-scene .notif-overlay.notif-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* iMessage icon */
+.iphone-scene .notif-icon {
+  flex-shrink: 0;
+  width: 3.8em;
+  height: 3.8em;
+  border-radius: 28%;
+  background: linear-gradient(135deg, #34c759, #30d158);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.iphone-scene .notif-icon svg {
+  width: 55%;
+  height: 55%;
+}
+
+/* Message text */
+.iphone-scene .notif-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  min-width: 0;
+  color: white;
+}
+
+.iphone-scene .notif-app {
+  font-size: 0.9em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.iphone-scene .notif-sender {
+  font-size: 1.15em;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.iphone-scene .notif-msg {
+  font-size: 1em;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Blur helper when notif open */
+.iphone-scene .notch-blur.notif-blur-open {
+  opacity: 1;
+  max-height: calc(var(--notch-radius) * 5);
+}
+
 /* Responsive scaling */
 @media (max-width: 768px) {
   .iphone-scene {
