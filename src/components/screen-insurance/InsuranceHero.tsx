@@ -15,7 +15,7 @@ import {
   SCREEN_PART_COSTS,
   type ScreenPartCost,
 } from "@/lib/screen-insurance-data";
-import { PhoneSilhouette } from "./PhoneSilhouette";
+import { IPhoneHero } from "./IPhoneHero";
 
 const SHOP_BASE = "https://shop.mobiletechlab.ca";
 
@@ -146,16 +146,8 @@ export function InsuranceHero() {
           </div>
 
           {/* Right column — phone silhouette */}
-          <div className="flex items-center justify-center">
-            <div
-              key={selectedSlug || "empty"}
-              className="animate-fade-in"
-            >
-              <PhoneSilhouette
-                modelName={selectedModel?.model}
-                price={price}
-              />
-            </div>
+          <div className="hidden md:flex items-center justify-center">
+            <IPhoneHero />
           </div>
         </div>
       </div>
