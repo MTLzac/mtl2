@@ -112,7 +112,8 @@ export const COVERAGE_INCLUDED = [
   "Touch responsiveness failure",
   "Screen discoloration or dead pixels",
   "Premium-quality replacement part",
-  "Lifetime warranty on the repair",
+  "Valid for 12 months from date of purchase",
+  "Covers one device per plan",
 ];
 
 export const COVERAGE_EXCLUDED = [
@@ -132,17 +133,17 @@ export const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
     title: "Choose Your Device",
-    description: "Select your iPhone model and purchase screen protection in seconds.",
+    description: "Select your iPhone model and purchase screen protection. Coverage starts immediately and lasts 12 months.",
   },
   {
     step: 2,
     title: "Crack Your Screen?",
-    description: "Accidents happen. When they do, bring your device to any MTL location.",
+    description: "Accidents happen. Within your 1-year coverage window, bring your device to any MTL location.",
   },
   {
     step: 3,
     title: "Free Screen Replacement",
-    description: "We replace your screen with a Premium part — no extra charge. Walk out good as new.",
+    description: "We replace your screen with a Premium part — no extra charge. One claim per plan.",
   },
 ];
 
@@ -154,17 +155,22 @@ export const INSURANCE_FAQS = [
   {
     question: "What does screen protection cover?",
     answer:
-      "Our screen protection covers one Premium screen replacement for your device. This includes cracked glass, LCD/OLED damage, touch issues, and dead pixels. The replacement part comes with a lifetime warranty.",
+      "Our screen protection covers one Premium screen replacement for your device within 12 months of purchase. This includes cracked glass, LCD/OLED damage, touch issues, and dead pixels. Coverage is for the screen only.",
+  },
+  {
+    question: "How long does coverage last?",
+    answer:
+      "Coverage is valid for one year (12 months) from the date of purchase. After that, the plan expires — whether or not you've used it.",
   },
   {
     question: "Is this a monthly subscription?",
     answer:
-      "No — it's a one-time payment. Pay once and you're covered for one screen replacement whenever you need it. No recurring charges.",
+      "No — it's a one-time payment. Pay once and you're covered for one screen replacement within 12 months. No recurring charges.",
   },
   {
     question: "What quality of screen do I get?",
     answer:
-      "You receive a Premium-quality screen — our highest-quality aftermarket part with OEM-level color accuracy, brightness, and touch responsiveness. It includes a lifetime warranty on the part and labour.",
+      "You receive a Premium-quality screen — our highest-quality aftermarket part with OEM-level color accuracy, brightness, and touch responsiveness.",
   },
   {
     question: "Can I use it at any Mobile Tech Lab location?",
@@ -185,5 +191,10 @@ export const INSURANCE_FAQS = [
     question: "Can I buy protection for a phone I didn't buy from MTL?",
     answer:
       "Yes! Screen protection is available for any iPhone, regardless of where you purchased it. We just need to verify the screen is in good condition at the time of purchase.",
+  },
+  {
+    question: "Can I cover multiple devices?",
+    answer:
+      "Each plan covers one device only. To protect multiple phones, purchase a separate plan for each device.",
   },
 ];

@@ -58,8 +58,8 @@ export function InsuranceHero() {
               <span className="text-primary">Screen Protected.</span>
             </h1>
             <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              Pay once, get a free Premium screen replacement whenever you need
-              it. No monthly fees. No deductibles.
+              Pay once, get a free Premium screen replacement for your device
+              within 12 months of purchase. No monthly fees. No deductibles.
             </p>
 
             {/* Model selectors */}
@@ -108,7 +108,7 @@ export function InsuranceHero() {
                   </p>
                   <p className="text-4xl font-bold text-primary">${price}</p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    One-time payment · Covers 1× Premium screen replacement
+                    One-time payment · 1 year coverage · 1 device · Screen only
                   </p>
                 </div>
 

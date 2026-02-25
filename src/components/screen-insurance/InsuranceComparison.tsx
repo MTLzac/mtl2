@@ -37,8 +37,8 @@ export function InsuranceComparison() {
             <ul className="space-y-3 text-sm">
               <li className="font-medium">$0 screen replacement — already paid for</li>
               <li>Premium-quality part included</li>
-              <li>Walk in any time — no wait for approval</li>
-              <li>Lifetime warranty on the replacement</li>
+              <li>Walk in any time within 12 months — no wait for approval</li>
+              <li>One device, one year, total peace of mind</li>
             </ul>
           </div>
         </div>
