@@ -100,16 +100,34 @@ export function InsuranceHero() {
             </div>
 
             {/* Price + CTA */}
-            {price != null && selectedModel && (
+            {price != null && selectedModel && (() => {
+              const savings = selectedModel.premiumPartCost - price;
+              const pct = Math.round((savings / selectedModel.premiumPartCost) * 100);
+              return (
               <div className="animate-fade-in space-y-4">
-                <div className="rounded-xl border border-primary/20 bg-primary/5 p-6">
-                  <p className="mb-1 text-sm font-medium text-muted-foreground">
+                <div className="rounded-xl border border-primary/20 bg-primary/5 p-6 space-y-4">
+                  <p className="text-sm font-medium text-muted-foreground">
                     {selectedModel.model} Screen Protection
                   </p>
-                  <p className="text-4xl font-bold text-primary">${price}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    One-time payment · 1 year coverage · 1 device · Screen only
-                  </p>
+
+                  {/* Price comparison */}
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-lg text-muted-foreground line-through">${selectedModel.premiumPartCost}</span>
+                    <span className="text-4xl font-bold text-primary">${price}</span>
+                    <span className="inline-flex items-center rounded-full bg-green-500/15 px-2.5 py-0.5 text-xs font-semibold text-green-700 dark:text-green-400">
+                      Save ${savings} ({pct}%)
+                    </span>
+                  </div>
+
+                  <hr className="border-primary/10" />
+
+                  {/* Feature grid */}
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-muted-foreground">
+                    <span>✓ Premium screen</span>
+                    <span>✓ 12 months</span>
+                    <span>✓ 1 device</span>
+                    <span>✓ No deductible</span>
+                  </div>
                 </div>
 
                 <Button size="lg" className="w-full gradient-primary text-lg sm:w-auto" asChild>
@@ -122,13 +140,9 @@ export function InsuranceHero() {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                 </Button>
-
-                <p className="text-xs text-muted-foreground">
-                  Screen replacement value: ${selectedModel.premiumPartCost}+ —
-                  you save ${selectedModel.premiumPartCost - price}+
-                </p>
               </div>
-            )}
+              );
+            })()}
           </div>
 
           {/* Right column — phone silhouette */}
