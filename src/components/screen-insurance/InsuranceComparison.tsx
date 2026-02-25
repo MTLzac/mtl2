@@ -21,7 +21,7 @@ export function InsuranceComparison() {
               <h3 className="text-lg font-bold">Without Protection</h3>
             </div>
             <ul className="space-y-3 text-sm text-muted-foreground">
-              <li>Pay full price for screen repair ($75 – $160+)</li>
+              <li>Pay up to $500 per repair</li>
               <li>Unexpected out-of-pocket expense</li>
               <li>May delay getting your phone fixed</li>
               <li>Standard warranty on repair only</li>
