@@ -17,8 +17,8 @@ const ScreenInsurance = () => {
         <title>Screen Protection Plans | Mobile Tech Lab</title>
         <meta
           name="description"
-          content="Protect your iPhone screen for 12 months with a one-time payment. Get a free Premium screen replacement — no monthly fees, no deductibles."
-        />
+          content="Protect your iPhone screen for 12 months with a one-time payment. Get a free Premium screen replacement — no monthly fees, no deductibles." />
+
         <link rel="canonical" href="https://mobiletechlab.ca/screen-insurance" />
       </Helmet>
 
@@ -32,20 +32,18 @@ const ScreenInsurance = () => {
         <InsuranceFAQ />
 
         {/* Final CTA */}
-        <section className="py-16 md:py-20 bg-primary/5">
-          <div className="container mx-auto px-4 text-center max-w-2xl">
-            <h2 className="mb-3 text-3xl font-extrabold md:text-4xl tracking-tight">
-              One-Time Price. <span className="text-primary">Screen Protected.</span>
+        <section className="py-16 md:py-20">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">One Year Coverage For Only $50
+
             </h2>
             <p className="mb-8 text-lg text-muted-foreground">
-              Pay $50 once — get a free Premium screen replacement for any iPhone within 12 months. No monthly fees. No deductibles.
+              Select your model above or contact us to get started.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg" className="gradient-primary text-lg" asChild>
-                <a href={`tel:${PRIMARY_PHONE}`}>
-                  Protect Your Device Now
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+              <Button size="lg" className="gradient-primary text-lg" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+                Choose Your Device
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button size="lg" variant="outline" className="text-lg" asChild>
                 <a href={`tel:${PRIMARY_PHONE}`}>
@@ -59,8 +57,8 @@ const ScreenInsurance = () => {
       </main>
 
       <Footer />
-    </>
-  );
+    </>);
+
 };
 
 export default ScreenInsurance;
