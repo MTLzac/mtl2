@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Zap, Smartphone, ArrowRight } from "lucide-react";
+import { ShieldCheck, Zap, Smartphone, CheckCircle2 } from "lucide-react";
 
 interface StepProps {
   number: number;
@@ -7,64 +7,104 @@ interface StepProps {
   description: string;
   icon: React.ElementType;
   delay: number;
+  highlights: string[];
 }
 
-const Step = ({ number, title, description, icon: Icon, delay }: StepProps) => (
+const Step = ({ number, title, description, icon: Icon, delay, highlights }: StepProps) => (
   <motion.div
-    initial={{ opacity: 0, y: 24 }}
+    initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-60px" }}
-    transition={{ delay, duration: 0.6, ease: "easeOut" }}
-    className="relative flex-1 bg-background/40 backdrop-blur-xl border border-border/20 p-8 rounded-[32px] shadow-xl shadow-muted/50 group hover:bg-background/60 transition-all"
+    transition={{ delay, duration: 0.8, type: "spring" }}
+    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+    className="relative flex-1 bg-white/40 backdrop-blur-2xl border border-white/30 p-8 rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] group transition-all overflow-hidden"
   >
-    <div className="absolute -top-4 -left-4 w-12 h-12 bg-destructive text-destructive-foreground rounded-full flex items-center justify-center font-black text-xl shadow-lg z-10">
-      {number}
-    </div>
+    {/* Subtle Background Glow */}
+    <div className="absolute -right-10 -top-10 w-32 h-32 bg-destructive/5 blur-3xl rounded-full group-hover:bg-destructive/10 transition-colors" />
 
-    <div className="mb-6 w-16 h-16 bg-destructive/10 rounded-2xl flex items-center justify-center text-destructive group-hover:scale-110 transition-transform duration-500">
-      <Icon size={32} strokeWidth={2.5} />
-    </div>
-
-    <h3 className="text-2xl font-bold mb-3 tracking-tight">{title}</h3>
-    <p className="text-muted-foreground leading-relaxed font-medium">{description}</p>
-
-    {number < 3 && (
-      <div className="hidden lg:block absolute top-1/2 -right-12 translate-x-1/2 -translate-y-1/2 text-border z-0">
-        <ArrowRight size={40} strokeWidth={1} />
+    <div className="flex flex-col h-full relative z-10">
+      <div className="mb-6 w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-destructive shadow-sm border border-border/30 group-hover:scale-110 transition-transform duration-500">
+        <Icon size={32} strokeWidth={2.5} />
       </div>
-    )}
+
+      <div className="space-y-4 mb-8">
+        <h3 className="text-2xl font-black text-foreground tracking-tight leading-tight italic uppercase">
+          <span className="text-destructive mr-2 opacity-50 text-xl not-italic">0{number}</span>
+          {title}
+        </h3>
+        <p className="text-muted-foreground leading-relaxed font-medium text-sm sm:text-base">
+          {description}
+        </p>
+      </div>
+
+      <div className="mt-auto space-y-2">
+        {highlights.map((text, i) => (
+          <div key={i} className="flex items-center gap-2 text-xs font-bold text-muted-foreground/70 uppercase tracking-wider">
+            <CheckCircle2 size={14} className="text-green-600" />
+            {text}
+          </div>
+        ))}
+      </div>
+    </div>
   </motion.div>
 );
 
-const steps: Omit<StepProps, "delay">[] = [
+/* Desktop SVG connector — dashed snake path between cards */
+function DesktopConnector() {
+  return (
+    <svg
+      className="hidden lg:block absolute top-1/2 left-0 w-full h-24 -translate-y-1/2 pointer-events-none z-0"
+      viewBox="0 0 1200 100"
+      fill="none"
+      preserveAspectRatio="none"
+    >
+      <motion.path
+        d="M200,50 C300,50 300,20 400,20 C500,20 500,80 600,80 C700,80 700,20 800,20 C900,20 900,50 1000,50"
+        stroke="hsl(var(--destructive) / 0.15)"
+        strokeWidth="2"
+        strokeDasharray="8 6"
+        strokeLinecap="round"
+        initial={{ pathLength: 0 }}
+        whileInView={{ pathLength: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.5, delay: 0.4, ease: "easeInOut" }}
+      />
+    </svg>
+  );
+}
+
+const steps: (Omit<StepProps, "delay">)[] = [
   {
     number: 1,
     icon: ShieldCheck,
-    title: "Activate Protection",
+    title: "Premium Setup",
     description:
-      "Sign up with a one-time $50 payment. We'll provide a high-quality screen protector to keep your glass safe from daily scratches.",
+      "Visit any MTL location for a 2-minute screen health check. We'll professionally apply your free Premium screen protector on the spot.",
+    highlights: ["Pro Installation", "Verification", "Free Protector"],
   },
   {
     number: 2,
     icon: Zap,
-    title: "Instant Safety Net",
+    title: "One-Time Price",
     description:
-      "If your screen cracks, don't panic. You're covered for up to $500 in repair costs for a full year. Just bring it to any MTL location.",
+      "Pay your $50 activation fee once. No monthly bills, no credit checks. You're immediately backed by $500 in screen repair coverage.",
+    highlights: ["No Monthly Fees", "$500 Coverage", "Instant Activation"],
   },
   {
     number: 3,
     icon: Smartphone,
     title: "Back to Pristine",
     description:
-      "Walk out with a brand-new, premium screen. Your replacement includes a 1-year warranty. Total stress-free recovery.",
+      "If life happens and your screen cracks, we've got you. Walk out with a brand-new premium screen and a full 1-year warranty.",
+    highlights: ["$0 Deductible", "New Screen", "1-Year Warranty"],
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section className="py-16 md:py-24 relative overflow-hidden bg-gradient-to-b from-primary/5 via-background to-background">
-      {/* Ambient radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_hsl(var(--destructive)/0.03)_0%,_transparent_70%)] pointer-events-none" />
+    <section className="py-16 md:py-24 relative overflow-hidden bg-[#fcfcfd]">
+      {/* Background Mesh */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,_hsl(var(--destructive)/0.03)_0%,_transparent_50%)] pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -72,17 +112,19 @@ export function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16 space-y-4"
+          className="max-w-3xl mb-16 space-y-4"
         >
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight">
-            How It <span className="text-destructive">Works.</span>
+          <div className="inline-block px-4 py-1.5 rounded-full bg-muted text-muted-foreground font-bold text-[10px] uppercase tracking-[0.2em]">
+            The MTL Process
+          </div>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-foreground tracking-tighter leading-none">
+            3 Steps to <br />
+            <span className="text-destructive">Zero Stress.</span>
           </h2>
-          <p className="text-lg text-muted-foreground font-medium max-w-2xl mx-auto">
-            Three simple steps to total peace of mind. No monthly subscriptions, no hidden catches.
-          </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-8 relative">
+          <DesktopConnector />
           {steps.map((step, i) => (
             <Step key={step.number} {...step} delay={0.1 + i * 0.1} />
           ))}
