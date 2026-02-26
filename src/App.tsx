@@ -80,6 +80,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 
 // Lazy-loaded Draft Pages
 const PDPv2Draft = lazy(() => import("./pages/draft/PDPv2Draft"));
+const SamsungRepairDraft = lazy(() => import("./pages/draft/SamsungRepairDraft"));
 
 // Lazy-loaded Location Pages
 const WinnipegLocation = lazy(() => import("./pages/location/WinnipegLocation"));
@@ -226,6 +227,7 @@ const App = () => (
 
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
+              <Route path="/samsung-repair-draft" element={<SamsungRepairDraft />} />
               
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
