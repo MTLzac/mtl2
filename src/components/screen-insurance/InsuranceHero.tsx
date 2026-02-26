@@ -42,9 +42,9 @@ export function InsuranceHero() {
                   </a>
                 </Button>
               </div>
-              <p className="text-sm text-muted-foreground font-semibold px-1">
-                ★ 4.9/5 Rating | No Deductibles | Cancel Anytime
-              </p>
+            <p className="text-sm text-muted-foreground font-semibold px-1">
+              ★ 4.9/5 Rating | No Deductibles | One-Time Payment
+            </p>
             </div>
           </div>
 
