@@ -7,7 +7,7 @@ const SERIES = [
     icon: Smartphone,
     title: "Galaxy S Series",
     description: "Samsung's flagship phones. AMOLED screen replacements and battery service for all S series generations.",
-    models: ["S24 Ultra", "S24+", "S24", "S23 Ultra", "S23+", "S23", "S23 FE", "S22 Ultra", "S22+", "S22", "S21 Ultra", "S21+", "S21", "S21 FE", "S20 Ultra", "S20+", "S20", "S20 FE", "S10+", "S10", "S10e"],
+    models: ["S25 Ultra", "S25+", "S25", "S24 Ultra", "S24+", "S24", "S24 FE", "S23 Ultra", "S23+", "S23", "S23 FE", "S22 Ultra", "S22+", "S22", "S21 Ultra", "S21+", "S21", "S21 FE", "S20 Ultra", "S20+", "S20", "S20 FE", "S10+", "S10", "S10e"],
   },
   {
     icon: Layers,

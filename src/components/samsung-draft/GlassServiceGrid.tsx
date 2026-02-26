@@ -15,32 +15,32 @@ const SERVICES = [
   {
     icon: ScreenShare,
     name: "Screen Replacement",
-    description: "Galaxy S, A, and Note AMOLED screen replacements. Z Fold and Z Flip inner and outer display repairs with quality parts.",
+    description: "OEM-spec Super AMOLED and Dynamic AMOLED 2X display replacements for Galaxy S, A, and Note series. Inner and outer foldable screen repairs for Z Fold and Z Flip with factory-calibrated touch digitizers.",
   },
   {
     icon: Battery,
     name: "Battery Replacement",
-    description: "Samsung phone batteries degrade after 2-3 years. Restore full-day battery life with same-day replacement service.",
+    description: "Genuine-spec lithium-polymer battery cell replacement for all Galaxy models. Restores full-day capacity with OEM-grade cells, adhesive re-sealing, and post-install battery health calibration.",
   },
   {
     icon: Plug,
     name: "Charging Port Repair",
-    description: "USB-C charging port repair for all Galaxy phones. Includes cleaning, testing, and component replacement if needed.",
+    description: "USB Type-C charging port micro-soldering and flex cable replacement. Includes ultrasonic port cleaning, continuity testing, and fast-charge verification for all Galaxy S and A series.",
   },
   {
     icon: Droplets,
     name: "Water Damage Repair",
-    description: "Ultrasonic cleaning and component-level repair gives your phone the best chance of recovery.",
+    description: "Multi-stage ultrasonic water damage cleaning with isopropyl bath, corrosion removal, and component-level board repair. IC chip and connector replacement when needed.",
   },
   {
     icon: Camera,
     name: "Camera Repair",
-    description: "Rear and front camera repairs. Fix blurry photos, cracked lenses, and autofocus issues.",
+    description: "Rear wide, ultra-wide, and telephoto camera module replacement. Front selfie camera repairs, autofocus recalibration, and cracked camera glass lens replacement.",
   },
   {
     icon: Volume2,
     name: "Speaker & Mic Repair",
-    description: "Speaker, earpiece, and microphone repairs for all Samsung Galaxy phones.",
+    description: "Bottom-firing speaker, earpiece, and MEMS microphone replacement for all Samsung Galaxy phones. Includes mesh cleaning and audio output verification.",
   },
 ];
 
