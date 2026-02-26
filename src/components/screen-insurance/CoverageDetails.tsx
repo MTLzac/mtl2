@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { CheckCircle2, XCircle, ShieldCheck, Shield } from "lucide-react";
 import { COVERAGE_INCLUDED, COVERAGE_EXCLUDED } from "@/lib/screen-insurance-data";
 
@@ -10,33 +10,57 @@ interface CoverageCardProps {
 
 const CoverageCard = ({ title, items, type }: CoverageCardProps) => {
   const isCovered = type === "covered";
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 20 });
+  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 20 });
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    x.set(e.clientX / rect.width - 0.5 - rect.left / rect.width);
+    y.set(e.clientY / rect.height - 0.5 - rect.top / rect.height);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.6, type: "spring" }}
-      whileHover={{ y: -8, scale: isCovered ? 1.03 : 1.01 }}
-      className={`flex-1 p-10 rounded-[48px] backdrop-blur-2xl relative overflow-hidden transition-all duration-700 ${
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.8, type: "spring", stiffness: 100, damping: 20 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      className={`flex-1 p-10 rounded-[48px] backdrop-blur-2xl relative overflow-hidden transition-shadow duration-500 ${
         isCovered
-          ? "bg-white/60 border-[3px] border-green-500/40 shadow-[0_40px_80px_-15px_rgba(34,197,94,0.2),inset_0_0_25px_rgba(34,197,94,0.03)] z-10"
-          : "bg-white/30 border border-destructive/20 shadow-[0_20px_40px_-15px_rgba(239,68,68,0.1)] opacity-80"
+          ? "bg-white/70 border-[3px] border-green-500/40 z-10 shadow-[0_40px_80px_-15px_rgba(34,197,94,0.2),inset_0_0_25px_rgba(34,197,94,0.03)]"
+          : "bg-white/40 border border-destructive/20 opacity-90 shadow-[0_20px_40px_-15px_rgba(239,68,68,0.1)]"
       }`}
     >
-      {/* Glass Specular Sweep */}
+      {/* Specular Sweep */}
       <motion.div
         animate={{ x: ["-100%", "200%"] }}
-        transition={{ duration: 5, repeat: Infinity, repeatDelay: 4, ease: "linear" }}
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-12 pointer-events-none"
+        transition={{ duration: 6, repeat: Infinity, repeatDelay: 3, ease: "linear" }}
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 pointer-events-none"
       />
 
-      {/* Warranty Seal (Covered Only) */}
+      {/* Warranty Seal */}
       {isCovered && (
-        <div className="absolute top-6 right-6 flex flex-col items-center group/seal">
-          <div className="w-12 h-12 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-md flex items-center justify-center text-green-600 shadow-sm transition-transform group-hover/seal:scale-110">
-            <ShieldCheck size={20} strokeWidth={3} />
+        <div
+          className="absolute top-8 right-8 flex flex-col items-center"
+          style={{ transform: "translateZ(40px)" }}
+        >
+          <div className="w-14 h-14 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-md flex items-center justify-center text-green-600 shadow-sm">
+            <ShieldCheck size={24} strokeWidth={3} />
           </div>
-          <span className="text-[7px] font-black uppercase tracking-[0.2em] mt-2 text-green-600/60 text-center leading-none">
+          <span className="text-[8px] font-black uppercase tracking-[0.2em] mt-2 text-green-600/60 text-center leading-none">
             Lifetime
             <br />
             Warranty
@@ -44,7 +68,10 @@ const CoverageCard = ({ title, items, type }: CoverageCardProps) => {
         </div>
       )}
 
-      <div className="flex items-center gap-4 mb-10 relative z-10">
+      <div
+        className="flex items-center gap-4 mb-10 relative z-10"
+        style={{ transform: "translateZ(30px)" }}
+      >
         <div
           className={`w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg ${
             isCovered
@@ -67,7 +94,10 @@ const CoverageCard = ({ title, items, type }: CoverageCardProps) => {
         </h3>
       </div>
 
-      <ul className="space-y-5 relative z-10">
+      <ul
+        className="space-y-6 relative z-10"
+        style={{ transform: "translateZ(20px)" }}
+      >
         {items.map((item) => {
           const isPremium = item.includes("Premium-quality");
           return (
@@ -84,7 +114,9 @@ const CoverageCard = ({ title, items, type }: CoverageCardProps) => {
                   isPremium ? "font-bold flex items-center gap-2" : "font-semibold"
                 }`}
               >
-                {isPremium && <Shield size={14} className="text-destructive fill-destructive/20" />}
+                {isPremium && (
+                  <Shield size={16} className="text-destructive fill-destructive/20" />
+                )}
                 {item}
               </span>
             </li>
@@ -98,13 +130,13 @@ const CoverageCard = ({ title, items, type }: CoverageCardProps) => {
 export function CoverageDetails() {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden bg-[#fcfcfd]">
-      {/* Adaptive Ambient Lighting with radial mask for organic bleed */}
+      {/* Liquid Parallax Ambient Glows */}
       <div
-        className="absolute top-1/2 left-0 w-[60%] h-full bg-green-500/5 blur-[140px] rounded-full -translate-y-1/2 pointer-events-none"
+        className="absolute top-1/2 left-0 w-[60%] h-full bg-green-500/[0.03] blur-[140px] rounded-full -translate-y-1/2 pointer-events-none"
         style={{ maskImage: "radial-gradient(ellipse at center, black 30%, transparent 70%)" }}
       />
       <div
-        className="absolute top-1/2 right-0 w-[40%] h-full bg-destructive/5 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none"
+        className="absolute top-1/2 right-0 w-[40%] h-full bg-destructive/[0.03] blur-[120px] rounded-full -translate-y-1/2 pointer-events-none"
         style={{ maskImage: "radial-gradient(ellipse at center, black 30%, transparent 70%)" }}
       />
 
@@ -128,7 +160,10 @@ export function CoverageDetails() {
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-10 max-w-6xl mx-auto items-stretch">
+        <div
+          className="flex flex-col lg:flex-row gap-12 max-w-6xl mx-auto items-stretch"
+          style={{ perspective: "1000px" }}
+        >
           <CoverageCard title="Covered" items={COVERAGE_INCLUDED} type="covered" />
           <CoverageCard title="Not Covered" items={COVERAGE_EXCLUDED} type="not-covered" />
         </div>
