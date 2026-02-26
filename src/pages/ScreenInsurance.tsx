@@ -34,8 +34,8 @@ const ScreenInsurance = () => {
         {/* Final CTA */}
         <section className="py-16 md:py-20">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">One Year Coverage For Only $50
-
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+              One-Time Price. <span className="text-destructive">Screen Protected.</span>
             </h2>
             <p className="mb-8 text-lg text-muted-foreground">
               Select your model above or contact us to get started.
