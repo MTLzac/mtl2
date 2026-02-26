@@ -50,7 +50,11 @@ export function IPhoneHero() {
       <div className="absolute bottom-4 w-64 h-8 bg-black/10 blur-[40px] rounded-[100%] pointer-events-none" />
 
       {/* CHASSIS */}
-      <div className="relative w-full max-w-[320px] sm:max-w-[340px] aspect-[37/76] rounded-[60px] p-[3px] bg-gradient-to-b from-[#4a4458] via-[#1e1a26] to-[#0f0d14] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
+      <motion.div
+        animate={{ y: [0, -10, 0] }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        className="relative w-full max-w-[320px] sm:max-w-[340px] aspect-[37/76] rounded-[60px] p-[3px] bg-gradient-to-b from-[#4a4458] via-[#1e1a26] to-[#0f0d14] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]"
+      >
         {/* Edge highlight */}
         <div className="absolute inset-0 rounded-[60px] border-[0.5px] border-white/20 pointer-events-none z-40" />
 
@@ -170,7 +174,7 @@ export function IPhoneHero() {
         <div className="absolute left-[-3.5px] top-[145px] w-[4px] h-12 bg-[#2a2635] rounded-l-md border-l border-white/20" />
         <div className="absolute left-[-3.5px] top-[210px] w-[4px] h-12 bg-[#2a2635] rounded-l-md border-l border-white/20" />
         <div className="absolute right-[-3.5px] top-[185px] w-[4px] h-20 bg-[#2a2635] rounded-r-md border-r border-white/20" />
-      </div>
+      </motion.div>
     </div>
   );
 }
