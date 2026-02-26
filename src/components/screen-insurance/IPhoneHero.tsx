@@ -56,16 +56,14 @@ export function IPhoneHero() {
 
   return (
     <div
-      className="flex-1 flex items-center justify-center relative py-10 w-full"
+      className="flex-1 flex items-center justify-center relative w-full max-h-[800px]"
       style={{ perspective: "1200px" }}
     >
       {/* Contact shadow */}
       <div className="absolute bottom-4 w-64 h-8 bg-black/10 blur-[40px] rounded-[100%] pointer-events-none" />
 
       {/* CHASSIS */}
-      <div
-        className="relative w-full max-w-[320px] sm:max-w-[340px] aspect-[37/76] rounded-[60px] p-[3px] bg-gradient-to-b from-[#4a4458] via-[#1e1a26] to-[#0f0d14] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]"
-      >
+      <div className="relative w-full max-w-[300px] sm:max-w-[340px] aspect-[37/76] rounded-[60px] p-[3px] bg-gradient-to-b from-[#4a4458] via-[#1e1a26] to-[#0f0d14] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
         {/* Specular Sweep */}
         <motion.div
           animate={{ x: ["-100%", "200%"] }}
