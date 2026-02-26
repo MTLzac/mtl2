@@ -49,7 +49,7 @@ export function IPhoneHero() {
       {/* Contact shadow */}
       <div className="absolute bottom-4 w-64 h-8 bg-black/10 blur-[40px] rounded-[100%] pointer-events-none" />
 
-      {/* CHASSIS: Fixed max-width + aspect ratio guardrail */}
+      {/* CHASSIS */}
       <div className="relative w-full max-w-[320px] sm:max-w-[340px] aspect-[37/76] rounded-[60px] p-[3px] bg-gradient-to-b from-[#4a4458] via-[#1e1a26] to-[#0f0d14] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
         {/* Edge highlight */}
         <div className="absolute inset-0 rounded-[60px] border-[0.5px] border-white/20 pointer-events-none z-40" />
@@ -71,12 +71,11 @@ export function IPhoneHero() {
                   y: isNotchExpanded ? 4 : 0,
                 }}
                 transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                className={`bg-black rounded-[40px] flex items-center overflow-hidden cursor-pointer shadow-2xl ${
+                className={`bg-black rounded-[40px] flex items-center overflow-hidden shadow-2xl ${
                   isNotchExpanded
                     ? "p-3 border-[0.5px] border-white/10 backdrop-blur-3xl bg-black/90"
                     : ""
                 }`}
-                
               >
                 <AnimatePresence mode="wait">
                   {isNotchExpanded ? (
@@ -84,21 +83,20 @@ export function IPhoneHero() {
                       key="exp"
                       initial={{ opacity: 0, y: -5 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -5 }}
                       className="flex items-center w-full gap-3"
                     >
                       <div className="w-11 h-11 bg-[#31d158] rounded-[14px] flex items-center justify-center flex-shrink-0 shadow-lg relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent" />
                         <MessageCircle className="text-white fill-white" size={24} />
                       </div>
-                      <div className="flex flex-col overflow-hidden">
+                      <div className="flex flex-col min-w-0 flex-1">
                         <span className="text-[10px] text-white/40 uppercase font-black tracking-widest leading-none mb-1">
                           iMessage
                         </span>
-                        <span className="text-[14px] text-white font-bold leading-tight truncate">
+                        <span className="text-[14px] text-white font-bold leading-tight">
                           Mobile Tech Lab
                         </span>
-                        <p className="text-[12px] text-white/80 leading-tight truncate">
+                        <p className="text-[12px] text-white/80 leading-tight">
                           Your screen is now 100% protected! ✅
                         </p>
                       </div>
