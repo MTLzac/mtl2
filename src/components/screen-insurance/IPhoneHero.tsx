@@ -25,7 +25,7 @@ const AppIcon = ({
 }) => (
   <div className="flex flex-col items-center gap-1">
     <div
-      className={`w-12 h-12 rounded-[13px] ${color} flex items-center justify-center shadow-[0_2px_4px_rgba(0,0,0,0.3)] relative overflow-hidden transition-all active:scale-90 cursor-pointer`}
+      className={`w-11 h-11 sm:w-12 sm:h-12 rounded-[13px] ${color} flex items-center justify-center shadow-lg relative overflow-hidden transition-transform active:scale-90`}
     >
       <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent pointer-events-none" />
       <Icon size={24} className="text-white drop-shadow-md" />
@@ -40,8 +40,8 @@ export function IPhoneHero() {
   const [isNotchExpanded, setIsNotchExpanded] = useState(false);
 
   useEffect(() => {
-    const expandTimer = setTimeout(() => setIsNotchExpanded(true), 1000);
-    const collapseTimer = setTimeout(() => setIsNotchExpanded(false), 4000);
+    const expandTimer = setTimeout(() => setIsNotchExpanded(true), 1200);
+    const collapseTimer = setTimeout(() => setIsNotchExpanded(false), 4200);
     return () => {
       clearTimeout(expandTimer);
       clearTimeout(collapseTimer);
@@ -49,25 +49,21 @@ export function IPhoneHero() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center relative py-10">
-      {/* Shadow beneath phone */}
-      <div className="absolute bottom-4 w-4/5 h-10 bg-black/10 blur-[40px] rounded-[100%] scale-x-75" />
+    <div className="flex-1 flex items-center justify-center relative py-10 w-full">
+      {/* Contact shadow */}
+      <div className="absolute bottom-4 w-64 h-8 bg-black/10 blur-[40px] rounded-[100%] pointer-events-none" />
 
-      {/* Phone chassis */}
-      <div className="relative w-[260px] sm:w-[300px] aspect-[37/76] rounded-[60px] p-[2.5px] bg-gradient-to-b from-[#4a4458] via-[#1e1a26] to-[#0f0d14] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5),_0_0_0_1px_rgba(255,255,255,0.05)]">
-        {/* Chamfered edge highlight */}
+      {/* CHASSIS: Fixed max-width + aspect ratio guardrail */}
+      <div className="relative w-full max-w-[320px] sm:max-w-[340px] aspect-[37/76] rounded-[60px] p-[3px] bg-gradient-to-b from-[#4a4458] via-[#1e1a26] to-[#0f0d14] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
+        {/* Edge highlight */}
         <div className="absolute inset-0 rounded-[60px] border-[0.5px] border-white/20 pointer-events-none z-40" />
 
-        {/* Inner bezel */}
-        <div className="w-full h-full bg-black rounded-[58px] p-[10px] relative shadow-[inset_0_0_20px_rgba(0,0,0,0.8)]">
-          <div className="absolute inset-[3px] border border-white/10 rounded-[50px] pointer-events-none z-30" />
-
-          {/* Screen */}
-          <div className="relative w-full h-full rounded-[48px] overflow-hidden bg-black flex flex-col shadow-[0_0_2px_rgba(255,255,255,0.1)]">
+        {/* Inner display assembly */}
+        <div className="w-full h-full bg-black rounded-[57px] p-[10px] relative shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] flex flex-col">
+          <div className="relative w-full h-full rounded-[48px] overflow-hidden bg-black flex flex-col">
             {/* Wallpaper */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#2a263d] via-[#12101a] to-black" />
-            <div className="absolute top-[-10%] right-[-10%] w-full h-full bg-[radial-gradient(circle_at_center,_rgba(255,0,50,0.1)_0%,_transparent_60%)]" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-white/[0.08] pointer-events-none z-20" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-white/[0.08] pointer-events-none z-20" />
 
             {/* Dynamic Island */}
             <div className="mt-4 flex justify-center w-full px-4 z-50 h-8 relative">
@@ -75,13 +71,13 @@ export function IPhoneHero() {
                 initial={false}
                 animate={{
                   width: isNotchExpanded ? "100%" : "110px",
-                  height: isNotchExpanded ? "82px" : "34px",
-                  y: isNotchExpanded ? 6 : 0,
+                  height: isNotchExpanded ? "80px" : "34px",
+                  y: isNotchExpanded ? 4 : 0,
                 }}
-                transition={{ type: "spring", stiffness: 450, damping: 30 }}
-                className={`relative bg-black rounded-[40px] flex items-center overflow-hidden cursor-pointer shadow-2xl ${
+                transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                className={`bg-black rounded-[40px] flex items-center overflow-hidden cursor-pointer shadow-2xl ${
                   isNotchExpanded
-                    ? "p-3 border-[0.5px] border-white/10 backdrop-blur-3xl bg-black/95"
+                    ? "p-3 border-[0.5px] border-white/10 backdrop-blur-3xl bg-black/90"
                     : ""
                 }`}
                 onClick={() => setIsNotchExpanded(!isNotchExpanded)}
@@ -89,36 +85,31 @@ export function IPhoneHero() {
                 <AnimatePresence mode="wait">
                   {isNotchExpanded ? (
                     <motion.div
-                      key="expanded"
-                      initial={{ opacity: 0, scale: 0.9, y: -10 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.9, y: -10 }}
-                      className="flex items-center w-full gap-4"
+                      key="exp"
+                      initial={{ opacity: 0, y: -5 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -5 }}
+                      className="flex items-center w-full gap-3"
                     >
-                      <div className="w-12 h-12 bg-[#31d158] rounded-[14px] flex items-center justify-center flex-shrink-0 shadow-lg relative overflow-hidden">
+                      <div className="w-11 h-11 bg-[#31d158] rounded-[14px] flex items-center justify-center flex-shrink-0 shadow-lg relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent" />
-                        <MessageCircle
-                          className="text-white fill-white"
-                          size={24}
-                        />
+                        <MessageCircle className="text-white fill-white" size={24} />
                       </div>
-                      <div className="flex flex-col">
+                      <div className="flex flex-col overflow-hidden">
                         <span className="text-[10px] text-white/40 uppercase font-black tracking-widest leading-none mb-1">
                           iMessage
                         </span>
-                        <span className="text-[14px] text-white font-bold leading-tight">
+                        <span className="text-[14px] text-white font-bold leading-tight truncate">
                           Mobile Tech Lab
                         </span>
-                        <p className="text-[12px] text-white/80 leading-tight">
+                        <p className="text-[12px] text-white/80 leading-tight truncate">
                           Your screen is now 100% protected! ✅
                         </p>
                       </div>
                     </motion.div>
                   ) : (
                     <div className="w-full h-full flex items-center justify-between px-4">
-                      <div className="w-3 h-3 rounded-full bg-[#050505] shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)] flex items-center justify-center">
-                        <div className="w-1.5 h-1.5 bg-blue-500/10 blur-[0.5px] rounded-full" />
-                      </div>
+                      <div className="w-3 h-3 rounded-full bg-[#050505] shadow-[inset_0_1px_2px_rgba(255,255,255,0.2)]" />
                       <div className="w-6 h-1.5 bg-white/5 rounded-full" />
                     </div>
                   )}
@@ -160,38 +151,31 @@ export function IPhoneHero() {
               </div>
 
               {/* Dock */}
-              <div className="mt-auto mb-3 mx-1 h-[80px] bg-white/10 backdrop-blur-3xl rounded-[34px] flex items-center justify-around px-4 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.4)]">
-                <div className="w-[54px] h-[54px] bg-[#31d158] rounded-[15px] flex items-center justify-center shadow-lg relative overflow-hidden active:scale-90 transition-transform">
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent" />
-                  <Phone size={26} className="text-white fill-white" />
+              <div className="mt-auto mb-3 mx-1 h-[78px] bg-white/10 backdrop-blur-2xl rounded-[32px] flex items-center justify-around px-4 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.4)]">
+                <div className="w-[50px] h-[50px] bg-[#31d158] rounded-[14px] flex items-center justify-center shadow-lg">
+                  <Phone size={24} className="text-white fill-white" />
                 </div>
-                <div className="w-[54px] h-[54px] bg-[#007AFF] rounded-[15px] flex items-center justify-center shadow-lg relative overflow-hidden active:scale-90 transition-transform">
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent" />
-                  <MessageSquare size={26} className="text-white fill-white" />
+                <div className="w-[50px] h-[50px] bg-[#007AFF] rounded-[14px] flex items-center justify-center shadow-lg">
+                  <MessageSquare size={24} className="text-white fill-white" />
                 </div>
-                <div className="w-[54px] h-[54px] bg-white rounded-[15px] flex items-center justify-center shadow-md border border-slate-100 active:scale-90 transition-transform">
-                  <Compass size={26} className="text-[#007AFF]" />
+                <div className="w-[50px] h-[50px] bg-white rounded-[14px] flex items-center justify-center border border-slate-100">
+                  <Compass size={24} className="text-[#007AFF]" />
                 </div>
-                <div className="w-[54px] h-[54px] bg-gradient-to-br from-pink-500 to-red-500 rounded-[15px] flex items-center justify-center shadow-lg relative overflow-hidden active:scale-90 transition-transform">
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent" />
-                  <Music size={26} className="text-white" />
+                <div className="w-[50px] h-[50px] bg-gradient-to-br from-pink-500 to-red-500 rounded-[14px] flex items-center justify-center shadow-lg">
+                  <Music size={24} className="text-white" />
                 </div>
               </div>
               {/* Home indicator */}
-              <div className="h-1.5 w-36 bg-white/25 rounded-full self-center mb-1" />
+              <div className="h-1.5 w-32 bg-white/25 rounded-full self-center mb-1" />
             </div>
           </div>
         </div>
 
         {/* Physical buttons */}
-        <div className="absolute left-[-2.5px] top-[100px] w-[3.5px] h-7 bg-gradient-to-r from-[#1a1725] to-[#2d2a45] rounded-l-sm border-l border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]" />
-        <div className="absolute left-[-3.5px] top-[145px] w-[4px] h-12 bg-gradient-to-r from-[#1a1725] to-[#2d2a45] rounded-l-md border-l border-white/20 shadow-[-2px_5px_10px_rgba(0,0,0,0.3)]" />
-        <div className="absolute left-[-3.5px] top-[210px] w-[4px] h-12 bg-gradient-to-r from-[#1a1725] to-[#2d2a45] rounded-l-md border-l border-white/20 shadow-[-2px_5px_10px_rgba(0,0,0,0.3)]" />
-        <div className="absolute right-[-3.5px] top-[185px] w-[4px] h-20 bg-gradient-to-l from-[#1a1725] to-[#2d2a45] rounded-r-md border-r border-white/20 shadow-[2px_5px_10px_rgba(0,0,0,0.3)]" />
-
-        {/* Antenna lines */}
-        <div className="absolute top-12 left-0 w-full h-[1.5px] bg-black/40" />
-        <div className="absolute bottom-12 left-0 w-full h-[1.5px] bg-black/40" />
+        <div className="absolute left-[-2.5px] top-[100px] w-[3px] h-7 bg-[#2a2635] rounded-l-sm border-l border-white/10" />
+        <div className="absolute left-[-3.5px] top-[145px] w-[4px] h-12 bg-[#2a2635] rounded-l-md border-l border-white/20" />
+        <div className="absolute left-[-3.5px] top-[210px] w-[4px] h-12 bg-[#2a2635] rounded-l-md border-l border-white/20" />
+        <div className="absolute right-[-3.5px] top-[185px] w-[4px] h-20 bg-[#2a2635] rounded-r-md border-r border-white/20" />
       </div>
     </div>
   );
