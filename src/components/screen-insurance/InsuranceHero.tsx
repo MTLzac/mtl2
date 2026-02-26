@@ -17,6 +17,7 @@ import {
 } from "@/lib/screen-insurance-data";
 import { IPhoneHero } from "./IPhoneHero";
 
+
 const SHOP_BASE = "https://shop.mobiletechlab.ca";
 
 export function InsuranceHero() {
