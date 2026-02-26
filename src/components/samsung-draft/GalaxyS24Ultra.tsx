@@ -169,12 +169,13 @@ export function GalaxyS24Ultra() {
         {/* Samsung Smart Pop-up notification pill */}
         <AnimatePresence>
           {isAlert && (
+            <div className="absolute top-10 inset-x-0 flex justify-center z-50 px-4">
             <motion.div
               initial={{ width: 40, opacity: 0, y: -10 }}
               animate={{ width: 230, opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ type: "spring", stiffness: 200, damping: 20, delay: 0.2 }}
-              className="absolute top-14 left-1/2 -translate-x-1/2 z-30 overflow-hidden"
+              className="overflow-hidden"
             >
               <div className="bg-black/80 backdrop-blur-xl rounded-[20px] border border-white/10 px-4 py-2.5 flex items-center gap-2.5 shadow-2xl">
                 <div className="w-5 h-5 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center shrink-0">
@@ -186,6 +187,7 @@ export function GalaxyS24Ultra() {
                 </div>
               </div>
             </motion.div>
+            </div>
           )}
         </AnimatePresence>
 
@@ -224,11 +226,11 @@ export function GalaxyS24Ultra() {
         {/* Success notification */}
         <AnimatePresence>
           {stage === "repaired" && (
+            <div className="absolute top-10 inset-x-0 flex justify-center z-50 px-4">
             <motion.div
               initial={{ width: 40, opacity: 0, y: -10 }}
               animate={{ width: 230, opacity: 1, y: 0 }}
               transition={{ type: "spring", stiffness: 200, damping: 20 }}
-              className="absolute top-14 left-1/2 -translate-x-1/2 z-30"
             >
               <div className="bg-black/80 backdrop-blur-xl rounded-[20px] border border-white/10 px-4 py-2.5 flex items-center gap-2.5 shadow-2xl">
                 <div className="w-5 h-5 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shrink-0">
@@ -240,6 +242,7 @@ export function GalaxyS24Ultra() {
                 </div>
               </div>
             </motion.div>
+            </div>
           )}
         </AnimatePresence>
       </div>
