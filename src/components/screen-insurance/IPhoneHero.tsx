@@ -40,12 +40,8 @@ export function IPhoneHero() {
   const [isNotchExpanded, setIsNotchExpanded] = useState(false);
 
   useEffect(() => {
-    const expandTimer = setTimeout(() => setIsNotchExpanded(true), 1200);
-    const collapseTimer = setTimeout(() => setIsNotchExpanded(false), 4200);
-    return () => {
-      clearTimeout(expandTimer);
-      clearTimeout(collapseTimer);
-    };
+    const timer = setTimeout(() => setIsNotchExpanded(true), 1200);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -80,7 +76,7 @@ export function IPhoneHero() {
                     ? "p-3 border-[0.5px] border-white/10 backdrop-blur-3xl bg-black/90"
                     : ""
                 }`}
-                onClick={() => setIsNotchExpanded(!isNotchExpanded)}
+                
               >
                 <AnimatePresence mode="wait">
                   {isNotchExpanded ? (
