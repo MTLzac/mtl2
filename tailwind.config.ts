@@ -105,6 +105,10 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.7" },
         },
+        "glint": {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(350%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -114,6 +118,7 @@ export default {
         "slide-in-left": "slide-in-left 0.5s ease-out forwards",
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
         "pulse-subtle": "pulse-subtle 2s ease-in-out infinite",
+        "glint": "glint 0.5s ease-in-out",
       },
     },
   },
