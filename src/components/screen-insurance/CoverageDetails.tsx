@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, XCircle, ShieldCheck } from "lucide-react";
+import { CheckCircle2, XCircle, ShieldCheck, Shield } from "lucide-react";
 import { COVERAGE_INCLUDED, COVERAGE_EXCLUDED } from "@/lib/screen-insurance-data";
 
 interface CoverageCardProps {
@@ -16,24 +16,40 @@ const CoverageCard = ({ title, items, type }: CoverageCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.6, type: "spring" }}
-      whileHover={{ y: -5, scale: isCovered ? 1.02 : 1.01 }}
-      className={`flex-1 p-10 rounded-[48px] backdrop-blur-2xl border relative overflow-hidden transition-all duration-500 ${
+      whileHover={{ y: -8, scale: isCovered ? 1.03 : 1.01 }}
+      className={`flex-1 p-10 rounded-[48px] backdrop-blur-2xl relative overflow-hidden transition-all duration-700 ${
         isCovered
-          ? "bg-white/50 border-green-500/30 shadow-[0_30px_60px_-15px_rgba(34,197,94,0.15)] z-10"
-          : "bg-white/30 border-destructive/20 shadow-[0_20px_40px_-15px_rgba(239,68,68,0.1)] opacity-90"
+          ? "bg-white/60 border-[3px] border-green-500/40 shadow-[0_40px_80px_-15px_rgba(34,197,94,0.2),inset_0_0_25px_rgba(34,197,94,0.03)] z-10"
+          : "bg-white/30 border border-destructive/20 shadow-[0_20px_40px_-15px_rgba(239,68,68,0.1)] opacity-80"
       }`}
     >
       {/* Glass Specular Sweep */}
       <motion.div
         animate={{ x: ["-100%", "200%"] }}
-        transition={{ duration: 4, repeat: Infinity, repeatDelay: 6, ease: "linear" }}
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none"
+        transition={{ duration: 5, repeat: Infinity, repeatDelay: 4, ease: "linear" }}
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-12 pointer-events-none"
       />
+
+      {/* Warranty Seal (Covered Only) */}
+      {isCovered && (
+        <div className="absolute top-6 right-6 flex flex-col items-center group/seal">
+          <div className="w-12 h-12 rounded-full bg-green-500/10 border border-green-500/20 backdrop-blur-md flex items-center justify-center text-green-600 shadow-sm transition-transform group-hover/seal:scale-110">
+            <ShieldCheck size={20} strokeWidth={3} />
+          </div>
+          <span className="text-[7px] font-black uppercase tracking-[0.2em] mt-2 text-green-600/60 text-center leading-none">
+            Lifetime
+            <br />
+            Warranty
+          </span>
+        </div>
+      )}
 
       <div className="flex items-center gap-4 mb-10 relative z-10">
         <div
           className={`w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg ${
-            isCovered ? "bg-green-600 text-white" : "bg-destructive text-white"
+            isCovered
+              ? "bg-green-600 text-white shadow-green-500/20"
+              : "bg-destructive text-white shadow-destructive/20"
           }`}
         >
           {isCovered ? (
@@ -52,29 +68,29 @@ const CoverageCard = ({ title, items, type }: CoverageCardProps) => {
       </div>
 
       <ul className="space-y-5 relative z-10">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-4">
-            <div className="mt-0.5 flex-shrink-0">
-              {isCovered ? (
-                <CheckCircle2 size={18} className="text-green-500" />
-              ) : (
-                <XCircle size={18} className="text-destructive/60" />
-              )}
-            </div>
-            <span className="text-foreground/80 font-semibold text-sm sm:text-base leading-snug tracking-tight">
-              {item}
-            </span>
-          </li>
-        ))}
+        {items.map((item) => {
+          const isPremium = item.includes("Premium-quality");
+          return (
+            <li key={item} className="flex items-start gap-4">
+              <div className="mt-0.5 flex-shrink-0">
+                {isCovered ? (
+                  <CheckCircle2 size={18} className="text-green-500" />
+                ) : (
+                  <XCircle size={18} className="text-destructive/60" />
+                )}
+              </div>
+              <span
+                className={`text-foreground/80 text-sm sm:text-base leading-snug tracking-tight ${
+                  isPremium ? "font-bold flex items-center gap-2" : "font-semibold"
+                }`}
+              >
+                {isPremium && <Shield size={14} className="text-destructive fill-destructive/20" />}
+                {item}
+              </span>
+            </li>
+          );
+        })}
       </ul>
-
-      {isCovered && (
-        <div className="mt-10 pt-6 border-t border-green-500/10 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-green-600 text-[10px] font-black uppercase tracking-widest">
-            Lifetime Warranty Included
-          </div>
-        </div>
-      )}
     </motion.div>
   );
 };
@@ -82,9 +98,15 @@ const CoverageCard = ({ title, items, type }: CoverageCardProps) => {
 export function CoverageDetails() {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden bg-[#fcfcfd]">
-      {/* Adaptive Ambient Lighting */}
-      <div className="absolute top-1/2 left-0 w-[50%] h-full bg-green-500/5 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" />
-      <div className="absolute top-1/2 right-0 w-[50%] h-full bg-destructive/5 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none" />
+      {/* Adaptive Ambient Lighting with radial mask for organic bleed */}
+      <div
+        className="absolute top-1/2 left-0 w-[60%] h-full bg-green-500/5 blur-[140px] rounded-full -translate-y-1/2 pointer-events-none"
+        style={{ maskImage: "radial-gradient(ellipse at center, black 30%, transparent 70%)" }}
+      />
+      <div
+        className="absolute top-1/2 right-0 w-[40%] h-full bg-destructive/5 blur-[120px] rounded-full -translate-y-1/2 pointer-events-none"
+        style={{ maskImage: "radial-gradient(ellipse at center, black 30%, transparent 70%)" }}
+      />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -96,10 +118,10 @@ export function CoverageDetails() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 backdrop-blur-md border border-white/20 shadow-sm text-muted-foreground font-black text-[10px] uppercase tracking-[0.2em]">
             <ShieldCheck size={14} className="text-destructive" />
-            No Fine Print
+            The MTL Promise
           </div>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-foreground tracking-tighter leading-none">
-            The MTL <span className="text-destructive">Promise.</span>
+            No Fine <span className="text-destructive">Print.</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-xl mx-auto leading-relaxed">
             Everything you need to know. Nothing you don't. Clear, upfront coverage for your peace of mind.
@@ -113,12 +135,12 @@ export function CoverageDetails() {
 
         <motion.p
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.5 }}
+          whileInView={{ opacity: 0.4 }}
           viewport={{ once: true }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="mt-16 md:mt-20 text-center text-muted-foreground font-bold text-[10px] uppercase tracking-[0.3em] max-w-2xl mx-auto"
+          className="mt-16 md:mt-20 text-center text-muted-foreground font-bold text-[10px] uppercase tracking-[0.3em] max-w-2xl mx-auto leading-loose"
         >
-          *Coverage begins immediately after Premium Setup. Lifetime warranty applies to the replacement part defects only.
+          *Coverage begins immediately after Premium Setup. Lifetime warranty applies to the replacement part manufacturer defects only. Physical and liquid damage are excluded.
         </motion.p>
       </div>
     </section>
