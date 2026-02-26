@@ -32,18 +32,20 @@ const ScreenInsurance = () => {
         <InsuranceFAQ />
 
         {/* Final CTA */}
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              Ready to Protect Your Screen?
+        <section className="py-16 md:py-20 bg-primary/5">
+          <div className="container mx-auto px-4 text-center max-w-2xl">
+            <h2 className="mb-3 text-3xl font-extrabold md:text-4xl tracking-tight">
+              One-Time Price. <span className="text-primary">Screen Protected.</span>
             </h2>
             <p className="mb-8 text-lg text-muted-foreground">
-              Select your model above or contact us to get started.
+              Pay $50 once — get a free Premium screen replacement for any iPhone within 12 months. No monthly fees. No deductibles.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg" className="gradient-primary text-lg" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-                Choose Your Device
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="gradient-primary text-lg" asChild>
+                <a href={`tel:${PRIMARY_PHONE}`}>
+                  Protect Your Device Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
               <Button size="lg" variant="outline" className="text-lg" asChild>
                 <a href={`tel:${PRIMARY_PHONE}`}>
