@@ -26,7 +26,7 @@ const AppIcon = ({
   color: string;
   icon: React.ElementType;
 }) => (
-  <div className="flex flex-col items-center gap-1 group">
+  <div className="flex flex-col items-center gap-1">
     <div
       className={`w-11 h-11 sm:w-12 sm:h-12 rounded-[13px] ${color} flex items-center justify-center shadow-lg relative overflow-hidden transition-transform active:scale-90`}
     >
@@ -62,18 +62,11 @@ export function IPhoneHero() {
       {/* Contact shadow */}
       <div className="absolute bottom-4 w-64 h-8 bg-black/10 blur-[40px] rounded-[100%] pointer-events-none" />
 
-      {/* CHASSIS — Deep Purple surgical steel with 3D tilt */}
-      <motion.div
-        animate={{
-          y: [0, -10, 0],
-          rotateY: [-4, -4, -4],
-          rotateX: [2, 2, 2],
-        }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="relative w-full max-w-[320px] sm:max-w-[340px] aspect-[37/76] rounded-[60px] p-[3px] bg-gradient-to-b from-[#4a4458] via-[#1e1a26] to-[#0f0d14] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] group/phone"
-        style={{ transformStyle: "preserve-3d" }}
+      {/* CHASSIS */}
+      <div
+        className="relative w-full max-w-[320px] sm:max-w-[340px] aspect-[37/76] rounded-[60px] p-[3px] bg-gradient-to-b from-[#4a4458] via-[#1e1a26] to-[#0f0d14] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]"
       >
-        {/* Specular Sweep — periodic light reflection across frame */}
+        {/* Specular Sweep */}
         <motion.div
           animate={{ x: ["-100%", "200%"] }}
           transition={{
@@ -82,131 +75,76 @@ export function IPhoneHero() {
             repeatDelay: 5,
             ease: "linear",
           }}
-          className="absolute inset-0 rounded-[60px] bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 z-40 pointer-events-none"
+          className="absolute inset-0 rounded-[60px] bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 z-[45] pointer-events-none"
         />
 
         {/* Edge highlight */}
-        <div className="absolute inset-0 rounded-[60px] border-[0.5px] border-white/20 pointer-events-none z-40" />
+        <div className="absolute inset-0 rounded-[60px] border-[0.5px] border-white/20 pointer-events-none z-[46]" />
 
         {/* Inner display assembly */}
         <div className="w-full h-full bg-black rounded-[57px] p-[10px] relative shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] flex flex-col">
+          {/* Display Panel — all interactive overlays anchored here */}
           <div className="relative w-full h-full rounded-[48px] overflow-hidden bg-black flex flex-col">
-            {/* Wallpaper — deep purple gradient */}
+            {/* Wallpaper */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#2a263d] via-[#12101a] to-black" />
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-white/[0.08] pointer-events-none z-20" />
 
-            {/* CRACK OVERLAY — Phase 2 & 3 (fades out on repair) */}
+            {/* CRACK OVERLAY */}
             <AnimatePresence>
               {showCrack && (
                 <motion.div
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.6 } }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0, transition: { duration: 0.6 } }}
                   transition={{ duration: 0.15 }}
-                  className="absolute inset-0 z-30 pointer-events-none overflow-hidden"
+                  className="absolute inset-0 z-30 pointer-events-none"
                 >
                   <svg
                     viewBox="0 0 340 700"
                     className="w-full h-full fill-none"
                     preserveAspectRatio="none"
                   >
-                    {/* Primary fracture — variable stroke width */}
                     <path
                       d="M40,0 L110,140 L90,310 L210,440 L160,700"
                       className="stroke-white/40"
                       strokeWidth="1.8"
                       strokeLinecap="round"
-                      style={{
-                        filter:
-                          "drop-shadow(0 0 3px rgba(255,255,255,0.2))",
-                      }}
+                      style={{ filter: "drop-shadow(0 0 3px rgba(255,255,255,0.2))" }}
                     />
-                    <path
-                      d="M0,180 L110,140 L340,90"
-                      className="stroke-white/35"
-                      strokeWidth="1.4"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M210,440 L340,520"
-                      className="stroke-white/30"
-                      strokeWidth="1.2"
-                    />
-                    <path
-                      d="M90,310 L10,380"
-                      className="stroke-white/30"
-                      strokeWidth="1.2"
-                    />
-
-                    {/* Secondary micro-fractures */}
-                    <path
-                      d="M110,140 L150,180 L180,140 M90,310 L120,330 L95,360 M210,440 L240,470"
-                      className="stroke-white/20"
-                      strokeWidth="0.8"
-                    />
-
-                    {/* Tertiary web cracks */}
-                    <path
-                      d="M110,140 L95,115 M110,140 L135,125 M90,310 L65,285 M90,310 L115,290 M210,440 L190,420 M210,440 L230,425"
-                      className="stroke-white/10"
-                      strokeWidth="0.5"
-                    />
-
-                    {/* Impact point — concentric stress rings */}
-                    <circle
-                      cx="110"
-                      cy="140"
-                      r="6"
-                      className="stroke-white/30"
-                      strokeWidth="0.6"
-                    />
-                    <circle
-                      cx="110"
-                      cy="140"
-                      r="14"
-                      className="stroke-white/15"
-                      strokeWidth="0.3"
-                    />
-                    <circle
-                      cx="110"
-                      cy="140"
-                      r="2"
-                      fill="white"
-                      opacity="0.4"
-                      className="blur-[1px]"
-                    />
+                    <path d="M0,180 L110,140 L340,90" className="stroke-white/35" strokeWidth="1.4" strokeLinecap="round" />
+                    <path d="M210,440 L340,520" className="stroke-white/30" strokeWidth="1.2" />
+                    <path d="M90,310 L10,380" className="stroke-white/30" strokeWidth="1.2" />
+                    <path d="M110,140 L150,180 L180,140 M90,310 L120,330 L95,360 M210,440 L240,470" className="stroke-white/20" strokeWidth="0.8" />
+                    <path d="M110,140 L95,115 M110,140 L135,125 M90,310 L65,285 M90,310 L115,290 M210,440 L190,420 M210,440 L230,425" className="stroke-white/10" strokeWidth="0.5" />
+                    <circle cx="110" cy="140" r="6" className="stroke-white/30" strokeWidth="0.6" />
+                    <circle cx="110" cy="140" r="14" className="stroke-white/15" strokeWidth="0.3" />
+                    <circle cx="110" cy="140" r="2" fill="white" opacity="0.4" />
                   </svg>
                 </motion.div>
               )}
             </AnimatePresence>
 
-            {/* REPAIR BUTTON — Phase 3 only */}
+            {/* REPAIR BUTTON — anchored inside Display Panel, z-[60] above cracks */}
             <AnimatePresence>
               {stage === "protected" && (
-                <motion.button
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    scale: [1, 1.05, 1],
-                  }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{
-                    opacity: { duration: 0.3 },
-                    scale: {
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    },
-                  }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setStage("repaired")}
-                  className="absolute bottom-28 left-1/2 -translate-x-1/2 z-50 bg-destructive text-white px-5 py-2.5 rounded-full font-bold text-sm shadow-xl shadow-destructive/30 flex items-center gap-2 border border-white/20 whitespace-nowrap cursor-pointer"
-                >
-                  <Wrench size={14} />
-                  Repair My Screen
-                </motion.button>
+                <div className="absolute bottom-[120px] left-0 right-0 flex justify-center z-[60]">
+                  <motion.button
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0, scale: [1, 1.05, 1] }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{
+                      opacity: { duration: 0.3 },
+                      scale: { duration: 2, repeat: Infinity, ease: "easeInOut" },
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setStage("repaired")}
+                    className="bg-destructive text-white px-6 py-3 rounded-full font-bold text-sm shadow-2xl shadow-destructive/30 flex items-center gap-2 border border-white/20 whitespace-nowrap cursor-pointer"
+                  >
+                    <Wrench size={16} />
+                    Repair My Screen
+                  </motion.button>
+                </div>
               )}
             </AnimatePresence>
 
@@ -237,18 +175,11 @@ export function IPhoneHero() {
                     >
                       <div className="w-11 h-11 bg-[#31d158] rounded-[14px] flex items-center justify-center flex-shrink-0 shadow-lg relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent" />
-                        <MessageCircle
-                          className="text-white fill-white"
-                          size={24}
-                        />
+                        <MessageCircle className="text-white fill-white" size={24} />
                       </div>
                       <div className="flex flex-col min-w-0 flex-1">
-                        <span className="text-[10px] text-white/40 uppercase font-black tracking-widest leading-none mb-1">
-                          iMessage
-                        </span>
-                        <span className="text-[14px] text-white font-bold leading-tight">
-                          Mobile Tech Lab
-                        </span>
+                        <span className="text-[10px] text-white/40 uppercase font-black tracking-widest leading-none mb-1">iMessage</span>
+                        <span className="text-[14px] text-white font-bold leading-tight">Mobile Tech Lab</span>
                         <p className="text-[12px] text-white/80 leading-tight">
                           {stage === "repaired"
                             ? "Repaired! Total cost to you: $0.00 ✅"
@@ -270,33 +201,13 @@ export function IPhoneHero() {
             <div className="flex-1 w-full px-5 pt-12 pb-4 flex flex-col gap-8 relative z-10">
               <div className="grid grid-cols-4 gap-y-9">
                 <AppIcon name="Photos" color="bg-white" icon={LayoutGrid} />
-                <AppIcon
-                  name="Instagram"
-                  color="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]"
-                  icon={Instagram}
-                />
-                <AppIcon
-                  name="TikTok"
-                  color="bg-black border border-white/20"
-                  icon={Music}
-                />
+                <AppIcon name="Instagram" color="bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7]" icon={Instagram} />
+                <AppIcon name="TikTok" color="bg-black border border-white/20" icon={Music} />
                 <AppIcon name="Maps" color="bg-[#1cb3ff]" icon={MapIcon} />
-                <AppIcon
-                  name="Safari"
-                  color="bg-gradient-to-b from-[#3498db] to-[#2980b9]"
-                  icon={Compass}
-                />
+                <AppIcon name="Safari" color="bg-gradient-to-b from-[#3498db] to-[#2980b9]" icon={Compass} />
                 <AppIcon name="Camera" color="bg-[#2c2c2e]" icon={Camera} />
-                <AppIcon
-                  name="Mail"
-                  color="bg-gradient-to-b from-[#1c92d2] to-[#f2fcfe]"
-                  icon={Mail}
-                />
-                <AppIcon
-                  name="MTL"
-                  color="bg-destructive shadow-red-500/30 shadow-lg"
-                  icon={ShieldCheck}
-                />
+                <AppIcon name="Mail" color="bg-gradient-to-b from-[#1c92d2] to-[#f2fcfe]" icon={Mail} />
+                <AppIcon name="MTL" color="bg-destructive shadow-red-500/30 shadow-lg" icon={ShieldCheck} />
               </div>
 
               {/* Dock */}
@@ -305,10 +216,7 @@ export function IPhoneHero() {
                   <Phone size={24} className="text-white fill-white" />
                 </div>
                 <div className="w-[50px] h-[50px] bg-[#007AFF] rounded-[14px] flex items-center justify-center shadow-lg active:scale-90 transition-transform">
-                  <MessageSquare
-                    size={24}
-                    className="text-white fill-white"
-                  />
+                  <MessageSquare size={24} className="text-white fill-white" />
                 </div>
                 <div className="w-[50px] h-[50px] bg-white rounded-[14px] flex items-center justify-center active:scale-90 transition-transform">
                   <Compass size={24} className="text-[#007AFF]" />
@@ -323,12 +231,12 @@ export function IPhoneHero() {
           </div>
         </div>
 
-        {/* Physical buttons — Deep Purple beveled */}
+        {/* Physical buttons */}
         <div className="absolute left-[-2.5px] top-[100px] w-[3.5px] h-7 bg-[#2a2635] rounded-l-sm border-l border-white/10" />
         <div className="absolute left-[-3.5px] top-[145px] w-[4px] h-12 bg-[#2a2635] rounded-l-md border-l border-white/20 shadow-[-2px_5px_10px_rgba(0,0,0,0.3)]" />
         <div className="absolute left-[-3.5px] top-[210px] w-[4px] h-12 bg-[#2a2635] rounded-l-md border-l border-white/20 shadow-[-2px_5px_10px_rgba(0,0,0,0.3)]" />
         <div className="absolute right-[-3.5px] top-[185px] w-[4px] h-20 bg-[#2a2635] rounded-r-md border-r border-white/20 shadow-[2px_5px_10px_rgba(0,0,0,0.3)]" />
-      </motion.div>
+      </div>
     </div>
   );
 }
