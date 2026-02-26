@@ -6,9 +6,7 @@ import { HowItWorks } from "@/components/screen-insurance/HowItWorks";
 import { CoverageDetails } from "@/components/screen-insurance/CoverageDetails";
 import { InsuranceComparison } from "@/components/screen-insurance/InsuranceComparison";
 import { InsuranceFAQ } from "@/components/screen-insurance/InsuranceFAQ";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
-import { PRIMARY_PHONE } from "@/lib/locations";
+import { InsuranceFinalCTA } from "@/components/screen-insurance/InsuranceFinalCTA";
 
 const ScreenInsurance = () => {
   return (
@@ -17,8 +15,8 @@ const ScreenInsurance = () => {
         <title>Screen Protection Plans | Mobile Tech Lab</title>
         <meta
           name="description"
-          content="Protect your iPhone screen for 12 months with a one-time payment. Get a free Premium screen replacement — no monthly fees, no deductibles." />
-
+          content="Protect your iPhone screen for 12 months with a one-time payment. Get a free Premium screen replacement — no monthly fees, no deductibles."
+        />
         <link rel="canonical" href="https://mobiletechlab.ca/screen-insurance" />
       </Helmet>
 
@@ -30,37 +28,12 @@ const ScreenInsurance = () => {
         <CoverageDetails />
         <InsuranceComparison />
         <InsuranceFAQ />
-
-        {/* Final CTA */}
-        <section className="py-16 md:py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              One Year Coverage for Only <span className="text-destructive">$50</span>
-            </h2>
-            <p className="mb-8 text-lg text-muted-foreground">
-              Protect your screen for 12 months with a single payment — no monthly fees, no deductibles.
-            </p>
-            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg" className="gradient-primary text-lg" asChild>
-                <a href="https://shop.mobiletechlab.ca/products/screen-protection" target="_blank" rel="noopener noreferrer">
-                  Get Protected Now
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg" asChild>
-                <a href={`tel:${PRIMARY_PHONE}`}>
-                  <Phone className="mr-2 h-5 w-5" />
-                  Call Us
-                </a>
-              </Button>
-            </div>
-          </div>
-        </section>
+        <InsuranceFinalCTA />
       </main>
 
       <Footer />
-    </>);
-
+    </>
+  );
 };
 
 export default ScreenInsurance;
