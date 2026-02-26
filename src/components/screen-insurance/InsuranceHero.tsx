@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Shield, ArrowRight } from "lucide-react";
+import { ShieldCheck, ArrowRight } from "lucide-react";
 import { IPhoneHero } from "./IPhoneHero";
 
 const SHOP_BASE = "https://shop.mobiletechlab.ca";
@@ -8,38 +8,43 @@ export function InsuranceHero() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/5 py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <div className="grid gap-12 md:grid-cols-2 md:items-center">
-          {/* Left column — copy + CTA */}
-          <div className="text-center md:text-left">
-            {/* Badge */}
-            <span className="mb-4 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-              <Shield className="h-4 w-4" />
-              Screen Protection Plans
+        <div className="flex flex-col md:flex-row items-center gap-12">
+          {/* Left — Marketing copy */}
+          <div className="flex-1 max-w-2xl space-y-6 text-center md:text-left z-10">
+            <span className="inline-flex items-center gap-2 rounded-full bg-destructive/10 px-4 py-2 text-sm font-medium text-destructive border border-destructive/20">
+              <ShieldCheck className="h-4 w-4" />
+              Premium Screen Protection
             </span>
 
-            <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              Full Year Screen Protection{" "}
-              <span className="text-primary">for just $50</span>
+            <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl leading-[1.1]">
+              One-Time Price.{" "}
+              <br />
+              <span className="text-destructive font-black">
+                Screen Protected.
+              </span>
             </h1>
-            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              Pay once, get a free Premium screen replacement for any iPhone
-              within 12 months of purchase. No monthly fees. No deductibles.
+
+            <p className="text-lg text-muted-foreground md:text-xl max-w-lg leading-relaxed">
+              The ultimate peace of mind. Get a free Premium screen replacement
+              for any iPhone within 12 months. No monthly fees. No deductibles.
             </p>
 
-            <Button size="lg" className="gradient-primary text-lg" asChild>
-              <a
-                href={`${SHOP_BASE}/products/screen-protection`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Protect Your Device Now
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </a>
-            </Button>
+            <div className="pt-2">
+              <Button size="lg" className="gradient-primary text-lg" asChild>
+                <a
+                  href={`${SHOP_BASE}/products/screen-protection`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Protect Your Device Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </div>
           </div>
 
-          {/* Right column — phone silhouette */}
-          <div className="hidden md:flex items-center justify-center">
+          {/* Right — iPhone with crack story */}
+          <div className="flex-1 hidden md:flex items-center justify-center">
             <IPhoneHero />
           </div>
         </div>

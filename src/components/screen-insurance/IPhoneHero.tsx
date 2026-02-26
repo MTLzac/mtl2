@@ -37,11 +37,16 @@ const AppIcon = ({
 );
 
 export function IPhoneHero() {
+  const [isCracked, setIsCracked] = useState(false);
   const [isNotchExpanded, setIsNotchExpanded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsNotchExpanded(true), 1200);
-    return () => clearTimeout(timer);
+    const crackTimer = setTimeout(() => setIsCracked(true), 1000);
+    const notchTimer = setTimeout(() => setIsNotchExpanded(true), 2000);
+    return () => {
+      clearTimeout(crackTimer);
+      clearTimeout(notchTimer);
+    };
   }, []);
 
   return (
@@ -64,6 +69,61 @@ export function IPhoneHero() {
             {/* Wallpaper */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#2a263d] via-[#12101a] to-black" />
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-white/[0.08] pointer-events-none z-20" />
+
+            {/* CRACK OVERLAY — Phase 2 */}
+            <AnimatePresence>
+              {isCracked && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.15 }}
+                  className="absolute inset-0 z-30 pointer-events-none"
+                >
+                  <svg
+                    viewBox="0 0 340 700"
+                    className="w-full h-full fill-none"
+                    preserveAspectRatio="none"
+                  >
+                    {/* Primary fracture lines */}
+                    <path
+                      d="M50,0 L120,150 L80,300 L200,450 L150,700 M0,200 L120,150 L340,100 M200,450 L340,550 M80,300 L0,400"
+                      className="stroke-white/40"
+                      strokeWidth="1.5"
+                      style={{ filter: "drop-shadow(0 0 2px rgba(255,255,255,0.15))" }}
+                    />
+                    {/* Secondary micro-fractures */}
+                    <path
+                      d="M120,150 L150,180 L180,140 M80,300 L110,320 L90,350 M200,450 L230,480"
+                      className="stroke-white/20"
+                      strokeWidth="1"
+                    />
+                    {/* Tertiary web cracks */}
+                    <path
+                      d="M120,150 L100,120 M120,150 L140,130 M80,300 L60,280 M80,300 L100,280 M200,450 L180,430 M200,450 L220,430"
+                      className="stroke-white/10"
+                      strokeWidth="0.5"
+                    />
+                    {/* Impact point highlight */}
+                    <circle
+                      cx="120"
+                      cy="150"
+                      r="8"
+                      className="stroke-white/30"
+                      strokeWidth="0.5"
+                      fill="none"
+                    />
+                    <circle
+                      cx="120"
+                      cy="150"
+                      r="15"
+                      className="stroke-white/15"
+                      strokeWidth="0.3"
+                      fill="none"
+                    />
+                  </svg>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             {/* Dynamic Island */}
             <div className="mt-4 flex justify-center w-full px-4 z-50 h-8 relative">
@@ -91,7 +151,10 @@ export function IPhoneHero() {
                     >
                       <div className="w-11 h-11 bg-[#31d158] rounded-[14px] flex items-center justify-center flex-shrink-0 shadow-lg relative overflow-hidden">
                         <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent" />
-                        <MessageCircle className="text-white fill-white" size={24} />
+                        <MessageCircle
+                          className="text-white fill-white"
+                          size={24}
+                        />
                       </div>
                       <div className="flex flex-col min-w-0 flex-1">
                         <span className="text-[10px] text-white/40 uppercase font-black tracking-widest leading-none mb-1">
@@ -154,7 +217,10 @@ export function IPhoneHero() {
                   <Phone size={24} className="text-white fill-white" />
                 </div>
                 <div className="w-[50px] h-[50px] bg-[#007AFF] rounded-[14px] flex items-center justify-center shadow-lg">
-                  <MessageSquare size={24} className="text-white fill-white" />
+                  <MessageSquare
+                    size={24}
+                    className="text-white fill-white"
+                  />
                 </div>
                 <div className="w-[50px] h-[50px] bg-white rounded-[14px] flex items-center justify-center border border-slate-100">
                   <Compass size={24} className="text-[#007AFF]" />
