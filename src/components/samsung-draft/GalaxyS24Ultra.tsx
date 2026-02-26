@@ -169,7 +169,7 @@ export function GalaxyS24Ultra() {
         {/* Samsung Smart Pop-up notification pill */}
         <AnimatePresence>
           {isAlert && (
-            <div className="absolute top-10 inset-x-0 flex justify-center z-50 px-4">
+            <div className="absolute top-4 inset-x-0 flex justify-center z-50 px-4">
             <motion.div
               initial={{ width: 40, opacity: 0, y: -10 }}
               animate={{ width: 230, opacity: 1, y: 0 }}
@@ -226,7 +226,7 @@ export function GalaxyS24Ultra() {
         {/* Success notification */}
         <AnimatePresence>
           {stage === "repaired" && (
-            <div className="absolute top-10 inset-x-0 flex justify-center z-50 px-4">
+            <div className="absolute top-4 inset-x-0 flex justify-center z-50 px-4">
             <motion.div
               initial={{ width: 40, opacity: 0, y: -10 }}
               animate={{ width: 230, opacity: 1, y: 0 }}
