@@ -131,18 +131,18 @@ export const COVERAGE_EXCLUDED = [
 export const HOW_IT_WORKS_STEPS = [
   {
     step: 1,
-    title: "Choose Your Device",
-    description: "Select your iPhone model and purchase screen protection. Coverage starts immediately and lasts 12 months.",
+    title: "Sign Up for $50",
+    description: "Get started with a one-time $50 payment and receive a free screen protector to keep your device safe from day one.",
   },
   {
     step: 2,
-    title: "Crack Your Screen?",
-    description: "Accidents happen. Within your 1-year coverage window, bring your device to any MTL location.",
+    title: "Screen Damaged? You're Covered",
+    description: "You're covered up to $500 in screen repair for one full year. Just bring your device to Mobile Tech Lab.",
   },
   {
     step: 3,
-    title: "Free Screen Replacement",
-    description: "We replace your screen with a Premium part — no extra charge. One claim per plan.",
+    title: "Enjoy Your New Screen",
+    description: "Walk out with a brand-new screen and a free 1-year warranty on the replacement. Total peace of mind.",
   },
 ];
 

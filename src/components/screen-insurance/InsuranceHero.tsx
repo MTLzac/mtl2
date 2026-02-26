@@ -55,8 +55,8 @@ export function InsuranceHero() {
             </span>
 
             <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              One-Time Price.{" "}
-              <span className="text-primary">Screen Protected.</span>
+              Full Year Screen Protection{" "}
+              <span className="text-primary">for just $50</span>
             </h1>
             <p className="mb-8 text-lg text-muted-foreground md:text-xl">
               Pay once, get a free Premium screen replacement for any iPhone
