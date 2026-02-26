@@ -2,7 +2,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import {
   ShieldCheck,
   XCircle,
-  TrendingDown,
+  AlertTriangle,
   CheckCircle2,
   CircleDollarSign,
   ArrowRight,
@@ -66,7 +66,7 @@ function ComparisonCard({ title, price, items, isHero }: CardProps) {
               isHero ? "bg-destructive text-white" : "bg-muted text-muted-foreground"
             }`}
           >
-            {isHero ? <ShieldCheck size={20} /> : <TrendingDown size={20} />}
+            {isHero ? <ShieldCheck size={20} /> : <AlertTriangle size={20} />}
           </div>
           <h3
             className={`font-black uppercase tracking-widest text-xs ${
@@ -102,7 +102,7 @@ function ComparisonCard({ title, price, items, isHero }: CardProps) {
           </div>
           {isHero && (
             <div className="text-xs font-black text-destructive/60 uppercase tracking-widest mt-2">
-              — Already Paid For
+              — Coverage Applied
             </div>
           )}
         </div>
@@ -145,7 +145,7 @@ export function InsuranceComparison() {
             <span className="text-destructive">Protection?</span>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground font-medium max-w-xl mx-auto">
-            See how much you save when life happens. It's the difference between a minor hiccup and a $500 disaster.
+            Avoid the choice between a $500+ bill or a risky 30-day warranty. Get the best screen for less.
           </p>
         </motion.div>
 
@@ -155,12 +155,12 @@ export function InsuranceComparison() {
         >
           <ComparisonCard
             title="Without Protection"
-            price="$500"
+            price="$500+"
             items={[
-              "Unexpected out-of-pocket expense",
-              "Delayed repairs & wait times",
-              "Standard 90-day warranty",
-              "Stressful claim process",
+              "$500+ Premium replacement cost",
+              "Value screens limited to 30-day warranty",
+              "No financial safety net — full price every time",
+              "Unexpected burden on every accident",
             ]}
             isHero={false}
           />
@@ -168,9 +168,9 @@ export function InsuranceComparison() {
             title="With MTL Protection"
             price="$0"
             items={[
-              "Premium screen replacement included",
+              "Premium screen replacement included ($0)",
+              "Lifetime Warranty on parts — always",
               "Professional setup & verification",
-              "Lifetime Warranty on parts",
               "Instant walk-in service",
             ]}
             isHero={true}
