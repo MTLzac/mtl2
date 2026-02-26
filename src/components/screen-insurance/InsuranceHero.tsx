@@ -17,10 +17,20 @@ export function InsuranceHero() {
             </span>
 
             <div className="space-y-4">
-              <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl leading-[0.95]">
+              <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl leading-[0.85]">
                 One-Time Price.{" "}
                 <br />
-                <span className="text-destructive font-black">
+                <span
+                  className="text-destructive font-black"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(90deg, hsl(var(--destructive)), hsl(var(--destructive) / 0.6), hsl(var(--destructive)))",
+                    backgroundSize: "200% auto",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    animation: "shimmer 6s linear infinite",
+                  }}
+                >
                   Screen Protected.
                 </span>
               </h1>
@@ -60,6 +70,13 @@ export function InsuranceHero() {
       {/* Background blobs */}
       <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
       <div className="pointer-events-none absolute -bottom-20 left-1/4 h-56 w-56 rounded-full bg-primary/5 blur-3xl" />
+
+      <style>{`
+        @keyframes shimmer {
+          0% { background-position: -200% center; }
+          100% { background-position: 200% center; }
+        }
+      `}</style>
     </section>
   );
 }
