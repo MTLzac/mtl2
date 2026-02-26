@@ -20,8 +20,8 @@ function MagneticButton({
 
   const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
-    x.set((e.clientX - rect.left - rect.width / 2) * 0.3);
-    y.set((e.clientY - rect.top - rect.height / 2) * 0.3);
+    x.set(e.clientX - rect.left - rect.width / 2);
+    y.set(e.clientY - rect.top - rect.height / 2);
   };
 
   return (
@@ -47,12 +47,12 @@ function MagneticButton({
 const trustBadges = [
   "Zero Deductibles",
   "Lifetime Warranty",
-  "No Credit Check",
+  "No Credit Check Required",
 ];
 
 export function InsuranceFinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-[#fcfcfd]">
+    <section className="relative overflow-hidden bg-white/60 backdrop-blur-3xl border-t border-white/40">
       {/* Top border */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border/60 to-transparent" />
 
