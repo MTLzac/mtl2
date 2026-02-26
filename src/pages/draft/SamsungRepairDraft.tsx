@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GalaxyHero } from "@/components/samsung-draft/GalaxyHero";
+import { SocialProofTicker } from "@/components/samsung-draft/SocialProofTicker";
 import { GlassServiceGrid } from "@/components/samsung-draft/GlassServiceGrid";
 import { ModelSeriesCards } from "@/components/samsung-draft/ModelSeriesCards";
 import { AdvantageSection } from "@/components/samsung-draft/AdvantageSection";
@@ -22,6 +23,7 @@ const SamsungRepairDraft = () => {
         <Header />
         <main className="flex-1">
           <GalaxyHero />
+          <SocialProofTicker />
           <GlassServiceGrid />
           <ModelSeriesCards />
           <AdvantageSection />
