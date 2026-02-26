@@ -192,16 +192,18 @@ export function GalaxyS24Ultra() {
         {/* Repair button */}
         <AnimatePresence>
           {isAlert && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.8 }}
-              onClick={handleRepair}
-              className="absolute top-[55%] left-1/2 -translate-x-1/2 z-30 px-5 py-2.5 bg-primary text-primary-foreground text-xs font-bold rounded-full shadow-lg shadow-primary/30 animate-pulse"
-            >
-              Repair My Screen
-            </motion.button>
+            <div className="absolute bottom-[20%] inset-x-0 flex justify-center z-[80] px-6">
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.8 }}
+                onClick={handleRepair}
+                className="px-5 py-2.5 bg-primary text-primary-foreground text-xs font-bold rounded-full shadow-lg shadow-primary/30 animate-bounce whitespace-nowrap"
+              >
+                Repair My Screen
+              </motion.button>
+            </div>
           )}
         </AnimatePresence>
 
