@@ -25,25 +25,30 @@ export function InsuranceHero() {
             </h1>
 
             <p className="text-lg text-muted-foreground md:text-xl max-w-lg leading-relaxed">
-              The ultimate peace of mind. Get a free Premium screen replacement
-              for any iPhone within 12 months. No monthly fees. No deductibles.
+              Pay once, and we'll replace your screen for free if it ever breaks
+              within 12 months. No hidden fees. No deductibles.
             </p>
 
-            <div className="pt-2">
-              <Button size="lg" className="gradient-primary text-lg" asChild>
-                <a
-                  href={`${SHOP_BASE}/products/screen-protection`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Protect Your Device Now
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
+            <div className="flex flex-col gap-4 pt-2">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="gradient-primary text-lg" asChild>
+                  <a
+                    href={`${SHOP_BASE}/products/screen-protection`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Protect Your Device Now
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
+              </div>
+              <p className="text-sm text-muted-foreground font-semibold px-1">
+                ★ 4.9/5 Rating | No Deductibles | Cancel Anytime
+              </p>
             </div>
           </div>
 
-          {/* Right — iPhone with crack story */}
+          {/* Right — iPhone with interactive storyboard */}
           <div className="flex-1 hidden md:flex items-center justify-center">
             <IPhoneHero />
           </div>
