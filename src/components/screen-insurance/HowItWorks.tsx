@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ShieldCheck, Zap, Smartphone, CheckCircle2 } from "lucide-react";
 
 interface StepProps {
@@ -10,43 +10,65 @@ interface StepProps {
   highlights: string[];
 }
 
-const Step = ({ number, title, description, icon: Icon, delay, highlights }: StepProps) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-60px" }}
-    transition={{ delay, duration: 0.8, type: "spring" }}
-    whileHover={{ y: -8, transition: { duration: 0.2 } }}
-    className="relative flex-1 bg-white/40 backdrop-blur-2xl border border-white/30 p-8 rounded-[40px] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.02),0_20px_40px_-10px_rgba(0,0,0,0.05)] group transition-all overflow-hidden"
-  >
-    <div className="absolute -right-10 -top-10 w-32 h-32 bg-destructive/5 blur-3xl rounded-full group-hover:bg-destructive/10 transition-colors" />
+const Step = ({ number, title, description, icon: Icon, delay, highlights }: StepProps) => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const xSpring = useSpring(x, { stiffness: 150, damping: 20 });
+  const ySpring = useSpring(y, { stiffness: 150, damping: 20 });
+  const rotateX = useTransform(ySpring, [-0.5, 0.5], ["7deg", "-7deg"]);
+  const rotateY = useTransform(xSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
 
-    <div className="flex flex-col h-full relative z-10">
-      <div className="mb-6 w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-destructive shadow-sm border border-border/30 group-hover:scale-110 transition-transform duration-500">
-        <Icon size={32} strokeWidth={2.5} />
-      </div>
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    x.set((e.clientX - rect.left) / rect.width - 0.5);
+    y.set((e.clientY - rect.top) / rect.height - 0.5);
+  };
 
-      <div className="space-y-4 mb-8">
-        <h3 className="text-2xl font-black text-foreground tracking-tight leading-tight italic uppercase">
-          <span className="text-destructive mr-2 opacity-50 text-xl not-italic">0{number}</span>
-          {title}
-        </h3>
-        <p className="text-muted-foreground leading-relaxed font-medium text-sm sm:text-base">
-          {description}
-        </p>
-      </div>
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
-      <div className="mt-auto space-y-3">
-        {highlights.map((text, i) => (
-          <div key={i} className="flex items-center gap-2 text-[10px] sm:text-xs font-black text-muted-foreground/70 uppercase tracking-[0.1em]">
-            <CheckCircle2 size={14} className="text-green-600 flex-shrink-0" />
-            {text}
-          </div>
-        ))}
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ delay, duration: 0.8, type: "spring", stiffness: 100, damping: 20 }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+      className="relative flex-1 bg-white/40 backdrop-blur-2xl border border-white/30 p-8 rounded-[40px] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.02),0_20px_40px_-10px_rgba(0,0,0,0.05)] group transition-all overflow-hidden"
+    >
+      <div className="absolute -right-10 -top-10 w-32 h-32 bg-destructive/5 blur-3xl rounded-full group-hover:bg-destructive/10 transition-colors" />
+
+      <div className="flex flex-col h-full relative z-10" style={{ transform: "translateZ(20px)" }}>
+        <div className="mb-6 w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-destructive shadow-sm border border-border/30 group-hover:scale-110 transition-transform duration-500">
+          <Icon size={32} strokeWidth={2.5} />
+        </div>
+
+        <div className="space-y-4 mb-8">
+          <h3 className="text-2xl font-black text-foreground tracking-tight leading-tight italic uppercase">
+            <span className="text-destructive mr-2 opacity-50 text-xl not-italic">0{number}</span>
+            {title}
+          </h3>
+          <p className="text-muted-foreground leading-relaxed font-medium text-sm sm:text-base">
+            {description}
+          </p>
+        </div>
+
+        <div className="mt-auto space-y-3">
+          {highlights.map((text, i) => (
+            <div key={i} className="flex items-center gap-2 text-[10px] sm:text-xs font-black text-muted-foreground/70 uppercase tracking-[0.1em]">
+              <CheckCircle2 size={14} className="text-green-600 flex-shrink-0" />
+              {text}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 function DesktopConnector() {
   return (
@@ -120,7 +142,7 @@ export function HowItWorks() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-8 relative mb-12">
+        <div className="flex flex-col lg:flex-row gap-8 relative mb-12" style={{ perspective: "1000px" }}>
           <DesktopConnector />
           {steps.map((step, i) => (
             <Step key={step.number} {...step} delay={0.1 + i * 0.1} />

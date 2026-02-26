@@ -41,6 +41,7 @@ const AppIcon = ({
 
 export function IPhoneHero() {
   const [stage, setStage] = useState<Stage>("pristine");
+  const [glint, setGlint] = useState(false);
 
   useEffect(() => {
     const crackTimer = setTimeout(() => setStage("cracked"), 1200);
@@ -51,8 +52,28 @@ export function IPhoneHero() {
     };
   }, []);
 
+  const handleRepair = () => {
+    setGlint(true);
+    setTimeout(() => {
+      setStage("repaired");
+      setGlint(false);
+    }, 400);
+  };
+
   const showCrack = stage === "cracked" || stage === "protected";
   const showNotification = stage === "protected" || stage === "repaired";
+
+  const glowColor = (() => {
+    switch (stage) {
+      case "cracked":
+        return "rgba(239, 68, 68, 0.15)";
+      case "protected":
+      case "repaired":
+        return "rgba(34, 197, 94, 0.12)";
+      default:
+        return "rgba(100, 80, 160, 0.08)";
+    }
+  })();
 
   return (
     <div
@@ -61,6 +82,14 @@ export function IPhoneHero() {
     >
       {/* Contact shadow */}
       <div className="absolute bottom-4 w-64 h-8 bg-black/10 blur-[40px] rounded-[100%] pointer-events-none" />
+
+      {/* Adaptive Studio Rim Lighting */}
+      <motion.div
+        animate={{ backgroundColor: glowColor }}
+        transition={{ duration: 0.8 }}
+        className="absolute inset-0 blur-[100px] rounded-full pointer-events-none scale-125"
+        style={{ opacity: 0.6 }}
+      />
 
       {/* CHASSIS */}
       <div className="relative w-full max-w-[300px] sm:max-w-[340px] aspect-[37/76] rounded-[60px] p-[3px] bg-gradient-to-b from-[#4a4458] via-[#1e1a26] to-[#0f0d14] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
@@ -81,13 +110,26 @@ export function IPhoneHero() {
 
         {/* Inner display assembly */}
         <div className="w-full h-full bg-black rounded-[57px] p-[10px] relative shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] flex flex-col">
-          {/* Display Panel — all interactive overlays anchored here */}
+          {/* Display Panel */}
           <div className="relative w-full h-full rounded-[48px] overflow-hidden bg-black flex flex-col">
             {/* Wallpaper */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#2a263d] via-[#12101a] to-black" />
             <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-white/[0.08] pointer-events-none z-20" />
 
-            {/* CRACK OVERLAY */}
+            {/* Repair Glint — white specular sweep on click */}
+            <AnimatePresence>
+              {glint && (
+                <motion.div
+                  initial={{ x: "-100%" }}
+                  animate={{ x: "200%" }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="absolute inset-0 z-[55] bg-gradient-to-r from-transparent via-white/60 to-transparent skew-x-12 pointer-events-none"
+                />
+              )}
+            </AnimatePresence>
+
+            {/* CRACK OVERLAY — variable stroke realism */}
             <AnimatePresence>
               {showCrack && (
                 <motion.div
@@ -105,14 +147,14 @@ export function IPhoneHero() {
                     <path
                       d="M40,0 L110,140 L90,310 L210,440 L160,700"
                       className="stroke-white/40"
-                      strokeWidth="1.8"
+                      strokeWidth="2.0"
                       strokeLinecap="round"
                       style={{ filter: "drop-shadow(0 0 3px rgba(255,255,255,0.2))" }}
                     />
                     <path d="M0,180 L110,140 L340,90" className="stroke-white/35" strokeWidth="1.4" strokeLinecap="round" />
-                    <path d="M210,440 L340,520" className="stroke-white/30" strokeWidth="1.2" />
-                    <path d="M90,310 L10,380" className="stroke-white/30" strokeWidth="1.2" />
-                    <path d="M110,140 L150,180 L180,140 M90,310 L120,330 L95,360 M210,440 L240,470" className="stroke-white/20" strokeWidth="0.8" />
+                    <path d="M210,440 L340,520" className="stroke-white/30" strokeWidth="1.0" />
+                    <path d="M90,310 L10,380" className="stroke-white/25" strokeWidth="0.8" />
+                    <path d="M110,140 L150,180 L180,140 M90,310 L120,330 L95,360 M210,440 L240,470" className="stroke-white/20" strokeWidth="0.6" />
                     <path d="M110,140 L95,115 M110,140 L135,125 M90,310 L65,285 M90,310 L115,290 M210,440 L190,420 M210,440 L230,425" className="stroke-white/10" strokeWidth="0.5" />
                     <circle cx="110" cy="140" r="6" className="stroke-white/30" strokeWidth="0.6" />
                     <circle cx="110" cy="140" r="14" className="stroke-white/15" strokeWidth="0.3" />
@@ -122,7 +164,7 @@ export function IPhoneHero() {
               )}
             </AnimatePresence>
 
-            {/* REPAIR BUTTON — anchored inside Display Panel, z-[60] above cracks */}
+            {/* REPAIR BUTTON — z-[60] */}
             <AnimatePresence>
               {stage === "protected" && (
                 <div className="absolute bottom-[120px] left-0 right-0 flex justify-center z-[60]">
@@ -136,7 +178,7 @@ export function IPhoneHero() {
                     }}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => setStage("repaired")}
+                    onClick={handleRepair}
                     className="bg-destructive text-white px-6 py-3 rounded-full font-bold text-sm shadow-2xl shadow-destructive/30 flex items-center gap-2 border border-white/20 whitespace-nowrap cursor-pointer"
                   >
                     <Wrench size={16} />
