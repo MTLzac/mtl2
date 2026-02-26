@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import {
-  ScreenShare,
+  Smartphone,
   Battery,
-  Plug,
+  Zap,
   Droplets,
   Camera,
-  Volume2,
+  Music,
   ArrowRight,
 } from "lucide-react";
 import { TiltCard } from "./TiltCard";
@@ -13,7 +13,7 @@ import { MagneticButton } from "./MagneticButton";
 
 const SERVICES = [
   {
-    icon: ScreenShare,
+    icon: Smartphone,
     name: "Screen Replacement",
     description: "OEM-spec Super AMOLED and Dynamic AMOLED 2X display replacements for Galaxy S, A, and Note series. Inner and outer foldable screen repairs for Z Fold and Z Flip with factory-calibrated touch digitizers.",
   },
@@ -23,7 +23,7 @@ const SERVICES = [
     description: "Genuine-spec lithium-polymer battery cell replacement for all Galaxy models. Restores full-day capacity with OEM-grade cells, adhesive re-sealing, and post-install battery health calibration.",
   },
   {
-    icon: Plug,
+    icon: Zap,
     name: "Charging Port Repair",
     description: "USB Type-C charging port micro-soldering and flex cable replacement. Includes ultrasonic port cleaning, continuity testing, and fast-charge verification for all Galaxy S and A series.",
   },
@@ -38,7 +38,7 @@ const SERVICES = [
     description: "Rear wide, ultra-wide, and telephoto camera module replacement. Front selfie camera repairs, autofocus recalibration, and cracked camera glass lens replacement.",
   },
   {
-    icon: Volume2,
+    icon: Music,
     name: "Speaker & Mic Repair",
     description: "Bottom-firing speaker, earpiece, and MEMS microphone replacement for all Samsung Galaxy phones. Includes mesh cleaning and audio output verification.",
   },
