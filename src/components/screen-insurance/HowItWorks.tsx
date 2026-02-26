@@ -16,10 +16,9 @@ const Step = ({ number, title, description, icon: Icon, delay, highlights }: Ste
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-60px" }}
     transition={{ delay, duration: 0.8, type: "spring" }}
-    whileHover={{ y: -5, transition: { duration: 0.2 } }}
-    className="relative flex-1 bg-white/40 backdrop-blur-2xl border border-white/30 p-8 rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.05)] group transition-all overflow-hidden"
+    whileHover={{ y: -8, transition: { duration: 0.2 } }}
+    className="relative flex-1 bg-white/40 backdrop-blur-2xl border border-white/30 p-8 rounded-[40px] shadow-[0_10px_15px_-3px_rgba(0,0,0,0.02),0_20px_40px_-10px_rgba(0,0,0,0.05)] group transition-all overflow-hidden"
   >
-    {/* Subtle Background Glow */}
     <div className="absolute -right-10 -top-10 w-32 h-32 bg-destructive/5 blur-3xl rounded-full group-hover:bg-destructive/10 transition-colors" />
 
     <div className="flex flex-col h-full relative z-10">
@@ -37,10 +36,10 @@ const Step = ({ number, title, description, icon: Icon, delay, highlights }: Ste
         </p>
       </div>
 
-      <div className="mt-auto space-y-2">
+      <div className="mt-auto space-y-3">
         {highlights.map((text, i) => (
-          <div key={i} className="flex items-center gap-2 text-xs font-bold text-muted-foreground/70 uppercase tracking-wider">
-            <CheckCircle2 size={14} className="text-green-600" />
+          <div key={i} className="flex items-center gap-2 text-[10px] sm:text-xs font-black text-muted-foreground/70 uppercase tracking-[0.1em]">
+            <CheckCircle2 size={14} className="text-green-600 flex-shrink-0" />
             {text}
           </div>
         ))}
@@ -49,7 +48,6 @@ const Step = ({ number, title, description, icon: Icon, delay, highlights }: Ste
   </motion.div>
 );
 
-/* Desktop SVG connector — dashed snake path between cards */
 function DesktopConnector() {
   return (
     <svg
@@ -73,7 +71,7 @@ function DesktopConnector() {
   );
 }
 
-const steps: (Omit<StepProps, "delay">)[] = [
+const steps: Omit<StepProps, "delay">[] = [
   {
     number: 1,
     icon: ShieldCheck,
@@ -95,16 +93,15 @@ const steps: (Omit<StepProps, "delay">)[] = [
     icon: Smartphone,
     title: "Back to Pristine",
     description:
-      "If life happens and your screen cracks, we've got you. Walk out with a brand-new premium screen and a full 1-year warranty.",
-    highlights: ["$0 Deductible", "New Screen", "1-Year Warranty"],
+      "If life happens and your screen cracks, we've got you. Walk out with a brand-new premium screen featuring an industry-leading warranty.",
+    highlights: ["LIFETIME WARRANTY*", "New Screen", "$0 Deductible"],
   },
 ];
 
 export function HowItWorks() {
   return (
     <section className="py-16 md:py-24 relative overflow-hidden bg-[#fcfcfd]">
-      {/* Background Mesh */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,_hsl(var(--destructive)/0.03)_0%,_transparent_50%)] pointer-events-none" />
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_80%_20%,_hsl(var(--destructive)/0.02)_0%,_transparent_50%)] pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -115,7 +112,7 @@ export function HowItWorks() {
           className="max-w-3xl mb-16 space-y-4"
         >
           <div className="inline-block px-4 py-1.5 rounded-full bg-muted text-muted-foreground font-bold text-[10px] uppercase tracking-[0.2em]">
-            The MTL Process
+            Premium Service Flow
           </div>
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-foreground tracking-tighter leading-none">
             3 Steps to <br />
@@ -123,12 +120,22 @@ export function HowItWorks() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-8 relative">
+        <div className="flex flex-col lg:flex-row gap-8 relative mb-12">
           <DesktopConnector />
           {steps.map((step, i) => (
             <Step key={step.number} {...step} delay={0.1 + i * 0.1} />
           ))}
         </div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.6 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+          className="text-center text-muted-foreground text-[10px] font-bold uppercase tracking-widest max-w-xl mx-auto"
+        >
+          *Lifetime warranty covers manufacturer defects. Physical and liquid damage are excluded. Coverage applies to insurance claims and direct repairs.
+        </motion.p>
       </div>
     </section>
   );
