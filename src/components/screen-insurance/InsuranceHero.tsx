@@ -18,7 +18,7 @@ export function InsuranceHero() {
 
             <div className="space-y-4">
               <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl xl:text-7xl leading-[0.85]">
-                One-Time Price.{" "}
+                One Year Coverage{" "}
                 <br />
                 <span
                   className="text-destructive font-black"
@@ -31,7 +31,7 @@ export function InsuranceHero() {
                     animation: "shimmer 6s linear infinite",
                   }}
                 >
-                  Screen Protected.
+                  for Only $50.
                 </span>
               </h1>
 
