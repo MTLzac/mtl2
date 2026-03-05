@@ -456,18 +456,18 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           </section>
 
           {/* ── Decision Guide ── */}
-          <section id="decision-guide" className="border-t border-border py-10 md:py-14">
-            <div className="container mx-auto max-w-3xl px-4">
-              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
-                {data.decisionGuide.heading}
-              </h2>
-              <HtmlBlock html={data.decisionGuide.contentHtml} />
-
-              <div className="mt-6">
-                <DecisionGuideCards scenarios={data.decisionGuide.scenarios} />
+          <section id="decision-guide" className="border-t border-border bg-secondary/20 py-14 md:py-20">
+            <div className="container mx-auto max-w-5xl px-4">
+              <div className="mb-10 max-w-2xl">
+                <h2 className="mb-4 text-2xl font-bold md:text-3xl">
+                  {data.decisionGuide.heading}
+                </h2>
+                <HtmlBlock html={data.decisionGuide.contentHtml} />
               </div>
 
-              <p className="mt-6 text-sm italic text-muted-foreground">
+              <DecisionGuideCards scenarios={data.decisionGuide.scenarios} />
+
+              <p className="mt-8 text-sm italic text-muted-foreground">
                 {data.decisionGuide.disclaimer}
               </p>
             </div>
