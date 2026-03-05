@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Smartphone } from "lucide-react";
+import { ArrowRight, Smartphone, Sparkles, ShieldCheck, AlertTriangle, XCircle, Banknote, Bus, Building, LockKeyhole } from "lucide-react";
 import { AtAGlanceGrid } from "./AtAGlanceGrid";
 import { DecisionGuideCards } from "./DecisionGuideCards";
 import { DeviceHubTOC } from "./DeviceHubTOC";
@@ -225,7 +225,42 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                 <h3 className="mb-4 text-xl font-semibold">
                   {data.iosSupportStatus.whatVersion.heading}
                 </h3>
-                <HtmlBlock html={data.iosSupportStatus.whatVersion.contentHtml} />
+                {/* Render intro text only (before the list) */}
+                <HtmlBlock
+                  html={data.iosSupportStatus.whatVersion.contentHtml.split('<ul>')[0]}
+                />
+
+                {/* Feature vs Security Comparison Cards */}
+                <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                  <div className="rounded-xl border border-blue-200 bg-blue-50/60 p-6 dark:border-blue-900/40 dark:bg-blue-950/20">
+                    <div className="mb-3 flex items-center gap-2.5">
+                      <span className="inline-flex items-center justify-center rounded-lg bg-blue-100 p-2 text-blue-600 dark:bg-blue-900/40 dark:text-blue-400">
+                        <Sparkles className="h-5 w-5" />
+                      </span>
+                      <h4 className="text-base font-bold text-foreground">Feature Updates</h4>
+                    </div>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      Major iOS releases (e.g., iOS 18 → iOS 19) bring new capabilities, app frameworks, and UI changes. The {data.deviceName} no longer receives these.
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-6 dark:border-emerald-900/40 dark:bg-emerald-950/20">
+                    <div className="mb-3 flex items-center gap-2.5">
+                      <span className="inline-flex items-center justify-center rounded-lg bg-emerald-100 p-2 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400">
+                        <ShieldCheck className="h-5 w-5" />
+                      </span>
+                      <h4 className="text-base font-bold text-foreground">Security Updates</h4>
+                    </div>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      Smaller patches that fix vulnerabilities. Apple may still issue these for iOS 18, but on a limited and unpredictable schedule.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Source link */}
+                <HtmlBlock
+                  html={data.iosSupportStatus.whatVersion.contentHtml.split('</ul>').slice(-1)[0] || ''}
+                  className="mt-4"
+                />
               </div>
             </div>
           </section>
@@ -238,13 +273,95 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
               </h2>
               <HtmlBlock html={data.updateDeprecation.contentHtml} />
 
-              <div className="mt-8">
-                <h3 className="mb-4 text-xl font-semibold">
+              {/* Step-Down Timeline */}
+              <div className="mt-8 space-y-0">
+                <h3 className="mb-6 text-xl font-semibold">
+                  How Support Gradually Declines
+                </h3>
+                <div className="relative border-l-2 border-border pl-8 space-y-8">
+                  {[
+                    {
+                      icon: <XCircle className="h-5 w-5" />,
+                      title: "Major iOS Updates Stop",
+                      desc: "The device stops receiving new iOS versions. Existing apps and features continue to work normally.",
+                      accent: "bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-400",
+                    },
+                    {
+                      icon: <AlertTriangle className="h-5 w-5" />,
+                      title: "Developer SDKs Move Forward",
+                      desc: "App developers build against newer iOS SDKs. Updates for older OS versions become less frequent, then stop.",
+                      accent: "bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400",
+                    },
+                    {
+                      icon: <ShieldCheck className="h-5 w-5" />,
+                      title: "Security Patches Become Rare",
+                      desc: "Apple may issue limited security patches, but on an unpredictable schedule. Known vulnerabilities remain unaddressed longer.",
+                      accent: "bg-red-100 text-destructive dark:bg-red-900/30",
+                    },
+                  ].map((step, i) => (
+                    <div key={i} className="relative">
+                      <div className={`absolute -left-[2.55rem] top-0.5 inline-flex items-center justify-center rounded-full p-1.5 ${step.accent}`}>
+                        {step.icon}
+                      </div>
+                      <h4 className="text-base font-bold text-foreground">{step.title}</h4>
+                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{step.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* App Compatibility — Icon Cards */}
+              <div className="mt-10">
+                <h3 className="mb-2 text-xl font-semibold">
                   {data.updateDeprecation.appCompatibility.heading}
                 </h3>
-                <HtmlBlock
-                  html={data.updateDeprecation.appCompatibility.contentHtml}
-                />
+                <p className="mb-6 text-sm leading-relaxed text-muted-foreground">
+                  From our experience, these are the categories of apps where Canadian users on the {data.deviceName} tend to notice compatibility issues first:
+                </p>
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {[
+                    {
+                      icon: <Banknote className="h-5 w-5" />,
+                      title: "Banking Apps",
+                      desc: "TD, RBC, Scotiabank, and BMO typically require iOS versions within two major releases of the current version.",
+                      accent: "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400",
+                    },
+                    {
+                      icon: <Bus className="h-5 w-5" />,
+                      title: "Transit & Payment",
+                      desc: "Presto, city transit apps, and mobile payment platforms often follow similar requirements.",
+                      accent: "bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400",
+                    },
+                    {
+                      icon: <Building className="h-5 w-5" />,
+                      title: "Government Services",
+                      desc: "CRA My Account, provincial health apps, and digital ID services may require newer iOS versions for security compliance.",
+                      accent: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400",
+                    },
+                    {
+                      icon: <LockKeyhole className="h-5 w-5" />,
+                      title: "Two-Factor Auth",
+                      desc: "Microsoft Authenticator and Google Authenticator will eventually require newer OS versions.",
+                      accent: "bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400",
+                    },
+                  ].map((card, i) => (
+                    <div
+                      key={i}
+                      className="rounded-xl border border-border bg-card p-5 transition-shadow hover:shadow-md"
+                    >
+                      <div className="mb-3 flex items-center gap-2.5">
+                        <span className={`inline-flex items-center justify-center rounded-lg p-2 ${card.accent}`}>
+                          {card.icon}
+                        </span>
+                        <h4 className="text-sm font-bold text-foreground">{card.title}</h4>
+                      </div>
+                      <p className="text-sm leading-relaxed text-muted-foreground">{card.desc}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                  This doesn't mean these apps stop working overnight. The transition is gradual, and many apps continue to function on older iOS versions even after they stop receiving updates for them.
+                </p>
               </div>
             </div>
           </section>
