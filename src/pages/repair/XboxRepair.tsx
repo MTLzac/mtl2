@@ -1,6 +1,8 @@
 import { RepairLandingTemplate } from "@/components/repair/RepairLandingTemplate";
 import { CommonIssuesSection } from "@/components/repair/CommonIssuesSection";
 import type { CommonIssue } from "@/components/repair/CommonIssuesSection";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import {
   HardDrive, 
   Fan, 
@@ -10,11 +12,12 @@ import {
   Power,
   Award,
   Zap,
-  Wrench,
-  Shield
+  ArrowRight,
 } from "lucide-react";
 import heroImage from "@/assets/hero-xbox.png";
 import xboxHdmiImage from "@/assets/repairs/xbox-broken-hdmi-port.png";
+
+const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 
 const SERVICES = [
   {
@@ -40,7 +43,9 @@ const SERVICES = [
   {
     icon: Gamepad2,
     name: "Controller Repair",
-    description: "Fix Elite and standard controller drift, bumpers, buttons, charging port damage, and sync problems.",
+    description: "Fix Xbox controller stick drift, bumper issues, charging ports, button failures, and sync problems. Controller repairs are also available as a dedicated service.",
+    linkText: "See our controller repair service →",
+    linkHref: "/repair/controller-repair-winnipeg",
   },
   {
     icon: HardDrive,
@@ -96,13 +101,9 @@ const MODEL_CATEGORIES = [
 ];
 
 const MODELS = [
-  // Xbox Series
   "Xbox Series X", "Xbox Series S",
-  // Xbox One
   "Xbox One X", "Xbox One S", "Xbox One S All-Digital", "Xbox One (Original)",
-  // Xbox 360
   "Xbox 360 E", "Xbox 360 S", "Xbox 360 (Original)",
-  // Controllers
   "Xbox Wireless Controller (Series X|S)",
   "Xbox Elite Wireless Controller Series 2",
   "Xbox Elite Wireless Controller",
@@ -158,6 +159,95 @@ const COMMON_ISSUES: CommonIssue[] = [
   },
 ];
 
+/* ── Change 2: Dedicated HDMI Section ── */
+const XboxHdmiSection = () => (
+  <section id="xbox-hdmi-repair" className="py-16 md:py-20">
+    <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-3xl">
+        <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+          Xbox HDMI Port Repair Winnipeg
+        </h2>
+        <div className="space-y-4 text-muted-foreground">
+          <p>
+            Many Xbox consoles we see in Winnipeg come in with damaged HDMI ports.
+            This often happens when the HDMI cable is bumped, forced in incorrectly,
+            or the console is moved while still plugged in.
+          </p>
+          <p className="font-medium text-foreground">Common symptoms include:</p>
+          <ul className="ml-4 list-disc space-y-1">
+            <li>No signal on the TV</li>
+            <li>Flickering display</li>
+            <li>Loose HDMI connection</li>
+            <li>HDMI cable not seating correctly</li>
+          </ul>
+          <p>
+            HDMI port repairs require board-level micro-soldering and are not simple
+            part swaps. Our technicians replace the damaged port and restore reliable video output.
+          </p>
+          <p>
+            Many HDMI repairs can be completed the same day when the console is dropped
+            off early enough. Rush service is also available.
+          </p>
+        </div>
+        <div className="mt-8">
+          <Button size="lg" className="gradient-primary" asChild>
+            <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
+              Get HDMI Repair Quote
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+/* ── Change 4: Related Console Repairs ── */
+const RELATED_CONSOLES = [
+  { label: "PlayStation 5 Repair Winnipeg", href: "/repair/ps5" },
+  { label: "PlayStation 4 Repair Winnipeg", href: "/repair/ps4" },
+  { label: "Nintendo Switch Repair Winnipeg", href: "/repair/nintendo-switch" },
+  { label: "Controller Repair Winnipeg", href: "/repair/controller-repair-winnipeg" },
+];
+
+const RelatedConsoleRepairs = () => (
+  <section id="related-console-repairs" className="py-16 md:py-20 bg-secondary/30">
+    <div className="container mx-auto px-4">
+      <div className="mx-auto max-w-3xl text-center">
+        <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+          Other Console Repairs We Offer
+        </h2>
+        <p className="mb-8 text-muted-foreground">
+          Mobile Tech Lab repairs a wide range of gaming consoles and controllers across Winnipeg.
+          If you need help with another system, our technicians can help.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          {RELATED_CONSOLES.map((item) => (
+            <Button key={item.href} variant="outline" size="lg" asChild>
+              <Link to={item.href}>
+                {item.label}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+/* ── Change 5: Hub Link ── */
+const ConsoleHubLink = () => (
+  <div className="container mx-auto px-4 py-8 text-center">
+    <p className="text-muted-foreground">
+      Looking for help with a different console?{" "}
+      <Link to="/consoles" className="font-medium text-primary hover:underline">
+        See all of our console repair services →
+      </Link>
+    </p>
+  </div>
+);
+
 const XboxRepair = () => {
   return (
     <RepairLandingTemplate
@@ -167,6 +257,7 @@ const XboxRepair = () => {
       slug="xbox"
       deviceName="Xbox"
       tagline="Xbox Repair Specialists in Winnipeg"
+      h1Override={<>Xbox Repair <span className="text-primary">Winnipeg</span></>}
       heroDescription="Xbox not cooperating? We repair a wide range of Xbox issues across all major models, including HDMI port damage, power or no-power problems, overheating, disc drive issues where applicable, software or system issues, and common controller repairs such as stick drift, charging port damage, button issues, or sync problems."
       heroImage={heroImage}
       services={SERVICES}
@@ -178,6 +269,9 @@ const XboxRepair = () => {
       serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online."
       pricingMicroCopy={PRICING_MICRO_COPY}
       commonIssuesSection={<CommonIssuesSection issues={COMMON_ISSUES} />}
+      afterCommonIssuesSection={<XboxHdmiSection />}
+      beforeFaqsSection={<RelatedConsoleRepairs />}
+      beforeLocationsSection={<ConsoleHubLink />}
     />
   );
 };

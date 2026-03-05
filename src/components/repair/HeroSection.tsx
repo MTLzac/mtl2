@@ -13,11 +13,12 @@ interface HeroSectionProps {
   heroImage?: string;
   hideImage?: boolean;
   quickFacts?: QuickFactsData;
+  h1Override?: React.ReactNode;
 }
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 
-export const HeroSection = ({ deviceName, tagline, description, heroImage, hideImage, quickFacts }: HeroSectionProps) => {
+export const HeroSection = ({ deviceName, tagline, description, heroImage, hideImage, quickFacts, h1Override }: HeroSectionProps) => {
   const imageToUse = heroImage || defaultHeroImage;
   const showImage = !hideImage;
   
@@ -34,7 +35,7 @@ export const HeroSection = ({ deviceName, tagline, description, heroImage, hideI
               <LiveStatusBadge />
             </div>
             <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-              {deviceName} Repair <span className="text-primary">Winnipeg</span> & Manitoba
+              {h1Override || <>{deviceName} Repair <span className="text-primary">Winnipeg</span> & Manitoba</>}
             </h1>
             <p className="mb-2 text-xl font-medium text-foreground/90 md:text-2xl">
               {tagline}
