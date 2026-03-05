@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Smartphone } from "lucide-react";
 import { AtAGlanceGrid } from "./AtAGlanceGrid";
 import { DecisionGuideCards } from "./DecisionGuideCards";
 import { DeviceHubTOC } from "./DeviceHubTOC";
@@ -67,10 +67,11 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
 
         <main className="flex-1">
           {/* ── Hero ── */}
-          <section className="border-b border-border bg-secondary/30 py-12 md:py-16">
+          <section className="relative overflow-hidden border-b border-border bg-gradient-to-br from-secondary/40 via-background to-secondary/20 py-14 md:py-20">
             <div className="container mx-auto px-4">
+              {/* Breadcrumb */}
               <nav
-                className="mb-6 text-sm text-muted-foreground"
+                className="mb-8 text-sm text-muted-foreground"
                 aria-label="Breadcrumb"
               >
                 <ol className="flex flex-wrap items-center gap-1.5">
@@ -90,47 +91,95 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                 </ol>
               </nav>
 
-              <div className="grid items-center gap-8 lg:grid-cols-2">
-                <div>
-                  <div className="mb-4 flex items-center gap-3">
+              {/* Two-column hero grid */}
+              <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+                {/* Left Column — Content */}
+                <div className="space-y-6">
+                  {/* Status Badge */}
+                  <div>
                     <Badge
-                      className={statusVariantClasses[data.statusBadge.variant]}
+                      className={`${statusVariantClasses[data.statusBadge.variant]} px-4 py-1.5 text-sm`}
                     >
                       {data.statusBadge.label}
                     </Badge>
                   </div>
 
-                  <h1 className="mb-4 text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
+                  {/* H1 */}
+                  <h1 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl lg:text-5xl">
                     {data.h1}
                   </h1>
 
+                  {/* Featured Snippet */}
                   <HtmlBlock
                     html={data.featuredSnippetHtml}
-                    className="text-lg text-muted-foreground leading-relaxed [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-primary/80 [&_p]:mb-4 [&_p:last-child]:mb-0"
+                    className="text-lg leading-relaxed text-muted-foreground [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-primary/80 [&_p]:mb-4 [&_p:last-child]:mb-0"
                   />
 
+                  {/* TL;DR */}
                   {data.tldrHtml && (
-                    <div className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4">
+                    <div className="rounded-xl border border-primary/20 bg-primary/5 p-5">
                       <HtmlBlock
                         html={data.tldrHtml}
                         className="text-sm leading-relaxed text-foreground [&_strong]:font-semibold"
                       />
                     </div>
                   )}
+
+                  {/* CTA Block */}
+                  <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:gap-4">
+                    <a
+                      href="https://shop.mobiletechlab.ca/pages/repair2"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-6 py-3 font-bold text-primary-foreground shadow-md transition-all hover:shadow-xl hover:brightness-110"
+                    >
+                      Get Repair Quote
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                    <Link
+                      to="/trade-in"
+                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-6 py-3 font-bold text-foreground transition-colors hover:bg-secondary"
+                    >
+                      Shop Upgrades
+                    </Link>
+                  </div>
                 </div>
 
-                {data.heroImage && (
-                  <div className="hidden items-center justify-center lg:flex">
-                    <img
-                      src={data.heroImage}
-                      alt={data.heroImageAlt || `${data.deviceName}`}
-                      className="h-80 w-auto object-contain mix-blend-multiply dark:mix-blend-screen dark:invert"
-                      loading="eager"
-                    />
+                {/* Right Column — Product Showcase Card */}
+                <div className="hidden lg:block">
+                  <div className="sticky top-24 rounded-2xl border border-border/50 bg-gradient-to-br from-secondary/60 via-background to-secondary/40 p-8 shadow-lg">
+                    {data.heroImage ? (
+                      <img
+                        src={data.heroImage}
+                        alt={data.heroImageAlt || `${data.deviceName}`}
+                        className="mx-auto h-72 w-auto object-contain"
+                        loading="eager"
+                      />
+                    ) : (
+                      <div className="flex h-72 items-center justify-center">
+                        <div className="text-center">
+                          <Smartphone className="mx-auto mb-4 h-20 w-20 text-muted-foreground/30" />
+                          <p className="text-sm font-medium text-muted-foreground/50">{data.deviceName}</p>
+                        </div>
+                      </div>
+                    )}
+                    {/* Quick specs under image */}
+                    <div className="mt-6 grid grid-cols-2 gap-3">
+                      {data.atAGlance.slice(0, 4).map((field) => (
+                        <div key={field.label} className="rounded-lg bg-background/60 p-3 text-center">
+                          <p className="text-xs font-medium text-muted-foreground">{field.label}</p>
+                          <p className="mt-0.5 text-sm font-semibold text-foreground">{field.value}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             </div>
+
+            {/* Decorative blurs */}
+            <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-16 left-1/3 h-64 w-64 rounded-full bg-primary/3 blur-3xl" />
           </section>
 
           {/* ── At a Glance ── */}
