@@ -146,25 +146,47 @@
   }
 }
 
-/* Stick drift comparison animations */
-@keyframes drift-rotate {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(180deg); }
-  100% { transform: rotate(360deg); }
+/* ── Stick drift comparison keyframes ── */
+
+/* Arrows: rotate during drift phase, hold during pauses */
+@keyframes drift-arrows-spin {
+  0%   { transform: rotate(0deg);   opacity: 0; }
+  5%   { opacity: 0.85; }
+  33%  { transform: rotate(120deg); opacity: 0.85; }  /* drift phase ~1.5s */
+  38%  { transform: rotate(120deg); opacity: 0.4; }   /* brief pause */
+  44%  { transform: rotate(0deg);   opacity: 0.3; }   /* reset */
+  55%  { transform: rotate(0deg);   opacity: 0; }     /* idle start */
+  100% { transform: rotate(0deg);   opacity: 0; }     /* idle ~2s */
 }
 
-@keyframes check-pulse {
-  0% { opacity: 0; transform: scale(0.6); }
-  40% { opacity: 0; transform: scale(0.6); }
-  60% { opacity: 1; transform: scale(1.15); }
-  80% { opacity: 1; transform: scale(0.95); }
-  100% { opacity: 1; transform: scale(1); }
+/* Stick dot: drift forward, wobble, return */
+@keyframes stick-drift-tilt {
+  0%   { top: 54%; opacity: 0; }
+  5%   { top: 54%; opacity: 0.6; }
+  18%  { top: 50%; }              /* drift forward */
+  22%  { top: 51%; }              /* wobble */
+  26%  { top: 49.5%; }            /* wobble */
+  33%  { top: 50.5%; opacity: 0.5; }
+  40%  { top: 54%; opacity: 0; }  /* return */
+  100% { top: 54%; opacity: 0; }
 }
 
-.animate-drift-rotate {
-  animation: drift-rotate 1.2s ease-in-out forwards;
+/* Character walk shimmer */
+@keyframes character-walk {
+  0%   { transform: translateX(0); opacity: 0; }
+  5%   { opacity: 0.7; }
+  15%  { transform: translateX(4px); }
+  25%  { transform: translateX(8px); }
+  33%  { transform: translateX(10px); opacity: 0.7; }
+  40%  { transform: translateX(0); opacity: 0; }
+  100% { transform: translateX(0); opacity: 0; }
 }
 
-.animate-check-pulse {
-  animation: check-pulse 2.2s ease-out forwards;
+/* AUTO-MOVE label pulse */
+@keyframes auto-move-pulse {
+  0%   { opacity: 0; transform: scale(0.9); }
+  8%   { opacity: 0.9; transform: scale(1); }
+  30%  { opacity: 0.9; transform: scale(1); }
+  38%  { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 0; transform: scale(0.9); }
 }
