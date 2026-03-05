@@ -153,7 +153,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                       <img
                         src={data.heroImage}
                         alt={data.heroImageAlt || `${data.deviceName}`}
-                        className="mx-auto h-72 w-auto object-contain"
+                        className="mx-auto h-72 w-auto object-contain mix-blend-multiply dark:mix-blend-screen dark:invert"
                         loading="eager"
                       />
                     ) : (
