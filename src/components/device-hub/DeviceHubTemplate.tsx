@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, ArrowUpRight, Smartphone, Sparkles, ShieldCheck, AlertTriangle, XCircle, Banknote, Bus, Building, LockKeyhole, Wrench, Database, ScanEye, Layers, Info } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Smartphone, Sparkles, ShieldCheck, AlertTriangle, XCircle, Banknote, Bus, Building, LockKeyhole, Wrench, Database, ScanEye, Layers, Info, Maximize } from "lucide-react";
 import { PRIMARY_PHONE } from "@/lib/locations";
 import { AtAGlanceGrid } from "./AtAGlanceGrid";
 import { DecisionGuideCards } from "./DecisionGuideCards";
@@ -564,12 +564,95 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           </section>
 
           {/* ── Trading In or Upgrading ── */}
-          <section id="trade-in-upgrade" className="border-t border-border py-10 md:py-14">
-            <div className="container mx-auto max-w-3xl px-4">
-              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+          <section id="trade-in-upgrade" className="border-t border-border py-14 md:py-20">
+            <div className="container mx-auto max-w-5xl px-4">
+              <h2 className="mb-4 text-2xl font-bold md:text-3xl">
                 {data.tradeInUpgrade.heading}
               </h2>
-              <HtmlBlock html={data.tradeInUpgrade.contentHtml} />
+
+              {/* Intro paragraph — extract first two <p> tags */}
+              <HtmlBlock
+                html={data.tradeInUpgrade.contentHtml.split('<ul>')[0]}
+                className="mb-10 max-w-2xl text-muted-foreground"
+              />
+
+              {/* Upgrade Path Cards */}
+              <div className="grid gap-6 md:grid-cols-3">
+                {(data.tradeInUpgrade as any).upgradePaths ? (
+                  ((data.tradeInUpgrade as any).upgradePaths as Array<{tag: string; title: string; description: string; icon: string; href?: string; linkLabel?: string}>).map((path, i) => {
+                    const icons: Record<string, React.ReactNode> = {
+                      smartphone: <Smartphone className="h-6 w-6" />,
+                      shieldCheck: <ShieldCheck className="h-6 w-6" />,
+                      maximize: <Maximize className="h-6 w-6" />,
+                    };
+                    return (
+                      <div key={i} className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+                        <span className="mb-1 inline-block w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">{path.tag}</span>
+                        <div className="mb-4 mt-3 flex items-center gap-3">
+                          <span className="inline-flex items-center justify-center rounded-xl bg-secondary p-2.5 text-foreground/70">{icons[path.icon] ?? <Smartphone className="h-6 w-6" />}</span>
+                          <h3 className="text-lg font-bold text-foreground">{path.title}</h3>
+                        </div>
+                        <p className="flex-1 text-sm leading-relaxed text-muted-foreground">{path.description}</p>
+                        {path.href && (
+                          <a href={path.href} target={path.href.startsWith('http') ? '_blank' : undefined} rel={path.href.startsWith('http') ? 'noopener noreferrer' : undefined} className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary/80">
+                            {path.linkLabel || 'Learn More'}
+                            <ArrowRight className="h-4 w-4" />
+                          </a>
+                        )}
+                      </div>
+                    );
+                  })
+                ) : (
+                  /* Fallback: render upgrade cards from known XS Max content structure */
+                  <>
+                    <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+                      <span className="mb-1 inline-block w-fit rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">Modern Performance</span>
+                      <div className="mb-4 mt-3 flex items-center gap-3">
+                        <span className="inline-flex items-center justify-center rounded-xl bg-secondary p-2.5 text-foreground/70"><Smartphone className="h-6 w-6" /></span>
+                        <h3 className="text-lg font-bold text-foreground">iPhone 12</h3>
+                      </div>
+                      <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                        First iPhone with 5G, MagSafe, and a significantly longer iOS support window. A natural upgrade for {data.deviceName} users who want continued software support.
+                      </p>
+                    </div>
+                    <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+                      <span className="mb-1 inline-block w-fit rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400">Budget Friendly</span>
+                      <div className="mb-4 mt-3 flex items-center gap-3">
+                        <span className="inline-flex items-center justify-center rounded-xl bg-secondary p-2.5 text-foreground/70"><ShieldCheck className="h-6 w-6" /></span>
+                        <h3 className="text-lg font-bold text-foreground">Certified Pre-Owned iPhone 12</h3>
+                      </div>
+                      <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                        Strong mid-range value for users buying used. Certified quality with warranty coverage.
+                      </p>
+                      <a
+                        href="https://shop.mobiletechlab.ca/products/iphone-12"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-border bg-secondary px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary/80"
+                      >
+                        Shop Pre-Owned
+                        <ArrowRight className="h-4 w-4" />
+                      </a>
+                    </div>
+                    <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+                      <span className="mb-1 inline-block w-fit rounded-full bg-amber-500/10 px-3 py-1 text-xs font-semibold text-amber-600 dark:text-amber-400">Max Screen Real Estate</span>
+                      <div className="mb-4 mt-3 flex items-center gap-3">
+                        <span className="inline-flex items-center justify-center rounded-xl bg-secondary p-2.5 text-foreground/70"><Maximize className="h-6 w-6" /></span>
+                        <h3 className="text-lg font-bold text-foreground">iPhone 12/13 Pro Max</h3>
+                      </div>
+                      <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                        For users who want to maintain the large-screen experience with modern camera and battery improvements.
+                      </p>
+                    </div>
+                  </>
+                )}
+              </div>
+
+              {/* Closing paragraph */}
+              <HtmlBlock
+                html={data.tradeInUpgrade.contentHtml.includes('</ul>') ? data.tradeInUpgrade.contentHtml.split('</ul>').slice(-1)[0] : ''}
+                className="mt-8 max-w-2xl text-sm text-muted-foreground [&_a]:text-primary [&_a]:underline"
+              />
             </div>
           </section>
 
