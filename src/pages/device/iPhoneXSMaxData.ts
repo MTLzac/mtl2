@@ -1,4 +1,5 @@
 import type { DeviceHubData } from "@/components/device-hub/types";
+import heroImg from "@/assets/devices/iphone-xs-max-hero.png";
 
 const iPhoneXSMaxData: DeviceHubData = {
   // ── SEO ──
@@ -16,7 +17,7 @@ const iPhoneXSMaxData: DeviceHubData = {
     label: "No longer receiving major iOS updates",
     variant: "deprecated",
   },
-  heroImage: undefined,
+  heroImage: heroImg,
   heroImageAlt: "Apple iPhone XS Max front and back view",
   featuredSnippetHtml: `
     <p>As of 2026, the iPhone XS Max does not support iOS 26 and will not receive future major iOS updates. Released in 2018 as Apple's first large-format OLED iPhone, the XS Max pairs a 6.5-inch Super Retina display with the A12 Bionic chip. While it remains usable for everyday tasks, its end-of-life software status and OLED screen repair costs increasingly favour upgrading when multiple repairs are needed.</p>
