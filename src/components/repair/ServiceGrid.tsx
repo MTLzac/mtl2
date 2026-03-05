@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LucideIcon, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export interface Service {
   icon: LucideIcon;
   name: string;
   description: string;
+  linkText?: string;
+  linkHref?: string;
 }
 
 interface ServiceGridProps {
@@ -40,6 +43,11 @@ export const ServiceGrid = ({ services, deviceName }: ServiceGridProps) => {
                 </div>
                 <h3 className="mb-2 text-lg font-semibold">{service.name}</h3>
                 <p className="text-sm text-muted-foreground">{service.description}</p>
+                {service.linkText && service.linkHref && (
+                  <Link to={service.linkHref} className="mt-2 inline-block text-sm font-medium text-primary hover:underline">
+                    {service.linkText}
+                  </Link>
+                )}
               </CardContent>
             </Card>
           ))}

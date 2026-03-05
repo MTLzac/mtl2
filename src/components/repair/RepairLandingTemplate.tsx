@@ -22,7 +22,7 @@ interface RepairLandingTemplateProps {
   metaTitle: string;
   metaDescription: string;
   canonicalUrl: string;
-  slug: string; // URL slug for breadcrumbs (e.g., "iphone", "samsung")
+  slug: string;
   
   // Hero
   deviceName: string;
@@ -30,6 +30,7 @@ interface RepairLandingTemplateProps {
   heroDescription: React.ReactNode;
   heroImage?: string;
   hideHeroImage?: boolean;
+  h1Override?: React.ReactNode;
   
   // Content
   services: Service[];
@@ -45,6 +46,9 @@ interface RepairLandingTemplateProps {
   pricingMicroCopy?: PricingMicroCopyData;
   beforeAfterSection?: React.ReactNode;
   commonIssuesSection?: React.ReactNode;
+  afterCommonIssuesSection?: React.ReactNode;
+  beforeFaqsSection?: React.ReactNode;
+  beforeLocationsSection?: React.ReactNode;
 }
 
 export const RepairLandingTemplate = ({
@@ -57,6 +61,7 @@ export const RepairLandingTemplate = ({
   heroDescription,
   heroImage,
   hideHeroImage,
+  h1Override,
   services,
   models,
   modelsDescription,
@@ -68,6 +73,9 @@ export const RepairLandingTemplate = ({
   pricingMicroCopy,
   beforeAfterSection,
   commonIssuesSection,
+  afterCommonIssuesSection,
+  beforeFaqsSection,
+  beforeLocationsSection,
 }: RepairLandingTemplateProps) => {
   const breadcrumbs = getRepairBreadcrumbs(deviceName, slug);
   
@@ -95,9 +103,12 @@ export const RepairLandingTemplate = ({
             heroImage={heroImage}
             hideImage={hideHeroImage}
             quickFacts={quickFacts}
+            h1Override={h1Override}
           />
           
           {commonIssuesSection}
+          
+          {afterCommonIssuesSection}
           
           <ServiceGrid services={services} deviceName={deviceName} />
           
@@ -114,9 +125,13 @@ export const RepairLandingTemplate = ({
           
           <RepairWaysToSave deviceName={deviceName} />
           
+          {beforeLocationsSection}
+          
           <LocationCards serviceAreaNote={serviceAreaNote} />
           
           {pricingMicroCopy && <PricingMicroCopy content={pricingMicroCopy} />}
+          
+          {beforeFaqsSection}
           
           <FAQSection deviceName={deviceName} faqs={faqs} />
         </main>
@@ -125,10 +140,12 @@ export const RepairLandingTemplate = ({
         <StickyQuoteCTA />
         <TableOfContents items={[
           ...(commonIssuesSection ? [{ id: "common-issues", label: "Common Issues" }] : []),
+          ...(afterCommonIssuesSection ? [{ id: "xbox-hdmi-repair", label: "HDMI Repair" }] : []),
           { id: "services", label: "Services" },
           ...(beforeAfterSection ? [{ id: "results", label: "Results" }] : []),
           { id: "models", label: "Models" },
           { id: "why-choose-us", label: "Why Us" },
+          ...(beforeFaqsSection ? [{ id: "related-console-repairs", label: "Related Repairs" }] : []),
           { id: "locations", label: "Locations" },
           { id: "faqs", label: "FAQs" },
         ]} />
