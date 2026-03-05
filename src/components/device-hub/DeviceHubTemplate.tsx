@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, ArrowUpRight, Smartphone, Sparkles, ShieldCheck, AlertTriangle, XCircle, Banknote, Bus, Building, LockKeyhole, Wrench, Database } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Smartphone, Sparkles, ShieldCheck, AlertTriangle, XCircle, Banknote, Bus, Building, LockKeyhole, Wrench, Database, ScanEye, Layers, Info } from "lucide-react";
 import { PRIMARY_PHONE } from "@/lib/locations";
 import { AtAGlanceGrid } from "./AtAGlanceGrid";
 import { DecisionGuideCards } from "./DecisionGuideCards";
@@ -473,52 +473,92 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
           </section>
 
           {/* ── Common Damage ── */}
-          <section id="common-damage" className="border-t border-border py-10 md:py-14">
-            <div className="container mx-auto max-w-3xl px-4">
-              <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+          <section id="common-damage" className="border-t border-border py-14 md:py-20">
+            <div className="container mx-auto max-w-5xl px-4">
+              <h2 className="mb-10 text-2xl font-bold md:text-3xl">
                 {data.commonDamage.heading}
               </h2>
 
-              {/* Front Glass */}
-              <div className="mb-10">
-                <h3 className="mb-4 text-xl font-semibold">
-                  {data.commonDamage.frontGlass.heading}
-                </h3>
-                {data.commonDamage.frontGlass.image && (
-                  <div className="mb-4">
-                    <img
-                      src={data.commonDamage.frontGlass.image}
-                      alt={
-                        data.commonDamage.frontGlass.imageAlt ||
-                        "Front glass damage"
-                      }
-                      className="w-full max-w-md rounded-lg"
-                      loading="lazy"
+              <div className="grid gap-8 lg:grid-cols-2">
+                {/* OLED Display Card */}
+                <div className="flex flex-col rounded-2xl border border-border border-t-4 border-t-foreground/80 bg-card shadow-sm">
+                  <div className="px-6 pt-6 pb-4">
+                    <div className="mb-4 flex items-center gap-3">
+                      <span className="inline-flex items-center justify-center rounded-xl bg-secondary p-2.5 text-foreground/70">
+                        <ScanEye className="h-6 w-6" />
+                      </span>
+                      <h3 className="text-lg font-bold text-foreground">
+                        {data.commonDamage.frontGlass.heading}
+                      </h3>
+                    </div>
+                    {data.commonDamage.frontGlass.image && (
+                      <img
+                        src={data.commonDamage.frontGlass.image}
+                        alt={data.commonDamage.frontGlass.imageAlt || "Front glass damage"}
+                        className="mb-4 w-full rounded-lg object-cover"
+                        loading="lazy"
+                      />
+                    )}
+                    {/* Main text — exclude last paragraph (pro tip) */}
+                    <HtmlBlock
+                      html={data.commonDamage.frontGlass.contentHtml
+                        .split('</p>')
+                        .slice(0, -2)
+                        .join('</p>') + '</p>'}
+                      className="text-sm leading-relaxed text-muted-foreground"
                     />
                   </div>
-                )}
-                <HtmlBlock html={data.commonDamage.frontGlass.contentHtml} />
-              </div>
+                  {/* Pro Tip — aftermarket insight */}
+                  <div className="mt-auto px-6 pb-6">
+                    <div className="flex gap-3 rounded-xl bg-secondary/60 p-4">
+                      <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        <span className="font-semibold text-foreground">Pro Tip:</span>{" "}
+                        Aftermarket OLED panels are available at lower price points than OEM, though colour accuracy and brightness may differ slightly. From our experience, most users find aftermarket OLED replacements acceptable for daily use.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-              {/* Back Glass */}
-              <div>
-                <h3 className="mb-4 text-xl font-semibold">
-                  {data.commonDamage.backGlass.heading}
-                </h3>
-                {data.commonDamage.backGlass.image && (
-                  <div className="mb-4">
-                    <img
-                      src={data.commonDamage.backGlass.image}
-                      alt={
-                        data.commonDamage.backGlass.imageAlt ||
-                        "Back glass damage"
-                      }
-                      className="w-full max-w-md rounded-lg"
-                      loading="lazy"
+                {/* Back Glass Card */}
+                <div className="flex flex-col rounded-2xl border border-border border-t-4 border-t-foreground/80 bg-card shadow-sm">
+                  <div className="px-6 pt-6 pb-4">
+                    <div className="mb-4 flex items-center gap-3">
+                      <span className="inline-flex items-center justify-center rounded-xl bg-secondary p-2.5 text-foreground/70">
+                        <Layers className="h-6 w-6" />
+                      </span>
+                      <h3 className="text-lg font-bold text-foreground">
+                        {data.commonDamage.backGlass.heading}
+                      </h3>
+                    </div>
+                    {data.commonDamage.backGlass.image && (
+                      <img
+                        src={data.commonDamage.backGlass.image}
+                        alt={data.commonDamage.backGlass.imageAlt || "Back glass damage"}
+                        className="mb-4 w-full rounded-lg object-cover"
+                        loading="lazy"
+                      />
+                    )}
+                    {/* Main text — second paragraph */}
+                    <HtmlBlock
+                      html={data.commonDamage.backGlass.contentHtml
+                        .split('</p>')
+                        .slice(1, -1)
+                        .join('</p>') + '</p>'}
+                      className="text-sm leading-relaxed text-muted-foreground [&_a]:text-primary [&_a]:underline"
                     />
                   </div>
-                )}
-                <HtmlBlock html={data.commonDamage.backGlass.contentHtml} />
+                  {/* Pro Tip — laser-welding detail */}
+                  <div className="mt-auto px-6 pb-6">
+                    <div className="flex gap-3 rounded-xl bg-secondary/60 p-4">
+                      <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        <span className="font-semibold text-foreground">Pro Tip:</span>{" "}
+                        The back glass is laser-welded to the stainless steel housing. Repair requires either a full housing swap or careful glass-only removal — a specialist procedure we perform regularly.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
