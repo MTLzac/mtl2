@@ -207,8 +207,99 @@ const ControllerRepair = () => {
           </div>
         </section>
 
-        {/* Related Repair Pages */}
+        {/* Repair or Swap */}
         <section className="py-12 md:py-16 bg-secondary/50">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
+              Repair or Swap — Two Ways To Fix Your Controller
+            </h2>
+            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-10">
+              Choose the option that works best for you.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-12">
+              {/* Repair Card */}
+              <div className="flex flex-col bg-card border border-border rounded-2xl p-6 md:p-8 shadow-sm">
+                <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <Wrench className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-3">Repair Your Controller</h3>
+                <p className="text-muted-foreground text-center mb-4 leading-relaxed">
+                  We repair controller issues such as stick drift, broken buttons, and charging problems.
+                </p>
+                <ul className="space-y-2 mb-6 flex-1">
+                  {["Professional component replacement", "Fully tested after repair", "Keep your original controller"].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <CheckCircle className="h-4 w-4 text-primary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Button size="lg" variant="outline" className="w-full" asChild>
+                  <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
+                    Get Repair Quote
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+
+              {/* Swap Card — highlighted */}
+              <div className="relative flex flex-col bg-card border-2 border-primary/40 rounded-2xl p-6 md:p-8 shadow-md ring-1 ring-primary/10">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-0.5 text-xs font-semibold text-primary-foreground">
+                  Faster Option
+                </span>
+                <div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                  <Gamepad2 className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold text-center mb-3">Swap For A Pre-Owned Controller</h3>
+                <p className="text-muted-foreground text-center mb-4 leading-relaxed">
+                  Trade in your damaged controller and apply its value toward a fully tested pre-owned replacement.
+                </p>
+                <ul className="space-y-2 mb-6 flex-1">
+                  {["Faster than waiting for a repair", "Tested working controller", "Pay only the difference"].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <CheckCircle className="h-4 w-4 text-primary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Button size="lg" className="w-full" asChild>
+                  <Link to="/trade-in">
+                    Check Replacement Options
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Visual flow */}
+            <div className="flex items-center justify-center gap-3 md:gap-5 flex-wrap">
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10 border border-destructive/20">
+                  <Gamepad2 className="h-6 w-6 text-destructive" />
+                </div>
+                <span className="text-xs font-medium text-muted-foreground">Broken Controller</span>
+              </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground/60 shrink-0" />
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
+                  <DollarSign className="h-6 w-6 text-primary" />
+                </div>
+                <span className="text-xs font-medium text-muted-foreground">Trade-In Credit</span>
+              </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground/60 shrink-0" />
+              <div className="flex flex-col items-center gap-2">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-chart-2/10 border border-chart-2/20">
+                  <CheckCircle className="h-6 w-6 text-chart-2" />
+                </div>
+                <span className="text-xs font-medium text-muted-foreground">Working Controller</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Repair Pages */}
+        <section className="py-12 md:py-16">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
               Related Console Repair Services
