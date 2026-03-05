@@ -13,9 +13,16 @@ import {
   Award,
   Zap,
   ArrowRight,
+  MonitorX,
+  Monitor,
+  Cable,
+  Unplug,
+  Phone,
 } from "lucide-react";
+import { BeforeAfterSlider } from "@/components/repair/BeforeAfterSlider";
 import heroImage from "@/assets/hero-xbox.png";
 import xboxHdmiImage from "@/assets/repairs/xbox-broken-hdmi-port.png";
+import xboxHdmiBeforeAfter from "@/assets/repairs/xbox-hdmi-before-after.png";
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
 
@@ -160,42 +167,86 @@ const COMMON_ISSUES: CommonIssue[] = [
 ];
 
 /* ── Change 2: Dedicated HDMI Section ── */
+const HDMI_SYMPTOMS = [
+  { icon: MonitorX, label: "No signal on the TV" },
+  { icon: Monitor, label: "Flickering display" },
+  { icon: Cable, label: "Loose HDMI connection" },
+  { icon: Unplug, label: "HDMI cable not seating properly" },
+];
+
 const XboxHdmiSection = () => (
   <section id="xbox-hdmi-repair" className="py-16 md:py-20">
     <div className="container mx-auto px-4">
-      <div className="mx-auto max-w-3xl">
-        <h2 className="mb-6 text-3xl font-bold md:text-4xl">
-          Xbox HDMI Port Repair Winnipeg
-        </h2>
-        <div className="space-y-4 text-muted-foreground">
-          <p>
-            Many Xbox consoles we see in Winnipeg come in with damaged HDMI ports.
-            This often happens when the HDMI cable is bumped, forced in incorrectly,
-            or the console is moved while still plugged in.
-          </p>
-          <p className="font-medium text-foreground">Common symptoms include:</p>
-          <ul className="ml-4 list-disc space-y-1">
-            <li>No signal on the TV</li>
-            <li>Flickering display</li>
-            <li>Loose HDMI connection</li>
-            <li>HDMI cable not seating correctly</li>
-          </ul>
-          <p>
-            HDMI port repairs require board-level micro-soldering and are not simple
-            part swaps. Our technicians replace the damaged port and restore reliable video output.
-          </p>
-          <p>
-            Many HDMI repairs can be completed the same day when the console is dropped
-            off early enough. Rush service is also available.
-          </p>
-        </div>
-        <div className="mt-8">
-          <Button size="lg" className="gradient-primary" asChild>
-            <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
-              Get HDMI Repair Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-          </Button>
+      <div className="mx-auto max-w-5xl rounded-2xl bg-secondary/40 p-6 shadow-sm md:p-10">
+        <div className="grid gap-8 md:grid-cols-2 md:gap-12">
+          {/* Left — Before/After Slider */}
+          <div className="flex flex-col justify-center">
+            <BeforeAfterSlider
+              image={xboxHdmiBeforeAfter}
+              imageAlt="Xbox Series X HDMI port before and after repair — broken vs professionally replaced"
+              beforeLabel="Broken HDMI Port"
+              afterLabel="Repaired HDMI Port"
+              caption="Example of damaged Xbox HDMI port (left) and professionally replaced port (right)"
+            />
+          </div>
+
+          {/* Right — Content */}
+          <div className="flex flex-col gap-5">
+            <h2 className="text-3xl font-bold md:text-4xl">
+              Xbox HDMI Port Repair Winnipeg
+            </h2>
+
+            <p className="text-muted-foreground">
+              Damaged HDMI ports are one of the most common Xbox repairs we see in
+              Winnipeg. This usually happens when the HDMI cable is bumped, forced
+              in incorrectly, or the console is moved while still plugged in.
+            </p>
+
+            {/* Symptoms Card */}
+            <div className="rounded-xl border border-border bg-card p-5">
+              <h3 className="mb-3 font-semibold">Common Symptoms</h3>
+              <ul className="grid gap-2 sm:grid-cols-2">
+                {HDMI_SYMPTOMS.map((s) => (
+                  <li key={s.label} className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <s.icon className="h-4 w-4 shrink-0 text-primary" />
+                    {s.label}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Repair Explanation */}
+            <p className="text-muted-foreground">
+              HDMI port replacement requires board-level micro-soldering. Our
+              technicians carefully remove the damaged port and install a new one
+              to restore stable video output.
+            </p>
+
+            {/* Speed Callout */}
+            <div className="flex items-start gap-3 rounded-xl border border-primary/20 bg-primary/5 p-4">
+              <Zap className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+              <p className="text-sm font-medium">
+                Same-day HDMI repairs are often possible when dropped off early.
+                Rush repair service is also available.
+              </p>
+            </div>
+
+            {/* CTA Row */}
+            <div className="flex flex-col gap-3 pt-1 sm:flex-row">
+              <Button size="lg" className="gradient-primary" asChild>
+                <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
+                  Get HDMI Repair Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <a href="tel:+12044894140">
+                  <Phone className="mr-2 h-4 w-4" />
+                  Call Repair Desk
+                </a>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
