@@ -202,7 +202,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                 <ViabilityScoreCards scores={data.viabilityScores} />
 
                 {data.quickTakeawayHtml && (
-                  <div className="mt-8 rounded-lg border border-border bg-muted/50 p-5">
+                  <div className="mt-8 rounded-2xl bg-secondary/60 p-6">
                     <HtmlBlock
                       html={data.quickTakeawayHtml}
                       className="text-sm leading-relaxed text-muted-foreground [&_strong]:text-foreground"
