@@ -62,6 +62,7 @@ const PS5Repair = lazy(() => import("./pages/repair/PS5Repair"));
 const PS4Repair = lazy(() => import("./pages/repair/PS4Repair"));
 const XboxRepair = lazy(() => import("./pages/repair/XboxRepair"));
 const SteamDeckRepair = lazy(() => import("./pages/repair/SteamDeckRepair"));
+const ControllerRepair = lazy(() => import("./pages/repair/ControllerRepair"));
 
 // Lazy-loaded B2B / Business Page
 const BusinessRepair = lazy(() => import("./pages/BusinessRepair"));
@@ -169,6 +170,7 @@ const App = () => (
               <Route path="/repair/playstation-4" element={<PS4Repair />} />
               <Route path="/repair/xbox" element={<XboxRepair />} />
               <Route path="/repair/steam-deck" element={<SteamDeckRepair />} />
+              <Route path="/repair/controller-repair-winnipeg" element={<ControllerRepair />} />
 
               {/* Service-Specific Pages */}
               <Route path="/repair/water-damage" element={<WaterDamageRepair />} />
