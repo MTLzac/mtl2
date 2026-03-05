@@ -1,37 +1,38 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import comparisonImage from "@/assets/repairs/controller-stick-drift-comparison.png";
 
 /**
- * Interactive stick-drift comparison image.
- * On hover (desktop) or tap (mobile) the left-panel "drift" indicators
- * animate, then the right-panel "repaired" check pulses.
+ * Stick-drift comparison image with a continuously looping
+ * drift animation on the LEFT panel only. The RIGHT panel
+ * stays completely static to emphasise the contrast.
+ *
+ * Animation auto-plays when the element enters the viewport
+ * (works on mobile without hover). Pauses when off-screen.
  */
 export const StickDriftComparison: React.FC<{ className?: string }> = ({
   className = "",
 }) => {
-  const [active, setActive] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
 
-  const trigger = useCallback(() => {
-    if (active) return;
-    setActive(true);
-    // Total animation ~2.2s then reset
-    timeoutRef.current = setTimeout(() => setActive(false), 2400);
-  }, [active]);
-
-  const handleMouseEnter = () => trigger();
-  const handleTouchStart = (e: React.TouchEvent) => {
-    e.preventDefault();
-    trigger();
-  };
+  // Intersection Observer — start/stop loop when in viewport
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.3 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   return (
     <div
-      className={`relative select-none cursor-pointer ${className}`}
-      onMouseEnter={handleMouseEnter}
-      onTouchStart={handleTouchStart}
+      ref={containerRef}
+      className={`relative select-none ${className}`}
       role="img"
-      aria-label="Before and after comparison of controller stick drift repair. Hover or tap to see animation."
+      aria-label="Before and after comparison of controller stick drift repair. The left panel animates to show stick drift; the right panel remains stable."
     >
       {/* Base image */}
       <img
@@ -41,94 +42,113 @@ export const StickDriftComparison: React.FC<{ className?: string }> = ({
         draggable={false}
       />
 
-      {/* ── LEFT PANEL OVERLAYS (drift animation) ── */}
+      {/* ═══════════════════════════════════════════
+          LEFT PANEL — looping drift overlays
+          ═══════════════════════════════════════════ */}
 
-      {/* Drift arrows — rotating ring overlay on the left stick area */}
+      {/* Drift arrows — slow continuous rotation */}
       <svg
-        className={`absolute pointer-events-none transition-opacity duration-300 ${
-          active ? "opacity-100" : "opacity-0"
-        }`}
+        className="absolute pointer-events-none"
         style={{
           top: "52%",
           left: "14.5%",
           width: "8%",
           height: "auto",
           aspectRatio: "1",
+          opacity: visible ? 0.85 : 0,
+          transition: "opacity 0.4s ease",
         }}
         viewBox="0 0 40 40"
       >
         <g
-          className={active ? "animate-drift-rotate" : ""}
-          style={{ transformOrigin: "center" }}
+          style={{
+            transformOrigin: "center",
+            animation: visible
+              ? "drift-arrows-spin 4.5s cubic-bezier(0.4,0,0.2,1) infinite"
+              : "none",
+          }}
         >
-          {/* Circular drift arrows */}
-          <path
-            d="M20 6 L23 11 L17 11 Z"
-            fill="hsl(var(--destructive))"
-            opacity="0.85"
-          />
-          <path
-            d="M34 20 L29 23 L29 17 Z"
-            fill="hsl(var(--destructive))"
-            opacity="0.85"
-          />
-          <path
-            d="M20 34 L17 29 L23 29 Z"
-            fill="hsl(var(--destructive))"
-            opacity="0.85"
-          />
-          <path
-            d="M6 20 L11 17 L11 23 Z"
-            fill="hsl(var(--destructive))"
-            opacity="0.85"
-          />
+          <path d="M20 6 L23 11 L17 11 Z" fill="hsl(var(--destructive))" />
+          <path d="M34 20 L29 23 L29 17 Z" fill="hsl(var(--destructive))" />
+          <path d="M20 34 L17 29 L23 29 Z" fill="hsl(var(--destructive))" />
+          <path d="M6 20 L11 17 L11 23 Z" fill="hsl(var(--destructive))" />
         </g>
       </svg>
 
-      {/* Stick tilt indicator — subtle dot that shifts forward */}
+      {/* Stick tilt — drifts forward then wobbles back */}
       <div
-        className={`absolute rounded-full bg-destructive/60 pointer-events-none transition-all duration-700 ease-in-out ${
-          active ? "opacity-80" : "opacity-0"
-        }`}
+        className="absolute rounded-full pointer-events-none"
         style={{
-          top: active ? "50%" : "52%",
           left: "18%",
-          width: "1.8%",
-          height: "auto",
+          width: "2%",
           aspectRatio: "1",
+          background: "hsl(var(--destructive) / 0.55)",
+          animation: visible
+            ? "stick-drift-tilt 4.5s ease-in-out infinite"
+            : "none",
+          opacity: visible ? 1 : 0,
+          transition: "opacity 0.4s ease",
         }}
       />
 
-      {/* Walking character indicator — small upward shimmer on the left screen */}
+      {/* Character walk shimmer on the left gameplay screen */}
       <div
-        className={`absolute pointer-events-none rounded transition-all ease-in-out ${
-          active
-            ? "opacity-70 translate-x-1 duration-1000"
-            : "opacity-0 translate-x-0 duration-300"
-        }`}
+        className="absolute pointer-events-none rounded"
         style={{
-          top: "12%",
-          left: "15%",
-          width: "6%",
-          height: "18%",
+          top: "8%",
+          left: "14%",
+          width: "8%",
+          height: "22%",
           background:
-            "linear-gradient(90deg, transparent, hsl(var(--destructive) / 0.15), transparent)",
+            "linear-gradient(180deg, transparent 30%, hsl(var(--destructive) / 0.12) 50%, transparent 70%)",
+          animation: visible
+            ? "character-walk 4.5s ease-in-out infinite"
+            : "none",
+          opacity: visible ? 1 : 0,
+          transition: "opacity 0.4s ease",
         }}
       />
 
-      {/* ── RIGHT PANEL OVERLAYS (repaired animation) ── */}
-
-      {/* Green check pulse */}
+      {/* AUTO-MOVE label inside the left gameplay window */}
       <div
-        className={`absolute pointer-events-none flex items-center justify-center ${
-          active ? "animate-check-pulse" : "opacity-0"
-        }`}
+        className="absolute pointer-events-none flex items-center justify-center"
+        style={{
+          top: "5%",
+          left: "10%",
+          width: "16%",
+          height: "6%",
+        }}
+      >
+        <span
+          className="px-1.5 py-0.5 rounded text-[7px] sm:text-[9px] font-bold tracking-wider uppercase"
+          style={{
+            background: "hsl(var(--destructive) / 0.8)",
+            color: "hsl(var(--destructive-foreground))",
+            animation: visible
+              ? "auto-move-pulse 4.5s ease-in-out infinite"
+              : "none",
+            opacity: visible ? 1 : 0,
+            transition: "opacity 0.4s ease",
+          }}
+        >
+          AUTO-MOVE
+        </span>
+      </div>
+
+      {/* ═══════════════════════════════════════════
+          RIGHT PANEL — completely static
+          ═══════════════════════════════════════════ */}
+
+      {/* Static green check — always visible */}
+      <div
+        className="absolute pointer-events-none flex items-center justify-center"
         style={{
           top: "82%",
           right: "8%",
-          width: "5%",
+          width: "4.5%",
           height: "auto",
           aspectRatio: "1",
+          opacity: 0.85,
         }}
       >
         <svg viewBox="0 0 24 24" className="w-full h-full">
@@ -149,32 +169,6 @@ export const StickDriftComparison: React.FC<{ className?: string }> = ({
             fill="none"
           />
         </svg>
-      </div>
-
-      {/* Calm centered-stick indicator on right panel */}
-      <div
-        className={`absolute pointer-events-none rounded-full border-2 transition-all ease-in-out ${
-          active
-            ? "opacity-60 scale-110 duration-700 delay-1000"
-            : "opacity-0 scale-100 duration-300"
-        }`}
-        style={{
-          top: "51%",
-          right: "14%",
-          width: "3%",
-          height: "auto",
-          aspectRatio: "1",
-          borderColor: "hsl(var(--success))",
-        }}
-      />
-
-      {/* Interaction hint */}
-      <div
-        className={`absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-foreground/70 text-background text-[10px] font-medium backdrop-blur-sm transition-opacity duration-500 ${
-          active ? "opacity-0" : "opacity-60"
-        }`}
-      >
-        Hover to see animation
       </div>
     </div>
   );
