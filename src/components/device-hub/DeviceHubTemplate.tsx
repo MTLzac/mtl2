@@ -4,7 +4,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, ArrowUpRight, Smartphone, Sparkles, ShieldCheck, AlertTriangle, XCircle, Banknote, Bus, Building, LockKeyhole, Wrench, Database, ScanEye, Layers, Info, Maximize } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Smartphone, Sparkles, ShieldCheck, AlertTriangle, XCircle, Banknote, Bus, Building, LockKeyhole, Wrench, Database, ScanEye, Layers, Info, Maximize, ChevronDown, MessageCircleQuestion } from "lucide-react";
 import { PRIMARY_PHONE } from "@/lib/locations";
 import { AtAGlanceGrid } from "./AtAGlanceGrid";
 import { DecisionGuideCards } from "./DecisionGuideCards";
@@ -700,21 +700,48 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
             </section>
           )}
 
-          {/* ── FAQs (visible, not accordions) ── */}
-          <section id="faqs" className="border-t border-border py-10 md:py-14">
+          {/* ── FAQs — Interactive Accordion ── */}
+          <section id="faqs" className="border-t border-border py-14 md:py-20">
             <div className="container mx-auto max-w-3xl px-4">
-              <h2 className="mb-8 text-2xl font-bold md:text-3xl">
+              <h2 className="mb-10 text-2xl font-bold md:text-3xl">
                 {data.faqHeading}
               </h2>
-              <div className="space-y-8">
+              <div className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
                 {data.faqs.map((faq, i) => (
-                  <article key={i}>
-                    <h3 className="mb-2 text-lg font-semibold">
-                      {faq.question}
-                    </h3>
-                    <HtmlBlock html={faq.answerHtml} />
-                  </article>
+                  <details
+                    key={i}
+                    className="group border-b border-border last:border-b-0"
+                  >
+                    <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-4 text-base font-semibold text-foreground transition-colors hover:bg-secondary/50 [&::-webkit-details-marker]:hidden">
+                      <span>{faq.question}</span>
+                      <ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180" />
+                    </summary>
+                    <div className="px-6 pb-5 pt-0">
+                      <HtmlBlock
+                        html={faq.answerHtml}
+                        className="text-sm leading-relaxed text-muted-foreground [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2"
+                      />
+                    </div>
+                  </details>
                 ))}
+              </div>
+
+              {/* Help Center Footer */}
+              <div className="mt-10 flex items-center gap-4 rounded-xl border border-border bg-secondary/40 p-6">
+                <span className="inline-flex shrink-0 items-center justify-center rounded-xl bg-primary/10 p-3 text-primary">
+                  <MessageCircleQuestion className="h-6 w-6" />
+                </span>
+                <div className="flex-1">
+                  <p className="font-semibold text-foreground">Still have questions?</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">Our repair experts are happy to help with any {data.deviceName}-specific questions.</p>
+                </div>
+                <a
+                  href={`tel:${PRIMARY_PHONE}`}
+                  className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                >
+                  Contact Us
+                  <ArrowRight className="h-4 w-4" />
+                </a>
               </div>
             </div>
           </section>
