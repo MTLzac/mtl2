@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { StickDriftComparison } from "@/components/repair/StickDriftComparison";
+
 import { Link } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -226,18 +226,6 @@ const ConsoleRepairHub = () => {
           </div>
         </section>
 
-        {/* Stick Drift Visual */}
-        <section className="py-12 md:py-16">
-          <div className="container mx-auto px-4 max-w-3xl text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-3">
-              What Is Stick Drift?
-            </h2>
-            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
-              Stick drift causes your controller's analog stick to register movement even when you're not touching it. Hover or tap the image below to see the difference.
-            </p>
-            <StickDriftComparison className="mx-auto" />
-          </div>
-        </section>
 
         {/* Why Choose */}
         <section className="py-12 md:py-16">
