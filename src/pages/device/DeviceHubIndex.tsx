@@ -33,7 +33,7 @@ const DeviceHubIndex = () => (
             Device Guides
           </h1>
           <p className="text-lg text-muted-foreground">
-            Honest, no-hype guides to help you decide whether your device is still worth repairing, trading in, or upgrading. Based on real repair data from our Manitoba shop.
+            Honest, no-hype guides to help you decide whether your device is still worth repairing, <a href="https://www.apple.com/in/shop/trade-in/how-to" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">trading in</a>, or upgrading. Based on real repair data from our Manitoba shop.
           </p>
         </div>
 
