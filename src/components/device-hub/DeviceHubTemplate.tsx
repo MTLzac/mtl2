@@ -460,7 +460,7 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                       If the device contains irreplaceable photos, contacts, or documents, prioritize data extraction before making a repair-or-replace decision. We offer motherboard-level recovery for devices that won't power on.
                     </p>
                     <a
-                      href={`tel:${PRIMARY_PHONE}`}
+                      href={`sms:${PRIMARY_PHONE}`}
                       className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-blue-300 bg-blue-50 px-4 py-2.5 text-sm font-semibold text-blue-700 transition-colors hover:bg-blue-100 dark:border-blue-800 dark:bg-blue-950/30 dark:text-blue-300 dark:hover:bg-blue-950/50"
                     >
                       <Database className="h-4 w-4" />
