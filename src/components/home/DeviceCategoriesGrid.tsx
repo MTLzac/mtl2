@@ -92,7 +92,7 @@ const ServiceCardComponent = ({ service }: { service: ServiceCard }) => {
             className={`mb-4 inline-flex w-fit rounded-lg p-3 ${
               isPrimary 
                 ? "bg-destructive/10 text-destructive" 
-                : "bg-muted text-muted-foreground"
+                : "bg-primary/10 text-primary"
             }`}
           >
             <service.icon className="h-5 w-5" />
