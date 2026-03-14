@@ -112,6 +112,7 @@ const SelkirkServiceArea = lazy(() => import("./pages/service-area/SelkirkServic
 // Lazy-loaded Article Pages
 const PhoneNotCharging = lazy(() => import("./pages/phone-problems/PhoneNotCharging"));
 const IPhoneNotCharging = lazy(() => import("./pages/phone-problems/IPhoneNotCharging"));
+const SamsungNotCharging = lazy(() => import("./pages/phone-problems/SamsungNotCharging"));
 
 const queryClient = new QueryClient();
 
