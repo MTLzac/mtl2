@@ -183,6 +183,18 @@ export const Footer = () => {
             </ul>
           </div>
 
+          {/* Phone Problems */}
+          <div>
+            <h3 className="mb-4 font-semibold">Phone Problems</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/phone-problems/phone-not-charging" className="text-muted-foreground hover:text-primary">
+                  Phone Not Charging
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* St. Vital Location */}
           <div>
             <h3 className="mb-4 font-semibold">{LOCATIONS[0].name}</h3>
