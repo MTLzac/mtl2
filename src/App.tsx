@@ -109,6 +109,9 @@ const BrandonServiceArea = lazy(() => import("./pages/service-area/BrandonServic
 const SelkirkServiceArea = lazy(() => import("./pages/service-area/SelkirkServiceArea"));
  const ThePasServiceArea = lazy(() => import("./pages/service-area/ThePasServiceArea"));
 
+// Lazy-loaded Article Pages
+const PhoneNotCharging = lazy(() => import("./pages/phone-problems/PhoneNotCharging"));
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -226,6 +229,9 @@ const App = () => (
                <Route path="/service-area/the-pas" element={<ThePasServiceArea />} />
               {/* Legacy redirect */}
               <Route path="/location/brandon" element={<BrandonServiceArea />} />
+
+              {/* Article Pages */}
+              <Route path="/phone-problems/phone-not-charging" element={<PhoneNotCharging />} />
 
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
