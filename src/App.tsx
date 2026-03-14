@@ -237,6 +237,7 @@ const App = () => (
               <Route path="/phone-problems/phone-not-charging" element={<PhoneNotCharging />} />
               <Route path="/phone-problems/phone-not-charging/iphone" element={<IPhoneNotCharging />} />
               <Route path="/phone-problems/phone-not-charging/samsung" element={<SamsungNotCharging />} />
+              <Route path="/phone-problems/phone-not-charging/charging-port" element={<ChargingPortDamage />} />
 
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
