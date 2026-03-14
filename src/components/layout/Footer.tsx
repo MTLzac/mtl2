@@ -192,6 +192,21 @@ export const Footer = () => {
                   Phone Not Charging
                 </Link>
               </li>
+              <li>
+                <Link to="/phone-problems/phone-not-charging/iphone" className="text-muted-foreground hover:text-primary">
+                  iPhone Not Charging
+                </Link>
+              </li>
+              <li>
+                <Link to="/phone-problems/phone-not-charging/samsung" className="text-muted-foreground hover:text-primary">
+                  Samsung Not Charging
+                </Link>
+              </li>
+              <li>
+                <Link to="/phone-problems/phone-not-charging/charging-port" className="text-muted-foreground hover:text-primary">
+                  Charging Port Issues
+                </Link>
+              </li>
             </ul>
           </div>
 
