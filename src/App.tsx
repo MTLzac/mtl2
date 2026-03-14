@@ -109,6 +109,9 @@ const BrandonServiceArea = lazy(() => import("./pages/service-area/BrandonServic
 const SelkirkServiceArea = lazy(() => import("./pages/service-area/SelkirkServiceArea"));
  const ThePasServiceArea = lazy(() => import("./pages/service-area/ThePasServiceArea"));
 
+// Lazy-loaded Article Pages
+const PhoneNotCharging = lazy(() => import("./pages/phone-problems/PhoneNotCharging"));
+
 const queryClient = new QueryClient();
 
 const App = () => (
