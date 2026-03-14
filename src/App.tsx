@@ -113,6 +113,7 @@ const SelkirkServiceArea = lazy(() => import("./pages/service-area/SelkirkServic
 const PhoneNotCharging = lazy(() => import("./pages/phone-problems/PhoneNotCharging"));
 const IPhoneNotCharging = lazy(() => import("./pages/phone-problems/IPhoneNotCharging"));
 const SamsungNotCharging = lazy(() => import("./pages/phone-problems/SamsungNotCharging"));
+const ChargingPortDamage = lazy(() => import("./pages/phone-problems/ChargingPortDamage"));
 
 const queryClient = new QueryClient();
 
