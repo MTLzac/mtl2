@@ -51,10 +51,10 @@ const PhoneNotCharging = () => {
   return (
     <>
       <Helmet>
-        <title>Why Is My Phone Not Charging? 9 Common Causes & Fixes | Mobile Tech Lab</title>
+        <title>Why Is My Phone Not Charging? 9 Common Causes and Fixes</title>
         <meta
           name="description"
-          content="Phone not charging? Learn the 9 most common causes — from dirty ports to battery issues — and how to fix them yourself or when to get a professional repair."
+          content="Phone not charging? Learn the most common causes and how to fix them before paying for repairs."
         />
         <link rel="canonical" href="https://mobiletechlab.ca/phone-problems/phone-not-charging" />
         <meta property="og:title" content="Why Is My Phone Not Charging? 9 Common Causes & Fixes" />
