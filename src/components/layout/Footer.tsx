@@ -207,6 +207,11 @@ export const Footer = () => {
                   Charging Port Issues
                 </Link>
               </li>
+              <li>
+                <Link to="/phone-problems/phone-not-charging/slow-charging" className="text-muted-foreground hover:text-primary">
+                  Slow Charging
+                </Link>
+              </li>
             </ul>
           </div>
 
