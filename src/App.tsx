@@ -114,6 +114,7 @@ const PhoneNotCharging = lazy(() => import("./pages/phone-problems/PhoneNotCharg
 const IPhoneNotCharging = lazy(() => import("./pages/phone-problems/IPhoneNotCharging"));
 const SamsungNotCharging = lazy(() => import("./pages/phone-problems/SamsungNotCharging"));
 const ChargingPortDamage = lazy(() => import("./pages/phone-problems/ChargingPortDamage"));
+const SlowCharging = lazy(() => import("./pages/phone-problems/SlowCharging"));
 
 const queryClient = new QueryClient();
 
