@@ -111,6 +111,7 @@ const SelkirkServiceArea = lazy(() => import("./pages/service-area/SelkirkServic
 
 // Lazy-loaded Article Pages
 const PhoneNotCharging = lazy(() => import("./pages/phone-problems/PhoneNotCharging"));
+const IPhoneNotCharging = lazy(() => import("./pages/phone-problems/IPhoneNotCharging"));
 
 const queryClient = new QueryClient();
 
@@ -232,6 +233,7 @@ const App = () => (
 
               {/* Article Pages */}
               <Route path="/phone-problems/phone-not-charging" element={<PhoneNotCharging />} />
+              <Route path="/phone-problems/phone-not-charging/iphone" element={<IPhoneNotCharging />} />
 
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
