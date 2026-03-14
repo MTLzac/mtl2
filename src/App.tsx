@@ -230,6 +230,9 @@ const App = () => (
               {/* Legacy redirect */}
               <Route path="/location/brandon" element={<BrandonServiceArea />} />
 
+              {/* Article Pages */}
+              <Route path="/phone-problems/phone-not-charging" element={<PhoneNotCharging />} />
+
               {/* Draft Pages - Hidden from production */}
               <Route path="/pdp-v2-draft" element={<PDPv2Draft />} />
               <Route path="/samsung-repair-draft" element={<SamsungRepairDraft />} />
