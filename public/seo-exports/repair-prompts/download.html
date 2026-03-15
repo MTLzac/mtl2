@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Download Repair Prompts ZIP</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 80px auto; text-align: center; }
+    button { padding: 12px 32px; font-size: 16px; cursor: pointer; border: none; background: #2563eb; color: #fff; border-radius: 8px; }
+    button:disabled { opacity: .5; cursor: wait; }
+    #status { margin-top: 16px; color: #555; }
+  </style>
+</head>
+<body>
+  <h1>Repair Prompts</h1>
+  <p>Click below to download all repair prompt JSON files as a single ZIP.</p>
+  <button id="btn" onclick="download()">Download ZIP</button>
+  <div id="status"></div>
+  <script>
+    async function download() {
+      const btn = document.getElementById('btn');
+      const status = document.getElementById('status');
+      btn.disabled = true;
+      status.textContent = 'Fetching index…';
+
+      try {
+        const base = window.location.pathname.replace(/download\.html$/, '');
+        const indexRes = await fetch(base + 'index.json');
+        const index = await indexRes.json();
+
+        // Collect all unique prompt file paths
+        const files = new Set();
+        files.add({ name: 'index.json', url: base + 'index.json' });
+
+        for (const page of index.pages) {
+          // promptFile is like "/seo-exports/repair-prompts/samsung.json"
+          const filename = page.promptFile.split('/').pop();
+          files.add({ name: filename, url: base + filename });
+        }
+
+        // Also grab generate-all.cjs
+        files.add({ name: 'generate-all.cjs', url: base + 'generate-all.cjs' });
+
+        const zip = new JSZip();
+        const fileArray = [...files];
+        let done = 0;
+
+        for (const f of fileArray) {
+          status.textContent = `Fetching ${f.name} (${++done}/${fileArray.length})…`;
+          try {
+            const res = await fetch(f.url);
+            if (res.ok) {
+              const text = await res.text();
+              zip.file(f.name, text);
+            }
+          } catch (e) {
+            // skip missing files
+          }
+        }
+
+        status.textContent = 'Generating ZIP…';
+        const blob = await zip.generateAsync({ type: 'blob' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'repair-prompts.zip';
+        a.click();
+        status.textContent = 'Done! Check your downloads.';
+      } catch (e) {
+        status.textContent = 'Error: ' + e.message;
+      }
+      btn.disabled = false;
+    }
+  </script>
+</body>
+</html>
