@@ -5,68 +5,109 @@
   <title>Download Repair Prompts ZIP</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 480px; margin: 80px auto; text-align: center; }
+    body { font-family: system-ui, sans-serif; max-width: 560px; margin: 80px auto; text-align: center; }
     button { padding: 12px 32px; font-size: 16px; cursor: pointer; border: none; background: #2563eb; color: #fff; border-radius: 8px; }
     button:disabled { opacity: .5; cursor: wait; }
-    #status { margin-top: 16px; color: #555; }
+    #status { margin-top: 16px; color: #555; white-space: pre-line; text-align: left; font-size: 13px; max-height: 400px; overflow-y: auto; }
   </style>
 </head>
 <body>
-  <h1>Repair Prompts</h1>
-  <p>Click below to download all repair prompt JSON files as a single ZIP.</p>
-  <button id="btn" onclick="download()">Download ZIP</button>
+  <h1>Repair Prompts ZIP</h1>
+  <p>Runs <code>generate-all.cjs</code> in-browser to produce all repair prompt JSONs, then bundles everything into a ZIP.</p>
+  <button id="btn" onclick="startDownload()">Download ZIP</button>
   <div id="status"></div>
   <script>
-    async function download() {
+    async function startDownload() {
       const btn = document.getElementById('btn');
       const status = document.getElementById('status');
       btn.disabled = true;
-      status.textContent = 'Fetching index…';
+      status.textContent = 'Fetching generate-all.cjs…';
 
       try {
         const base = window.location.pathname.replace(/download\.html$/, '');
-        const indexRes = await fetch(base + 'index.json');
-        const index = await indexRes.json();
 
-        // Collect all unique prompt file paths
-        const files = new Set();
-        files.add({ name: 'index.json', url: base + 'index.json' });
+        // 1. Fetch the CJS script as text
+        const cjsRes = await fetch(base + 'generate-all.cjs');
+        if (!cjsRes.ok) throw new Error('Could not fetch generate-all.cjs (' + cjsRes.status + ')');
+        const cjsText = await cjsRes.text();
 
-        for (const page of index.pages) {
-          // promptFile is like "/seo-exports/repair-prompts/samsung.json"
-          const filename = page.promptFile.split('/').pop();
-          files.add({ name: filename, url: base + filename });
-        }
+        status.textContent = 'Executing generator in-browser…\n';
 
-        // Also grab generate-all.cjs
-        files.add({ name: 'generate-all.cjs', url: base + 'generate-all.cjs' });
+        // 2. Mock Node builtins to capture file writes
+        const generatedFiles = {};
 
+        const mockFs = {
+          writeFileSync(filePath, content) {
+            const name = filePath.replace(/\\/g, '/').split('/').pop();
+            generatedFiles[name] = content;
+          },
+          existsSync() { return true; },
+          mkdirSync() {}
+        };
+
+        const mockPath = {
+          join(...parts) { return parts.join('/'); },
+          resolve(...parts) { return parts.join('/'); },
+          dirname(p) { return p.split('/').slice(0, -1).join('/'); },
+          basename(p) { return p.split('/').pop(); }
+        };
+
+        const mockRequire = (mod) => {
+          if (mod === 'fs') return mockFs;
+          if (mod === 'path') return mockPath;
+          throw new Error('Unknown module: ' + mod);
+        };
+
+        const logs = [];
+        const mockConsole = {
+          log: (...a) => logs.push(a.join(' ')),
+          error: (...a) => logs.push('[ERR] ' + a.join(' ')),
+          warn: (...a) => logs.push('[WARN] ' + a.join(' '))
+        };
+
+        // 3. Execute CJS in a Function wrapper
+        const wrapper = new Function('require', '__dirname', '__filename', 'module', 'exports', 'console',
+          cjsText
+        );
+        const mockModule = { exports: {} };
+        wrapper(mockRequire, '/mock', '/mock/generate-all.cjs', mockModule, mockModule.exports, mockConsole);
+
+        const count = Object.keys(generatedFiles).length;
+        status.textContent = `✅ Generated ${count} JSON files\n${logs.join('\n')}\n\nBuilding ZIP…`;
+
+        // 4. Build ZIP
         const zip = new JSZip();
-        const fileArray = [...files];
-        let done = 0;
-
-        for (const f of fileArray) {
-          status.textContent = `Fetching ${f.name} (${++done}/${fileArray.length})…`;
-          try {
-            const res = await fetch(f.url);
-            if (res.ok) {
-              const text = await res.text();
-              zip.file(f.name, text);
-            }
-          } catch (e) {
-            // skip missing files
-          }
+        for (const [name, content] of Object.entries(generatedFiles)) {
+          zip.file(name, content);
         }
 
-        status.textContent = 'Generating ZIP…';
+        // Add supporting files from server
+        const extras = [
+          { name: 'index.json', url: base + 'index.json' },
+          { name: 'generate-all.cjs', url: base + 'generate-all.cjs' },
+          { name: 'oppo-repair-astro-prompt.json', url: '/seo-exports/oppo-repair-astro-prompt.json' },
+          { name: 'astro-repair-template.md', url: '/seo-exports/astro-repair-template.md' },
+          { name: 'astro-rebuild-spec.md', url: '/seo-exports/astro-rebuild-spec.md' }
+        ];
+
+        for (const f of extras) {
+          try {
+            const r = await fetch(f.url);
+            if (r.ok) zip.file(f.name, await r.text());
+          } catch(e) {}
+        }
+
+        const total = Object.keys(zip.files).length;
+        status.textContent += `\nZipping ${total} files…`;
         const blob = await zip.generateAsync({ type: 'blob' });
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
         a.download = 'repair-prompts.zip';
         a.click();
-        status.textContent = 'Done! Check your downloads.';
+        status.textContent = `✅ Done! ZIP downloaded with ${total} files:\n\n` +
+          Object.keys(zip.files).sort().join('\n');
       } catch (e) {
-        status.textContent = 'Error: ' + e.message;
+        status.textContent = '❌ Error: ' + e.message + '\n\n' + (e.stack || '');
       }
       btn.disabled = false;
     }
