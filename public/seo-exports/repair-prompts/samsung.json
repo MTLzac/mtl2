@@ -1,0 +1,305 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "purpose": "LLM prompt to generate an Astro static page for Samsung Phone repair services",
+    "template": "RepairLandingTemplate",
+    "reference_doc": "/seo-exports/astro-repair-template.md"
+  },
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": ["BreadcrumbList", "Service", "FAQPage"],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/samsung.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+  "page": {
+    "slug": "samsung",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/samsung",
+    "metaTitle": "Samsung Phone Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab",
+    "metaDescription": "Expert Samsung Galaxy repair in Winnipeg. Screen replacement, battery, charging port, water damage repair for all Galaxy S, Z Fold, Z Flip, A series & Note models. Fast same-day service.",
+    "robots": "index, follow",
+    "deviceName": "Samsung Phone",
+    "h1": "Winnipeg's Samsung Galaxy Phone Repair Specialists",
+    "heroDescription": "From the latest Galaxy S24 Ultra to foldable Z Fold and Z Flip devices, we specialize in <a href=\"https://www.samsung.com/ca/support/service-center/\" target=\"_blank\" rel=\"noopener noreferrer\">Samsung smartphone repairs</a>. Cracked screens, dead batteries, water damage, and charging issues—all fixed with quality parts and backed by our repair warranty.",
+    "heroImage": {
+      "src": "/assets/hero-samsung.png",
+      "alt": "Samsung Galaxy phone repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+  "breadcrumbs": [
+    { "label": "Home", "href": "/" },
+    { "label": "Repairs", "href": "/repair" },
+    { "label": "Samsung Phone", "href": null }
+  ],
+  "services": [
+    {
+      "icon": "ScreenShare",
+      "name": "Screen Replacement",
+      "description": "Galaxy S, A, and Note AMOLED screen replacements. Z Fold and Z Flip inner and outer display repairs with quality parts. Samsung screen repair costs vary significantly by model and part availability. For many Samsung phones — especially newer or higher-end models — the replacement screen used is the original Samsung display, which can impact overall repair cost. Lower-quality aftermarket screens may exist for some models, but they are not offered when they cannot be reliably warrantied."
+    },
+    {
+      "icon": "Battery",
+      "name": "Battery Replacement",
+      "description": "Samsung phone batteries degrade after 2-3 years. Restore full-day battery life with same-day replacement service."
+    },
+    {
+      "icon": "Plug",
+      "name": "Charging Port Repair",
+      "description": "USB-C charging port repair for all Galaxy phones. Includes cleaning, testing, and component replacement if needed."
+    },
+    {
+      "icon": "Droplets",
+      "name": "Water Damage Repair",
+      "description": "Dropped your Galaxy in water? Our ultrasonic cleaning and component-level repair gives your phone the best chance of recovery."
+    },
+    {
+      "icon": "Camera",
+      "name": "Camera Repair",
+      "description": "Rear camera module and front selfie camera repairs. Fix blurry photos, cracked lenses, and autofocus issues."
+    },
+    {
+      "icon": "Volume2",
+      "name": "Speaker & Mic Repair",
+      "description": "Can't hear calls or be heard? Speaker, earpiece, and microphone repairs for all Samsung Galaxy phones."
+    }
+  ],
+  "advantage_pillars": [
+    {
+      "icon": "Wrench",
+      "title": "Foldable Specialists",
+      "description": "Z Fold and Z Flip repairs including screen, hinge, and flex cable issues. Few shops in Winnipeg touch foldables—we embrace them."
+    },
+    {
+      "icon": "Zap",
+      "title": "Same-Day Galaxy Repairs",
+      "description": "Most Samsung phone repairs completed same day. Walk-ins welcome at both locations. Same-day Samsung phone repair depends on the model, part availability, and our current repair queue."
+    },
+    {
+      "icon": "Award",
+      "title": "Warranty on Every Repair",
+      "description": "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward."
+    },
+    {
+      "icon": "DollarSign",
+      "title": "Transparent Pricing",
+      "description": "Free diagnostics and upfront quotes. No surprises—know your repair cost before we start."
+    }
+  ],
+  "model_categories": [
+    {
+      "title": "Galaxy S Series",
+      "models": ["S24 Ultra", "S24+", "S24", "S23 Ultra", "S23+", "S23", "S23 FE", "S22 Ultra", "S22+", "S22", "S21 Ultra", "S21+", "S21", "S21 FE", "S20 Ultra", "S20+", "S20", "S20 FE", "S10+", "S10", "S10e"],
+      "description": "Samsung's flagship phones. AMOLED screen replacements and battery service for all S series generations."
+    },
+    {
+      "title": "Galaxy Z Fold & Z Flip",
+      "models": ["Z Fold 5", "Z Fold 4", "Z Fold 3", "Z Flip 5", "Z Flip 4", "Z Flip 3"],
+      "description": "Foldable phone specialists. Inner screen, outer screen, hinge mechanism, and flex cable repairs."
+    },
+    {
+      "title": "Galaxy A Series",
+      "models": ["A54", "A53", "A52", "A51", "A34", "A33", "A32", "A14", "A13", "A12"],
+      "description": "Budget-friendly repairs for Samsung's mid-range lineup. Same quality service, lower cost parts."
+    },
+    {
+      "title": "Galaxy Note Series",
+      "models": ["Note 20 Ultra", "Note 20", "Note 10+", "Note 10"],
+      "description": "S Pen and stylus functionality preserved. Screen and battery repairs for all Note models. For certain Samsung models, we'll also help you decide whether repair or replacement makes more financial sense."
+    }
+  ],
+  "models_flat": [
+    "Galaxy S24 Ultra", "Galaxy S24+", "Galaxy S24",
+    "Galaxy S23 Ultra", "Galaxy S23+", "Galaxy S23", "Galaxy S23 FE",
+    "Galaxy S22 Ultra", "Galaxy S22+", "Galaxy S22",
+    "Galaxy S21 Ultra", "Galaxy S21+", "Galaxy S21", "Galaxy S21 FE",
+    "Galaxy S20 Ultra", "Galaxy S20+", "Galaxy S20", "Galaxy S20 FE",
+    "Galaxy S10+", "Galaxy S10", "Galaxy S10e",
+    "Galaxy Z Fold 5", "Galaxy Z Fold 4", "Galaxy Z Fold 3",
+    "Galaxy Z Flip 5", "Galaxy Z Flip 4", "Galaxy Z Flip 3",
+    "Galaxy A54", "Galaxy A53", "Galaxy A52", "Galaxy A51",
+    "Galaxy A34", "Galaxy A33", "Galaxy A32",
+    "Galaxy A14", "Galaxy A13", "Galaxy A12",
+    "Galaxy Note 20 Ultra", "Galaxy Note 20", "Galaxy Note 10+", "Galaxy Note 10"
+  ],
+  "models_description": "We repair all Samsung Galaxy phone models including the S series, Z Fold, Z Flip, A series, and Note series. Don't see your model? Contact us!",
+  "pricing_micro_copy": {
+    "costDriver": "Samsung repair costs are primarily driven by the screen—OEM Samsung displays can be surprisingly expensive, especially for flagship S and Z series devices. Samsung provides official guidance on <a href='https://www.samsung.com/ca/support/model/SM-S928WZKAXAC/' target='_blank' rel='noopener noreferrer'>device care and battery maintenance</a> that can help extend the lifespan of your Galaxy phone.",
+    "priceShock": "Many customers expect Samsung repairs to cost less than iPhone repairs, but premium AMOLED screens often cost the same or more. As <a href='https://www.ifixit.com/Search?query=samsung+galaxy+repair' target='_blank' rel='noopener noreferrer'>iFixit's Samsung teardowns</a> demonstrate, foldable devices like the Z Fold and Z Flip have particularly complex internal assemblies that affect repair difficulty and cost.",
+    "advisory": "If the repair cost approaches the value of your device, we'll explain that clearly so you can make an informed decision.",
+    "fallback": "When repair doesn't make sense, data recovery is often still an option."
+  },
+  "faqs": [
+    {
+      "question": "How long does Samsung phone screen replacement take?",
+      "answer": "Most Samsung Galaxy screen replacements are completed within 1-2 hours. Foldable devices like the Z Fold and Z Flip may take 2-4 hours due to their complex display assemblies."
+    },
+    {
+      "question": "Do you repair Samsung Galaxy foldable phones?",
+      "answer": "Yes! We specialize in Galaxy Z Fold and Z Flip repairs including inner screen, outer screen, hinge mechanism, and flex cable issues. Few repair shops in Winnipeg work on foldables—we have the tools and experience."
+    },
+    {
+      "question": "How much does Samsung Galaxy repair cost in Winnipeg?",
+      "answer": "Repair costs vary by model. Galaxy A series repairs are typically the most affordable, while flagship S series and foldable Z series cost more due to premium components. Use our free quote tool for an accurate estimate. <a href='/repair-pricing'>Learn more about how repair pricing works</a>."
+    },
+    {
+      "question": "Do you use genuine Samsung parts?",
+      "answer": "We use high-quality parts that meet or exceed OEM specifications. We'll discuss part options and pricing with you before starting any repair."
+    },
+    {
+      "question": "Will I lose my data during Samsung phone repair?",
+      "answer": "For most repairs (screen, battery, charging port), your data remains intact. We recommend backing up before any repair as a precaution. For water damage cases, data recovery is a priority."
+    }
+  ],
+  "service_area_note": "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Walk-ins welcome or book online.",
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for Samsung repair. Can you help?"
+  },
+  "table_of_contents": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "services", "label": "Services" },
+    { "id": "models", "label": "Models" },
+    { "id": "why-choose-us", "label": "Why Us" },
+    { "id": "locations", "label": "Locations" },
+    { "id": "faqs", "label": "FAQs" }
+  ],
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repair" },
+        { "@type": "ListItem", "position": 3, "name": "Samsung Phone" }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Samsung Phone Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": { "@type": "City", "name": "Winnipeg" },
+      "serviceType": "Phone Repair",
+      "url": "https://mobiletechlab.ca/repair/samsung",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Samsung Phone Repair Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Screen Replacement" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Charging Port Repair" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Water Damage Repair" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Camera Repair" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speaker & Mic Repair" } }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How long does Samsung phone screen replacement take?", "acceptedAnswer": { "@type": "Answer", "text": "Most Samsung Galaxy screen replacements are completed within 1-2 hours. Foldable devices like the Z Fold and Z Flip may take 2-4 hours due to their complex display assemblies." } },
+        { "@type": "Question", "name": "Do you repair Samsung Galaxy foldable phones?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We specialize in Galaxy Z Fold and Z Flip repairs including inner screen, outer screen, hinge mechanism, and flex cable issues. Few repair shops in Winnipeg work on foldables—we have the tools and experience." } },
+        { "@type": "Question", "name": "How much does Samsung Galaxy repair cost in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Repair costs vary by model. Galaxy A series repairs are typically the most affordable, while flagship S series and foldable Z series cost more due to premium components. Use our free quote tool for an accurate estimate." } },
+        { "@type": "Question", "name": "Do you use genuine Samsung parts?", "acceptedAnswer": { "@type": "Answer", "text": "We use high-quality parts that meet or exceed OEM specifications. We'll discuss part options and pricing with you before starting any repair." } },
+        { "@type": "Question", "name": "Will I lose my data during Samsung phone repair?", "acceptedAnswer": { "@type": "Answer", "text": "For most repairs (screen, battery, charging port), your data remains intact. We recommend backing up before any repair as a precaution. For water damage cases, data recovery is a priority." } }
+      ]
+    }
+  },
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}
