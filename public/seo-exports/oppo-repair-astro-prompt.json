@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "version": "1.0",
+    "generator": "mobiletechlab-lovable-export",
+    "date": "2026-03-15",
+    "purpose": "LLM prompt to generate an Astro static page for Oppo repair services",
+    "template": "RepairLandingTemplate",
+    "reference_doc": "/seo-exports/astro-repair-template.md"
+  },
+
+  "constraints": {
+    "framework": "Astro (latest stable)",
+    "rendering": "Static HTML only — zero client-side JavaScript unless explicitly marked as `client:load` island",
+    "styling": "Tailwind CSS using semantic design tokens from the provided CSS variables. NEVER use raw color values (no `bg-blue-500`, no `text-white`). Use `bg-primary`, `text-foreground`, `bg-muted`, etc.",
+    "fonts": "Inter via Google Fonts, loaded in <head> with `font-display: swap`",
+    "icons": "Inline SVG only — no icon library runtime. Copy SVG paths from Lucide (https://lucide.dev). Each icon must have `aria-hidden=\"true\"` and `focusable=\"false\"`.",
+    "images": "All `<img>` tags MUST have `alt`, `width`, `height`, and `loading=\"lazy\"` (except hero which uses `loading=\"eager\"`). Use Astro `<Image />` component where possible.",
+    "links_internal": "Standard `<a href=\"/path\">` — NO client-side router. All internal links must start with `/`.",
+    "links_external": "All external `<a>` tags MUST have `target=\"_blank\"` and `rel=\"noopener noreferrer\"`.",
+    "accessibility": "All interactive elements must be keyboard-accessible. Use semantic HTML (`<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`). Buttons must have visible focus rings.",
+    "accordions": "Use native `<details>` + `<summary>` elements. NO JavaScript accordions.",
+    "seo_title_max_chars": 60,
+    "seo_description_max_chars": 160,
+    "must_have_single_h1": true,
+    "canonical_url_required": true,
+    "structured_data_required": ["BreadcrumbList", "Service", "FAQPage"],
+    "forbidden": [
+      "React or any JSX runtime",
+      "useState, useEffect, or any React hooks",
+      "Client-side routing (react-router, @astrojs/preact, etc.)",
+      "CSS-in-JS libraries",
+      "Hardcoded color values in components",
+      "JavaScript-based accordions or toggles",
+      "Placeholder or lorem ipsum content",
+      "Any content not present in this JSON"
+    ]
+  },
+
+  "file_structure": {
+    "layout": "src/layouts/BaseLayout.astro",
+    "page": "src/pages/repair/oppo.astro",
+    "components": [
+      "src/components/repair/VisibleBreadcrumbs.astro",
+      "src/components/repair/HeroSection.astro",
+      "src/components/repair/ServiceGrid.astro",
+      "src/components/repair/ModelListGrid.astro",
+      "src/components/repair/WhyChooseUs.astro",
+      "src/components/repair/PricingMicroCopy.astro",
+      "src/components/repair/LocationCards.astro",
+      "src/components/repair/FAQSection.astro",
+      "src/components/repair/StickyMobileCTA.astro",
+      "src/components/repair/TableOfContents.astro"
+    ]
+  },
+
+  "section_order": [
+    "breadcrumbs",
+    "hero",
+    "services",
+    "models",
+    "why_choose_us",
+    "pricing_micro_copy",
+    "locations",
+    "faqs",
+    "sticky_mobile_cta",
+    "table_of_contents"
+  ],
+
+  "page": {
+    "slug": "oppo",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/oppo",
+    "metaTitle": "Oppo Repair Winnipeg | Find X & Reno Screen Fix | Mobile Tech Lab",
+    "metaDescription": "Oppo repair in Winnipeg. Screen, battery, SUPERVOOC charging repair for Oppo Find X, Reno, A series & Realme devices. Growing market specialists.",
+    "robots": "index, follow",
+    "deviceName": "Oppo",
+    "h1": "Oppo & Realme Repair Specialists in Winnipeg",
+    "heroDescription": "From the flagship Find X series to the affordable A-series, we repair all Oppo devices in Winnipeg. Plus Realme phones too! SUPERVOOC charging issues, cracked screens, battery problems—we fix it all.",
+    "heroImage": {
+      "src": "/assets/hero-oppo.png",
+      "alt": "Oppo smartphone repair services in Winnipeg",
+      "width": 600,
+      "height": 400,
+      "loading": "eager"
+    }
+  },
+
+  "breadcrumbs": [
+    { "label": "Home", "href": "/" },
+    { "label": "Repairs", "href": "/repair" },
+    { "label": "Oppo", "href": null }
+  ],
+
+  "services": [
+    {
+      "icon": "ScreenShare",
+      "icon_svg": "<path d='M13 3H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3'/><path d='M8 21h8'/><path d='M12 17v4'/><path d='m17 8 5-5'/><path d='M17 3h5v5'/>",
+      "name": "Screen Replacement",
+      "description": "Replace cracked AMOLED displays on Oppo Find X, Reno, and Realme devices with precision. Repair costs and timelines vary by model and part availability. For less common devices like these, parts availability can differ by model and supplier, but repairs are often still possible after evaluation. Aftermarket parts are only offered when the quality is sufficient to be reliably warrantied."
+    },
+    {
+      "icon": "Battery",
+      "icon_svg": "<rect width='16' height='10' x='2' y='7' rx='2' ry='2'/><line x1='22' x2='22' y1='11' y2='13'/>",
+      "name": "Battery Replacement",
+      "description": "Restore battery performance to your Oppo or Realme phone in Winnipeg."
+    },
+    {
+      "icon": "Zap",
+      "icon_svg": "<path d='M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z'/>",
+      "name": "SUPERVOOC Repair",
+      "description": "Fix SUPERVOOC and VOOC fast charging issues—65W to 150W charging restored."
+    },
+    {
+      "icon": "Camera",
+      "icon_svg": "<path d='M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z'/><circle cx='12' cy='13' r='3'/>",
+      "name": "Camera Repair",
+      "description": "Repair Hasselblad-partnered cameras on flagship Oppo Find X devices."
+    },
+    {
+      "icon": "Volume2",
+      "icon_svg": "<path d='M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z'/><path d='M16 9a5 5 0 0 1 0 6'/><path d='M19.364 18.364a9 9 0 0 0 0-12.728'/>",
+      "name": "Speaker Repair",
+      "description": "Fix Dolby Atmos speakers, earpieces, and audio quality issues."
+    },
+    {
+      "icon": "Plug",
+      "icon_svg": "<path d='M12 22v-5'/><path d='M9 8V2'/><path d='M15 8V2'/><path d='M18 8v5a6 6 0 0 1-6 6a6 6 0 0 1-6-6V8z'/>",
+      "name": "Charging Port Repair",
+      "description": "Repair USB-C ports for reliable fast charging and data transfer."
+    }
+  ],
+
+  "advantage_pillars": [
+    {
+      "icon": "Award",
+      "title": "Oppo & Realme Experts",
+      "description": "Specialized in the BBK family of brands including Oppo, Realme, and OnePlus devices. Repairs for these devices typically require at least one business day due to part sourcing. If you need a working phone while we complete the repair, loaner phones may be available."
+    },
+    {
+      "icon": "Zap",
+      "title": "SUPERVOOC Specialists",
+      "description": "Expert repair for 65W to 150W SUPERVOOC fast charging systems. If a repair is outside your budget or parts are not readily available, we can also attempt data recovery to help you retrieve important information."
+    },
+    {
+      "icon": "TrendingUp",
+      "title": "Growing Market Leaders",
+      "description": "Early adopters of Oppo repair in Winnipeg, staying ahead of the curve. Most repairs for these devices are reasonably priced, but many customers don't have a baseline for what a repair should cost, so we'll explain options clearly before proceeding."
+    },
+    {
+      "icon": "Award",
+      "title": "Warranty on Every Repair",
+      "description": "Screen repair warranties vary by part tier (30 days to lifetime). 90-day battery warranty. Lifetime warranty on most other repairs. Warranty coverage applies to the part repaired or replaced only and does not extend to unrelated components. If a function cannot be tested prior to repair, its operation cannot be guaranteed afterward."
+    }
+  ],
+
+  "model_categories": [
+    {
+      "title": "Find X Flagships",
+      "models": ["Find X7 Ultra", "Find X7", "Find X6 Pro", "Find X6", "Find X5 Pro", "Find X5"],
+      "description": "Premium flagship repairs with Hasselblad camera expertise."
+    },
+    {
+      "title": "Reno Series",
+      "models": ["Reno 11 Pro", "Reno 11", "Reno 10 Pro+", "Reno 10 Pro", "Reno 10", "Reno 8 Pro", "Reno 8"],
+      "description": "Mid-range Reno repairs with portrait camera specialization."
+    },
+    {
+      "title": "Oppo A Series",
+      "models": ["A98", "A78", "A58", "A38", "A17", "A16", "A15"],
+      "description": "Budget-friendly A-series repairs at affordable prices."
+    },
+    {
+      "title": "Realme Devices",
+      "models": ["GT 5 Pro", "GT 3", "11 Pro+", "11 Pro", "11", "10 Pro+", "10 Pro", "C55", "C53"],
+      "description": "Full Realme lineup support—GT flagships to C-series budget phones."
+    },
+    {
+      "title": "Foldables",
+      "models": ["Find N3", "Find N2", "Find N2 Flip"],
+      "description": "Specialized foldable screen and hinge repairs."
+    }
+  ],
+
+  "models_flat": [
+    "Oppo Find X7 Ultra", "Oppo Find X7", "Oppo Find X6 Pro", "Oppo Find X6",
+    "Oppo Find X5 Pro", "Oppo Find X5", "Oppo Find N3", "Oppo Find N2", "Oppo Find N2 Flip",
+    "Oppo Reno 11 Pro", "Oppo Reno 11", "Oppo Reno 10 Pro+", "Oppo Reno 10 Pro", "Oppo Reno 10",
+    "Oppo Reno 8 Pro", "Oppo Reno 8",
+    "Oppo A98", "Oppo A78", "Oppo A58", "Oppo A38", "Oppo A17", "Oppo A16", "Oppo A15",
+    "Realme GT 5 Pro", "Realme GT 3", "Realme 11 Pro+", "Realme 11 Pro", "Realme 11",
+    "Realme 10 Pro+", "Realme 10 Pro", "Realme C55", "Realme C53"
+  ],
+  "models_description": "We repair all Oppo and Realme devices including Find X flagships, Reno series, A-series, and foldables. Repair cost and part availability can vary between models, even within the same brand.",
+
+  "pricing_micro_copy": {
+    "costDriver": "Oppo and Realme repair costs vary by model—budget A-series devices are affordable, while Find X flagships and foldables cost more due to premium components. Oppo's <a href='https://support.oppo.com/ca/' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>Canadian support centre</a> provides model-specific troubleshooting and SUPERVOOC charging diagnostics.",
+    "priceShock": "Many customers are surprised that flagship Oppo repairs can cost as much as Samsung or iPhone repairs, especially for Find X and N-series foldables. <a href='https://www.ifixit.com/Search?query=oppo+find+teardown' target='_blank' rel='noopener noreferrer' class='text-primary hover:underline'>iFixit's Oppo teardowns</a> reveal the engineering complexity of SUPERVOOC charging systems and foldable hinge mechanisms.",
+    "advisory": "If the repair cost doesn't make sense for your device's value, we'll explain alternatives clearly.",
+    "fallback": "When repair isn't practical, data recovery is often still possible to retrieve your files."
+  },
+
+  "faqs": [
+    {
+      "question": "Do you repair Oppo phones in Winnipeg?",
+      "answer": "Yes! We're Winnipeg's Oppo and Realme specialists. We service all devices from budget A-series to flagship Find X models at our St. Vital and Garden City locations."
+    },
+    {
+      "question": "Can you fix SUPERVOOC fast charging issues?",
+      "answer": "Absolutely! We're experts in SUPERVOOC and VOOC charging repairs—from 65W standard to 150W ultra-fast charging. We diagnose port issues, cable problems, and internal charging components."
+    },
+    {
+      "question": "Do you repair Oppo foldable phones?",
+      "answer": "Yes, we service the Oppo Find N series including the Find N3 and N2 Flip foldables. Specialized hinge and flexible display repairs available."
+    },
+    {
+      "question": "Are Oppo and Realme parts available in Winnipeg?",
+      "answer": "We maintain stock for popular Oppo and Realme models. Find X flagships and Reno series parts are typically in stock; less common models may take 2-3 business days to source."
+    },
+    {
+      "question": "Do you repair Realme phones too?",
+      "answer": "Yes! Realme is part of the BBK family (along with Oppo and OnePlus), and we're experts in all Realme models from GT gaming phones to budget C-series devices."
+    }
+  ],
+
+  "service_area_note": "Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods. Also serving Thompson, MB. Walk-ins welcome or book online.",
+
+  "locations": [
+    {
+      "name": "St. Vital Centre",
+      "address": "1225 St Mary's Rd, Winnipeg, MB R2M 5E5",
+      "phone": "(204) 500-9757",
+      "phoneHref": "tel:2045009757",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+St+Vital",
+      "badge": "Walk-ins Welcome"
+    },
+    {
+      "name": "Garden City Shopping Centre",
+      "address": "2305 McPhillips St, Winnipeg, MB R2V 3E1",
+      "phone": "(204) 515-7736",
+      "phoneHref": "tel:2045157736",
+      "hours": "Mon–Sat 10am–7pm, Sun 12pm–5pm",
+      "mapUrl": "https://maps.google.com/?q=Mobile+Tech+Lab+Garden+City",
+      "badge": "Walk-ins Welcome"
+    }
+  ],
+
+  "cta": {
+    "quoteWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "primaryPhone": "(204) 500-9757",
+    "primaryPhoneHref": "tel:2045009757",
+    "smsNumber": "2045009757",
+    "smsMessage": "Hi, I found your site searching for Oppo repair. Can you help?"
+  },
+
+  "table_of_contents": [
+    { "id": "hero", "label": "Overview" },
+    { "id": "services", "label": "Services" },
+    { "id": "models", "label": "Models" },
+    { "id": "why-choose-us", "label": "Why Us" },
+    { "id": "locations", "label": "Locations" },
+    { "id": "faqs", "label": "FAQs" }
+  ],
+
+  "structured_data": {
+    "breadcrumb_list": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repair" },
+        { "@type": "ListItem", "position": 3, "name": "Oppo" }
+      ]
+    },
+    "service": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Oppo Repair Service",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": { "@type": "City", "name": "Winnipeg" },
+      "serviceType": "Phone Repair",
+      "url": "https://mobiletechlab.ca/repair/oppo",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Oppo Repair Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Screen Replacement" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Battery Replacement" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SUPERVOOC Repair" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Camera Repair" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Speaker Repair" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Charging Port Repair" } }
+        ]
+      }
+    },
+    "faq_page": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do you repair Oppo phones in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We're Winnipeg's Oppo and Realme specialists. We service all devices from budget A-series to flagship Find X models at our St. Vital and Garden City locations." } },
+        { "@type": "Question", "name": "Can you fix SUPERVOOC fast charging issues?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely! We're experts in SUPERVOOC and VOOC charging repairs—from 65W standard to 150W ultra-fast charging. We diagnose port issues, cable problems, and internal charging components." } },
+        { "@type": "Question", "name": "Do you repair Oppo foldable phones?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we service the Oppo Find N series including the Find N3 and N2 Flip foldables. Specialized hinge and flexible display repairs available." } },
+        { "@type": "Question", "name": "Are Oppo and Realme parts available in Winnipeg?", "acceptedAnswer": { "@type": "Answer", "text": "We maintain stock for popular Oppo and Realme models. Find X flagships and Reno series parts are typically in stock; less common models may take 2-3 business days to source." } },
+        { "@type": "Question", "name": "Do you repair Realme phones too?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Realme is part of the BBK family (along with Oppo and OnePlus), and we're experts in all Realme models from GT gaming phones to budget C-series devices." } }
+      ]
+    }
+  },
+
+  "validation_checklist": [
+    "Page has exactly ONE <h1> tag matching the `page.h1` field",
+    "All services render with inline SVG icons, not an icon library import",
+    "All FAQ items use <details>/<summary>, not JS accordions",
+    "All external links have target='_blank' rel='noopener noreferrer'",
+    "Canonical URL matches `page.canonicalUrl` exactly",
+    "All three JSON-LD blocks are injected in <head>",
+    "<meta name='robots' content='index, follow'> is present",
+    "No React, Preact, or JSX runtime in the build output",
+    "Hero image has loading='eager'; all other images have loading='lazy'",
+    "Page renders fully without JavaScript enabled",
+    "All color classes use Tailwind semantic tokens (bg-primary, text-foreground, etc.)",
+    "Phone links use tel: protocol; SMS links use sms: protocol",
+    "Section IDs match table_of_contents entries for anchor navigation",
+    "No placeholder content — every string comes from this JSON"
+  ]
+}
