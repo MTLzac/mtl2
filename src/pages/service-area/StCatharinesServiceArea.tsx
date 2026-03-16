@@ -76,7 +76,7 @@ const StCatharinesServiceArea = () => {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Mobile Tech Lab",
-            "description": "Professional phone, tablet, and console repair for St. Catharines, Ontario. Mail-in service with prepaid shipping and fast turnaround.",
+            "description": "iPhone repair for St. Catharines, Ontario. Mail-in iPhone screen replacement, battery swap, and charging port fix. Also Samsung, iPad, and console repair with prepaid shipping.",
             "url": "https://mobiletechlab.ca",
             "telephone": "+1-204-500-9757",
             "areaServed": [
