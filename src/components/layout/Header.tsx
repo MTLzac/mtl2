@@ -187,26 +187,39 @@ export const Header = () => {
                       ))}
                     </ul>
                   </div>
-                  {/* Mail-In Service Areas */}
+                  {/* Mail-In Service Areas — grouped by province */}
                   <div>
                     <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                       <Package className="h-4 w-4" />
                       Mail-In Service Areas
                     </div>
-                    <ul className="space-y-1">
-                      {MAIL_IN_AREAS.map((area) => (
-                        <li key={area.href}>
-                          <NavigationMenuLink asChild>
-                            <Link
-                              to={area.href}
-                              className="block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
-                            >
-                              {area.name}
-                            </Link>
-                          </NavigationMenuLink>
-                        </li>
-                      ))}
-                    </ul>
+                    {Object.entries(MAIL_IN_BY_PROVINCE).map(([province, areas]) => (
+                      <div key={province} className="mb-2">
+                        <p className="px-2 text-xs font-medium uppercase tracking-wider text-muted-foreground/70">{province}</p>
+                        <ul className="space-y-1">
+                          {areas.map((area) => (
+                            <li key={area.href}>
+                              <NavigationMenuLink asChild>
+                                <Link
+                                  to={area.href}
+                                  className="block rounded-md px-2 py-1.5 text-sm text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                                >
+                                  {area.name}
+                                </Link>
+                              </NavigationMenuLink>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                    <NavigationMenuLink asChild>
+                      <Link
+                        to="/service-areas"
+                        className="mt-1 block rounded-md px-2 py-1.5 text-sm font-medium text-primary hover:bg-accent hover:text-accent-foreground"
+                      >
+                        View All Areas →
+                      </Link>
+                    </NavigationMenuLink>
                   </div>
                 </div>
               </NavigationMenuContent>
