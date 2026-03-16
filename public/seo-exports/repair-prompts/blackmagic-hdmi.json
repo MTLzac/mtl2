@@ -1,0 +1,464 @@
+{
+  "meta": {
+    "version": "2.0",
+    "page_type": "niche-repair",
+    "purpose": "Complete structured JSON prompt for building the /repair/blackmagic-hdmi page as a static Astro page. Every field contains real production copy — no placeholders. This is a niche/specialty repair page using a different layout than standard brand repair pages.",
+    "astroOutputPath": "src/pages/repair/blackmagic-hdmi.astro",
+    "templateNote": "This page uses the NicheRepairTemplate layout, which differs from RepairLandingTemplate. It has: Hero → Proof/Video → Process Steps → Why Others Can't Help → Related Repairs → Why Choose Us → Mail-In Callout → Locations → FAQ. No services grid. No model list."
+  },
+  "constraints": {
+    "framework": "Astro — static HTML only, zero client-side JavaScript",
+    "styling": "Tailwind CSS with semantic design tokens from the project design system",
+    "fonts": "Inter via Google Fonts CDN",
+    "icons": "Inline SVG only — no icon library imports",
+    "images": "Use <img> with loading='lazy', explicit width/height, descriptive alt text",
+    "videos": "YouTube embed via <iframe> with privacy-enhanced mode, lazy loading, and proper title attribute",
+    "interactivity": "Use native <details>/<summary> for FAQ accordion — no JS. Table of contents requires minimal JS for scroll-spy (IntersectionObserver) — this is the ONLY permitted JS on the page.",
+    "links_internal": "<a href='/path'> — no client-side router",
+    "links_external": "target='_blank' rel='noopener noreferrer'",
+    "seo": "Single <h1>, canonical URL, JSON-LD (BreadcrumbList, FAQPage, Service), meta robots index/follow",
+    "forbidden": ["React", "JSX", "Alpine.js", "any JS framework", "client-side routing", "hydration"]
+  },
+  "section_order": [
+    "visible_breadcrumbs",
+    "section_1_hero",
+    "section_2_proof_video",
+    "section_3_repair_process",
+    "section_4_why_others_cant_help",
+    "section_5_related_repairs",
+    "section_6_why_choose_us",
+    "section_7_mail_in_callout",
+    "section_8_locations",
+    "section_9_faq",
+    "section_10_sticky_cta",
+    "section_11_table_of_contents"
+  ],
+  "seo": {
+    "titleTag": "BlackMagic Pocket 4K/6K HDMI Port Repair | BMPCC HDMI Fix",
+    "metaDescription": "BMPCC 4K or 6K HDMI not working? We repair BlackMagic Pocket Cinema Camera HDMI ports and controller IC chips. Mail-in service available Canada-wide.",
+    "canonicalUrl": "https://mobiletechlab.ca/repair/blackmagic-hdmi",
+    "robots": "index, follow",
+    "breadcrumbs": [
+      { "label": "Home", "href": "/" },
+      { "label": "Repairs", "href": "/repairs" },
+      { "label": "BlackMagic HDMI Repair", "href": "/repair/blackmagic-hdmi" }
+    ],
+    "breadcrumbSchema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/repairs" },
+        { "@type": "ListItem", "position": 3, "name": "BlackMagic HDMI Repair", "item": "https://mobiletechlab.ca/repair/blackmagic-hdmi" }
+      ]
+    },
+    "faqSchema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can you really fix a BlackMagic Pocket 4K HDMI port?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we've successfully repaired BMPCC 4K and 6K cameras with HDMI port and controller IC failures. The HDMI components are similar to those we repair on gaming consoles daily, and our micro-soldering experience translates directly to BlackMagic camera repairs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "My BMPCC 4K has no HDMI output - is it the port or something else?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HDMI output failure on the BlackMagic Pocket Cinema Camera can be caused by either the physical HDMI port or the HDMI controller IC chip on the motherboard. We perform board-level diagnosis to identify the exact failure point before recommending repair."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you repair the BlackMagic Pocket 6K as well?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, both the BMPCC 4K and 6K use similar HDMI port and controller IC components. Whether your BlackMagic Pocket 6K has intermittent HDMI or complete output failure, we can diagnose and repair both models."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you know if it's the HDMI port or the controller IC?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use board-level diagnostic equipment to test the HDMI signal path. This includes checking continuity on the port, testing the controller IC output, and verifying the communication between components. This dual diagnosis prevents wasted repairs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why can't I get my BMPCC HDMI fixed elsewhere?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "BlackMagic doesn't offer component-level repairs — they typically suggest replacement cameras. Most local repair shops lack the specialized micro-soldering equipment and experience needed for professional cinema camera board-level repair. Our console HDMI repair experience gives us the skills to tackle these jobs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you accept mail-in BlackMagic camera repairs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we regularly receive BMPCC 4K and 6K cameras from filmmakers and content creators across Canada. We provide guidance on proper packaging to ensure your camera arrives safely for HDMI port or controller IC repair."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How should I ship my BlackMagic camera for HDMI repair?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Remove any accessories (lens, cage, handle, SSD). Use the original box if available, or pack securely with foam or bubble wrap in a sturdy box. We recommend insured shipping with tracking. Contact us before shipping and we'll provide detailed packaging instructions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if both the HDMI port and controller IC need replacement?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If diagnosis reveals both the HDMI port and controller IC have failed, we can replace both components. We'll provide a quote for the full repair before proceeding, so you know exactly what's needed to restore HDMI output on your BlackMagic camera."
+          }
+        }
+      ]
+    },
+    "serviceSchema": {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "BlackMagic Pocket Cinema Camera HDMI Repair",
+      "description": "Professional HDMI port and controller IC repair for BlackMagic Pocket Cinema Camera 4K and 6K. Board-level micro-soldering by experienced technicians.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Mobile Tech Lab",
+        "url": "https://mobiletechlab.ca"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Canada"
+      },
+      "serviceType": "Electronics Repair"
+    }
+  },
+  "visible_breadcrumbs": {
+    "instructions": "Render a visible breadcrumb nav above the hero. Use semantic <nav aria-label='Breadcrumb'> with an <ol>. Style: small text, muted color, '/' separator between items. Last item is plain text (current page), others are links.",
+    "items": [
+      { "label": "Home", "href": "/" },
+      { "label": "Repairs", "href": "/repairs" },
+      { "label": "BlackMagic HDMI Repair", "href": null }
+    ]
+  },
+  "section_1_hero": {
+    "instructions": "Full-width hero with gradient background (from-background via-background to-primary/5). Centered text layout — no image in hero. Two badges above headline. Two CTA buttons: Call and Text. Decorative blurred circles in corners.",
+    "sectionId": "hero",
+    "badges": [
+      {
+        "label": "Pro Video Equipment Specialist",
+        "style": "destructive — red-tinted background, red text, AlertTriangle icon before text"
+      },
+      {
+        "label": "Mail-In Service Available",
+        "style": "primary — primary-tinted background, primary text, Package icon before text"
+      }
+    ],
+    "headline": "BlackMagic Pocket 4K/6K HDMI Repair",
+    "headlineTag": "h1",
+    "subheadline": "HDMI Port & Controller IC Replacement",
+    "subheadlineStyle": "text-xl font-medium text-primary",
+    "heroDescription": "Is your BMPCC 4K or 6K showing no HDMI output? We fix BlackMagic Pocket Cinema Camera HDMI ports and the controller IC chip when others can't. Based in Winnipeg, MB - mail-in repairs welcome from anywhere in Canada.",
+    "ctaPrimary": {
+      "label": "Call Now: (204) 500-9757",
+      "href": "tel:2045009757",
+      "iconBefore": "phone"
+    },
+    "ctaSecondary": {
+      "label": "Text Us: (204) 500-9757",
+      "href": "sms:+12045009757?body=Hi%2C%20I%20found%20your%20site%20searching%20for%20BlackMagic%20Pocket%20Cinema%20Camera%20repair.%20Can%20you%20help%3F",
+      "iconBefore": "message-square",
+      "variant": "outline"
+    },
+    "decorativeElements": [
+      "Blurred circle: absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-primary/5 blur-3xl",
+      "Blurred circle: absolute -top-24 -left-24 h-64 w-64 rounded-full bg-primary/5 blur-3xl"
+    ]
+  },
+  "section_2_proof_video": {
+    "instructions": "Two-column section on md+, stacked on mobile. Left column: YouTube embed in a rounded, bordered, shadowed container with 16:9 aspect ratio. Right column: heading, caption paragraph, and two CTA buttons (Call + Text). Background: muted/30 with top and bottom borders.",
+    "sectionId": "proof",
+    "backgroundStyle": "border-y border-border bg-muted/30",
+    "youtubeVideoId": "nlnYBiuD6VU",
+    "youtubeVideoTitle": "Watch Our BMPCC HDMI Repair Process",
+    "youtubeEmbedUrl": "https://www.youtube.com/embed/nlnYBiuD6VU",
+    "iframeAttributes": {
+      "allow": "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+      "referrerpolicy": "strict-origin-when-cross-origin",
+      "allowfullscreen": true,
+      "loading": "lazy"
+    },
+    "rightColumnHeading": "Watch the Repair Process",
+    "rightColumnCaption": "Our professional micro-soldering workstation where we diagnose and repair BMPCC 4K and 6K HDMI port and controller IC failures. We use the same precision equipment for gaming console HDMI repairs.",
+    "ctaPrimary": {
+      "label": "Call to Get Started",
+      "href": "tel:2045009757",
+      "iconBefore": "phone"
+    },
+    "ctaSecondary": {
+      "label": "Text Us",
+      "href": "sms:+12045009757?body=Hi%2C%20I%20found%20your%20site%20searching%20for%20BlackMagic%20Pocket%20Cinema%20Camera%20repair.%20Can%20you%20help%3F",
+      "variant": "outline",
+      "iconBefore": "message-square"
+    },
+    "fallbackImage": {
+      "note": "If youtubeVideoId is removed, show the proof image instead with a 'Repair Complete' badge",
+      "src": "/assets/repairs/bmpcc-hdmi-repair-workstation.png",
+      "alt": "BlackMagic Pocket Cinema Camera HDMI port repair workstation",
+      "completeBadge": "Repair Complete"
+    }
+  },
+  "section_3_repair_process": {
+    "instructions": "Section heading centered, then a 2-column grid of 4 numbered step cards. Each card has a numbered circle (bg-primary text-primary-foreground), a bold title, and a description paragraph. Cards have rounded borders and subtle shadow.",
+    "sectionId": "process",
+    "sectionHeading": "Our Repair Process",
+    "sectionSubheading": "How we tackle repairs that others won't even attempt",
+    "steps": [
+      {
+        "step": 1,
+        "title": "HDMI Diagnosis",
+        "description": "Board-level inspection to determine if the failure is the HDMI port itself or the HDMI controller IC chip on the motherboard. We test both failure points before recommending repair."
+      },
+      {
+        "step": 2,
+        "title": "Component Sourcing",
+        "description": "Locating compatible HDMI ports or controller ICs — often cross-referencing with similar components we already use for PS5, Xbox, and Switch HDMI repairs."
+      },
+      {
+        "step": 3,
+        "title": "Micro-Soldering Repair",
+        "description": "Precision removal and replacement of the failed HDMI port or controller IC using professional BGA rework equipment and proper thermal management."
+      },
+      {
+        "step": 4,
+        "title": "Signal & Output Testing",
+        "description": "Full HDMI output testing at multiple resolutions including 4K/6K to verify clean signal and proper handshake before returning your camera."
+      }
+    ],
+    "cardStyle": {
+      "container": "rounded-xl border border-border bg-card p-6 shadow-sm",
+      "numberCircle": "flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold",
+      "title": "text-lg font-semibold text-foreground",
+      "description": "text-sm text-muted-foreground"
+    }
+  },
+  "section_4_why_others_cant_help": {
+    "instructions": "Section with muted background and top/bottom borders. Centered heading, then a 3-column grid of problem cards. Each card has a destructive/red theme: red-tinted border, red-tinted background, icon in a red circle, bold title, description. This section builds urgency by showing the customer has limited options.",
+    "sectionId": "why-others-cant",
+    "backgroundStyle": "border-y border-border bg-muted/30",
+    "sectionHeading": "Why Others Can't Help",
+    "sectionSubheading": "Most repair shops turn away these devices — here's why we don't",
+    "problems": [
+      {
+        "iconType": "ban",
+        "title": "No Manufacturer Support",
+        "description": "BlackMagic doesn't offer HDMI port repair — a replacement camera is often the only 'official' option for BMPCC 4K or 6K HDMI failures."
+      },
+      {
+        "iconType": "x-circle",
+        "title": "Repair Shops Decline",
+        "description": "Most electronics repair shops don't have experience with professional cinema cameras or the micro-soldering skills required for BMPCC HDMI repair."
+      },
+      {
+        "iconType": "help-circle",
+        "title": "Two Possible Failure Points",
+        "description": "The HDMI issue could be the port OR the controller IC chip — misdiagnosis leads to wasted repairs. Most shops can't properly diagnose both."
+      }
+    ],
+    "cardStyle": {
+      "container": "rounded-xl border border-destructive/20 bg-destructive/5 p-6",
+      "iconCircle": "flex h-12 w-12 items-center justify-center rounded-full bg-destructive/10 text-destructive",
+      "title": "text-lg font-semibold text-foreground",
+      "description": "text-sm text-muted-foreground"
+    }
+  },
+  "section_5_related_repairs": {
+    "instructions": "Simple section with centered heading and a row of pill-shaped links. Each link has the repair label and a right-arrow icon. On hover: primary background with white text. Only render this section if relatedRepairs array is non-empty.",
+    "sectionHeading": "Related HDMI Repairs",
+    "sectionSubheading": "We fix HDMI ports on other devices too",
+    "repairs": [
+      { "label": "PS5 HDMI Repair", "href": "/repair/ps5" },
+      { "label": "Xbox HDMI Repair", "href": "/repair/xbox" },
+      { "label": "Nintendo Switch Repair", "href": "/repair/nintendo-switch" }
+    ],
+    "pillStyle": "inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-primary hover:text-primary-foreground hover:border-primary"
+  },
+  "section_6_why_choose_us": {
+    "instructions": "4-column grid of trust differentiators. Each pillar: icon in a primary-tinted circle, bold title, description. All centered text. These are custom pillars specific to this niche repair — not the generic defaults.",
+    "sectionId": "why-choose-us",
+    "sectionHeading": "The Mobile Tech Lab Advantage: Why We Are Winnipeg's Best",
+    "sectionSubheading": "Why Winnipeg customers consistently choose us for their repairs",
+    "pillars": [
+      {
+        "iconType": "search",
+        "title": "Dual Diagnosis Capability",
+        "description": "We identify whether your BMPCC HDMI failure is the port or the controller IC before starting repair."
+      },
+      {
+        "iconType": "gamepad-2",
+        "title": "Console HDMI Experience",
+        "description": "We repair similar HDMI ports on PS5, Xbox, and Nintendo Switch daily — the same skills apply to your BlackMagic camera."
+      },
+      {
+        "iconType": "package",
+        "title": "Mail-In Friendly",
+        "description": "Professional packaging guidance for shipping your BMPCC 4K or 6K camera safely from anywhere in Canada."
+      },
+      {
+        "iconType": "heart",
+        "title": "Pro Equipment Respect",
+        "description": "We understand this is your production tool and livelihood, not just another gadget to fix."
+      }
+    ],
+    "pillarStyle": {
+      "iconCircle": "mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4 text-primary",
+      "iconSize": "h-8 w-8",
+      "title": "text-lg font-semibold",
+      "description": "text-sm text-muted-foreground"
+    }
+  },
+  "section_7_mail_in_callout": {
+    "instructions": "Full-width section with primary/5 background. Centered layout: pill badge with Package icon, heading, description paragraph, and a single CTA button linking to /contact.",
+    "backgroundStyle": "bg-primary/5",
+    "badge": {
+      "iconType": "package",
+      "label": "Mail-In Repairs",
+      "style": "inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 font-medium text-primary"
+    },
+    "heading": "Can't Find Anyone Local?",
+    "description": "Ship your BMPCC 4K or 6K from anywhere in Canada for professional HDMI port or controller IC repair. We provide packaging guidance and quick turnaround for filmmakers who can't be without their camera.",
+    "ctaLabel": "Get Mail-In Quote",
+    "ctaHref": "/contact"
+  },
+  "section_8_locations": {
+    "instructions": "This section is identical across all repair pages. Use the exact data below — do not change any copy, hours, phone numbers, or addresses. Because mailInAvailable=true, render 3 columns: two location cards + one mail-in card. The mail-in card has a primary-tinted border and background.",
+    "sectionId": "locations",
+    "sectionHeading": "Visit Us or Mail It In",
+    "sectionSubheading": "Two walk-in locations in Winnipeg, or ship your device to us from anywhere.",
+    "showMailInCard": true,
+    "locations": [
+      {
+        "name": "St. Vital Location",
+        "address": "845 Dakota St #25, Winnipeg, MB R2M 5M3",
+        "phone": "(204) 500-9757",
+        "phoneHref": "tel:2045009757",
+        "hours": ["Mon-Sat: 9AM - 7PM", "Sun: 12PM - 7PM"],
+        "directionsHref": "https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3"
+      },
+      {
+        "name": "Thompson Location",
+        "address": "300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2",
+        "phone": "(204) 410-0262",
+        "phoneHref": "tel:2044100262",
+        "hours": ["Mon-Sat: 10AM - 6PM", "Sun: Closed"],
+        "directionsHref": "https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2"
+      }
+    ],
+    "mailInCard": {
+      "heading": "Mail-In Repairs",
+      "iconType": "truck",
+      "cardStyle": "border-primary/30 bg-primary/5",
+      "description": "Ship your device to us from anywhere in Canada or internationally. We'll diagnose, repair, and ship it back.",
+      "bulletPoints": [
+        "Free diagnostic",
+        "Secure packaging provided",
+        "Insured return shipping"
+      ],
+      "ctaLabel": "Get a Quote",
+      "ctaHref": "/contact"
+    },
+    "locationCardStructure": {
+      "iconTypes": {
+        "pin": "map-pin",
+        "phone": "phone",
+        "clock": "clock",
+        "directions": "navigation"
+      },
+      "directionsButtonLabel": "Get Directions",
+      "directionsButtonVariant": "outline, full-width"
+    }
+  },
+  "section_9_faq": {
+    "instructions": "Render FAQs as a native <details>/<summary> accordion — no JavaScript. Must match seo.faqSchema exactly — same 8 questions and answers. Wrap in a section with centered heading.",
+    "sectionId": "faqs",
+    "sectionHeading": "BlackMagic Pocket Cinema Camera Repair FAQs",
+    "sectionSubheading": "Common questions about BlackMagic Pocket Cinema Camera repair at Mobile Tech Lab",
+    "note": "Copy FAQ items exactly from seo.faqSchema.mainEntity — do not generate new items. There are 8 FAQ items.",
+    "accordionStyle": {
+      "container": "mx-auto max-w-3xl divide-y divide-border",
+      "summary": "cursor-pointer py-4 text-left font-medium text-foreground hover:text-primary",
+      "answer": "pb-4 text-sm text-muted-foreground leading-relaxed"
+    }
+  },
+  "section_10_sticky_cta": {
+    "instructions": "Fixed bottom bar visible only on mobile (md:hidden). Contains two equal-width buttons: Call and Text. Stays fixed at bottom of viewport with backdrop blur.",
+    "style": "fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 p-4 backdrop-blur-sm md:hidden",
+    "buttons": [
+      {
+        "label": "Call",
+        "href": "tel:2049001054",
+        "iconBefore": "phone",
+        "variant": "primary"
+      },
+      {
+        "label": "Text",
+        "href": "sms:+12045009757?body=Hi%2C%20I%20found%20your%20site%20and%20need%20a%20repair.%20Can%20you%20help%3F",
+        "iconBefore": "message-square",
+        "variant": "outline"
+      }
+    ]
+  },
+  "section_11_table_of_contents": {
+    "instructions": "Floating TOC button in the bottom-right corner (bottom-24 on mobile to clear sticky CTA, bottom-8 on desktop). Clicking opens a small popover with section links. This is the ONLY component that requires JavaScript — use a minimal IntersectionObserver for scroll-spy highlighting, and a simple toggle for open/close. Keep the JS inline and under 30 lines.",
+    "position": "fixed bottom-24 right-4 z-40 md:bottom-8",
+    "triggerButton": {
+      "icon_closed": "list",
+      "icon_open": "chevron-up",
+      "style": "h-12 w-12 rounded-full border border-border bg-card shadow-lg"
+    },
+    "popoverLabel": "Jump to section",
+    "items": [
+      { "id": "proof", "label": "Proof" },
+      { "id": "process", "label": "Process" },
+      { "id": "why-choose-us", "label": "Why Us" },
+      { "id": "locations", "label": "Locations" },
+      { "id": "faqs", "label": "FAQs" }
+    ],
+    "activeItemStyle": "bg-primary/10 font-medium text-primary",
+    "inactiveItemStyle": "text-muted-foreground hover:bg-muted"
+  },
+  "shared_layout": {
+    "instructions": "Wrap the entire page in the shared site layout. The layout includes: sticky header with navigation, desktop CTA, footer with links, and the mobile sticky CTA bar.",
+    "header": "Shared site header — use the same header component as all other pages",
+    "footer": "Shared site footer — use the same footer component as all other pages",
+    "mainTag": "Wrap all sections in <main class='flex-1 pb-20 md:pb-0'> — pb-20 on mobile to clear the sticky CTA bar"
+  },
+  "validation_checklist": {
+    "instructions": "Before returning the built Astro page, verify every item on this list is true",
+    "checks": [
+      "titleTag is under 60 characters",
+      "metaDescription is under 155 characters",
+      "canonicalUrl matches the slug exactly",
+      "breadcrumbs array has exactly 3 items",
+      "faqSchema has exactly 8 items",
+      "faqSchema items match section_9_faq content exactly",
+      "section_3_repair_process has exactly 4 steps",
+      "section_4_why_others_cant_help has exactly 3 problem cards",
+      "section_6_why_choose_us has exactly 4 pillars",
+      "section_8_locations data is identical to the provided constants — not paraphrased",
+      "YouTube embed uses privacy-enhanced mode or standard embed URL",
+      "All section IDs match the table_of_contents items",
+      "Sticky CTA bar is md:hidden only",
+      "No placeholder text — every string field has real content",
+      "Only one <h1> tag on the entire page",
+      "Output is valid HTML — no unclosed tags, no React/JSX syntax",
+      "Zero client-side JavaScript except the minimal TOC scroll-spy"
+    ]
+  }
+}
