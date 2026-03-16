@@ -107,7 +107,9 @@ const SteinbachServiceArea = lazy(() => import("./pages/service-area/SteinbachSe
 const PortageLaPrairieServiceArea = lazy(() => import("./pages/service-area/PortageLaPrairieServiceArea"));
 const BrandonServiceArea = lazy(() => import("./pages/service-area/BrandonServiceArea"));
 const SelkirkServiceArea = lazy(() => import("./pages/service-area/SelkirkServiceArea"));
- const ThePasServiceArea = lazy(() => import("./pages/service-area/ThePasServiceArea"));
+const ThePasServiceArea = lazy(() => import("./pages/service-area/ThePasServiceArea"));
+const StCatharinesServiceArea = lazy(() => import("./pages/service-area/StCatharinesServiceArea"));
+const PrinceAlbertServiceArea = lazy(() => import("./pages/service-area/PrinceAlbertServiceArea"));
 
 // Lazy-loaded Article Pages
 const PhoneNotCharging = lazy(() => import("./pages/phone-problems/PhoneNotCharging"));
