@@ -64,10 +64,10 @@ const StCatharinesServiceArea = () => {
   return (
     <>
       <Helmet>
-        <title>Mail-In Phone, Tablet & Console Repair for St. Catharines, ON | Mobile Tech Lab</title>
+        <title>iPhone Repair St. Catharines — Mail-In Screen & Battery Fix | Mobile Tech Lab</title>
         <meta 
           name="description" 
-          content="St. Catharines, ON mail-in phone, tablet, and console repair. Ship your iPhone, Samsung, iPad, Nintendo Switch, or PlayStation to our Winnipeg lab — prepaid label, fast turnaround, certified technicians." 
+          content="iPhone repair for St. Catharines, ON — mail in your iPhone for screen replacement, battery swap, or charging port fix. Also Samsung, iPad, Nintendo Switch & PlayStation repair. Prepaid shipping, 2–3 day delivery." 
         />
         <link rel="canonical" href="https://mobiletechlab.ca/service-area/st-catharines" />
         
@@ -76,7 +76,7 @@ const StCatharinesServiceArea = () => {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "Mobile Tech Lab",
-            "description": "Professional phone, tablet, and console repair for St. Catharines, Ontario. Mail-in service with prepaid shipping and fast turnaround.",
+            "description": "iPhone repair for St. Catharines, Ontario. Mail-in iPhone screen replacement, battery swap, and charging port fix. Also Samsung, iPad, and console repair with prepaid shipping.",
             "url": "https://mobiletechlab.ca",
             "telephone": "+1-204-500-9757",
             "areaServed": [
@@ -104,13 +104,14 @@ const StCatharinesServiceArea = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
-                Phone, Tablet & Console Repair for St. Catharines, ON
+                iPhone Repair for St. Catharines, ON
               </h1>
               <p className="text-lg text-muted-foreground">
-                Need your iPhone screen fixed, iPad battery replaced, or Nintendo Switch repaired? 
-                Ship your device from St. Catharines to our certified Winnipeg repair lab with a 
-                prepaid Canada Post label. Most repairs are completed the same day your device arrives, 
-                with typical 2–3 day shipping each way.
+                Cracked iPhone screen? Dead battery? Charging port not working? Ship your iPhone 
+                from St. Catharines to our certified Winnipeg repair lab with a prepaid Canada Post 
+                label — most iPhone repairs are completed the same day your phone arrives. We also 
+                fix Samsung phones, iPads, Nintendo Switch, and PlayStation consoles, with 2–3 day 
+                shipping each way.
               </p>
             </div>
           </div>
@@ -226,7 +227,7 @@ const StCatharinesServiceArea = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="mb-3 text-2xl font-bold md:text-3xl">
-                Ready to Start Your Repair from St. Catharines?
+                Ready to Fix Your iPhone from St. Catharines?
               </h2>
               <p className="mb-6 text-muted-foreground">
                 Get a free quote online or call us directly — no commitment required.
