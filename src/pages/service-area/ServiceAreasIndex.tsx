@@ -13,10 +13,10 @@ const ServiceAreasIndex = () => {
   return (
     <>
       <Helmet>
-        <title>Mobile Tech Lab | Manitoba Mail-In Phone Repair Service Areas</title>
+        <title>Mobile Tech Lab | Canada-Wide Mail-In Phone, Tablet & Console Repair</title>
         <meta
           name="description"
-          content="We serve customers across Manitoba with fast mail-in phone and device repair from our Winnipeg lab. View towns we service and request a prepaid shipping label."
+          content="We serve customers across Canada with fast mail-in phone, tablet, and console repair from our Winnipeg lab. View cities we service and request a prepaid shipping label."
         />
         <link rel="canonical" href="https://mobiletechlab.ca/service-areas" />
       </Helmet>
