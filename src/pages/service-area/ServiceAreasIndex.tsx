@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Package, Phone, ArrowRight, MapPin, Truck } from "lucide-react";
 import { PRIMARY_PHONE, PRIMARY_PHONE_FORMATTED } from "@/lib/locations";
-import { SERVICE_AREAS, getServiceAreaHref } from "@/lib/service-areas";
+import { SERVICE_AREAS, getServiceAreaHref, getServiceAreasByProvince } from "@/lib/service-areas";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 
 const ServiceAreasIndex = () => {
