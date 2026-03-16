@@ -107,7 +107,9 @@ const SteinbachServiceArea = lazy(() => import("./pages/service-area/SteinbachSe
 const PortageLaPrairieServiceArea = lazy(() => import("./pages/service-area/PortageLaPrairieServiceArea"));
 const BrandonServiceArea = lazy(() => import("./pages/service-area/BrandonServiceArea"));
 const SelkirkServiceArea = lazy(() => import("./pages/service-area/SelkirkServiceArea"));
- const ThePasServiceArea = lazy(() => import("./pages/service-area/ThePasServiceArea"));
+const ThePasServiceArea = lazy(() => import("./pages/service-area/ThePasServiceArea"));
+const StCatharinesServiceArea = lazy(() => import("./pages/service-area/StCatharinesServiceArea"));
+const PrinceAlbertServiceArea = lazy(() => import("./pages/service-area/PrinceAlbertServiceArea"));
 
 // Lazy-loaded Article Pages
 const PhoneNotCharging = lazy(() => import("./pages/phone-problems/PhoneNotCharging"));
@@ -230,7 +232,9 @@ const App = () => (
               <Route path="/service-area/portage-la-prairie" element={<PortageLaPrairieServiceArea />} />
               <Route path="/service-area/brandon" element={<BrandonServiceArea />} />
               <Route path="/service-area/selkirk" element={<SelkirkServiceArea />} />
-               <Route path="/service-area/the-pas" element={<ThePasServiceArea />} />
+              <Route path="/service-area/the-pas" element={<ThePasServiceArea />} />
+              <Route path="/service-area/st-catharines" element={<StCatharinesServiceArea />} />
+              <Route path="/service-area/prince-albert" element={<PrinceAlbertServiceArea />} />
               {/* Legacy redirect */}
               <Route path="/location/brandon" element={<BrandonServiceArea />} />
 
