@@ -35,7 +35,7 @@ const ServiceAreasIndex = () => {
         <section className="bg-gradient-to-b from-primary/5 to-background py-16">
           <div className="container mx-auto px-4 text-center">
             <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl">
-              Mail-In Phone Repair Across Manitoba
+              Mail-In Phone, Tablet & Console Repair Across Canada
             </h1>
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
               Mobile Tech Lab offers fast, affordable mail-in phone, tablet, and console repair to customers across Canada. 
