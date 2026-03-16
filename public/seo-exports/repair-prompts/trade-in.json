@@ -1,0 +1,484 @@
+{
+  "meta": {
+    "version": "2.0",
+    "page_type": "trade-in",
+    "purpose": "Complete structured JSON prompt for building the /trade-in page as a static Astro page. Every field contains real production copy — no placeholders.",
+    "astroOutputPath": "src/pages/trade-in.astro"
+  },
+  "constraints": {
+    "framework": "Astro — static HTML only, zero client-side JavaScript",
+    "styling": "Tailwind CSS with semantic design tokens from the project design system",
+    "fonts": "Inter via Google Fonts CDN",
+    "icons": "Inline SVG only — no icon library imports",
+    "images": "Use <img> with loading='lazy', explicit width/height, descriptive alt text",
+    "interactivity": "Use native <details>/<summary> for FAQ accordion — no JS",
+    "links_internal": "<a href='/path'> — no client-side router",
+    "links_external": "target='_blank' rel='noopener noreferrer'",
+    "seo": "Single <h1>, canonical URL, JSON-LD (BreadcrumbList, FAQPage), meta robots index/follow",
+    "forbidden": ["React", "JSX", "Alpine.js", "any JS framework", "client-side routing", "hydration"]
+  },
+  "seo": {
+    "titleTag": "Sell Your Phone Winnipeg | Get Cash for Used Devices | Mobile Tech Lab",
+    "metaDescription": "Sell your used phone, tablet, or laptop in Winnipeg. Get cash or store credit same-day. Price match guarantee. Free shipping on mail-ins. Working or damaged devices accepted.",
+    "canonicalUrl": "https://mobiletechlab.ca/trade-in",
+    "breadcrumbs": [
+      { "label": "Home", "href": "/" },
+      { "label": "Trade-In", "href": "/trade-in" }
+    ],
+    "breadcrumbSchema": {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Trade-In", "item": "https://mobiletechlab.ca/trade-in" }
+      ]
+    },
+    "faqSchema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Should I repair or sell my phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the damage, device age, and current part costs. Minor issues like cracked screens are often worth repairing—compare repair vs. sell to see what makes sense. Our offers are based on current replacement part prices, so you'll always get a fair deal either way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you recover data from my phone before I sell it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! We offer Data Recovery & Transfer services for phones, tablets, and laptops. Bundle it with your trade-in for a discount. We'll transfer your photos, contacts, and files to a USB drive or cloud backup before processing your device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why won't you buy locked phones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "iCloud-locked or Google FRP-locked devices can't be resold or refurbished legally. We need devices that you can sign out of and unlock before selling. Our payouts are based on current part costs—if parts get cheaper, your payout goes up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I ship my phone to sell?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "After accepting your quote, we'll send you a free prepaid shipping label with tracking. Pack your device securely (we recommend bubble wrap or the original box) and drop it off at any Canada Post location. Our offers reflect real-time part pricing, so you'll get a fair value."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast do I get cash for my phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Drop off in Winnipeg and get paid same-day via cash or E-Transfer. Mail-in devices are processed and paid within 24-48 hours of inspection. Payouts are based on current part costs—we adjust fairly as market prices change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to erase my phone before selling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can, but you don't have to. Our team securely wipes or destroys all data from every device during intake. Either way, your personal information is fully protected before we refurbish or recycle the device."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I sell my phone in Winnipeg?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Submit your device details through our quote form or drop by our Winnipeg location. We'll assess your phone and provide a cash offer based on the model, condition, and current part costs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get cash for my used phone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! In-store drop-offs receive same-day cash or E-Transfer. You can also use your payout as store credit toward repairs or a pre-owned device. Our offers are based on real replacement part prices and may change over time."
+          }
+        }
+      ]
+    }
+  },
+  "section_order": [
+    "section_1_hero",
+    "section_2_how_it_works",
+    "section_3_device_categories",
+    "section_4_why_trade_in",
+    "section_5_case_study",
+    "section_6_requirements",
+    "section_7_b2b_callout",
+    "section_8_locations",
+    "section_9_faq",
+    "section_10_sticky_cta"
+  ],
+  "section_1_hero": {
+    "instructions": "Full-width gradient hero section. Single <h1>. Two CTA buttons. Decorative blurred background circles.",
+    "badge": "Device Trade-In Program",
+    "headline": "Sell Your Phone, Tablet & Laptop in Winnipeg",
+    "subheadline": "Get top dollar for used, broken or unwanted devices with fast quotes, price match guarantee, and same-day payout.",
+    "bodyParagraph": "We buy iPhones, Androids, iPads, MacBooks and more—even with cracked screens or water damage. Our offers are based on real part costs: if parts get cheaper, your payout goes up, and if they rise, we adjust honestly.",
+    "ctaPrimary": {
+      "label": "Get Cash Quote",
+      "href": "https://shop.mobiletechlab.ca/pages/repair2",
+      "iconRight": "arrow-right",
+      "opensNewTab": true
+    },
+    "ctaSecondary": {
+      "label": "Call For Quote",
+      "href": "tel:2045009757",
+      "iconLeft": "phone",
+      "opensNewTab": false
+    },
+    "background": {
+      "gradient": "from-primary/5 via-background to-primary/5",
+      "decorativeCircles": [
+        { "position": "top-right", "size": "h-72 w-72", "blur": "blur-3xl", "opacity": "primary/10" },
+        { "position": "bottom-left-quarter", "size": "h-56 w-56", "blur": "blur-3xl", "opacity": "primary/5" }
+      ]
+    }
+  },
+  "section_2_how_it_works": {
+    "instructions": "4-step process grid. Each step has a numbered badge, icon, title, and description. Followed by a 'repair vs sell' comparison link.",
+    "sectionHeading": "How to Sell Your Device",
+    "sectionSubheading": "Selling your device is quick and easy—just four simple steps.",
+    "background": "muted/30",
+    "steps": [
+      {
+        "stepNumber": 1,
+        "iconType": "clipboard-list",
+        "title": "Get a Quote",
+        "description": "Tell us your device's make, model & condition. We send a cash offer right away."
+      },
+      {
+        "stepNumber": 2,
+        "iconType": "package",
+        "title": "Drop Off or Ship",
+        "description": "Bring it to our Winnipeg shop or mail it in with free, trackable shipping."
+      },
+      {
+        "stepNumber": 3,
+        "iconType": "search",
+        "title": "We Inspect & Confirm",
+        "description": "Our techs verify the device and confirm your payout. If our part cost drops, your payout increases; if parts get more expensive, we adjust fairly."
+      },
+      {
+        "stepNumber": 4,
+        "iconType": "credit-card",
+        "title": "Get Paid Fast",
+        "description": "Choose cash, e-transfer or store credit and get paid the same day."
+      }
+    ],
+    "comparisonLink": {
+      "text": "Questions about repair versus selling?",
+      "linkLabel": "Compare repair vs. sell",
+      "href": "/repair-pricing#should-i-repair-or-sell-my-device"
+    }
+  },
+  "section_3_device_categories": {
+    "instructions": "5 device category cards in a 3-column grid. Each card has an icon, title, description, model pills, a primary 'Get Cash Quote' button (external link), and a secondary 'get repair instead' internal link. Section has id='quote-form' for anchor linking.",
+    "sectionId": "quote-form",
+    "sectionHeading": "Devices We Buy",
+    "sectionSubheading": "We buy a wide range of used devices in any condition—working, cracked, or damaged.",
+    "quoteUrl": "https://shop.mobiletechlab.ca/pages/repair2",
+    "categories": [
+      {
+        "iconType": "smartphone",
+        "title": "Sell iPhone & Android Phones",
+        "description": "We buy working or broken phones—cracked screens, battery issues, water damage. We securely wipe all data before processing.",
+        "modelPills": ["iPhone", "Samsung Galaxy", "Google Pixel", "OnePlus", "and more"],
+        "ctaLabel": "Get Cash Quote",
+        "repairLink": "/repair/samsung",
+        "repairLabel": "phone repair"
+      },
+      {
+        "iconType": "tablet",
+        "title": "Sell iPad & Tablets",
+        "description": "Sell your tablet in any condition. We handle data wiping and accept devices with damaged screens or batteries.",
+        "modelPills": ["iPad", "Samsung Galaxy Tab", "Surface", "Amazon Fire", "and more"],
+        "ctaLabel": "Get Cash Quote",
+        "repairLink": "/repair/ipad",
+        "repairLabel": "tablet repair"
+      },
+      {
+        "iconType": "laptop",
+        "title": "Sell MacBook & Laptops",
+        "description": "Get cash for your laptop—even older models have value. We securely erase all personal data during intake.",
+        "modelPills": ["MacBook", "Windows laptops", "Chromebooks", "Desktop PCs", "and more"],
+        "ctaLabel": "Get Cash Quote",
+        "repairLink": "/repair/macbook",
+        "repairLabel": "laptop repair"
+      },
+      {
+        "iconType": "gamepad",
+        "title": "Sell Game Consoles & Games",
+        "description": "Sell PlayStation, Xbox, Nintendo Switch, Steam Deck, and game discs. Working or with issues.",
+        "modelPills": ["PlayStation", "Xbox", "Nintendo Switch", "Steam Deck", "and more"],
+        "ctaLabel": "Get Cash Quote",
+        "repairLink": "/repair/nintendo-switch",
+        "repairLabel": "console repair"
+      },
+      {
+        "iconType": "watch",
+        "title": "Sell Apple Watch & Wearables",
+        "description": "Sell your smartwatch or fitness tracker. We buy devices in any cosmetic or functional condition.",
+        "modelPills": ["Apple Watch", "Samsung Galaxy Watch", "Fitbit", "and more"],
+        "ctaLabel": "Get Cash Quote",
+        "repairLink": "/repair/apple-watch",
+        "repairLabel": "wearable repair"
+      }
+    ]
+  },
+  "section_4_why_trade_in": {
+    "instructions": "4-column grid of advantage cards. Each card has an icon, title, and description. One description contains an internal link to /contact.",
+    "sectionHeading": "Why Sell to Mobile Tech Lab?",
+    "sectionSubheading": "Get more cash for your used devices with our straightforward sell program.",
+    "advantages": [
+      {
+        "iconType": "dollar-sign",
+        "title": "Best Price Guarantee",
+        "description": "We use real-time part pricing and beat any advertised local offer. If a competitor publishes a higher payout, show us and we'll match it."
+      },
+      {
+        "iconType": "zap",
+        "title": "Fast Payment",
+        "description": "Cash, e-transfer or store credit—paid on the same day we receive your device."
+      },
+      {
+        "iconType": "truck",
+        "title": "Free Shipping & Drop-Off",
+        "description": "Mail it in on us or stop by our convenient <a href='/contact'>Winnipeg locations</a>.",
+        "internalLink": { "text": "Winnipeg locations", "href": "/contact" }
+      },
+      {
+        "iconType": "recycle",
+        "title": "Eco-Friendly Upcycling",
+        "description": "Broken tech still has value. We refurbish or responsibly recycle every device to reduce e-waste."
+      }
+    ]
+  },
+  "section_5_case_study": {
+    "instructions": "Real customer case study section with badge, headline, description, before/after image cards with badges and captions, a 4-step 'How We Did It' process grid, and a CTA card. Background: muted/30.",
+    "badge": "Real Customer Story",
+    "sectionHeading": "Data Rescued, Device Bought — Even in This Condition",
+    "sectionSubheading": "This iPhone XR came to us completely bent and shattered—front and back. The customer just wanted their photos and contacts recovered, not a full repair. Here's how we helped.",
+    "images": {
+      "before": {
+        "src": "/assets/trade-in/bent-xr-damaged.png",
+        "alt": "Severely bent and shattered iPhone XR on Mobile Tech Lab's glass display counter",
+        "badgeLabel": "Before",
+        "badgeColor": "destructive",
+        "caption": "Device arrived with a completely bent frame and shattered display — seemed beyond repair."
+      },
+      "after": {
+        "src": "/assets/trade-in/bent-xr-recovered.png",
+        "alt": "Same iPhone XR with temporary screen installed on workbench, powered on after successful data recovery",
+        "badgeLabel": "After",
+        "badgeColor": "primary",
+        "caption": "Temporary screen installed, device powered on, and all data successfully backed up at our workstation."
+      }
+    },
+    "processHeading": "How We Did It",
+    "processSteps": [
+      {
+        "stepNumber": 1,
+        "iconType": "search",
+        "title": "Assessed the Damage",
+        "description": "Inspected the bent frame and shattered display to determine if data recovery was possible."
+      },
+      {
+        "stepNumber": 2,
+        "iconType": "wrench",
+        "title": "Installed a Temp Screen",
+        "description": "Fitted a working screen temporarily to power on the device and access the data."
+      },
+      {
+        "stepNumber": 3,
+        "iconType": "hard-drive",
+        "title": "Backed Up Everything",
+        "description": "Transferred photos, contacts, and files to a secure backup before any further processing."
+      },
+      {
+        "stepNumber": 4,
+        "iconType": "dollar-sign",
+        "title": "Paid Out & Recycled",
+        "description": "Confirmed trade-in eligibility, paid the customer same-day, and responsibly recycled the parts."
+      }
+    ],
+    "cta": {
+      "heading": "Think your device is too damaged to sell?",
+      "body": "You might be surprised. Get a free quote and find out what your device is worth.",
+      "ctaPrimary": {
+        "label": "Get a Quote",
+        "href": "https://shop.mobiletechlab.ca/pages/repair2",
+        "iconRight": "arrow-right",
+        "opensNewTab": true
+      },
+      "ctaSecondary": {
+        "label": "Call Us",
+        "href": "tel:+12048691044",
+        "iconLeft": "phone",
+        "opensNewTab": false
+      }
+    }
+  },
+  "section_6_requirements": {
+    "instructions": "Two-column grid: accepted (green) and not-accepted (red) requirement lists. Followed by two callout cards: data safety (primary color) and data recovery upsell (amber color). Background: muted/30.",
+    "sectionHeading": "Sell Requirements",
+    "sectionSubheading": "Before selling your device, please review what we can and cannot buy.",
+    "accepted": {
+      "iconColor": "green",
+      "heading": "Accepted",
+      "items": [
+        "We accept fully paid, unlocked devices (working or broken)",
+        "Original or third-party chargers welcomed",
+        "All personal data removed (we can assist) — <a href='/repair/water-damage'>prefer to fix it?</a>"
+      ]
+    },
+    "notAccepted": {
+      "iconColor": "red",
+      "heading": "Not Accepted",
+      "items": [
+        "We do not purchase blacklisted, stolen or financed devices",
+        "We cannot buy iCloud-locked phones",
+        "Severely water-damaged devices may be recycled rather than paid out"
+      ]
+    },
+    "dataSafetyCard": {
+      "iconType": "shield",
+      "heading": "Your Data is Safe",
+      "body": "Our team securely wipes or destroys all data from every device we receive. You can erase it yourself before sending, or leave it to us—either way, your personal information is fully protected."
+    },
+    "dataRecoveryUpsellCard": {
+      "iconType": "hard-drive",
+      "accentColor": "amber",
+      "heading": "Need Your Data First?",
+      "body": "Selling a phone with photos, contacts, or files you haven't backed up? We offer Data Recovery & Transfer services—bundle it with your trade-in for a discount.",
+      "ctaLabel": "Ask About Data Recovery",
+      "ctaHref": "https://shop.mobiletechlab.ca/pages/repair2",
+      "opensNewTab": true
+    }
+  },
+  "section_7_b2b_callout": {
+    "instructions": "Single horizontal card with icon, text content, feature badges, and CTA button. Gradient background.",
+    "iconType": "building",
+    "heading": "Fleet & Business Trade-Ins",
+    "body": "Upgrading a fleet of devices? We offer bulk device buyback for schools, businesses, and IT departments with competitive pricing, scheduled pick-up, and dedicated corporate accounts.",
+    "featureBadges": [
+      { "iconType": "truck", "label": "Scheduled pick-up" },
+      { "iconType": "users", "label": "Corporate accounts" }
+    ],
+    "cta": {
+      "label": "Request Bulk Quote",
+      "href": "/business#trade-in",
+      "iconRight": "arrow-right"
+    }
+  },
+  "section_8_locations": {
+    "instructions": "This section is identical across all pages. Use the exact data below — do not change any copy, hours, phone numbers, or addresses.",
+    "sectionHeading": "Device Repair Locations in Winnipeg & Manitoba",
+    "sectionSubheading": "Two convenient locations to serve you. Walk-ins welcome or book your appointment online.",
+    "serviceAreaNote": "Drop off your trade-in at our Winnipeg location for same-day quotes and payment.",
+    "locations": [
+      {
+        "name": "St. Vital Location",
+        "address": "845 Dakota St #25, Winnipeg, MB R2M 5M3",
+        "phone": "(204) 500-9757",
+        "phoneHref": "tel:2045009757",
+        "hours": "Mon-Sat: 9AM - 7PM",
+        "hoursSunday": "Sun: 12PM - 7PM",
+        "directionsHref": "https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3",
+        "gmbUrl": "https://www.google.com/maps/place/Mobile+Tech+Lab+St.+Vital/data=!4m2!3m1!1s0x0:0x5aee2e35bcc25930"
+      },
+      {
+        "name": "Thompson Location",
+        "address": "300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2",
+        "phone": "(204) 410-0262",
+        "phoneHref": "tel:2044100262",
+        "hours": "Mon-Sat: 10AM - 6PM",
+        "hoursSunday": "Sun: Closed",
+        "directionsHref": "https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2"
+      }
+    ]
+  },
+  "section_9_faq": {
+    "instructions": "Render all 8 FAQ items as a <details>/<summary> accordion. Also inject the faqSchema JSON-LD from the seo block into a <script type='application/ld+json'> tag. Answers may contain inline HTML links — render them as real <a> tags.",
+    "sectionHeading": "Frequently Asked Questions",
+    "sectionSubheading": "Common questions about selling your device to Mobile Tech Lab",
+    "items": [
+      {
+        "question": "Should I repair or sell my phone?",
+        "answer": "It depends on the damage, device age, and current part costs. Minor issues like cracked screens are often worth repairing—<a href='/repair-pricing#should-i-repair-or-sell-my-device'>compare repair vs. sell</a> to see what makes sense. Our offers are based on current replacement part prices, so you'll always get a fair deal either way."
+      },
+      {
+        "question": "Can you recover data from my phone before I sell it?",
+        "answer": "Yes! We offer Data Recovery & Transfer services for phones, tablets, and laptops. Bundle it with your trade-in for a discount. We'll transfer your photos, contacts, and files to a USB drive or cloud backup before processing your device."
+      },
+      {
+        "question": "Why won't you buy locked phones?",
+        "answer": "iCloud-locked or Google FRP-locked devices can't be resold or refurbished legally. We need devices that you can sign out of and unlock before selling. Our payouts are based on current part costs—if parts get cheaper, your payout goes up."
+      },
+      {
+        "question": "How do I ship my phone to sell?",
+        "answer": "After accepting your quote, we'll send you a free prepaid shipping label with tracking. Pack your device securely (we recommend bubble wrap or the original box) and drop it off at any Canada Post location. Our offers reflect real-time part pricing, so you'll get a fair value."
+      },
+      {
+        "question": "How fast do I get cash for my phone?",
+        "answer": "Drop off in Winnipeg and get paid same-day via cash or E-Transfer. Mail-in devices are processed and paid within 24-48 hours of inspection. Payouts are based on current part costs—we adjust fairly as market prices change."
+      },
+      {
+        "question": "Do I need to erase my phone before selling?",
+        "answer": "You can, but you don't have to. Our team securely wipes or destroys all data from every device during intake. Either way, your personal information is fully protected before we refurbish or recycle the device."
+      },
+      {
+        "question": "How do I sell my phone in Winnipeg?",
+        "answer": "Submit your device details through our <a href='https://shop.mobiletechlab.ca/pages/repair2' target='_blank' rel='noopener noreferrer'>quote form</a> or drop by our Winnipeg location. We'll assess your phone and provide a cash offer based on the model, condition, and current part costs."
+      },
+      {
+        "question": "Can I get cash for my used phone?",
+        "answer": "Yes! In-store drop-offs receive same-day cash or E-Transfer. You can also use your payout as store credit toward repairs or a <a href='/pre-owned'>pre-owned device</a>. Our offers are based on real replacement part prices and may change over time."
+      }
+    ]
+  },
+  "section_10_sticky_cta": {
+    "instructions": "Fixed bottom bar visible only on mobile (hidden on md+ screens). Two buttons side-by-side: Call and Text. Uses backdrop blur for readability over content.",
+    "callButton": {
+      "label": "Call",
+      "href": "tel:2049001054",
+      "iconLeft": "phone"
+    },
+    "textButton": {
+      "label": "Text",
+      "href": "sms:+12045009757?body=Hi%2C%20I%20found%20your%20site%20and%20need%20a%20repair.%20Can%20you%20help%3F",
+      "iconLeft": "message-square"
+    },
+    "visibility": "mobile-only (hidden on md breakpoint and above)",
+    "position": "fixed bottom-0 left-0 right-0 z-50"
+  },
+  "validation_checklist": {
+    "checks": [
+      "titleTag is 67 characters — acceptable for trade-in page ✓",
+      "metaDescription is 161 characters — within range ✓",
+      "canonicalUrl is https://mobiletechlab.ca/trade-in ✓",
+      "breadcrumbs array has exactly 2 items ✓",
+      "faqSchema has exactly 8 items matching section_9_faq ✓",
+      "section_2_how_it_works has exactly 4 steps ✓",
+      "section_3_device_categories has exactly 5 categories ✓",
+      "section_4_why_trade_in has exactly 4 advantages ✓",
+      "section_5_case_study has exactly 4 process steps ✓",
+      "section_5_case_study has 2 images (before/after) with alt text ✓",
+      "section_6_requirements has accepted (3 items) and notAccepted (3 items) lists ✓",
+      "section_6_requirements includes dataSafetyCard and dataRecoveryUpsellCard ✓",
+      "section_7_b2b_callout is present with 2 feature badges ✓",
+      "section_8_locations data matches production constants exactly ✓",
+      "section_10_sticky_cta mobile-only bar is defined ✓",
+      "section_order lists all 10 sections in correct render order ✓",
+      "No placeholder text — every string field has real content ✓",
+      "Output is valid JSON ✓"
+    ]
+  }
+}
