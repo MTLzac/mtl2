@@ -1,0 +1,433 @@
+{
+  "meta": {
+    "version": "2.0",
+    "page_type": "business-b2b",
+    "purpose": "Complete structured JSON prompt for building the /business page as a static Astro page. Every field contains real production copy — no placeholders. This is a B2B-focused page for schools, IT resellers, and repair shops.",
+    "astroOutputPath": "src/pages/business.astro",
+    "templateNote": "This page uses a hybrid layout combining RepairLandingTemplate components with a unique BulkBuybackSection. Section order: Hero → Services Grid → Bulk Buyback → Model Categories → Why Choose Us → Ways to Save → Locations → FAQ. No breadcrumbs. No TableOfContents."
+  },
+  "constraints": {
+    "framework": "Astro — static HTML only, zero client-side JavaScript",
+    "styling": "Tailwind CSS with semantic design tokens from the project design system",
+    "fonts": "Inter via Google Fonts CDN",
+    "icons": "Inline SVG only — no icon library imports",
+    "images": "Use <img> with loading='lazy', explicit width/height, descriptive alt text",
+    "interactivity": "Use native <details>/<summary> for FAQ accordion — no JS",
+    "links_internal": "<a href='/path'> — no client-side router",
+    "links_external": "target='_blank' rel='noopener noreferrer'",
+    "seo": "Single <h1>, canonical URL, JSON-LD (FAQPage), meta robots index/follow",
+    "forbidden": ["React", "JSX", "Alpine.js", "any JS framework", "client-side routing", "hydration"],
+    "externalWidgetUrl": "https://shop.mobiletechlab.ca/pages/repair2"
+  },
+  "section_order": [
+    "section_1_hero",
+    "section_2_services_grid",
+    "section_3_bulk_buyback",
+    "section_4_model_categories",
+    "section_5_why_choose_us",
+    "section_6_ways_to_save",
+    "section_7_locations",
+    "section_8_faq",
+    "section_9_sticky_cta"
+  ],
+  "seo": {
+    "titleTag": "Business & Wholesale Device Repair | Mobile Tech Lab Winnipeg",
+    "metaDescription": "B2B device repair and buyback for schools, IT resellers, and repair shops. Volume pricing, free shipping, and fleet trade-in programs. No minimums.",
+    "canonicalUrl": "https://mobiletechlab.ca/business",
+    "robots": "index, follow",
+    "faqSchema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there a minimum order for volume pricing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No minimum. We welcome any volume, from a handful of devices to hundreds. Volume pricing applies automatically—the more you send, the more you save."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the shipping work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer free one-way shipping on all B2B orders. Choose a prepaid label to send devices to us, or we'll cover return shipping back to you—whichever works best for your workflow."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What devices do you repair for businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "iPads, Chromebooks, corporate phones (iPhone, Samsung, Pixel), laptops (Surface, Dell, HP, Lenovo), and more. If you have it, we can likely fix it. Contact us for any device not listed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast is turnaround for bulk orders?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most repairs are completed within 24-48 hours. Business accounts get priority processing. For large fleet orders, we'll provide a timeline estimate upfront."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer ITAD or device recycling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we provide secure device disposal with destruction certificates available for compliance. All recycling is done environmentally responsibly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you handle repairs other shops can't do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We specialize in board-level repairs, microsoldering, and data recovery. If another shop turned you away, bring it to us."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the bulk device buyback work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Upgrading your fleet? We'll quote your old devices and often pay significantly more than carrier trade-in programs. We accept working, damaged, or broken devices—phones, tablets, laptops, and Chromebooks. Fast payment via E-Transfer or check."
+          }
+        }
+      ]
+    }
+  },
+  "section_1_hero": {
+    "instructions": "Full-width hero section with NO image (text-only centered layout). Contains a LiveStatusBadge area (omit in Astro — static page), tagline, description, and two CTAs. Also includes a pricing note link. Background uses the standard hero gradient.",
+    "headline": "Business & Wholesale Repairs",
+    "headlineTag": "h1",
+    "tagline": "Your Trusted Partner for Fleet & Bulk Device Services",
+    "taglineStyle": "text-xl font-medium text-primary",
+    "description": "From school iPad fleets to corporate upgrades—we handle bulk repairs, refurbishment, and device buyback with volume pricing and free one-way shipping. No minimums.",
+    "ctaPrimary": {
+      "label": "Get a Free Quote",
+      "href": "https://shop.mobiletechlab.ca/pages/repair2",
+      "target": "_blank",
+      "rel": "noopener noreferrer",
+      "iconAfter": "arrow-right"
+    },
+    "ctaSecondary": {
+      "label": "Call Now",
+      "href": "tel:2045009757",
+      "iconBefore": "phone"
+    },
+    "pricingNote": {
+      "text": "Not sure what affects the cost?",
+      "linkLabel": "How repair pricing works",
+      "linkHref": "/repair-pricing"
+    },
+    "heroImage": null,
+    "hideImage": true
+  },
+  "section_2_services_grid": {
+    "instructions": "Section with secondary/30 background. Centered heading and subheading, then a responsive flex-wrap grid of 7 service cards (3 columns on lg, 2 on sm, 1 on mobile). Each card has: icon in primary-tinted rounded-lg container (hover: bg-primary text-white), bold title, description. Below the grid: a centered 'Request Repair' CTA button linking to the external widget.",
+    "sectionId": "services",
+    "backgroundStyle": "bg-secondary/30",
+    "sectionHeading": "Business Repair Services in Winnipeg",
+    "sectionSubheading": "Expert repairs for all Business issues. Fast turnaround, quality parts, and warranty included.",
+    "cards": [
+      {
+        "iconType": "monitor",
+        "title": "Fleet Screen Repairs",
+        "description": "High-volume screen replacements for iPads, Chromebooks, and phones. Bulk pricing available."
+      },
+      {
+        "iconType": "battery",
+        "title": "Battery Fleet Refresh",
+        "description": "Keep your device fleet running at full capacity with bulk battery replacements."
+      },
+      {
+        "iconType": "cpu",
+        "title": "Board-Level Repairs",
+        "description": "Advanced microsoldering and logic board repairs that other shops can't handle."
+      },
+      {
+        "iconType": "droplets",
+        "title": "Water & Liquid Damage",
+        "description": "Professional recovery for devices exposed to liquid. Data recovery options available."
+      },
+      {
+        "iconType": "sparkles",
+        "title": "Device Refurbishment",
+        "description": "Complete device overhauls—cleaning, repairs, and testing—ready for redeployment."
+      },
+      {
+        "iconType": "recycle",
+        "title": "Recycling & ITAD",
+        "description": "Secure device disposal with asset destruction certificates. Environmentally responsible."
+      },
+      {
+        "iconType": "arrow-left-right",
+        "title": "Bulk Device Buyback",
+        "description": "Upgrading your fleet? Get more than carrier trade-in programs for your old devices."
+      }
+    ],
+    "ctaButton": {
+      "label": "Request Repair",
+      "href": "https://shop.mobiletechlab.ca/pages/repair2",
+      "target": "_blank",
+      "rel": "noopener noreferrer",
+      "iconAfter": "arrow-right",
+      "style": "gradient-primary"
+    },
+    "cardStyle": {
+      "container": "w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] border-border/50 bg-card rounded-lg transition-all hover:border-primary/30 hover:shadow-lg",
+      "iconContainer": "inline-flex rounded-lg bg-primary/10 p-3 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground",
+      "iconSize": "h-6 w-6",
+      "title": "text-lg font-semibold",
+      "description": "text-sm text-muted-foreground"
+    }
+  },
+  "section_3_bulk_buyback": {
+    "instructions": "Highlighted callout section with primary/5 background. Contains a single large card (max-w-4xl, centered) with primary-tinted border and shadow. Inside: icon in circle, heading, subheadline in primary color, body paragraph, checklist of 4 benefits with green checkmark icons, and a CTA button. Single-column layout (no image).",
+    "backgroundStyle": "bg-primary/5",
+    "cardStyle": "border-primary/20 bg-card shadow-lg p-8 md:p-12 rounded-xl",
+    "icon": {
+      "type": "arrow-left-right",
+      "containerStyle": "inline-flex rounded-full bg-primary/10 p-4 text-primary",
+      "size": "h-8 w-8"
+    },
+    "heading": "Upgrading Your Fleet? We'll Buy Your Old Devices",
+    "subheadline": "Get More Than Carrier Trade-In Programs",
+    "subheadlineStyle": "text-lg font-medium text-primary",
+    "body": "When your organization upgrades from iPhone 8 to iPhone SE, or swaps out aging iPads for new models, don't leave money on the table. We offer competitive bulk buyback pricing—often significantly more than carrier trade-in programs.",
+    "benefits": [
+      "Phones, tablets, laptops, and Chromebooks accepted",
+      "Working, damaged, or broken devices—we quote them all",
+      "Fast payment via E-Transfer or check",
+      "Free shipping on bulk trade-ins"
+    ],
+    "benefitIconStyle": "rounded-full bg-primary/10 p-1 text-primary (check icon h-4 w-4)",
+    "ctaButton": {
+      "label": "Get a Bulk Buyback Quote",
+      "href": "https://shop.mobiletechlab.ca/pages/repair2",
+      "target": "_blank",
+      "rel": "noopener noreferrer",
+      "iconAfter": "arrow-right",
+      "style": "gradient-primary"
+    }
+  },
+  "section_4_model_categories": {
+    "instructions": "Section with centered heading and subheading. Renders a flex-wrap grid of 3 category cards (centered, max-w-5xl). Each card has: icon in primary circle, bold title, short description, up to 3 model pill badges (with '+N more' badge if > 3 models), and a 'Get Quote' CTA button at the bottom. On hover, the card border turns primary and gains shadow. The CTA button on hover switches to primary bg/text.",
+    "sectionId": "models",
+    "sectionHeading": "All Business Models We Repair in Winnipeg",
+    "sectionSubheading": "We specialize in the unique architecture of each Business generation",
+    "groups": [
+      {
+        "iconType": "tablet",
+        "groupTitle": "Education Devices",
+        "groupDescription": "Bulk classroom device repairs at competitive rates",
+        "allModels": [
+          "iPad 7th Gen", "iPad 8th Gen", "iPad 9th Gen", "iPad 10th Gen",
+          "iPad Air", "iPad Pro", "Acer Chromebook", "HP Chromebook",
+          "Lenovo Chromebook", "Dell Chromebook", "Samsung Chromebook"
+        ],
+        "visiblePills": ["iPad 7th Gen", "iPad 8th Gen", "iPad 9th Gen"],
+        "moreCount": 8,
+        "ctaLabel": "Get Quote",
+        "ctaHref": "https://shop.mobiletechlab.ca/pages/repair2",
+        "ctaTarget": "_blank"
+      },
+      {
+        "iconType": "tablet-smartphone",
+        "groupTitle": "Corporate & Enterprise",
+        "groupDescription": "Keep your workforce connected with fast turnaround",
+        "allModels": [
+          "iPhone SE", "iPhone 11", "iPhone 12", "iPhone 13", "iPhone 14",
+          "Samsung Galaxy A-Series", "Samsung Galaxy S-Series", "Google Pixel",
+          "Surface Pro", "Dell Latitude", "HP EliteBook", "Lenovo ThinkPad"
+        ],
+        "visiblePills": ["iPhone SE", "iPhone 11", "iPhone 12"],
+        "moreCount": 9,
+        "ctaLabel": "Get Quote",
+        "ctaHref": "https://shop.mobiletechlab.ca/pages/repair2",
+        "ctaTarget": "_blank"
+      },
+      {
+        "iconType": "monitor",
+        "groupTitle": "Repair Shop Overflow",
+        "groupDescription": "We handle the jobs others can't—microsoldering, data recovery, and more",
+        "allModels": [
+          "Complex Repairs", "Board-Level Work", "Water Damage Recovery",
+          "Data Recovery", "Microsoldering", "Any Device Type"
+        ],
+        "visiblePills": ["Complex Repairs", "Board-Level Work", "Water Damage Recovery"],
+        "moreCount": 3,
+        "ctaLabel": "Get Quote",
+        "ctaHref": "https://shop.mobiletechlab.ca/pages/repair2",
+        "ctaTarget": "_blank"
+      }
+    ],
+    "cardStyle": {
+      "container": "border-border/50 bg-card transition-all hover:border-primary/50 hover:shadow-lg rounded-lg",
+      "iconCircle": "inline-flex rounded-full bg-primary/10 p-3 text-primary mx-auto",
+      "title": "text-lg font-semibold text-center",
+      "description": "text-sm text-muted-foreground text-center leading-relaxed",
+      "pillBadge": "text-xs font-normal bg-secondary",
+      "moreBadge": "text-xs font-normal border variant-outline",
+      "ctaButton": "w-full variant-ghost group-hover:bg-primary group-hover:text-primary-foreground"
+    }
+  },
+  "section_5_why_choose_us": {
+    "instructions": "4-column grid of trust differentiators (2-col on sm, 4-col on lg). Each pillar: icon in a primary-tinted circle, bold title, description. All centered text. These are custom B2B-specific pillars.",
+    "sectionId": "why-choose-us",
+    "sectionHeading": "The Mobile Tech Lab Advantage: Why We Are Winnipeg's Best",
+    "sectionSubheading": "Why Winnipeg customers consistently choose us for their repairs",
+    "pillars": [
+      {
+        "iconType": "badge-dollar-sign",
+        "title": "Volume Pricing",
+        "description": "Competitive bulk rates with no minimum order. The more you send, the more you save."
+      },
+      {
+        "iconType": "truck",
+        "title": "Free One-Way Shipping",
+        "description": "We cover shipping one way—choose a prepaid label to us, or free return shipping to you."
+      },
+      {
+        "iconType": "clock",
+        "title": "Fast Turnaround",
+        "description": "Priority processing for business accounts. Most repairs completed in 24-48 hours."
+      },
+      {
+        "iconType": "star",
+        "title": "Trusted Experience",
+        "description": "500+ 5-star reviews. Trusted by schools, businesses, and repair shops across Manitoba."
+      }
+    ],
+    "pillarStyle": {
+      "iconCircle": "mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4 text-primary",
+      "iconSize": "h-8 w-8",
+      "title": "text-lg font-semibold",
+      "description": "text-sm text-muted-foreground"
+    }
+  },
+  "section_6_ways_to_save": {
+    "instructions": "Section with muted/30 background and a top border. Centered heading with a primary-colored highlight span. Subheading below. Then a 2-column card grid (max-w-4xl). Card 1: Price Match (shield icon, outline CTA linking to tel:). Card 2: Trade-In (refresh icon, primary-tinted CTA linking to /trade-in). Both cards have rounded-2xl borders, hover shadow, and full-width CTA buttons at the bottom.",
+    "backgroundStyle": "bg-muted/30 with top border-border/50",
+    "sectionHeading": "Worried About Repair Cost? <span class='text-primary'>You Have Options.</span>",
+    "sectionSubheading": "Most customers use one of these options to lower their repair cost.",
+    "card1_price_match": {
+      "iconType": "shield",
+      "iconContainerStyle": "mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10",
+      "title": "We'll Match Any Local Repair Price",
+      "body": "Found a lower price at another Winnipeg repair shop? We'll match it — so you don't overpay. No pressure. No hassle.",
+      "ctaLabel": "Check If We Can Match Your Price",
+      "ctaHref": "tel:2045009757",
+      "ctaVariant": "outline",
+      "ctaIconBefore": "phone"
+    },
+    "card2_trade_in": {
+      "iconType": "refresh-cw",
+      "iconContainerStyle": "mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary/10",
+      "title": "Lower Your Business Repair Cost With a Trade-In",
+      "body": "Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.",
+      "secondaryText": "Get paid via Cash, E-Transfer, or Store Credit",
+      "ctaLabel": "Lower My Business Repair Cost",
+      "ctaHref": "/trade-in",
+      "ctaIconAfter": "arrow-right",
+      "ctaStyle": "bg-primary/10 text-primary border-primary/40 hover:bg-primary/15"
+    },
+    "cardStyle": "rounded-2xl border border-border/50 bg-card shadow-sm hover:shadow-md transition-shadow"
+  },
+  "section_7_locations": {
+    "instructions": "This section is identical across all repair pages. Use the exact data below — do not change any copy, hours, phone numbers, or addresses. This page does NOT show a mail-in card (showMailInCard=false), so render only the 2 location cards in a 2-column grid.",
+    "sectionId": "locations",
+    "sectionHeading": "Device Repair Locations in Winnipeg & Manitoba",
+    "sectionSubheading": "Two convenient locations to serve you. Walk-ins welcome or book your appointment online.",
+    "serviceAreaNote": "We serve businesses across Manitoba and Canada. Free one-way shipping on all B2B orders.",
+    "serviceAreaNoteIcon": "truck",
+    "showMailInCard": false,
+    "locations": [
+      {
+        "name": "St. Vital Location",
+        "address": "845 Dakota St #25, Winnipeg, MB R2M 5M3",
+        "phone": "(204) 500-9757",
+        "phoneHref": "tel:2045009757",
+        "hours": ["Mon-Sat: 9AM - 7PM", "Sun: 12PM - 7PM"],
+        "directionsHref": "https://maps.google.com/?q=845+Dakota+St+%2325+Winnipeg+MB+R2M+5M3"
+      },
+      {
+        "name": "Thompson Location",
+        "address": "300 Mystery Lake Rd #1530, Thompson, MB R8N 0M2",
+        "phone": "(204) 410-0262",
+        "phoneHref": "tel:2044100262",
+        "hours": ["Mon-Sat: 10AM - 6PM", "Sun: Closed"],
+        "directionsHref": "https://maps.google.com/?q=300+Mystery+Lake+Rd+%231530+Thompson+MB+R8N+0M2"
+      }
+    ],
+    "locationCardStructure": {
+      "iconTypes": {
+        "pin": "map-pin",
+        "phone": "phone",
+        "clock": "clock",
+        "directions": "navigation"
+      },
+      "directionsButtonLabel": "Get Directions",
+      "directionsButtonVariant": "outline, full-width"
+    }
+  },
+  "section_8_faq": {
+    "instructions": "Render FAQs as a native <details>/<summary> accordion — no JavaScript. Must match seo.faqSchema exactly — same 7 questions and answers. Wrap in a section with centered heading.",
+    "sectionId": "faqs",
+    "sectionHeading": "Business Repair FAQs",
+    "sectionSubheading": "Common questions about Business repair at Mobile Tech Lab",
+    "note": "Copy FAQ items exactly from seo.faqSchema.mainEntity — do not generate new items. There are 7 FAQ items.",
+    "accordionStyle": {
+      "container": "mx-auto max-w-3xl divide-y divide-border",
+      "summary": "cursor-pointer py-4 text-left font-medium text-foreground hover:text-primary",
+      "answer": "pb-4 text-sm text-muted-foreground leading-relaxed"
+    }
+  },
+  "section_9_sticky_cta": {
+    "instructions": "Fixed bottom bar visible only on mobile (md:hidden). Contains two equal-width buttons: Call and Text. Stays fixed at bottom of viewport with backdrop blur.",
+    "style": "fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 p-4 backdrop-blur-sm md:hidden",
+    "buttons": [
+      {
+        "label": "Call",
+        "href": "tel:2049001054",
+        "iconBefore": "phone",
+        "variant": "primary"
+      },
+      {
+        "label": "Text",
+        "href": "sms:+12045009757?body=Hi%2C%20I%20found%20your%20site%20and%20need%20a%20repair.%20Can%20you%20help%3F",
+        "iconBefore": "message-square",
+        "variant": "outline"
+      }
+    ]
+  },
+  "shared_layout": {
+    "instructions": "Wrap the entire page in the shared site layout. The layout includes: sticky header with navigation, desktop CTA, footer with links, and the mobile sticky CTA bar.",
+    "header": "Shared site header — use the same header component as all other pages",
+    "footer": "Shared site footer — use the same footer component as all other pages",
+    "mainTag": "Wrap all sections in <main class='flex-1 pb-20 md:pb-0'> — pb-20 on mobile to clear the sticky CTA bar"
+  },
+  "validation_checklist": {
+    "instructions": "Before returning the built Astro page, verify every item on this list is true",
+    "checks": [
+      "titleTag is under 60 characters",
+      "metaDescription is under 155 characters",
+      "canonicalUrl is https://mobiletechlab.ca/business",
+      "faqSchema has exactly 7 items",
+      "faqSchema items match section_8_faq content exactly",
+      "section_2_services_grid has exactly 7 cards",
+      "section_4_model_categories has exactly 3 groups",
+      "section_5_why_choose_us has exactly 4 pillars",
+      "section_6_ways_to_save has exactly 2 cards",
+      "section_7_locations data is identical to the provided constants — not paraphrased",
+      "All external links use target='_blank' rel='noopener noreferrer'",
+      "Sticky CTA bar is md:hidden only",
+      "No placeholder text — every string field has real content",
+      "Only one <h1> tag on the entire page",
+      "Output is valid HTML — no unclosed tags, no React/JSX syntax",
+      "Zero client-side JavaScript — FAQ uses native <details>/<summary>"
+    ]
+  }
+}
