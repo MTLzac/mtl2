@@ -338,25 +338,37 @@ export const Header = () => {
                   </ul>
                 </div>
                 
-                {/* Mail-In Service Areas */}
+                {/* Mail-In Service Areas — grouped by province */}
                 <div>
                   <div className="mb-2 flex items-center gap-2 text-sm font-semibold text-primary">
                     <Package className="h-4 w-4" />
                     Mail-In Service Areas
                   </div>
-                  <ul className="ml-6 space-y-2">
-                    {MAIL_IN_AREAS.map((area) => (
-                      <li key={area.href}>
-                        <Link
-                          to={area.href}
-                          className="block text-sm text-muted-foreground hover:text-primary"
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {area.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                  {Object.entries(MAIL_IN_BY_PROVINCE).map(([province, areas]) => (
+                    <div key={province} className="mb-2">
+                      <p className="ml-6 text-xs font-medium uppercase tracking-wider text-muted-foreground/70">{province}</p>
+                      <ul className="ml-6 space-y-2">
+                        {areas.map((area) => (
+                          <li key={area.href}>
+                            <Link
+                              to={area.href}
+                              className="block text-sm text-muted-foreground hover:text-primary"
+                              onClick={() => setMobileOpen(false)}
+                            >
+                              {area.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                  <Link
+                    to="/service-areas"
+                    className="ml-6 block text-sm font-medium text-primary hover:underline"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    View All Areas →
+                  </Link>
                 </div>
               </div>
 
