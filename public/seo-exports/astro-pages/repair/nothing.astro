@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import VisibleBreadcrumbs from "../../components/repair/VisibleBreadcrumbs.astro";
+import HeroSection from "../../components/repair/HeroSection.astro";
+import ServiceGrid from "../../components/repair/ServiceGrid.astro";
+import ModelListGrid from "../../components/repair/ModelListGrid.astro";
+import WhyChooseUs from "../../components/repair/WhyChooseUs.astro";
+import PricingMicroCopy from "../../components/repair/PricingMicroCopy.astro";
+import LocationCards from "../../components/repair/LocationCards.astro";
+import FAQSection from "../../components/repair/FAQSection.astro";
+import StickyMobileCTA from "../../components/repair/StickyMobileCTA.astro";
+import TableOfContents from "../../components/repair/TableOfContents.astro";
+
+const title = "Nothing Phone Repair Winnipeg | Glyph & Screen Fix | Mobile Tech Lab";
+const description = "Nothing Phone repair in Winnipeg. Screen, Glyph interface, battery repair for Nothing Phone (2), Phone (1) & CMF devices. New brand expertise.";
+const canonical = "https://mobiletechlab.ca/repair/nothing";
+const deviceName = "Nothing Phone";
+const slug = "nothing";
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 2, "name": "Repairs", "item": "https://mobiletechlab.ca/" },
+    { "@type": "ListItem", "position": 3, "name": "Nothing Phone Repair", "item": canonical }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Nothing Phone Repair Winnipeg",
+  "description": description,
+  "url": canonical,
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Mobile Tech Lab",
+    "url": "https://mobiletechlab.ca"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Winnipeg"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    /* FAQ items injected by FAQSection component data */
+  ]
+};
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <Fragment slot="head">
+    <meta name="robots" content="index, follow" />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <!-- 1. Breadcrumbs -->
+  <VisibleBreadcrumbs deviceName={deviceName} slug={slug} />
+
+  <!-- 2. Hero -->
+  <HeroSection deviceName={deviceName} slug={slug} />
+
+  <!-- 3. Services -->
+  <ServiceGrid deviceName={deviceName} />
+
+  <!-- 4. Models -->
+  <ModelListGrid deviceName={deviceName} />
+
+  <!-- 5. Why Choose Us -->
+  <WhyChooseUs deviceName={deviceName} />
+
+  <!-- 6. Pricing Micro Copy -->
+  <PricingMicroCopy deviceName={deviceName} />
+
+  <!-- 7. Locations -->
+  <LocationCards deviceName={deviceName} />
+
+  <!-- 8. FAQs -->
+  <FAQSection deviceName={deviceName} />
+
+  <!-- 9. Sticky Mobile CTA -->
+  <StickyMobileCTA />
+
+  <!-- 10. Table of Contents -->
+  <TableOfContents />
+</BaseLayout>
