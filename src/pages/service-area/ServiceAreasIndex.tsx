@@ -38,9 +38,9 @@ const ServiceAreasIndex = () => {
               Mail-In Phone Repair Across Manitoba
             </h1>
             <p className="mx-auto max-w-3xl text-lg text-muted-foreground">
-              Mobile Tech Lab offers fast, affordable mail-in phone and device repair to customers across Manitoba. 
+              Mobile Tech Lab offers fast, affordable mail-in phone, tablet, and console repair to customers across Canada. 
               All mail-in repairs are handled through our certified Winnipeg repair lab, with most deliveries 
-              arriving within 1–2 business days. Below are the towns we commonly serve.
+              arriving within 1–3 business days depending on your location. Below are the towns and cities we commonly serve.
             </p>
           </div>
         </section>
