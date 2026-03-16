@@ -104,13 +104,14 @@ const StCatharinesServiceArea = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
-                Phone, Tablet & Console Repair for St. Catharines, ON
+                iPhone Repair for St. Catharines, ON
               </h1>
               <p className="text-lg text-muted-foreground">
-                Need your iPhone screen fixed, iPad battery replaced, or Nintendo Switch repaired? 
-                Ship your device from St. Catharines to our certified Winnipeg repair lab with a 
-                prepaid Canada Post label. Most repairs are completed the same day your device arrives, 
-                with typical 2–3 day shipping each way.
+                Cracked iPhone screen? Dead battery? Charging port not working? Ship your iPhone 
+                from St. Catharines to our certified Winnipeg repair lab with a prepaid Canada Post 
+                label — most iPhone repairs are completed the same day your phone arrives. We also 
+                fix Samsung phones, iPads, Nintendo Switch, and PlayStation consoles, with 2–3 day 
+                shipping each way.
               </p>
             </div>
           </div>
