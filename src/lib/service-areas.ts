@@ -8,47 +8,80 @@
 export interface ServiceArea {
   name: string;
   slug: string;
+  province: string;
+  provinceShort: string;
   distance: string;
   deliveryTime: string;
   description?: string;
 }
 
 export const SERVICE_AREAS: ServiceArea[] = [
+  // Manitoba
   {
-    name: "Steinbach, MB",
+    name: "Steinbach",
     slug: "steinbach",
+    province: "Manitoba",
+    provinceShort: "MB",
     distance: "~60 km",
     deliveryTime: "1-day delivery",
     description: "Southeast Manitoba",
   },
   {
-    name: "Brandon, MB",
+    name: "Brandon",
     slug: "brandon",
+    province: "Manitoba",
+    provinceShort: "MB",
     distance: "~215 km",
     deliveryTime: "1-2 day delivery",
     description: "Western Manitoba",
   },
   {
-    name: "Portage la Prairie, MB",
+    name: "Portage la Prairie",
     slug: "portage-la-prairie",
+    province: "Manitoba",
+    provinceShort: "MB",
     distance: "~85 km",
     deliveryTime: "1-day delivery",
     description: "Central Manitoba",
   },
   {
-    name: "Selkirk, MB",
+    name: "Selkirk",
     slug: "selkirk",
+    province: "Manitoba",
+    provinceShort: "MB",
     distance: "~35 km",
     deliveryTime: "1-day delivery",
     description: "Interlake region",
   },
-   {
-     name: "The Pas, MB",
-     slug: "the-pas",
-     distance: "~630 km",
-     deliveryTime: "1-2 day delivery",
-     description: "Northern Manitoba (Thompson in-person or mail-in)",
-   },
+  {
+    name: "The Pas",
+    slug: "the-pas",
+    province: "Manitoba",
+    provinceShort: "MB",
+    distance: "~630 km",
+    deliveryTime: "1-2 day delivery",
+    description: "Northern Manitoba (Thompson in-person or mail-in)",
+  },
+  // Saskatchewan
+  {
+    name: "Prince Albert",
+    slug: "prince-albert",
+    province: "Saskatchewan",
+    provinceShort: "SK",
+    distance: "~750 km",
+    deliveryTime: "2-3 day delivery",
+    description: "Central Saskatchewan",
+  },
+  // Ontario
+  {
+    name: "St. Catharines",
+    slug: "st-catharines",
+    province: "Ontario",
+    provinceShort: "ON",
+    distance: "~2,000 km",
+    deliveryTime: "2-3 day delivery",
+    description: "Niagara Region",
+  },
 ];
 
 /**
@@ -62,6 +95,22 @@ export const getServiceAreaHref = (slug: string): string =>
  */
 export const getServiceAreasForNav = () =>
   SERVICE_AREAS.map((area) => ({
-    name: area.name,
+    name: `${area.name}, ${area.provinceShort}`,
     href: getServiceAreaHref(area.slug),
+    province: area.province,
   }));
+
+/**
+ * Get service areas grouped by province
+ */
+export const getServiceAreasByProvince = () => {
+  const grouped: Record<string, { name: string; href: string }[]> = {};
+  SERVICE_AREAS.forEach((area) => {
+    if (!grouped[area.province]) grouped[area.province] = [];
+    grouped[area.province].push({
+      name: `${area.name}, ${area.provinceShort}`,
+      href: getServiceAreaHref(area.slug),
+    });
+  });
+  return grouped;
+};
