@@ -227,7 +227,7 @@ const PrinceAlbertServiceArea = () => {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="mb-3 text-2xl font-bold md:text-3xl">
-                Ready to Start Your Repair from Prince Albert?
+                Ready to Fix Your iPhone from Prince Albert?
               </h2>
               <p className="mb-6 text-muted-foreground">
                 Get a free quote online or call us directly — no commitment required.
