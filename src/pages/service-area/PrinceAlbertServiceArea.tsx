@@ -64,10 +64,10 @@ const PrinceAlbertServiceArea = () => {
   return (
     <>
       <Helmet>
-        <title>Mail-In Phone, Tablet & Console Repair for Prince Albert, SK | Mobile Tech Lab</title>
+        <title>iPhone Repair Prince Albert — Mail-In Screen & Battery Fix | Mobile Tech Lab</title>
         <meta 
           name="description" 
-          content="Prince Albert, SK mail-in phone, tablet, and console repair. Ship your iPhone, Samsung, iPad, Nintendo Switch, or Xbox to our Winnipeg lab — prepaid label, fast turnaround, certified technicians." 
+          content="iPhone repair for Prince Albert, SK — mail in your iPhone for screen replacement, battery swap, or charging port fix. Also Samsung, iPad, Nintendo Switch & Xbox repair. Prepaid shipping, 2–3 day delivery." 
         />
         <link rel="canonical" href="https://mobiletechlab.ca/service-area/prince-albert" />
         
