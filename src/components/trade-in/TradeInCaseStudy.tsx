@@ -7,28 +7,28 @@
  
  const QUOTE_URL = "https://shop.mobiletechlab.ca/pages/repair2";
  
- const steps = [
-   {
-     icon: Search,
-     title: "Assessed the Damage",
-     description: "Inspected the bent frame and shattered display to determine if data recovery was possible.",
-   },
-   {
-     icon: Wrench,
-     title: "Installed a Temp Screen",
-     description: "Fitted a working screen temporarily to power on the device and access the data.",
-   },
-   {
-     icon: HardDrive,
-     title: "Backed Up Everything",
-     description: "Transferred photos, contacts, and files to a secure backup before any further processing.",
-   },
-   {
-     icon: DollarSign,
-     title: "Paid Out & Recycled",
-     description: "Confirmed trade-in eligibility, paid the customer same-day, and responsibly recycled the parts.",
-   },
- ];
+const steps = [
+  {
+    icon: Search,
+    title: "Checked What We Were Working With",
+    description: "We looked at the bent frame and smashed screen to see if the data inside could still be saved.",
+  },
+  {
+    icon: Wrench,
+    title: "We Found a Way to Access the Data",
+    description: "Using a temporary screen, we powered the phone back on and got into it — no full repair needed.",
+  },
+  {
+    icon: HardDrive,
+    title: "Saved All Their Stuff",
+    description: "Photos, contacts, and files were all backed up safely before anything else happened.",
+  },
+  {
+    icon: DollarSign,
+    title: "Paid Out & Recycled",
+    description: "The customer got paid same-day, and we responsibly recycled the leftover parts.",
+  },
+];
  
  export const TradeInCaseStudy = () => {
    return (
@@ -39,12 +39,12 @@
            <Badge variant="outline" className="mb-4 border-primary/40 bg-primary/10 text-primary">
              Real Customer Story
            </Badge>
-           <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-             Data Rescued, Device Bought — Even in This Condition
-           </h2>
-           <p className="mx-auto max-w-2xl text-muted-foreground">
-             This iPhone XR came to us completely bent and shattered—front and back. The customer just wanted their photos and contacts recovered, not a full repair. Here's how we helped.
-           </p>
+            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+              We Bought This Broken iPhone — Yours Might Be Worth Something Too
+            </h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground">
+              This iPhone XR came to us completely bent and shattered—front and back. The customer just wanted their photos and contacts recovered, not a full repair. Here's how we helped.
+            </p>
          </div>
  
          {/* Before/After Images */}
@@ -90,9 +90,14 @@
            </figure>
          </div>
  
-         {/* How We Did It Steps */}
-         <div className="mx-auto max-w-4xl">
-           <h3 className="mb-6 text-center text-xl font-semibold">How We Did It</h3>
+          {/* Payout context line */}
+          <p className="mx-auto mb-10 max-w-2xl text-center text-sm font-medium text-muted-foreground">
+            Customer received a same-day payout after data recovery—even in this condition.
+          </p>
+
+          {/* Why This Still Had Value Steps */}
+          <div className="mx-auto max-w-4xl">
+            <h3 className="mb-6 text-center text-xl font-semibold">Why This Still Had Value</h3>
            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
              {steps.map((step, index) => (
                <Card key={index} className="border-border/50 bg-card text-center">
@@ -116,17 +121,17 @@
          {/* CTA Block */}
          <Card className="mx-auto mt-10 max-w-2xl border-primary/20 bg-gradient-to-br from-primary/5 via-background to-primary/10">
            <CardContent className="p-6 text-center md:p-8">
-             <h3 className="mb-2 text-lg font-semibold">
-               Think your device is too damaged to sell?
-             </h3>
-             <p className="mb-6 text-muted-foreground">
-               You might be surprised. Get a free quote and find out what your device is worth.
-             </p>
-             <div className="flex flex-col justify-center gap-3 sm:flex-row">
-               <Button className="gradient-primary" asChild>
-                 <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
-                   Get a Quote
-                   <ArrowRight className="ml-2 h-4 w-4" />
+              <h3 className="mb-2 text-lg font-semibold">
+                Think your phone is worthless? It probably isn't.
+              </h3>
+              <p className="mb-6 text-muted-foreground">
+                You might be surprised. Get a free quote and find out what your device is worth.
+              </p>
+              <div className="flex flex-col justify-center gap-3 sm:flex-row">
+                <Button className="gradient-primary" asChild>
+                  <a href={QUOTE_URL} target="_blank" rel="noopener noreferrer">
+                    See What Yours Is Worth
+                    <ArrowRight className="ml-2 h-4 w-4" />
                  </a>
                </Button>
                <Button variant="outline" asChild>
