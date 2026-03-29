@@ -8,7 +8,10 @@ export const Requirements = () => {
     <section className="py-16 md:py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Sell Requirements</h2>
+          <p className="mb-4 text-sm text-muted-foreground">
+            Not sure if your device qualifies? We'll tell you in seconds — no commitment required.
+          </p>
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">Before You Sell — Quick Checklist</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
             Before selling your device, please review what we can and cannot buy.
           </p>
@@ -37,34 +40,34 @@ export const Requirements = () => {
                   <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
                   <span>
                     All personal data removed (we can assist) — 
-                    <Link to="/repair/water-damage" className="text-primary hover:underline ml-1">prefer to fix it?</Link>
+                    Need help removing your data? We can assist.
                   </span>
                 </li>
               </ul>
             </CardContent>
           </Card>
 
-          {/* Not Accepted */}
+          {/* Devices We Can't Purchase */}
           <Card className="border-red-500/30 bg-red-500/5">
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-red-600 dark:text-red-400">
                 <XCircle className="h-5 w-5" />
-                Not Accepted
+                Devices We Can't Purchase
               </CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-                  We do not purchase blacklisted, stolen or financed devices
+                  Devices must be fully paid and not blacklisted, stolen, or financed
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-                  We cannot buy iCloud-locked phones
+                  Devices must be unlocked (no iCloud lock)
                 </li>
                 <li className="flex items-start gap-2 text-sm text-muted-foreground">
                   <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-                  Severely water-damaged devices may be recycled rather than paid out
+                  Severely water-damaged devices may be eligible for recycling instead of payout
                 </li>
               </ul>
             </CardContent>
@@ -79,10 +82,21 @@ export const Requirements = () => {
                 <Shield className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="mb-1 font-semibold">Your Data is Safe</h3>
-                <p className="text-sm text-muted-foreground">
-                  Our team securely wipes or destroys all data from every device we receive. You can erase it yourself before sending, or leave it to us—either way, your personal information is fully protected.
-                </p>
+                <h3 className="mb-2 font-semibold">Your Data is 100% Safe</h3>
+                <ul className="space-y-1.5 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    Fully wiped or destroyed
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    Never accessed without consent
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                    We can handle it for you
+                  </li>
+                </ul>
               </div>
             </CardContent>
           </Card>
