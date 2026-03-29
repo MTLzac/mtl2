@@ -16,7 +16,7 @@ export const TradeInHero = () => {
           </div>
           
           <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Sell Your Phone, Tablet & Laptop in Winnipeg
+            Sell Your Phone for Cash Near You in Winnipeg — <span>Get Paid Today</span>
           </h1>
           
           <p className="mb-2 text-xl font-medium text-foreground/90 md:text-2xl">
