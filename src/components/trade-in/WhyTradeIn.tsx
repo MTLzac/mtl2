@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const advantages = [
   {
     icon: DollarSign,
-    title: "Best Price Guarantee",
-    description: "We use real-time part pricing and beat any advertised local offer. If a competitor publishes a higher payout, show us and we'll match it.",
+    title: "Competitive Pricing",
+    description: "We use real-time part pricing to keep our offers fair. If a competitor publishes a higher payout, show us and we'll do our best to match it.",
   },
   {
     icon: Zap,
