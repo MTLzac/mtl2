@@ -1,9 +1,10 @@
 {
   "meta": {
-    "version": "2.0",
+    "version": "3.0",
     "page_type": "trade-in",
     "purpose": "Complete structured JSON prompt for building the /trade-in page as a static Astro page. Every field contains real production copy — no placeholders.",
-    "astroOutputPath": "src/pages/trade-in.astro"
+    "astroOutputPath": "src/pages/trade-in.astro",
+    "lastUpdated": "2026-03-29"
   },
   "constraints": {
     "framework": "Astro — static HTML only, zero client-side JavaScript",
@@ -119,7 +120,7 @@
   "section_1_hero": {
     "instructions": "Full-width gradient hero section. Single <h1>. Two CTA buttons. Decorative blurred background circles.",
     "badge": "Device Trade-In Program",
-    "headline": "Sell Your Phone, Tablet & Laptop in Winnipeg",
+    "headline": "Sell Your Phone for Cash Near You in Winnipeg — <span>Get Paid Today</span>",
     "subheadline": "Get top dollar for used, broken or unwanted devices with fast quotes, price match guarantee, and same-day payout.",
     "bodyParagraph": "We buy iPhones, Androids, iPads, MacBooks and more—even with cracked screens or water damage. Our offers are based on real part costs: if parts get cheaper, your payout goes up, and if they rise, we adjust honestly.",
     "ctaPrimary": {
@@ -143,7 +144,7 @@
     }
   },
   "section_2_how_it_works": {
-    "instructions": "4-step process grid. Each step has a numbered badge, icon, title, and description. Followed by a 'repair vs sell' comparison link.",
+    "instructions": "4-step process grid. Each step has a numbered badge ('Step N'), icon, title, and description. Cards have hover border and shadow effects. Followed by a 'repair vs sell' comparison link below the grid.",
     "sectionHeading": "How to Sell Your Device",
     "sectionSubheading": "Selling your device is quick and easy—just four simple steps.",
     "background": "muted/30",
@@ -180,7 +181,7 @@
     }
   },
   "section_3_device_categories": {
-    "instructions": "5 device category cards in a 3-column grid. Each card has an icon, title, description, model pills, a primary 'Get Cash Quote' button (external link), and a secondary 'get repair instead' internal link. Section has id='quote-form' for anchor linking.",
+    "instructions": "5 device category cards in a responsive grid (1-col mobile, 2-col md, 3-col lg). Each card has an icon, title, description, model pills/chips, a primary 'Get Cash Quote' button (external link opening in new tab), and a secondary 'get repair instead' internal link. Section has id='quote-form' for anchor linking.",
     "sectionId": "quote-form",
     "sectionHeading": "Devices We Buy",
     "sectionSubheading": "We buy a wide range of used devices in any condition—working, cracked, or damaged.",
@@ -234,14 +235,14 @@
     ]
   },
   "section_4_why_trade_in": {
-    "instructions": "4-column grid of advantage cards. Each card has an icon, title, and description. One description contains an internal link to /contact.",
+    "instructions": "4-column grid of advantage cards (1-col mobile, 2-col md, 4-col lg). Each card has a circular icon container, title, and description. One description contains an internal link to /contact. Cards have hover border and shadow effects.",
     "sectionHeading": "Why Sell to Mobile Tech Lab?",
     "sectionSubheading": "Get more cash for your used devices with our straightforward sell program.",
     "advantages": [
       {
         "iconType": "dollar-sign",
-        "title": "Best Price Guarantee",
-        "description": "We use real-time part pricing and beat any advertised local offer. If a competitor publishes a higher payout, show us and we'll match it."
+        "title": "Competitive Pricing",
+        "description": "We use real-time part pricing to keep our offers fair. If a competitor publishes a higher payout, show us and we'll do our best to match it."
       },
       {
         "iconType": "zap",
@@ -262,58 +263,67 @@
     ]
   },
   "section_5_case_study": {
-    "instructions": "Real customer case study section with badge, headline, description, before/after image cards with badges and captions, a 4-step 'How We Did It' process grid, and a CTA card. Background: muted/30.",
+    "instructions": "Real customer case study section with a badge ('Real Customer Story'), headline, description paragraph, before/after image cards with overlay badges and captions, a context line below images, a 4-step 'Why This Still Had Value' process grid with numbered circles and icons, and a CTA card at the bottom. Background: muted/30.",
     "badge": "Real Customer Story",
-    "sectionHeading": "Data Rescued, Device Bought — Even in This Condition",
+    "sectionHeading": "We Bought This Broken iPhone — Yours Might Be Worth Something Too",
     "sectionSubheading": "This iPhone XR came to us completely bent and shattered—front and back. The customer just wanted their photos and contacts recovered, not a full repair. Here's how we helped.",
     "images": {
+      "layout": "2-column grid, max-w-4xl centered, gap-6",
       "before": {
         "src": "/assets/trade-in/bent-xr-damaged.png",
         "alt": "Severely bent and shattered iPhone XR on Mobile Tech Lab's glass display counter",
+        "aspectRatio": "4/5",
+        "objectFit": "cover",
         "badgeLabel": "Before",
         "badgeColor": "destructive",
+        "badgePosition": "absolute left-3 top-3",
         "caption": "Device arrived with a completely bent frame and shattered display — seemed beyond repair."
       },
       "after": {
         "src": "/assets/trade-in/bent-xr-recovered.png",
         "alt": "Same iPhone XR with temporary screen installed on workbench, powered on after successful data recovery",
+        "aspectRatio": "4/5",
+        "objectFit": "cover",
         "badgeLabel": "After",
         "badgeColor": "primary",
+        "badgePosition": "absolute left-3 top-3",
         "caption": "Temporary screen installed, device powered on, and all data successfully backed up at our workstation."
       }
     },
-    "processHeading": "How We Did It",
+    "payoutContextLine": "Customer received a same-day payout after data recovery—even in this condition.",
+    "processHeading": "Why This Still Had Value",
     "processSteps": [
       {
         "stepNumber": 1,
         "iconType": "search",
-        "title": "Assessed the Damage",
-        "description": "Inspected the bent frame and shattered display to determine if data recovery was possible."
+        "title": "Checked What We Were Working With",
+        "description": "We looked at the bent frame and smashed screen to see if the data inside could still be saved."
       },
       {
         "stepNumber": 2,
         "iconType": "wrench",
-        "title": "Installed a Temp Screen",
-        "description": "Fitted a working screen temporarily to power on the device and access the data."
+        "title": "We Found a Way to Access the Data",
+        "description": "Using a temporary screen, we powered the phone back on and got into it — no full repair needed."
       },
       {
         "stepNumber": 3,
         "iconType": "hard-drive",
-        "title": "Backed Up Everything",
-        "description": "Transferred photos, contacts, and files to a secure backup before any further processing."
+        "title": "Saved All Their Stuff",
+        "description": "Photos, contacts, and files were all backed up safely before anything else happened."
       },
       {
         "stepNumber": 4,
         "iconType": "dollar-sign",
         "title": "Paid Out & Recycled",
-        "description": "Confirmed trade-in eligibility, paid the customer same-day, and responsibly recycled the parts."
+        "description": "The customer got paid same-day, and we responsibly recycled the leftover parts."
       }
     ],
     "cta": {
-      "heading": "Think your device is too damaged to sell?",
+      "heading": "Think your phone is worthless? It probably isn't.",
       "body": "You might be surprised. Get a free quote and find out what your device is worth.",
+      "background": "gradient from-primary/5 via-background to-primary/10",
       "ctaPrimary": {
-        "label": "Get a Quote",
+        "label": "See What Yours Is Worth",
         "href": "https://shop.mobiletechlab.ca/pages/repair2",
         "iconRight": "arrow-right",
         "opensNewTab": true
@@ -327,8 +337,9 @@
     }
   },
   "section_6_requirements": {
-    "instructions": "Two-column grid: accepted (green) and not-accepted (red) requirement lists. Followed by two callout cards: data safety (primary color) and data recovery upsell (amber color). Background: muted/30.",
-    "sectionHeading": "Sell Requirements",
+    "instructions": "Section opens with a reassurance line above the heading. Two-column grid: accepted (green border/bg) and not-accepted (red border/bg) requirement lists using check/x circle icons. Followed by two callout cards stacked vertically: data safety card (primary color with bullet list) and data recovery upsell card (amber accent with CTA button). Background: muted/30.",
+    "reassuranceLine": "Not sure if your device qualifies? We'll tell you in seconds — no commitment required.",
+    "sectionHeading": "Before You Sell — Quick Checklist",
     "sectionSubheading": "Before selling your device, please review what we can and cannot buy.",
     "accepted": {
       "iconColor": "green",
@@ -336,22 +347,28 @@
       "items": [
         "We accept fully paid, unlocked devices (working or broken)",
         "Original or third-party chargers welcomed",
-        "All personal data removed (we can assist) — <a href='/repair/water-damage'>prefer to fix it?</a>"
+        "All personal data removed (we can assist) — Need help removing your data? We can assist."
       ]
     },
     "notAccepted": {
       "iconColor": "red",
-      "heading": "Not Accepted",
+      "heading": "Devices We Can't Purchase",
       "items": [
-        "We do not purchase blacklisted, stolen or financed devices",
-        "We cannot buy iCloud-locked phones",
-        "Severely water-damaged devices may be recycled rather than paid out"
+        "Devices must be fully paid and not blacklisted, stolen, or financed",
+        "Devices must be unlocked (no iCloud lock)",
+        "Severely water-damaged devices may be eligible for recycling instead of payout"
       ]
     },
     "dataSafetyCard": {
       "iconType": "shield",
-      "heading": "Your Data is Safe",
-      "body": "Our team securely wipes or destroys all data from every device we receive. You can erase it yourself before sending, or leave it to us—either way, your personal information is fully protected."
+      "accentColor": "primary",
+      "heading": "Your Data is 100% Safe",
+      "format": "bullet list with check-circle icons",
+      "items": [
+        "Fully wiped or destroyed",
+        "Never accessed without consent",
+        "We can handle it for you"
+      ]
     },
     "dataRecoveryUpsellCard": {
       "iconType": "hard-drive",
@@ -364,7 +381,7 @@
     }
   },
   "section_7_b2b_callout": {
-    "instructions": "Single horizontal card with icon, text content, feature badges, and CTA button. Gradient background.",
+    "instructions": "Single horizontal card with building icon, text content, two feature badges with icons, and a CTA button linking to /business#trade-in. Gradient background.",
     "iconType": "building",
     "heading": "Fleet & Business Trade-Ins",
     "body": "Upgrading a fleet of devices? We offer bulk device buyback for schools, businesses, and IT departments with competitive pricing, scheduled pick-up, and dedicated corporate accounts.",
@@ -379,7 +396,7 @@
     }
   },
   "section_8_locations": {
-    "instructions": "This section is identical across all pages. Use the exact data below — do not change any copy, hours, phone numbers, or addresses.",
+    "instructions": "This section is identical across all pages. Use the exact data below — do not change any copy, hours, phone numbers, or addresses. Render as cards with map/directions links.",
     "sectionHeading": "Device Repair Locations in Winnipeg & Manitoba",
     "sectionSubheading": "Two convenient locations to serve you. Walk-ins welcome or book your appointment online.",
     "serviceAreaNote": "Drop off your trade-in at our Winnipeg location for same-day quotes and payment.",
@@ -406,7 +423,7 @@
     ]
   },
   "section_9_faq": {
-    "instructions": "Render all 8 FAQ items as a <details>/<summary> accordion. Also inject the faqSchema JSON-LD from the seo block into a <script type='application/ld+json'> tag. Answers may contain inline HTML links — render them as real <a> tags.",
+    "instructions": "Render all 8 FAQ items as a native <details>/<summary> accordion — no JavaScript. Also inject the faqSchema JSON-LD from the seo block into a <script type='application/ld+json'> tag. Answers may contain inline HTML links — render them as real <a> tags with appropriate attributes.",
     "sectionHeading": "Frequently Asked Questions",
     "sectionSubheading": "Common questions about selling your device to Mobile Tech Lab",
     "items": [
@@ -466,11 +483,24 @@
       "canonicalUrl is https://mobiletechlab.ca/trade-in ✓",
       "breadcrumbs array has exactly 2 items ✓",
       "faqSchema has exactly 8 items matching section_9_faq ✓",
+      "section_1_hero headline uses <span> for 'Get Paid Today' ✓",
       "section_2_how_it_works has exactly 4 steps ✓",
       "section_3_device_categories has exactly 5 categories ✓",
       "section_4_why_trade_in has exactly 4 advantages ✓",
+      "section_4_why_trade_in uses 'Competitive Pricing' (not 'Best Price Guarantee') ✓",
+      "section_4_why_trade_in uses softened language ('do our best to match it') ✓",
+      "section_5_case_study headline is 'We Bought This Broken iPhone — Yours Might Be Worth Something Too' ✓",
+      "section_5_case_study has payoutContextLine below images ✓",
+      "section_5_case_study processHeading is 'Why This Still Had Value' (not 'How We Did It') ✓",
+      "section_5_case_study steps use non-technical language ✓",
+      "section_5_case_study CTA heading is 'Think your phone is worthless? It probably isn't.' ✓",
+      "section_5_case_study CTA button is 'See What Yours Is Worth' ✓",
       "section_5_case_study has exactly 4 process steps ✓",
       "section_5_case_study has 2 images (before/after) with alt text ✓",
+      "section_6_requirements has reassuranceLine above heading ✓",
+      "section_6_requirements heading is 'Before You Sell — Quick Checklist' ✓",
+      "section_6_requirements notAccepted heading is 'Devices We Can't Purchase' ✓",
+      "section_6_requirements dataSafetyCard heading is 'Your Data is 100% Safe' with bullet list ✓",
       "section_6_requirements has accepted (3 items) and notAccepted (3 items) lists ✓",
       "section_6_requirements includes dataSafetyCard and dataRecoveryUpsellCard ✓",
       "section_7_b2b_callout is present with 2 feature badges ✓",
