@@ -107,16 +107,49 @@
   },
   "section_order": [
     "section_1_hero",
+    "section_1b_pricing_expectations",
     "section_2_how_it_works",
     "section_3_device_categories",
-    "section_4_why_trade_in",
     "section_5_case_study",
+    "section_4_why_trade_in",
     "section_6_requirements",
     "section_7_b2b_callout",
     "section_8_locations",
     "section_9_faq",
     "section_10_sticky_cta"
   ],
+  "section_1b_pricing_expectations": {
+    "instructions": "Insert directly below hero. 3–4 card grid matching existing card styles (same as steps or device cards). Focus on price ranges to anchor expectations without overcommitting.",
+    "sectionId": "pricing-expectations",
+    "sectionHeading": "What Your Phone Could Be Worth",
+    "sectionSubheading": "Prices vary based on condition, storage, and market demand—but here's what we've recently paid:",
+    "background": "background",
+    "cards": [
+      {
+        "title": "Recent iPhone Payouts",
+        "description": "$120 – $450+ depending on model and condition"
+      },
+      {
+        "title": "Broken Phones",
+        "description": "$20 – $250+ even with cracked screens or issues"
+      },
+      {
+        "title": "Newer Devices",
+        "description": "Up to $600+ for newer models in good condition"
+      },
+      {
+        "title": "We Price Fairly",
+        "description": "Many devices are worth more after inspection—especially if damage is minor"
+      }
+    ],
+    "trustLine": "Most people guess their phone's value wrong—we give you the real number in under 30 seconds.",
+    "cta": {
+      "label": "See What Yours Is Worth",
+      "href": "https://shop.mobiletechlab.ca/pages/repair2",
+      "iconRight": "arrow-right",
+      "opensNewTab": true
+    }
+  },
   "section_1_hero": {
     "instructions": "Full-width gradient hero section. Single <h1>. Two CTA buttons. Decorative blurred background circles.",
     "badge": "Device Trade-In Program",
