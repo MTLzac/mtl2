@@ -255,7 +255,12 @@
     <priority>0.6</priority>
   </url>
    <url>
-     <loc>https://mobiletechlab.ca/service-area/the-pas</loc>
+     <loc>https://mobiletechlab.ca/service-area/st-catharines</loc>
+     <changefreq>monthly</changefreq>
+     <priority>0.6</priority>
+   </url>
+   <url>
+     <loc>https://mobiletechlab.ca/service-area/prince-albert</loc>
      <changefreq>monthly</changefreq>
      <priority>0.6</priority>
    </url>
@@ -309,5 +314,39 @@
     <loc>https://mobiletechlab.ca/repairs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Screen Insurance -->
+  <url>
+    <loc>https://mobiletechlab.ca/screen-insurance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Phone Problems / Articles -->
+  <url>
+    <loc>https://mobiletechlab.ca/phone-problems/phone-not-charging</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mobiletechlab.ca/phone-problems/phone-not-charging/iphone</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mobiletechlab.ca/phone-problems/phone-not-charging/samsung</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mobiletechlab.ca/phone-problems/phone-not-charging/charging-port</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mobiletechlab.ca/phone-problems/phone-not-charging/slow-charging</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
