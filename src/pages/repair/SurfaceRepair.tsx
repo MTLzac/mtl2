@@ -149,8 +149,8 @@ const PRICING_MICRO_COPY = {
 const SurfaceRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="Microsoft Surface Repair in Manitoba | MobileTechLab"
-      metaDescription="Expert Microsoft Surface repair services in Winnipeg and Winkler. Screen replacement, battery replacement, charging issues, data recovery, and liquid damage repair."
+      metaTitle="Microsoft Surface Repair Winnipeg | Screen & Battery Fix | Mobile Tech Lab"
+      metaDescription="Microsoft Surface repair in Winnipeg. Screen replacement, battery replacement, charging issues, data recovery, and liquid damage repair for Surface Pro, Laptop & Go."
       canonicalUrl="https://mobiletechlab.ca/repair/surface"
       slug="surface"
       deviceName="Microsoft Surface"
