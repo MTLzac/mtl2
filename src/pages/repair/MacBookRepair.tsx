@@ -148,8 +148,8 @@ const PRICING_MICRO_COPY = {
 const MacBookRepair = () => {
   return (
     <RepairLandingTemplate
-      metaTitle="MacBook Repair Services | Expert Mac Repairs"
-      metaDescription="Professional MacBook repair services including screen replacement, battery replacement, keyboard repair, liquid damage restoration, and data recovery. Fast turnaround and quality parts."
+      metaTitle="MacBook Repair Winnipeg | Screen, Battery & Keyboard Fix | Mobile Tech Lab"
+      metaDescription="MacBook repair in Winnipeg. Screen replacement, battery replacement, keyboard repair, liquid damage restoration, and data recovery. Fast turnaround and quality parts."
       canonicalUrl="https://mobiletechlab.ca/repair/macbook"
       slug="macbook"
       deviceName="MacBook"
