@@ -72,12 +72,11 @@ export const RepairWaysToSave = ({ deviceName }: RepairWaysToSaveProps) => {
               </h3>
               
               <p className="mb-2 text-muted-foreground leading-relaxed">
-                Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost.
+                Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost. Get paid via Cash, E-Transfer, or Store Credit.{" "}
+                <Link to="/trade-in" className="text-primary hover:underline">See your current trade-in value</Link>.
               </p>
               
-              <p className="mb-6 flex-1 text-sm text-muted-foreground/80">
-                Get paid via Cash, E-Transfer, or Store Credit
-              </p>
+              <div className="mb-6 flex-1" />
               
               <Button 
                 size="lg"
