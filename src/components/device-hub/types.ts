@@ -26,6 +26,14 @@ export interface DeviceHubData {
   /** Quick takeaway summary HTML — rendered immediately after the scoring section */
   quickTakeawayHtml?: string;
 
+  // ── Quick Facts (optional — appears between At a Glance / Viability and iOS Support) ──
+  quickFacts?: {
+    heading: string;
+    items: { label: string; value: string }[];
+    /** Small italic footnote rendered beneath the grid */
+    footnote?: string;
+  };
+
   // ── iOS Support Status (H2) ──
   iosSupportStatus: HtmlSection & {
     /** H3 — What iOS Version Does the {Device} Support? */
