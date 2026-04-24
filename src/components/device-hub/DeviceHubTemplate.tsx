@@ -719,16 +719,53 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                   keep, or upgrade. These guides are being published progressively as part of our ongoing device reference series.
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
-                  {data.comparisons.map((comp) => (
-                    <div
-                      key={comp.slug}
-                      className="flex items-center rounded-lg border border-border bg-card p-4 text-muted-foreground"
-                    >
-                      <span className="font-medium">{comp.label}</span>
-                      <span className="ml-auto text-xs italic">Coming soon</span>
-                    </div>
-                  ))}
+                  {data.comparisons.map((comp) => {
+                    const isLive = Boolean(comp.href);
+                    const className =
+                      "flex items-center rounded-lg border border-border bg-card p-4 text-muted-foreground" +
+                      (isLive ? " transition-colors hover:border-primary/40 hover:bg-secondary/40" : "");
+                    const content = (
+                      <>
+                        <span className="font-medium">{comp.label}</span>
+                        <span className={`ml-auto text-xs ${isLive ? "font-semibold text-primary" : "italic"}`}>
+                          {isLive ? "View comparison →" : "Coming soon"}
+                        </span>
+                      </>
+                    );
+                    return isLive ? (
+                      <Link key={comp.slug} to={comp.href!} className={className}>
+                        {content}
+                      </Link>
+                    ) : (
+                      <div key={comp.slug} className={className}>
+                        {content}
+                      </div>
+                    );
+                  })}
                 </div>
+              </div>
+            </section>
+          )}
+
+          {/* ── Related Guides (lightweight link strip) ── */}
+          {data.relatedGuides && data.relatedGuides.links.length > 0 && (
+            <section id="related-guides" className="border-t border-border py-8 md:py-10">
+              <div className="container mx-auto max-w-3xl px-4">
+                <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                  {data.relatedGuides.heading}
+                </h2>
+                <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                  {data.relatedGuides.links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        to={link.href}
+                        className="text-primary underline underline-offset-2 hover:text-primary/80"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </section>
           )}
