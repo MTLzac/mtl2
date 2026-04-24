@@ -75,6 +75,12 @@ export interface DeviceHubData {
   // ── Comparison Entry Points ──
   comparisons: ComparisonLink[];
 
+  // ── Related Guides (optional — lightweight link strip below comparisons) ──
+  relatedGuides?: {
+    heading: string;
+    links: { label: string; href: string }[];
+  };
+
   // ── FAQs ──
   faqHeading: string;
   faqs: DeviceHubFAQ[];
@@ -127,6 +133,8 @@ export interface DecisionScenario {
 export interface ComparisonLink {
   label: string;
   slug: string;
+  /** Optional URL — when provided the card renders as a live link ("View comparison") instead of "Coming soon". */
+  href?: string;
 }
 
 export interface DeviceHubFAQ {
