@@ -3,8 +3,8 @@ export const SCREEN_TIERS = [
   {
     name: "Value",
     type: "Aftermarket",
-    warranty: "30-day warranty against defects",
-    warrantyDetail: "30-day warranty against defects",
+    warranty: "30-day warranty",
+    warrantyDetail: "against defects",
     exclusions: "Excludes physical/liquid damage",
     description: "Budget-friendly option when available",
     highlight: false,
@@ -12,8 +12,8 @@ export const SCREEN_TIERS = [
   {
     name: "Premium",
     type: "Original-quality",
-    warranty: "Lifetime warranty against defects",
-    warrantyDetail: "Lifetime warranty against defects",
+    warranty: "Lifetime warranty",
+    warrantyDetail: "against defects",
     exclusions: "Excludes physical/liquid damage",
     description: "Best balance of quality and value",
     highlight: true,
