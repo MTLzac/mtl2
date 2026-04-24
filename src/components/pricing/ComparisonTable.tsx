@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Filter } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -15,25 +15,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import {
-  REPAIR_COMPARISONS,
-  DEVICE_TYPE_FILTERS,
-  BRAND_FILTERS,
-} from "@/lib/pricing-data";
+import { REPAIR_COMPARISONS } from "@/lib/pricing-data";
 import { cn } from "@/lib/utils";
 
 export const ComparisonTable = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedDeviceType, setSelectedDeviceType] = useState<string | null>(null);
-  const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
-
-  const filteredRepairs = REPAIR_COMPARISONS.filter((repair) => {
-    const matchesDevice =
-      !selectedDeviceType || repair.deviceTypes.includes(selectedDeviceType);
-    const matchesBrand =
-      !selectedBrand || repair.brands.includes(selectedBrand);
-    return matchesDevice && matchesBrand;
-  });
 
   return (
     <section className="py-16 md:py-20">
@@ -58,99 +44,31 @@ export const ComparisonTable = () => {
             </div>
 
             <CollapsibleContent className="space-y-6">
-              {/* Filters */}
-              <div className="flex flex-wrap items-center gap-3">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Filter className="h-4 w-4" />
-                  <span>Filter by:</span>
-                </div>
-
-                {/* Device Type Filters */}
-                <div className="flex flex-wrap gap-2">
-                  {DEVICE_TYPE_FILTERS.map((type) => (
-                    <button
-                      key={type}
-                      onClick={() =>
-                        setSelectedDeviceType(
-                          selectedDeviceType === type ? null : type
-                        )
-                      }
-                      className={cn(
-                        "rounded-full px-3 py-1 text-sm font-medium transition-colors",
-                        selectedDeviceType === type
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-muted text-muted-foreground hover:bg-muted/80"
-                      )}
-                    >
-                      {type}
-                    </button>
-                  ))}
-                </div>
-
-                <span className="text-muted-foreground">|</span>
-
-                {/* Brand Filters */}
-                <div className="flex flex-wrap gap-2">
-                  {BRAND_FILTERS.map((brand) => (
-                    <button
-                      key={brand}
-                      onClick={() =>
-                        setSelectedBrand(selectedBrand === brand ? null : brand)
-                      }
-                      className={cn(
-                        "rounded-full px-3 py-1 text-sm font-medium transition-colors",
-                        selectedBrand === brand
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-muted text-muted-foreground hover:bg-muted/80"
-                      )}
-                    >
-                      {brand}
-                    </button>
-                  ))}
-                </div>
-
-                {(selectedDeviceType || selectedBrand) && (
-                  <button
-                    onClick={() => {
-                      setSelectedDeviceType(null);
-                      setSelectedBrand(null);
-                    }}
-                    className="text-sm text-primary hover:underline"
-                  >
-                    Clear filters
-                  </button>
-                )}
-              </div>
-
               {/* Desktop Table */}
               <div className="hidden md:block overflow-hidden rounded-lg border border-border">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-muted/50">
                       <TableHead className="font-semibold">Repair Type</TableHead>
-                      <TableHead className="font-semibold">Cost Driver</TableHead>
-                      <TableHead className="font-semibold">Options Available</TableHead>
+                      <TableHead className="font-semibold">Typical Range (CAD)</TableHead>
+                      <TableHead className="font-semibold">What Changes the Cost</TableHead>
                       <TableHead className="font-semibold">Turnaround</TableHead>
-                      <TableHead className="font-semibold">Warranty</TableHead>
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {filteredRepairs.map((repair) => (
+                    {REPAIR_COMPARISONS.map((repair) => (
                       <TableRow key={repair.repairType}>
                         <TableCell className="font-medium">
                           {repair.repairType}
+                        </TableCell>
+                        <TableCell className="text-foreground font-medium">
+                          {repair.typicalRange}
                         </TableCell>
                         <TableCell className="text-muted-foreground">
                           {repair.costDriver}
                         </TableCell>
                         <TableCell className="text-muted-foreground">
-                          {repair.tiers.join(", ")}
-                        </TableCell>
-                        <TableCell className="text-muted-foreground">
                           {repair.turnaround}
-                        </TableCell>
-                        <TableCell className="text-muted-foreground">
-                          {repair.warranty}
                         </TableCell>
                       </TableRow>
                     ))}
@@ -160,35 +78,29 @@ export const ComparisonTable = () => {
 
               {/* Mobile Cards */}
               <div className="grid gap-4 md:hidden">
-                {filteredRepairs.map((repair) => (
+                {REPAIR_COMPARISONS.map((repair) => (
                   <Card key={repair.repairType} className="border-border/50">
                     <CardContent className="p-4 space-y-3">
                       <h3 className="font-semibold text-foreground">
                         {repair.repairType}
                       </h3>
                       <div className="space-y-2 text-sm">
-                        <div className="flex justify-between">
+                        <div className="flex justify-between gap-3">
+                          <span className="text-muted-foreground">Typical range:</span>
+                          <span className="text-right text-foreground font-medium">
+                            {repair.typicalRange}
+                          </span>
+                        </div>
+                        <div className="flex justify-between gap-3">
                           <span className="text-muted-foreground">Cost driver:</span>
                           <span className="text-right text-foreground">
                             {repair.costDriver}
                           </span>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Options:</span>
-                          <span className="text-right text-foreground">
-                            {repair.tiers.join(", ")}
-                          </span>
-                        </div>
-                        <div className="flex justify-between">
+                        <div className="flex justify-between gap-3">
                           <span className="text-muted-foreground">Turnaround:</span>
                           <span className="text-right text-foreground">
                             {repair.turnaround}
-                          </span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Warranty:</span>
-                          <span className="text-right text-foreground">
-                            {repair.warranty}
                           </span>
                         </div>
                       </div>
@@ -197,11 +109,9 @@ export const ComparisonTable = () => {
                 ))}
               </div>
 
-              {filteredRepairs.length === 0 && (
-                <p className="text-center text-muted-foreground py-8">
-                  No repairs match the selected filters.
-                </p>
-              )}
+              <p className="text-sm text-muted-foreground italic">
+                Items marked "Quote required" vary too widely to publish a useful range. Use the Get Repair Quote button for an exact answer in 1–2 business hours on any device.
+              </p>
             </CollapsibleContent>
           </Collapsible>
         </div>
