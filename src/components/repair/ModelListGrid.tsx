@@ -88,7 +88,7 @@ export const ModelListGrid = ({
                       asChild
                     >
                       <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
-                        Get Quote
+                        {categoryButtonLabel}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
