@@ -16,6 +16,7 @@ interface ModelListGridProps {
   description?: string;
   categories?: ModelCategory[];
   initialVisibleCount?: number;
+  categoryButtonLabel?: string;
 }
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
@@ -27,7 +28,8 @@ export const ModelListGrid = ({
   models, 
   description, 
   categories,
-  initialVisibleCount = 12 
+  initialVisibleCount = 12,
+  categoryButtonLabel = "Get Quote",
 }: ModelListGridProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   
@@ -86,7 +88,7 @@ export const ModelListGrid = ({
                       asChild
                     >
                       <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
-                        Get Quote
+                        {categoryButtonLabel}
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
