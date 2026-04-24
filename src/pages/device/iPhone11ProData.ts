@@ -109,6 +109,22 @@ const iPhone11ProData: DeviceHubData = {
     },
   },
 
+  // ── Vintage Status ──
+  vintageStatus: {
+    heading: "Vintage Status: What It Means for Your iPhone 11 Pro",
+    contentHtml: `
+      <p>On January 1, 2026, Apple added the iPhone 11 Pro to its vintage products list. The iPhone 11 Pro Max was added earlier, in September 2025. This is a service-and-repair classification, not a software classification — the device still runs current iOS and still receives updates. What changes is how Apple handles repairs.</p>
+      <p>Apple defines three service tiers:</p>
+      <ul>
+        <li><strong>Current</strong> — Full repair service, parts widely available at Apple Stores and Apple Authorized Service Providers (AASPs)</li>
+        <li><strong>Vintage</strong> — More than 5 years since last sold. Apple and AASPs still offer repairs, subject to parts availability. Parts are no longer manufactured on demand, so supply depends on existing inventory.</li>
+        <li><strong>Obsolete</strong> — More than 7 years since last sold. Apple stops all hardware service; no replacement parts. Only independent/third-party repair shops can service the device.</li>
+      </ul>
+      <p>Based on Apple's pattern, the iPhone 11 Pro will move from vintage to obsolete around January 2028 — roughly two years from now. During the vintage window, it's worth thinking about repairs strategically: if you've been putting off a battery replacement or screen repair, doing it in the next 12-24 months means access to the widest parts supply and the most competitive pricing — see our <a href="/repair-pricing">iPhone repair pricing</a> for current costs.</p>
+      <p>Third-party repair shops like Mobile Tech Lab continue to service iPhones past the obsolete date using aftermarket parts, OEM-pull components from other devices, and refurbished modules. This is normal, safe, and extends the usable life of the phone well beyond Apple's official service window.</p>
+    `,
+  },
+
   // ── What Happens When Updates Stop ──
   updateDeprecation: {
     heading: "What Happens When the iPhone 11 Pro Eventually Stops Getting iOS Updates?",
