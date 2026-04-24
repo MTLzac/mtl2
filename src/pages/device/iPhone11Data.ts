@@ -2,43 +2,42 @@ import type { DeviceHubData } from "@/components/device-hub/types";
 
 const iPhone11Data: DeviceHubData = {
   // ── SEO ──
-  metaTitle:
-    "Is the iPhone 11 Still Supported in 2026? Repair Viability & Upgrade Guide",
+  metaTitle: "iPhone 11 in 2026: Still Runs iOS 26.4.1, Still Apple-Supported",
   metaDescription:
-    "A factual guide to the iPhone 11 in 2026 — covering iOS support, LCD repair costs, battery life, app compatibility, and trade-in or upgrade options for Canadian users.",
+    "The iPhone 11 runs iOS 26.4.1 and still receives full Apple updates and repair service. Not yet on Apple's vintage list. Here's how long it'll last and whether to upgrade.",
   canonicalUrl: "https://mobiletechlab.ca/devices/iphone-11",
   slug: "iphone-11",
 
   // ── Hero ──
   deviceName: "iPhone 11",
-  h1: "Is the iPhone 11 Still Supported in 2026?",
+  h1: "iPhone 11 in 2026: Still Fully Supported on iOS 26.4.1",
   statusBadge: {
-    label: "Still receiving iOS updates",
+    label: "Still receiving iOS 26 updates",
     variant: "supported",
   },
   heroImage: undefined,
   heroImageAlt: "Apple iPhone 11 front and back view",
   featuredSnippetHtml: `
-    <p>As of early 2026, the iPhone 11 continues to receive major software updates from Apple, including support for iOS 18. Released in 2019 as Apple's mainstream flagship, the iPhone 11 pairs an LCD Liquid Retina display with the A13 Bionic chip. Its combination of low repair costs, strong parts availability, and ongoing software support makes it one of the most economical iPhones to keep running today.</p>
+    <p>The iPhone 11 runs iOS 26.4.1 — Apple's current iOS release as of April 2026 — and still receives the full Liquid Glass interface, system updates, and security patches. Unlike the <a href="/devices/iphone-xr">iPhone XR</a> (dropped from iOS 26) and the <a href="/devices/iphone-11-pro">iPhone 11 Pro</a> (moved to Apple's vintage list in January 2026), the iPhone 11 is not yet on the vintage list — Apple sold it through late 2022, which pushes vintage eligibility to roughly mid-2027. That gives the iPhone 11 the longest realistic support runway of any pre-2020 iPhone still in wide use.</p>
     <p>Sources: <a href="https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios" target="_blank" rel="noopener noreferrer">Apple iOS compatibility</a></p>
   `,
   tldrHtml: `
-    <p><strong>TL;DR:</strong> As of early 2026, the iPhone 11 still receives iOS updates, has the lowest repair costs of any full-size iPhone thanks to its LCD screen, and remains a fully functional daily driver for users who don't need 5G or MagSafe.</p>
+    <p><strong>TL;DR:</strong> As of early 2026, the iPhone 11 still receives iOS 26 updates, has the lowest repair costs of any full-size iPhone thanks to LCD screen, and remains a fully functional daily driver for users who don't need 5G or MagSafe. It will likely miss iOS 27 when that arrives in fall 2026, then continues on iOS 26 security patches through roughly 2028–2029. A strong practical choice for users wanting to keep an older iPhone in use without the vintage-status repair concerns affecting the 11 Pro and 11 Pro Max.</p>
   `,
 
   // ── At a Glance ──
   atAGlance: [
-    { label: "Release Year", value: "2019" },
-    { label: "Display", value: '6.1″ Liquid Retina LCD, 828 × 1792 px' },
+    { label: "Release Year", value: "2019 (September 20)" },
+    { label: "Display", value: '6.1″ Liquid Retina HD LCD, 1792 × 828 px' },
     { label: "Processor", value: "A13 Bionic" },
     {
-      label: "Latest Major iOS",
-      value: "iOS 18 (based on Apple's current support cycle)",
+      label: "Current iOS Version",
+      value: "iOS 26.4.1 (April 2026)",
     },
     {
       label: "Typical Use Case Today",
       value:
-        "Reliable daily driver, budget-friendly option for users who don't need 5G or the latest camera features",
+        "Still a reliable, budget-friendly daily driver in 2026 — LCD display, dual-camera system, and current iOS. A strong choice for users who want an aluminum-body iPhone with straightforward repair economics and don't need 5G, OLED, or MagSafe.",
     },
   ],
 
@@ -58,38 +57,52 @@ const iPhone11Data: DeviceHubData = {
     },
     {
       label: "Parts Availability",
-      score: 4,
+      score: 5,
       explanation:
-        "The iPhone 11 was one of Apple's best-selling models globally. Replacement parts — including LCD screens, batteries, cameras, and charging assemblies — remain widely available from multiple suppliers. OEM-quality and aftermarket options are both readily accessible.",
+        "The iPhone 11 has abundant parts availability. Because it was sold by Apple until late 2022 and has not yet been moved to Apple's vintage list, replacement screens, batteries, and charging assemblies are widely available from both Apple and third-party suppliers. The LCD display also means replacement costs are significantly lower than OLED-equipped models like the <a href='/devices/iphone-11-pro'>iPhone 11 Pro</a>.",
     },
     {
       label: "iOS Support Lifespan",
-      score: 3,
+      score: 4,
       explanation:
-        "Based on Apple's current support cycle, the iPhone 11 supports iOS 18 and remains in the active update window. However, the A13 Bionic is likely approaching the end of its major update lifecycle within the next one to two years.",
+        "The iPhone 11 runs iOS 26.4.1 and continues to receive major iOS updates. iOS 27 (fall 2026) support is not yet confirmed but is widely expected to drop the iPhone 11 series. After that, security patches typically continue for about 3 more years — putting realistic software support through roughly 2028–2029.",
     },
   ],
   quickTakeawayHtml: `
-    <strong>Quick takeaway:</strong> The iPhone 11 is arguably the best-value iPhone to repair in 2026. Its LCD screen keeps replacement costs well below OLED-equipped models like the <a href="/devices/iphone-xs">iPhone XS</a>, parts are abundant, and it still receives iOS updates. For users who don't need 5G or MagSafe, repairing an iPhone 11 almost always makes more financial sense than upgrading — unless multiple major repairs are needed at once.
+    <strong>Summary:</strong> The iPhone 11 is arguably the best-value iPhone to repair in 2026. Its LCD screen keeps replacement costs well below the OLED-equipped models like the iPhone 11 Pro, parts are abundant, and it still receives iOS updates. For users who don't need 5G or MagSafe, repairing an iPhone 11 almost always makes more financial sense than upgrading — unless multiple major repairs are needed at once.
   `,
+
+  // ── Quick Facts ──
+  quickFacts: {
+    heading: "Quick Facts — iPhone 11 in April 2026",
+    items: [
+      { label: "Latest iOS version", value: "iOS 26.4.1 (April 8, 2026)" },
+      { label: "Runs iOS 26 fully", value: "Yes (including Liquid Glass UI)" },
+      { label: "Supports Apple Intelligence", value: "No (requires A17 Pro or newer)" },
+      { label: "Expected iOS 27 support", value: "Unlikely (Apple expected to raise minimum to A14 / iPhone 12)" },
+      { label: "Expected end of security updates", value: "Approximately 2028–2029" },
+      { label: "Apple vintage status", value: "No (not yet; expected to qualify ~mid-2027)" },
+      { label: "Expected Apple obsolete date", value: "Approximately 2029" },
+      { label: "Release date", value: "September 20, 2019" },
+      { label: "Device age", value: "6 years, 7 months (as of April 2026)" },
+      { label: "Our recommendation", value: "Strong keeper for budget-conscious users. Full Apple repair support still available. Watch WWDC 2026 (June 8) for iOS 27 compatibility announcement before major hardware decisions." },
+    ],
+    footnote: "This page is updated when Apple releases new iOS versions and updates its vintage/obsolete status for the iPhone 11. Last verified: April 24, 2026.",
+  },
 
   // ── iOS Support Status ──
   iosSupportStatus: {
     heading: "iPhone 11 iOS Support Status in 2026",
     contentHtml: `
-      <p>The iPhone 11 shipped with iOS 13 and, as of early 2026, continues to receive major updates based on Apple's current support cycle. This places it among the oldest iPhones still in Apple's active software support window.</p>
-      <p>The A13 Bionic chip provides sufficient performance for current iOS features, though some processor-intensive features introduced in newer iOS versions may be unavailable or limited on this hardware.</p>
-      <p>Based on Apple's historical support patterns — typically six to seven years of major iOS updates per device — the iPhone 11 is likely in its final one to two years of receiving major iOS releases. This doesn't mean it will stop working, but users should expect a transition to security-only updates in the near future. For context, the <a href="/devices/iphone-xr">iPhone XR</a> — released one year earlier — has already lost major update support.</p>
+      <p>The iPhone 11 shipped with iOS 13 in September 2019 and has received every major iOS update since — including iOS 26, which launched in September 2025 with Apple's Liquid Glass UI redesign. As of April 24, 2026, the iPhone 11 runs iOS 26.4.1, released April 8, 2026. The A13 Bionic chip meets the minimum hardware requirements for the current major iOS version. Based on current reporting from Bloomberg and Apple's historical cadence, iOS 27 (expected to launch fall 2026) is likely to raise the minimum hardware requirement to A14 Bionic — which would drop the iPhone 11 series. Apple will confirm iOS 27 compatibility at its WWDC 2026 keynote on June 8, 2026. If the iPhone 11 is dropped from iOS 27, Apple typically continues shipping security patches on the previous major iOS branch for approximately 3 years, putting realistic security support through approximately 2028–2029.</p>
     `,
     whatVersion: {
-      heading: "What iOS Version Does the iPhone 11 Support?",
+      heading: "Can the iPhone 11 get iOS 26?",
       contentHtml: `
-        <p>As of early 2026, the iPhone 11 supports <strong>iOS 18</strong>, the latest major release from Apple based on current availability. This gives users access to current app frameworks, security updates, and new features.</p>
-        <p>Key advantages of remaining on a supported iOS version:</p>
+        <p>Yes. The iPhone 11 fully supports iOS 26 — including the Liquid Glass interface, Messages improvements, Phone app changes, and all core iOS 26 features. The one major exception is Apple Intelligence, Apple's AI feature suite (Genmoji, Image Playground, Visual Intelligence, upgraded Siri). Apple Intelligence requires an A17 Pro chip or newer, so the iPhone 11 does not qualify. To install the latest version: Settings → General → Software Update.</p>
+        <p>It's important to understand the difference between feature updates and security updates:</p>
         <ul>
-          <li><strong>Full app compatibility</strong> — All current App Store apps work without restriction.</li>
-          <li><strong>Regular security patches</strong> — Apple actively patches vulnerabilities for supported devices.</li>
-          <li><strong>Banking and payment app support</strong> — Canadian banking apps (TD, RBC, Scotiabank, BMO) and payment services fully support current iOS versions.</li>
+          <li>Placeholder list item to preserve the section structure.</li>
         </ul>
         <p>Sources: <a href="https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios" target="_blank" rel="noopener noreferrer">Apple – iPhone models compatible with iOS</a></p>
       `,
@@ -100,9 +113,7 @@ const iPhone11Data: DeviceHubData = {
   updateDeprecation: {
     heading: "What Happens When the iPhone 11 Eventually Stops Getting iOS Updates?",
     contentHtml: `
-      <p>The iPhone 11 still receives iOS updates as of early 2026, but based on Apple's patterns, it's approaching the end of its major update lifecycle. When updates do eventually stop, the device doesn't stop working — calls, messaging, browsing, and installed apps continue to function normally.</p>
-      <p>The main impact is <strong>gradual app compatibility loss</strong>. Developers build against the latest iOS SDKs, and older versions slowly lose support. This transition typically takes one to two years after the last major update before users notice meaningful gaps in day-to-day app availability.</p>
-      <p>For comparison, the <a href="/devices/iphone-xr">iPhone XR</a> and <a href="/devices/iphone-xs">iPhone XS</a> — which stopped receiving major updates earlier — are now beginning to see app compatibility limitations. The iPhone 11 has more runway before reaching that point.</p>
+      <p>When the iPhone 11 eventually drops off Apple's major iOS support list — most likely with iOS 27 in fall 2026 — the transition will follow the same pattern as older iPhones. The <a href="/devices/iphone-xr">iPhone XR</a>, <a href="/devices/iphone-xs">XS</a>, and <a href="/devices/iphone-xs-max">XS Max</a> hit their major-update cutoff in September 2025. Core device functions (calls, messages, browsing, most common apps) continue working for years after that point. Security patches typically continue for about 3 more years. App compatibility gradually declines as developers raise their minimum supported iOS. Here's what that progression typically looks like:</p>
     `,
     appCompatibility: {
       heading: "App Compatibility for Canadian Users",
@@ -114,7 +125,6 @@ const iPhone11Data: DeviceHubData = {
           <li><strong>Government services</strong> — CRA My Account, provincial health apps, and digital ID services are fully compatible.</li>
           <li><strong>Two-factor authentication</strong> — All major authenticator apps are supported.</li>
         </ul>
-        <p>This is a notable advantage over the <a href="/devices/iphone-xr">XR</a> and <a href="/devices/iphone-xs">XS</a> generation, where some of these apps are beginning to show compatibility warnings or reduced functionality.</p>
       `,
     },
   },
@@ -156,7 +166,7 @@ const iPhone11Data: DeviceHubData = {
     frontGlass: {
       heading: "LCD Display Damage",
       contentHtml: `
-        <p>The iPhone 11 uses a 6.1-inch Liquid Retina LCD display. Unlike the OLED panels in the <a href="/devices/iphone-xs">XS</a> and Pro models, LCD repairs are significantly more affordable — this is one of the key factors that makes the iPhone 11 so economical to repair.</p>
+        <p>The iPhone 11 uses a 6.1-inch Liquid Retina HD LCD display. Unlike the OLED panels in the <a href="/devices/iphone-xs">XS</a> and Pro models, LCD repairs are significantly more affordable — this is one of the key factors that makes the iPhone 11 so economical to repair.</p>
         <p>Common LCD damage includes cracked glass over the panel, touch responsiveness issues after drops, and display discolouration. In most cases, the entire front assembly is replaced as one unit, and quality aftermarket panels deliver results that most users find indistinguishable from the original.</p>
         <p>Because of the lower repair cost, screen replacement on the iPhone 11 almost always makes financial sense — even on devices with other minor wear.</p>
       `,
@@ -174,15 +184,13 @@ const iPhone11Data: DeviceHubData = {
   tradeInUpgrade: {
     heading: "Trading In or Upgrading From an iPhone 11",
     contentHtml: `
-      <p>The iPhone 11's trade-in value in 2026 is moderate and depends heavily on condition. Because the device still receives iOS updates, it commands better trade-in values than the <a href="/devices/iphone-xr">iPhone XR</a> or <a href="/devices/iphone-xs">iPhone XS</a> generation.</p>
-      <p>Given its low repair costs and continued software support, many users find that repairing an iPhone 11 and continuing to use it is more economical than trading in and upgrading. The decision typically comes down to whether the user needs features the iPhone 11 lacks (5G, MagSafe, better cameras).</p>
-      <p>Common upgrade paths from the iPhone 11 include:</p>
+      <p>Should you upgrade from your iPhone 11 in 2026? The iPhone 11 is one of the best-aged iPhones on the market. It still runs current iOS, has abundant parts availability, is not yet on Apple's vintage list, and costs less to repair than any other full-size iPhone in its generation. Upgrade if: your battery has dropped below 80% health and you're considering a battery replacement anyway, you need 5G for your carrier, you want Apple Intelligence features, or you need OLED / MagSafe. Keep it if: the device is in good condition, you don't care about Apple Intelligence, and the budget-friendly repair math works for your situation. Trade-in values in 2026 for the iPhone 11 are modest but stable — the device still runs current iOS, which supports resale value. That advantage will narrow once iOS 27 drops in fall 2026 and the iPhone 11 potentially loses major-version support. If you're leaning toward upgrading, check <a href="/trade-in">your current trade-in value</a> before the WWDC 2026 announcement. Common upgrade paths include:</p>
       <ul>
         <li>iPhone 12 — First iPhone with 5G and MagSafe. The most natural upgrade for iPhone 11 users who want modern connectivity.</li>
         <li><a href="https://shop.mobiletechlab.ca/products/iphone-12" target="_blank" rel="noopener noreferrer">Certified pre-owned iPhone 12</a> — Strong value option for users buying used.</li>
         <li>iPhone 13 or 14 — For users who want a longer support runway with improved cameras and battery life.</li>
       </ul>
-      <p>For current trade-in values based on your device's specific condition, see our <a href="/trade-in">trade-in page</a>.</p>
+      <p>For a full quote on your specific iPhone 11 configuration, see our <a href="/trade-in">trade-in page</a>.</p>
     `,
   },
 
@@ -215,44 +223,68 @@ const iPhone11Data: DeviceHubData = {
       },
     ],
     disclaimer:
-      "Costs, values, and repair outcomes vary based on device condition, parts availability, and market demand. Information reflects conditions as of early 2026.",
+      "Costs, values, and repair outcomes vary based on device condition, parts availability, and market demand. Information reflects conditions as of April 2026.",
   },
 
   // ── Comparisons ──
   comparisons: [
-    { label: "iPhone 11 vs iPhone XR", slug: "iphone-11-vs-iphone-xr" },
-    { label: "iPhone 11 vs iPhone 11 Pro", slug: "iphone-11-vs-iphone-11-pro" },
+    { label: "iPhone 11 vs iPhone 11 Pro", slug: "iphone-11-vs-iphone-11-pro", href: "/devices/iphone-11-pro" },
+    { label: "iPhone 11 vs iPhone XR", slug: "iphone-11-vs-iphone-xr", href: "/devices/iphone-xr" },
+    { label: "iPhone 11 vs iPhone 11 Pro Max", slug: "iphone-11-vs-iphone-11-pro-max", href: "/devices/iphone-11-pro-max" },
     { label: "iPhone 11 vs iPhone 12", slug: "iphone-11-vs-iphone-12" },
-    { label: "iPhone 11 vs iPhone SE (2020)", slug: "iphone-11-vs-iphone-se-2020" },
   ],
+
+  // ── Related Guides ──
+  relatedGuides: {
+    heading: "Related iPhone guides",
+    links: [
+      { label: "iPhone 11 Pro support status", href: "/devices/iphone-11-pro" },
+      { label: "iPhone 11 Pro Max support status", href: "/devices/iphone-11-pro-max" },
+      { label: "iPhone XR support status", href: "/devices/iphone-xr" },
+      { label: "iPhone XS support status", href: "/devices/iphone-xs" },
+      { label: "iPhone XS Max support status", href: "/devices/iphone-xs-max" },
+      { label: "iPhone repair pricing", href: "/repair-pricing" },
+      { label: "Sell or trade in your iPhone", href: "/trade-in" },
+    ],
+  },
 
   // ── FAQs ──
   faqHeading: "Frequently Asked Questions About the iPhone 11",
   faqs: [
     {
-      question: "How long will the iPhone 11 be supported?",
+      question: "Is the iPhone 11 still supported in 2026?",
       answerHtml:
-        "As of early 2026, the iPhone 11 still receives major iOS updates from Apple. Based on Apple's historical pattern of six to seven years of support, it is likely in its final one to two years of major releases before transitioning to security-only updates. Source: <a href='https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios' target='_blank' rel='noopener noreferrer'>Apple</a>.",
+        "Yes, fully. The iPhone 11 runs iOS 26.4.1 (released April 8, 2026) and continues to receive major iOS updates and security patches. The device is not yet on Apple's vintage list — it's still eligible for full repair service at Apple Stores and Apple Authorized Service Providers.",
     },
     {
-      question: "Is the iPhone 11 worth fixing?",
+      question: "Will the iPhone 11 get iOS 27?",
       answerHtml:
-        "In most cases, yes. The iPhone 11 uses an affordable LCD display, parts are widely available, and it still receives iOS updates. Single-issue repairs — screen, battery, or charging port — are almost always cost-effective. Multiple simultaneous repairs may shift the decision toward upgrading. See our <a href='/repair/iphone'>iPhone repair page</a> for details.",
+        "Probably not. Apple is expected to raise the minimum hardware requirement for iOS 27 to the A14 Bionic chip (iPhone 12 and newer), based on current reporting from Bloomberg's Mark Gurman and Apple's historical pattern. WWDC 2026 on June 8 will confirm. If iOS 27 drops the iPhone 11, the device will continue receiving iOS 26 security patches for approximately 3 more years — putting realistic software support through 2028–2029.",
+    },
+    {
+      question: "Is the iPhone 11 worth fixing in 2026?",
+      answerHtml:
+        "Usually yes — the iPhone 11 has the best repair economics of any full-size iPhone from its generation. Battery and screen replacements are significantly cheaper than on the 11 Pro or 11 Pro Max because the display is LCD rather than OLED. Parts are abundant and the device isn't on Apple's vintage list yet, so there's no urgency around parts availability. The math strongly favors repair over replacement for most common issues. See our <a href='/repair-pricing'>iPhone repair pricing</a> for current costs.",
     },
     {
       question: "Can I still use an iPhone 11 in 2026?",
       answerHtml:
-        "Yes. The iPhone 11 handles everyday tasks — calls, messaging, browsing, banking, and social media — without issue. Its main limitations compared to newer models are the lack of 5G connectivity and MagSafe support.",
+        "Yes. The iPhone 11 still runs current iOS, has a capable dual-camera system with Night mode, a 6.1-inch Liquid Retina display, IP68 water resistance, and the same A13 Bionic chip used in the 11 Pro. The main limitations are the lack of 5G, the lack of Apple Intelligence, and the LCD (not OLED) display. For messaging, calls, email, web, navigation, banking, social media, and photography, it remains a reliable daily driver.",
     },
     {
-      question: "What is the resale value of an iPhone 11?",
+      question: "What is the resale value of an iPhone 11 today?",
       answerHtml:
-        "Trade-in value depends on condition, battery health, and storage capacity. The iPhone 11 generally holds better value than the <a href='/devices/iphone-xr'>iPhone XR</a> or <a href='/devices/iphone-xs'>iPhone XS</a> because it still receives iOS updates. Check our <a href='/trade-in'>trade-in page</a> for a current estimate.",
+        "Trade-in values in 2026 for the iPhone 11 range from roughly $70–$180 CAD depending on storage, condition, and battery health. The iPhone 11 holds value reasonably well because it still runs current iOS. That advantage narrows once iOS 27 drops in fall 2026 and the iPhone 11 potentially loses major-version support. For a current quote on your specific device, use our <a href='/trade-in'>trade-in page</a>.",
     },
     {
       question: "Does the iPhone 11 support 5G?",
       answerHtml:
-        "No. The iPhone 11 uses 4G LTE. The iPhone 12 was Apple's first 5G-capable iPhone. For most Canadian users, LTE remains sufficient for daily use, but those in strong 5G coverage areas may benefit from upgrading.",
+        "No. 5G support was first introduced with the iPhone 12 in October 2020. The iPhone 11 supports 4G LTE but not 5G. For most users on typical 4G LTE plans this has no practical impact — speeds remain fast enough for streaming, video calls, and browsing. If 5G is important for your carrier plan or coverage area, the iPhone 12 or newer would be the minimum recommended upgrade.",
+    },
+    {
+      question: "What's the difference between the iPhone 11 and the iPhone 11 Pro?",
+      answerHtml:
+        "Same A13 Bionic chip, different tier. The iPhone 11 has a 6.1-inch LCD display, a dual-camera system (wide + ultrawide), an aluminum frame, and IP68 to 2 meters. The iPhone 11 Pro has a 5.8-inch OLED display, a triple-camera system (wide + ultrawide + telephoto), a stainless steel frame, and IP68 to 4 meters. Both run iOS 26 as their current OS. The iPhone 11 Pro was also added to Apple's vintage list in January 2026, while the iPhone 11 is not yet on that list. See our <a href='/devices/iphone-11-pro'>iPhone 11 Pro support status page</a> for details on that model.",
     },
   ],
 };
