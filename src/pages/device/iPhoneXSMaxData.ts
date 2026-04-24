@@ -3,16 +3,15 @@ import heroImg from "@/assets/devices/iphone-xs-max-hero.png";
 
 const iPhoneXSMaxData: DeviceHubData = {
   // ── SEO ──
-  metaTitle:
-    "Is the iPhone XS Max Still Supported in 2026? Repair Viability & Upgrade Guide",
+  metaTitle: "iPhone XS Max in 2026: Runs iOS 18.7.8, Still Supported",
   metaDescription:
-    "A factual guide to the iPhone XS Max in 2026 — covering iOS support status, OLED repair costs, battery life, app compatibility, and trade-in or upgrade options for Canadian users.",
+    "The iPhone XS Max runs iOS 18.7.8 — its final major version. Apple still ships security updates, but no iOS 26. See what still works, how long it'll last, and when to upgrade.",
   canonicalUrl: "https://mobiletechlab.ca/devices/iphone-xs-max",
   slug: "iphone-xs-max",
 
   // ── Hero ──
   deviceName: "iPhone XS Max",
-  h1: "Is the iPhone XS Max Still Supported in 2026?",
+  h1: "iPhone XS Max in 2026: Still Supported, With Limitations",
   statusBadge: {
     label: "No longer receiving major iOS updates",
     variant: "deprecated",
@@ -20,23 +19,26 @@ const iPhoneXSMaxData: DeviceHubData = {
   heroImage: heroImg,
   heroImageAlt: "Apple iPhone XS Max front and back view",
   featuredSnippetHtml: `
-    <p>As of 2026, the iPhone XS Max does not support iOS 26 and will not receive future major iOS updates. Released in 2018 as Apple's first large-format OLED iPhone, the XS Max pairs a 6.5-inch Super Retina display with the A12 Bionic chip. While it remains usable for everyday tasks, its end-of-life software status and OLED screen repair costs increasingly favour upgrading when multiple repairs are needed.</p>
+    <p>The iPhone XS Max runs <strong>iOS 18.7.8</strong> — released April 22, 2026 — which is the final major iOS version it will receive. Apple continues to ship security updates (the most recent was 2 days ago), but the XS Max won't get iOS 26, Apple Intelligence, or future feature updates. Apple's largest iPhone at launch in 2018, the XS Max's 6.5-inch OLED display and 3,174 mAh battery still hold up well for everyday use in 2026 — here's what to expect.</p>
     <p>Sources: <a href="https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios" target="_blank" rel="noopener noreferrer">Apple iOS compatibility</a></p>
+  `,
+  tldrHtml: `
+    <p><strong>TL;DR:</strong> The iPhone XS Max is no longer receiving major iOS updates, but it still gets Apple security patches. Its large 6.5-inch OLED display and stainless steel frame are premium components — repair is usually worthwhile for devices in good cosmetic condition, though XS Max OLED replacement is the costliest repair in its class. Upgrade is typically more practical once multiple repairs are needed.</p>
   `,
 
   // ── At a Glance ──
   atAGlance: [
-    { label: "Release Year", value: "2018" },
-    { label: "Display", value: '6.5″ Super Retina OLED, 1242 × 2688 px' },
+    { label: "Release Year", value: "2018 (September 21)" },
+    { label: "Display", value: '6.5″ Super Retina OLED, 2688 × 1242 px' },
     { label: "Processor", value: "A12 Bionic" },
     {
-      label: "Latest Major iOS",
-      value: "iOS 18 (does not support iOS 26)",
+      label: "Current iOS Version",
+      value: "iOS 18.7.8 (April 2026)",
     },
     {
       label: "Typical Use Case Today",
       value:
-        "Large-screen media device, secondary phone, or backup for users who prefer a bigger display",
+        "Large-screen media device, secondary phone, or backup for users who prefer a bigger OLED display and don't require the latest iOS features or 5G connectivity.",
     },
   ],
 
@@ -64,29 +66,51 @@ const iPhoneXSMaxData: DeviceHubData = {
       label: "iOS Support Lifespan",
       score: 2,
       explanation:
-        "The iPhone XS Max received its last major iOS update with iOS 18. It does not support iOS 26 and will not receive future major releases. Apple may issue limited security patches for iOS 18, but the device is functionally at end-of-life for software support.",
+        "The iPhone XS Max received its last major iOS update with iOS 18 (current version 18.7.8, April 2026). It does not support iOS 26 and will not receive future major releases. Apple is expected to continue shipping security patches through approximately 2028, based on its historical pattern with similarly aged devices.",
     },
   ],
   quickTakeawayHtml: `
     <strong>Quick takeaway:</strong> The iPhone XS Max remains a capable large-screen device in 2026, but its lack of iOS 26 support and the cost of OLED screen replacement mean that upgrading is often the better long-term value when multiple repairs are needed. For single issues like battery wear, repair is still cost-effective.
   `,
 
+  // ── Quick Facts ──
+  quickFacts: {
+    heading: "Quick Facts — iPhone XS Max in April 2026",
+    items: [
+      { label: "Latest iOS version", value: "iOS 18.7.8 (April 22, 2026)" },
+      { label: "Still receiving security updates", value: "Yes" },
+      { label: "Can install iOS 26", value: "No (Apple dropped support at WWDC 2025)" },
+      { label: "Supports Apple Intelligence", value: "No (requires A17 Pro or newer)" },
+      { label: "Expected end of security updates", value: "Approximately 2028" },
+      { label: "Release date", value: "September 21, 2018" },
+      { label: "Device age", value: "7 years, 7 months (as of April 2026)" },
+      { label: "Major iOS versions received", value: "7 (iOS 12 through iOS 18)" },
+      { label: "Display / battery", value: '6.5″ OLED · 3,174 mAh (largest iPhone battery at launch)' },
+      {
+        label: "Our recommendation",
+        value:
+          "Still a capable large-screen daily driver; repair worthwhile if in good condition, upgrade if OLED burn-in is visible, battery has degraded, or you need 5G / Apple Intelligence",
+      },
+    ],
+    footnote:
+      "This page is updated when Apple releases new iOS 18 security patches. Last verified: April 24, 2026.",
+  },
+
   // ── iOS Support Status ──
   iosSupportStatus: {
     heading: "iPhone XS Max iOS Support Status in 2026",
     contentHtml: `
-      <p>The iPhone XS Max shipped with iOS 12 and received major updates through iOS 18. As of 2026, it does not support iOS 26 and will not receive future major feature updates from Apple.</p>
-      <p>Apple has historically provided limited security patches to devices one or two generations behind the current release. However, these patches are not guaranteed and address only critical vulnerabilities — they do not include new features or app framework updates.</p>
+      <p>The iPhone XS Max shipped with iOS 12 in 2018 and received major updates through iOS 18 — seven major iOS versions, which puts it at the upper end of Apple's typical support window. At WWDC 2025, Apple confirmed that iOS 26 dropped support for the iPhone XS Max, XS, and XR (all three use the A12 Bionic chip). The current version is <strong>iOS 18.7.8</strong>, released <strong>April 22, 2026</strong>, and Apple continues shipping security patches — the XS Max received four security updates in the first four months of 2026 alone. Based on Apple's pattern with older devices (iOS 12.5.8 still received a patch in January 2026), the iPhone XS Max should continue receiving critical security updates through approximately 2028.</p>
       <p>The XS Max shares the same A12 Bionic chip as the <a href="/devices/iphone-xs">iPhone XS</a> and <a href="/devices/iphone-xr">iPhone XR</a>, which means all three devices reached their iOS support ceiling at the same time.</p>
     `,
     whatVersion: {
-      heading: "What iOS Version Does the iPhone XS Max Support?",
+      heading: "Can the iPhone XS Max get iOS 26?",
       contentHtml: `
-        <p>The iPhone XS Max supports up to <strong>iOS 18</strong>. This was the last major iOS version available for the A12 Bionic chip. The device did not receive iOS 19, iOS 20, or any subsequent releases.</p>
+        <p>No. The iPhone XS Max's maximum supported iOS version is <strong>iOS 18</strong>, with <strong>iOS 18.7.8</strong> being the most recent release as of April 2026. Apple dropped major iOS support for the XS Max when iOS 26 launched in September 2025, alongside the iPhone XS and iPhone XR. The A12 Bionic processor does not meet the hardware requirements for iOS 26 or Apple Intelligence features. To install the latest version: Settings → General → Software Update.</p>
         <p>It's important to understand the difference between <strong>feature updates</strong> and <strong>security updates</strong>:</p>
         <ul>
-          <li><strong>Feature updates</strong> (e.g., iOS 18 → iOS 19) bring new capabilities, app frameworks, and UI changes. The iPhone XS Max no longer receives these.</li>
-          <li><strong>Security updates</strong> are smaller patches that fix vulnerabilities. Apple may still issue these for iOS 18, but on a limited and unpredictable schedule.</li>
+          <li><strong>Feature updates</strong> (e.g., iOS 18 → iOS 26) bring new capabilities, app frameworks, and UI changes. The iPhone XS Max no longer receives these.</li>
+          <li><strong>Security updates</strong> are smaller patches that fix vulnerabilities. Apple continues to issue these for iOS 18 — the most recent (18.7.8) shipped on April 22, 2026.</li>
         </ul>
         <p>Sources: <a href="https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios" target="_blank" rel="noopener noreferrer">Apple – iPhone models compatible with iOS</a></p>
       `,
@@ -95,7 +119,7 @@ const iPhoneXSMaxData: DeviceHubData = {
 
   // ── What Happens When Updates Stop ──
   updateDeprecation: {
-    heading: "What Happens When the iPhone XS Max Stops Getting iOS Updates?",
+    heading: "What Happens Now That the iPhone XS Max Has Stopped Getting iOS Updates?",
     contentHtml: `
       <p>The iPhone XS Max does not stop working when it loses iOS support. Calls, messaging, browsing, and most currently installed apps continue to function normally.</p>
       <p>What changes over time is <strong>app compatibility</strong>. Developers build against the latest iOS SDKs, and older versions gradually lose support. This process is gradual — not immediate — but accelerates as the device falls further behind the current iOS release.</p>
@@ -148,7 +172,7 @@ const iPhoneXSMaxData: DeviceHubData = {
 
   // ── Common Damage ──
   commonDamage: {
-    heading: "Common iPhone XS Max Damage and What It Means",
+    heading: "Common iPhone XS Max Damage and What It Costs",
     frontGlass: {
       heading: "OLED Display Damage",
       contentHtml: `
@@ -170,14 +194,13 @@ const iPhoneXSMaxData: DeviceHubData = {
   tradeInUpgrade: {
     heading: "Trading In or Upgrading From an iPhone XS Max",
     contentHtml: `
-      <p>The iPhone XS Max's trade-in value in 2026 is modest and heavily condition-dependent. The stainless steel frame helps preserve cosmetic condition, but battery health and screen condition remain the primary factors that determine value.</p>
-      <p>Common upgrade paths from the iPhone XS Max include:</p>
+      <p>Should you upgrade from your iPhone XS Max in 2026? If the device is in good shape and you mostly text, browse, call, and take casual photos — no. The XS Max still handles these well on iOS 18.7.8, and Apple's security patches should continue through ~2028. Its 6.5-inch OLED and larger 3,174 mAh battery still give it an edge over smaller or older phones for media consumption and all-day use. Upgrade if: your battery drops below 80% health, your OLED has noticeable burn-in (a common issue on 6+ year-old OLED panels), you need 5G, you want Apple Intelligence features, or the apps you depend on start requiring iOS 26. Trade-in values in 2026 are modest and heavily condition-dependent. The XS Max generally commands higher resale value than the smaller XS due to its larger display, but any OLED burn-in or battery degradation reduces value significantly. Because the XS Max no longer receives major iOS updates, trade-in value is declining. Trading in sooner typically yields a better return than waiting. Common upgrade paths include:</p>
       <ul>
         <li>iPhone 12 — First iPhone with 5G, MagSafe, and a significantly longer iOS support window. A natural upgrade for XS Max users who want continued software support.</li>
         <li><a href="https://shop.mobiletechlab.ca/products/iphone-12" target="_blank" rel="noopener noreferrer">Certified pre-owned iPhone 12</a> — Strong mid-range value for users buying used.</li>
         <li>iPhone 12 Pro Max or 13 Pro Max — For users who want to maintain the large-screen experience with modern camera and battery improvements.</li>
       </ul>
-      <p>For current trade-in values based on your device's specific condition, see our <a href="/trade-in">trade-in page</a>.</p>
+      <p>For a current trade-in quote on your XS Max, use our <a href="/trade-in">trade-in calculator</a>.</p>
     `,
   },
 
@@ -210,39 +233,75 @@ const iPhoneXSMaxData: DeviceHubData = {
 
   // ── Comparisons ──
   comparisons: [
-    { label: "iPhone XS Max vs iPhone XS", slug: "iphone-xs-max-vs-iphone-xs" },
-    { label: "iPhone XS Max vs iPhone XR", slug: "iphone-xs-max-vs-iphone-xr" },
-    { label: "iPhone XS Max vs iPhone 11", slug: "iphone-xs-max-vs-iphone-11" },
-    { label: "iPhone XS Max vs iPhone 12", slug: "iphone-xs-max-vs-iphone-12" },
+    {
+      label: "iPhone XS Max vs iPhone XS",
+      slug: "iphone-xs-max-vs-iphone-xs",
+      href: "/devices/iphone-xs",
+    },
+    {
+      label: "iPhone XS Max vs iPhone XR",
+      slug: "iphone-xs-max-vs-iphone-xr",
+      href: "/devices/iphone-xr",
+    },
+    {
+      label: "iPhone XS Max vs iPhone 11 Pro Max",
+      slug: "iphone-xs-max-vs-iphone-11-pro-max",
+    },
+    {
+      label: "iPhone XS Max vs iPhone 12 Pro Max",
+      slug: "iphone-xs-max-vs-iphone-12-pro-max",
+    },
   ],
+
+  // ── Related Guides ──
+  relatedGuides: {
+    heading: "Related iPhone guides",
+    links: [
+      { label: "iPhone XS support status", href: "/devices/iphone-xs" },
+      { label: "iPhone XR support status", href: "/devices/iphone-xr" },
+      { label: "iPhone 11 Pro support status", href: "/devices/iphone-11-pro" },
+      { label: "iPhone repair pricing", href: "/repair-pricing" },
+      { label: "Sell or trade in your iPhone", href: "/trade-in" },
+    ],
+  },
 
   // ── FAQs ──
   faqHeading: "Frequently Asked Questions About the iPhone XS Max",
   faqs: [
     {
-      question: "How long will the iPhone XS Max be supported?",
+      question: "Is the iPhone XS Max still supported in 2026?",
       answerHtml:
-        "The iPhone XS Max received its last major iOS update with iOS 18. Apple may continue to issue limited security patches for iOS 18, but the device will not receive iOS 19 or later. App compatibility will gradually decline as developers target newer iOS versions. Source: <a href='https://support.apple.com/en-ca/guide/iphone/iphe3fa5df43/ios' target='_blank' rel='noopener noreferrer'>Apple</a>.",
+        "Yes, with limitations. Apple ended major iOS updates for the iPhone XS Max when iOS 26 launched in September 2025. Security updates continue — iOS 18.7.8 shipped on April 22, 2026. Based on Apple's historical pattern with devices of similar age, you can expect critical security patches through approximately 2028.",
     },
     {
       question: "Is the iPhone XS Max worth fixing?",
       answerHtml:
-        "For single-issue repairs like battery replacement, repair is typically worthwhile — especially given the XS Max's larger battery, where users notice a significant improvement after service. However, the 6.5-inch OLED display is one of the costlier iPhone screens to replace. If multiple major repairs are needed simultaneously, the combined cost often approaches or exceeds the device's market value.",
+        "For most repairs, yes — with one important caveat. Battery replacement on an XS Max in otherwise good condition restores it to a reliable large-screen daily driver at a fraction of the cost of a new phone. Where the math gets harder: OLED display replacement on the 6.5-inch panel is one of the costliest single-component repairs in its class, often approaching half of the device's current resale value. For screen damage on the XS Max, get a repair quote before deciding — in some cases, trade-in and upgrade is the more practical choice.",
     },
     {
       question: "Can I still use an iPhone XS Max in 2026?",
       answerHtml:
-        "Yes. The iPhone XS Max remains functional for calls, messaging, browsing, email, and most social media in 2026. The large 6.5-inch OLED display still delivers excellent media and reading experience. Where users may notice limitations is in newer app requirements and battery longevity on original batteries.",
+        "Yes. The XS Max running iOS 18.7.8 handles messaging, email, web browsing, navigation, banking apps, social media, streaming, and most mainstream apps without issue. The 6.5-inch OLED is still a premium-quality display, and the larger 3,174 mAh battery gives it an edge over smaller phones for all-day use. You'll miss newer iOS features (Apple Intelligence, the Liquid Glass redesign introduced in iOS 26, some iOS 26-only app features), but day-to-day use remains reliable.",
     },
     {
-      question: "What is the resale value of an iPhone XS Max?",
+      question: "What is the resale value of an iPhone XS Max today?",
       answerHtml:
-        "Resale value depends on condition, battery health, storage capacity, and carrier lock status. The XS Max generally commands slightly higher trade-in values than the standard XS due to its larger screen size and ongoing demand for big-screen devices. For a current estimate, see our <a href='/trade-in'>trade-in page</a>.",
+        "Trade-in values in 2026 range from roughly $90–$180 CAD depending on storage and condition — generally higher than the smaller iPhone XS due to the larger display. OLED burn-in is a common issue on 6+ year-old XS Max panels and significantly reduces value, as do cracked screens and swollen batteries. Unlocked devices in Excellent condition with no burn-in command the top of the range. For a current trade-in quote on your specific device, use our <a href='/trade-in'>trade-in calculator</a>.",
     },
     {
-      question: "What's the difference between the iPhone XS Max and iPhone XS?",
+      question: "What's the difference between the iPhone XS and iPhone XS Max?",
       answerHtml:
-        "The XS Max shares the same A12 Bionic processor, camera system, and iOS support ceiling as the standard <a href='/devices/iphone-xs'>iPhone XS</a>. The key differences are physical: a 6.5-inch display versus 5.8 inches, a larger 3,174 mAh battery versus 2,658 mAh, and a slightly heavier build. Both devices are at the same point in their software lifecycle.",
+        "Same internals, different size. The iPhone XS has a 5.8-inch OLED display and a 2,658 mAh battery. The iPhone XS Max has a 6.5-inch OLED display and a larger 3,174 mAh battery. Both use the A12 Bionic chip, both have the same dual 12MP cameras, both run iOS 18 as their final major version. Choice comes down to screen size preference and battery life. See our <a href='/devices/iphone-xs'>iPhone XS page</a> for details on the smaller model.",
+    },
+    {
+      question: "Does the iPhone XS Max get iOS 26?",
+      answerHtml:
+        "No. Apple dropped support for the iPhone XS Max (along with the XS and XR) when iOS 26 launched in September 2025 — all three devices use the A12 Bionic chip, which does not meet iOS 26's hardware requirements. The maximum supported iOS version is iOS 18, currently at 18.7.8.",
+    },
+    {
+      question: "How long will the iPhone XS Max be supported?",
+      answerHtml:
+        "Major feature updates have already ended. Security updates should continue through approximately 2028, based on Apple's pattern of supporting devices for about three years past their final major iOS version. App compatibility will gradually decline as developers raise their minimum supported iOS version, but most mainstream apps work well on iOS 18 and will continue to for several more years.",
     },
   ],
 };
