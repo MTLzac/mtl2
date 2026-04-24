@@ -8,6 +8,7 @@ const TRUST_BADGES = [
 ];
 
 const ANCHOR_LINKS = [
+  { label: "Device Pricing", href: "#device-pricing" },
   { label: "Screen Options", href: "#screen-options" },
   { label: "Turnaround", href: "#turnaround" },
   { label: "Data Services", href: "#data-options" },
@@ -25,23 +26,17 @@ export const PricingHero = () => {
             <span className="text-primary/75 font-semibold">(Winnipeg)</span>
           </h1>
 
-          {/* Subheadline */}
-          <p className="mx-auto mb-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            We don't publish fixed prices because repair costs depend on your
-            specific device, the parts available, and current part costs. Here's
-            how we think about pricing so you can understand your options and
-            avoid surprises.
+          {/* Subheadline — repositioned with cross-category anchor prices */}
+          <p className="mx-auto mb-10 max-w-3xl text-lg text-muted-foreground md:text-xl">
+            We don't publish fixed price lists because part costs change often — and when they drop, we pass the savings on to you. Every repair is quoted against current part pricing. Here's what typical repairs start at in Winnipeg: iPhone screens from $99 (iPhone XS, XR, iPhone 11) up to $349 (iPhone 16 Pro Max). iPad screens from $129. Samsung Galaxy screens from $129. MacBook screens from $299. PS5 repairs from $99. See our{" "}
+            <a
+              href="/repair/iphone"
+              className="text-primary font-medium hover:underline"
+            >
+              iPhone repair page
+            </a>{" "}
+            for the full iPhone pricing matrix, or scroll down for anchor prices on every device category.
           </p>
-
-          {/* Pricing philosophy primer - split into two logical groups */}
-          <div className="mx-auto mb-10 max-w-2xl space-y-3 text-base text-muted-foreground">
-            <p>
-              The part itself is usually the biggest factor in repair cost, not the labor. Some repairs are closer to routine maintenance, while others can approach the value of the device.
-            </p>
-            <p>
-              If a repair doesn't make financial sense, we'll explain alternatives instead of pushing it. When repair isn't ideal, data recovery may still be an option.
-            </p>
-          </div>
 
           {/* Trust Badges */}
           <div className="mb-8 flex flex-wrap items-center justify-center gap-4">
@@ -82,7 +77,7 @@ export const PricingHero = () => {
 
           {/* Part-cost transparency micro-line */}
           <p className="mb-8 text-sm text-muted-foreground/80">
-            Repair pricing generally follows real part costs. When part costs drop over time, repair prices often follow.
+            Repair pricing tracks real part costs. When parts get cheaper, our prices drop. When parts are scarce, costs rise. Your quote is always based on current part pricing — never stale list prices.
           </p>
 
           {/* Anchor Links */}
