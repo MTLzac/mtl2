@@ -16,6 +16,7 @@ interface ModelListGridProps {
   description?: string;
   categories?: ModelCategory[];
   initialVisibleCount?: number;
+  categoryButtonLabel?: string;
 }
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
