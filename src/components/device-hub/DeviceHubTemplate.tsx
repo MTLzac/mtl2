@@ -299,6 +299,18 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
             </div>
           </section>
 
+          {/* ── Vintage Status (optional) ── */}
+          {data.vintageStatus && (
+            <section id="vintage-status" className="border-t border-border py-10 md:py-14">
+              <div className="container mx-auto max-w-3xl px-4">
+                <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+                  {data.vintageStatus.heading}
+                </h2>
+                <HtmlBlock html={data.vintageStatus.contentHtml} />
+              </div>
+            </section>
+          )}
+
           {/* ── What Happens When Updates Stop ── */}
           <section id="update-deprecation" className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">

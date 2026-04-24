@@ -40,6 +40,9 @@ export interface DeviceHubData {
     whatVersion: HtmlSubSection;
   };
 
+  // ── Vintage Status (optional — appears between iOS Support and Update Deprecation) ──
+  vintageStatus?: HtmlSection;
+
   // ── What Happens When Updates Stop (H2) ──
   updateDeprecation: HtmlSection & {
     /** H3 — App Compatibility Issues Canadian Users May Notice */
