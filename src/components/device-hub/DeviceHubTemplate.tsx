@@ -214,6 +214,39 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
             </section>
           )}
 
+          {/* ── Quick Facts ── */}
+          {data.quickFacts && data.quickFacts.items.length > 0 && (
+            <section id="quick-facts" className="border-t border-border py-10 md:py-14">
+              <div className="container mx-auto max-w-3xl px-4">
+                <div className="rounded-2xl border border-border bg-card p-6 shadow-sm md:p-8">
+                  <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+                    {data.quickFacts.heading}
+                  </h2>
+                  <dl className="grid grid-cols-1 gap-x-8 gap-y-3 md:grid-cols-2">
+                    {data.quickFacts.items.map((item) => (
+                      <div
+                        key={item.label}
+                        className="flex flex-col gap-1 border-b border-border/50 py-3 last:border-b-0 md:flex-row md:items-baseline md:justify-between md:gap-4"
+                      >
+                        <dt className="text-sm font-medium text-muted-foreground">
+                          {item.label}
+                        </dt>
+                        <dd className="text-sm font-semibold text-foreground md:text-right">
+                          {item.value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                  {data.quickFacts.footnote && (
+                    <p className="mt-6 text-xs italic text-muted-foreground">
+                      {data.quickFacts.footnote}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </section>
+          )}
+
           {/* ── iOS Support Status ── */}
           <section id="ios-support" className="border-t border-border py-10 md:py-14">
             <div className="container mx-auto max-w-3xl px-4">
