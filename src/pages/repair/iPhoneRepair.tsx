@@ -362,7 +362,7 @@ const IPhoneRepair = () => {
         <title>iPhone Repair Winnipeg: Screens $99–$349, Battery $89–$149</title>
         <meta
           name="description"
-          content="Fast iPhone repair in Winnipeg. Screen repair $99–$349 by model (Value tier up to 50% less). Battery $89–$149. Same-day service, lifetime warranty on Premium screens, price match guarantee."
+          content="Fast iPhone repair Winnipeg. Screens $99–$349 (Value up to 50% less). Battery $89–$149. Same-day service, lifetime warranty, price match."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://mobiletechlab.ca/repair/iphone" />
