@@ -126,6 +126,19 @@ const DeviceHubTemplate = ({ data }: { data: DeviceHubData }) => {
                     </div>
                   )}
 
+                  {/* Secondary callout (e.g. phase-out clarification) */}
+                  {data.phaseOutCallout && (
+                    <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-5 dark:border-emerald-400/30 dark:bg-emerald-400/5">
+                      <h2 className="mb-2 text-base font-bold text-foreground">
+                        {data.phaseOutCallout.heading}
+                      </h2>
+                      <HtmlBlock
+                        html={data.phaseOutCallout.bodyHtml}
+                        className="text-sm leading-relaxed text-foreground [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-primary/80 [&_strong]:font-semibold [&_p]:mb-3 [&_p:last-child]:mb-0"
+                      />
+                    </div>
+                  )}
+
                   {/* CTA Block */}
                   <div className="flex flex-col gap-3 pt-2 sm:flex-row sm:gap-4">
                     <a

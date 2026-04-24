@@ -17,6 +17,11 @@ export interface DeviceHubData {
   featuredSnippetHtml: string;
   /** Optional TL;DR summary box rendered directly after the intro paragraph */
   tldrHtml?: string;
+  /** Optional secondary callout rendered immediately after the TL;DR box (different accent color) */
+  phaseOutCallout?: {
+    heading: string;
+    bodyHtml: string;
+  };
 
   // ── At a Glance ──
   atAGlance: AtAGlanceField[];
