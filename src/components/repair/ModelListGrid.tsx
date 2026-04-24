@@ -28,7 +28,8 @@ export const ModelListGrid = ({
   models, 
   description, 
   categories,
-  initialVisibleCount = 12 
+  initialVisibleCount = 12,
+  categoryButtonLabel = "Get Quote",
 }: ModelListGridProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   
