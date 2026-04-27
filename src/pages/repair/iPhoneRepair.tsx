@@ -381,54 +381,120 @@ const IPhoneRepair = () => {
           {/* HERO */}
           <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/5 py-12 md:py-20">
             <div className="container mx-auto px-4">
-              <div className="mx-auto max-w-4xl text-center">
-                <div className="mb-4 flex flex-wrap items-center justify-center gap-3">
-                  <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-                    Winnipeg's #1 iPhone Repair Shop
-                  </span>
-                  <LiveStatusBadge />
+              <div className="mx-auto max-w-6xl">
+                <div className="grid items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
+                  {/* Left: copy */}
+                  <div className="text-center lg:text-left">
+                    <div className="mb-4 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                      <span className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+                        Winnipeg's #1 iPhone Repair Shop
+                      </span>
+                      <LiveStatusBadge />
+                    </div>
+
+                    <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
+                      iPhone Repair in <span className="text-primary">Winnipeg</span> — Save Up to $350 vs Apple
+                    </h1>
+
+                    <p className="mb-4 text-xl font-medium text-foreground/90 md:text-2xl">
+                      Battery, Screen, Charging Port & Back Glass Repairs
+                    </p>
+
+                    <p className="mb-8 max-w-2xl text-lg text-muted-foreground lg:mx-0 mx-auto">
+                      Mobile Tech Lab repairs every iPhone from iPhone 4 to iPhone 17 Pro Max — at $30
+                      to $350 less than Apple Canada's official prices. Most repairs $99 to $199.
+                      Same-day service on most parts. We also repair{" "}
+                      <Link to="/repair/ipad" className="text-primary hover:underline">iPads</Link>,{" "}
+                      <Link to="/repair/macbook" className="text-primary hover:underline">MacBooks</Link>
+                      , and Apple Watches.
+                    </p>
+
+                    <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
+                      <Button size="lg" className="gradient-primary text-lg" asChild>
+                        <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
+                          Get a Free Quote
+                          <ArrowRight className="ml-2 h-5 w-5" />
+                        </a>
+                      </Button>
+                      <Button size="lg" variant="outline" className="text-lg" asChild>
+                        <a href={`tel:${PRIMARY_PHONE}`}>
+                          <Phone className="mr-2 h-5 w-5" />
+                          Call Now
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+
+                  {/* Right: pricing tile comparison (Patch 5 — Option B) */}
+                  <div aria-hidden="true" className="mx-auto w-full max-w-sm lg:max-w-none">
+                    <div className="mb-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                      iPhone 16 Pro Max — screen repair
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="rounded-2xl border border-border bg-muted/40 p-5 text-center">
+                        <div className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                          Apple Polo Park
+                        </div>
+                        <div className="text-3xl font-bold text-muted-foreground line-through decoration-destructive decoration-[3px]">
+                          $499
+                        </div>
+                        <div className="mt-1 text-[10px] text-muted-foreground">official Apple price</div>
+                      </div>
+                      <div className="relative rounded-2xl border-2 border-primary bg-card p-5 text-center shadow-lg">
+                        <div className="mb-1 text-xs font-medium uppercase tracking-wide text-primary">
+                          MTL Value
+                        </div>
+                        <div className="text-3xl font-bold text-primary">$219</div>
+                        <div className="mt-1 text-[10px] text-muted-foreground">Mobile Tech Lab</div>
+                        <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-success px-3 py-1 text-xs font-bold text-background shadow-md">
+                          $280 saved
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-                  iPhone Repair in <span className="text-primary">Winnipeg</span> — Save Up to $350 vs Apple
-                </h1>
-
-                <p className="mb-4 text-xl font-medium text-foreground/90 md:text-2xl">
-                  Battery, Screen, Charging Port & Back Glass Repairs
-                </p>
-
-                <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-                  Mobile Tech Lab repairs every iPhone from iPhone 4 to iPhone 17 Pro Max — at $30
-                  to $350 less than Apple Canada's official prices. Most repairs $99 to $199.
-                  Same-day service on most parts. We also repair{" "}
-                  <Link to="/repair/ipad" className="text-primary hover:underline">iPads</Link>,{" "}
-                  <Link to="/repair/macbook" className="text-primary hover:underline">MacBooks</Link>
-                  , and Apple Watches.
-                </p>
-
-                <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                  <Button size="lg" className="gradient-primary text-lg" asChild>
-                    <a href={REPAIR_WIDGET_URL} target="_blank" rel="noopener noreferrer">
-                      Get a Free Quote
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </a>
-                  </Button>
-                  <Button size="lg" variant="outline" className="text-lg" asChild>
-                    <a href={`tel:${PRIMARY_PHONE}`}>
-                      <Phone className="mr-2 h-5 w-5" />
-                      Call Now
-                    </a>
-                  </Button>
+                {/* Trust badges row (Patch 6) */}
+                <div className="mt-10 rounded-xl border border-border/50 bg-card/50 p-4 backdrop-blur-sm">
+                  <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <Sparkles className="h-5 w-5" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-xs text-muted-foreground">Reviews</p>
+                        <p className="text-sm font-semibold text-foreground">★★★★★ 4.9 (500+)</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <Smartphone className="h-5 w-5" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-xs text-muted-foreground">Pricing</p>
+                        <p className="text-sm font-semibold text-foreground">From $69</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <Battery className="h-5 w-5" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-xs text-muted-foreground">Warranty</p>
+                        <p className="text-sm font-semibold text-foreground">Lifetime (Premium)</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                        <Plug className="h-5 w-5" />
+                      </div>
+                      <div className="min-w-0">
+                        <p className="text-xs text-muted-foreground">Speed</p>
+                        <p className="text-sm font-semibold text-foreground">Same-Day Service</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <QuickFacts
-                  facts={{
-                    turnaround: "1-2 hours",
-                    startingPrice: "From $69",
-                    warranty: "Up to lifetime warranty",
-                    locations: "St. Vital & Thompson",
-                  }}
-                />
               </div>
             </div>
 
