@@ -143,6 +143,18 @@ export const AppleComparisonStrip = () => {
                   (by model — Value screens, aftermarket OLED)
                 </div>
               </div>
+              {/* Visual proportion bar — ~44% of $499 */}
+              <div className="space-y-1.5" aria-hidden="true">
+                <div className="h-3 w-full overflow-hidden rounded-full bg-muted">
+                  <div
+                    className="flex h-full items-center justify-end rounded-full bg-success pr-2 text-[10px] font-semibold text-background"
+                    style={{ width: "44%" }}
+                  >
+                    $219
+                  </div>
+                </div>
+                <div className="text-[10px] text-muted-foreground">~44% of Apple's top price</div>
+              </div>
               <ul className="space-y-2 text-sm">
                 {VALUE_BULLETS.map((b) => (
                   <li key={b} className="flex gap-2">
