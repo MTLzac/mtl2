@@ -652,11 +652,12 @@ const IPhoneRepair = () => {
           </section>
 
           {/* IMAGE PLACEHOLDER 2 — workshop interior */}
-          <section className="py-6">
+          <section className="py-8">
             <div className="container mx-auto px-4">
-              <div className="mx-auto flex h-[250px] max-w-5xl items-center justify-center rounded-2xl border border-dashed border-border bg-muted/30">
+              <div className="mx-auto flex h-[250px] max-w-5xl flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-border bg-muted/40">
+                <Camera className="h-8 w-8 text-muted-foreground/70" aria-hidden="true" />
                 <p className="px-4 text-center text-sm italic text-muted-foreground">
-                  Image placeholder: photo of St. Vital workshop interior showing devices and tools
+                  Image coming soon: St. Vital workshop interior
                 </p>
               </div>
             </div>
