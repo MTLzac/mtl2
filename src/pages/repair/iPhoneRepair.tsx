@@ -836,6 +836,63 @@ const IPhoneRepair = () => {
             </div>
           </section>
 
+          {/* WHAT HAPPENS NEXT (Patch 3) */}
+          <section className="py-12 md:py-16">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
+                <h3 className="mb-8 text-center text-2xl font-bold text-foreground md:text-3xl">
+                  What happens after you request a quote
+                </h3>
+                <ol className="grid gap-6 md:grid-cols-4">
+                  {[
+                    {
+                      icon: ClipboardList,
+                      title: "Submit your quote",
+                      body: "One short form, takes under 60 seconds. No account required.",
+                    },
+                    {
+                      icon: MessageSquare,
+                      title: "Get a price in 1–2 business hours",
+                      body: "We text or email your exact quote during shop hours. No phone calls unless you want one.",
+                    },
+                    {
+                      icon: MapPin,
+                      title: "Drop off or ship in",
+                      body: "Walk into St. Vital or Thompson, or mail it to us. No appointment needed.",
+                    },
+                    {
+                      icon: CheckCircle2,
+                      title: "Same-day repair when in stock",
+                      body: "Most repairs done in 1–2 hours. If parts aren't in stock, we tell you upfront and order in 1–3 business days.",
+                    },
+                  ].map((step, i) => {
+                    const Icon = step.icon;
+                    return (
+                      <li
+                        key={step.title}
+                        className="relative rounded-2xl border border-border bg-card p-5"
+                      >
+                        <div className="mb-3 flex items-center gap-3">
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                            {i + 1}
+                          </span>
+                          <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                        </div>
+                        <h4 className="mb-1 text-base font-semibold text-foreground">
+                          {step.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground">{step.body}</p>
+                      </li>
+                    );
+                  })}
+                </ol>
+                <p className="mt-6 text-center text-sm font-medium text-foreground">
+                  No surprises, no pressure. If our quote isn't right for you, you don't owe us anything.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* LOCAL TRUST */}
           <div data-sticky-hide-anchor>
             <LocalTrustSection
