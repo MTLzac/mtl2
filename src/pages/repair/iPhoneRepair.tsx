@@ -900,6 +900,14 @@ const IPhoneRepair = () => {
               paragraph={LOCAL_TRUST_PARAGRAPH}
             />
           </div>
+          {/* AUTHOR / REVIEWED-BY ATTRIBUTION (Patch 7) */}
+          <section className="border-t border-border/60 bg-muted/30 py-6">
+            <div className="container mx-auto px-4">
+              <p className="mx-auto max-w-4xl text-center text-xs italic text-muted-foreground">
+                Pricing reviewed by the MTL Repair Team, senior repair technicians at Mobile Tech Lab. Verified April 27, 2026. Apple Canada pricing sourced directly from Apple's Get an Estimate tool.
+              </p>
+            </div>
+          </section>
         </main>
 
         <Footer />
