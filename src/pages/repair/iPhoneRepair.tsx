@@ -4,10 +4,9 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ServiceGrid, Service } from "@/components/repair/ServiceGrid";
-import { ModelListGrid, ModelCategory } from "@/components/repair/ModelListGrid";
+import { ModelCategory } from "@/components/repair/ModelListGrid";
 import { FAQSection, FAQ } from "@/components/repair/FAQSection";
 import { LocationCards } from "@/components/repair/LocationCards";
-import { StickyQuoteCTA } from "@/components/repair/StickyQuoteCTA";
 import { RepairWaysToSave } from "@/components/repair/RepairWaysToSave";
 import { LiveStatusBadge } from "@/components/repair/LiveStatusBadge";
 import { WhyChooseUsExtended } from "@/components/repair/WhyChooseUsExtended";
@@ -18,6 +17,7 @@ import { AppleComparisonStrip } from "@/components/repair/iphone/AppleComparison
 import { IPhonePricingTable } from "@/components/repair/iphone/IPhonePricingTable";
 import { AppleVintageSection } from "@/components/repair/iphone/AppleVintageSection";
 import { PremiumVsValueCards } from "@/components/repair/iphone/PremiumVsValueCards";
+import { IPhoneStickyQuoteBar } from "@/components/repair/iphone/IPhoneStickyQuoteBar";
 import { PRIMARY_PHONE } from "@/lib/locations";
 import {
   Smartphone,
