@@ -50,6 +50,15 @@ export const AppleComparisonStrip = () => {
                 <div className="text-3xl font-bold text-foreground">$179 – $499</div>
                 <div className="text-xs text-muted-foreground">(varies by model)</div>
               </div>
+              {/* Visual proportion bar — $499 = 100% scale */}
+              <div className="space-y-1.5" aria-hidden="true">
+                <div className="h-3 w-full overflow-hidden rounded-full bg-muted">
+                  <div className="flex h-full w-full items-center justify-end rounded-full bg-muted-foreground/60 pr-2 text-[10px] font-semibold text-background">
+                    $499
+                  </div>
+                </div>
+                <div className="text-[10px] text-muted-foreground">Top-of-range price</div>
+              </div>
               <ul className="space-y-2 text-sm">
                 {APPLE_BULLETS.map((b) => (
                   <li key={b} className="flex gap-2">
