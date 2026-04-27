@@ -147,18 +147,19 @@ const RowCells = ({ row, includeSave = true }: { row: Row; includeSave?: boolean
     </td>
     <td
       className={cn(
-        "px-4 py-3 bg-primary/5 font-semibold",
-        row.quoteRequired ? "italic font-normal text-muted-foreground" : "text-foreground"
+        "px-4 py-3 font-semibold",
+        row.quoteRequired
+          ? "bg-destructive/5 p-0"
+          : "bg-primary/5 text-foreground"
       )}
     >
       {row.quoteRequired ? (
         <a
-          href={REPAIR_WIDGET_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:underline"
+          href="/quote"
+          className="group flex h-full w-full items-center justify-between gap-1 px-4 py-3 font-bold text-destructive transition-colors hover:bg-destructive hover:text-background"
         >
-          {row.premium}
+          <span>Get a quote</span>
+          <span className="underline underline-offset-2">→</span>
         </a>
       ) : (
         row.premium
@@ -167,17 +168,16 @@ const RowCells = ({ row, includeSave = true }: { row: Row; includeSave?: boolean
     <td
       className={cn(
         "px-4 py-3 font-semibold",
-        row.quoteRequired ? "italic font-normal text-muted-foreground" : "text-success"
+        row.quoteRequired ? "bg-destructive/5 p-0" : "text-success"
       )}
     >
       {row.quoteRequired ? (
         <a
-          href={REPAIR_WIDGET_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:underline"
+          href="/quote"
+          className="group flex h-full w-full items-center justify-between gap-1 px-4 py-3 font-bold text-destructive transition-colors hover:bg-destructive hover:text-background"
         >
-          {row.value}
+          <span>Get a quote</span>
+          <span className="underline underline-offset-2">→</span>
         </a>
       ) : (
         <div className="flex items-center gap-2">

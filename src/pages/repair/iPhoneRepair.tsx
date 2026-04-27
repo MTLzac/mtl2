@@ -29,6 +29,10 @@ import {
   ArrowRight,
   Phone,
   Sparkles,
+  ClipboardList,
+  MessageSquare,
+  MapPin,
+  CheckCircle2,
 } from "lucide-react";
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
@@ -248,8 +252,8 @@ const FAQS: FAQ[] = [
 const REVIEWS = [
   {
     quote:
-      "Got my iPhone 14 screen replaced in under an hour at the St. Vital location. Super fast, affordable, and the staff were incredibly friendly. Best iPhone repair in Winnipeg!",
-    author: "Google Review",
+      "Apple told me they couldn't fix my iPhone XS Max because it was too old. Mobile Tech Lab had it back to me the same day for $99. Working perfectly two months later. Saved me from buying a new phone.",
+    author: "Customer, Winnipeg (Google Review — pending verification)",
     rating: 5,
   },
   {
@@ -358,6 +362,46 @@ const SERVICE_SCHEMA = {
 };
 
 // ============================================
+// 7. LOCAL BUSINESS SCHEMA (Patch 5)
+// ============================================
+const LOCAL_BUSINESS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Mobile Tech Lab",
+  description:
+    "iPhone repair specialists in Winnipeg and Thompson, Manitoba. Same-day screen repair, battery replacement, and full diagnostic services with lifetime warranty on Premium repairs.",
+  image: "https://mobiletechlab.ca/logo.png",
+  url: "https://mobiletechlab.ca/repair/iphone",
+  telephone: "(204) 500-9757",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "845 Dakota St #25",
+    addressLocality: "Winnipeg",
+    addressRegion: "MB",
+    postalCode: "R2M 5M3",
+    addressCountry: "CA",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "49.8401",
+    longitude: "-97.0991",
+  },
+  openingHours: ["Mo-Fr 10:00-19:00", "Sa 10:00-18:00", "Su 12:00-17:00"],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "500",
+    bestRating: "5",
+  },
+  areaServed: [
+    { "@type": "City", name: "Winnipeg" },
+    { "@type": "City", name: "Thompson" },
+    { "@type": "AdministrativeArea", name: "Manitoba" },
+  ],
+};
+
+// ============================================
 // MAIN COMPONENT
 // ============================================
 const IPhoneRepair = () => {
@@ -372,6 +416,7 @@ const IPhoneRepair = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://mobiletechlab.ca/repair/iphone" />
         <script type="application/ld+json">{JSON.stringify(SERVICE_SCHEMA)}</script>
+        <script type="application/ld+json">{JSON.stringify(LOCAL_BUSINESS_SCHEMA)}</script>
       </Helmet>
 
       <div className="flex min-h-screen flex-col">
@@ -425,32 +470,36 @@ const IPhoneRepair = () => {
                     </div>
                   </div>
 
-                  {/* Right: pricing tile comparison (Patch 5 — Option B) */}
+                  {/* Right: pricing tile comparison (Patch 4 — model-context labels) */}
                   <div aria-hidden="true" className="mx-auto w-full max-w-sm lg:max-w-none">
-                    <div className="mb-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      iPhone 16 Pro Max — screen repair
-                    </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="rounded-2xl border border-border bg-muted/40 p-5 text-center">
-                        <div className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                          Apple Polo Park
+                        <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                          Apple Canada
                         </div>
                         <div className="text-3xl font-bold text-muted-foreground line-through decoration-destructive decoration-[3px]">
                           $499
                         </div>
-                        <div className="mt-1 text-[10px] text-muted-foreground">official Apple price</div>
+                        <div className="mt-2 text-[11px] leading-tight text-muted-foreground">
+                          iPhone 16 Pro Max screen repair
+                        </div>
                       </div>
                       <div className="relative rounded-2xl border-2 border-primary bg-card p-5 text-center shadow-lg">
-                        <div className="mb-1 text-xs font-medium uppercase tracking-wide text-primary">
-                          MTL Value
+                        <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                          Mobile Tech Lab
                         </div>
                         <div className="text-3xl font-bold text-primary">$219</div>
-                        <div className="mt-1 text-[10px] text-muted-foreground">Mobile Tech Lab</div>
+                        <div className="mt-2 text-[11px] leading-tight text-muted-foreground">
+                          iPhone 16 Pro Max — Value tier
+                        </div>
                         <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-success px-3 py-1 text-xs font-bold text-background shadow-md">
                           $280 saved
                         </div>
                       </div>
                     </div>
+                    <p className="mt-6 text-center text-xs font-medium text-foreground">
+                      You save $280. Same model. Same repair. Different price.
+                    </p>
                   </div>
                 </div>
 
@@ -500,6 +549,49 @@ const IPhoneRepair = () => {
 
             <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/10 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-20 left-1/4 h-56 w-56 rounded-full bg-primary/5 blur-3xl" />
+          </section>
+
+          {/* QUICK SUMMARY (Patch 1 — TL;DR for AI search & skim readers) */}
+          <section className="py-10 md:py-12">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-4xl rounded-2xl border border-border bg-muted/40 p-6 md:p-8">
+                <h2 className="mb-1 text-xl font-bold text-foreground md:text-2xl">
+                  Quick Summary
+                </h2>
+                <p className="mb-4 text-sm text-muted-foreground">
+                  Everything you need to know in 30 seconds:
+                </p>
+                <ul className="space-y-3 text-base text-foreground">
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span>
+                      Mobile Tech Lab repairs every iPhone from iPhone 4 to iPhone 17 Pro Max at our St. Vital and Thompson, MB locations.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span>
+                      Screen repair from $69 (Value tier) or $79 (Premium tier). Most repairs $99–$199. Save $30–$350 vs Apple Canada.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span>
+                      Premium screens carry a lifetime warranty against defects (vs Apple's 90 days). Value tier carries a 30-day warranty for budget-conscious customers.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span>
+                      Apple Canada has discontinued service for iPhone XS, XS Max, 11 Pro, 11 Pro Max, X, and SE 1st gen — we still repair all of them.
+                    </span>
+                  </li>
+                </ul>
+                <p className="mt-5 border-t border-border pt-4 text-sm font-medium text-foreground">
+                  Same-day service on most repairs. Free quote in 1–2 business hours.
+                </p>
+              </div>
+            </div>
           </section>
 
           {/* APPLE COMPARISON STRIP — 3 cards */}
@@ -744,6 +836,63 @@ const IPhoneRepair = () => {
             </div>
           </section>
 
+          {/* WHAT HAPPENS NEXT (Patch 3) */}
+          <section className="py-12 md:py-16">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-5xl">
+                <h3 className="mb-8 text-center text-2xl font-bold text-foreground md:text-3xl">
+                  What happens after you request a quote
+                </h3>
+                <ol className="grid gap-6 md:grid-cols-4">
+                  {[
+                    {
+                      icon: ClipboardList,
+                      title: "Submit your quote",
+                      body: "One short form, takes under 60 seconds. No account required.",
+                    },
+                    {
+                      icon: MessageSquare,
+                      title: "Get a price in 1–2 business hours",
+                      body: "We text or email your exact quote during shop hours. No phone calls unless you want one.",
+                    },
+                    {
+                      icon: MapPin,
+                      title: "Drop off or ship in",
+                      body: "Walk into St. Vital or Thompson, or mail it to us. No appointment needed.",
+                    },
+                    {
+                      icon: CheckCircle2,
+                      title: "Same-day repair when in stock",
+                      body: "Most repairs done in 1–2 hours. If parts aren't in stock, we tell you upfront and order in 1–3 business days.",
+                    },
+                  ].map((step, i) => {
+                    const Icon = step.icon;
+                    return (
+                      <li
+                        key={step.title}
+                        className="relative rounded-2xl border border-border bg-card p-5"
+                      >
+                        <div className="mb-3 flex items-center gap-3">
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                            {i + 1}
+                          </span>
+                          <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                        </div>
+                        <h4 className="mb-1 text-base font-semibold text-foreground">
+                          {step.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground">{step.body}</p>
+                      </li>
+                    );
+                  })}
+                </ol>
+                <p className="mt-6 text-center text-sm font-medium text-foreground">
+                  No surprises, no pressure. If our quote isn't right for you, you don't owe us anything.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* LOCAL TRUST */}
           <div data-sticky-hide-anchor>
             <LocalTrustSection
@@ -751,6 +900,14 @@ const IPhoneRepair = () => {
               paragraph={LOCAL_TRUST_PARAGRAPH}
             />
           </div>
+          {/* AUTHOR / REVIEWED-BY ATTRIBUTION (Patch 7) */}
+          <section className="border-t border-border/60 bg-muted/30 py-6">
+            <div className="container mx-auto px-4">
+              <p className="mx-auto max-w-4xl text-center text-xs italic text-muted-foreground">
+                Pricing reviewed by the MTL Repair Team, senior repair technicians at Mobile Tech Lab. Verified April 27, 2026. Apple Canada pricing sourced directly from Apple's Get an Estimate tool.
+              </p>
+            </div>
+          </section>
         </main>
 
         <Footer />
