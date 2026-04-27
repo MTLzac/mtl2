@@ -412,6 +412,7 @@ const IPhoneRepair = () => {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://mobiletechlab.ca/repair/iphone" />
         <script type="application/ld+json">{JSON.stringify(SERVICE_SCHEMA)}</script>
+        <script type="application/ld+json">{JSON.stringify(LOCAL_BUSINESS_SCHEMA)}</script>
       </Helmet>
 
       <div className="flex min-h-screen flex-col">
@@ -465,32 +466,36 @@ const IPhoneRepair = () => {
                     </div>
                   </div>
 
-                  {/* Right: pricing tile comparison (Patch 5 — Option B) */}
+                  {/* Right: pricing tile comparison (Patch 4 — model-context labels) */}
                   <div aria-hidden="true" className="mx-auto w-full max-w-sm lg:max-w-none">
-                    <div className="mb-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      iPhone 16 Pro Max — screen repair
-                    </div>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="rounded-2xl border border-border bg-muted/40 p-5 text-center">
-                        <div className="mb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                          Apple Polo Park
+                        <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                          Apple Canada
                         </div>
                         <div className="text-3xl font-bold text-muted-foreground line-through decoration-destructive decoration-[3px]">
                           $499
                         </div>
-                        <div className="mt-1 text-[10px] text-muted-foreground">official Apple price</div>
+                        <div className="mt-2 text-[11px] leading-tight text-muted-foreground">
+                          iPhone 16 Pro Max screen repair
+                        </div>
                       </div>
                       <div className="relative rounded-2xl border-2 border-primary bg-card p-5 text-center shadow-lg">
-                        <div className="mb-1 text-xs font-medium uppercase tracking-wide text-primary">
-                          MTL Value
+                        <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-primary">
+                          Mobile Tech Lab
                         </div>
                         <div className="text-3xl font-bold text-primary">$219</div>
-                        <div className="mt-1 text-[10px] text-muted-foreground">Mobile Tech Lab</div>
+                        <div className="mt-2 text-[11px] leading-tight text-muted-foreground">
+                          iPhone 16 Pro Max — Value tier
+                        </div>
                         <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-success px-3 py-1 text-xs font-bold text-background shadow-md">
                           $280 saved
                         </div>
                       </div>
                     </div>
+                    <p className="mt-6 text-center text-xs font-medium text-foreground">
+                      You save $280. Same model. Same repair. Different price.
+                    </p>
                   </div>
                 </div>
 
