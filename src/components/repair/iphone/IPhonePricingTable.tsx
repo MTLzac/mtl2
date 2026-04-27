@@ -32,6 +32,7 @@ interface Section {
   title: string;
   rows: Row[];
   note?: string;
+  savings?: { label: string; premiumPct?: number; valuePct?: number };
 }
 
 const SECTIONS: Section[] = [
@@ -44,6 +45,7 @@ const SECTIONS: Section[] = [
       { model: "iPhone 17", apple: "$429", premium: "Get a quote →", value: "Get a quote →", save: "up to $250+", quoteRequired: true },
     ],
     note: "iPhone 17 series pricing depends on current part costs and quality tier. We typically save customers $200+ vs Apple. Get an exact quote in 1-2 business hours.",
+    savings: { label: "Apple charges $429–$499. MTL pricing pending — typical savings $200+" },
   },
   {
     title: "iPhone 16 Series",
@@ -54,6 +56,7 @@ const SECTIONS: Section[] = [
       { model: "iPhone 16", apple: "$365", premium: "$259", value: "$159", save: "$206" },
       { model: "iPhone 16e", apple: "$329", premium: "$179", value: "$129", save: "$200" },
     ],
+    savings: { label: "Average savings: $231 (Premium) / $311 (Value)", premiumPct: 66, valuePct: 89 },
   },
   {
     title: "iPhone 15 Series",
@@ -63,6 +66,7 @@ const SECTIONS: Section[] = [
       { model: "iPhone 15 Plus", apple: "$429", premium: "$249", value: "$129", save: "$300" },
       { model: "iPhone 15", apple: "$429", premium: "$219", value: "$129", save: "$300" },
     ],
+    savings: { label: "Average savings: $214 (Premium) / $312 (Value)", premiumPct: 61, valuePct: 89 },
   },
   {
     title: "iPhone 14 Series",
@@ -72,6 +76,7 @@ const SECTIONS: Section[] = [
       { model: "iPhone 14 Plus", apple: "$429", premium: "$189", value: "$99", save: "$330" },
       { model: "iPhone 14", apple: "$365", premium: "$179", value: "$99", save: "$266" },
     ],
+    savings: { label: "Average savings: $237 (Premium) / $312 (Value)", premiumPct: 68, valuePct: 89 },
   },
   {
     title: "iPhone 13 Series",
@@ -81,6 +86,7 @@ const SECTIONS: Section[] = [
       { model: "iPhone 13", apple: "$365", premium: "$169", value: "$129", save: "$236" },
       { model: "iPhone 13 Mini", apple: "$309", premium: "$199", value: "$129", save: "$180" },
     ],
+    savings: { label: "Average savings: $187 (Premium) / $235 (Value)", premiumPct: 53, valuePct: 67 },
   },
   {
     title: "iPhone 12 Series",
@@ -90,6 +96,7 @@ const SECTIONS: Section[] = [
       { model: "iPhone 12", apple: "$365", premium: "$169", value: "$99", save: "$266" },
       { model: "iPhone 12 Mini", apple: "$309", premium: "$169", value: "$129", save: "$180" },
     ],
+    savings: { label: "Average savings: $191 (Premium) / $251 (Value)", premiumPct: 55, valuePct: 72 },
   },
   {
     title: "iPhone 11 / X / XR Series",
@@ -97,6 +104,7 @@ const SECTIONS: Section[] = [
       { model: "iPhone 11", apple: "$259", premium: "$139", value: "$99", save: "$160" },
       { model: "iPhone XR", apple: "$259", premium: "$149", value: "$99", save: "$160" },
     ],
+    savings: { label: "Average savings: $115 (Premium) / $160 (Value)", premiumPct: 33, valuePct: 46 },
   },
   {
     title: "iPhone SE (Apple-Serviced)",
@@ -104,6 +112,7 @@ const SECTIONS: Section[] = [
       { model: "iPhone SE (3rd Gen, 2022)", apple: "$179", premium: "$89", value: "$79", save: "$100" },
       { model: "iPhone SE (2nd Gen, 2020)", apple: "$179", premium: "$89", value: "$79", save: "$100" },
     ],
+    savings: { label: "Average savings: $90 (Premium) / $100 (Value)", premiumPct: 26, valuePct: 29 },
   },
 ];
 
@@ -205,9 +214,33 @@ export const IPhonePricingTable = () => {
         <div className="mx-auto max-w-6xl space-y-10">
           {SECTIONS.map((section) => (
             <div key={section.title}>
-              <h3 className="mb-3 text-xl font-bold text-foreground md:text-2xl">
+              <h3 className="mb-2 text-xl font-bold text-foreground md:text-2xl">
                 {section.title}
               </h3>
+
+              {section.savings && (
+                <div className="mb-3 rounded-md border border-success/30 bg-success/5 px-3 py-2">
+                  <p className="text-xs font-medium text-foreground md:text-sm">
+                    <span className="text-success">▸</span> {section.savings.label}
+                  </p>
+                  {section.savings.premiumPct !== undefined && section.savings.valuePct !== undefined && (
+                    <div className="mt-2 grid gap-1.5" aria-hidden="true">
+                      <div className="flex items-center gap-2">
+                        <span className="w-16 shrink-0 text-[10px] font-semibold text-primary">Premium</span>
+                        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                          <div className="h-full rounded-full bg-primary" style={{ width: `${section.savings.premiumPct}%` }} />
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="w-16 shrink-0 text-[10px] font-semibold text-success">Value</span>
+                        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+                          <div className="h-full rounded-full bg-success" style={{ width: `${section.savings.valuePct}%` }} />
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* Desktop table */}
               <div className="hidden overflow-hidden rounded-lg border border-border md:block">
