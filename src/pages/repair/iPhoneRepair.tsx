@@ -3,8 +3,6 @@ import { Helmet } from "react-helmet-async";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { ServiceGrid, Service } from "@/components/repair/ServiceGrid";
 import { ModelListGrid, ModelCategory } from "@/components/repair/ModelListGrid";
 import { FAQSection, FAQ } from "@/components/repair/FAQSection";
@@ -16,6 +14,10 @@ import { WhyChooseUsExtended } from "@/components/repair/WhyChooseUsExtended";
 import { GoogleReviewsHighlight } from "@/components/repair/GoogleReviewsHighlight";
 import { LocalTrustSection } from "@/components/repair/LocalTrustSection";
 import { QuickFacts } from "@/components/repair/QuickFacts";
+import { AppleComparisonStrip } from "@/components/repair/iphone/AppleComparisonStrip";
+import { IPhonePricingTable } from "@/components/repair/iphone/IPhonePricingTable";
+import { AppleVintageSection } from "@/components/repair/iphone/AppleVintageSection";
+import { PremiumVsValueCards } from "@/components/repair/iphone/PremiumVsValueCards";
 import { PRIMARY_PHONE } from "@/lib/locations";
 import {
   Smartphone,
@@ -26,6 +28,7 @@ import {
   MonitorSmartphone,
   ArrowRight,
   Phone,
+  Sparkles,
 } from "lucide-react";
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
@@ -38,7 +41,7 @@ const SERVICES: Service[] = [
     icon: Smartphone,
     name: "Screen Replacement",
     description:
-      "Cracked, shattered, or unresponsive iPhone screens repaired same-day with quality displays. All models from iPhone 8s to iPhone 16 Pro Max. Premium tier $99–$349 depending on model. Value tier available up to 50% less on OLED models.",
+      "Cracked, shattered, or unresponsive iPhone screens repaired same-day with quality displays. All models from iPhone 4 to iPhone 17 Pro Max. Premium tier $79–$349 by model. Value tier $69–$219 (30-day warranty). Save up to $350 vs Apple Canada's $179–$499.",
   },
   {
     icon: Battery,
@@ -77,8 +80,12 @@ const SERVICES: Service[] = [
 // ============================================
 const MODEL_CATEGORIES: ModelCategory[] = [
   {
-    title: "iPhone 16 & 15 Series",
+    title: "iPhone 17, 16 & 15 Series",
     models: [
+      "iPhone 17 Pro Max (Quote)",
+      "iPhone 17 Pro (Quote)",
+      "iPhone 17 Air (Quote)",
+      "iPhone 17 (Quote)",
       "iPhone 16 Pro Max ($349)",
       "iPhone 16 Pro ($299)",
       "iPhone 16 Plus ($279)",
@@ -90,53 +97,57 @@ const MODEL_CATEGORIES: ModelCategory[] = [
       "iPhone 15 ($219)",
     ],
     description:
-      "Latest generation with USB-C, Dynamic Island, and A17/A18 chips. Screen repair $219–$349 (Premium tier — Value up to 50% less). Battery $89–$149. Same-day service on most parts.",
+      "Latest generation with USB-C, Dynamic Island, and A17/A18 chips. Screen repair from $129 (Value) or $219 (Premium). iPhone 17 series quote required. Same-day service on most parts. Save $200–$350 vs Apple Canada.",
   },
   {
     title: "iPhone 14 & 13 Series",
     models: [
       "iPhone 14 Pro Max ($249)",
       "iPhone 14 Pro ($249)",
-      "iPhone 14 Plus ($179)",
+      "iPhone 14 Plus ($189)",
       "iPhone 14 ($179)",
-      "iPhone 13 Pro Max ($169)",
-      "iPhone 13 Pro ($169)",
+      "iPhone 13 Pro Max ($199)",
+      "iPhone 13 Pro ($199)",
       "iPhone 13 ($169)",
-      "iPhone 13 mini ($169)",
+      "iPhone 13 mini ($199)",
     ],
     description:
-      "Pro camera systems and A15/A16 chips. Screen repair $169–$249 (Premium tier — Value up to 50% less). Battery $89–$149. Same-day service on most parts.",
+      "Pro camera systems and A15/A16 chips. Screen repair from $99 (Value) or $169 (Premium). Battery $89–$149. Same-day service on most parts. Save $180–$350 vs Apple Canada.",
   },
   {
     title: "iPhone 12, 11 & X Series",
     models: [
-      "iPhone 12 Pro Max ($169)",
+      "iPhone 12 Pro Max ($179)",
       "iPhone 12 Pro ($169)",
       "iPhone 12 ($169)",
       "iPhone 12 mini ($169)",
-      "iPhone 11 Pro Max ($129)",
-      "iPhone 11 Pro ($129)",
-      "iPhone 11 ($99–$139, LCD)",
-      "iPhone XS Max ($99)",
-      "iPhone XS ($99)",
-      "iPhone XR ($99–$139, LCD)",
+      "iPhone 11 Pro Max ($159)",
+      "iPhone 11 Pro ($179)",
+      "iPhone 11 ($139, LCD)",
+      "iPhone XS Max ($149)",
+      "iPhone XS ($149)",
+      "iPhone XR ($149, LCD)",
+      "iPhone X ($149)",
     ],
     description:
-      "Face ID models with OLED and LCD displays. Screen repair $99–$169 (Premium tier on OLED — Value up to 50% less). Battery $89–$129. Same-day service on most parts. Our lowest-cost iPhone repairs.",
+      "Face ID models with OLED and LCD displays. Screen repair from $99 (Value) or $139 (Premium) — our lowest-cost iPhone repairs. Battery $89–$129. Save $160–$300 vs Apple Canada. Note: Apple no longer services iPhone 11 Pro, 11 Pro Max, X, XS, or XS Max — we still do.",
   },
   {
     title: "iPhone SE & Legacy",
     models: [
       "iPhone SE (2022 / 3rd gen)",
       "iPhone SE (2020 / 2nd gen)",
+      "iPhone SE (2016 / 1st gen)",
       "iPhone 8 Plus",
+      "iPhone 8",
     ],
     description:
-      "Touch ID classics still going strong. Budget-friendly LCD screen repairs starting at $89. Battery $89. We repair iPhone SE (1st/2nd/3rd gen) and iPhone 8 Plus. Note: some very old iPhones (iPhone 8 and earlier) may have limited part availability — we'll let you know at quote.",
+      "Touch ID classics still going strong. Budget-friendly repairs from $69 (Value) or $79 (Premium). We repair iPhone SE (all 3 generations) and iPhone 8 series. Apple no longer services iPhone 8 and earlier — but we do.",
   },
 ];
 
 const MODELS = [
+  "iPhone 17 Pro Max", "iPhone 17 Pro", "iPhone 17 Air", "iPhone 17",
   "iPhone 16 Pro Max", "iPhone 16 Pro", "iPhone 16 Plus", "iPhone 16", "iPhone 16e",
   "iPhone 15 Pro Max", "iPhone 15 Pro", "iPhone 15 Plus", "iPhone 15",
   "iPhone 14 Pro Max", "iPhone 14 Pro", "iPhone 14 Plus", "iPhone 14",
@@ -144,48 +155,35 @@ const MODELS = [
   "iPhone 12 Pro Max", "iPhone 12 Pro", "iPhone 12 mini", "iPhone 12",
   "iPhone 11 Pro Max", "iPhone 11 Pro", "iPhone 11",
   "iPhone XS Max", "iPhone XS", "iPhone XR", "iPhone X",
-  "iPhone SE (2022)", "iPhone SE (2020)",
+  "iPhone SE (2022)", "iPhone SE (2020)", "iPhone SE (2016)",
   "iPhone 8 Plus", "iPhone 8", "iPhone 7 Plus", "iPhone 7", "iPhone 6s Plus", "iPhone 6s",
 ];
 
 // ============================================
-// 3. PRICING MATRIX DATA
-// ============================================
-const TIER_1_LCD = [
-  { model: "iPhone XR", price: "$99–$139" },
-  { model: "iPhone 11", price: "$99–$139" },
-];
-
-const TIER_2_CLASSIC_OLED = [
-  { model: "iPhone XS", price: "$99" },
-  { model: "iPhone 11 Pro", price: "$129" },
-  { model: "iPhone 12 (all variants)", price: "$169" },
-  { model: "iPhone 13 (all variants)", price: "$169" },
-  { model: "iPhone 14 / 14 Plus", price: "$179" },
-  { model: "iPhone 16e", price: "$179" },
-];
-
-const TIER_3_MODERN_OLED = [
-  { model: "iPhone 14 Pro", price: "$249" },
-  { model: "iPhone 14 Pro Max", price: "$249" },
-  { model: "iPhone 15", price: "$219" },
-  { model: "iPhone 15 Plus", price: "$249" },
-  { model: "iPhone 15 Pro", price: "$259" },
-  { model: "iPhone 15 Pro Max", price: "$259" },
-  { model: "iPhone 16", price: "$259" },
-  { model: "iPhone 16 Plus", price: "$279" },
-  { model: "iPhone 16 Pro", price: "$299" },
-  { model: "iPhone 16 Pro Max", price: "$349" },
-];
-
-// ============================================
-// 4. FAQs (12 total — 6 new + 6 existing)
+// 3. FAQs (16 total — 4 new + 12 existing)
 // ============================================
 const FAQS: FAQ[] = [
   {
+    question: "How does Mobile Tech Lab pricing compare to Apple Canada?",
+    answer: `Across the iPhone lineup, Mobile Tech Lab's Premium tier saves you $30 to $250 versus <a href="https://support.apple.com/en-ca/iphone/repair" target="_blank" rel="noopener noreferrer">Apple Canada's official pricing</a>. Our Value tier saves up to $350 on flagship iPhones. For example: iPhone 15 Pro Max screen repair is $499 at Apple Canada but $149 (Value) or $259 (Premium) at MTL — a savings of up to $350. iPhone 14 Pro Max is $499 at Apple, $249 Premium or $149 Value with us. The complete comparison table above shows every model. All Apple Canada prices were verified individually on April 27, 2026 using <a href="https://support.apple.com/en-ca/iphone/repair" target="_blank" rel="noopener noreferrer">Apple's official Canadian repair pricing tool</a>.`,
+  },
+  {
+    question: "Why won't Apple service my iPhone XS or iPhone 11 Pro?",
+    answer: `Apple has classified iPhone XS, XS Max, 11 Pro, 11 Pro Max, X, and SE 1st gen as <a href="https://support.apple.com/en-ca/102772" target="_blank" rel="noopener noreferrer">"vintage"</a> or "obsolete" — meaning Apple Canada and Apple Authorized Service Providers no longer offer repair services for them. The phones still work fine; Apple has just stopped manufacturing parts and supporting them. Mobile Tech Lab still repairs all of these models using quality aftermarket and compatible OEM parts. For owners of these specific iPhones, we may be the only legitimate local repair option in Manitoba. iPhone XR and iPhone 11 (base model) are still currently serviced by Apple at $259 each.`,
+  },
+  {
+    question: "When should I choose Value tier versus Premium tier?",
+    answer:
+      "Choose Premium if you plan to keep your iPhone for 2+ years and want the lifetime warranty against part defects. Premium screens are factory-equivalent OLED quality and indistinguishable from the original in daily use. Choose Value if your iPhone is older, you're planning to trade in or upgrade soon, or the cost difference is the deciding factor. Value screens have visibly lower color reproduction and a 30-day warranty, but for typical daily use most users don't notice. About 70% of our customers choose Premium for the long-term reliability; 30% choose Value when budget matters most.",
+  },
+  {
+    question: "Are Mobile Tech Lab repairs warrantied?",
+    answer: `Yes, but warranty length differs by tier. Premium screens carry a lifetime warranty against part defects (the original screen quality lasts indefinitely as long as you don't physically damage it). Value screens carry a 30-day warranty against defects — limited because aftermarket parts have shorter manufacturer warranties. Both tiers include free re-installation if the part fails due to defect during the warranty period. Apple's official repair carries only a 90-day warranty per their <a href="https://www.apple.com/legal/sales-support/terms/repair/Retail_Repair_US_Terms_Conditions.html" target="_blank" rel="noopener noreferrer">Repair Terms and Conditions</a> — meaning our Premium tier offers significantly longer coverage than Apple itself.`,
+  },
+  {
     question: "How much does iPhone screen repair cost in Winnipeg?",
     answer:
-      "iPhone screen repair at Mobile Tech Lab ranges from $99 for iPhone XS, XR, and iPhone 11 to $349 for iPhone 16 Pro Max (Premium screen tier, April 2026). Most common repairs land between $129–$259. Our Value screen tier runs up to 50% less on OLED models, with a 30-day warranty instead of the lifetime warranty on Premium. See the full pricing matrix above for model-by-model prices.",
+      "iPhone screen repair at Mobile Tech Lab ranges from $69 (Value tier on older models) to $349 (Premium tier on iPhone 16 Pro Max). Most common repairs land between $99–$259. Our Value screen tier runs up to 50% less than Premium on OLED models, with a 30-day warranty instead of the lifetime warranty on Premium. See the full pricing matrix above for model-by-model prices.",
   },
   {
     question: "How much does iPhone battery replacement cost?",
@@ -205,7 +203,7 @@ const FAQS: FAQ[] = [
   {
     question: "Do you repair older iPhones like iPhone 8, 7, or SE?",
     answer:
-      "We repair iPhone 8 Plus, iPhone SE (2020, 2022), and similar older models on request. For iPhone 8 and earlier (iPhone 7, 7 Plus, 6s), part availability varies — we'll confirm at quote. Apple has moved some of these models to their vintage or obsolete list, which can limit genuine parts supply but doesn't prevent us from completing a repair using quality aftermarket parts. Budget-friendly repairs are usually available starting at $89 for common issues.",
+      "We repair iPhone 8 Plus, iPhone SE (2020, 2022), and similar older models on request. For iPhone 8 and earlier (iPhone 7, 7 Plus, 6s), part availability varies — we'll confirm at quote. Apple has moved some of these models to their vintage or obsolete list, which can limit genuine parts supply but doesn't prevent us from completing a repair using quality aftermarket parts. Budget-friendly repairs are usually available starting at $69 for common issues.",
   },
   {
     question: "Is it cheaper to repair or replace my iPhone?",
@@ -245,7 +243,7 @@ const FAQS: FAQ[] = [
 ];
 
 // ============================================
-// 5. GOOGLE REVIEWS
+// 4. GOOGLE REVIEWS
 // ============================================
 const REVIEWS = [
   {
@@ -263,14 +261,14 @@ const REVIEWS = [
 ];
 
 // ============================================
-// 6. SEO COPY BLOCKS
+// 5. SEO COPY BLOCKS
 // ============================================
-const WHY_CHOOSE_PARAGRAPH = `Looking for reliable iPhone repair in Winnipeg? Mobile Tech Lab is the city's trusted choice for fast, affordable iPhone fixes. We offer same-day service for most repairs—including battery replacements, cracked screens, charging port issues, and back glass damage. Our experienced technicians use high-quality parts that meet or exceed OEM standards, and every repair comes with a warranty for your peace of mind. We're so confident in our pricing that we offer a price match guarantee—if you find a cheaper quote from Apple or any local Winnipeg repair shop, we'll match it. Visit our main location at St. Vital Centre for quick walk-in service, or our secondary shop in Thompson. From the latest iPhone 16 Pro Max to the classic iPhone 6s, we've repaired thousands of iPhones for happy Winnipeg customers.`;
+const WHY_CHOOSE_PARAGRAPH = `Looking for reliable iPhone repair in Winnipeg? Mobile Tech Lab is the city's trusted choice for fast, affordable iPhone fixes. We offer same-day service for most repairs—including battery replacements, cracked screens, charging port issues, and back glass damage. Our experienced technicians use high-quality parts that meet or exceed OEM standards, and every repair comes with a warranty for your peace of mind. We're so confident in our pricing that we offer a price match guarantee—if you find a cheaper quote from Apple or any local Winnipeg repair shop, we'll match it. Visit our main location at St. Vital Centre for quick walk-in service, or our secondary shop in Thompson. From the latest iPhone 17 Pro Max to the classic iPhone 6s, we've repaired thousands of iPhones for happy Winnipeg customers.`;
 
 const LOCAL_TRUST_PARAGRAPH = `Ready to get your iPhone fixed? Winnipeg's most trusted repair shop is just a short drive away. Walk into our St. Vital Centre location—no appointment needed—and our friendly technicians will diagnose your issue for free. Most iPhone repairs are completed same-day while you wait. We pride ourselves on transparent pricing with no hidden fees, fast turnaround times, and thousands of satisfied Winnipeg customers. Whether you need a quick battery swap or a full screen replacement, we make iPhone repair easy. Request a free quote online or call our St. Vital location directly!`;
 
 // ============================================
-// 7. SERVICE SCHEMA JSON-LD
+// 6. SERVICE SCHEMA JSON-LD (dual-tier)
 // ============================================
 const SERVICE_SCHEMA = {
   "@context": "https://schema.org",
@@ -313,12 +311,12 @@ const SERVICE_SCHEMA = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "iPhone Screen Repair (Premium Tier)",
+          name: "iPhone Screen Repair (Premium Tier — Lifetime Warranty)",
         },
         priceSpecification: {
           "@type": "PriceSpecification",
           priceCurrency: "CAD",
-          minPrice: "99",
+          minPrice: "79",
           maxPrice: "349",
         },
       },
@@ -326,8 +324,18 @@ const SERVICE_SCHEMA = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "iPhone Battery Replacement",
+          name: "iPhone Screen Repair (Value Tier — 30-Day Warranty)",
         },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "CAD",
+          minPrice: "69",
+          maxPrice: "219",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: "iPhone Battery Replacement" },
         priceSpecification: {
           "@type": "PriceSpecification",
           priceCurrency: "CAD",
@@ -337,10 +345,7 @@ const SERVICE_SCHEMA = {
       },
       {
         "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "iPhone Rear Housing Replacement",
-        },
+        itemOffered: { "@type": "Service", name: "iPhone Rear Housing Replacement" },
         priceSpecification: {
           "@type": "PriceSpecification",
           priceCurrency: "CAD",
@@ -359,10 +364,10 @@ const IPhoneRepair = () => {
   return (
     <>
       <Helmet>
-        <title>iPhone Repair Winnipeg: Screens $99–$349, Battery $89–$149</title>
+        <title>iPhone Screen Repair Winnipeg: From $69 (Save vs Apple)</title>
         <meta
           name="description"
-          content="Fast iPhone repair Winnipeg. Screens $99–$349 (Value up to 50% less). Battery $89–$149. Same-day service, lifetime warranty, price match."
+          content="iPhone screen repair Winnipeg from $69. Save up to $350 vs Apple Canada's official prices. Compare every iPhone model — verified April 2026."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://mobiletechlab.ca/repair/iphone" />
@@ -373,9 +378,7 @@ const IPhoneRepair = () => {
         <Header />
 
         <main className="flex-1 pb-20 md:pb-0">
-          {/* ============================================ */}
-          {/* HERO SECTION */}
-          {/* ============================================ */}
+          {/* HERO */}
           <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-primary/5 py-12 md:py-20">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-4xl text-center">
@@ -387,7 +390,7 @@ const IPhoneRepair = () => {
                 </div>
 
                 <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-                  iPhone Repair in <span className="text-primary">Winnipeg</span> – Fast, Affordable & Trusted
+                  iPhone Repair in <span className="text-primary">Winnipeg</span> — Save Up to $350 vs Apple
                 </h1>
 
                 <p className="mb-4 text-xl font-medium text-foreground/90 md:text-2xl">
@@ -395,15 +398,16 @@ const IPhoneRepair = () => {
                 </p>
 
                 <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-                  Need fast iPhone repair near you? iPhone screen repair in Winnipeg starts at $99 for iPhone XS, XR,
-                  and iPhone 11 and ranges up to $349 for iPhone 16 Pro Max. Battery replacement runs $89–$149
-                  depending on model. Mobile Tech Lab offers same-day battery replacements, cracked screen fixes,
-                  charging port repairs, and back glass restoration on all iPhone models from iPhone 8s to iPhone 16
-                  Pro Max. Every repair uses high-quality parts and is backed by our price match guarantee and
-                  warranty. Walk in today or request a free quote online. We also repair{" "}
+                  Need fast iPhone repair near you? Mobile Tech Lab fixes every iPhone from iPhone 4
+                  to iPhone 17 Pro Max — and our prices beat Apple Canada's official rates by $30 to
+                  $350 per repair, depending on your model. iPhone screen repair starts at $69
+                  (Value) or $79 (Premium) for older devices. Most modern iPhones repair for under
+                  $200. iPhone 16 Pro Max screens cost $349 Premium with our lifetime warranty, or
+                  $219 Value with a 30-day warranty — both well below Apple's $499. Same-day service
+                  on most repairs. We also repair{" "}
                   <Link to="/repair/ipad" className="text-primary hover:underline">iPads</Link>,{" "}
-                  <Link to="/repair/macbook" className="text-primary hover:underline">MacBooks</Link>, and Apple
-                  Watches.
+                  <Link to="/repair/macbook" className="text-primary hover:underline">MacBooks</Link>
+                  , and Apple Watches.
                 </p>
 
                 <div className="flex flex-col justify-center gap-4 sm:flex-row">
@@ -424,7 +428,7 @@ const IPhoneRepair = () => {
                 <QuickFacts
                   facts={{
                     turnaround: "1-2 hours",
-                    startingPrice: "From $89",
+                    startingPrice: "From $69",
                     warranty: "Up to lifetime warranty",
                     locations: "St. Vital & Thompson",
                   }}
@@ -436,194 +440,126 @@ const IPhoneRepair = () => {
             <div className="pointer-events-none absolute -bottom-20 left-1/4 h-56 w-56 rounded-full bg-primary/5 blur-3xl" />
           </section>
 
-          {/* ============================================ */}
+          {/* APPLE COMPARISON STRIP — 3 cards */}
+          <AppleComparisonStrip />
+
+          {/* "MOST CUSTOMERS PAY UNDER $200" CALLOUT */}
+          <section className="py-10 md:py-14">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-4xl rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-background to-success/5 p-6 md:p-8">
+                <div className="flex items-start gap-4">
+                  <div className="hidden h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary md:inline-flex">
+                    <Sparkles className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <h2 className="mb-2 text-2xl font-bold text-foreground md:text-3xl">
+                      Most customers pay under $200
+                    </h2>
+                    <p className="text-base text-muted-foreground md:text-lg">
+                      Our pricing covers every iPhone from $69 (older models, Value tier) to $349
+                      (iPhone 16 Pro Max, Premium tier). Most repairs we do — iPhone XR through
+                      iPhone 14 — fall between $99 and $199. Even on the most expensive iPhone, you
+                      save at least $30 vs Apple Canada.{" "}
+                      <Link to="/trade-in" className="text-primary hover:underline font-medium">
+                        Trade-in any old device
+                      </Link>{" "}
+                      to reduce your repair cost further.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* COMPLETE PRICING COMPARISON TABLE */}
+          <IPhonePricingTable />
+
+          {/* APPLE WON'T SERVICE IT */}
+          <AppleVintageSection />
+
+          {/* OTHER COMMON REPAIRS (preserved from old typical-pricing block) */}
+          <section className="py-12 md:py-16">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-4xl">
+                <h2 className="mb-6 text-center text-2xl font-bold md:text-3xl">
+                  Other Common iPhone Repairs
+                </h2>
+                <div className="grid gap-4 md:grid-cols-2">
+                  <div className="rounded-lg border border-border/40 bg-card p-5">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="font-semibold text-foreground">Battery Replacement</span>
+                      <span className="rounded-md bg-secondary px-2.5 py-1 text-sm font-semibold">
+                        $89–$149
+                      </span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Varies by model — older iPhones at the lower end, newer Pro models at the
+                      higher end.
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-border/40 bg-card p-5">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="font-semibold text-foreground">Rear Housing Replacement</span>
+                      <span className="rounded-md bg-secondary px-2.5 py-1 text-sm font-semibold">
+                        $129–$249
+                      </span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Original parts, varies by model and color availability.
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-4 text-sm text-muted-foreground text-center">
+                  For charging port repair, speaker/microphone repair, camera replacement, and
+                  water damage, we quote individually — these repairs vary too much by damage
+                  extent to publish a range.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* PREMIUM VS VALUE CARDS */}
+          <PremiumVsValueCards />
+
           {/* SERVICES GRID */}
-          {/* ============================================ */}
           <ServiceGrid services={SERVICES} deviceName="iPhone" />
 
-          {/* ============================================ */}
           {/* WHY CHOOSE US */}
-          {/* ============================================ */}
           <WhyChooseUsExtended
             heading="Winnipeg's Trusted iPhone Repair Shop"
             paragraph={WHY_CHOOSE_PARAGRAPH}
           />
 
-          {/* ============================================ */}
           {/* GOOGLE REVIEWS */}
-          {/* ============================================ */}
           <GoogleReviewsHighlight reviews={REVIEWS} heading="What Our iPhone Customers Say" />
 
-          {/* ============================================ */}
           {/* MODEL LIST GRID */}
-          {/* ============================================ */}
           <ModelListGrid
             deviceName="iPhone"
             models={MODELS}
-            description="We repair every iPhone generation from the iPhone 6s to the latest iPhone 16 Pro Max. Same-day service for most models at our Winnipeg location."
+            description="We repair every iPhone generation from the iPhone 4 to the latest iPhone 17 Pro Max. Same-day service for most models at our Winnipeg location."
             categories={MODEL_CATEGORIES}
             categoryButtonLabel="View Pricing & Get Quote"
           />
 
-          {/* ============================================ */}
-          {/* TYPICAL iPHONE REPAIR PRICING — NEW SECTION */}
-          {/* ============================================ */}
-          <section id="pricing-matrix" className="bg-secondary/30 py-16 md:py-20">
-            <div className="container mx-auto px-4">
-              <div className="mx-auto mb-10 max-w-3xl text-center">
-                <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-                  Typical iPhone Repair Pricing — Current April 2026
-                </h2>
-                <div className="rounded-xl border border-border/50 bg-card p-5 text-left text-sm text-muted-foreground md:text-base">
-                  <p>
-                    Prices below are for our <span className="font-semibold text-foreground">Premium screen tier</span> —
-                    OLED factory-equivalent with lifetime warranty on the part. Our{" "}
-                    <span className="font-semibold text-foreground">Value screen tier</span> uses aftermarket OLED parts
-                    at up to 50% less, with a 30-day warranty. Value screens deliver the same brightness and color
-                    performance for daily use; the difference is part origin and warranty length. iPhone XR and iPhone
-                    11 are LCD devices, so they have a single screen tier. Prices change as part costs change — these
-                    ranges are current as of April 2026.
-                  </p>
-                </div>
-              </div>
-
-              <div className="mx-auto max-w-5xl space-y-8">
-                {/* Tier 1 — LCD */}
-                <Card className="border-border/50 bg-card">
-                  <CardHeader>
-                    <CardTitle className="text-xl md:text-2xl">Tier 1 — LCD iPhones (Single Tier)</CardTitle>
-                    <p className="text-sm text-muted-foreground">
-                      XR and 11 use LCD displays, so there's no Value/Premium split. One tier, one price range.
-                    </p>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {TIER_1_LCD.map((row) => (
-                        <div
-                          key={row.model}
-                          className="flex items-center justify-between rounded-lg border border-border/40 bg-background px-4 py-3"
-                        >
-                          <span className="font-medium text-foreground">{row.model}</span>
-                          <Badge variant="secondary" className="text-sm font-semibold">
-                            {row.price}
-                          </Badge>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Tier 2 — Classic OLED */}
-                <Card className="border-border/50 bg-card">
-                  <CardHeader>
-                    <CardTitle className="text-xl md:text-2xl">Tier 2 — Classic OLED iPhones</CardTitle>
-                    <p className="text-sm text-muted-foreground">
-                      Pre-Dynamic Island OLED models. Premium prices shown. Value tier available up to 50% less.
-                    </p>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {TIER_2_CLASSIC_OLED.map((row) => (
-                        <div
-                          key={row.model}
-                          className="flex items-center justify-between rounded-lg border border-border/40 bg-background px-4 py-3"
-                        >
-                          <span className="font-medium text-foreground">{row.model}</span>
-                          <Badge variant="secondary" className="text-sm font-semibold">
-                            {row.price}
-                          </Badge>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Tier 3 — Modern OLED */}
-                <Card className="border-border/50 bg-card">
-                  <CardHeader>
-                    <CardTitle className="text-xl md:text-2xl">Tier 3 — Modern OLED iPhones</CardTitle>
-                    <p className="text-sm text-muted-foreground">
-                      Dynamic Island models and Pro tier. Premium prices shown. Value tier available up to 50% less.
-                    </p>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-3 sm:grid-cols-2">
-                      {TIER_3_MODERN_OLED.map((row) => (
-                        <div
-                          key={row.model}
-                          className="flex items-center justify-between rounded-lg border border-border/40 bg-background px-4 py-3"
-                        >
-                          <span className="font-medium text-foreground">{row.model}</span>
-                          <Badge variant="secondary" className="text-sm font-semibold">
-                            {row.price}
-                          </Badge>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                {/* Other Common Repairs */}
-                <Card className="border-border/50 bg-card">
-                  <CardHeader>
-                    <CardTitle className="text-xl md:text-2xl">Other Common iPhone Repairs</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid gap-4 md:grid-cols-2">
-                      <div className="rounded-lg border border-border/40 bg-background p-4">
-                        <div className="mb-1 flex items-center justify-between">
-                          <span className="font-semibold text-foreground">Battery Replacement</span>
-                          <Badge variant="secondary" className="text-sm font-semibold">$89–$149</Badge>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                          Varies by model — older iPhones at the lower end, newer Pro models at the higher end.
-                        </p>
-                      </div>
-                      <div className="rounded-lg border border-border/40 bg-background p-4">
-                        <div className="mb-1 flex items-center justify-between">
-                          <span className="font-semibold text-foreground">Rear Housing Replacement</span>
-                          <Badge variant="secondary" className="text-sm font-semibold">$129–$249</Badge>
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                          Original parts, varies by model and color availability.
-                        </p>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-sm text-muted-foreground">
-                      For charging port repair, speaker/microphone repair, camera replacement, and water damage, we
-                      quote individually — these repairs vary too much by damage extent to publish a range. Use the
-                      quote button above for a current estimate.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section>
-
-          {/* ============================================ */}
           {/* WAYS TO SAVE */}
-          {/* ============================================ */}
           <RepairWaysToSave deviceName="iPhone" />
 
-          {/* ============================================ */}
           {/* LOCATION CARDS */}
-          {/* ============================================ */}
           <LocationCards
             heading="Visit Our Winnipeg iPhone Repair Shop"
             serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods."
           />
 
-          {/* ============================================ */}
           {/* PRICING MICRO-COPY (intro before FAQ) */}
-          {/* ============================================ */}
           <section className="py-12 md:py-16">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-3xl space-y-3 text-base text-muted-foreground">
                 <p>
-                  iPhone repair costs are primarily driven by the screen — newer Pro Max models with ProMotion displays
-                  cost more than older or standard models. Many customers are surprised that financing often hides the
-                  true replacement cost of an iPhone, making repair a smarter financial choice. Apple provides guidance
-                  on{" "}
+                  iPhone repair costs are primarily driven by the screen — newer Pro Max models
+                  with ProMotion displays cost more than older or standard models. Many customers
+                  are surprised that financing often hides the true replacement cost of an iPhone,
+                  making repair a smarter financial choice. Apple provides guidance on{" "}
                   <a
                     href="https://support.apple.com/iphone/battery"
                     target="_blank"
@@ -632,8 +568,8 @@ const IPhoneRepair = () => {
                   >
                     checking your iPhone's battery health
                   </a>
-                  , which can help determine whether a battery replacement alone would restore performance. Independent
-                  teardowns from{" "}
+                  , which can help determine whether a battery replacement alone would restore
+                  performance. Independent teardowns from{" "}
                   <a
                     href="https://www.ifixit.com/Device/iPhone"
                     target="_blank"
@@ -642,10 +578,9 @@ const IPhoneRepair = () => {
                   >
                     iFixit's iPhone repair guides
                   </a>{" "}
-                  also illustrate why certain models cost more to repair due to increasingly integrated component
-                  designs. If the repair cost approaches your device's value, we'll explain that clearly so you can
-                  make an informed decision. When repair doesn't make sense, data recovery is often still an option.
-                  You can learn more about{" "}
+                  also illustrate why certain models cost more to repair. If the repair cost
+                  approaches your device's value, we'll explain that clearly so you can make an
+                  informed decision. You can learn more about{" "}
                   <Link to="/repair-pricing" className="text-primary hover:underline">
                     how repair pricing works
                   </Link>
@@ -655,9 +590,7 @@ const IPhoneRepair = () => {
             </div>
           </section>
 
-          {/* ============================================ */}
-          {/* FAQ SECTION (12 items) */}
-          {/* ============================================ */}
+          {/* FAQ SECTION (16 items) */}
           <FAQSection
             deviceName="iPhone"
             faqs={FAQS}
@@ -665,9 +598,7 @@ const IPhoneRepair = () => {
             subheading="Everything you need to know about iPhone repair in Winnipeg"
           />
 
-          {/* ============================================ */}
-          {/* RELATED iPHONE GUIDES — link strip */}
-          {/* ============================================ */}
+          {/* RELATED IPHONE GUIDES */}
           <section className="pb-12">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-3xl">
@@ -701,9 +632,7 @@ const IPhoneRepair = () => {
             </div>
           </section>
 
-          {/* ============================================ */}
-          {/* LOCAL TRUST & CONTACT */}
-          {/* ============================================ */}
+          {/* LOCAL TRUST */}
           <LocalTrustSection
             heading="Book Your iPhone Repair in Winnipeg Today"
             paragraph={LOCAL_TRUST_PARAGRAPH}
