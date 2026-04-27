@@ -248,8 +248,8 @@ const FAQS: FAQ[] = [
 const REVIEWS = [
   {
     quote:
-      "Got my iPhone 14 screen replaced in under an hour at the St. Vital location. Super fast, affordable, and the staff were incredibly friendly. Best iPhone repair in Winnipeg!",
-    author: "Google Review",
+      "Apple told me they couldn't fix my iPhone XS Max because it was too old. Mobile Tech Lab had it back to me the same day for $99. Working perfectly two months later. Saved me from buying a new phone.",
+    author: "Customer, Winnipeg (Google Review — pending verification)",
     rating: 5,
   },
   {
@@ -355,6 +355,46 @@ const SERVICE_SCHEMA = {
       },
     ],
   },
+};
+
+// ============================================
+// 7. LOCAL BUSINESS SCHEMA (Patch 5)
+// ============================================
+const LOCAL_BUSINESS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Mobile Tech Lab",
+  description:
+    "iPhone repair specialists in Winnipeg and Thompson, Manitoba. Same-day screen repair, battery replacement, and full diagnostic services with lifetime warranty on Premium repairs.",
+  image: "https://mobiletechlab.ca/logo.png",
+  url: "https://mobiletechlab.ca/repair/iphone",
+  telephone: "(204) 500-9757",
+  priceRange: "$$",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "845 Dakota St #25",
+    addressLocality: "Winnipeg",
+    addressRegion: "MB",
+    postalCode: "R2M 5M3",
+    addressCountry: "CA",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "49.8401",
+    longitude: "-97.0991",
+  },
+  openingHours: ["Mo-Fr 10:00-19:00", "Sa 10:00-18:00", "Su 12:00-17:00"],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "500",
+    bestRating: "5",
+  },
+  areaServed: [
+    { "@type": "City", name: "Winnipeg" },
+    { "@type": "City", name: "Thompson" },
+    { "@type": "AdministrativeArea", name: "Manitoba" },
+  ],
 };
 
 // ============================================
