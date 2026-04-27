@@ -72,7 +72,7 @@ export const RepairWaysToSave = ({ deviceName }: RepairWaysToSaveProps) => {
               </h3>
               
               <p className="mb-2 text-muted-foreground leading-relaxed">
-                Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost. Get paid via Cash, E-Transfer, or Store Credit.{" "}
+                Trade in phones, tablets, consoles, or laptops — even broken ones — to reduce today's repair cost. Most customers cut their final repair cost by $50 to $200 with a trade-in. Get paid via Cash, E-Transfer, or Store Credit.{" "}
                 <Link to="/trade-in" className="text-primary hover:underline">See your current trade-in value</Link>.
               </p>
               
