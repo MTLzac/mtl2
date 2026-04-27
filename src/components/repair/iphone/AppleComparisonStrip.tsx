@@ -135,11 +135,9 @@ export const AppleComparisonStrip = () => {
         </div>
 
         <p className="mx-auto mt-8 max-w-4xl text-center text-sm text-muted-foreground">
-          For most modern iPhones, Mobile Tech Lab's Premium tier saves you $30 to $250 compared to
-          Apple Canada pricing. Our Value tier saves up to $350. Both tiers are professionally
-          installed at our St. Vital and Thompson locations with same-day service when parts are
-          in stock. All Apple Canada prices below were verified individually on April 27, 2026
-          using Apple's official{" "}
+          Both tiers professionally installed at our St. Vital and Thompson locations. Same-day
+          service when parts are in stock. All Apple Canada prices verified April 27, 2026 using
+          Apple's official{" "}
           <a
             href="https://getsupport.apple.com/"
             target="_blank"
