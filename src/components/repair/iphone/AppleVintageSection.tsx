@@ -68,15 +68,27 @@ export const AppleVintageSection = () => {
                   <tr key={row.model} className="hover:bg-muted/30">
                     <td className="px-4 py-3 font-medium text-foreground">{row.model}</td>
                     <td className="px-4 py-3">
-                      <span className="inline-flex items-center gap-1.5 italic text-destructive">
-                        <XCircle className="h-4 w-4" />
-                        Not serviced
+                      <span className="inline-flex items-center gap-1.5 rounded-md border border-destructive/40 bg-destructive/10 px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-destructive">
+                        <XCircle className="h-3.5 w-3.5" />
+                        Apple Says No
                       </span>
                     </td>
-                    <td className="px-4 py-3 bg-primary/5 font-semibold text-foreground">
-                      {row.premium}
+                    <td className="px-4 py-3 bg-primary/5">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="inline-flex items-center rounded-md border border-success/50 bg-success/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-success">
+                          We Fix It
+                        </span>
+                        <span className="font-semibold text-foreground">{row.premium}</span>
+                      </div>
                     </td>
-                    <td className="px-4 py-3 font-semibold text-success">{row.value}</td>
+                    <td className="px-4 py-3">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <span className="inline-flex items-center rounded-md border border-success/50 bg-success/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-success">
+                          We Fix It
+                        </span>
+                        <span className="font-semibold text-success">{row.value}</span>
+                      </div>
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -88,14 +100,26 @@ export const AppleVintageSection = () => {
             {ROWS.map((row) => (
               <div key={row.model} className="rounded-lg border border-border bg-card p-4 space-y-2">
                 <div className="font-semibold text-foreground">{row.model}</div>
-                <div className="inline-flex items-center gap-1.5 text-sm italic text-destructive">
-                  <XCircle className="h-4 w-4" />
-                  Apple: Not serviced
+                <div>
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-destructive/40 bg-destructive/10 px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-destructive">
+                    <XCircle className="h-3.5 w-3.5" />
+                    Apple Says No
+                  </span>
                 </div>
-                <div className="grid grid-cols-2 gap-2 text-sm pt-1">
-                  <div className="text-primary">MTL Premium:</div>
+                <div className="grid grid-cols-2 gap-2 text-sm pt-1 items-center">
+                  <div className="flex items-center gap-1.5">
+                    <span className="inline-flex items-center rounded-md border border-success/50 bg-success/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-success">
+                      We Fix
+                    </span>
+                    <span className="text-primary">Premium</span>
+                  </div>
                   <div className="text-right font-semibold">{row.premium}</div>
-                  <div className="text-success">MTL Value:</div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="inline-flex items-center rounded-md border border-success/50 bg-success/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-success">
+                      We Fix
+                    </span>
+                    <span className="text-success">Value</span>
+                  </div>
                   <div className="text-right font-semibold text-success">{row.value}</div>
                 </div>
               </div>
