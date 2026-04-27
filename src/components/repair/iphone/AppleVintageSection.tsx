@@ -15,13 +15,26 @@ export const AppleVintageSection = () => {
   return (
     <section id="apple-wont-service" className="bg-secondary/30 py-16 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="mx-auto mb-10 max-w-3xl text-center">
+        <div className="mx-auto mb-8 max-w-3xl text-center">
           <h2 className="mb-3 text-3xl font-bold md:text-4xl">
-            Apple Won't Service It — But We Will
+            Apple Won't Touch These iPhones. We Will.
           </h2>
           <p className="text-muted-foreground md:text-lg">
-            Apple Canada has classified these iPhones as vintage or obsolete and no longer offers
-            repair service. Mobile Tech Lab still repairs them at standard Premium and Value pricing.
+            Apple Canada has classified these iPhones as vintage or obsolete — meaning Apple Stores
+            and Authorized Service Providers will no longer repair them. We still do.
+          </p>
+        </div>
+
+        {/* "Apple-only alternative" callout */}
+        <div className="mx-auto mb-8 max-w-4xl rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-background to-success/5 p-6 md:p-7">
+          <h3 className="mb-2 text-xl font-bold text-foreground md:text-2xl">
+            If you own one of these iPhones, you may have nowhere else to go
+          </h3>
+          <p className="text-base text-muted-foreground md:text-lg">
+            Apple's vintage classification means independent repair shops are now your only
+            legitimate path to a working screen. Mobile Tech Lab repairs all of these at standard
+            Premium ($79–$179) or Value ($69–$99) pricing — the same care and quality we give
+            every iPhone.
           </p>
         </div>
 
