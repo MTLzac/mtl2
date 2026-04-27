@@ -398,13 +398,9 @@ const IPhoneRepair = () => {
                 </p>
 
                 <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-                  Need fast iPhone repair near you? Mobile Tech Lab fixes every iPhone from iPhone 4
-                  to iPhone 17 Pro Max — and our prices beat Apple Canada's official rates by $30 to
-                  $350 per repair, depending on your model. iPhone screen repair starts at $69
-                  (Value) or $79 (Premium) for older devices. Most modern iPhones repair for under
-                  $200. iPhone 16 Pro Max screens cost $349 Premium with our lifetime warranty, or
-                  $219 Value with a 30-day warranty — both well below Apple's $499. Same-day service
-                  on most repairs. We also repair{" "}
+                  Mobile Tech Lab repairs every iPhone from iPhone 4 to iPhone 17 Pro Max — at $30
+                  to $350 less than Apple Canada's official prices. Most repairs $99 to $199.
+                  Same-day service on most parts. We also repair{" "}
                   <Link to="/repair/ipad" className="text-primary hover:underline">iPads</Link>,{" "}
                   <Link to="/repair/macbook" className="text-primary hover:underline">MacBooks</Link>
                   , and Apple Watches.
