@@ -528,15 +528,6 @@ const IPhoneRepair = () => {
           {/* GOOGLE REVIEWS */}
           <GoogleReviewsHighlight reviews={REVIEWS} heading="What Our iPhone Customers Say" />
 
-          {/* MODEL LIST GRID */}
-          <ModelListGrid
-            deviceName="iPhone"
-            models={MODELS}
-            description="We repair every iPhone generation from the iPhone 4 to the latest iPhone 17 Pro Max. Same-day service for most models at our Winnipeg location."
-            categories={MODEL_CATEGORIES}
-            categoryButtonLabel="View Pricing & Get Quote"
-          />
-
           {/* WAYS TO SAVE */}
           <RepairWaysToSave deviceName="iPhone" />
 
