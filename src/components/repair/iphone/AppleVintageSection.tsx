@@ -13,10 +13,21 @@ const ROWS = [
 
 export const AppleVintageSection = () => {
   return (
-    <section id="apple-wont-service" className="bg-secondary/30 py-16 md:py-20">
+    <section
+      id="apple-wont-service"
+      className="bg-gradient-to-b from-destructive/5 via-secondary/30 to-background py-16 md:py-20"
+    >
       <div className="container mx-auto px-4">
-        <div className="mx-auto mb-8 max-w-3xl text-center">
-          <h2 className="mb-3 text-3xl font-bold md:text-4xl">
+        <div className="mx-auto mb-8 max-w-4xl text-center">
+          <div className="mb-4 flex flex-wrap items-center justify-center gap-3">
+            <span className="inline-flex items-center rounded-md border border-destructive/40 bg-destructive/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-destructive line-through">
+              Apple: Declined
+            </span>
+            <span className="inline-flex items-center rounded-md border border-success/50 bg-success/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-success">
+              MTL: Available
+            </span>
+          </div>
+          <h2 className="mb-3 text-4xl font-extrabold md:text-5xl">
             Apple Won't Touch These iPhones. We Will.
           </h2>
           <p className="text-muted-foreground md:text-lg">
