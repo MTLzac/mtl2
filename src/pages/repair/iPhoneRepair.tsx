@@ -802,41 +802,7 @@ const IPhoneRepair = () => {
             subheading="Everything you need to know about iPhone repair in Winnipeg"
           />
 
-          {/* RELATED IPHONE GUIDES */}
-          <section className="pb-12">
-            <div className="container mx-auto px-4">
-              <div className="mx-auto max-w-3xl">
-                <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
-                  Related iPhone guides
-                </h2>
-                <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
-                  <Link to="/devices/iphone-xr" className="text-primary hover:underline">
-                    iPhone XR support status
-                  </Link>
-                  <Link to="/devices/iphone-xs" className="text-primary hover:underline">
-                    iPhone XS support status
-                  </Link>
-                  <Link to="/devices/iphone-xs-max" className="text-primary hover:underline">
-                    iPhone XS Max support status
-                  </Link>
-                  <Link to="/devices/iphone-11" className="text-primary hover:underline">
-                    iPhone 11 support status
-                  </Link>
-                  <Link to="/devices/iphone-11-pro" className="text-primary hover:underline">
-                    iPhone 11 Pro support status
-                  </Link>
-                  <Link to="/repair-pricing" className="text-primary hover:underline">
-                    How repair pricing works
-                  </Link>
-                  <Link to="/trade-in" className="text-primary hover:underline">
-                    Trade in your iPhone
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* WHAT HAPPENS NEXT (Patch 3) */}
+          {/* WHAT HAPPENS NEXT (Patch 3 — Round 4.5: moved above final CTA) */}
           <section className="py-12 md:py-16">
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-5xl">
@@ -889,6 +855,40 @@ const IPhoneRepair = () => {
                 <p className="mt-6 text-center text-sm font-medium text-foreground">
                   No surprises, no pressure. If our quote isn't right for you, you don't owe us anything.
                 </p>
+              </div>
+            </div>
+          </section>
+
+          {/* RELATED IPHONE GUIDES */}
+          <section className="pb-12">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-3xl">
+                <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                  Related iPhone guides
+                </h2>
+                <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+                  <Link to="/devices/iphone-xr" className="text-primary hover:underline">
+                    iPhone XR support status
+                  </Link>
+                  <Link to="/devices/iphone-xs" className="text-primary hover:underline">
+                    iPhone XS support status
+                  </Link>
+                  <Link to="/devices/iphone-xs-max" className="text-primary hover:underline">
+                    iPhone XS Max support status
+                  </Link>
+                  <Link to="/devices/iphone-11" className="text-primary hover:underline">
+                    iPhone 11 support status
+                  </Link>
+                  <Link to="/devices/iphone-11-pro" className="text-primary hover:underline">
+                    iPhone 11 Pro support status
+                  </Link>
+                  <Link to="/repair-pricing" className="text-primary hover:underline">
+                    How repair pricing works
+                  </Link>
+                  <Link to="/trade-in" className="text-primary hover:underline">
+                    Trade in your iPhone
+                  </Link>
+                </div>
               </div>
             </div>
           </section>
