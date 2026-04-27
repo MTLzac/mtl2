@@ -29,6 +29,10 @@ import {
   ArrowRight,
   Phone,
   Sparkles,
+  ClipboardList,
+  MessageSquare,
+  MapPin,
+  CheckCircle2,
 } from "lucide-react";
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
