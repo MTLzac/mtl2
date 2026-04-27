@@ -614,6 +614,53 @@ const IPhoneRepair = () => {
             serviceAreaNote="Serving St. Vital, Fort Garry, Garden City, Transcona, and all Winnipeg neighborhoods."
           />
 
+          {/* GOOGLE MAPS — both locations (Patch 4) */}
+          <section className="bg-secondary/30 pb-16 md:pb-20">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
+                <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                  <div className="border-b border-border px-4 py-2 text-sm font-semibold text-foreground">
+                    St. Vital — 845 Dakota St #25
+                  </div>
+                  <iframe
+                    title="Mobile Tech Lab — St. Vital location map"
+                    src="https://www.google.com/maps?q=845+Dakota+St+%2325,+Winnipeg,+MB+R2M+5M3&output=embed"
+                    width="100%"
+                    height="280"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    style={{ border: 0 }}
+                  />
+                </div>
+                <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+                  <div className="border-b border-border px-4 py-2 text-sm font-semibold text-foreground">
+                    Thompson — 300 Mystery Lake Rd #535
+                  </div>
+                  <iframe
+                    title="Mobile Tech Lab — Thompson location map"
+                    src="https://www.google.com/maps?q=300+Mystery+Lake+Rd+%23535,+Thompson,+MB+R8N+5M2&output=embed"
+                    width="100%"
+                    height="280"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    style={{ border: 0 }}
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* IMAGE PLACEHOLDER 2 — workshop interior */}
+          <section className="py-6">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto flex h-[250px] max-w-5xl items-center justify-center rounded-2xl border border-dashed border-border bg-muted/30">
+                <p className="px-4 text-center text-sm italic text-muted-foreground">
+                  Image placeholder: photo of St. Vital workshop interior showing devices and tools
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* PRICING MICRO-COPY (intro before FAQ) */}
           <section className="py-12 md:py-16">
             <div className="container mx-auto px-4">
