@@ -32,6 +32,7 @@ interface Section {
   title: string;
   rows: Row[];
   note?: string;
+  savings?: { label: string; premiumPct?: number; valuePct?: number };
 }
 
 const SECTIONS: Section[] = [
