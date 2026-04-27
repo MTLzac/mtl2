@@ -15,7 +15,8 @@ export const AppleVintageSection = () => {
   return (
     <section
       id="apple-wont-service"
-      className="bg-gradient-to-b from-destructive/5 via-secondary/30 to-background py-16 md:py-20"
+      className="border-y border-destructive/30 bg-destructive/[0.04] py-20 md:py-24"
+      style={{ backgroundColor: "hsl(0 100% 98%)" }}
     >
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-8 max-w-4xl text-center">
