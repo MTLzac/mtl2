@@ -214,33 +214,32 @@ export const IPhonePricingTable = () => {
         <div className="mx-auto max-w-6xl space-y-10">
           {SECTIONS.map((section) => (
             <div key={section.title}>
-              <h3 className="mb-2 text-xl font-bold text-foreground md:text-2xl">
-                {section.title}
-              </h3>
-
-              {section.savings && (
-                <div className="mb-3 rounded-md border border-success/30 bg-success/5 px-3 py-2">
-                  <p className="text-xs font-medium text-foreground md:text-sm">
-                    <span className="text-success">▸</span> {section.savings.label}
+              <div className="mb-3 rounded-md border border-border bg-muted/60 px-3 py-2.5">
+                <h3 className="flex items-center gap-2 text-lg font-bold text-foreground md:text-xl">
+                  <span className="text-primary">▸</span> {section.title}
+                </h3>
+                {section.savings && (
+                  <p className="mt-1 text-xs text-muted-foreground md:text-sm">
+                    <span className="font-bold text-foreground">{section.savings.label}</span>
                   </p>
-                  {section.savings.premiumPct !== undefined && section.savings.valuePct !== undefined && (
-                    <div className="mt-2 grid gap-1.5" aria-hidden="true">
-                      <div className="flex items-center gap-2">
-                        <span className="w-16 shrink-0 text-[10px] font-semibold text-primary">Premium</span>
-                        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
-                          <div className="h-full rounded-full bg-primary" style={{ width: `${section.savings.premiumPct}%` }} />
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <span className="w-16 shrink-0 text-[10px] font-semibold text-success">Value</span>
-                        <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
-                          <div className="h-full rounded-full bg-success" style={{ width: `${section.savings.valuePct}%` }} />
-                        </div>
+                )}
+                {section.savings?.premiumPct !== undefined && section.savings?.valuePct !== undefined && (
+                  <div className="mt-2 grid gap-1.5" aria-hidden="true">
+                    <div className="flex items-center gap-2">
+                      <span className="w-16 shrink-0 text-[10px] font-semibold text-primary">Premium</span>
+                      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-background">
+                        <div className="h-full rounded-full bg-primary" style={{ width: `${section.savings.premiumPct}%` }} />
                       </div>
                     </div>
-                  )}
-                </div>
-              )}
+                    <div className="flex items-center gap-2">
+                      <span className="w-16 shrink-0 text-[10px] font-semibold text-success">Value</span>
+                      <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-background">
+                        <div className="h-full rounded-full bg-success" style={{ width: `${section.savings.valuePct}%` }} />
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
 
               {/* Desktop table */}
               <div className="hidden overflow-hidden rounded-lg border border-border md:block">
