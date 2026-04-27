@@ -41,7 +41,7 @@ const SERVICES: Service[] = [
     icon: Smartphone,
     name: "Screen Replacement",
     description:
-      "Cracked, shattered, or unresponsive iPhone screens repaired same-day with quality displays. All models from iPhone 4 to iPhone 17 Pro Max. Premium tier $79–$349 by model. Value tier $69–$219 (30-day warranty). Save up to $350 vs Apple Canada's $179–$499.",
+      "Cracked, shattered, or unresponsive iPhone screens repaired same-day with quality displays. All models from iPhone 4 to iPhone 17 Pro Max. Premium $79–$349 / Value $69–$219 by model.",
   },
   {
     icon: Battery,
