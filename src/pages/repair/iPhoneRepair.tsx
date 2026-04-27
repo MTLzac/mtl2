@@ -12,7 +12,7 @@ import { LiveStatusBadge } from "@/components/repair/LiveStatusBadge";
 import { WhyChooseUsExtended } from "@/components/repair/WhyChooseUsExtended";
 import { GoogleReviewsHighlight } from "@/components/repair/GoogleReviewsHighlight";
 import { LocalTrustSection } from "@/components/repair/LocalTrustSection";
-import { QuickFacts } from "@/components/repair/QuickFacts";
+// QuickFacts replaced by inline trust badges row in hero
 import { AppleComparisonStrip } from "@/components/repair/iphone/AppleComparisonStrip";
 import { IPhonePricingTable } from "@/components/repair/iphone/IPhonePricingTable";
 import { AppleVintageSection } from "@/components/repair/iphone/AppleVintageSection";
