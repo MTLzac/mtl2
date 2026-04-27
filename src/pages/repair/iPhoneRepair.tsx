@@ -4,10 +4,9 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { ServiceGrid, Service } from "@/components/repair/ServiceGrid";
-import { ModelListGrid, ModelCategory } from "@/components/repair/ModelListGrid";
+import { ModelCategory } from "@/components/repair/ModelListGrid";
 import { FAQSection, FAQ } from "@/components/repair/FAQSection";
 import { LocationCards } from "@/components/repair/LocationCards";
-import { StickyQuoteCTA } from "@/components/repair/StickyQuoteCTA";
 import { RepairWaysToSave } from "@/components/repair/RepairWaysToSave";
 import { LiveStatusBadge } from "@/components/repair/LiveStatusBadge";
 import { WhyChooseUsExtended } from "@/components/repair/WhyChooseUsExtended";
@@ -18,6 +17,7 @@ import { AppleComparisonStrip } from "@/components/repair/iphone/AppleComparison
 import { IPhonePricingTable } from "@/components/repair/iphone/IPhonePricingTable";
 import { AppleVintageSection } from "@/components/repair/iphone/AppleVintageSection";
 import { PremiumVsValueCards } from "@/components/repair/iphone/PremiumVsValueCards";
+import { IPhoneStickyQuoteBar } from "@/components/repair/iphone/IPhoneStickyQuoteBar";
 import { PRIMARY_PHONE } from "@/lib/locations";
 import {
   Smartphone,
@@ -41,7 +41,7 @@ const SERVICES: Service[] = [
     icon: Smartphone,
     name: "Screen Replacement",
     description:
-      "Cracked, shattered, or unresponsive iPhone screens repaired same-day with quality displays. All models from iPhone 4 to iPhone 17 Pro Max. Premium tier $79–$349 by model. Value tier $69–$219 (30-day warranty). Save up to $350 vs Apple Canada's $179–$499.",
+      "Cracked, shattered, or unresponsive iPhone screens repaired same-day with quality displays. All models from iPhone 4 to iPhone 17 Pro Max. Premium $79–$349 / Value $69–$219 by model.",
   },
   {
     icon: Battery,
@@ -398,13 +398,9 @@ const IPhoneRepair = () => {
                 </p>
 
                 <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground">
-                  Need fast iPhone repair near you? Mobile Tech Lab fixes every iPhone from iPhone 4
-                  to iPhone 17 Pro Max — and our prices beat Apple Canada's official rates by $30 to
-                  $350 per repair, depending on your model. iPhone screen repair starts at $69
-                  (Value) or $79 (Premium) for older devices. Most modern iPhones repair for under
-                  $200. iPhone 16 Pro Max screens cost $349 Premium with our lifetime warranty, or
-                  $219 Value with a 30-day warranty — both well below Apple's $499. Same-day service
-                  on most repairs. We also repair{" "}
+                  Mobile Tech Lab repairs every iPhone from iPhone 4 to iPhone 17 Pro Max — at $30
+                  to $350 less than Apple Canada's official prices. Most repairs $99 to $199.
+                  Same-day service on most parts. We also repair{" "}
                   <Link to="/repair/ipad" className="text-primary hover:underline">iPads</Link>,{" "}
                   <Link to="/repair/macbook" className="text-primary hover:underline">MacBooks</Link>
                   , and Apple Watches.
@@ -443,6 +439,9 @@ const IPhoneRepair = () => {
           {/* APPLE COMPARISON STRIP — 3 cards */}
           <AppleComparisonStrip />
 
+          {/* APPLE WON'T SERVICE IT (moved up — strongest differentiator) */}
+          <AppleVintageSection />
+
           {/* "MOST CUSTOMERS PAY UNDER $200" CALLOUT */}
           <section className="py-10 md:py-14">
             <div className="container mx-auto px-4">
@@ -458,8 +457,7 @@ const IPhoneRepair = () => {
                     <p className="text-base text-muted-foreground md:text-lg">
                       Our pricing covers every iPhone from $69 (older models, Value tier) to $349
                       (iPhone 16 Pro Max, Premium tier). Most repairs we do — iPhone XR through
-                      iPhone 14 — fall between $99 and $199. Even on the most expensive iPhone, you
-                      save at least $30 vs Apple Canada.{" "}
+                      iPhone 14 — fall between $99 and $199.{" "}
                       <Link to="/trade-in" className="text-primary hover:underline font-medium">
                         Trade-in any old device
                       </Link>{" "}
@@ -473,9 +471,6 @@ const IPhoneRepair = () => {
 
           {/* COMPLETE PRICING COMPARISON TABLE */}
           <IPhonePricingTable />
-
-          {/* APPLE WON'T SERVICE IT */}
-          <AppleVintageSection />
 
           {/* OTHER COMMON REPAIRS (preserved from old typical-pricing block) */}
           <section className="py-12 md:py-16">
@@ -532,15 +527,6 @@ const IPhoneRepair = () => {
 
           {/* GOOGLE REVIEWS */}
           <GoogleReviewsHighlight reviews={REVIEWS} heading="What Our iPhone Customers Say" />
-
-          {/* MODEL LIST GRID */}
-          <ModelListGrid
-            deviceName="iPhone"
-            models={MODELS}
-            description="We repair every iPhone generation from the iPhone 4 to the latest iPhone 17 Pro Max. Same-day service for most models at our Winnipeg location."
-            categories={MODEL_CATEGORIES}
-            categoryButtonLabel="View Pricing & Get Quote"
-          />
 
           {/* WAYS TO SAVE */}
           <RepairWaysToSave deviceName="iPhone" />
@@ -633,14 +619,16 @@ const IPhoneRepair = () => {
           </section>
 
           {/* LOCAL TRUST */}
-          <LocalTrustSection
-            heading="Book Your iPhone Repair in Winnipeg Today"
-            paragraph={LOCAL_TRUST_PARAGRAPH}
-          />
+          <div data-sticky-hide-anchor>
+            <LocalTrustSection
+              heading="Book Your iPhone Repair in Winnipeg Today"
+              paragraph={LOCAL_TRUST_PARAGRAPH}
+            />
+          </div>
         </main>
 
         <Footer />
-        <StickyQuoteCTA />
+        <IPhoneStickyQuoteBar />
       </div>
     </>
   );

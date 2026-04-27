@@ -38,12 +38,12 @@ const SECTIONS: Section[] = [
   {
     title: "iPhone 17 Series (Newest)",
     rows: [
-      { model: "iPhone 17 Pro Max", apple: "$499", premium: "Quote required", value: "Quote required", save: "—", quoteRequired: true },
-      { model: "iPhone 17 Pro", apple: "$429", premium: "Quote required", value: "Quote required", save: "—", quoteRequired: true },
-      { model: "iPhone 17 Air", apple: "$429", premium: "Quote required", value: "Quote required", save: "—", quoteRequired: true },
-      { model: "iPhone 17", apple: "$429", premium: "Quote required", value: "Quote required", save: "—", quoteRequired: true },
+      { model: "iPhone 17 Pro Max", apple: "$499", premium: "Get a quote →", value: "Get a quote →", save: "up to $300+", quoteRequired: true },
+      { model: "iPhone 17 Pro", apple: "$429", premium: "Get a quote →", value: "Get a quote →", save: "up to $250+", quoteRequired: true },
+      { model: "iPhone 17 Air", apple: "$429", premium: "Get a quote →", value: "Get a quote →", save: "up to $250+", quoteRequired: true },
+      { model: "iPhone 17", apple: "$429", premium: "Get a quote →", value: "Get a quote →", save: "up to $250+", quoteRequired: true },
     ],
-    note: "iPhone 17 series MTL pricing in process. Get a personalized quote in 1-2 business hours.",
+    note: "iPhone 17 series pricing depends on current part costs and quality tier. We typically save customers $200+ vs Apple. Get an exact quote in 1-2 business hours.",
   },
   {
     title: "iPhone 16 Series",
