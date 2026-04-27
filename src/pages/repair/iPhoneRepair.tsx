@@ -551,6 +551,49 @@ const IPhoneRepair = () => {
             <div className="pointer-events-none absolute -bottom-20 left-1/4 h-56 w-56 rounded-full bg-primary/5 blur-3xl" />
           </section>
 
+          {/* QUICK SUMMARY (Patch 1 — TL;DR for AI search & skim readers) */}
+          <section className="py-10 md:py-12">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-4xl rounded-2xl border border-border bg-muted/40 p-6 md:p-8">
+                <h2 className="mb-1 text-xl font-bold text-foreground md:text-2xl">
+                  Quick Summary
+                </h2>
+                <p className="mb-4 text-sm text-muted-foreground">
+                  Everything you need to know in 30 seconds:
+                </p>
+                <ul className="space-y-3 text-base text-foreground">
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span>
+                      Mobile Tech Lab repairs every iPhone from iPhone 4 to iPhone 17 Pro Max at our St. Vital and Thompson, MB locations.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span>
+                      Screen repair from $69 (Value tier) or $79 (Premium tier). Most repairs $99–$199. Save $30–$350 vs Apple Canada.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span>
+                      Premium screens carry a lifetime warranty against defects (vs Apple's 90 days). Value tier carries a 30-day warranty for budget-conscious customers.
+                    </span>
+                  </li>
+                  <li className="flex gap-3">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <span>
+                      Apple Canada has discontinued service for iPhone XS, XS Max, 11 Pro, 11 Pro Max, X, and SE 1st gen — we still repair all of them.
+                    </span>
+                  </li>
+                </ul>
+                <p className="mt-5 border-t border-border pt-4 text-sm font-medium text-foreground">
+                  Same-day service on most repairs. Free quote in 1–2 business hours.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* APPLE COMPARISON STRIP — 3 cards */}
           <AppleComparisonStrip />
 
