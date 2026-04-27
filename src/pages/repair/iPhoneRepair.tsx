@@ -508,6 +508,17 @@ const IPhoneRepair = () => {
           {/* APPLE WON'T SERVICE IT (moved up — strongest differentiator) */}
           <AppleVintageSection />
 
+          {/* IMAGE PLACEHOLDER 1 — technician at work */}
+          <section className="py-6">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto flex h-[250px] max-w-5xl items-center justify-center rounded-2xl border border-dashed border-border bg-muted/30">
+                <p className="px-4 text-center text-sm italic text-muted-foreground">
+                  Image placeholder: photo of MTL technician at work on an iPhone
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* "MOST CUSTOMERS PAY UNDER $200" CALLOUT */}
           <section className="py-10 md:py-14">
             <div className="container mx-auto px-4">
