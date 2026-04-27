@@ -68,41 +68,43 @@ export const PremiumVsValueCards = () => {
               </div>
               <CardTitle className="text-xl text-success">Value Screen — $69 to $219</CardTitle>
               <p className="text-sm text-muted-foreground">
-                The budget-conscious choice. Same screen brightness for daily use, with tradeoffs.
+                The smart choice when you're upgrading soon, on a tight budget, or repairing an older iPhone.
               </p>
             </CardHeader>
             <CardContent className="space-y-4 text-sm">
               <div>
                 <div className="font-semibold text-foreground">Quality</div>
                 <p className="text-muted-foreground">
-                  Aftermarket OLED (or LCD on older models). Visibly lower quality compared to
-                  Premium — less vivid color reproduction, slight brightness loss in direct
-                  sunlight, may impact battery life slightly. Acceptable for daily use.
+                  Aftermarket OLED panel that meets daily use standards. Color reproduction and
+                  brightness are slightly less vivid than Premium, but unnoticeable for typical use
+                  (texting, browsing, video calls). If you've been using a cracked screen for weeks,
+                  the upgrade will feel dramatic regardless of tier.
                 </p>
               </div>
               <div>
                 <div className="font-semibold text-foreground">Warranty</div>
                 <p className="text-muted-foreground">
-                  30-day warranty against defects. Limited time coverage means we cover the part
-                  for the first month only.
+                  30-day defect warranty. The vast majority of part failures occur in the first 30
+                  days — we cover that window completely. After that, normal wear applies.
                 </p>
               </div>
               <div>
                 <div className="font-semibold text-foreground">Performance</div>
                 <p className="text-muted-foreground">
-                  For everyday use the difference is subtle. The screen is "good enough" for most
-                  users.
+                  Indistinguishable in everyday use. Most users who choose Value report being fully
+                  satisfied.
                 </p>
               </div>
               <div>
                 <div className="font-semibold text-foreground">Best for</div>
                 <p className="text-muted-foreground">
-                  Users who need budget repair, are planning to trade in or upgrade soon, or have
-                  older devices where the cost savings matter most.
+                  Older iPhones (iPhone 11 and below), customers planning to trade in within 12
+                  months, or anyone who wants a working phone at the lowest possible cost.
                 </p>
               </div>
               <p className="rounded-md bg-success/5 p-3 text-sm font-medium text-success">
-                Value starts at $69 for older iPhones, $219 for iPhone 16 Pro Max.
+                Value starts at $69 (older iPhones) and tops out at $219 (iPhone 16 Pro Max). About
+                30% of customers choose Value.
               </p>
             </CardContent>
           </Card>
