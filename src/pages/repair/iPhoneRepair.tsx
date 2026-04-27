@@ -439,6 +439,9 @@ const IPhoneRepair = () => {
           {/* APPLE COMPARISON STRIP — 3 cards */}
           <AppleComparisonStrip />
 
+          {/* APPLE WON'T SERVICE IT (moved up — strongest differentiator) */}
+          <AppleVintageSection />
+
           {/* "MOST CUSTOMERS PAY UNDER $200" CALLOUT */}
           <section className="py-10 md:py-14">
             <div className="container mx-auto px-4">
@@ -454,8 +457,7 @@ const IPhoneRepair = () => {
                     <p className="text-base text-muted-foreground md:text-lg">
                       Our pricing covers every iPhone from $69 (older models, Value tier) to $349
                       (iPhone 16 Pro Max, Premium tier). Most repairs we do — iPhone XR through
-                      iPhone 14 — fall between $99 and $199. Even on the most expensive iPhone, you
-                      save at least $30 vs Apple Canada.{" "}
+                      iPhone 14 — fall between $99 and $199.{" "}
                       <Link to="/trade-in" className="text-primary hover:underline font-medium">
                         Trade-in any old device
                       </Link>{" "}
@@ -469,9 +471,6 @@ const IPhoneRepair = () => {
 
           {/* COMPLETE PRICING COMPARISON TABLE */}
           <IPhonePricingTable />
-
-          {/* APPLE WON'T SERVICE IT */}
-          <AppleVintageSection />
 
           {/* OTHER COMMON REPAIRS (preserved from old typical-pricing block) */}
           <section className="py-12 md:py-16">
