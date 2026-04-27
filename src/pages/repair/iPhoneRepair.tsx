@@ -619,14 +619,16 @@ const IPhoneRepair = () => {
           </section>
 
           {/* LOCAL TRUST */}
-          <LocalTrustSection
-            heading="Book Your iPhone Repair in Winnipeg Today"
-            paragraph={LOCAL_TRUST_PARAGRAPH}
-          />
+          <div data-sticky-hide-anchor>
+            <LocalTrustSection
+              heading="Book Your iPhone Repair in Winnipeg Today"
+              paragraph={LOCAL_TRUST_PARAGRAPH}
+            />
+          </div>
         </main>
 
         <Footer />
-        <StickyQuoteCTA />
+        <IPhoneStickyQuoteBar />
       </div>
     </>
   );
