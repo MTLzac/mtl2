@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import PageLoader from "@/components/PageLoader";
 
 // Core pages - keep synchronous for instant first paint
@@ -204,12 +204,12 @@ const App = () => (
               {/* Contact Page */}
               <Route path="/contact" element={<Contact />} />
 
-              {/* Location Pages */}
-              <Route path="/location/winnipeg" element={<WinnipegLocation />} />
-              <Route path="/location/thompson" element={<ThompsonLocation />} />
-              {/* Legacy location routes */}
+              {/* Location Pages — canonical at /locations/* */}
               <Route path="/locations/winnipeg" element={<WinnipegLocation />} />
               <Route path="/locations/thompson" element={<ThompsonLocation />} />
+              {/* Legacy singular routes redirect to canonical plural */}
+              <Route path="/location/winnipeg" element={<Navigate to="/locations/winnipeg" replace />} />
+              <Route path="/location/thompson" element={<Navigate to="/locations/thompson" replace />} />
 
               {/* Informational Pages */}
               <Route path="/repair-pricing" element={<RepairPricing />} />
