@@ -1,13 +1,13 @@
-import { XCircle } from "lucide-react";
+import { XCircle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const NOTE_ROWS = [
-  { model: "Galaxy Note 20 Ultra", mtl: "From $249" },
-  { model: "Galaxy Note 20", mtl: "From $229" },
-  { model: "Galaxy Note 10+", mtl: "From $229" },
-  { model: "Galaxy Note 10", mtl: "From $199" },
-  { model: "Galaxy Note 9", mtl: "From $199" },
-  { model: "Galaxy Note 8", mtl: "From $179" },
+  "Galaxy Note 20 Ultra",
+  "Galaxy Note 20",
+  "Galaxy Note 10+",
+  "Galaxy Note 10",
+  "Galaxy Note 9",
+  "Galaxy Note 8",
 ];
 
 export const SamsungDiscontinuedSection = () => {
@@ -50,9 +50,9 @@ export const SamsungDiscontinuedSection = () => {
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
-                {NOTE_ROWS.map((row) => (
-                  <tr key={row.model} className="hover:bg-muted/30">
-                    <td className="px-4 py-3 font-medium text-foreground">{row.model}</td>
+                {NOTE_ROWS.map((model) => (
+                  <tr key={model} className="hover:bg-muted/30">
+                    <td className="px-4 py-3 font-medium text-foreground">{model}</td>
                     <td className="px-4 py-3">
                       <span className="inline-flex items-center gap-1.5 rounded-md border border-destructive/40 bg-destructive/10 px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-destructive">
                         <XCircle className="h-3.5 w-3.5" />
@@ -60,12 +60,10 @@ export const SamsungDiscontinuedSection = () => {
                       </span>
                     </td>
                     <td className="px-4 py-3 bg-primary/5">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className="inline-flex items-center rounded-md border border-success/50 bg-success/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-success">
-                          We Fix It
-                        </span>
-                        <span className="font-semibold text-foreground">{row.mtl}</span>
-                      </div>
+                      <span className="inline-flex items-center gap-1.5 rounded-md border border-success/50 bg-success/15 px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-success">
+                        <CheckCircle2 className="h-3.5 w-3.5" />
+                        Quote required
+                      </span>
                     </td>
                   </tr>
                 ))}
@@ -75,23 +73,23 @@ export const SamsungDiscontinuedSection = () => {
 
           {/* Mobile */}
           <div className="space-y-3 md:hidden">
-            {NOTE_ROWS.map((row) => (
+            {NOTE_ROWS.map((model) => (
               <div
-                key={row.model}
+                key={model}
                 className="rounded-lg border border-border bg-card p-4 space-y-2"
               >
-                <div className="font-semibold text-foreground">{row.model}</div>
+                <div className="font-semibold text-foreground">{model}</div>
                 <div>
                   <span className="inline-flex items-center gap-1.5 rounded-md border border-destructive/40 bg-destructive/10 px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-destructive">
                     <XCircle className="h-3.5 w-3.5" />
                     Samsung Discontinued
                   </span>
                 </div>
-                <div className="flex items-center justify-between pt-1">
-                  <span className="inline-flex items-center rounded-md border border-success/50 bg-success/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-success">
-                    We Fix It
+                <div className="pt-1">
+                  <span className="inline-flex items-center gap-1.5 rounded-md border border-success/50 bg-success/15 px-2 py-1 text-[11px] font-bold uppercase tracking-wider text-success">
+                    <CheckCircle2 className="h-3.5 w-3.5" />
+                    MTL: Quote required
                   </span>
-                  <span className="font-semibold text-foreground">{row.mtl}</span>
                 </div>
               </div>
             ))}
@@ -99,24 +97,15 @@ export const SamsungDiscontinuedSection = () => {
 
           <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
             Samsung's authorized service network no longer offers screen repairs or screen module
-            replacement for any Galaxy Note model.{" "}
-            <a
-              href="https://www.samsung.com/ca/support/Out-of-Warranty-Pricing/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              Samsung's official pricing tool
-            </a>{" "}
-            also doesn't list service for many older A-series models (A14, A15, A24, A25, A34, A35)
-            — these typically require quote-based service through third parties like us. The phones
-            still work — Samsung has just stopped supporting them. We use quality aftermarket and
-            OEM-equivalent parts to restore Note and discontinued A-series devices.
+            replacement for any Galaxy Note model. The phones still work — Samsung has just stopped
+            supporting them. We use quality aftermarket parts (and OEM-equivalent where available)
+            to restore Note devices. Pricing varies based on current part costs and availability —
+            get an exact quote in 1–2 business hours.
           </p>
 
           <div className="mt-6 flex justify-center">
             <Button size="lg" className="gradient-primary" asChild>
-              <a href="/quote">Get a Quote for Your Note or Older Galaxy →</a>
+              <a href="/quote">Get a Quote for Your Note →</a>
             </Button>
           </div>
         </div>

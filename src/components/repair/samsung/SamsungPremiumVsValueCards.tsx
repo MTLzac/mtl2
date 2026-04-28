@@ -16,10 +16,11 @@ export const SamsungPremiumVsValueCards = () => {
 
         <p className="mx-auto mb-10 max-w-3xl text-center text-base text-muted-foreground">
           Samsung's Super AMOLED and Dynamic AMOLED panels are some of the most expensive
-          smartphone displays to replace. For select popular Galaxy models — Galaxy S22, S23, S24,
-          A53, A54 — we offer two screen quality tiers: Premium (genuine OEM Samsung Service Pack)
-          and Value (high-quality aftermarket OLED). For other models, we offer a single tier based
-          on what's available. Get a personalized quote and we'll explain your options.
+          smartphone displays to replace. We always offer Premium tier (genuine OEM Samsung
+          Service Pack parts) where available. Value tier (aftermarket OLED) is offered on select
+          models when our suppliers can source quality alternatives — availability varies by
+          model and timing. Get a personalized quote and we'll tell you which tiers are available
+          for your specific Galaxy.
         </p>
 
         <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
@@ -59,7 +60,8 @@ export const SamsungPremiumVsValueCards = () => {
               <div>
                 <div className="font-semibold text-foreground">Best for</div>
                 <p className="text-muted-foreground">
-                  Customers who want long-term reliability and factory-original quality.
+                  Customers who want long-term reliability and factory-original quality. About 70%
+                  of customers choose Premium.
                 </p>
               </div>
             </CardContent>
@@ -71,37 +73,40 @@ export const SamsungPremiumVsValueCards = () => {
               <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-full bg-success/10 text-success">
                 <Wallet className="h-5 w-5" />
               </div>
-              <CardTitle className="text-xl text-success">Value Screen — Budget Option</CardTitle>
+              <CardTitle className="text-xl text-success">Value Screen — When Available</CardTitle>
               <p className="text-sm text-muted-foreground">
-                Aftermarket OLED panel — meets daily use standards at a lower cost.
+                Aftermarket OLED panel, offered when supply permits.
               </p>
             </CardHeader>
             <CardContent className="space-y-4 text-sm">
               <div>
+                <div className="font-semibold text-foreground">Availability</div>
+                <p className="text-muted-foreground">
+                  Part-supply dependent. Not always available — ask for a quote to see your
+                  options.
+                </p>
+              </div>
+              <div>
                 <div className="font-semibold text-foreground">Quality</div>
                 <p className="text-muted-foreground">
-                  Aftermarket OLED panel. Color reproduction and brightness slightly less vivid
-                  than Premium, but unnoticeable for typical use.
+                  When available, aftermarket OLED that meets daily use standards. Color
+                  reproduction and brightness slightly less vivid than Premium, but generally
+                  unnoticeable for typical use.
                 </p>
               </div>
               <div>
                 <div className="font-semibold text-foreground">Warranty</div>
                 <p className="text-muted-foreground">
-                  30 days against manufacturing defects in the replacement part. Same exclusions as
-                  Premium.
-                </p>
-              </div>
-              <div>
-                <div className="font-semibold text-foreground">Performance</div>
-                <p className="text-muted-foreground">
-                  Indistinguishable in everyday use for most customers.
+                  30 days against manufacturing defects in the replacement part. Same exclusions
+                  as Premium.
                 </p>
               </div>
               <div>
                 <div className="font-semibold text-foreground">Best for</div>
                 <p className="text-muted-foreground">
-                  Older devices, customers planning to trade in within 12 months, or anyone who
-                  wants a working phone at the lowest cost. About 30% of customers choose Value.
+                  Older devices, customers planning to trade in within 12 months, or budget-
+                  conscious customers. About 30% of customers choose Value when it's available for
+                  their model.
                 </p>
               </div>
             </CardContent>

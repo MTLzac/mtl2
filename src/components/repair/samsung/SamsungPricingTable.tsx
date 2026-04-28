@@ -1,179 +1,126 @@
-import { Info } from "lucide-react";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 interface Row {
   model: string;
-  screen: string; // Samsung Canada screen repair
-  module: string; // Samsung Canada screen module
-  mtl: string; // MTL anchor
-  save: string; // savings
-  quoteRequired?: boolean;
+  range: string;
+  notes: string;
 }
 
 interface Section {
   title: string;
   rows: Row[];
   note?: string;
-  savings?: { label: string };
 }
 
 const SECTIONS: Section[] = [
   {
     title: "Galaxy S26 Series (Newest)",
-    savings: { label: "Average savings vs Samsung Canada: from $33 (S26) up to $133+ (S26 Ultra)" },
     rows: [
-      { model: "Galaxy S26 Ultra", screen: "$432", module: "—", mtl: "$299", save: "$133" },
-      { model: "Galaxy S26+", screen: "$342", module: "—", mtl: "$249", save: "$93" },
-      { model: "Galaxy S26", screen: "$277", module: "—", mtl: "$199", save: "$78" },
+      { model: "Galaxy S26 Ultra", range: "$399 – $449", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S26+", range: "$299 – $329", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S26", range: "$249 – $279", notes: "OEM Service Pack screen" },
     ],
   },
   {
     title: "Galaxy S25 Series",
-    savings: { label: "Average savings: from $11 (S25+) up to $66+ (S25 Edge module)" },
     rows: [
-      { model: "Galaxy S25 Edge", screen: "—", module: "$406", mtl: "$349", save: "$57" },
-      { model: "Galaxy S25 Ultra", screen: "$315", module: "—", mtl: "$299", save: "$16" },
-      { model: "Galaxy S25+", screen: "$260", module: "—", mtl: "$249", save: "$11" },
-      { model: "Galaxy S25", screen: "$220", module: "—", mtl: "$199", save: "$21" },
+      { model: "Galaxy S25 Edge", range: "$399 – $449", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S25 Ultra", range: "$399 – $449", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S25+", range: "$299 – $329", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S25", range: "$249 – $279", notes: "OEM Service Pack screen" },
     ],
   },
   {
     title: "Galaxy S24 Series",
     rows: [
-      { model: "Galaxy S24 Ultra", screen: "$311", module: "—", mtl: "$299", save: "$12" },
-      { model: "Galaxy S24+", screen: "$260", module: "—", mtl: "$249", save: "$11" },
-      { model: "Galaxy S24", screen: "$225", module: "—", mtl: "$199", save: "$26" },
-      { model: "Galaxy S24 FE", screen: "$242", module: "$345", mtl: "$199", save: "$43" },
+      { model: "Galaxy S24 Ultra", range: "$349 – $449", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S24+", range: "$279 – $329", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S24", range: "$249 – $279", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S24 FE", range: "$249 – $299", notes: "OEM Service Pack screen" },
     ],
   },
   {
     title: "Galaxy S23 Series",
     rows: [
-      { model: "Galaxy S23 Ultra", screen: "$351", module: "$426", mtl: "$299", save: "$52" },
-      { model: "Galaxy S23+", screen: "$266", module: "$340", mtl: "$249", save: "$17" },
-      { model: "Galaxy S23", screen: "$257", module: "$329", mtl: "$199", save: "$58" },
-      { model: "Galaxy S23 FE", screen: "$236", module: "$335", mtl: "$199", save: "$37" },
+      { model: "Galaxy S23 Ultra", range: "$349 – $429", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S23+", range: "$279 – $329", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S23", range: "$249 – $279", notes: "OEM Service Pack screen" },
+      { model: "Galaxy S23 FE", range: "$249 – $279", notes: "OEM Service Pack screen" },
     ],
   },
   {
     title: "Galaxy S22 Series",
     rows: [
-      { model: "Galaxy S22 Ultra", screen: "$340", module: "$414", mtl: "$299", save: "$41" },
-      { model: "Galaxy S22+", screen: "$263", module: "$319", mtl: "$249", save: "$14" },
-      { model: "Galaxy S22", screen: "$252", module: "$311", mtl: "$199", save: "$53" },
+      { model: "Galaxy S22 Ultra", range: "$349 – $399", notes: "Premium / Value may be available" },
+      { model: "Galaxy S22+", range: "$279 – $329", notes: "Premium / Value may be available" },
+      { model: "Galaxy S22", range: "$249 – $279", notes: "Premium / Value may be available" },
     ],
   },
   {
     title: "Galaxy S21 / S20 Series",
     rows: [
-      { model: "Galaxy S21 Ultra", screen: "$315", module: "$379", mtl: "$299", save: "$16" },
-      { model: "Galaxy S21+", screen: "$258", module: "$308", mtl: "$249", save: "$9" },
-      { model: "Galaxy S20 Ultra", screen: "$289", module: "$360", mtl: "$249", save: "$40" },
-      { model: "Galaxy S20+", screen: "$252", module: "$360", mtl: "$199", save: "$53" },
-      { model: "Galaxy S20", screen: "$256", module: "$457", mtl: "$199", save: "$57" },
+      { model: "Galaxy S21 Ultra", range: "$329 – $379", notes: "Premium / Value may be available" },
+      { model: "Galaxy S21+", range: "$279 – $299", notes: "Premium / Value may be available" },
+      { model: "Galaxy S20 Ultra", range: "$299 – $349", notes: "Premium / Value may be available" },
+      { model: "Galaxy S20+", range: "$249 – $279", notes: "Premium / Value may be available" },
+      { model: "Galaxy S20", range: "$229 – $259", notes: "Premium / Value may be available" },
     ],
   },
   {
-    title: "Galaxy A Series",
-    savings: {
-      label:
-        "Most A-series models require a quote — Samsung Canada doesn't publish pricing for A14, A15, A16, A24, A34, A55. We do.",
-    },
+    title: "Galaxy A Series — our most affordable Samsung repairs",
     rows: [
-      { model: "Galaxy A54 5G", screen: "$225", module: "$256", mtl: "$129", save: "$96" },
-      { model: "Galaxy A53 5G", screen: "—", module: "$250", mtl: "$129", save: "$121" },
-      { model: "Galaxy A13", screen: "—", module: "$200", mtl: "$129", save: "$71" },
-      { model: "Galaxy A12 LTE", screen: "—", module: "$230", mtl: "$129", save: "$101" },
-      { model: "Galaxy A03", screen: "—", module: "$225", mtl: "$129", save: "$96" },
+      { model: "Galaxy A54 5G", range: "$129 – $179", notes: "Premium / Value may be available" },
+      { model: "Galaxy A53 5G", range: "$129 – $179", notes: "Premium / Value may be available" },
       {
         model: "Galaxy A14 / A15 / A16 / A24 / A25 / A34 / A35 / A55",
-        screen: "Not listed by Samsung",
-        module: "—",
-        mtl: "From $129",
-        save: "Get a quote →",
-        quoteRequired: true,
+        range: "From $129",
+        notes: "Quote-based — many variants",
       },
+      { model: "Galaxy A12 / A13 / A03", range: "$129 – $159", notes: "Quality varies by part availability" },
     ],
   },
   {
-    title: "Galaxy Z Foldable Summary",
-    note: "See dedicated Foldable Specialist section below for model-by-model pricing.",
+    title: "Galaxy Z Foldable Series",
+    note: "See dedicated Foldable Specialist section above for complete Z Fold and Z Flip pricing breakdown.",
+    rows: [
+      { model: "Galaxy Z Fold (all gen, inner)", range: "$499 – $699", notes: "Specialty repair — see foldable section" },
+      { model: "Galaxy Z Fold (all gen, outer)", range: "$179 – $229", notes: "Specialty repair — see foldable section" },
+      { model: "Galaxy Z Flip (all gen, inner)", range: "$349 – $449", notes: "Specialty repair — see foldable section" },
+      { model: "Galaxy Z Flip (all gen, outer)", range: "$99 – $149", notes: "Specialty repair — see foldable section" },
+    ],
+  },
+  {
+    title: "Galaxy Note Series (Samsung Discontinued)",
     rows: [
       {
-        model: "Galaxy Z Fold (all gen, inner)",
-        screen: "$702 – $902",
-        module: "$684 – $861",
-        mtl: "From $399",
-        save: "$300 – $500+",
-      },
-      {
-        model: "Galaxy Z Fold (all gen, outer)",
-        screen: "$165 – $236",
-        module: "—",
-        mtl: "From $149",
-        save: "Varies",
-      },
-      {
-        model: "Galaxy Z Flip (all gen, inner)",
-        screen: "$439 – $496",
-        module: "$456 – $495",
-        mtl: "From $299",
-        save: "$140 – $200+",
-      },
-      {
-        model: "Galaxy Z Flip (all gen, outer)",
-        screen: "$145 – $236",
-        module: "—",
-        mtl: "From $99",
-        save: "Varies",
+        model: "Galaxy Note 8 / 9 / 10 / 10+ / 20 / 20 Ultra",
+        range: "Quote required",
+        notes: "Samsung discontinued service — we still repair",
       },
     ],
   },
 ];
 
-const QuoteCell = ({ children }: { children: React.ReactNode }) => (
-  <a
-    href="/quote"
-    className="group flex h-full w-full items-center justify-between gap-1 px-4 py-3 font-bold text-destructive transition-colors hover:bg-destructive hover:text-background"
-  >
-    <span>{children}</span>
-    <span className="underline underline-offset-2">→</span>
-  </a>
-);
-
 export const SamsungPricingTable = () => {
   return (
-    <section id="samsung-pricing-comparison" className="py-16 md:py-20">
+    <section id="samsung-pricing-reference" className="py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-10 max-w-3xl text-center">
           <h2 className="mb-3 text-3xl font-bold md:text-4xl">
-            Complete Samsung Screen Repair Pricing Comparison
+            Complete Samsung Repair Pricing Reference
           </h2>
           <p className="text-muted-foreground md:text-lg">
-            Every Galaxy model. Samsung Canada's official pricing vs our anchor pricing. Verified
-            April 27, 2026.
+            Premium tier pricing across the Galaxy lineup. Get an exact quote in 1–2 hours.
           </p>
         </div>
 
-        <div className="mx-auto max-w-6xl space-y-10">
+        <div className="mx-auto max-w-5xl space-y-10">
           {SECTIONS.map((section) => (
             <div key={section.title}>
               <div className="mb-3 rounded-md border border-border bg-muted/60 px-3 py-2.5">
                 <h3 className="flex items-center gap-2 text-lg font-bold text-foreground md:text-xl">
                   <span className="text-primary">▸</span> {section.title}
                 </h3>
-                {section.savings && (
-                  <p className="mt-1 text-xs text-muted-foreground md:text-sm">
-                    <span className="font-bold text-foreground">{section.savings.label}</span>
-                  </p>
-                )}
               </div>
 
               {/* Desktop */}
@@ -182,61 +129,20 @@ export const SamsungPricingTable = () => {
                   <thead className="bg-muted/50">
                     <tr className="text-left">
                       <th className="px-4 py-3 font-semibold">Galaxy Model</th>
-                      <th className="px-4 py-3 font-semibold">
-                        <TooltipProvider>
-                          <Tooltip>
-                            <TooltipTrigger className="inline-flex items-center gap-1">
-                              Samsung Canada Screen
-                              <Info className="h-3.5 w-3.5 text-muted-foreground" />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              Samsung Canada's published "Screen Repair" rate (panel only).
-                              Verified April 27, 2026.
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </th>
-                      <th className="px-4 py-3 font-semibold">
-                        <TooltipProvider>
-                          <Tooltip>
-                            <TooltipTrigger className="inline-flex items-center gap-1">
-                              Samsung Canada Module
-                              <Info className="h-3.5 w-3.5 text-muted-foreground" />
-                            </TooltipTrigger>
-                            <TooltipContent>
-                              Samsung's "Screen Module" — includes panel + bezel + battery bundle.
-                            </TooltipContent>
-                          </Tooltip>
-                        </TooltipProvider>
-                      </th>
                       <th className="px-4 py-3 font-semibold bg-primary/5 text-primary">
-                        MTL From
+                        Premium Tier Range
                       </th>
-                      <th className="px-4 py-3 font-semibold text-success">You Save (Min)</th>
+                      <th className="px-4 py-3 font-semibold">Notes</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-border">
                     {section.rows.map((row) => (
                       <tr key={row.model} className="hover:bg-muted/30">
                         <td className="px-4 py-3 font-medium text-foreground">{row.model}</td>
-                        <td className="px-4 py-3 text-muted-foreground">{row.screen}</td>
-                        <td className="px-4 py-3 text-muted-foreground">{row.module}</td>
-                        <td
-                          className={cn(
-                            "px-4 py-3 font-semibold bg-primary/5",
-                            row.quoteRequired && "p-0"
-                          )}
-                        >
-                          {row.quoteRequired ? <QuoteCell>{row.mtl}</QuoteCell> : row.mtl}
+                        <td className="px-4 py-3 font-semibold bg-primary/5 text-foreground">
+                          {row.range}
                         </td>
-                        <td
-                          className={cn(
-                            "px-4 py-3 font-semibold text-success",
-                            row.quoteRequired && "p-0"
-                          )}
-                        >
-                          {row.quoteRequired ? <QuoteCell>{row.save}</QuoteCell> : row.save}
-                        </td>
+                        <td className="px-4 py-3 text-muted-foreground">{row.notes}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -252,15 +158,10 @@ export const SamsungPricingTable = () => {
                   >
                     <div className="font-semibold text-foreground">{row.model}</div>
                     <div className="grid grid-cols-2 gap-2 text-sm">
-                      <div className="text-muted-foreground">Samsung Screen:</div>
-                      <div className="text-right">{row.screen}</div>
-                      <div className="text-muted-foreground">Samsung Module:</div>
-                      <div className="text-right">{row.module}</div>
-                      <div className="text-primary">MTL From:</div>
-                      <div className="text-right font-semibold">{row.mtl}</div>
-                      <div className="text-success">You Save:</div>
-                      <div className="text-right font-semibold text-success">{row.save}</div>
+                      <div className="text-primary">Premium Range:</div>
+                      <div className="text-right font-semibold">{row.range}</div>
                     </div>
+                    <div className="text-xs text-muted-foreground">{row.notes}</div>
                   </div>
                 ))}
               </div>
@@ -273,20 +174,11 @@ export const SamsungPricingTable = () => {
         </div>
 
         <p className="mx-auto mt-8 max-w-4xl text-sm italic text-muted-foreground">
-          Samsung Canada prices reflect Samsung's published Canadian out-of-warranty service rates
-          as listed on{" "}
-          <a
-            href="https://www.samsung.com/ca/support/Out-of-Warranty-Pricing/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="not-italic text-primary hover:underline"
-          >
-            samsung.com/ca/support
-          </a>{" "}
-          April 27, 2026. Samsung Canada's actual repair costs may vary by authorized service
-          partner. Mobile Tech Lab pricing reflects our anchor "from" rates — your exact quote
-          depends on current part costs and availability after physical inspection. Get an exact
-          quote estimate in 1–2 business hours.
+          Premium tier pricing reflects genuine OEM Samsung Service Pack screens where available.
+          Value tier (aftermarket alternatives) may be available on select models when supply
+          permits — ask for a quote and we'll let you know your options. Pricing tracks current
+          part costs and availability. Get an exact quote estimate in 1–2 business hours. We
+          price-match any verifiable local competitor.
         </p>
 
         <div className="mt-6 flex justify-center">

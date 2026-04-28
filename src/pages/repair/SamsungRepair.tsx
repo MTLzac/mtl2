@@ -11,8 +11,8 @@ import { LiveStatusBadge } from "@/components/repair/LiveStatusBadge";
 import { WhyChooseUsExtended } from "@/components/repair/WhyChooseUsExtended";
 import { GoogleReviewsHighlight } from "@/components/repair/GoogleReviewsHighlight";
 import { LocalTrustSection } from "@/components/repair/LocalTrustSection";
-import { SamsungComparisonStrip } from "@/components/repair/samsung/SamsungComparisonStrip";
 import { SamsungPriceMatchBanner } from "@/components/repair/samsung/SamsungPriceMatchBanner";
+import { SamsungWarrantyComparison } from "@/components/repair/samsung/SamsungWarrantyComparison";
 import { SamsungDiscontinuedSection } from "@/components/repair/samsung/SamsungDiscontinuedSection";
 import { SamsungPricingTable } from "@/components/repair/samsung/SamsungPricingTable";
 import { SamsungFoldableSection } from "@/components/repair/samsung/SamsungFoldableSection";
@@ -33,6 +33,8 @@ import {
   MessageSquare,
   MapPin,
   CheckCircle2,
+  ShieldCheck,
+  BadgeCheck,
 } from "lucide-react";
 
 const REPAIR_WIDGET_URL = "https://shop.mobiletechlab.ca/pages/repair2";
@@ -45,19 +47,18 @@ const SERVICES: Service[] = [
     icon: Smartphone,
     name: "Screen Replacement",
     description:
-      "Galaxy A from $129. Galaxy S from $199. Ultra from $299. Foldable from $399. Save up to $500 vs Samsung Canada.",
+      "Galaxy A from $129. Galaxy S $249–$329. Ultra $349–$449. Foldable inner from $349 (Flip) or $499 (Fold). Premium tier carries lifetime-of-device warranty.",
   },
   {
     icon: Battery,
     name: "Battery Replacement",
     description:
-      "Galaxy A from $89, Galaxy S from $129, Foldable from $179. 90-day warranty on all batteries (industry standard — batteries degrade naturally).",
+      "Galaxy A from $89, Galaxy S from $129, Foldable from $179. 90-day warranty on all batteries.",
   },
   {
     icon: MonitorSmartphone,
     name: "Back Glass Repair",
-    description:
-      "Rear housing replacement from $129. Glass-back panels on flagship Galaxy devices.",
+    description: "Rear housing replacement from $129.",
   },
   {
     icon: Plug,
@@ -72,9 +73,9 @@ const SERVICES: Service[] = [
   },
   {
     icon: Droplets,
-    name: "Liquid Damage / Water Damage Service",
+    name: "Liquid Damage Service",
     description:
-      "Diagnostic and data recovery attempts from $149 (plus $49 device-opening diagnostic fee). Important: outcomes cannot be guaranteed, and NO warranty applies to liquid-damaged devices, on any component, regardless of whether future failure relates to our work. We often recommend backup-and-replace for severely damaged devices.",
+      "Data recovery attempts from $149 plus $49 diagnostic fee. NO warranty applies to liquid-damaged devices.",
   },
 ];
 
@@ -83,27 +84,27 @@ const SERVICES: Service[] = [
 // ============================================
 const FAQS: FAQ[] = [
   {
-    question: "How does Mobile Tech Lab Samsung pricing compare to Samsung Canada?",
-    answer: `Across the Galaxy lineup, Mobile Tech Lab saves customers $30 to $500+ versus <a href="https://www.samsung.com/ca/support/Out-of-Warranty-Pricing/" target="_blank" rel="noopener noreferrer">Samsung Canada's official out-of-warranty pricing</a>. For example: Galaxy Z Fold5 inner screen repair is $702 at Samsung Canada but starts at $499 at MTL — saving $203. Galaxy A54 screen at Samsung is $225 vs $129 at MTL — saving $96. The complete comparison table above shows Samsung Canada's published pricing for every Galaxy model. All Samsung Canada prices were sourced directly from <a href="https://www.samsung.com/ca/support/Out-of-Warranty-Pricing/" target="_blank" rel="noopener noreferrer">Samsung's official Out-of-Warranty Pricing page</a> on April 27, 2026.`,
+    question:
+      "Why is Mobile Tech Lab Premium tier sometimes priced similar to Samsung's authorized service?",
+    answer: `Honest answer: Samsung's authorized service network often subsidizes flagship pricing through their service partner agreements, which means their out-of-warranty pricing on current models is sometimes lower than third-party shops who source genuine Samsung parts independently.<br/><br/><strong>Where we genuinely win:</strong><ul class="list-disc pl-5 mt-2 space-y-1"><li>Lifetime-of-device warranty on Premium tier (vs Samsung's 90-day warranty)</li><li>Same-day local service in Winnipeg and Thompson (vs Samsung's mail-in or limited service centre options)</li><li>Foldable repair specialty (we save customers $200+ on Z Fold inner screens)</li><li>Galaxy A series and older models (where we're significantly cheaper)</li><li>Note series repair (Samsung Canada has discontinued service)</li><li>Price-match guarantee on any verifiable local competitor's quote</li></ul><br/>For current flagship S series Premium repairs, Samsung's authorized service might match or beat our price — but their 90-day warranty expires while ours lasts the lifetime of the device.`,
   },
   {
     question: "What is the price match guarantee?",
     answer:
-      "If you can show us a real, current quote for the same Samsung repair from a verifiable Winnipeg or Thompson repair shop, we'll match their price. The repair must be the same model, same part quality tier, and the competing shop must be a legitimate Manitoba business. We're confident in our pricing and don't want you wasting time shopping around.",
+      "If you can show us a real, current quote for the same Samsung repair from a verifiable Winnipeg or Thompson repair shop, we'll match their price. The repair must be the same model, same part quality tier, and the competing shop must be a legitimate Manitoba business. We may call to verify the quote. We're confident in our pricing and don't want you wasting time shopping around.<br/><br/><strong>Recent example:</strong> A customer brought us a $179 quote for a Galaxy A54 screen repair from another Winnipeg shop. We honoured the price and completed the repair same-day.",
   },
   {
     question: "Why did Samsung stop servicing my Galaxy Note?",
     answer:
-      "Samsung Canada discontinued service for the entire Galaxy Note series — including Note 8, 9, 10, 10+, 20, and 20 Ultra. Samsung's official pricing tool no longer lists service options for these models. The phones still work; Samsung has just stopped supporting them. Mobile Tech Lab still repairs all Note models using quality aftermarket and OEM-equivalent parts. For owners of Galaxy Note phones in Manitoba, we may be one of the only legitimate repair options remaining.",
+      "Samsung Canada discontinued service for the entire Galaxy Note series — Note 8, 9, 10, 10+, 20, and 20 Ultra. The phones still work; Samsung has just stopped supporting them. Mobile Tech Lab still repairs all Note models using quality aftermarket parts (and OEM-equivalent where available). For owners of Galaxy Note phones in Manitoba, we may be one of the only legitimate repair options remaining.",
   },
   {
     question: "How much does a Galaxy Z Fold or Z Flip repair cost?",
-    answer:
-      "Galaxy Z Fold inner screen repairs at Samsung Canada cost between $702 and $902 depending on generation. Mobile Tech Lab's foldable repairs start at $399. Z Flip inner screens at Samsung are $439–$496; ours start at $299. Foldable repairs are specialized work — we're one of the few Manitoba shops that carries foldable parts and has the technique to install them properly. See the Foldable Specialist section above for model-by-model pricing.",
+    answer: `Foldable repairs are specialized work. Our Premium tier pricing:<ul class="list-disc pl-5 mt-2 space-y-1"><li>Z Fold inner screens: $499–$699</li><li>Z Fold outer screens: $179–$229</li><li>Z Flip inner screens: $349–$449</li><li>Z Flip outer screens: $99–$149</li></ul><br/>For context, <a href="https://www.samsung.com/ca/support/Out-of-Warranty-Pricing/" target="_blank" rel="noopener noreferrer">Samsung Canada's authorized service</a> lists some foldable inner screen repairs at up to $902. We typically save customers $200+ on foldable repairs while delivering OEM Samsung Service Pack quality. See the Foldable Specialist section above for model-by-model pricing.`,
   },
   {
     question: "Are Mobile Tech Lab repairs warrantied?",
-    answer: `Yes — with clearly defined scope.<br/><br/><strong>Premium tier</strong> screens, charging ports, cameras, and most non-battery components: lifetime of the device warranty against manufacturing defects in the replacement part.<br/><br/><strong>Value tier</strong> same components: 30-day warranty against manufacturing defects in the replacement part.<br/><br/><strong>Premium AND Value tier batteries:</strong> 90-day warranty against manufacturing defects only. Batteries naturally degrade with use, so longer warranties are not offered by anyone — including Apple and Samsung.<br/><br/><strong>What our warranty covers:</strong> Defects in the specific part we replaced, during the warranty period, when the device hasn't been physically or liquid damaged after our repair.<br/><br/><strong>What our warranty does NOT cover:</strong><ul class="list-disc pl-5 mt-2 space-y-1"><li>Physical damage (drops, cracks, impacts) after repair</li><li>Liquid damage after repair</li><li>Failures of components we did not service</li><li>Devices that were liquid-damaged before our repair (no warranty applies to liquid-damaged devices, ever)</li></ul><br/>For comparison: <a href="https://www.samsung.com/ca/support/warranty/" target="_blank" rel="noopener noreferrer">Samsung Canada's authorized repair service</a> typically carries a 90-day warranty on parts and labour. Our Premium tier offers significantly longer coverage on most non-battery repairs.`,
+    answer: `Yes — with clearly defined scope.<br/><br/><strong>Premium tier</strong> screens, charging ports, cameras, and most non-battery components: lifetime of the device warranty against manufacturing defects in the replacement part.<br/><br/><strong>Value tier</strong> (when available): 30-day warranty against manufacturing defects in the replacement part.<br/><br/><strong>Premium AND Value tier batteries:</strong> 90-day warranty against manufacturing defects only. Batteries naturally degrade with use, so longer warranties are not offered by anyone — including Samsung.<br/><br/><strong>What our warranty covers:</strong> Defects in the specific part we replaced, during the warranty period, when the device hasn't been physically or liquid damaged after our repair.<br/><br/><strong>What our warranty does NOT cover:</strong><ul class="list-disc pl-5 mt-2 space-y-1"><li>Physical damage (drops, cracks, impacts) after repair</li><li>Liquid damage after repair</li><li>Failures of components we did not service</li><li>Devices that were liquid-damaged before our repair (no warranty applies to liquid-damaged devices, ever)</li></ul><br/>For comparison: <a href="https://www.samsung.com/ca/support/warranty/" target="_blank" rel="noopener noreferrer">Samsung Canada's authorized repair service</a> typically carries a 90-day warranty on parts and labour. Our Premium tier offers significantly longer coverage on most non-battery repairs.`,
   },
   {
     question: "How does your quote and diagnostic process work?",
@@ -116,12 +117,12 @@ const FAQS: FAQ[] = [
   {
     question: "Are the parts you use genuine Samsung parts?",
     answer:
-      "For Premium tier repairs, yes — we source genuine Samsung Service Pack parts directly. These are the same parts Samsung Canada uses in their authorized service centres. For Value tier repairs, we use high-quality aftermarket OLED panels that closely match original specifications. Both options are professionally installed. We'll explain your part options when you request a quote.",
+      "For Premium tier repairs, yes — we source genuine Samsung Service Pack parts directly. These are the same parts Samsung Canada uses in their authorized service centres. For Value tier repairs (when available), we use high-quality aftermarket OLED panels that closely match original specifications. Both options are professionally installed. We'll explain your part options when you request a quote.",
   },
   {
-    question: "What's the difference between Screen Repair and Screen Module replacement?",
+    question: "When is Value tier available?",
     answer:
-      'Samsung Canada offers two repair types. "Screen Repair" replaces only the broken display panel — cheaper and reduces e-waste. "Screen Module" replaces the entire screen plus bezel (metal frame) plus battery — more comprehensive, more expensive. Mobile Tech Lab generally focuses on screen-only replacement to keep costs low; we replace bezels and batteries separately when needed. This approach typically saves customers another $50–$100 vs Samsung\'s bundled module pricing.',
+      "Value tier (aftermarket alternatives to genuine Samsung parts) is offered when our suppliers can source quality aftermarket parts for your specific Galaxy model. Availability varies by model, generation, and supply timing. Some models — particularly current flagships and foldable inner screens — typically only have Premium tier available because aftermarket alternatives either don't exist or don't meet our quality standards. Older models and high-volume devices (S22, S23, S24 standard, A53, A54) more often have Value tier as an option. Get a quote and we'll tell you what's available for your device.",
   },
   {
     question: "Do you repair Samsung phones bought from carriers (Rogers, Bell, Telus)?",
@@ -131,12 +132,12 @@ const FAQS: FAQ[] = [
   {
     question: "How long does a Samsung screen repair take?",
     answer:
-      "Most screen repairs are completed same-day when parts are in stock — typically 1–2 hours from drop-off. If your specific Galaxy variant isn't in stock, we order parts and complete the repair in 1–3 business days. We'll tell you the exact timeline when you request your quote estimate — no surprises.",
+      "Most screen repairs are completed same-day when parts are in stock — typically 1–2 hours from drop-off. If your specific Galaxy variant isn't in stock, we order parts and complete the repair in 1–3 business days. Foldable repairs typically take 2–5 business days for parts arrival, then 1–2 hours for installation. We'll tell you the exact timeline when you request your quote estimate.",
   },
   {
     question: "What if my Samsung phone is older than what Samsung still services?",
     answer:
-      "We repair Galaxy devices going back further than Samsung's authorized service network. Samsung's official pricing tool only lists current and recent models — for older Galaxies (S20, S21, A53, etc.) and discontinued models (Note series), we're often the only legitimate repair option in Manitoba. Get a quote estimate for any Samsung Galaxy from Galaxy S6 onward.",
+      "We repair Galaxy devices going back further than Samsung's authorized service network. For older Galaxies (S20, S21, A53, etc.) and discontinued models (Note series), we're often the only legitimate repair option in Manitoba. Get a quote estimate for any Samsung Galaxy from Galaxy S6 onward.",
   },
   {
     question: "Should I get my Samsung repaired or replace it?",
@@ -146,12 +147,12 @@ const FAQS: FAQ[] = [
   {
     question: "Do you offer Samsung Care+ alternatives?",
     answer:
-      "Mobile Tech Lab doesn't offer recurring insurance plans — we offer transparent per-repair pricing. Samsung Care+ runs $8–$18/month plus $99–$199 deductible per claim. Many customers find paying us once per repair is cheaper than the cumulative cost of Samsung Care+ over a 2–3 year ownership cycle, especially for Galaxy A and standard S series phones.",
+      "Mobile Tech Lab doesn't offer recurring insurance plans — we offer transparent per-repair pricing with our price-match guarantee and lifetime warranty on Premium tier. Samsung Care+ runs $8–$18/month plus $99–$199 deductible per claim. Many customers find paying us once per repair is cheaper than the cumulative cost of Samsung Care+ over a 2–3 year ownership cycle.",
   },
   {
     question: "Can a Samsung repair affect my warranty?",
     answer:
-      "If your Galaxy is still under Samsung's standard manufacturer warranty (typically 12 months from purchase), having a third-party shop repair the screen will void Samsung's hardware warranty for any future hardware claims. If you're outside the warranty period, you have nothing to lose by going with us — most Samsungs are repaired by us when they're 12+ months old anyway. Samsung Care+ deductibles are also often higher than our repair cost.",
+      "If your Galaxy is still under Samsung's standard manufacturer warranty (typically 12 months from purchase), having a third-party shop repair the screen will void Samsung's hardware warranty for any future hardware claims. If you're outside the warranty period, you have nothing to lose by going with us — most Samsungs are repaired by us when they're 12+ months old anyway.",
   },
   {
     question: "How quickly can I get a Samsung repair quote?",
@@ -166,7 +167,7 @@ const FAQS: FAQ[] = [
 const REVIEWS = [
   {
     quote:
-      "Samsung wanted $700 to fix my Z Fold5 inner screen. Mobile Tech Lab did it for $499. Two weeks later it's working perfectly. Going back to them next time.",
+      "I was nervous handing over my $1,800 Z Fold5 to anyone but Samsung. Mobile Tech Lab walked me through their process upfront — clean inner screen install, working flawlessly two months later. Lifetime warranty made the choice easy.",
     author: "Customer, Winnipeg (Google Review)",
     rating: 5,
   },
@@ -176,14 +177,20 @@ const REVIEWS = [
     author: "Google Review",
     rating: 5,
   },
+  {
+    quote:
+      "Brought them a $179 screen quote from another shop on my Galaxy A54. They matched it without hassle and had me out the door in 90 minutes. No reason to shop around.",
+    author: "Customer, Winnipeg (Google Review)",
+    rating: 5,
+  },
 ];
 
 // ============================================
 // 4. COPY BLOCKS
 // ============================================
-const WHY_CHOOSE_PARAGRAPH = `Looking for reliable Samsung Galaxy repair in Winnipeg? Mobile Tech Lab is Manitoba's foldable repair specialist and the trusted local choice for Galaxy A, S, Ultra, Note, and Z Fold/Flip repairs. We offer same-day service for most repairs when parts are in stock — including battery replacement, cracked AMOLED screens, USB-C charging port issues, and back glass damage. Our experienced technicians use genuine Samsung Service Pack parts (Premium tier) or high-quality aftermarket OLED panels (Value tier), and every repair is backed by clearly-scoped warranty terms. We price-match any verifiable local competitor in Winnipeg or Thompson. Visit our main location at St. Vital Centre for walk-in service, or our Thompson, MB shop. From the latest Galaxy S26 Ultra to the discontinued Galaxy Note 8, we've repaired thousands of Samsungs for happy Manitoba customers.`;
+const WHY_CHOOSE_PARAGRAPH = `Looking for reliable Samsung Galaxy repair in Winnipeg? Mobile Tech Lab is Manitoba's foldable repair specialist and the trusted local choice for Galaxy A, S, Ultra, Note, and Z Fold/Flip repairs. Our Premium tier carries a lifetime-of-device warranty against manufacturing defects — significantly longer than Samsung's standard 90-day repair warranty. We price-match any verifiable local competitor in Winnipeg or Thompson, and we still repair Galaxy Note series even though Samsung Canada has discontinued service for them. Same-day service for most repairs when parts are in stock. Visit our St. Vital Centre location for walk-in service, or our Thompson, MB shop. From the latest Galaxy S26 Ultra to the discontinued Galaxy Note 8, we've repaired thousands of Samsungs for happy Manitoba customers.`;
 
-const LOCAL_TRUST_PARAGRAPH = `Ready to get your Samsung Galaxy fixed? Walk into our St. Vital Centre location — no appointment needed — and our friendly technicians will inspect your device. Most Samsung repairs are completed same-day while you wait when parts are in stock. We pride ourselves on transparent estimate-then-final-price pricing, our price-match guarantee, foldable expertise, and our continued support for the discontinued Galaxy Note series. Whether you need a quick battery swap or a full Z Fold inner screen replacement, we make Samsung repair easy. Request a free quote estimate online or call our St. Vital location directly!`;
+const LOCAL_TRUST_PARAGRAPH = `Same-day service on most Samsung repairs when parts are in stock. Lifetime-of-device warranty on Premium tier. We price-match any verifiable local competitor. Manitoba's foldable repair specialist. We repair Galaxy Note series even though Samsung Canada has discontinued service. Get an estimate in 1–2 business hours. No commitment until we physically inspect your device and confirm the final price.`;
 
 // ============================================
 // 5. SCHEMAS
@@ -222,48 +229,126 @@ const SERVICE_SCHEMA = {
     { "@type": "City", name: "Thompson" },
     { "@type": "AdministrativeArea", name: "Manitoba" },
   ],
+  additionalProperty: [
+    {
+      "@type": "PropertyValue",
+      name: "Price Match Guarantee",
+      value:
+        "We price-match any verifiable local competitor's quote in Winnipeg and Thompson on Samsung repairs.",
+    },
+    {
+      "@type": "PropertyValue",
+      name: "Premium Tier Warranty",
+      value:
+        "Lifetime of the device against manufacturing defects in the replacement part.",
+    },
+  ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Samsung Galaxy Repair Services",
     itemListElement: [
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Samsung Galaxy A Series Screen Repair" },
+        itemOffered: {
+          "@type": "Service",
+          name: "Samsung Galaxy A Series Screen Repair (Premium)",
+        },
         priceSpecification: {
           "@type": "PriceSpecification",
           priceCurrency: "CAD",
           minPrice: "129",
+          maxPrice: "179",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Samsung Galaxy S Series Screen Repair (Premium)",
+        },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "CAD",
+          minPrice: "229",
+          maxPrice: "329",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Samsung Galaxy S Ultra Screen Repair (Premium)",
+        },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "CAD",
+          minPrice: "349",
+          maxPrice: "449",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Samsung Galaxy Z Fold Inner Screen Repair (Premium)",
+        },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "CAD",
+          minPrice: "499",
+          maxPrice: "699",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Samsung Galaxy Z Fold Outer Screen Repair (Premium)",
+        },
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "CAD",
+          minPrice: "179",
           maxPrice: "229",
         },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Samsung Galaxy S Series Screen Repair" },
+        itemOffered: {
+          "@type": "Service",
+          name: "Samsung Galaxy Z Flip Inner Screen Repair (Premium)",
+        },
         priceSpecification: {
           "@type": "PriceSpecification",
           priceCurrency: "CAD",
-          minPrice: "199",
-          maxPrice: "349",
+          minPrice: "349",
+          maxPrice: "449",
         },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Samsung Galaxy Z Fold Inner Screen Repair" },
+        itemOffered: {
+          "@type": "Service",
+          name: "Samsung Galaxy Z Flip Outer Screen Repair (Premium)",
+        },
         priceSpecification: {
           "@type": "PriceSpecification",
           priceCurrency: "CAD",
-          minPrice: "399",
-          maxPrice: "599",
+          minPrice: "99",
+          maxPrice: "149",
         },
       },
       {
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: "Samsung Galaxy Z Flip Inner Screen Repair" },
+        itemOffered: {
+          "@type": "Service",
+          name: "Samsung Galaxy Note Series Repair (Vintage Models)",
+        },
         priceSpecification: {
           "@type": "PriceSpecification",
           priceCurrency: "CAD",
-          minPrice: "299",
-          maxPrice: "349",
+          minPrice: "179",
+          maxPrice: "329",
         },
       },
       {
@@ -285,7 +370,7 @@ const LOCAL_BUSINESS_SCHEMA = {
   "@type": "LocalBusiness",
   name: "Mobile Tech Lab",
   description:
-    "Samsung Galaxy repair specialists in Winnipeg and Thompson, Manitoba. Galaxy A, S, Ultra, Z Fold, Z Flip repair with same-day service. Manitoba's foldable repair specialist.",
+    "Samsung Galaxy repair specialists in Winnipeg and Thompson, Manitoba. Lifetime warranty on Premium repairs. Price-match guarantee. Galaxy A, S, Ultra, Z Fold, Z Flip, and Note series repair. Manitoba's foldable repair specialist.",
   image: "https://mobiletechlab.ca/logo.png",
   url: "https://mobiletechlab.ca/repair/samsung",
   telephone: "(204) 500-9757",
@@ -320,10 +405,10 @@ const SamsungRepair = () => {
   return (
     <>
       <Helmet>
-        <title>Samsung Repair Winnipeg: Galaxy + Foldable from $129 | MTL</title>
+        <title>Samsung Repair Winnipeg | Lifetime Warranty + Price Match | MTL</title>
         <meta
           name="description"
-          content="Samsung repair Winnipeg from $129. Galaxy A, S, Ultra, Z Fold, Z Flip — save up to $500 vs Samsung Canada. We price-match any local competitor."
+          content="Samsung Galaxy repair Winnipeg. Lifetime warranty on Premium repairs (vs Samsung's 90 days). We price-match any local competitor. Foldable specialists."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://mobiletechlab.ca/repair/samsung" />
@@ -349,7 +434,7 @@ const SamsungRepair = () => {
                     </div>
 
                     <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-                      Samsung Repair in <span className="text-primary">Winnipeg</span> — Save Up to $500 vs Samsung Canada
+                      Samsung Repair in <span className="text-primary">Winnipeg</span> — Price-Match Guaranteed
                     </h1>
 
                     <p className="mb-4 text-xl font-medium text-foreground/90 md:text-2xl">
@@ -357,7 +442,19 @@ const SamsungRepair = () => {
                     </p>
 
                     <p className="mb-8 max-w-2xl text-lg text-muted-foreground lg:mx-0 mx-auto">
-                      Mobile Tech Lab repairs every Samsung Galaxy from Galaxy A series budget phones to the Galaxy Z Fold flagship — at significantly less than Samsung Canada's official out-of-warranty pricing. Galaxy A repairs from $129, Galaxy S Ultra from $299, foldables from $399. Most repairs $179–$299. Same-day service on most parts when in stock. We price-match any local competitor in Winnipeg or Thompson.
+                      Mobile Tech Lab repairs every Samsung Galaxy from Galaxy A series to the
+                      Galaxy Z Fold flagship at our St. Vital and Thompson locations. We also fix{" "}
+                      <Link to="/repair/iphone" className="text-primary hover:underline">
+                        iPhones
+                      </Link>{" "}
+                      and{" "}
+                      <Link to="/repair/macbook" className="text-primary hover:underline">
+                        MacBooks
+                      </Link>
+                      . Galaxy A repairs from $129. Galaxy S Ultra from $349. Foldables from $179
+                      (outer) or $349 (inner). We price-match any verifiable local competitor's
+                      quote — and our Premium tier carries a lifetime-of-device warranty (vs
+                      Samsung's 90 days). Same-day service on most parts when in stock.
                     </p>
 
                     <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
@@ -376,35 +473,39 @@ const SamsungRepair = () => {
                     </div>
                   </div>
 
-                  {/* Pricing tiles */}
-                  <div aria-hidden="true" className="mx-auto w-full max-w-sm lg:max-w-none">
+                  {/* Warranty comparison tiles */}
+                  <div aria-hidden="false" className="mx-auto w-full max-w-sm lg:max-w-none">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="rounded-2xl border border-border bg-muted/40 p-5 text-center">
-                        <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-                          Samsung Canada
+                        <div className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                          Samsung Authorized Service
                         </div>
-                        <div className="text-3xl font-bold text-muted-foreground line-through decoration-destructive decoration-[3px]">
-                          $315
+                        <div className="text-2xl font-bold text-muted-foreground">
+                          90-day
                         </div>
+                        <div className="text-xs font-medium text-muted-foreground">warranty</div>
                         <div className="mt-2 text-[11px] leading-tight text-muted-foreground">
-                          Galaxy S25 Ultra screen repair
+                          Industry standard
                         </div>
                       </div>
                       <div className="relative rounded-2xl border-2 border-primary bg-card p-5 text-center shadow-lg">
-                        <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-primary">
-                          Mobile Tech Lab
+                        <div className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-primary">
+                          Mobile Tech Lab Premium
                         </div>
-                        <div className="text-3xl font-bold text-primary">$299</div>
+                        <div className="text-2xl font-bold text-primary">Lifetime</div>
+                        <div className="text-xs font-medium text-foreground">of device</div>
                         <div className="mt-2 text-[11px] leading-tight text-muted-foreground">
-                          Galaxy S25 Ultra — From
+                          Against manufacturing defects
                         </div>
-                        <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-success px-3 py-1 text-xs font-bold text-background shadow-md">
-                          Save $16+
+                        <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground shadow-md">
+                          Better coverage
                         </div>
                       </div>
                     </div>
                     <p className="mt-6 text-center text-xs font-medium text-foreground">
-                      Save on Galaxy S25 Ultra. Save $200+ on Galaxy Z Fold inner screens. Get an exact quote in 1–2 hours.
+                      Premium tier covers your screen, charging port, and camera repairs for as
+                      long as you own the device. Same-day service. Price-matched if you find
+                      lower elsewhere.
                     </p>
                   </div>
                 </div>
@@ -423,21 +524,23 @@ const SamsungRepair = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <Smartphone className="h-5 w-5" />
+                        <BadgeCheck className="h-5 w-5" />
                       </div>
                       <div className="min-w-0">
                         <p className="text-xs text-muted-foreground">Pricing</p>
-                        <p className="text-sm font-semibold text-foreground">From $129</p>
+                        <p className="text-sm font-semibold text-foreground">
+                          Price Match Guarantee
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <Battery className="h-5 w-5" />
+                        <ShieldCheck className="h-5 w-5" />
                       </div>
                       <div className="min-w-0">
                         <p className="text-xs text-muted-foreground">Warranty</p>
                         <p className="text-sm font-semibold text-foreground">
-                          Lifetime (Premium screens, ports, cameras)
+                          Lifetime Warranty (Premium)
                         </p>
                       </div>
                     </div>
@@ -473,62 +576,72 @@ const SamsungRepair = () => {
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
                     <span>
-                      Mobile Tech Lab repairs every Samsung Galaxy from Galaxy A budget phones to Galaxy Z Fold flagships at our St. Vital and Thompson, MB locations.
+                      Mobile Tech Lab repairs every Samsung Galaxy from Galaxy A budget phones to
+                      Galaxy Z Fold flagships at our St. Vital and Thompson, MB locations.
                     </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
                     <span>
-                      Samsung repair from $129 (Galaxy A) to $399+ (foldables). Most repairs $179–$299. Save up to $500 vs Samsung Canada's official out-of-warranty pricing.
+                      Galaxy A repairs from $129. Galaxy S Ultra from $349. Foldable inner screens
+                      from $349 (Z Flip) or $499 (Z Fold). Most repairs $129–$329.
                     </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
                     <span>
-                      Manitoba's foldable repair specialist. Galaxy Z Fold inner screens at Samsung Canada cost $702–$902 — we repair them for significantly less.
+                      Premium tier carries a lifetime-of-device warranty against manufacturing
+                      defects — significantly longer than Samsung's standard 90-day repair
+                      warranty.
                     </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
                     <span>
-                      We price-match any local competitor in Winnipeg or Thompson. Samsung Canada has discontinued service for Galaxy Note series — we still repair them.
+                      We price-match any verifiable local competitor's quote on Samsung repairs.
+                      Manitoba's foldable repair specialist. We repair Galaxy Note series (Samsung
+                      Canada has discontinued service for these models).
                     </span>
                   </li>
                 </ul>
                 <p className="mt-5 border-t border-border pt-4 text-sm font-medium text-foreground">
-                  Same-day service on most repairs when parts are in stock. Free quote estimate in 1–2 business hours. See FAQ below for warranty terms.
+                  Same-day service on most repairs when parts are in stock. Free quote estimate in
+                  1–2 business hours. See FAQ below for warranty terms and diagnostic policy.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* 3-BADGE SUMMARY */}
-          <SamsungComparisonStrip />
-
-          {/* PRICE-MATCH BANNER */}
+          {/* PRICE-MATCH BANNER (NEW HEADLINE POSITION) */}
           <SamsungPriceMatchBanner />
+
+          {/* LIFETIME WARRANTY COMPARISON */}
+          <SamsungWarrantyComparison />
 
           {/* SAMSUNG DISCONTINUED — NOTE SERIES */}
           <SamsungDiscontinuedSection />
 
-          {/* MOST CUSTOMERS PAY UNDER $250 CALLOUT */}
+          {/* FOLDABLE SPECIALIST (with single Samsung Canada citation) */}
+          <SamsungFoldableSection />
+
+          {/* MOST REPAIRS $129-$329 CALLOUT */}
           <section className="py-10 md:py-14">
             <div className="container mx-auto px-4">
-              <div className="mx-auto max-w-4xl rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-background to-success/5 p-6 md:p-8">
+              <div className="mx-auto max-w-4xl rounded-2xl border-2 border-primary/30 bg-gradient-to-br from-primary/5 via-background to-primary/5 p-6 md:p-8">
                 <div className="flex items-start gap-4">
                   <div className="hidden h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary md:inline-flex">
                     <Sparkles className="h-6 w-6" />
                   </div>
                   <div>
                     <h2 className="mb-2 text-2xl font-bold text-foreground md:text-3xl">
-                      Most customers pay under $250
+                      Most Samsung repairs $129–$329
                     </h2>
                     <p className="text-base text-muted-foreground md:text-lg">
                       Our Samsung pricing covers every Galaxy from $129 (Galaxy A series, simple
-                      screen repair) to $399+ (Z Fold inner screen). Most repairs we do — Galaxy
-                      S, A, and Flip outer screens — fall between $129 and $249. Even on flagship
-                      S Ultra and Fold inner screens, you save $30 to $500+ vs Samsung Canada's
-                      official pricing.{" "}
+                      screen repair) to $699 (Z Fold7 inner screen Premium). Most repairs we do —
+                      Galaxy A, S, S+, and Flip outer screens — fall between $129 and $329.
+                      Premium tier uses genuine OEM Samsung Service Pack parts where available,
+                      with a lifetime-of-device warranty against manufacturing defects.{" "}
                       <Link to="/trade-in" className="text-primary hover:underline font-medium">
                         Trade-in any old device
                       </Link>{" "}
@@ -540,7 +653,7 @@ const SamsungRepair = () => {
             </div>
           </section>
 
-          {/* COMPLETE PRICING TABLE */}
+          {/* COMPLETE PRICING TABLE — MTL ONLY */}
           <SamsungPricingTable />
 
           {/* FOLDABLE SPECIALIST */}
@@ -558,9 +671,9 @@ const SamsungRepair = () => {
                     <div className="mb-2 font-semibold text-foreground">Battery Replacement</div>
                     <p className="mb-3 text-sm text-muted-foreground">
                       Samsung Galaxy battery replacement from $89 (Galaxy A) to $179 (Galaxy Z
-                      Fold). Most repairs same-day when parts are in stock. Battery warranty: 90
-                      days against manufacturing defects. Batteries naturally degrade with use;
-                      longer warranties are not offered by anyone (including Samsung).
+                      Fold). Same-day when parts are in stock. Battery warranty: 90 days against
+                      manufacturing defects (industry standard — batteries degrade naturally with
+                      use).
                     </p>
                     <a href="/quote" className="text-sm font-semibold text-primary hover:underline">
                       Get a quote →
@@ -570,8 +683,7 @@ const SamsungRepair = () => {
                     <div className="mb-2 font-semibold text-foreground">Charging Port Repair</div>
                     <p className="mb-3 text-sm text-muted-foreground">
                       USB-C charging port repair from $79. Common on devices 2+ years old.
-                      Lifetime-of-device warranty (Premium tier) against manufacturing defects in
-                      the replacement part.
+                      Lifetime-of-device warranty (Premium tier) against manufacturing defects.
                     </p>
                     <a href="/quote" className="text-sm font-semibold text-primary hover:underline">
                       Get a quote →
@@ -581,8 +693,7 @@ const SamsungRepair = () => {
                     <div className="mb-2 font-semibold text-foreground">Camera Repair</div>
                     <p className="mb-3 text-sm text-muted-foreground">
                       Rear and front camera replacement from $99. Galaxy Ultra cameras priced
-                      higher due to complexity. Lifetime-of-device warranty (Premium tier) against
-                      manufacturing defects in the replacement part.
+                      higher due to complexity. Lifetime-of-device warranty (Premium tier).
                     </p>
                     <a href="/quote" className="text-sm font-semibold text-primary hover:underline">
                       Get a quote →
@@ -590,7 +701,7 @@ const SamsungRepair = () => {
                   </div>
                   <div className="rounded-lg border-2 border-destructive/30 bg-destructive/[0.03] p-5">
                     <div className="mb-2 font-semibold text-foreground">
-                      Liquid Damage / Water Damage Service
+                      Liquid Damage Service
                     </div>
                     <p className="mb-3 text-sm text-muted-foreground">
                       Diagnostic and data recovery attempts from $149 (plus $49 device-opening
@@ -708,12 +819,12 @@ const SamsungRepair = () => {
                     {
                       icon: CheckCircle2,
                       title: "We confirm the final price before any work begins",
-                      body: "If our estimate matches the actual repair, we proceed. If your device needs different work than expected, we'll tell you the new price first — you can approve, decline, or pay only the $49 diagnostic fee and walk away.",
+                      body: "If our estimate matches the actual repair, we proceed. If your device needs different work than expected, we'll tell you the new price first. If internal diagnosis is needed (opening the device), a $49 diagnostic fee applies, credited toward whatever repair resolves the issue. You can approve, decline, or pay only the diagnostic fee and walk away.",
                     },
                     {
                       icon: CheckCircle2,
                       title: "Same-day repair when parts are in stock",
-                      body: "Most repairs done in 1–2 hours. If parts aren't in stock, we tell you upfront and order them in 1–3 business days.",
+                      body: "Most repairs done in 1–2 hours. Foldable repairs typically 2–5 business days for parts arrival.",
                     },
                   ].map((step, i) => {
                     const Icon = step.icon;
@@ -757,8 +868,7 @@ const SamsungRepair = () => {
             <div className="container mx-auto px-4">
               <p className="mx-auto max-w-4xl text-center text-xs italic text-muted-foreground">
                 Pricing reviewed by the MTL Repair Team, senior repair technicians at Mobile Tech
-                Lab. Verified April 27, 2026. Samsung Canada pricing sourced directly from
-                Samsung's Out-of-Warranty Pricing page.
+                Lab. Verified April 27, 2026.
               </p>
             </div>
           </section>

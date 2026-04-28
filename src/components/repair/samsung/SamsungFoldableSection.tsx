@@ -3,32 +3,30 @@ import { Button } from "@/components/ui/button";
 interface FoldRow {
   model: string;
   type: string;
-  samsung: string;
   mtl: string;
-  save: string;
 }
 
 const FOLD_ROWS: FoldRow[] = [
-  { model: "Galaxy Z Fold7", type: "Inner screen module", samsung: "$861", mtl: "$599", save: "$262" },
-  { model: "Galaxy Z Fold7", type: "Outer screen", samsung: "$236", mtl: "$179", save: "$57" },
-  { model: "Galaxy Z Fold6", type: "Inner screen", samsung: "$770", mtl: "$549", save: "$221" },
-  { model: "Galaxy Z Fold6", type: "Outer screen", samsung: "$228", mtl: "$179", save: "$49" },
-  { model: "Galaxy Z Fold5", type: "Inner screen", samsung: "$702", mtl: "$499", save: "$203" },
-  { model: "Galaxy Z Fold5", type: "Outer screen", samsung: "$222", mtl: "$169", save: "$53" },
-  { model: "Galaxy Z Fold4", type: "Inner screen", samsung: "$711", mtl: "$499", save: "$212" },
-  { model: "Galaxy Z Fold4", type: "Outer screen", samsung: "$232", mtl: "$169", save: "$63" },
-  { model: "Galaxy Z Fold3 5G", type: "Inner screen", samsung: "$902", mtl: "$499", save: "$403" },
-  { model: "Galaxy Z Fold3 5G", type: "Outer screen", samsung: "$165", mtl: "$149", save: "$16" },
-  { model: "Galaxy Z Flip7", type: "Inner screen module", samsung: "$456", mtl: "$349", save: "$107" },
-  { model: "Galaxy Z Flip7", type: "Outer screen", samsung: "$215", mtl: "$149", save: "$66" },
-  { model: "Galaxy Z Flip6", type: "Inner screen", samsung: "$439", mtl: "$329", save: "$110" },
-  { model: "Galaxy Z Flip6", type: "Outer screen", samsung: "$195", mtl: "$129", save: "$66" },
-  { model: "Galaxy Z Flip5", type: "Inner screen", samsung: "$475", mtl: "$329", save: "$146" },
-  { model: "Galaxy Z Flip5", type: "Outer screen", samsung: "$206", mtl: "$129", save: "$77" },
-  { model: "Galaxy Z Flip4", type: "Inner screen", samsung: "$468", mtl: "$299", save: "$169" },
-  { model: "Galaxy Z Flip4", type: "Outer screen", samsung: "$180", mtl: "$99", save: "$81" },
-  { model: "Galaxy Z Flip3 5G", type: "Inner screen", samsung: "$496", mtl: "$299", save: "$197" },
-  { model: "Galaxy Z Flip3 5G", type: "Outer screen", samsung: "$145", mtl: "$99", save: "$46" },
+  { model: "Galaxy Z Fold7", type: "Inner screen", mtl: "$599 – $699" },
+  { model: "Galaxy Z Fold7", type: "Outer screen", mtl: "$179 – $229" },
+  { model: "Galaxy Z Fold6", type: "Inner screen", mtl: "$549 – $649" },
+  { model: "Galaxy Z Fold6", type: "Outer screen", mtl: "$179 – $229" },
+  { model: "Galaxy Z Fold5", type: "Inner screen", mtl: "$499 – $599" },
+  { model: "Galaxy Z Fold5", type: "Outer screen", mtl: "$179 – $199" },
+  { model: "Galaxy Z Fold4", type: "Inner screen", mtl: "$499 – $599" },
+  { model: "Galaxy Z Fold4", type: "Outer screen", mtl: "$179 – $199" },
+  { model: "Galaxy Z Fold3 5G", type: "Inner screen", mtl: "$499 – $599" },
+  { model: "Galaxy Z Fold3 5G", type: "Outer screen", mtl: "$179 – $199" },
+  { model: "Galaxy Z Flip7", type: "Inner screen", mtl: "$399 – $449" },
+  { model: "Galaxy Z Flip7", type: "Outer screen", mtl: "$129 – $149" },
+  { model: "Galaxy Z Flip6", type: "Inner screen", mtl: "$349 – $449" },
+  { model: "Galaxy Z Flip6", type: "Outer screen", mtl: "$99 – $149" },
+  { model: "Galaxy Z Flip5", type: "Inner screen", mtl: "$349 – $449" },
+  { model: "Galaxy Z Flip5", type: "Outer screen", mtl: "$99 – $149" },
+  { model: "Galaxy Z Flip4", type: "Inner screen", mtl: "$349 – $399" },
+  { model: "Galaxy Z Flip4", type: "Outer screen", mtl: "$99 – $129" },
+  { model: "Galaxy Z Flip3 5G", type: "Inner screen", mtl: "$349 – $399" },
+  { model: "Galaxy Z Flip3 5G", type: "Outer screen", mtl: "$99 – $129" },
 ];
 
 export const SamsungFoldableSection = () => {
@@ -40,19 +38,36 @@ export const SamsungFoldableSection = () => {
             Manitoba's Galaxy Z Fold &amp; Z Flip Repair Specialists
           </h2>
           <p className="text-muted-foreground md:text-lg">
-            Foldable repair is a niche specialty — and we've earned it. Samsung Canada Fold inner
-            screens cost up to $902. We repair them for significantly less.
+            Foldable repair is a niche specialty — and we've earned it. We repair both Z Fold and
+            Z Flip models, inner and outer screens.
           </p>
         </div>
 
         <div className="mx-auto max-w-4xl">
-          <p className="mb-8 text-base text-muted-foreground md:text-lg">
-            Galaxy Z Fold and Z Flip repairs require specialized technique. The folding display
-            panels are made from Ultra Thin Glass (UTG) — entirely different technology from
-            standard smartphone screens. Mobile Tech Lab is one of the few Manitoba repair shops
-            with the experience, parts access, and tooling to fix foldables properly. Same-day
-            service when parts are in stock; otherwise 2–5 business days for parts arrival.
-          </p>
+          <div className="mb-8 space-y-4 text-base text-muted-foreground md:text-lg">
+            <p>
+              Galaxy Z Fold and Z Flip repairs require specialized technique. The folding display
+              panels are made from Ultra Thin Glass (UTG) — entirely different technology from
+              standard smartphone screens. For context,{" "}
+              <a
+                href="https://www.samsung.com/ca/support/Out-of-Warranty-Pricing/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Samsung Canada's authorized service lists foldable repair pricing
+              </a>{" "}
+              up to $902 for some Z Fold inner screens — among the highest published phone repair
+              prices in Canada. We typically save customers $200+ on foldable repairs while
+              delivering the same OEM Samsung Service Pack quality on Premium tier.
+            </p>
+            <p>
+              Mobile Tech Lab is one of the few Manitoba repair shops with the experience, parts
+              access, and tooling to fix foldables properly. Same-day service when parts are in
+              stock; otherwise 2–5 business days for parts arrival. Most foldable customers have
+              their device back within 1 week of drop-off.
+            </p>
+          </div>
 
           {/* Desktop */}
           <div className="hidden overflow-hidden rounded-lg border border-border bg-card md:block">
@@ -61,9 +76,9 @@ export const SamsungFoldableSection = () => {
                 <tr className="text-left">
                   <th className="px-4 py-3 font-semibold">Model</th>
                   <th className="px-4 py-3 font-semibold">Repair Type</th>
-                  <th className="px-4 py-3 font-semibold">Samsung Canada</th>
-                  <th className="px-4 py-3 font-semibold bg-primary/5 text-primary">MTL From</th>
-                  <th className="px-4 py-3 font-semibold text-success">You Save</th>
+                  <th className="px-4 py-3 font-semibold bg-primary/5 text-primary">
+                    MTL Premium
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-border">
@@ -71,9 +86,9 @@ export const SamsungFoldableSection = () => {
                   <tr key={`${row.model}-${i}`} className="hover:bg-muted/30">
                     <td className="px-4 py-3 font-medium text-foreground">{row.model}</td>
                     <td className="px-4 py-3 text-muted-foreground">{row.type}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{row.samsung}</td>
-                    <td className="px-4 py-3 font-semibold bg-primary/5">{row.mtl}</td>
-                    <td className="px-4 py-3 font-semibold text-success">{row.save}</td>
+                    <td className="px-4 py-3 font-semibold bg-primary/5 text-foreground">
+                      {row.mtl}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -90,20 +105,17 @@ export const SamsungFoldableSection = () => {
                 <div className="font-semibold text-foreground">{row.model}</div>
                 <div className="text-xs text-muted-foreground">{row.type}</div>
                 <div className="grid grid-cols-2 gap-2 text-sm pt-1">
-                  <div className="text-muted-foreground">Samsung Canada:</div>
-                  <div className="text-right">{row.samsung}</div>
-                  <div className="text-primary">MTL From:</div>
+                  <div className="text-primary">MTL Premium:</div>
                   <div className="text-right font-semibold">{row.mtl}</div>
-                  <div className="text-success">You Save:</div>
-                  <div className="text-right font-semibold text-success">{row.save}</div>
                 </div>
               </div>
             ))}
           </div>
 
           <p className="mt-4 text-sm italic text-muted-foreground">
-            MTL prices are anchor estimates — exact quotes vary based on current part costs and
-            physical inspection.
+            Pricing reflects Premium tier with genuine OEM Samsung Service Pack parts where
+            available. Exact quote depends on current part costs and physical inspection. Get an
+            estimate in 1–2 business hours.
           </p>
 
           <div className="mt-8 rounded-2xl border border-border bg-card p-6">
@@ -128,11 +140,22 @@ export const SamsungFoldableSection = () => {
                   We've repaired hundreds of foldables since the original Galaxy Fold launched
                 </span>
               </li>
+              <li className="flex gap-2">
+                <span className="text-primary">▸</span>
+                <span>
+                  Premium tier carries a lifetime-of-device warranty (vs Samsung's 90-day repair
+                  warranty)
+                </span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-primary">▸</span>
+                <span>
+                  Foldable timeline: 2–5 business days for parts arrival, then 1–2 hours for
+                  installation. Most foldable customers have their device back within 1 week of
+                  drop-off — often sooner if your model's parts are in stock.
+                </span>
+              </li>
             </ul>
-            <p className="mt-4 text-sm text-foreground">
-              Bring your foldable to us with confidence. We'll inspect and give you an honest
-              assessment.
-            </p>
           </div>
 
           <div className="mt-6 flex justify-center">
