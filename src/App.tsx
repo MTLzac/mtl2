@@ -86,6 +86,7 @@ const SamsungRepairDraft = lazy(() => import("./pages/draft/SamsungRepairDraft")
 // Lazy-loaded Location Pages
 const WinnipegLocation = lazy(() => import("./pages/location/WinnipegLocation"));
 const ThompsonLocation = lazy(() => import("./pages/location/ThompsonLocation"));
+const BrandonLocation = lazy(() => import("./pages/location/BrandonLocation"));
 // Lazy-loaded Informational Pages
 const RepairPricing = lazy(() => import("./pages/RepairPricing"));
 const RepairOrReplace = lazy(() => import("./pages/RepairOrReplace"));
@@ -105,7 +106,7 @@ const IPhone11ProDevice = lazy(() => import("./pages/device/iPhone11Pro"));
 const ServiceAreasIndex = lazy(() => import("./pages/service-area/ServiceAreasIndex"));
 const SteinbachServiceArea = lazy(() => import("./pages/service-area/SteinbachServiceArea"));
 const PortageLaPrairieServiceArea = lazy(() => import("./pages/service-area/PortageLaPrairieServiceArea"));
-const BrandonServiceArea = lazy(() => import("./pages/service-area/BrandonServiceArea"));
+
 const SelkirkServiceArea = lazy(() => import("./pages/service-area/SelkirkServiceArea"));
 const ThePasServiceArea = lazy(() => import("./pages/service-area/ThePasServiceArea"));
 const StCatharinesServiceArea = lazy(() => import("./pages/service-area/StCatharinesServiceArea"));
@@ -230,13 +231,13 @@ const App = () => (
               <Route path="/service-areas" element={<ServiceAreasIndex />} />
               <Route path="/service-area/steinbach" element={<SteinbachServiceArea />} />
               <Route path="/service-area/portage-la-prairie" element={<PortageLaPrairieServiceArea />} />
-              <Route path="/service-area/brandon" element={<BrandonServiceArea />} />
               <Route path="/service-area/selkirk" element={<SelkirkServiceArea />} />
               <Route path="/service-area/the-pas" element={<ThePasServiceArea />} />
               <Route path="/service-area/st-catharines" element={<StCatharinesServiceArea />} />
               <Route path="/service-area/prince-albert" element={<PrinceAlbertServiceArea />} />
-              {/* Legacy redirect */}
-              <Route path="/location/brandon" element={<BrandonServiceArea />} />
+              {/* Brandon: canonical at /location/brandon, legacy /service-area/brandon redirects */}
+              <Route path="/location/brandon" element={<BrandonLocation />} />
+              <Route path="/service-area/brandon" element={<Navigate to="/location/brandon" replace />} />
 
               {/* Article Pages */}
               <Route path="/phone-problems/phone-not-charging" element={<PhoneNotCharging />} />
