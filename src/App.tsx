@@ -106,7 +106,7 @@ const IPhone11ProDevice = lazy(() => import("./pages/device/iPhone11Pro"));
 const ServiceAreasIndex = lazy(() => import("./pages/service-area/ServiceAreasIndex"));
 const SteinbachServiceArea = lazy(() => import("./pages/service-area/SteinbachServiceArea"));
 const PortageLaPrairieServiceArea = lazy(() => import("./pages/service-area/PortageLaPrairieServiceArea"));
-const BrandonServiceArea = lazy(() => import("./pages/service-area/BrandonServiceArea"));
+
 const SelkirkServiceArea = lazy(() => import("./pages/service-area/SelkirkServiceArea"));
 const ThePasServiceArea = lazy(() => import("./pages/service-area/ThePasServiceArea"));
 const StCatharinesServiceArea = lazy(() => import("./pages/service-area/StCatharinesServiceArea"));
