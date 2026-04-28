@@ -73,9 +73,9 @@ const SERVICES: Service[] = [
   },
   {
     icon: Droplets,
-    name: "Water Damage Repair",
+    name: "Liquid Damage / Water Damage Service",
     description:
-      "Dropped your iPhone in water? Our technicians assess and repair water-damaged devices with ultrasonic cleaning.",
+      "Diagnostic and data recovery attempts from $149 (plus $49 device-opening diagnostic fee). Important: outcomes cannot be guaranteed, and NO warranty applies to liquid-damaged devices, on any component, regardless of whether future failure relates to our work. We often recommend backup-and-replace over repair for severely water-damaged devices.",
   },
 ];
 
@@ -182,7 +182,15 @@ const FAQS: FAQ[] = [
   },
   {
     question: "Are Mobile Tech Lab repairs warrantied?",
-    answer: `Yes, but warranty length differs by tier. Premium screens carry a lifetime warranty against part defects (the original screen quality lasts indefinitely as long as you don't physically damage it). Value screens carry a 30-day warranty against defects — limited because aftermarket parts have shorter manufacturer warranties. Both tiers include free re-installation if the part fails due to defect during the warranty period. Apple's official repair carries only a 90-day warranty per their <a href="https://www.apple.com/legal/sales-support/terms/repair/Retail_Repair_US_Terms_Conditions.html" target="_blank" rel="noopener noreferrer">Repair Terms and Conditions</a> — meaning our Premium tier offers significantly longer coverage than Apple itself.`,
+    answer: `Yes — with clearly defined scope.<br/><br/><strong>Premium tier</strong> screens, charging ports, cameras, and most non-battery components: lifetime of the device warranty against manufacturing defects in the replacement part.<br/><br/><strong>Value tier</strong> same components: 30-day warranty against manufacturing defects in the replacement part.<br/><br/><strong>Premium AND Value tier batteries:</strong> 90-day warranty against manufacturing defects only. Batteries naturally degrade with use, so longer warranties are not offered by anyone — including Apple and Samsung.<br/><br/><strong>What our warranty covers:</strong> Defects in the specific part we replaced, during the warranty period, when the device hasn't been physically or liquid damaged after our repair.<br/><br/><strong>What our warranty does NOT cover:</strong><ul class="list-disc pl-5 mt-2 space-y-1"><li>Physical damage (drops, cracks, impacts) after repair</li><li>Liquid damage after repair</li><li>Failures of components we did not service</li><li>Devices that were liquid-damaged before our repair (no warranty applies to liquid-damaged devices, ever)</li></ul><br/>For comparison: Apple's official repair carries a 90-day warranty per their <a href="https://www.apple.com/legal/sales-support/terms/repair/Retail_Repair_US_Terms_Conditions.html" target="_blank" rel="noopener noreferrer">Repair Terms and Conditions</a>. Our Premium tier offers significantly longer coverage on most non-battery repairs.`,
+  },
+  {
+    question: "Can you repair water-damaged iPhones?",
+    answer: `We attempt diagnosis and data recovery on water-damaged iPhones, but outcomes cannot be guaranteed. Liquid damage causes unpredictable corrosion that can affect any component on the logic board — and damage often surfaces days or weeks after the initial incident, sometimes long after what looked like a successful repair.<br/><br/><strong>Our process:</strong><ol class="list-decimal pl-5 mt-2 space-y-1"><li>$49 diagnostic fee to open the device and assess damage (credited toward repair if you proceed; non-refundable if you don't)</li><li>We give you an honest assessment — often we recommend backing up your data and considering replacement rather than expensive repair attempts</li><li>If we proceed with repair, total cost typically $149–$249</li><li><strong>NO WARRANTY</strong> applies to liquid-damaged device repairs, ever, on any component</li></ol><br/>If your iPhone has liquid damage, contact us — we'd rather tell you a hard truth upfront than charge you for a repair that may fail again unpredictably.`,
+  },
+  {
+    question: "How does your quote and diagnostic process work?",
+    answer: `Online and phone quotes are estimates based on the symptoms you describe. The actual repair needed and final price are determined after we physically inspect your device.<br/><br/><strong>Our diagnostic process:</strong><ul class="list-disc pl-5 mt-2 space-y-1"><li><strong>Quick external inspection:</strong> free (we can usually identify common issues at the counter)</li><li><strong>Internal diagnostic — opening the device:</strong> $49 fee, credited toward whatever repair resolves the issue. Non-refundable if you decide not to proceed with the repair.</li><li><strong>Final price confirmation:</strong> we always tell you the actual repair cost before starting work. You can approve, decline, or pay only the diagnostic fee and walk away.</li></ul><br/><strong>Why we charge a diagnostic fee for opening devices:</strong> Modern smartphones are complex, and opening a device to identify an issue takes 30–60 minutes of skilled technician time. The $49 fee covers that time. If you proceed with a repair, the fee is fully credited — so paying customers effectively get free diagnostics.`,
   },
   {
     question: "How much does iPhone screen repair cost in Winnipeg?",
@@ -577,7 +585,7 @@ const IPhoneRepair = () => {
                   <li className="flex gap-3">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
                     <span>
-                      Premium screens carry a lifetime warranty against defects (vs Apple's 90 days). Value tier carries a 30-day warranty for budget-conscious customers.
+                      Premium screens carry a lifetime-of-device warranty against manufacturing defects in the replacement part (vs Apple's 90-day repair warranty). Value tier and all batteries carry shorter warranties — see FAQ for full warranty terms.
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -809,27 +817,32 @@ const IPhoneRepair = () => {
                 <h3 className="mb-8 text-center text-2xl font-bold text-foreground md:text-3xl">
                   What happens after you request a quote
                 </h3>
-                <ol className="grid gap-6 md:grid-cols-4">
+                <ol className="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
                   {[
                     {
                       icon: ClipboardList,
-                      title: "Submit your quote",
-                      body: "One short form, takes under 60 seconds. No account required.",
+                      title: "Submit your quote request",
+                      body: "One short form, takes under 60 seconds. Tell us your device model and what's wrong.",
                     },
                     {
                       icon: MessageSquare,
-                      title: "Get a price in 1–2 business hours",
-                      body: "We text or email your exact quote during shop hours. No phone calls unless you want one.",
+                      title: "Get an estimate in 1–2 business hours",
+                      body: "We text or email you an ESTIMATE based on your description. Final price is determined after we physically inspect the device.",
                     },
                     {
                       icon: MapPin,
                       title: "Drop off or ship in",
-                      body: "Walk into St. Vital or Thompson, or mail it to us. No appointment needed.",
+                      body: "Walk into St. Vital or Thompson, or mail it to us. We'll inspect and confirm the actual repair needed.",
                     },
                     {
                       icon: CheckCircle2,
-                      title: "Same-day repair when in stock",
-                      body: "Most repairs done in 1–2 hours. If parts aren't in stock, we tell you upfront and order in 1–3 business days.",
+                      title: "We confirm the final price before any work begins",
+                      body: "If our estimate matches the actual repair, we proceed. If your device needs different work than expected, we'll tell you the new price first — you can approve, decline, or pay only the $49 diagnostic fee and walk away.",
+                    },
+                    {
+                      icon: CheckCircle2,
+                      title: "Same-day repair when parts are in stock",
+                      body: "Most repairs done in 1–2 hours. If parts aren't in stock, we tell you upfront and order them in 1–3 business days.",
                     },
                   ].map((step, i) => {
                     const Icon = step.icon;
@@ -853,7 +866,7 @@ const IPhoneRepair = () => {
                   })}
                 </ol>
                 <p className="mt-6 text-center text-sm font-medium text-foreground">
-                  No surprises, no pressure. If our quote isn't right for you, you don't owe us anything.
+                  No surprises, no pressure. If our final price isn't right for you after inspection, you only pay the $49 diagnostic fee and we hand your device back.
                 </p>
               </div>
             </div>
