@@ -16,10 +16,10 @@ const Index = () => {
     <>
       <OrganizationSchema />
       <Helmet>
-        <title>Professional Phone, Tablet, Computer & Console Repair in Winnipeg | Mobile Tech Lab</title>
+        <title>Cell Phone Repair Winnipeg | Same-Day Service | Mobile Tech Lab</title>
         <meta
           name="description"
-          content="Mobile Tech Lab offers professional phone, tablet, laptop, and console repair in Winnipeg and across Manitoba. Same-day service, certified technicians, and warranty-backed repairs."
+          content="iPhone, Samsung, iPad, MacBook & laptop repair in Winnipeg & Thompson. Same-day service when parts are in stock. 4.8★ from 500+ reviews. Walk-ins welcome."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://mobiletechlab.ca/" />
