@@ -44,7 +44,7 @@ export const HeroSection = () => {
 
           {/* Tagline */}
           <p className="mb-4 text-xl text-muted-foreground md:text-2xl">
-            iPhones, iPads, Samsung, Laptops, Consoles & More — Fixed Fast, Priced Fair
+            iPhones, iPads, Samsung, Laptops, MacBooks & Consoles — Same-Day Service, Lifetime Warranty on Premium Repairs
           </p>
           <p className="mb-8 text-base text-muted-foreground max-w-2xl mx-auto">
             Mobile Tech Lab is Winnipeg's trusted destination for professional device repair. Our certified technicians serve customers across Manitoba with same-day service, transparent pricing, and a warranty on every repair.
