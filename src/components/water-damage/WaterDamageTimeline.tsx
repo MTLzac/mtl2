@@ -3,7 +3,7 @@ export const WaterDamageTimeline = () => {
     { t: "Walk in or call ahead", b: "Either works. No appointment needed. Bring the device powered off, in a dry container if possible. Tell us how much liquid, what kind, and how long ago." },
     { t: "$49 diagnostic", b: "We open the device and assess the damage scope. This usually takes 30–60 minutes during business hours. The diagnostic fee covers our time and is credited toward your repair if you proceed." },
     { t: "Honest assessment", b: "We tell you exactly what we found, what's recoverable, what isn't, and what your real options are. This includes \"your data is in cloud backup, you don't need our recovery service\" if that's accurate. We'd rather lose the upsell than give bad advice." },
-    { t: "You decide", b: "Repair attempt ($149+), data recovery attempt ($129+tax), specialty service referral, replacement, or just walking out with your data. You choose. We don't pressure." },
+    { t: "You decide", b: "We give you the options — repair attempt ($149+), data recovery attempt ($129+tax), specialty service referral, replacement, or simply walking out with your data backed up. No pressure. No upsell." },
     { t: "Repair or recovery (if you proceed)", b: "We complete the work as quoted. For repair attempts, no warranty applies to liquid-damaged devices. For data recovery, you pay $129+tax regardless of whether we successfully extract data — but we don't charge if we determine before opening that recovery isn't possible." },
   ];
 

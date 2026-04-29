@@ -36,7 +36,7 @@ export const WaterDamageHonestTruth = () => {
 
           <div className="bg-muted/40 border-l-4 border-primary rounded-r-xl p-6">
             <p className="text-foreground italic leading-relaxed">
-              Most repair shops won't tell you any of this. They'll quote you a confident price, attempt the repair, hand it back working, and hope it lasts past their warranty period. We'd rather tell you the truth: liquid damage is unpredictable, future failures are common, and we don't warranty these repairs because we can't honestly stand behind outcomes we don't control. If that's the kind of shop you want, we're it.
+              Most repair shops won't tell you any of this. They'll quote you a confident price, attempt the repair, hand it back working, and hope it lasts past their warranty period. We'd rather tell you the truth: liquid damage is unpredictable, future failures are common, and we don't warranty these repairs because we can't honestly stand behind outcomes we don't control. If that's the kind of shop you want, we're it. <a href="https://www.ifixit.com/News" target="_blank" rel="noopener noreferrer" className="not-italic text-primary hover:underline">Independent teardowns from iFixit</a> confirm that modern smartphones are tightly sealed, making internal water damage difficult to detect without proper inspection.
             </p>
           </div>
         </div>

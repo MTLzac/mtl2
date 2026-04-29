@@ -17,20 +17,23 @@ export const WaterDamageDataRecovery = () => {
             In most liquid damage cases, recovering photos, messages, and files is the priority. If your device won't turn on at all, we can still attempt data recovery — but here's our honest first recommendation:
           </p>
 
-          {/* Cloud backup callout */}
-          <div className="bg-card border-2 border-primary/30 rounded-xl p-6 mb-8">
+          {/* Cloud backup callout — visually distinct trust-building advice block */}
+          <aside
+            role="note"
+            aria-label="Cloud backup recommendation"
+            className="my-6 border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 rounded-r-lg p-4"
+          >
             <div className="flex items-start gap-3">
-              <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Cloud className="h-5 w-5 text-primary" />
+              <div className="h-10 w-10 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center flex-shrink-0">
+                <Cloud className="h-5 w-5 text-amber-700 dark:text-amber-400" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">Check your cloud backups first.</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Before paying for any data recovery service, sign into your <strong className="text-foreground">iCloud account</strong> (iPhone/iPad/Mac), <strong className="text-foreground">Google account</strong> (Android), or <strong className="text-foreground">Microsoft account</strong> (Windows laptop). Your most recent backup may already have everything you need. If you can restore from a recent backup to a different device, you don't need our data recovery service — and we'll tell you that. Most repair shops won't.
+                <p className="text-foreground leading-relaxed">
+                  <strong className="font-bold">Check your cloud backups first.</strong> Before paying for any data recovery service, sign into your <strong className="text-foreground">iCloud account</strong> (iPhone/iPad/Mac), <strong className="text-foreground">Google account</strong> (Android), or <strong className="text-foreground">Microsoft account</strong> (Windows laptop). Your most recent backup may already have everything you need. If you can restore from a recent backup to a different device, you don't need our data recovery service — and we'll tell you that. Most repair shops won't.
                 </p>
               </div>
             </div>
-          </div>
+          </aside>
 
           <h3 className="text-xl font-semibold text-foreground mb-4">
             When cloud backups aren't enough — our $129 data recovery process
