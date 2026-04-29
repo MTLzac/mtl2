@@ -1,9 +1,15 @@
 export { WaterDamageHero } from "./WaterDamageHero";
+export { WaterDamageQuickSummary } from "./WaterDamageQuickSummary";
 export { WaterDamageFirstSteps } from "./WaterDamageFirstSteps";
+export { WaterDamageMyths } from "./WaterDamageMyths";
 export { WaterDamageProcess } from "./WaterDamageProcess";
 export { WaterDamageDataRecovery } from "./WaterDamageDataRecovery";
+export { WaterDamagePricing } from "./WaterDamagePricing";
 export { WaterDamageCleaningFee } from "./WaterDamageCleaningFee";
 export { WaterDamageRepairVsRecovery } from "./WaterDamageRepairVsRecovery";
+export { WaterDamageHonestTruth } from "./WaterDamageHonestTruth";
 export { WaterDamageDevices } from "./WaterDamageDevices";
 export { WaterDamageReplacement } from "./WaterDamageReplacement";
+export { WaterDamageTimeline } from "./WaterDamageTimeline";
 export { WaterDamageFinalCTA } from "./WaterDamageFinalCTA";
+export { WaterDamageSchema } from "./WaterDamageSchema";
