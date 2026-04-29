@@ -5,22 +5,22 @@ const steps = [
   {
     icon: ClipboardList,
     title: "Get a Quote",
-    description: "Tell us your device's make, model & condition. We send a cash offer right away.",
+    description: "Tell us your device's make, model, and condition. We send a cash, e-transfer, or store credit estimate right away.",
   },
   {
     icon: Package,
     title: "Drop Off or Ship",
-    description: "Bring it to our Winnipeg shop or mail it in with free, trackable shipping.",
+    description: "Bring it to our Winnipeg or Thompson shop, or mail it in with our free trackable shipping — perfect if you're in Brandon, Portage, Steinbach, or anywhere 1-3 hours outside Winnipeg.",
   },
   {
     icon: Search,
     title: "We Inspect & Confirm",
-    description: "Our techs verify the device and confirm your payout. If our part cost drops, your payout increases; if parts get more expensive, we adjust fairly.",
+    description: "Our techs verify the device on the spot (or within 1 business day of mail-in arrival). If condition matches your description, the estimate stands. If parts pricing has changed, we explain honestly and adjust.",
   },
   {
     icon: CreditCard,
     title: "Get Paid Fast",
-    description: "Choose cash, e-transfer or store credit and get paid the same day.",
+    description: "Choose cash, e-transfer, or store credit and get paid the same day (in-store) or same-day after mail-in inspection.",
   },
 ];
 
@@ -61,7 +61,7 @@ export const HowItWorks = () => {
         <div className="mt-8 text-center">
           <p className="text-muted-foreground">
             Questions about repair versus selling?{" "}
-            <Link to="/repair-pricing#should-i-repair-or-sell-my-device" className="text-primary hover:underline font-medium">
+            <Link to="/repair-or-replace-device-canada" className="text-primary hover:underline font-medium">
               Compare repair vs. sell
             </Link>
             .
