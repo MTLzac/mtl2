@@ -38,7 +38,7 @@ export const HeroSection = () => {
 
           {/* H1 */}
           <h1 className="mb-4 text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl">
-            Professional Phone, Tablet, Computer & Console{" "}
+            Phone, Tablet & Computer{" "}
             <span className="text-primary">Repair in Winnipeg</span>
           </h1>
 
