@@ -1,4 +1,4 @@
-import { Smartphone, Tablet, Laptop, Gamepad2, Watch } from "lucide-react";
+import { Smartphone, Tablet, Laptop, Gamepad2, Watch, Disc } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
@@ -11,7 +11,7 @@ const categories = [
     icon: Smartphone,
     title: "Sell iPhone & Android Phones",
     models: ["iPhone", "Samsung Galaxy", "Google Pixel", "OnePlus", "and more"],
-    description: "We buy working or broken phones—cracked screens, battery issues, water damage. We securely wipe all data before processing.",
+    description: "We buy working or broken phones — cracked screens, battery issues, water damage. We install temporary parts to test if needed. Locked devices (iCloud or carrier) cannot be purchased.",
     repairLink: "/repair/samsung",
     repairLabel: "phone repair",
   },
@@ -19,7 +19,7 @@ const categories = [
     icon: Tablet,
     title: "Sell iPad & Tablets",
     models: ["iPad", "Samsung Galaxy Tab", "Surface", "Amazon Fire", "and more"],
-    description: "Sell your tablet in any condition. We handle data wiping and accept devices with damaged screens or batteries.",
+    description: "Sell your tablet in any condition. We handle data wiping and accept devices with damaged screens or batteries. Must be unlocked from any cloud or carrier accounts.",
     repairLink: "/repair/ipad",
     repairLabel: "tablet repair",
   },
@@ -27,7 +27,7 @@ const categories = [
     icon: Laptop,
     title: "Sell MacBook & Laptops",
     models: ["MacBook", "Windows laptops", "Chromebooks", "Desktop PCs", "and more"],
-    description: "Get cash for your laptop—even older models have value. We securely erase all personal data during intake.",
+    description: "Get cash for your laptop — even older models have value. We securely erase all personal data during intake. iCloud-locked and account-locked devices cannot be purchased.",
     repairLink: "/repair/macbook",
     repairLabel: "laptop repair",
   },
@@ -35,17 +35,25 @@ const categories = [
     icon: Gamepad2,
     title: "Sell Game Consoles & Games",
     models: ["PlayStation", "Xbox", "Nintendo Switch", "Steam Deck", "and more"],
-    description: "Sell PlayStation, Xbox, Nintendo Switch, Steam Deck, and game discs. Working or with issues.",
+    description: "Sell PlayStation, Xbox, Nintendo Switch, Steam Deck, and game discs. We buy controllers and gaming accessories too. Working or with testable issues.",
     repairLink: "/repair/nintendo-switch",
     repairLabel: "console repair",
   },
   {
     icon: Watch,
-    title: "Sell Apple Watch & Wearables",
-    models: ["Apple Watch", "Samsung Galaxy Watch", "Fitbit", "and more"],
-    description: "Sell your smartwatch or fitness tracker. We buy devices in any cosmetic or functional condition.",
+    title: "Sell Smartwatches",
+    models: ["Apple Watch", "Samsung Galaxy Watch", "and more"],
+    description: "Get cash for your Apple Watch or Samsung Galaxy Watch — must be unlocked and testable. We do NOT buy fitness trackers, smart rings, or other wearables that aren't testable smartwatches. We also do NOT buy any audio products (headphones, earbuds, speakers).",
     repairLink: "/repair/apple-watch",
     repairLabel: "wearable repair",
+  },
+  {
+    icon: Disc,
+    title: "Sell Video Games & Accessories",
+    models: ["Game discs", "Controllers", "Headsets", "Gaming keyboards/mice", "and more"],
+    description: "We buy your physical video games (PlayStation, Xbox, Nintendo) and gaming accessories — controllers, headsets, gaming keyboards. Most major brands accepted.",
+    repairLink: "/repair/controller",
+    repairLabel: "controller repair",
   },
 ];
 
@@ -56,7 +64,7 @@ export const DeviceCategories = () => {
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold md:text-4xl">Devices We Buy</h2>
           <p className="mx-auto max-w-2xl text-muted-foreground">
-            We buy a wide range of used devices in any condition—working, cracked, or damaged.
+            We buy a wide range of tested devices in any working condition — even cracked, dark, or non-charging — as long as we can test functionality.
           </p>
         </div>
 

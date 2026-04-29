@@ -28,21 +28,18 @@ export const Requirements = () => {
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
-                <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
-                  We accept fully paid, unlocked devices (working or broken)
-                </li>
-                <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
-                  Original or third-party chargers welcomed
-                </li>
-                <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
-                  <span>
-                    All personal data removed (we can assist) — 
-                    Need help removing your data? We can assist.
-                  </span>
-                </li>
+                {[
+                  "We accept fully paid, unlocked devices (working or broken — see exclusions)",
+                  "Original or third-party chargers welcomed",
+                  "We test broken devices by installing temporary parts when needed",
+                  "All personal data is wiped securely",
+                  "Need help removing your data? We can assist",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-500" />
+                    {item}
+                  </li>
+                ))}
               </ul>
             </CardContent>
           </Card>
@@ -57,18 +54,20 @@ export const Requirements = () => {
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
-                <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-                  Devices must be fully paid and not blacklisted, stolen, or financed
-                </li>
-                <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-                  Devices must be unlocked (no iCloud lock)
-                </li>
-                <li className="flex items-start gap-2 text-sm text-muted-foreground">
-                  <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-                  Severely water-damaged devices may be eligible for recycling instead of payout
-                </li>
+                {[
+                  "Locked devices (iCloud, carrier, FRP, financing locks) — we can't unlock for buyers",
+                  "Audio products (wireless headphones, wired headphones, earbuds, speakers — any brand)",
+                  "Devices reported lost, stolen, or blacklisted",
+                  "Devices with active financing or balance owing",
+                  "Non-testable blacked-out devices (we must be able to power on or test with parts)",
+                  "Devices for \"parts only\" — we don't buy devices we can't restore to sellable condition",
+                  "Severely water-damaged devices may be eligible for recycling instead of payout (case-by-case)",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <XCircle className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
+                    {item}
+                  </li>
+                ))}
               </ul>
             </CardContent>
           </Card>

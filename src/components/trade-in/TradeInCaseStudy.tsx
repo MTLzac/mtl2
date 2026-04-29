@@ -39,12 +39,12 @@ const steps = [
            <Badge variant="outline" className="mb-4 border-primary/40 bg-primary/10 text-primary">
              Real Customer Story
            </Badge>
-            <h2 className="mb-4 text-3xl font-bold md:text-4xl">
-              We Bought This Broken iPhone — Yours Might Be Worth Something Too
-            </h2>
-            <p className="mx-auto max-w-2xl text-muted-foreground">
-              This iPhone XR came to us completely bent and shattered—front and back. The customer just wanted their photos and contacts recovered, not a full repair. Here's how we helped.
-            </p>
+             <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+               Real Story: We Bought This "Worthless" Broken iPhone
+             </h2>
+             <p className="mx-auto max-w-2xl text-muted-foreground">
+               This iPhone XR came in completely bent and shattered — front and back. The customer wanted their photos and contacts back, not a full repair. Here's how we helped.
+             </p>
          </div>
  
          {/* Before/After Images */}
