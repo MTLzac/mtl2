@@ -1,31 +1,25 @@
-import { DollarSign, Zap, Truck, Recycle } from "lucide-react";
+import { Wrench, Banknote, Truck, Recycle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
 
 const advantages = [
   {
-    icon: DollarSign,
-    title: "Competitive Pricing",
-    description: "We use real-time part pricing to keep our offers fair. If a competitor publishes a higher payout, show us and we'll do our best to match it.",
+    icon: Wrench,
+    title: "We Test Broken Devices",
+    description: "Most shops only buy fully working phones. We install temporary parts to test broken devices — so a cracked-screen phone or a dark display can still get a real offer.",
   },
   {
-    icon: Zap,
-    title: "Fast Payment",
-    description: "Cash, e-transfer or store credit—paid on the same day we receive your device.",
+    icon: Banknote,
+    title: "Three Payment Options",
+    description: "Cash, e-transfer, or store credit (typically the highest payout). You choose what works for you. Same-day payment when you accept the offer.",
   },
   {
     icon: Truck,
-    title: "Free Shipping & Drop-Off",
-    description: (
-      <>
-        Mail it in on us or stop by our convenient{" "}
-        <Link to="/contact" className="text-primary hover:underline">Winnipeg locations</Link>.
-      </>
-    ),
+    title: "Walk-In or Mail-In",
+    description: "Walk into St. Vital or Thompson during business hours for an instant offer, or mail your device in with our free trackable shipping. Mail-in is perfect for customers in Brandon, Portage, Steinbach, Selkirk, Dauphin, and rural Manitoba — no need to drive into the city.",
   },
   {
     icon: Recycle,
-    title: "Eco-Friendly Upcycling",
+    title: "Eco-Friendly Recycling",
     description: "Broken tech still has value. We refurbish or responsibly recycle every device to reduce e-waste.",
   },
 ];
