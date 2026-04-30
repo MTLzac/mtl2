@@ -1205,13 +1205,19 @@ const BatteryReplacement = () => {
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-3xl text-center">
                 <h2 className="mb-4 text-3xl font-bold md:text-4xl">Ready to Get Your Battery Replaced?</h2>
-                <p className="mb-8 text-base text-muted-foreground md:text-lg">
-                  Walk in for a free battery health check at our St. Vital or Thompson location — no commitment. We'll
-                  show you your actual battery health, explain your options honestly (including both Genuine Apple and
-                  third-party for iPhone), and quote pricing based on your specific device. Most batteries replaced
-                  same-day or within 24-48 hours. If you're not sure your device needs a battery, or if you want a
-                  quote first, get a quote online or call us.
-                </p>
+                <div className="mb-8 space-y-4 text-base text-muted-foreground md:text-lg">
+                  <p>
+                    Walk in to our St. Vital or Thompson location for a free battery health check — no appointment
+                    needed.
+                  </p>
+                  <p>
+                    Most batteries replaced same-day or within 24-48 hours. Same Genuine Apple battery price as Apple
+                    Service Centre. Save $20–$50 with our quality third-party option if you prefer.
+                  </p>
+                  <p className="font-medium text-foreground">
+                    Free battery health check on the spot. No commitment until you accept the quote.
+                  </p>
+                </div>
                 <div className="flex flex-col justify-center gap-4 sm:flex-row">
                   <Button size="lg" className="gap-2" asChild>
                     <a href="/#quote">
