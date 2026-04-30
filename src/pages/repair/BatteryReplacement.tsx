@@ -162,7 +162,7 @@ const BatteryReplacement = () => {
                     </p>
                   </div>
 
-                  <div className="flex flex-col gap-4 sm:flex-row">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
                     <Button size="lg" className="gap-2" asChild>
                       <a href="/#quote">
                         <MessageSquare className="h-5 w-5" />
@@ -170,12 +170,18 @@ const BatteryReplacement = () => {
                       </a>
                     </Button>
                     <Button size="lg" variant="outline" className="gap-2" asChild>
-                      <a href={`tel:${PRIMARY_PHONE}`}>
-                        <Phone className="h-5 w-5" />
-                        Call {PRIMARY_PHONE_FORMATTED}
+                      <a href="/#quote">
+                        <Activity className="h-5 w-5" />
+                        Check Battery Health (Free)
                       </a>
                     </Button>
                   </div>
+                  <p className="text-sm text-muted-foreground">
+                    Or call{" "}
+                    <a href={`tel:${PRIMARY_PHONE}`} className="font-medium text-primary hover:underline">
+                      {PRIMARY_PHONE_FORMATTED}
+                    </a>
+                  </p>
 
                   {/* Trust badges */}
                   <div className="flex flex-wrap gap-2 pt-2">
