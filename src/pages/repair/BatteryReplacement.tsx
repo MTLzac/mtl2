@@ -108,8 +108,8 @@ const BatteryReplacement = () => {
   const trustBadges = [
     { icon: Star, label: "4.9 from 500+ Google reviews" },
     { icon: Apple, label: "Apple Independent Repair Provider" },
+    { icon: Zap, label: "Same Apple Price, Often Faster" },
     { icon: BatteryCharging, label: "Free Battery Health Check" },
-    { icon: Clock, label: "Same-Day Service" },
   ];
 
   const deviceCategories = [
