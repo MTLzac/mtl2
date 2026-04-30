@@ -437,6 +437,88 @@ const BatteryReplacement = () => {
             </div>
           </section>
 
+          {/* SECTION 4.5 — HOW TO CHECK BATTERY HEALTH */}
+          <section className="bg-muted/40 py-16 md:py-20">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-4xl">
+                <div className="mb-10 text-center">
+                  <h2 className="mb-3 text-3xl font-bold md:text-4xl">
+                    How to Check Your iPhone Battery Health (Before Walking In)
+                  </h2>
+                  <p className="mx-auto max-w-2xl text-muted-foreground">
+                    Takes 30 seconds. Helps you decide if you actually need a replacement.
+                  </p>
+                </div>
+                <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
+                  <div className="space-y-5">
+                    <p className="text-muted-foreground">
+                      Apple includes a built-in battery health diagnostic on every iPhone. Here's how to check yours:
+                    </p>
+                    <ol className="space-y-3">
+                      {[
+                        "Open the Settings app",
+                        "Tap Battery",
+                        "Tap Battery Health & Charging",
+                        "Look at 'Maximum Capacity'",
+                      ].map((step, i) => (
+                        <li key={i} className="flex gap-3 rounded-lg border border-border bg-card p-4">
+                          <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                            {i + 1}
+                          </div>
+                          <p className="pt-1 text-foreground">
+                            <strong>Step {i + 1}:</strong> {step}
+                          </p>
+                        </li>
+                      ))}
+                    </ol>
+                    <div className="rounded-lg border border-border bg-card p-5">
+                      <p className="mb-3 font-semibold text-foreground">What the number means:</p>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li>
+                          <strong className="text-foreground">100% — 90%:</strong> Battery is healthy. Replacement not
+                          needed.
+                        </li>
+                        <li>
+                          <strong className="text-foreground">89% — 80%:</strong> Battery is degraded but still
+                          functional. Apple's threshold for replacement recommendation is 80%. Worth considering
+                          replacement if you're noticing performance issues.
+                        </li>
+                        <li>
+                          <strong className="text-foreground">Below 80%:</strong> Apple recommends replacement. You'll
+                          likely see degraded performance and shorter battery life.
+                        </li>
+                        <li>
+                          <strong className="text-foreground">'Service' Message:</strong> Battery is significantly
+                          degraded or has a defect. Replacement strongly recommended.
+                        </li>
+                      </ul>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">For Samsung and Android:</strong> Battery health is harder to
+                      check natively. We use AccuBattery and similar diagnostic tools at our shop — bring it in for a
+                      free check.
+                    </p>
+                    <p className="text-foreground">
+                      If your iPhone shows below 80%, walk in any time for a quote.
+                    </p>
+                    <Button size="lg" className="gap-2" asChild>
+                      <a href="/#quote">
+                        <MessageSquare className="h-5 w-5" />
+                        Battery Below 80%? Get Your Quote
+                      </a>
+                    </Button>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="flex h-full w-full items-center justify-center rounded-2xl border border-dashed border-border bg-card p-8 text-center text-sm text-muted-foreground">
+                      [Image placeholder — Battery Health navigation screenshot showing Settings → Battery → Battery
+                      Health & Charging → Maximum Capacity percentage highlighted]
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* SECTION 5 — DEVICE-SPECIFIC */}
           <section className="bg-secondary/20 py-16 md:py-20">
             <div className="container mx-auto px-4">
