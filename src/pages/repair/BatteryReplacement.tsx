@@ -902,6 +902,7 @@ const BatteryReplacement = () => {
                     "iPad Air / standard iPad: from $149",
                     "iPad Pro 11-inch: from $179",
                     "iPad Pro 12.9-inch / 13-inch: from $199–$229",
+                    "iPad Pro M4 (newest models, 2024+) — please call (204) 500-9757 for current pricing and parts availability",
                   ],
                   process: [
                     "iPad batteries are glued in place — replacement is more involved than iPhone (typically 2-3 hours)",
