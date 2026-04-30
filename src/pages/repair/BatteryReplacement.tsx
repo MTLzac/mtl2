@@ -813,36 +813,38 @@ const BatteryReplacement = () => {
                   </p>
                 </div>
 
-                {/* Which option callout */}
+                {/* Which option — scannable 5-second decision */}
                 <div className="mb-8 rounded-2xl border border-border bg-muted/40 p-6 sm:p-8">
-                  <h4 className="mb-4 text-xl font-bold">Which Option Should You Choose?</h4>
-                  <p className="mb-4 text-muted-foreground">Honest take from us:</p>
+                  <h4 className="mb-1 text-xl font-bold">Which Option Should You Choose?</h4>
+                  <p className="mb-6 text-muted-foreground">Honest take in 5 seconds:</p>
                   <div className="grid gap-6 md:grid-cols-2">
-                    <div>
-                      <p className="mb-2 font-semibold text-foreground">Choose Genuine Apple if:</p>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• You sell or trade in your iPhone often (Genuine maintains higher resale value)</li>
-                        <li>• You don't want any notification messages in Settings</li>
-                        <li>• You're inside Apple's AppleCare+ window and want to maintain coverage</li>
-                        <li>• The price difference doesn't matter much to you</li>
+                    <div className="rounded-xl border border-primary/30 bg-card p-5">
+                      <p className="mb-3 flex items-center gap-2 text-base font-bold text-foreground">
+                        <Apple className="h-5 w-5 text-primary" />
+                        Genuine Apple
+                      </p>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" /><span>You sell or trade your iPhone often (maintains higher resale value)</span></li>
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" /><span>You have AppleCare+ remaining and want to preserve coverage</span></li>
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" /><span>You don't want any iOS notification messages</span></li>
                       </ul>
                     </div>
-                    <div>
-                      <p className="mb-2 font-semibold text-foreground">Choose Third-Party if:</p>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• You want to save $20-30+ and don't mind a cosmetic notification</li>
-                        <li>• You're not concerned about resale value (you'll keep this iPhone until upgrade)</li>
-                        <li>• You understand the notification timeline and accept it</li>
-                        <li>• Your iPhone is older (3+ years) and the savings make more sense</li>
+                    <div className="rounded-xl border-2 border-blue-500/40 bg-card p-5">
+                      <p className="mb-3 flex items-center gap-2 text-base font-bold text-foreground">
+                        <span aria-hidden="true">💰</span>
+                        Quality Third-Party
+                      </p>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" /><span>You want to save $20–$50</span></li>
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" /><span>You'll keep this iPhone until you're ready to upgrade</span></li>
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" /><span>You're okay with a cosmetic iOS notification (visible only in Settings after 19 days)</span></li>
                       </ul>
                     </div>
                   </div>
-                  <p className="mt-6 text-sm text-muted-foreground">
-                    We carry both options at all times. Walk in or call{" "}
-                    <a href={`tel:${PRIMARY_PHONE}`} className="text-primary hover:underline">
-                      {PRIMARY_PHONE_FORMATTED}
-                    </a>{" "}
-                    — we'll quote both prices for your specific iPhone model and let you decide.
+                  <p className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
+                    <strong>Bottom line:</strong> Most customers choose Quality Third-Party for the savings. Choose
+                    Genuine Apple if you sell/trade your iPhone often, have AppleCare+, or simply prefer no
+                    notification messages. Both come with the same 90-day warranty.
                   </p>
                 </div>
 
