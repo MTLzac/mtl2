@@ -1105,7 +1105,9 @@ const BatteryReplacement = () => {
             </div>
           </section>
 
-          <LocationCards heading="Visit Our Battery Replacement Locations" />
+          <div id="locations" className="scroll-mt-24">
+            <LocationCards heading="Visit Our Battery Replacement Locations" />
+          </div>
 
           {/* MID-PAGE CTA #3 — Before FAQ */}
           <section className="bg-secondary/30 py-10">
