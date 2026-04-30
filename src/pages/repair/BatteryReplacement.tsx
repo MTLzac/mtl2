@@ -26,6 +26,7 @@ import { LocationCards } from "@/components/repair/LocationCards";
 import { FAQSection } from "@/components/repair/FAQSection";
 import { PRIMARY_PHONE, PRIMARY_PHONE_FORMATTED } from "@/lib/locations";
 import { BatterySchema } from "@/components/battery-replacement/BatterySchema";
+import heroBatteryImage from "@/assets/hero-battery-replacement.jpg";
 
 const BatteryReplacement = () => {
   const faqs = [
