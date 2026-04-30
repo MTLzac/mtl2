@@ -273,6 +273,60 @@ const BatteryReplacement = () => {
             </div>
           </section>
 
+          {/* SECTION 2.5 — APPLE STORE COMPARISON CALLOUT */}
+          <section className="bg-secondary/30 py-16 lg:py-20">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-4xl rounded-2xl border border-border bg-card p-8 shadow-sm sm:p-10">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                  <Apple className="h-3.5 w-3.5" />
+                  Apple IRP Advantage
+                </div>
+                <h2 className="mb-6 text-2xl font-bold text-foreground md:text-3xl lg:text-4xl">
+                  Same Genuine Apple Battery. Same Price. Often Faster Than Apple Store.
+                </h2>
+                <div className="space-y-4 text-base text-muted-foreground md:text-lg">
+                  <p>
+                    Apple Store battery service in Winnipeg requires booking an appointment — sometimes days or weeks
+                    out. Even after your appointment, parts may need ordering. Total turnaround can be 3-7 days from
+                    booking to repair completion.
+                  </p>
+                  <p>
+                    As an Apple Independent Repair Provider, we install the same Genuine Apple battery at the same
+                    Apple Service Centre price — typically same-day or within 24-48 hours. No appointment required for
+                    walk-ins. No parts-ordering wait.
+                  </p>
+                  <p className="font-medium text-foreground">What this means in practice:</p>
+                  <ul className="space-y-2">
+                    {[
+                      "Same Genuine Apple part Apple's own Service Centres use",
+                      "Same pricing as Apple's official Service Centre repair",
+                      "Walk in any time during business hours — no booking required",
+                      "Most Genuine Apple battery replacements completed same-day if parts in stock",
+                      "24-48 hour turnaround if specific model parts need to be pulled",
+                    ].map((item, i) => (
+                      <li key={i} className="flex gap-3">
+                        <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p>
+                    We're not here to undercut Apple. We match their price exactly on Genuine Apple batteries. We're
+                    just usually quicker.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <Button size="lg" className="gap-2" asChild>
+                    <a href="/#quote">
+                      <MessageSquare className="h-5 w-5" />
+                      Get Quote — Walk-In Welcome
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* SECTION 3 — QUICK SUMMARY */}
           <section className="py-12 lg:py-16">
             <div className="container mx-auto px-4">
