@@ -50,6 +50,7 @@ const LaptopRepair = lazy(() => import("./pages/repair/LaptopRepair"));
 
 // Lazy-loaded Service-Specific Pages
 const WaterDamageRepair = lazy(() => import("./pages/repair/WaterDamageRepair"));
+const BatteryReplacement = lazy(() => import("./pages/repair/BatteryReplacement"));
 
 // Lazy-loaded Niche Repair Pages
 const CatS62ChargingPortRepair = lazy(() => import("./pages/repair/CatS62ChargingPortRepair"));
@@ -184,6 +185,7 @@ const App = () => (
 
               {/* Service-Specific Pages */}
               <Route path="/repair/water-damage" element={<WaterDamageRepair />} />
+              <Route path="/repair/battery-replacement" element={<BatteryReplacement />} />
 
               {/* Niche Repair Pages */}
               <Route path="/repair/cat-s62-charging-port" element={<CatS62ChargingPortRepair />} />
