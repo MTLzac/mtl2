@@ -766,7 +766,7 @@ const BatteryReplacement = () => {
 
                 {/* Notification timeline callout */}
                 <div className="mb-10 rounded-2xl border border-border bg-card p-6 sm:p-8">
-                  <h4 className="mb-1 text-xl font-bold">About the iOS Notification (Third-Party Option Only)</h4>
+                  <h4 className="mb-1 text-xl font-bold">Worried About the Notification? Here's How It Actually Works</h4>
                   <p className="mb-6 text-sm text-muted-foreground">
                     Here's exactly what to expect — and when it disappears.
                   </p>
