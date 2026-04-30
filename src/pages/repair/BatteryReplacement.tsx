@@ -700,17 +700,22 @@ const BatteryReplacement = () => {
                   </Card>
 
                   {/* Option B — Third-party */}
-                  <Card className="relative border-2 border-blue-500/40 bg-card">
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-semibold text-white shadow-md">
-                      ⭐ MOST POPULAR — Most customers save with this option
+                  <Card className="relative overflow-hidden border-2 border-blue-500/60 bg-card shadow-lg">
+                    {/* Full-width ribbon */}
+                    <div className="flex items-center justify-center gap-2 bg-blue-600 px-4 py-2 text-sm font-bold uppercase tracking-wide text-white">
+                      <Star className="h-4 w-4 fill-white" />
+                      Most Customers Choose This
                     </div>
-                    <CardHeader className="pt-6">
+                    <CardHeader className="pt-5">
+                      <p className="mb-2 text-sm font-semibold text-blue-600">
+                        Most customers save $20–$50 with this option.
+                      </p>
                       <div className="mb-2 inline-flex w-fit items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-foreground">
                         Save $20–30+
                       </div>
                       <CardTitle className="text-2xl">Option B: Quality Third-Party Battery</CardTitle>
                       <p className="text-sm text-muted-foreground">
-                        $20-30+ less than Genuine. iOS displays a notification.
+                        $20-30+ less than Genuine. Cosmetic iOS indicator only.
                       </p>
                     </CardHeader>
                     <CardContent className="space-y-4">
@@ -736,9 +741,9 @@ const BatteryReplacement = () => {
                           </li>
                         ))}
                         <li className="flex gap-2">
-                          <AlertTriangle className="mt-0.5 h-4 w-4 flex-shrink-0 text-destructive" />
+                          <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
                           <span className="text-foreground">
-                            iOS displays an 'Important Battery Message' notification (see timeline below)
+                            iOS shows a non-Apple battery indicator after install (cosmetic only — see timeline below)
                           </span>
                         </li>
                       </ul>
