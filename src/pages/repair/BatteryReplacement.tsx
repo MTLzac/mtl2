@@ -324,6 +324,111 @@ const BatteryReplacement = () => {
                   </Button>
                 </div>
               </div>
+
+              {/* PATCH 1 — Apple Store pricing comparison (moved here) */}
+              <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-border bg-card p-6 sm:p-8">
+                <h3 className="mb-2 text-xl font-bold md:text-2xl">iPhone Battery Pricing vs Apple Store</h3>
+                <p className="mb-6 text-sm text-muted-foreground md:text-base">
+                  We charge exactly what Apple charges for Genuine Apple battery replacement. No markup. No premium.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse text-sm">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/40 text-left">
+                        <th className="p-3 font-semibold text-foreground">iPhone Model</th>
+                        <th className="p-3 font-semibold text-foreground">Apple Store (Genuine)</th>
+                        <th className="p-3 font-semibold text-foreground">MTL (Genuine)</th>
+                        <th className="p-3 font-semibold text-blue-600">MTL (Third-Party)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-foreground">
+                      {[
+                        ["iPhone 8 / SE", "$129", "$129", "from $89 (save $40)"],
+                        ["iPhone X / XR / XS / XS Max", "$129", "$129", "from $99 (save $30)"],
+                        ["iPhone 11 series", "$129", "$129", "from $99 (save $30)"],
+                        ["iPhone 12 / 13 series", "$129–$149", "$129–$149", "from $109 (save $20–$40)"],
+                        ["iPhone 14 / 15 series", "$149–$169", "$149–$169", "from $129 (save $20–$40)"],
+                        ["iPhone 16 / 17 series", "$179–$199", "$179–$199", "from $149 (save $30–$50)"],
+                      ].map((row, i) => (
+                        <tr key={i} className="border-b border-border/60">
+                          <td className="p-3 font-medium">{row[0]}</td>
+                          <td className="p-3 text-muted-foreground">{row[1]}</td>
+                          <td className="p-3">{row[2]}</td>
+                          <td className="p-3 font-medium text-blue-600">{row[3]}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-6 text-sm text-muted-foreground md:text-base">
+                  Apple's posted prices for iPhone battery service are the same as ours when you choose Genuine
+                  Apple. Where we add value: walk-in availability, same-day service in most cases, and the option to
+                  save $20–$50 with our quality third-party battery if you prefer.
+                </p>
+                <p className="mt-3 text-sm">
+                  <a
+                    href="https://support.apple.com/en-ca/iphone/repair"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-primary hover:underline"
+                  >
+                    See Apple's official iPhone repair pricing
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </p>
+                <p className="mt-4 text-xs text-muted-foreground">
+                  Apple Service pricing verified October 2025. Apple may update pricing — we update ours to match
+                  Genuine Apple service pricing. Final price determined after physical inspection.
+                </p>
+              </div>
+
+              {/* PATCH 4 — Why Customers Choose Us Over Apple Store */}
+              <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-border bg-card p-6 sm:p-8">
+                <h3 className="mb-2 text-2xl font-bold md:text-3xl">
+                  Why Winnipeg Customers Choose Us Over Apple Store
+                </h3>
+                <p className="mb-6 text-muted-foreground">
+                  Same Genuine Apple battery. Same Apple price. Here's what's different:
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    {
+                      title: "Walk-in welcome",
+                      body: "No appointment booking required. Apple Store typically requires booking 1-2 weeks in advance for battery service.",
+                    },
+                    {
+                      title: "Same-day service",
+                      body: "Most Genuine Apple battery replacements completed same-day if parts in stock. Apple Store may need to order parts, extending turnaround to 3-7 days from booking to completion.",
+                    },
+                    {
+                      title: "Two Manitoba locations",
+                      body: "St. Vital (Winnipeg) and Thompson, MB. Apple's only authorized Service Centre in Manitoba is at Polo Park — a longer drive for many customers and the only option for the entire province.",
+                    },
+                    {
+                      title: "Same Genuine Apple part",
+                      body: "As an Apple Independent Repair Provider, we install the exact same Genuine Apple battery Apple's Service Centres use, paired correctly via Apple's GSX system.",
+                    },
+                  ].map((item, i) => (
+                    <li key={i} className="flex gap-3">
+                      <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                      <div>
+                        <p className="font-semibold text-foreground">{item.title}</p>
+                        <p className="text-sm text-muted-foreground">{item.body}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
+                  We respect Apple Store and the work they do. We're an Apple Independent Repair Provider — we work
+                  within their ecosystem using their parts and pairing systems. The only difference is convenience:
+                  we're closer to most Winnipeg neighbourhoods, no booking required, and typically faster end-to-end.
+                  Same Genuine Apple part. Same Apple price. Less waiting.
+                </p>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  Apple Store appointment availability and turnaround vary by season and demand. Verify current Apple
+                  Store wait times directly with Apple if relevant to your decision.
+                </p>
+              </div>
             </div>
           </section>
 
