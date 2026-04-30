@@ -15,6 +15,7 @@ import {
   Lock,
   Settings,
   Search,
+  Info,
   Clock,
   Activity,
   Zap,
