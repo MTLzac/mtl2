@@ -16,6 +16,9 @@ import {
   Settings,
   Search,
   Clock,
+  Activity,
+  Zap,
+  ExternalLink,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -105,8 +108,8 @@ const BatteryReplacement = () => {
   const trustBadges = [
     { icon: Star, label: "4.9 from 500+ Google reviews" },
     { icon: Apple, label: "Apple Independent Repair Provider" },
+    { icon: Zap, label: "Same Apple Price, Often Faster" },
     { icon: BatteryCharging, label: "Free Battery Health Check" },
-    { icon: Clock, label: "Same-Day Service" },
   ];
 
   const deviceCategories = [
@@ -159,7 +162,7 @@ const BatteryReplacement = () => {
                     </p>
                   </div>
 
-                  <div className="flex flex-col gap-4 sm:flex-row">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
                     <Button size="lg" className="gap-2" asChild>
                       <a href="/#quote">
                         <MessageSquare className="h-5 w-5" />
@@ -167,12 +170,18 @@ const BatteryReplacement = () => {
                       </a>
                     </Button>
                     <Button size="lg" variant="outline" className="gap-2" asChild>
-                      <a href={`tel:${PRIMARY_PHONE}`}>
-                        <Phone className="h-5 w-5" />
-                        Call {PRIMARY_PHONE_FORMATTED}
+                      <a href="/#quote">
+                        <Activity className="h-5 w-5" />
+                        Check Battery Health (Free)
                       </a>
                     </Button>
                   </div>
+                  <p className="text-sm text-muted-foreground">
+                    Or call{" "}
+                    <a href={`tel:${PRIMARY_PHONE}`} className="font-medium text-primary hover:underline">
+                      {PRIMARY_PHONE_FORMATTED}
+                    </a>
+                  </p>
 
                   {/* Trust badges */}
                   <div className="flex flex-wrap gap-2 pt-2">
@@ -259,6 +268,60 @@ const BatteryReplacement = () => {
                     Most independent repair shops in Winnipeg are NOT IRP-authorized — meaning they cannot install
                     Genuine Apple batteries that pair correctly with iOS. We're one of the few who can.
                   </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* SECTION 2.5 — APPLE STORE COMPARISON CALLOUT */}
+          <section className="bg-secondary/30 py-16 lg:py-20">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-4xl rounded-2xl border border-border bg-card p-8 shadow-sm sm:p-10">
+                <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                  <Apple className="h-3.5 w-3.5" />
+                  Apple IRP Advantage
+                </div>
+                <h2 className="mb-6 text-2xl font-bold text-foreground md:text-3xl lg:text-4xl">
+                  Same Genuine Apple Battery. Same Price. Often Faster Than Apple Store.
+                </h2>
+                <div className="space-y-4 text-base text-muted-foreground md:text-lg">
+                  <p>
+                    Apple Store battery service in Winnipeg requires booking an appointment — sometimes days or weeks
+                    out. Even after your appointment, parts may need ordering. Total turnaround can be 3-7 days from
+                    booking to repair completion.
+                  </p>
+                  <p>
+                    As an Apple Independent Repair Provider, we install the same Genuine Apple battery at the same
+                    Apple Service Centre price — typically same-day or within 24-48 hours. No appointment required for
+                    walk-ins. No parts-ordering wait.
+                  </p>
+                  <p className="font-medium text-foreground">What this means in practice:</p>
+                  <ul className="space-y-2">
+                    {[
+                      "Same Genuine Apple part Apple's own Service Centres use",
+                      "Same pricing as Apple's official Service Centre repair",
+                      "Walk in any time during business hours — no booking required",
+                      "Most Genuine Apple battery replacements completed same-day if parts in stock",
+                      "24-48 hour turnaround if specific model parts need to be pulled",
+                    ].map((item, i) => (
+                      <li key={i} className="flex gap-3">
+                        <CheckCircle2 className="mt-1 h-4 w-4 flex-shrink-0 text-primary" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p>
+                    We're not here to undercut Apple. We match their price exactly on Genuine Apple batteries. We're
+                    just usually quicker.
+                  </p>
+                </div>
+                <div className="mt-8">
+                  <Button size="lg" className="gap-2" asChild>
+                    <a href="/#quote">
+                      <MessageSquare className="h-5 w-5" />
+                      Get Quote — Walk-In Welcome
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>
@@ -374,6 +437,88 @@ const BatteryReplacement = () => {
             </div>
           </section>
 
+          {/* SECTION 4.5 — HOW TO CHECK BATTERY HEALTH */}
+          <section className="bg-muted/40 py-16 md:py-20">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-4xl">
+                <div className="mb-10 text-center">
+                  <h2 className="mb-3 text-3xl font-bold md:text-4xl">
+                    How to Check Your iPhone Battery Health (Before Walking In)
+                  </h2>
+                  <p className="mx-auto max-w-2xl text-muted-foreground">
+                    Takes 30 seconds. Helps you decide if you actually need a replacement.
+                  </p>
+                </div>
+                <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
+                  <div className="space-y-5">
+                    <p className="text-muted-foreground">
+                      Apple includes a built-in battery health diagnostic on every iPhone. Here's how to check yours:
+                    </p>
+                    <ol className="space-y-3">
+                      {[
+                        "Open the Settings app",
+                        "Tap Battery",
+                        "Tap Battery Health & Charging",
+                        "Look at 'Maximum Capacity'",
+                      ].map((step, i) => (
+                        <li key={i} className="flex gap-3 rounded-lg border border-border bg-card p-4">
+                          <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                            {i + 1}
+                          </div>
+                          <p className="pt-1 text-foreground">
+                            <strong>Step {i + 1}:</strong> {step}
+                          </p>
+                        </li>
+                      ))}
+                    </ol>
+                    <div className="rounded-lg border border-border bg-card p-5">
+                      <p className="mb-3 font-semibold text-foreground">What the number means:</p>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li>
+                          <strong className="text-foreground">100% — 90%:</strong> Battery is healthy. Replacement not
+                          needed.
+                        </li>
+                        <li>
+                          <strong className="text-foreground">89% — 80%:</strong> Battery is degraded but still
+                          functional. Apple's threshold for replacement recommendation is 80%. Worth considering
+                          replacement if you're noticing performance issues.
+                        </li>
+                        <li>
+                          <strong className="text-foreground">Below 80%:</strong> Apple recommends replacement. You'll
+                          likely see degraded performance and shorter battery life.
+                        </li>
+                        <li>
+                          <strong className="text-foreground">'Service' Message:</strong> Battery is significantly
+                          degraded or has a defect. Replacement strongly recommended.
+                        </li>
+                      </ul>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      <strong className="text-foreground">For Samsung and Android:</strong> Battery health is harder to
+                      check natively. We use AccuBattery and similar diagnostic tools at our shop — bring it in for a
+                      free check.
+                    </p>
+                    <p className="text-foreground">
+                      If your iPhone shows below 80%, walk in any time for a quote.
+                    </p>
+                    <Button size="lg" className="gap-2" asChild>
+                      <a href="/#quote">
+                        <MessageSquare className="h-5 w-5" />
+                        Battery Below 80%? Get Your Quote
+                      </a>
+                    </Button>
+                  </div>
+                  <div className="flex items-center justify-center">
+                    <div className="flex h-full w-full items-center justify-center rounded-2xl border border-dashed border-border bg-card p-8 text-center text-sm text-muted-foreground">
+                      [Image placeholder — Battery Health navigation screenshot showing Settings → Battery → Battery
+                      Health & Charging → Maximum Capacity percentage highlighted]
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* SECTION 5 — DEVICE-SPECIFIC */}
           <section className="bg-secondary/20 py-16 md:py-20">
             <div className="container mx-auto px-4">
@@ -449,8 +594,11 @@ const BatteryReplacement = () => {
                   </Card>
 
                   {/* Option B — Third-party */}
-                  <Card className="border-border">
-                    <CardHeader>
+                  <Card className="relative border-2 border-blue-500/40 bg-card">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-semibold text-white shadow-md">
+                      ⭐ MOST POPULAR — Most customers save with this option
+                    </div>
+                    <CardHeader className="pt-6">
                       <div className="mb-2 inline-flex w-fit items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-foreground">
                         Save $20–30+
                       </div>
@@ -460,6 +608,10 @@ const BatteryReplacement = () => {
                       </p>
                     </CardHeader>
                     <CardContent className="space-y-4">
+                      <p className="rounded-md border border-blue-500/20 bg-blue-500/5 p-3 text-sm italic text-foreground">
+                        Trusted by hundreds of MTL customers — third-party batteries are functionally identical to
+                        Genuine in everyday use.
+                      </p>
                       <p className="text-muted-foreground">
                         Quality replacement battery (not bargain-bin parts) with the same chemistry and capacity as
                         Genuine. Functional performance is identical.
@@ -503,6 +655,63 @@ const BatteryReplacement = () => {
                       </p>
                     </CardContent>
                   </Card>
+                </div>
+
+                {/* Apple price comparison block */}
+                <div className="mb-10 rounded-2xl border border-border bg-card p-6 sm:p-8">
+                  <h3 className="mb-2 text-xl font-bold md:text-2xl">iPhone Battery Pricing vs Apple Store</h3>
+                  <p className="mb-6 text-sm text-muted-foreground md:text-base">
+                    We charge exactly what Apple charges for Genuine Apple battery replacement. No markup. No premium.
+                  </p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full border-collapse text-sm">
+                      <thead>
+                        <tr className="border-b border-border bg-muted/40 text-left">
+                          <th className="p-3 font-semibold text-foreground">iPhone Model</th>
+                          <th className="p-3 font-semibold text-foreground">Apple Store (Genuine)</th>
+                          <th className="p-3 font-semibold text-foreground">MTL (Genuine)</th>
+                          <th className="p-3 font-semibold text-blue-600">MTL (Third-Party)</th>
+                        </tr>
+                      </thead>
+                      <tbody className="text-foreground">
+                        {[
+                          ["iPhone 8 / SE", "$129", "$129", "from $89 (save $40)"],
+                          ["iPhone X / XR / XS / XS Max", "$129", "$129", "from $99 (save $30)"],
+                          ["iPhone 11 series", "$129", "$129", "from $99 (save $30)"],
+                          ["iPhone 12 / 13 series", "$129–$149", "$129–$149", "from $109 (save $20–$40)"],
+                          ["iPhone 14 / 15 series", "$149–$169", "$149–$169", "from $129 (save $20–$40)"],
+                          ["iPhone 16 / 17 series", "$179–$199", "$179–$199", "from $149 (save $30–$50)"],
+                        ].map((row, i) => (
+                          <tr key={i} className="border-b border-border/60">
+                            <td className="p-3 font-medium">{row[0]}</td>
+                            <td className="p-3 text-muted-foreground">{row[1]}</td>
+                            <td className="p-3">{row[2]}</td>
+                            <td className="p-3 font-medium text-blue-600">{row[3]}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="mt-6 text-sm text-muted-foreground md:text-base">
+                    Apple's posted prices for iPhone battery service are the same as ours when you choose Genuine
+                    Apple. Where we add value: walk-in availability, same-day service in most cases, and the option to
+                    save $20–$50 with our quality third-party battery if you prefer.
+                  </p>
+                  <p className="mt-3 text-sm">
+                    <a
+                      href="https://support.apple.com/en-ca/iphone/repair"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-primary hover:underline"
+                    >
+                      See Apple's official iPhone repair pricing
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  </p>
+                  <p className="mt-4 text-xs text-muted-foreground">
+                    Apple Service pricing verified October 2025. Apple may update pricing — we update ours to match
+                    Genuine Apple service pricing. Final price determined after physical inspection.
+                  </p>
                 </div>
 
                 {/* Notification timeline callout */}
@@ -598,6 +807,29 @@ const BatteryReplacement = () => {
                     </Link>{" "}
                     for screen, charging port, and other repairs.
                   </p>
+                </div>
+              </div>
+
+              {/* MID-PAGE CTA #1 — After iPhone section */}
+              <div className="mx-auto mb-12 max-w-5xl">
+                <div className="rounded-xl border border-border bg-card p-6 text-center sm:p-8">
+                  <p className="mb-4 text-lg font-semibold text-foreground">
+                    Ready for Your iPhone Battery Replacement? Walk in or get an instant quote.
+                  </p>
+                  <div className="flex flex-col justify-center gap-3 sm:flex-row">
+                    <Button size="lg" className="gap-2" asChild>
+                      <a href="/#quote">
+                        <MessageSquare className="h-5 w-5" />
+                        Get iPhone Battery Quote
+                      </a>
+                    </Button>
+                    <Button size="lg" variant="outline" className="gap-2" asChild>
+                      <a href={`tel:${PRIMARY_PHONE}`}>
+                        <Phone className="h-5 w-5" />
+                        Call {PRIMARY_PHONE_FORMATTED}
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               </div>
 
@@ -800,6 +1032,31 @@ const BatteryReplacement = () => {
             </div>
           </section>
 
+          {/* MID-PAGE CTA #2 — After warranty */}
+          <section className="bg-secondary/30 py-10">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-3xl rounded-xl border border-border bg-card p-6 text-center sm:p-8">
+                <p className="mb-4 text-lg font-semibold text-foreground">
+                  Questions? We're happy to walk you through your options before you commit.
+                </p>
+                <div className="flex flex-col justify-center gap-3 sm:flex-row">
+                  <Button size="lg" className="gap-2" asChild>
+                    <a href="/#quote">
+                      <MessageSquare className="h-5 w-5" />
+                      Get Battery Quote
+                    </a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="gap-2" asChild>
+                    <a href={`tel:${PRIMARY_PHONE}`}>
+                      <Phone className="h-5 w-5" />
+                      Call {PRIMARY_PHONE_FORMATTED}
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* SECTION 7 — PROCESS */}
           <section className="py-16 md:py-20">
             <div className="container mx-auto px-4">
@@ -848,7 +1105,33 @@ const BatteryReplacement = () => {
             </div>
           </section>
 
-          <LocationCards heading="Visit Our Battery Replacement Locations" />
+          <div id="locations" className="scroll-mt-24">
+            <LocationCards heading="Visit Our Battery Replacement Locations" />
+          </div>
+
+          {/* MID-PAGE CTA #3 — Before FAQ */}
+          <section className="bg-secondary/30 py-10">
+            <div className="container mx-auto px-4">
+              <div className="mx-auto max-w-3xl rounded-xl border border-border bg-card p-6 text-center sm:p-8">
+                <p className="mb-4 text-lg font-semibold text-foreground">
+                  Most batteries replaced same-day. Walk in or schedule online.
+                </p>
+                <div className="flex flex-col justify-center gap-3 sm:flex-row">
+                  <Button size="lg" className="gap-2" asChild>
+                    <a href="/#quote">
+                      <MessageSquare className="h-5 w-5" />
+                      Get Battery Quote
+                    </a>
+                  </Button>
+                  <Button size="lg" variant="outline" className="gap-2" asChild>
+                    <a href="#locations">
+                      Visit Our Locations
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </section>
 
           {/* SECTION 8 — FAQ */}
           <FAQSection
