@@ -512,8 +512,11 @@ const BatteryReplacement = () => {
                   </Card>
 
                   {/* Option B — Third-party */}
-                  <Card className="border-border">
-                    <CardHeader>
+                  <Card className="relative border-2 border-blue-500/40 bg-card">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-semibold text-white shadow-md">
+                      ⭐ MOST POPULAR — Most customers save with this option
+                    </div>
+                    <CardHeader className="pt-6">
                       <div className="mb-2 inline-flex w-fit items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-foreground">
                         Save $20–30+
                       </div>
@@ -523,6 +526,10 @@ const BatteryReplacement = () => {
                       </p>
                     </CardHeader>
                     <CardContent className="space-y-4">
+                      <p className="rounded-md border border-blue-500/20 bg-blue-500/5 p-3 text-sm italic text-foreground">
+                        Trusted by hundreds of MTL customers — third-party batteries are functionally identical to
+                        Genuine in everyday use.
+                      </p>
                       <p className="text-muted-foreground">
                         Quality replacement battery (not bargain-bin parts) with the same chemistry and capacity as
                         Genuine. Functional performance is identical.
