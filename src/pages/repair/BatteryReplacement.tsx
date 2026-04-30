@@ -15,6 +15,7 @@ import {
   Lock,
   Settings,
   Search,
+  Info,
   Clock,
   Activity,
   Zap,
@@ -324,6 +325,111 @@ const BatteryReplacement = () => {
                   </Button>
                 </div>
               </div>
+
+              {/* PATCH 1 — Apple Store pricing comparison (moved here) */}
+              <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-border bg-card p-6 sm:p-8">
+                <h3 className="mb-2 text-xl font-bold md:text-2xl">iPhone Battery Pricing vs Apple Store</h3>
+                <p className="mb-6 text-sm text-muted-foreground md:text-base">
+                  We charge exactly what Apple charges for Genuine Apple battery replacement. No markup. No premium.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse text-sm">
+                    <thead>
+                      <tr className="border-b border-border bg-muted/40 text-left">
+                        <th className="p-3 font-semibold text-foreground">iPhone Model</th>
+                        <th className="p-3 font-semibold text-foreground">Apple Store (Genuine)</th>
+                        <th className="p-3 font-semibold text-foreground">MTL (Genuine)</th>
+                        <th className="p-3 font-semibold text-blue-600">MTL (Third-Party)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-foreground">
+                      {[
+                        ["iPhone 8 / SE", "$129", "$129", "from $89 (save $40)"],
+                        ["iPhone X / XR / XS / XS Max", "$129", "$129", "from $99 (save $30)"],
+                        ["iPhone 11 series", "$129", "$129", "from $99 (save $30)"],
+                        ["iPhone 12 / 13 series", "$129–$149", "$129–$149", "from $109 (save $20–$40)"],
+                        ["iPhone 14 / 15 series", "$149–$169", "$149–$169", "from $129 (save $20–$40)"],
+                        ["iPhone 16 / 17 series", "$179–$199", "$179–$199", "from $149 (save $30–$50)"],
+                      ].map((row, i) => (
+                        <tr key={i} className="border-b border-border/60">
+                          <td className="p-3 font-medium">{row[0]}</td>
+                          <td className="p-3 text-muted-foreground">{row[1]}</td>
+                          <td className="p-3">{row[2]}</td>
+                          <td className="p-3 font-medium text-blue-600">{row[3]}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-6 text-sm text-muted-foreground md:text-base">
+                  Apple's posted prices for iPhone battery service are the same as ours when you choose Genuine
+                  Apple. Where we add value: walk-in availability, same-day service in most cases, and the option to
+                  save $20–$50 with our quality third-party battery if you prefer.
+                </p>
+                <p className="mt-3 text-sm">
+                  <a
+                    href="https://support.apple.com/en-ca/iphone/repair"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-primary hover:underline"
+                  >
+                    See Apple's official iPhone repair pricing
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </p>
+                <p className="mt-4 text-xs text-muted-foreground">
+                  Apple Service pricing verified October 2025. Apple may update pricing — we update ours to match
+                  Genuine Apple service pricing. Final price determined after physical inspection.
+                </p>
+              </div>
+
+              {/* PATCH 4 — Why Customers Choose Us Over Apple Store */}
+              <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-border bg-card p-6 sm:p-8">
+                <h3 className="mb-2 text-2xl font-bold md:text-3xl">
+                  Why Winnipeg Customers Choose Us Over Apple Store
+                </h3>
+                <p className="mb-6 text-muted-foreground">
+                  Same Genuine Apple battery. Same Apple price. Here's what's different:
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    {
+                      title: "Walk-in welcome",
+                      body: "No appointment booking required. Apple Store typically requires booking 1-2 weeks in advance for battery service.",
+                    },
+                    {
+                      title: "Same-day service",
+                      body: "Most Genuine Apple battery replacements completed same-day if parts in stock. Apple Store may need to order parts, extending turnaround to 3-7 days from booking to completion.",
+                    },
+                    {
+                      title: "Two Manitoba locations",
+                      body: "St. Vital (Winnipeg) and Thompson, MB. Apple's only authorized Service Centre in Manitoba is at Polo Park — a longer drive for many customers and the only option for the entire province.",
+                    },
+                    {
+                      title: "Same Genuine Apple part",
+                      body: "As an Apple Independent Repair Provider, we install the exact same Genuine Apple battery Apple's Service Centres use, paired correctly via Apple's GSX system.",
+                    },
+                  ].map((item, i) => (
+                    <li key={i} className="flex gap-3">
+                      <CheckCircle2 className="mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                      <div>
+                        <p className="font-semibold text-foreground">{item.title}</p>
+                        <p className="text-sm text-muted-foreground">{item.body}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
+                  We respect Apple Store and the work they do. We're an Apple Independent Repair Provider — we work
+                  within their ecosystem using their parts and pairing systems. The only difference is convenience:
+                  we're closer to most Winnipeg neighbourhoods, no booking required, and typically faster end-to-end.
+                  Same Genuine Apple part. Same Apple price. Less waiting.
+                </p>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  Apple Store appointment availability and turnaround vary by season and demand. Verify current Apple
+                  Store wait times directly with Apple if relevant to your decision.
+                </p>
+              </div>
             </div>
           </section>
 
@@ -594,17 +700,22 @@ const BatteryReplacement = () => {
                   </Card>
 
                   {/* Option B — Third-party */}
-                  <Card className="relative border-2 border-blue-500/40 bg-card">
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-blue-600 px-4 py-1 text-xs font-semibold text-white shadow-md">
-                      ⭐ MOST POPULAR — Most customers save with this option
+                  <Card className="relative overflow-hidden border-2 border-blue-500/60 bg-card shadow-lg">
+                    {/* Full-width ribbon */}
+                    <div className="flex items-center justify-center gap-2 bg-blue-600 px-4 py-2 text-sm font-bold uppercase tracking-wide text-white">
+                      <Star className="h-4 w-4 fill-white" />
+                      Most Customers Choose This
                     </div>
-                    <CardHeader className="pt-6">
+                    <CardHeader className="pt-5">
+                      <p className="mb-2 text-sm font-semibold text-blue-600">
+                        Most customers save $20–$50 with this option.
+                      </p>
                       <div className="mb-2 inline-flex w-fit items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-foreground">
                         Save $20–30+
                       </div>
                       <CardTitle className="text-2xl">Option B: Quality Third-Party Battery</CardTitle>
                       <p className="text-sm text-muted-foreground">
-                        $20-30+ less than Genuine. iOS displays a notification.
+                        $20-30+ less than Genuine. Cosmetic iOS indicator only.
                       </p>
                     </CardHeader>
                     <CardContent className="space-y-4">
@@ -630,9 +741,9 @@ const BatteryReplacement = () => {
                           </li>
                         ))}
                         <li className="flex gap-2">
-                          <AlertTriangle className="mt-0.5 h-4 w-4 flex-shrink-0 text-destructive" />
+                          <Info className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" />
                           <span className="text-foreground">
-                            iOS displays an 'Important Battery Message' notification (see timeline below)
+                            iOS shows a non-Apple battery indicator after install (cosmetic only — see timeline below)
                           </span>
                         </li>
                       </ul>
@@ -657,66 +768,11 @@ const BatteryReplacement = () => {
                   </Card>
                 </div>
 
-                {/* Apple price comparison block */}
-                <div className="mb-10 rounded-2xl border border-border bg-card p-6 sm:p-8">
-                  <h3 className="mb-2 text-xl font-bold md:text-2xl">iPhone Battery Pricing vs Apple Store</h3>
-                  <p className="mb-6 text-sm text-muted-foreground md:text-base">
-                    We charge exactly what Apple charges for Genuine Apple battery replacement. No markup. No premium.
-                  </p>
-                  <div className="overflow-x-auto">
-                    <table className="w-full border-collapse text-sm">
-                      <thead>
-                        <tr className="border-b border-border bg-muted/40 text-left">
-                          <th className="p-3 font-semibold text-foreground">iPhone Model</th>
-                          <th className="p-3 font-semibold text-foreground">Apple Store (Genuine)</th>
-                          <th className="p-3 font-semibold text-foreground">MTL (Genuine)</th>
-                          <th className="p-3 font-semibold text-blue-600">MTL (Third-Party)</th>
-                        </tr>
-                      </thead>
-                      <tbody className="text-foreground">
-                        {[
-                          ["iPhone 8 / SE", "$129", "$129", "from $89 (save $40)"],
-                          ["iPhone X / XR / XS / XS Max", "$129", "$129", "from $99 (save $30)"],
-                          ["iPhone 11 series", "$129", "$129", "from $99 (save $30)"],
-                          ["iPhone 12 / 13 series", "$129–$149", "$129–$149", "from $109 (save $20–$40)"],
-                          ["iPhone 14 / 15 series", "$149–$169", "$149–$169", "from $129 (save $20–$40)"],
-                          ["iPhone 16 / 17 series", "$179–$199", "$179–$199", "from $149 (save $30–$50)"],
-                        ].map((row, i) => (
-                          <tr key={i} className="border-b border-border/60">
-                            <td className="p-3 font-medium">{row[0]}</td>
-                            <td className="p-3 text-muted-foreground">{row[1]}</td>
-                            <td className="p-3">{row[2]}</td>
-                            <td className="p-3 font-medium text-blue-600">{row[3]}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                  <p className="mt-6 text-sm text-muted-foreground md:text-base">
-                    Apple's posted prices for iPhone battery service are the same as ours when you choose Genuine
-                    Apple. Where we add value: walk-in availability, same-day service in most cases, and the option to
-                    save $20–$50 with our quality third-party battery if you prefer.
-                  </p>
-                  <p className="mt-3 text-sm">
-                    <a
-                      href="https://support.apple.com/en-ca/iphone/repair"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-primary hover:underline"
-                    >
-                      See Apple's official iPhone repair pricing
-                      <ExternalLink className="h-3.5 w-3.5" />
-                    </a>
-                  </p>
-                  <p className="mt-4 text-xs text-muted-foreground">
-                    Apple Service pricing verified October 2025. Apple may update pricing — we update ours to match
-                    Genuine Apple service pricing. Final price determined after physical inspection.
-                  </p>
-                </div>
+                {/* Apple price comparison moved to Section 2.5 (above) */}
 
                 {/* Notification timeline callout */}
                 <div className="mb-10 rounded-2xl border border-border bg-card p-6 sm:p-8">
-                  <h4 className="mb-1 text-xl font-bold">About the iOS Notification (Third-Party Option Only)</h4>
+                  <h4 className="mb-1 text-xl font-bold">Worried About the Notification? Here's How It Actually Works</h4>
                   <p className="mb-6 text-sm text-muted-foreground">
                     Here's exactly what to expect — and when it disappears.
                   </p>
@@ -763,36 +819,38 @@ const BatteryReplacement = () => {
                   </p>
                 </div>
 
-                {/* Which option callout */}
+                {/* Which option — scannable 5-second decision */}
                 <div className="mb-8 rounded-2xl border border-border bg-muted/40 p-6 sm:p-8">
-                  <h4 className="mb-4 text-xl font-bold">Which Option Should You Choose?</h4>
-                  <p className="mb-4 text-muted-foreground">Honest take from us:</p>
+                  <h4 className="mb-1 text-xl font-bold">Which Option Should You Choose?</h4>
+                  <p className="mb-6 text-muted-foreground">Honest take in 5 seconds:</p>
                   <div className="grid gap-6 md:grid-cols-2">
-                    <div>
-                      <p className="mb-2 font-semibold text-foreground">Choose Genuine Apple if:</p>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• You sell or trade in your iPhone often (Genuine maintains higher resale value)</li>
-                        <li>• You don't want any notification messages in Settings</li>
-                        <li>• You're inside Apple's AppleCare+ window and want to maintain coverage</li>
-                        <li>• The price difference doesn't matter much to you</li>
+                    <div className="rounded-xl border border-primary/30 bg-card p-5">
+                      <p className="mb-3 flex items-center gap-2 text-base font-bold text-foreground">
+                        <Apple className="h-5 w-5 text-primary" />
+                        Genuine Apple
+                      </p>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" /><span>You sell or trade your iPhone often (maintains higher resale value)</span></li>
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" /><span>You have AppleCare+ remaining and want to preserve coverage</span></li>
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" /><span>You don't want any iOS notification messages</span></li>
                       </ul>
                     </div>
-                    <div>
-                      <p className="mb-2 font-semibold text-foreground">Choose Third-Party if:</p>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        <li>• You want to save $20-30+ and don't mind a cosmetic notification</li>
-                        <li>• You're not concerned about resale value (you'll keep this iPhone until upgrade)</li>
-                        <li>• You understand the notification timeline and accept it</li>
-                        <li>• Your iPhone is older (3+ years) and the savings make more sense</li>
+                    <div className="rounded-xl border-2 border-blue-500/40 bg-card p-5">
+                      <p className="mb-3 flex items-center gap-2 text-base font-bold text-foreground">
+                        <span aria-hidden="true">💰</span>
+                        Quality Third-Party
+                      </p>
+                      <ul className="space-y-2 text-sm text-muted-foreground">
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" /><span>You want to save $20–$50</span></li>
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" /><span>You'll keep this iPhone until you're ready to upgrade</span></li>
+                        <li className="flex gap-2"><CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-blue-600" /><span>You're okay with a cosmetic iOS notification (visible only in Settings after 19 days)</span></li>
                       </ul>
                     </div>
                   </div>
-                  <p className="mt-6 text-sm text-muted-foreground">
-                    We carry both options at all times. Walk in or call{" "}
-                    <a href={`tel:${PRIMARY_PHONE}`} className="text-primary hover:underline">
-                      {PRIMARY_PHONE_FORMATTED}
-                    </a>{" "}
-                    — we'll quote both prices for your specific iPhone model and let you decide.
+                  <p className="mt-6 rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
+                    <strong>Bottom line:</strong> Most customers choose Quality Third-Party for the savings. Choose
+                    Genuine Apple if you sell/trade your iPhone often, have AppleCare+, or simply prefer no
+                    notification messages. Both come with the same 90-day warranty.
                   </p>
                 </div>
 
@@ -844,6 +902,7 @@ const BatteryReplacement = () => {
                     "iPad Air / standard iPad: from $149",
                     "iPad Pro 11-inch: from $179",
                     "iPad Pro 12.9-inch / 13-inch: from $199–$229",
+                    "iPad Pro M4 (newest models, 2024+) — please call (204) 500-9757 for current pricing and parts availability",
                   ],
                   process: [
                     "iPad batteries are glued in place — replacement is more involved than iPhone (typically 2-3 hours)",
@@ -1146,13 +1205,19 @@ const BatteryReplacement = () => {
             <div className="container mx-auto px-4">
               <div className="mx-auto max-w-3xl text-center">
                 <h2 className="mb-4 text-3xl font-bold md:text-4xl">Ready to Get Your Battery Replaced?</h2>
-                <p className="mb-8 text-base text-muted-foreground md:text-lg">
-                  Walk in for a free battery health check at our St. Vital or Thompson location — no commitment. We'll
-                  show you your actual battery health, explain your options honestly (including both Genuine Apple and
-                  third-party for iPhone), and quote pricing based on your specific device. Most batteries replaced
-                  same-day or within 24-48 hours. If you're not sure your device needs a battery, or if you want a
-                  quote first, get a quote online or call us.
-                </p>
+                <div className="mb-8 space-y-4 text-base text-muted-foreground md:text-lg">
+                  <p>
+                    Walk in to our St. Vital or Thompson location for a free battery health check — no appointment
+                    needed.
+                  </p>
+                  <p>
+                    Most batteries replaced same-day or within 24-48 hours. Same Genuine Apple battery price as Apple
+                    Service Centre. Save $20–$50 with our quality third-party option if you prefer.
+                  </p>
+                  <p className="font-medium text-foreground">
+                    Free battery health check on the spot. No commitment until you accept the quote.
+                  </p>
+                </div>
                 <div className="flex flex-col justify-center gap-4 sm:flex-row">
                   <Button size="lg" className="gap-2" asChild>
                     <a href="/#quote">
