@@ -728,6 +728,29 @@ const BatteryReplacement = () => {
                 </div>
               </div>
 
+              {/* MID-PAGE CTA #1 — After iPhone section */}
+              <div className="mx-auto mb-12 max-w-5xl">
+                <div className="rounded-xl border border-border bg-card p-6 text-center sm:p-8">
+                  <p className="mb-4 text-lg font-semibold text-foreground">
+                    Ready for Your iPhone Battery Replacement? Walk in or get an instant quote.
+                  </p>
+                  <div className="flex flex-col justify-center gap-3 sm:flex-row">
+                    <Button size="lg" className="gap-2" asChild>
+                      <a href="/#quote">
+                        <MessageSquare className="h-5 w-5" />
+                        Get iPhone Battery Quote
+                      </a>
+                    </Button>
+                    <Button size="lg" variant="outline" className="gap-2" asChild>
+                      <a href={`tel:${PRIMARY_PHONE}`}>
+                        <Phone className="h-5 w-5" />
+                        Call {PRIMARY_PHONE_FORMATTED}
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
               {/* 5B–5E shared layout helper */}
               {[
                 {
